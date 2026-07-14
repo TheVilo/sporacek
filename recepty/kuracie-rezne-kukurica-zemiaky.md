@@ -1,30 +1,30 @@
 # Kuracie rezne s kukuricou a maslovými zemiakmi
 
 **slug:** kuracie-rezne-kukurica-zemiaky  
-**čas prípravy:** 25 minút  
 **porcie:** 2  
-**cena za porciu:** ~0,65 €  
-**úspora oproti bežným cenám:** ~57 %  
-**⚡ Tip:** Kukurica je v akcii LEN v utorok 14. 7. za 0,19 €/kus!
+**čas prípravy:** 25 minút  
+**cena za porciu:** 0,58 €/osoba  
+**týždeň:** 29/2026 · Lidl 13.–19. 7.  
+**⚡ Kukurica platí LEN v utorok 14. 7.!**
 
 ---
 
 ## Foto prompt
-"Pan-seared golden chicken breast with whole corn on the cob and buttery baby potatoes, simple home cooking style, natural light, white plate, garnished with fresh parsley, overhead shot"
+"Pan-seared golden chicken breast with whole corn on the cob and buttery baby potatoes, natural light, white plate, fresh parsley, overhead shot, food photography"
 
 ---
 
-## Suroviny
+## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Akciová cena | Náklad |
-|---|---|---|---|
-| Kuracie prsné rezne | 300 g | 2,39 €/kg | 0,72 € |
-| Lahôdková kukurica | 1 kus | **0,19 €/kus** ⚡ | 0,19 € |
-| Zemiaky skoré | 400 g | 1,39 €/2 kg | 0,28 € |
-| Maslo | 20 g | 1,39 €/250 g | 0,11 € |
-| Soľ, korenie, cesnak | – | v každej kuchyni | – |
+| Surovina | Množstvo | Cena |
+|---|---|---|
+| Kuracie prsné rezne | 300 g | 0,72 € |
+| Lahôdková kukurica | 1 ks | 0,19 € |
+| Zemiaky skoré | 200 g | 0,14 € |
+| Maslo | 20 g | 0,11 € |
+| Soľ, korenie | — | zásoby |
 
-**Celkom: ~1,30 € / 2 porcie = 0,65 €/porcia**
+**Celkom: 1,16 € → 0,58 €/osoba**
 
 ---
 
@@ -36,19 +36,18 @@
 | Bielkoviny | 34 g |
 | Sacharidy | 35 g |
 | Tuky | 10 g |
-| Vláknina | 4 g |
 
 ---
 
 ## Postup
 
-1. Kuracie prsné rezne osoľ, okoreni a nechaj 5 minút "sadnúť".
-2. Na panvici rozpusť maslo na strednom ohni. Rezne opekaj 5 minút z každej strany, kým sa nezlatia. Odlož na tanier, prikryj alobalom.
-3. Zemiaky uvari v osolenej vode 15–18 minút do mäkka. Scedi, pridaj štipku masla a soli.
-4. Kukuricu uvari v osolenej vode 8–10 minút. Vyber, osuš a potri masielkom so soľou.
-5. Podávaj kuracie rezne so zemiakmi a kukuricou. Tak jednoduché, tak dobré.
+1. Kuracie rezne osoľ, okoreni a nechaj 5 minút odpočívať.
+2. Na panvici rozpusť maslo na strednom ohni. Rezne opekaj 5 minút z každej strany, kým sa nezlatia.
+3. Zemiaky uvari v osolenej vode 15–18 minút do mäkka. Scedi, pridaj štipku masla.
+4. Kukuricu uvari v osolenej vode 8–10 minút. Osuš, potri masielkom so soľou.
+5. Podávaj spolu — jednoducho a chutne.
 
 ---
 
 ## Tagy
-`#kuracie` `#kukurica` `#zemiaky` `#rýchle varenie` `#lacné` `#šporáček` `#akcia-lidl` `#utorok-akcia`
+`#kuracie` `#kukurica` `#zemiaky` `#rýchle` `#šporáček` `#akcia-lidl` `#utorok-akcia`

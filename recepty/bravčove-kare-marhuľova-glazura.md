@@ -1,10 +1,10 @@
 # Bravčové karé s marhuľovou glazúrou
 
 **slug:** bravčove-kare-marhuľova-glazura  
+**porcie:** 2  
 **čas prípravy:** 30 minút  
-**porcie:** 4  
-**cena za porciu:** ~0,67 €  
-**úspora oproti bežným cenám:** ~57 %
+**cena za porciu:** 0,65 €/osoba  
+**týždeň:** 29/2026 · Lidl 13.–19. 7.
 
 ---
 
@@ -13,21 +13,21 @@
 
 ---
 
-## Suroviny
+## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Akciová cena | Náklad |
-|---|---|---|---|
-| Bravčové karé (bez kosti) | 600 g | 2,99 €/kg | 1,79 € |
-| Marhule čerstvé | 400 g | 1,99 €/kg | 0,80 € |
-| Cukor kryštálový | 2 PL | 0,75 €/kg | 0,05 € |
-| Olivový olej | 2 PL | 6,99 €/750 ml | 0,05 € |
-| Soľ, korenie, rozmarín | – | v každej kuchyni | – |
+| Surovina | Množstvo | Cena |
+|---|---|---|
+| Bravčové karé (bez kosti) | 300 g | 0,90 € |
+| Marhule čerstvé | 200 g | 0,40 € |
+| Cukor kryštálový | 1 PL | zásoby |
+| Olivový olej | 2 PL | zásoby |
+| Soľ, korenie, rozmarín | — | zásoby |
 
-**Celkom: ~2,69 € / 4 porcie = 0,67 €/porcia**
+**Celkom: 1,30 € → 0,65 €/osoba**
 
 ---
 
-## Nutričné hodnoty (na porciu ~250 g)
+## Nutričné hodnoty (na porciu)
 
 | | |
 |---|---|
@@ -35,19 +35,18 @@
 | Bielkoviny | 28 g |
 | Sacharidy | 18 g |
 | Tuky | 15 g |
-| Vláknina | 1 g |
 
 ---
 
 ## Postup
 
-1. Karé nakroj na 4 rovnaké plátky (asi 1,5 cm hrubé). Dobre osoľ a okoreni z oboch strán.
-2. Marhule rozkroj, vykôstkuj a nakrájaj na štvrtiny. Daj do malého hrnca s cukrom, štipkou rozmarínu a 3 PL vody. Var na malom ohni 5–7 minút, kým nezmäknú a omáčka sa mierne nezahustí.
-3. Na oleji (stredne silný oheň) opekaj plátky karé 4 minúty z každej strany – nemieš, nechaj ich opiecť.
-4. Prelejaj marhuľovú omáčku priamo na mäso a dusí ešte 3 minúty, kým sa glazúra neobalí okolo mäsa.
-5. Podávaj s čerstvým chlebom (Drevorubačský chlieb za 0,99 €) alebo ryžou.
+1. Karé nakroj na 2 plátky (~1,5 cm hrubé). Dobre osoľ a okoreni z oboch strán.
+2. Marhule rozkroj, vykôstkuj, nakrájaj na štvrtiny. Var v hrnci s cukrom, rozmarínom a 2 PL vody 5–7 minút.
+3. Na oleji opekaj plátky karé 4 minúty z každej strany — nemieš, nechaj ich opiecť.
+4. Prelejaj marhuľovú omáčku na mäso, dusí ešte 3 minúty.
+5. Podávaj s chlebom alebo ryžou. Vyzerá ako z reštaurácie, stojí menej ako káva vonku.
 
 ---
 
 ## Tagy
-`#bravčové` `#marhule` `#glazúra` `#letné jedlo` `#šporáček` `#akcia-lidl`
+`#bravčové` `#marhule` `#glazúra` `#letné` `#šporáček` `#akcia-lidl`

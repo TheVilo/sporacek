@@ -1,29 +1,29 @@
 # Krémová dyňová polievka
 
 **slug:** kremova-dynova-polievka  
+**porcie:** 2  
 **čas prípravy:** 30 minút  
-**porcie:** 4  
-**cena za porciu:** ~0,62 €  
-**úspora oproti bežným cenám:** ~50 %
+**cena za porciu:** 0,58 €/osoba  
+**týždeň:** 29/2026 · Lidl 13.–19. 7.
 
 ---
 
 ## Foto prompt
-"Creamy orange pumpkin soup in a white bowl, drizzle of cream on top, pumpkin seeds as garnish, warm autumn colors, natural side light, cozy kitchen setting, minimal styling, food photography"
+"Creamy orange pumpkin soup in a white bowl, drizzle of cream on top, pumpkin seeds as garnish, warm autumn colors, natural side light, cozy kitchen setting, food photography"
 
 ---
 
-## Suroviny
+## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Akciová cena | Náklad |
-|---|---|---|---|
-| Červená dyňa (bezjadierková) | 1 kg | 1,79 €/kg | 1,79 € |
-| Cibuľa | 1 ks | 0,99 €/5 kg | 0,10 € |
-| Smotana na šľahanie | 100 ml | 1,29 €/250 ml | 0,52 € |
-| Olivový olej | 2 PL | 6,99 €/750 ml | 0,05 € |
-| Soľ, zázvor (mletý), kurkuma | – | v každej kuchyni | – |
+| Surovina | Množstvo | Cena |
+|---|---|---|
+| Červená dyňa bezjadierková | 500 g | 0,90 € |
+| Smotana na šľahanie | 50 ml | 0,26 € |
+| Cibuľa | ½ ks | zásoby |
+| Olivový olej | 1 PL | zásoby |
+| Soľ, zázvor, kurkuma | — | zásoby |
 
-**Celkom: ~2,46 € / 4 porcie = 0,62 €/porcia**
+**Celkom: 1,16 € → 0,58 €/osoba**
 
 ---
 
@@ -35,21 +35,20 @@
 | Bielkoviny | 2 g |
 | Sacharidy | 20 g |
 | Tuky | 7 g |
-| Vláknina | 2 g |
 
 ---
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a orestuj na oleji v hrnci 3 minúty, kým neskloane.
-2. Dyňu ošúpaj (kôra je tuhá – použij veľký nôž), vykôstky vydlabaj lyžicou a nakrájaj na kocky ~3 cm. Pridaj k cibuľke.
-3. Zalejaj 700 ml vody alebo zeleninového vývaru. Pridaj ½ ČL mletého zázvoru, ¼ ČL kurkumy a osoľ podľa chuti.
-4. Var na strednom ohni 20 minút, kým dyňa úplne nezmäkne.
-5. Mixuj tyčovým mixérom do hladka. Vlej smotanu, premiešaj a povar ešte 2 minúty. Podávaj s chlebom.
+1. Cibuľu nakrájaj nadrobno, orestuj na oleji 3 minúty.
+2. Dyňu ošúpaj, nakrájaj na kocky ~3 cm, pridaj k cibuľke.
+3. Zalejaj 400 ml vody, pridaj ½ ČL zázvoru, ¼ ČL kurkumy, osoľ.
+4. Var 20 minút do mäkka. Mixuj tyčovým mixérom do hladka.
+5. Vlej smotanu, premiešaj, povar 2 minúty. Podávaj s chlebom.
 
-**Tip:** Zvyšok smotany vyšľahaj a daj na polievku ako dekoráciu – vyzerá ako z reštaurácie.
+Tip: Zvyšok smotany vyšľahaj a daj na polievku ako dekoráciu.
 
 ---
 
 ## Tagy
-`#polievka` `#dyňa` `#vegánske` `#zdravé` `#lacné` `#šporáček` `#akcia-lidl`
+`#polievka` `#dyňa` `#vegánske` `#zdravé` `#šporáček` `#akcia-lidl`

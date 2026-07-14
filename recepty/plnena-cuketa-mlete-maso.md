@@ -1,35 +1,35 @@
 # Plnená cuketa s mletým mäsom a ryžou
 
 **slug:** plnena-cuketa-mlete-maso  
+**porcie:** 2  
 **čas prípravy:** 40 minút  
-**porcie:** 4  
-**cena za porciu:** ~0,75 €  
-**úspora oproti bežným cenám:** ~46 %
+**cena za porciu:** 0,71 €/osoba  
+**týždeň:** 29/2026 · Lidl 13.–19. 7.
 
 ---
 
 ## Foto prompt
-"Stuffed zucchini halves filled with seasoned ground meat and rice, baked golden-brown, on a white ceramic plate, garnished with fresh cherry tomatoes, natural side light, rustic wooden table, food photography"
+"Stuffed zucchini halves filled with seasoned ground meat and rice, baked golden-brown, white ceramic plate, fresh cherry tomatoes, natural side light, rustic wooden table, food photography"
 
 ---
 
-## Suroviny
+## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Akciová cena | Náklad |
-|---|---|---|---|
-| Cuketa | 2 ks | 0,49 €/ks | 0,98 € |
-| Mleté bravčové mäso | 400 g | 3,29 €/kg | 1,32 € |
-| Guľatozrnná ryža | 100 g | 1,35 €/kg | 0,14 € |
-| Cibuľa | 1 ks | 0,99 €/5 kg | 0,10 € |
-| Strapcové paradajky | 200 g | 1,49 €/750 g | 0,40 € |
-| Olivový olej | 2 PL | 6,99 €/750 ml | 0,05 € |
-| Soľ, korenie, oregano | – | v každej kuchyni | – |
+| Surovina | Množstvo | Cena |
+|---|---|---|
+| Cuketa | 1 ks | 0,49 € |
+| Mleté bravčové mäso | 200 g | 0,66 € |
+| Guľatozrnná ryža | 50 g | 0,07 € |
+| Strapcové paradajky | 100 g | 0,20 € |
+| Cibuľa | ½ ks | zásoby |
+| Olivový olej | 1 PL | zásoby |
+| Soľ, korenie, oregano | — | zásoby |
 
-**Celkom: ~2,99 € / 4 porcie = 0,75 €/porcia**
+**Celkom: 1,42 € → 0,71 €/osoba**
 
 ---
 
-## Nutričné hodnoty (na porciu ~350 g)
+## Nutričné hodnoty (na porciu)
 
 | | |
 |---|---|
@@ -37,19 +37,18 @@
 | Bielkoviny | 22 g |
 | Sacharidy | 28 g |
 | Tuky | 9 g |
-| Vláknina | 3 g |
 
 ---
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Cukety umyj, nakroj pozdĺžne na polovice a lyžičkou vydlabaj dužinu – nechaj okolo 1 cm "misku". Dužinu odlož.
-2. Na oleji orestuj nadrobno nakrájanú cibuľu (2–3 min), pridaj mleté mäso a zrestuj do hneda (5–7 min). Osoľ, okoreni.
-3. Pridaj dužinu z cukety a nakrájané paradajky, premiešaj. Uve ryžu podľa návodu (alebo použij zvyšnú uvarenú), pridaj k mäsu.
-4. Zmesou naplň vydlabané cukety. Poukladaj do pekáča, podlej 50 ml vody.
-5. Peč 25 minút, kým cuketa zmäkne a povrch sa mierne opečie. Podávaj hneď.
+1. Rúru predhrej na 200 °C. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu. Dužinu odlož.
+2. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj mäso a zrestuj do hneda (5–7 min). Osoľ, okoreni.
+3. Pridaj dužinu z cukety, paradajky a uvarenú ryžu. Premiešaj.
+4. Naplň vydlabané cukety zmesou. Daj do pekáča, podlej 50 ml vody.
+5. Peč 25 minút do zlatista. Podávaj hneď.
 
 ---
 
 ## Tagy
-`#hlavné jedlo` `#zelenina` `#bravčové` `#lacné varenie` `#rúra` `#šporáček` `#akcia-lidl`
+`#hlavné jedlo` `#zelenina` `#bravčové` `#rúra` `#šporáček` `#akcia-lidl`
