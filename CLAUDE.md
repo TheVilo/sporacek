@@ -103,8 +103,16 @@ Recept má viac tagov naraz.
 
 ## Artifacty (vizuálne prehľady)
 
-- Pred vytvorením nového artifactu **vždy over `Artifact list`**, či už niečo podobné neexistuje (napr. prehľad týždňa/receptov). Ak áno, **rozšír/aktualizuj ten istý** (rovnaká URL), nevytváraj duplicitu.
-- Artifact „šporáček — týždeň [dátum]" slúži ako živý prehľad receptov s fotkami, cenou a postupom — aktualizuj jeho obsah, keď pribudnú recepty, namiesto nového artifactu.
+**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`). Artifacty sú len jeho zobrazenie — nikdy nežijú vlastným životom. Ak sa artifact rozchádza s repom, repo vyhráva a artifact sa prepíše podľa neho.
+
+Pred vytvorením nového artifactu **vždy over `Artifact list`**, či už niečo podobné neexistuje. Ak áno, **rozšír/aktualizuj ten istý** (rovnaká URL), nevytváraj duplicitu. Pri úprave existujúceho artifactu si najprv over jeho aktuálny obsah proti repu, nie len podľa pamäte z konverzácie.
+
+Rozlišuj dva odlišné typy artifactov, nemiešaj ich:
+
+1. **Databáza receptov** (samostatný artifact, mimo social flow) — prehľad *všetkých* receptov v `recepty/` (fotka, cena, tagy, postup). Rastie priebežne s databázou. Pri pridaní receptu ho **doplň** do artifactu, negeneruj nanovo fotky/dáta receptov, ktoré už existujú — šetrí to tokeny.
+   **Kanonická URL (jedna, stále rovnaká, aktualizuje sa v mieste):** https://claude.ai/code/artifact/4a74dccc-333b-40d5-ac90-2c43f4bcd1bf
+2. **Týždenný "social" flow** (prepojené artifacty: 🛒 Katalóg → 🍽️ Recepty týždňa → 📋 Nákupný zoznam → 📱 Social) — úzko naviazaný na *jeden konkrétny* leták/týždeň (`tydne/<týždeň>/`). Ukazuje len tie recepty, ktoré boli pre daný týždeň skutočne vybrané/schválené — nie celú databázu. Každý krok linkuje na susedné kroky (spoločný `flow-nav` pás hore). Pri zmene výberu receptov na daný týždeň **aktualizuj všetky kroky flow**, nech si navzájom nesedia.
+   **Každý nový týždeň dostáva vlastné nové URL** (nepreťažuj URL z minulého týždňa — je to historický záznam). URL aktuálneho/posledného týždňa zapíš do `tydne/<týždeň>/OVERVIEW.md`.
 
 ---
 
