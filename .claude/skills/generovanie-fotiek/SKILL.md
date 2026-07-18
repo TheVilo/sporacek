@@ -7,6 +7,14 @@ description: Použi vždy, keď treba vygenerovať fotku jedla pre recept (foto_
 
 Fotky **sú súčasťou repa** (priečinok `fotky/`, viď `CLAUDE.md`) — generuj ich do dočasného súboru, over si ich, potom ulož do `fotky/<id>.jpg`, commitni a pushni. Cez GitHub/git pull sa dostanú aj do lokálnej zložky `sporacek`.
 
+## Kritická, nemeniteľná podmienka: amatérska mobilná fotka, nie umelecká food photography
+
+Fotky **musia vyzerať ako bežný telefónny odfotok jedla tesne pred jedením** — presne také, aké ľudia posielajú na WhatsApp alebo dávajú do Instagram Stories. **Nie** naštylizovaná, profesionálne nasvietená "food photography" scéna.
+
+Vyhýbaj sa: bokehu/rozostrenému pozadiu, plátenym obrúskom, vintage doskám na krájanie, fľašiam vína, umelo poukladaným bylinkám/kvetom/sviečkam, "zlatému" naaranžovanému svetlu. Namiesto toho: ostrý celý záber, obyčajná kuchyňa/stôl taký, aký reálne je, mierne nedokonalý uhol, bežné (aj nerovnomerné) domáce svetlo.
+
+Presná šablóna promptu je v `.claude/skills/tyzdenny-vystup/SKILL.md` — použi ju vždy, aj mimo týždenného letáku.
+
 ## Čo je treba
 
 - **`GEMINI_API_KEY`** v premennej prostredia. Ak nie je nastavená, popros o ňu používateľa (Google AI Studio → API key). Zatiaľ sa nedá trvalo uložiť ako env premenná tohto prostredia, takže ju na začiatku session treba dostať znova.
