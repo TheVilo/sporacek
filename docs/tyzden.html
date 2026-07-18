@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>šporáček — týždenný výstup</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #204432; --green-ink: #16301f; --terracotta: #BA5F3F; --sand: #E7D6B4;
+    --paper: #FAF6EE; --surface: #FFFFFF; --text: #21301f; --text-muted: #5b6b57;
+    --border: #ddd0b8; --shadow: 0 1px 2px rgba(32,68,50,.07), 0 8px 20px rgba(32,68,50,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --green: #7cb99a; --green-ink: #eaf3ec; --terracotta: #e28a61; --sand: #cbb98f;
+      --paper: #131f19; --surface: #1b2b21; --text: #eef2ea; --text-muted: #a9b8a4;
+      --border: #34463b; --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.3); }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--paper); color: var(--text);
+    font-family: 'Plus Jakarta Sans', -apple-system, "Segoe UI", ui-sans-serif, Roboto, Helvetica, Arial, sans-serif;
+    font-variant-numeric: tabular-nums; line-height: 1.55; font-weight: 500;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px 70px; }
+
+  .top-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .refresh-btn {
+    font-family: inherit; font-size: .8rem; font-weight: 700; color: var(--green-ink);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
+    padding: 7px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .refresh-btn:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
+  .refresh-btn:disabled { opacity: .6; cursor: wait; }
+
+  .week-picker { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
+  .week-chip {
+    font-family: inherit; border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    padding: 7px 14px; border-radius: 100px; font-size: .82rem; cursor: pointer; font-weight: 600;
+  }
+  .week-chip[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--paper); font-weight: 700; }
+  .status-line { font-size: .78rem; color: var(--text-muted); margin-bottom: 18px; }
+
+  .tabs { position: sticky; top: 0; z-index: 5; display: flex; gap: 6px; flex-wrap: wrap; background: var(--paper); padding: 10px 0 14px; margin-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .tab { text-decoration: none; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); padding: 7px 14px; border-radius: 100px; font-weight: 700; font-size: .82rem; white-space: nowrap; cursor: pointer; }
+  .tab:hover { background: color-mix(in srgb, var(--sand) 40%, var(--surface)); color: var(--text); }
+
+  .eyebrow { text-transform: uppercase; letter-spacing: .09em; font-size: .72rem; color: var(--terracotta); font-weight: 700; margin-bottom: 8px; }
+  h1 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin: 0 0 6px; color: var(--green-ink); text-wrap: balance; letter-spacing: -0.01em; }
+  .sub { color: var(--text-muted); font-size: .95rem; margin-bottom: 22px; }
+
+  section { margin: 44px 0; scroll-margin-top: 64px; }
+  section > h2 { font-size: 1.3rem; font-weight: 800; color: var(--green-ink); margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+  section > .section-sub { color: var(--text-muted); font-size: .85rem; margin-bottom: 18px; }
+
+  .summary { background: var(--green); color: var(--paper); border-radius: 18px; padding: 20px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 16px; margin-bottom: 8px; box-shadow: var(--shadow); }
+  .summary .item .n { font-size: 1.5rem; font-weight: 800; display: block; }
+  .summary .item .l { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; opacity: .85; font-weight: 600; }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+  .cat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; box-shadow: var(--shadow); }
+  .cat-card .name { font-weight: 700; font-size: .9rem; }
+  .cat-card .price-row { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
+  .cat-card .old { text-decoration: line-through; color: var(--text-muted); font-size: .82rem; }
+  .cat-card .new { font-weight: 800; color: var(--green-ink); }
+  .cat-card .off { color: var(--terracotta); font-weight: 700; font-size: .78rem; margin-left: auto; }
+  .cat-flag { display: block; font-size: .68rem; font-weight: 700; color: var(--terracotta); margin-top: 3px; }
+
+  .meals { display: flex; flex-direction: column; gap: 14px; }
+  .meal { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); padding: 10px; display: grid; grid-template-columns: 128px 1fr; gap: 14px; }
+  @media (max-width: 480px) { .meal { grid-template-columns: 96px 1fr; gap: 10px; } }
+  .photo-wrap { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 1 / 1.05; background: var(--sand); }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .meal-body { display: flex; flex-direction: column; justify-content: center; padding: 4px 8px 4px 0; min-width: 0; }
+  .meal-day { font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; }
+  .meal h3 { margin: 3px 0 5px; font-size: 1.05rem; line-height: 1.25; color: var(--green-ink); text-wrap: balance; }
+  .price-line { font-size: 1.05rem; font-weight: 800; color: var(--green-ink); margin-bottom: 2px; }
+  .price-line span { font-size: .7rem; font-weight: 600; color: var(--text-muted); }
+  .macro-line { font-size: .78rem; color: var(--text-muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .tag { font-size: .7rem; padding: 3px 9px; border-radius: 100px; border: 1px solid var(--border); color: var(--text-muted); background: color-mix(in srgb, var(--sand) 25%, var(--surface)); }
+  details.postup summary { cursor: pointer; font-weight: 700; font-size: .78rem; color: var(--terracotta); list-style: none; display: flex; align-items: center; gap: 6px; user-select: none; }
+  details.postup summary::-webkit-details-marker { display: none; }
+  details.postup summary::before { content: "▸"; display: inline-block; transition: transform .15s ease; font-size: .68rem; }
+  details.postup[open] summary::before { transform: rotate(90deg); }
+  details.postup ol { margin: 8px 0 0; padding-left: 1.15em; display: flex; flex-direction: column; gap: 5px; font-size: .82rem; color: var(--text); }
+  details.postup ol li::marker { color: var(--terracotta); font-weight: 700; }
+
+  .group { margin-bottom: 18px; }
+  .group h3 { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; margin: 0 0 8px; }
+  .group-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+  .row { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--border); font-size: .88rem; }
+  .row:last-child { border-bottom: none; }
+  .row .name { font-weight: 700; flex: 1; min-width: 0; }
+  .row .qty { color: var(--text-muted); font-size: .82rem; white-space: nowrap; }
+  .row .price { font-weight: 800; color: var(--green-ink); white-space: nowrap; min-width: 55px; text-align: right; }
+  .note-box { font-size: .82rem; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; padding: 14px 16px; margin-top: 14px; }
+
+  .story-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 14px; }
+  .story-card .day { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; margin-bottom: 6px; }
+  .story-card h4 { margin: 0 0 10px; font-size: 1rem; color: var(--green-ink); }
+  .story-slide { background: color-mix(in srgb, var(--sand) 20%, var(--surface)); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; font-size: .87rem; white-space: pre-line; }
+  .story-slide b { color: var(--text-muted); font-weight: 700; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 4px; }
+  .cta-line { font-size: .8rem; color: var(--terracotta); font-weight: 700; margin-top: 6px; }
+  .feed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 14px; white-space: pre-line; font-size: .87rem; }
+  .feed-card h4 { margin: 0 0 10px; font-size: 1rem; color: var(--green-ink); white-space: normal; }
+
+  .empty-state, .error-state { padding: 60px 20px; text-align: center; color: var(--text-muted); }
+  .error-state { color: var(--terracotta); }
+
+  footer.cta { margin-top: 40px; padding: 18px 22px; border: 1px dashed var(--border); border-radius: 14px; background: var(--surface); font-size: .85rem; color: var(--text-muted); }
+  footer.cta b { color: var(--green-ink); }
+  footer.cta code { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <div class="eyebrow">Šporáček · týždenný výstup</div>
+      <h1 id="pageTitle">Načítavam…</h1>
+    </div>
+    <button class="refresh-btn" id="refreshBtn" onclick="loadWeekList(true)">⟳ Obnoviť</button>
+  </div>
+  <div class="week-picker" id="weekPicker"></div>
+  <div class="status-line" id="statusLine">Hľadám dostupné týždne…</div>
+
+  <nav class="tabs" id="tabs" style="display:none">
+    <a class="tab" href="#katalog">🛒 Akcia</a>
+    <a class="tab" href="#recepty">🍽️ Recepty</a>
+    <a class="tab" href="#zoznam">📋 Nákupný zoznam</a>
+    <a class="tab" href="#social">📱 Social obsah</a>
+  </nav>
+
+  <div id="content"></div>
+
+  <footer class="cta">
+    Táto stránka si dáta ťahá naživo z <code>tydne/&lt;týždeň&gt;/data.json</code> a receptov z <code>recepty/</code> priamo na GitHube — žiadne prekódovávanie, nový týždeň sa objaví automaticky po pushnutí.
+  </footer>
+</div>
+
+<script>
+const OWNER = "TheVilo";
+const REPO = "sporacek";
+const BRANCH = "main";
+const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
+
+let weeks = [];
+let currentWeek = null;
+
+function escapeHtml(s) {
+  const div = document.createElement("div");
+  div.textContent = s == null ? "" : String(s);
+  return div.innerHTML;
+}
+
+function parseMarkdownRecipe(slug, text) {
+  const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
+  const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
+  const cenaM = text.match(/\*\*cena za porciu:\*\*\s*([\d,]+)\s*€/);
+  const cena = cenaM ? parseFloat(cenaM[1].replace(",", ".")) : null;
+  const kcal = (text.match(/Energia\s*\|\s*~?(\d+)\s*kcal/) || [, null])[1];
+  const bielkoviny = (text.match(/Bielkoviny\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const sacharidy = (text.match(/Sacharidy\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const tuky = (text.match(/Tuky\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  const postup = [];
+  if (postupM) for (const line of postupM[1].trim().split("\n")) {
+    const m = line.trim().match(/^\d+\.\s*(.+)$/);
+    if (m) postup.push(m[1].trim());
+  }
+  const tagyM = text.match(/## Tagy\s*\n(.+)/);
+  let tagy = [];
+  if (tagyM) tagy = [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]);
+  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy };
+}
+
+function parseYamlRecipe(slug, text) {
+  const fmM = text.match(/^---\n([\s\S]+?)\n---/);
+  const fm = fmM ? fmM[1] : "";
+  const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
+  const cenaM = fm.match(/cena_za_porciu:\s*([\d.]+)/);
+  const cena = cenaM ? parseFloat(cenaM[1]) : null;
+  const kcal = (fm.match(/kcal:\s*(\d+)/) || [, null])[1];
+  const bielkoviny = (fm.match(/bielkoviny_g:\s*(\d+)/) || [, null])[1];
+  const sacharidy = (fm.match(/sacharidy_g:\s*(\d+)/) || [, null])[1];
+  const tuky = (fm.match(/tuky_g:\s*(\d+)/) || [, null])[1];
+  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n## |$)/);
+  const postup = [];
+  if (postupM) for (const line of postupM[1].trim().split("\n")) {
+    const m = line.trim().match(/^\d+\.\s*(.+)$/);
+    if (m) postup.push(m[1].trim());
+  }
+  let tagy = [];
+  const tagyBlockM = fm.match(/tagy:\n((?:\s+\w+:.*\n?)+)/);
+  if (tagyBlockM) for (const m of tagyBlockM[1].matchAll(/\[(.*?)\]/g)) {
+    tagy.push(...m[1].split(",").map(x => x.trim()).filter(Boolean));
+  }
+  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy };
+}
+
+async function fetchRecipe(slug) {
+  const resp = await fetch(`${RAW_BASE}/recepty/${encodeURIComponent(slug)}.md`, { cache: "no-store" });
+  if (!resp.ok) return null;
+  const text = await resp.text();
+  return text.startsWith("---\n") ? parseYamlRecipe(slug, text) : parseMarkdownRecipe(slug, text);
+}
+
+async function loadWeekList(manual) {
+  const statusLine = document.getElementById("statusLine");
+  const btn = document.getElementById("refreshBtn");
+  btn.disabled = true;
+  statusLine.textContent = manual ? "Obnovujem…" : "Hľadám dostupné týždne…";
+  try {
+    const listResp = await fetch(`${API_BASE}/contents/tydne?ref=${BRANCH}`, { cache: "no-store" });
+    if (!listResp.ok) throw new Error(`GitHub API vrátilo ${listResp.status}`);
+    const dirs = (await listResp.json()).filter(f => f.type === "dir");
+    dirs.sort((a, b) => b.name.localeCompare(a.name));
+    weeks = dirs.map(d => ({ folder: d.name }));
+    if (weeks.length === 0) {
+      document.getElementById("content").innerHTML = `<div class="empty-state">Zatiaľ žiadny týždenný výstup v <code>tydne/</code>.</div>`;
+      statusLine.textContent = "";
+      return;
+    }
+    renderWeekPicker();
+    await selectWeek(currentWeek && weeks.some(w => w.folder === currentWeek) ? currentWeek : weeks[0].folder);
+  } catch (err) {
+    document.getElementById("content").innerHTML = `<div class="error-state">Nepodarilo sa načítať zoznam týždňov: ${escapeHtml(err.message)}</div>`;
+    statusLine.textContent = "Chyba pri načítaní.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function renderWeekPicker() {
+  const el = document.getElementById("weekPicker");
+  el.innerHTML = weeks.map(w => `
+    <button class="week-chip" aria-pressed="${w.folder === currentWeek}" onclick="selectWeek('${w.folder.replace(/'/g, "\\'")}')">${escapeHtml(w.folder)}</button>
+  `).join("");
+}
+
+async function selectWeek(folder) {
+  currentWeek = folder;
+  renderWeekPicker();
+  const statusLine = document.getElementById("statusLine");
+  const content = document.getElementById("content");
+  const tabs = document.getElementById("tabs");
+  statusLine.textContent = "Načítavam týždeň…";
+  content.innerHTML = "";
+  tabs.style.display = "none";
+
+  try {
+    const dataResp = await fetch(`${RAW_BASE}/tydne/${encodeURIComponent(folder)}/data.json`, { cache: "no-store" });
+    if (!dataResp.ok) throw new Error(`data.json sa nenašiel pre ${folder} (${dataResp.status})`);
+    const data = await dataResp.json();
+
+    const meals = await Promise.all(data.recepty.map(async (m) => {
+      const r = await fetchRecipe(m.slug);
+      return { ...m, recipe: r };
+    }));
+
+    document.getElementById("pageTitle").textContent = `${data.obchod} · týždeň ${data.tyzden}`;
+    renderWeek(data, meals);
+    tabs.style.display = "";
+    const now = new Date().toLocaleString("sk-SK");
+    statusLine.textContent = `Naposledy načítané: ${now}`;
+  } catch (err) {
+    content.innerHTML = `<div class="error-state">Nepodarilo sa načítať týždeň: ${escapeHtml(err.message)}</div>`;
+    statusLine.textContent = "Chyba pri načítaní.";
+  }
+}
+
+function mealCardHtml(m) {
+  const r = m.recipe;
+  if (!r) return `<div class="meal"><div class="meal-body"><div class="meal-day">${escapeHtml(m.den)}</div><h3>${escapeHtml(m.slug)} (recept sa nenašiel)</h3></div></div>`;
+  const macroParts = [];
+  if (r.kcal) macroParts.push(`${r.kcal} kcal`);
+  if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
+  if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
+  if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
+  const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
+  const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€<span> / porcia</span>` : "";
+  const nonTypTags = r.tagy.filter(t => !["večera","obed","šalát","polievka","jednohrnec","akcia-lidl"].includes(t));
+  return `
+    <div class="meal">
+      <div class="photo-wrap"><img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" /></div>
+      <div class="meal-body">
+        <div class="meal-day">${escapeHtml(m.den)}</div>
+        <h3>${escapeHtml(r.nazov)}</h3>
+        ${priceStr ? `<div class="price-line">${priceStr}</div>` : ""}
+        <div class="macro-line">${r.cas ? escapeHtml(r.cas) + " · " : ""}${macroParts.join(" · ")}</div>
+        <div class="tags">${nonTypTags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("")}</div>
+        <details class="postup">
+          <summary>Postup (${r.postup.length} krokov)</summary>
+          <ol>${r.postup.map(s => `<li>${escapeHtml(s)}</li>`).join("")}</ol>
+        </details>
+      </div>
+    </div>`;
+}
+
+function catCardHtml(c) {
+  return `
+    <div class="cat-card">
+      <div class="name">${escapeHtml(c.nazov)}</div>
+      <div class="price-row">
+        ${c.stara_cena ? `<span class="old">${Number(c.stara_cena).toFixed(2)}&nbsp;€</span>` : ""}
+        <span class="new">${Number(c.akciova_cena).toFixed(2)}&nbsp;€</span>
+        ${c.zlava ? `<span class="off">${escapeHtml(c.zlava)}</span>` : ""}
+      </div>
+      ${c.flag ? `<div class="cat-flag">${escapeHtml(c.flag)}</div>` : ""}
+    </div>`;
+}
+
+function shoppingGroupHtml(g) {
+  return `
+    <div class="group">
+      <h3>${escapeHtml(g.nazov)}</h3>
+      <div class="group-card">
+        ${g.polozky.map(p => `
+          <div class="row">
+            <div class="name">${escapeHtml(p.nazov)}</div>
+            <div class="qty">${escapeHtml(p.mnozstvo)}</div>
+            <div class="price">${Number(p.cena).toFixed(2)}&nbsp;€</div>
+          </div>`).join("")}
+      </div>
+    </div>`;
+}
+
+function storyCardHtml(s) {
+  return `
+    <div class="story-card">
+      <div class="day">${escapeHtml(s.den)}</div>
+      <h4>${escapeHtml(s.recept)}</h4>
+      <div class="story-slide"><b>Slide 1</b>${escapeHtml(s.slide1)}</div>
+      <div class="story-slide"><b>Slide 2</b>${escapeHtml(s.slide2)}</div>
+      <div class="cta-line">CTA: ${escapeHtml(s.cta)}</div>
+    </div>`;
+}
+
+function feedCardHtml(f) {
+  return `<div class="feed-card"><h4>${escapeHtml(f.nazov)}</h4>${escapeHtml(f.text)}</div>`;
+}
+
+function renderWeek(data, meals) {
+  const content = document.getElementById("content");
+  const s = data.suhrn || {};
+
+  const summaryHtml = `
+    <div class="summary">
+      <div class="item"><span class="n">${s.plan_spolu != null ? s.plan_spolu.toFixed(2) + "&nbsp;€" : "—"}</span><span class="l">Plán spolu</span></div>
+      <div class="item"><span class="n">${s.uspora != null ? "~" + s.uspora.toFixed(2) + "&nbsp;€" : "—"}</span><span class="l">Úspora na nákupe</span></div>
+      <div class="item"><span class="n">${s.priemer_porcia != null ? s.priemer_porcia.toFixed(2) + "&nbsp;€" : "—"}</span><span class="l">Priemer / porcia</span></div>
+      <div class="item"><span class="n">${meals.length}×2</span><span class="l">Porcií spolu</span></div>
+    </div>`;
+
+  const katalogHtml = `
+    <section id="katalog">
+      <h2>🛒 Kľúčové akciové suroviny</h2>
+      <div class="section-sub">${escapeHtml(data.obchod)} · platnosť ${escapeHtml(data.platnost)}</div>
+      <div class="cat-grid">${(data.katalog_zvyraznenia || []).map(catCardHtml).join("")}</div>
+    </section>`;
+
+  const receptyHtml = `
+    <section id="recepty">
+      <h2>🍽️ Recepty tohto týždňa</h2>
+      <div class="section-sub">${meals.length} receptov, zdroj: <code>recepty/</code></div>
+      <div class="meals">${meals.map(mealCardHtml).join("")}</div>
+    </section>`;
+
+  const zoznamHtml = `
+    <section id="zoznam">
+      <h2>📋 Nákupný zoznam</h2>
+      <div class="section-sub">Pre ${meals.length} jedál (2 osoby) · bez základnej výbavy</div>
+      ${(data.nakupny_zoznam?.skupiny || []).map(shoppingGroupHtml).join("")}
+      ${data.nakupny_zoznam?.poznamka ? `<div class="note-box">${escapeHtml(data.nakupny_zoznam.poznamka)}</div>` : ""}
+    </section>`;
+
+  const socialHtml = `
+    <section id="social">
+      <h2>📱 Social obsah</h2>
+      <div class="section-sub">Hotové texty na Stories a feed posty</div>
+      ${(data.social?.stories || []).map(storyCardHtml).join("")}
+      ${(data.social?.feed_posty || []).map(feedCardHtml).join("")}
+    </section>`;
+
+  content.innerHTML = summaryHtml + katalogHtml + receptyHtml + zoznamHtml + socialHtml;
+}
+
+loadWeekList(false);
+</script>
+</body>
+</html>

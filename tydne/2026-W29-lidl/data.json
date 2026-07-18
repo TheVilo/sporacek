@@ -1,0 +1,134 @@
+{
+  "obchod": "Lidl",
+  "tyzden": "29/2026",
+  "platnost": "2026-07-13 - 2026-07-19",
+  "katalog_zvyraznenia": [
+    {"nazov": "Marhule", "stara_cena": 4.49, "akciova_cena": 1.99, "zlava": "-55%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Červená dyňa bezjadierková", "stara_cena": 4.49, "akciova_cena": 1.79, "zlava": "-60%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Broskyne", "stara_cena": 2.49, "akciova_cena": 0.99, "zlava": "-60%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Strapcové paradajky", "stara_cena": 2.49, "akciova_cena": 1.49, "zlava": "-40%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Čučoriedky", "stara_cena": 3.29, "akciova_cena": 1.49, "zlava": "-55%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Červená paprika", "stara_cena": 3.69, "akciova_cena": 2.19, "zlava": "-40%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Cuketa", "stara_cena": 1.20, "akciova_cena": 0.49, "zlava": "-59%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Konzumné zemiaky (2 kg)", "stara_cena": 2.49, "akciova_cena": 1.39, "zlava": "-44%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Cibuľa (5 kg)", "stara_cena": 1.99, "akciova_cena": 0.99, "zlava": "-50%", "kategoria": "Ovocie a zelenina", "flag": ""},
+    {"nazov": "Lahôdková kukurica", "stara_cena": 1.29, "akciova_cena": 0.19, "zlava": "-85%", "kategoria": "Ovocie a zelenina", "flag": "⚡ len utorok 14.7."},
+    {"nazov": "Kuracie prsné rezne", "stara_cena": null, "akciova_cena": 2.39, "zlava": "supercena", "kategoria": "Mäso", "flag": ""},
+    {"nazov": "Bravčové karé (bez kosti)", "stara_cena": 5.49, "akciova_cena": 2.99, "zlava": "-45%", "kategoria": "Mäso", "flag": ""},
+    {"nazov": "Mleté bravčové mäso", "stara_cena": null, "akciova_cena": 3.29, "zlava": "", "kategoria": "Mäso", "flag": ""},
+    {"nazov": "Bravčová krkovička", "stara_cena": 5.79, "akciova_cena": 3.99, "zlava": "-31%", "kategoria": "Mäso", "flag": ""},
+    {"nazov": "Kuracie stehenné rezne XXL", "stara_cena": 6.59, "akciova_cena": 3.99, "zlava": "-39%", "kategoria": "Mäso", "flag": ""},
+    {"nazov": "Mozzarella Classic 245 g", "stara_cena": null, "akciova_cena": 0.79, "zlava": "", "kategoria": "Mliečne a ostatné", "flag": ""},
+    {"nazov": "Maslo 250 g", "stara_cena": 1.18, "akciova_cena": 1.39, "zlava": "trvalé zlacnenie", "kategoria": "Mliečne a ostatné", "flag": ""},
+    {"nazov": "Smotana na šľahanie 250 ml", "stara_cena": null, "akciova_cena": 1.29, "zlava": "", "kategoria": "Mliečne a ostatné", "flag": ""},
+    {"nazov": "Guľatozrnná ryža 1 kg", "stara_cena": null, "akciova_cena": 1.35, "zlava": "", "kategoria": "Mliečne a ostatné", "flag": ""},
+    {"nazov": "Rio Mare tuniak 3×65 g", "stara_cena": null, "akciova_cena": 2.49, "zlava": "", "kategoria": "Mliečne a ostatné", "flag": ""}
+  ],
+  "recepty": [
+    {"den": "Pondelok 13. 7.", "slug": "plnena-cuketa-mlete-maso"},
+    {"den": "Utorok 14. 7. ⚡", "slug": "kuracie-rezne-kukurica-zemiaky"},
+    {"den": "Streda 15. 7.", "slug": "bravčove-kare-marhuľova-glazura"},
+    {"den": "Štvrtok 16. 7.", "slug": "kremova-dynova-polievka"},
+    {"den": "Piatok 17. 7.", "slug": "letny-salat-broskyne-mozzarella"}
+  ],
+  "nakupny_zoznam": {
+    "skupiny": [
+      {
+        "nazov": "Zelenina a ovocie (akciové)",
+        "polozky": [
+          {"nazov": "cuketa", "mnozstvo": "1 ks", "cena": 0.49},
+          {"nazov": "strapcové paradajky", "mnozstvo": "750 g bal.", "cena": 1.49},
+          {"nazov": "marhule", "mnozstvo": "~200 g", "cena": 0.40},
+          {"nazov": "červená dyňa", "mnozstvo": "~500 g", "cena": 0.90},
+          {"nazov": "broskyne", "mnozstvo": "750 g bal.", "cena": 0.99},
+          {"nazov": "zemiaky skoré", "mnozstvo": "2 kg bal.", "cena": 1.39},
+          {"nazov": "⚡ kukurica lahôdková", "mnozstvo": "1 ks (len ut. 14.7.)", "cena": 0.19}
+        ]
+      },
+      {
+        "nazov": "Mäso (akciové)",
+        "polozky": [
+          {"nazov": "kuracie prsné rezne", "mnozstvo": "~300 g", "cena": 0.72},
+          {"nazov": "bravčové karé", "mnozstvo": "~300 g", "cena": 0.90},
+          {"nazov": "bravčové mleté mäso", "mnozstvo": "~200 g", "cena": 0.66}
+        ]
+      },
+      {
+        "nazov": "Mliečne (akciové)",
+        "polozky": [
+          {"nazov": "mozzarella", "mnozstvo": "245 g", "cena": 0.79},
+          {"nazov": "maslo", "mnozstvo": "250 g", "cena": 1.39},
+          {"nazov": "smotana na šľahanie", "mnozstvo": "250 ml", "cena": 1.29}
+        ]
+      },
+      {
+        "nazov": "Zásoby (ak nemáš doma)",
+        "polozky": [
+          {"nazov": "ryža", "mnozstvo": "1 kg", "cena": 1.35},
+          {"nazov": "olivový olej", "mnozstvo": "750 ml", "cena": 6.99},
+          {"nazov": "cukor kryštálový", "mnozstvo": "1 kg", "cena": 0.75},
+          {"nazov": "cibuľa", "mnozstvo": "5 kg", "cena": 0.99}
+        ]
+      }
+    ],
+    "poznamka": "Zemiaky, ryža, olej, cukor a cibuľa sú z väčších balení — spotrebuje sa len časť, zvyšok ostáva na ďalšie týždne. ⚡ Kukurica platí len v utorok 14. 7. — nezabudni!"
+  },
+  "social": {
+    "stories": [
+      {
+        "den": "Pondelok 13. 7.",
+        "recept": "🥒 Plnená cuketa s mäsom a ryžou",
+        "slide1": "Cuketa za 49 centov.\nMleté mäso za euro tridsať.\nVečera pre štyroch za 3 €.\nNie, nevynechali sme nič.",
+        "slide2": "🥒 Plnená cuketa s mäsom a ryžou\n⏱ 40 minút · 💰 0,75 €/porcia · 👨‍👩‍👧‍👦 Nakŕmiš 4 ľudí",
+        "cta": "Recept v bio / swipe up"
+      },
+      {
+        "den": "Utorok 14. 7. ⚡ špeciálna ponuka",
+        "recept": "🌽 Kuracie rezne s kukuricou",
+        "slide1": "Pozor, dnes len dnes.\nKukurica v Lidli za 0,19 €.\nÁno, devätnásť centov.\n(Bežne 1,29 €.)",
+        "slide2": "🌽 Kuracie rezne + kukurica + zemiaky\n⏱ 25 minút · 💰 0,65 €/porcia · ⚡ Kukurica platí LEN dnes do zatvárania!",
+        "cta": "Bež do Lidlu ešte dnes!"
+      },
+      {
+        "den": "Streda 15. 7.",
+        "recept": "🍑 Bravčové karé s marhuľovou glazúrou",
+        "slide1": "Bravčové karé mínus 45 %.\nMarhule mínus 55 %.\nElegantná večera plus nula stresu.\nMatematika, ktorá sa oplatí.",
+        "slide2": "🍑 Karé s marhuľovou glazúrou\n⏱ 30 minút · 💰 0,67 €/porcia · ✨ Vyzerá ako z reštaurácie",
+        "cta": "Celý recept v bio"
+      },
+      {
+        "den": "Štvrtok 16. 7.",
+        "recept": "🎃 Krémová dyňová polievka",
+        "slide1": "Červená dyňa za 1,79 €/kg.\nŠtyri porcie polievky za 2,46 €.\nJedna porcia = 62 centov.\nMeno tohto receptu je matematika.",
+        "slide2": "🎃 Krémová dyňová polievka\n⏱ 30 minút · 💰 0,62 €/porcia · 🌱 Bez mäsa, plná chute",
+        "cta": "Recept čaká na teba v bio"
+      },
+      {
+        "den": "Piatok 17. 7.",
+        "recept": "🍑🧀 Letný šalát s broskyňami a mozzarellou",
+        "slide1": "Piatok.\nVarenie nechceme.\nBroskyne za 0,99 €, mozzarella za 0,79 €.\nŠalát za 10 minút. Hotovo.",
+        "slide2": "🍑🧀 Broskyne + mozzarella + med + olej\n⏱ 10 minút (fakt) · 💰 0,66 €/porcia · 0 % namáhania, 100 % chute",
+        "cta": "Recept v bio — ale ani ho nepotrebuješ"
+      }
+    ],
+    "feed_posty": [
+      {
+        "nazov": "Food Waste fakt (streda)",
+        "text": "Priemerná slovenská domácnosť vyhodí ročne jedlo za ~300 €.\n\nNie preto, že nakupuje zle. Ale preto, že nakupuje bez plánu.\n\nMy sme tento týždeň urobili 5 receptov z toho, čo bolo v akcii v Lidli. Všetky suroviny sme využili. Žiadna cuketa neskončila v odpadkoši.\n\nToto je celý trik Šporáčka: letáky nie sú len zľavové lístky. Sú to plány na ďalší týždeň.\n\nTento týždeň sme nakŕmili 4 osoby za menej ako 4 € na deň.\n\nKoľko vám ide „do smetí\" každý týždeň? 👇\n\n#šporáček #foodwaste #nakupovaniebezodpadu #smartnakupovanie #lacnévarenie #lidl #slovensko"
+      },
+      {
+        "nazov": "Shopping Tips karusel (piatok, 4 slidy)",
+        "text": "Slide 1 — Hook: Ako nakupovať v Lidli a nezaplatiť viac, ako treba. (Konkrétne tipy, nie motivačné reči.)\n\nSlide 2 — Tip #1: Otvor leták PRED nákupom, nie v obchode. Zoznam jedál si píš podľa akcií — nie podľa receptov, ktoré si vymyslíš doma a až potom hľadáš suroviny.\n\nSlide 3 — Tip #2: Sleduj \"platí len dnes\" položky. Tento týždeň: kukurica za 0,19 € len v utorok. Kto to vedel vopred, ušetril 1,10 € na kuse.\n\nSlide 4 — Záver: Šporáček robí toto za teba každý týždeň. Leták → recepty → nákupný zoznam. Followuj a nikdy viac nechodíš do Lidlu bez plánu.\n\n#šporáček #shoppingtip #lidl #lacnénakupovanie #smart #slovensko"
+      },
+      {
+        "nazov": "Sobotný Savings Summary (sobota 19. 7.)",
+        "text": "📊 Tento týždeň v číslach\n\n5 receptov. 13 porcií. Akcie z Lidlu 13.–19. 7.\n\nPlnená cuketa — 0,75 €/porcia (~46 %)\nKuracie rezne + kukurica — 0,65 €/porcia (~57 %)\nKaré s marhuľami — 0,67 €/porcia (~57 %)\nDyňová polievka — 0,62 €/porcia (~50 %)\nBroskynový šalát — 0,66 €/porcia (~56 %)\n\nPriemerná porcia tento týždeň: 0,67 €\nKeby sme kupovali bez akcie: ~1,50 €/porcia\n\nNa jednom týždni sme ušetrili kľudne 10–15 € na rodinu.\n\nTo je káva von každý týždeň navyše. Alebo nie — to je tvoja voľba. 😄\n\n#šporáček #weeklyrecap #savings #lacnévarenie #lidl"
+      }
+    ]
+  },
+  "suhrn": {
+    "plan_spolu": 6.16,
+    "uspora": 7.59,
+    "priemer_porcia": 0.62
+  }
+}
