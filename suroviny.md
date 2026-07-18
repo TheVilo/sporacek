@@ -35,6 +35,9 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - šampiňóny
 - dyňa
 
+## Ovocie
+- čučoriedky
+
 ## Strukoviny a obilniny
 - šošovica
 - fazuľa
