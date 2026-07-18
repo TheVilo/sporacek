@@ -49,7 +49,7 @@
 1. Cibuľu, mrkvu a zeler nakrájaj nadrobno a orestuj na oleji 5 minút.
 2. Pridaj prelisovaný cesnak a rascu, krátko opraž.
 3. Vsyp scedený cícer, pridaj konzervované paradajky, bujón a 500 ml vody. Premiešaj.
-4. Priveď do varu, znížiť teplotu a duste 15 minút, kým zelenina nezmäkne.
+4. Priveď do varu, zníž teplotu a dus 15 minút, kým zelenina nezmäkne.
 5. Dochuť soľou a korením. Ak chceš hustejšiu textúru, časť polievky rozmixuj tyčovým mixérom.
 6. Podávaj s chlebom.
 

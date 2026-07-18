@@ -43,7 +43,7 @@
 
 1. Cibuľu nakrájaj nadrobno, orestuj na oleji 3 minúty.
 2. Dyňu ošúpaj, nakrájaj na kocky ~3 cm, pridaj k cibuľke.
-3. Zalejaj 400 ml vody, pridaj ½ ČL zázvoru, ¼ ČL kurkumy, osoľ.
+3. Zalej 400 ml vody, pridaj ½ ČL zázvoru, ¼ ČL kurkumy, osoľ.
 4. Var 20 minút do mäkka. Mixuj tyčovým mixérom do hladka.
 5. Vlej smotanu, premiešaj, povar 2 minúty. Podávaj s chlebom.
 

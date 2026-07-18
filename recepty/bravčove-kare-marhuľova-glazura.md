@@ -41,10 +41,10 @@
 
 ## Postup
 
-1. Karé nakroj na 2 plátky (~1,5 cm hrubé). Dobre osoľ a okoreni z oboch strán.
+1. Karé nakroj na 2 plátky (~1,5 cm hrubé). Dobre osoľ a okoreň z oboch strán.
 2. Marhule rozkroj, vykôstkuj, nakrájaj na štvrtiny. Var v hrnci s cukrom, rozmarínom a 2 PL vody 5–7 minút.
 3. Na oleji opekaj plátky karé 4 minúty z každej strany — nemieš, nechaj ich opiecť.
-4. Prelejaj marhuľovú omáčku na mäso, dusí ešte 3 minúty.
+4. Prelej marhuľovú omáčku na mäso a dus ešte 3 minúty.
 5. Podávaj s chlebom alebo ryžou. Vyzerá ako z reštaurácie, stojí menej ako káva vonku.
 
 ---

@@ -45,7 +45,7 @@
 ## Postup
 
 1. Cestoviny uvar podľa návodu na obale v osolenej vode.
-2. Kuracie prsia nakrájaj na kocky, osoľ a okoreni. Na oleji ich opeč do zlatista a mäkka (6–8 minút), potom vyber z panvice.
+2. Kuracie prsia nakrájaj na kocky, osoľ a okoreň. Na oleji ich opeč do zlatista a mäkka (6–8 minút), potom vyber z panvice.
 3. Na tej istej panvici orestuj prelisovaný cesnak (30 sekúnd), pridaj smotanu a priveď k varu.
 4. Vmiešaj špenát, nech zvädne (1–2 minúty). Pridaj parmezán, dochuť soľou a korením.
 5. Vráť kura do panvice, pridaj scedené cestoviny a premiešaj, nech sa všetko spojí.

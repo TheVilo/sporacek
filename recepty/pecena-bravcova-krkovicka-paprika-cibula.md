@@ -43,7 +43,7 @@
 ## Postup
 
 1. Rúru predhrej na 200 °C.
-2. Krkovičku nakrájaj na plátky, osoľ, okoreni a potri olivovým olejom.
+2. Krkovičku nakrájaj na plátky, osoľ, okoreň a potri olivovým olejom.
 3. Papriku nakrájaj na prúžky, cibuľu na mesiačiky, zemiaky na kocky.
 4. Všetko premiešaj v pekáči, pridaj bobkový list.
 5. Peč 40–45 minút do zlatista, v polovici obráť.
