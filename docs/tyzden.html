@@ -36,6 +36,13 @@
   }
   .refresh-btn:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
   .refresh-btn:disabled { opacity: .6; cursor: wait; }
+  .top-actions { display: flex; align-items: center; gap: 8px; }
+  .nav-link {
+    font-family: inherit; font-size: .8rem; font-weight: 700; color: var(--green-ink); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
+    padding: 7px 16px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .nav-link:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
 
   .week-picker { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
   .week-chip {
@@ -124,7 +131,10 @@
       <div class="eyebrow">Šporáček · týždenný výstup</div>
       <h1 id="pageTitle">Načítavam…</h1>
     </div>
-    <button class="refresh-btn" id="refreshBtn" onclick="loadWeekList(true)">⟳ Obnoviť</button>
+    <div class="top-actions">
+      <a class="nav-link" href="index.html">📚 Databáza receptov</a>
+      <button class="refresh-btn" id="refreshBtn" onclick="loadWeekList(true)">⟳ Obnoviť</button>
+    </div>
   </div>
   <div class="week-picker" id="weekPicker"></div>
   <div class="status-line" id="statusLine">Hľadám dostupné týždne…</div>
