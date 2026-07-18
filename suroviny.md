@@ -17,6 +17,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - slanina
 - tuniak v konzerve
 - losos
+- bravčové karé
 
 ## Zelenina
 - cibuľa
@@ -39,6 +40,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 
 ## Ovocie
 - čučoriedky
+- marhule
 
 ## Strukoviny a obilniny
 - šošovica
@@ -58,6 +60,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - syr feta
 - parmezán
 - jogurt biely
+- maslo
 
 ## Základy a koreniny
 - olivový olej
@@ -73,6 +76,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - bobkový list
 - ocot
 - balzamikový ocot
+- horčica
 - citrón
 - strúhanka
 - múka
