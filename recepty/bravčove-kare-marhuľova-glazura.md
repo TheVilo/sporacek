@@ -10,7 +10,17 @@
 ---
 
 ## Foto prompt
-"Pan-seared pork loin chops with glossy golden apricot glaze, fresh apricot halves on the side, warm amber tones, natural window light, rustic wooden table, professional food photography"
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: Bravčové karé s marhuľovou glazúrou.
+Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
+Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
+Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.
+Celý záber ostrý, BEZ bokehu/rozostreného pozadia — mobilné fotky nemajú hĺbku ostrosti ako profi objektív.
+Mierne nedokonalý, neštudovaný uhol (zhora alebo tak, ako by človek prirodzene fotil vlastné jedlo).
+ŽIADNE štylizované rekvizity — žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, umelo poukladané bylinky, kvety, sviečky.
+Obyčajná kuchyňa alebo stôl v pozadí, taký, aký reálne je — nie upravený "moodboard".
+Voľné miesto navrchu alebo po strane na text.
+Bez textu a bez loga v obrázku.
+Formát 9:16 (Instagram Stories).
 
 ---
 
