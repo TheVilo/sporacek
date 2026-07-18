@@ -44,7 +44,7 @@
 ## Postup
 
 1. Rúru predhrej na 200 °C. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu. Dužinu odlož.
-2. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj mäso a zrestuj do hneda (5–7 min). Osoľ, okoreni.
+2. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj mäso a opeč do hneda (5–7 min). Osoľ, okoreň.
 3. Pridaj dužinu z cukety, paradajky a uvarenú ryžu. Premiešaj.
 4. Naplň vydlabané cukety zmesou. Daj do pekáča, podlej 50 ml vody.
 5. Peč 25 minút do zlatista. Podávaj hneď.

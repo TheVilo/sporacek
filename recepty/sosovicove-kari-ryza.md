@@ -49,7 +49,7 @@
 2. Cibuľu a cesnak nakrájaj najemno a orestuj na oleji do sklovita (asi 3 minúty).
 3. Pridaj kari korenie a krátko opraž (30 sekúnd), nech sa uvoľní vôňa.
 4. Vsyp šošovicu, pridaj konzervované paradajky, kokosové mlieko a 300 ml vody. Premiešaj.
-5. Priveď do varu, znížiť teplotu a duste 20–25 minút, kým šošovica nezmäkne. Priebežne premiešavaj.
+5. Priveď do varu, zníž teplotu a dus 20–25 minút, kým šošovica nezmäkne. Priebežne premiešavaj.
 6. Dochuť soľou a podávaj na ryži.
 
 ---

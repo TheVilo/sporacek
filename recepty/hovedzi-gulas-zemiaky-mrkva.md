@@ -48,8 +48,8 @@
 
 1. Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlatista (7–10 minút).
 2. Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán (7–10 minút).
-3. Znížiť teplotu, vmiešaj prelisovaný cesnak, sladkú papriku a rascu. Zalej vodou alebo vývarom, aby bolo mäso ponorené. Priveď do varu, prikry a duste na miernom ohni 40 minút.
-4. Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a duste ďalších 30–40 minút, kým mäso nie je mäkké.
+3. Zníž teplotu, vmiešaj prelisovaný cesnak, sladkú papriku a rascu. Zalej vodou alebo vývarom, aby bolo mäso ponorené. Priveď do varu, prikry a dus na miernom ohni 40 minút.
+4. Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a dus ďalších 30–40 minút, kým mäso nie je mäkké.
 5. Dochuť soľou a čiernym korením. Podávaj s krajcom chleba.
 
 ---

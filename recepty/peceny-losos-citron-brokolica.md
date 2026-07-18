@@ -46,7 +46,7 @@
 1. Rúru predhrej na 200 °C. Zemiaky nakrájaj na menšie kocky, brokolicu rozdeľ na ružičky.
 2. Zemiaky a brokolicu rozlož na plech vystlaný papierom na pečenie, pokvapkaj olivovým olejom, osoľ. Peč 15 minút.
 3. Olivový olej zmiešaj s prelisovaným cesnakom a šťavou z citróna.
-4. Vyber plech, uvoľni miesto pre lososa. Filé polož na plech, potri citrónovo-cesnakovou zmesou, osoľ, okoreni.
+4. Vyber plech, uvoľni miesto pre lososa. Filé polož na plech, potri citrónovo-cesnakovou zmesou, osoľ, okoreň.
 5. Peč ďalších 12–15 minút, kým losos nie je vo vnútri ružový a pri dotyku sa jemne rozpadá na vločky.
 6. Podávaj hneď, s klinom citróna navrch.
 

@@ -42,10 +42,10 @@
 
 ## Postup
 
-1. Kuracie rezne osoľ, okoreni a nechaj 5 minút odpočívať.
-2. Na panvici rozpusť maslo na strednom ohni. Rezne opekaj 5 minút z každej strany, kým sa nezlatia.
-3. Zemiaky uvari v osolenej vode 15–18 minút do mäkka. Scedi, pridaj štipku masla.
-4. Kukuricu uvari v osolenej vode 8–10 minút. Osuš, potri masielkom so soľou.
+1. Kuracie rezne osoľ, okoreň a nechaj 5 minút odpočívať.
+2. Na panvici rozpusť maslo na strednom ohni. Rezne opekaj 5 minút z každej strany, kým nezhnednú do zlatista.
+3. Zemiaky uvar v osolenej vode 15–18 minút do mäkka. Scedi, pridaj štipku masla.
+4. Kukuricu uvar v osolenej vode 8–10 minút. Osuš, potri masielkom so soľou.
 5. Podávaj spolu — jednoducho a chutne.
 
 ---
