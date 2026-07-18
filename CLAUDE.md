@@ -32,9 +32,10 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `znalostna-baza/` | brand manuál, obsahová stratégia |
 | `suroviny.md` | **číselník surovín** — jednotné názvy (kritické!) |
 | `recepty/` | jeden súbor = jeden recept |
+| `fotky/` | fotky receptov, pomenované podľa id (napr. `kremove-kuracie-rizoto-sampinony.jpg`) |
 | `tydne/` | výstup týždňa (leták → recepty → nákup → úspora) |
 
-Fotky **nie sú v repe.** Recept drží len odkaz (`foto_url`).
+Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync automaticky ukladajú aj lokálne. Recept v `foto_url` drží relatívnu cestu (napr. `fotky/kremove-kuracie-rizoto-sampinony.jpg`).
 
 ---
 
@@ -77,9 +78,9 @@ Recept má viac tagov naraz.
 - **Odhad**, nie lekársky presné údaje. Vždy uvádzať ako približné.
 
 ### fotka
-- Súbor sa volá podľa **id** (napr. `kremove-kuracie-rizoto-sampinony.jpg`).
-- Recept obsahuje `foto_prompt` (zadanie pre generátor) a `foto_url` (odkaz na hotovú fotku).
-- Presná šablóna promptu je v skille `.claude/skills/tyzdenny-vystup/SKILL.md`.
+- Súbor sa volá podľa **id** (napr. `kremove-kuracie-rizoto-sampinony.jpg`) a ukladá sa do `fotky/`.
+- Recept obsahuje `foto_prompt` (zadanie pre generátor) a `foto_url` (relatívna cesta k hotovej fotke, napr. `fotky/kremove-kuracie-rizoto-sampinony.jpg`).
+- Presná šablóna promptu je v skille `.claude/skills/tyzdenny-vystup/SKILL.md`, presný postup generovania (Gemini/nanobanana) je v `.claude/skills/generovanie-fotiek/SKILL.md`.
 
 ---
 
@@ -96,6 +97,14 @@ Recept má viac tagov naraz.
 ## Kedy siahnuť po skille
 
 - Spracovanie týždenného letáku (recepty, nákupný zoznam, ceny, stories) → `.claude/skills/tyzdenny-vystup/SKILL.md`. Nenačítavaj ho, ak práve neriešiš týždenný výstup — šetrí to kontext.
+- Generovanie fotky k receptu (foto_url) → `.claude/skills/generovanie-fotiek/SKILL.md`. Obsahuje presný funkčný postup (SDK, nie curl) aj časté chyby, nech sa nezisťuje nanovo v každej session.
+
+---
+
+## Artifacty (vizuálne prehľady)
+
+- Pred vytvorením nového artifactu **vždy over `Artifact list`**, či už niečo podobné neexistuje (napr. prehľad týždňa/receptov). Ak áno, **rozšír/aktualizuj ten istý** (rovnaká URL), nevytváraj duplicitu.
+- Artifact „šporáček — týždeň [dátum]" slúži ako živý prehľad receptov s fotkami, cenou a postupom — aktualizuj jeho obsah, keď pribudnú recepty, namiesto nového artifactu.
 
 ---
 

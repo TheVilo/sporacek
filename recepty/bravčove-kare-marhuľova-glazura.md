@@ -5,6 +5,7 @@
 **čas prípravy:** 30 minút  
 **cena za porciu:** 0,65 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/bravčove-kare-marhuľova-glazura.jpg  
 
 ---
 
@@ -49,4 +50,4 @@
 ---
 
 ## Tagy
-`#bravčové` `#marhule` `#glazúra` `#letné` `#šporáček` `#akcia-lidl`
+`#večera` `#bravčové` `#sýte` `#lacné` `#akcia-lidl`
