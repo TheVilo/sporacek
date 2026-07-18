@@ -12,6 +12,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - kuracie stehná
 - bravčové mleté mäso
 - bravčová krkovička
+- hovädzie mäso
 - hovädzie mleté mäso
 - slanina
 - tuniak v konzerve
@@ -34,6 +35,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - brokolica
 - šampiňóny
 - dyňa
+- zeler
 
 ## Ovocie
 - čučoriedky
@@ -77,3 +79,4 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - paradajkový pretlak
 - konzervované paradajky
 - bujón (kocka)
+- kokosové mlieko
