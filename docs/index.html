@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>šporáček — databáza receptov</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥕</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #204432; --green-ink: #16301f; --terracotta: #BA5F3F; --sand: #E7D6B4;
+    --paper: #FAF6EE; --surface: #FFFFFF; --text: #21301f; --text-muted: #5b6b57;
+    --border: #ddd0b8; --shadow: 0 1px 2px rgba(32,68,50,.07), 0 8px 20px rgba(32,68,50,.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --green: #7cb99a; --green-ink: #eaf3ec; --terracotta: #e28a61; --sand: #cbb98f;
+      --paper: #131f19; --surface: #1b2b21; --text: #eef2ea; --text-muted: #a9b8a4;
+      --border: #34463b; --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.3); }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--text);
+    font-family: 'Plus Jakarta Sans', -apple-system, "Segoe UI", ui-sans-serif, Roboto, Helvetica, Arial, sans-serif;
+    font-variant-numeric: tabular-nums; line-height: 1.5; font-weight: 500;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 22px 64px; }
+
+  .top-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .09em; font-size: .72rem; color: var(--terracotta); font-weight: 700; }
+  h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 6px; color: var(--green-ink); text-wrap: balance; letter-spacing: -0.01em; }
+  .sub { color: var(--text-muted); font-size: .95rem; margin-bottom: 22px; max-width: 65ch; }
+
+  .refresh-btn {
+    font-family: inherit; font-size: .8rem; font-weight: 700; color: var(--green-ink);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
+    padding: 7px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .refresh-btn:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
+  .refresh-btn:disabled { opacity: .6; cursor: wait; }
+  .status-line { font-size: .78rem; color: var(--text-muted); margin-bottom: 26px; }
+
+  .summary {
+    background: var(--green); color: var(--paper); border-radius: 18px;
+    padding: 22px 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 18px; margin-bottom: 34px; box-shadow: var(--shadow);
+  }
+  .summary .item .n { font-size: 1.6rem; font-weight: 800; display: block; letter-spacing: -0.01em; }
+  .summary .item .l { font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; font-weight: 600; }
+
+  section.group { margin-bottom: 40px; }
+  .group-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+  .group-head h2 { font-size: 1.15rem; font-weight: 800; color: var(--green-ink); margin: 0; }
+  .group-head .count { font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+  .photo-wrap { position: relative; aspect-ratio: 4 / 3.2; overflow: hidden; background: var(--sand); }
+  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .price-badge { position: absolute; top: 10px; right: 10px; background: var(--surface); color: var(--green-ink); font-weight: 800; font-size: .82rem; padding: 5px 11px; border-radius: 100px; box-shadow: var(--shadow); }
+
+  .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .card h3 { margin: 0; font-size: 1.02rem; line-height: 1.3; color: var(--green-ink); font-weight: 700; text-wrap: balance; }
+  .macro-line { font-size: .78rem; color: var(--text-muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: .68rem; padding: 3px 9px; border-radius: 100px; border: 1px solid var(--border); color: var(--text-muted); background: color-mix(in srgb, var(--sand) 25%, var(--surface)); font-weight: 600; }
+
+  details.postup { margin-top: auto; border-top: 1px dashed var(--border); padding-top: 10px; }
+  details.postup summary { cursor: pointer; font-weight: 700; font-size: .82rem; color: var(--terracotta); list-style: none; display: flex; align-items: center; gap: 6px; user-select: none; }
+  details.postup summary::-webkit-details-marker { display: none; }
+  details.postup summary::before { content: "▸"; display: inline-block; transition: transform .15s ease; font-size: .7rem; }
+  details.postup[open] summary::before { transform: rotate(90deg); }
+  details.postup ol { margin: 10px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
+  details.postup ol li::marker { color: var(--terracotta); font-weight: 700; }
+
+  .empty-state, .error-state { padding: 60px 20px; text-align: center; color: var(--text-muted); }
+  .error-state { color: var(--terracotta); }
+  .skeleton { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; height: 320px; animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: .6; } 50% { opacity: .3; } }
+
+  footer.cta { margin-top: 36px; padding: 18px 22px; border: 1px dashed var(--border); border-radius: 14px; background: var(--surface); font-size: .85rem; color: var(--text-muted); }
+  footer.cta b { color: var(--green-ink); }
+  footer.cta code { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); padding: 1px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <div class="eyebrow">Šporáček · databáza receptov</div>
+      <h1>Všetky recepty</h1>
+    </div>
+    <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
+  </div>
+  <div class="sub">Táto stránka si dáta ťahá naživo priamo z GitHub repa (<code>recepty/</code>, <code>fotky/</code>) — pri každom otvorení alebo obnovení vidíš vždy aktuálny stav, bez potreby prekódovávania.</div>
+  <div class="status-line" id="statusLine">Načítavam…</div>
+
+  <div id="content">
+    <div class="grid">
+      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+
+  <footer class="cta">
+    Zdroj pravdy je vždy repo <code>github.com/TheVilo/sporacek</code> (priečinky <code>recepty/</code> a <code>fotky/</code>). Táto stránka sa nikdy neukladá — je to len živé zobrazenie.
+  </footer>
+</div>
+
+<script>
+const OWNER = "TheVilo";
+const REPO = "sporacek";
+const BRANCH = "main";
+const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
+
+const TYP_ORDER = ["večera", "obed", "šalát", "polievka"];
+const TYP_LABEL = { "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
+const TYP_TAGS = new Set(["večera", "obed", "šalát", "polievka", "jednohrnec"]);
+
+function primaryTyp(tags) {
+  for (const t of TYP_ORDER) if (tags.includes(t)) return t;
+  return "iné";
+}
+
+function parseMarkdownRecipe(slug, text) {
+  const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
+  const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
+  const cenaM = text.match(/\*\*cena za porciu:\*\*\s*([\d,]+)\s*€/);
+  const cena = cenaM ? parseFloat(cenaM[1].replace(",", ".")) : null;
+  const kcal = (text.match(/Energia\s*\|\s*~?(\d+)\s*kcal/) || [, null])[1];
+  const bielkoviny = (text.match(/Bielkoviny\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const sacharidy = (text.match(/Sacharidy\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const tuky = (text.match(/Tuky\s*\|\s*(\d+)\s*g/) || [, null])[1];
+
+  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  const postup = [];
+  if (postupM) {
+    for (const line of postupM[1].trim().split("\n")) {
+      const m = line.trim().match(/^\d+\.\s*(.+)$/);
+      if (m) postup.push(m[1].trim());
+    }
+  }
+
+  const tagyM = text.match(/## Tagy\s*\n(.+)/);
+  let tagy = [];
+  if (tagyM) {
+    tagy = [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]);
+  }
+
+  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy };
+}
+
+function parseYamlRecipe(slug, text) {
+  const fmM = text.match(/^---\n([\s\S]+?)\n---/);
+  const fm = fmM ? fmM[1] : "";
+  const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
+  const cenaM = fm.match(/cena_za_porciu:\s*([\d.]+)/);
+  const cena = cenaM ? parseFloat(cenaM[1]) : null;
+  const kcal = (fm.match(/kcal:\s*(\d+)/) || [, null])[1];
+  const bielkoviny = (fm.match(/bielkoviny_g:\s*(\d+)/) || [, null])[1];
+  const sacharidy = (fm.match(/sacharidy_g:\s*(\d+)/) || [, null])[1];
+  const tuky = (fm.match(/tuky_g:\s*(\d+)/) || [, null])[1];
+
+  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n## |$)/);
+  const postup = [];
+  if (postupM) {
+    for (const line of postupM[1].trim().split("\n")) {
+      const m = line.trim().match(/^\d+\.\s*(.+)$/);
+      if (m) postup.push(m[1].trim());
+    }
+  }
+
+  let tagy = [];
+  const tagyBlockM = fm.match(/tagy:\n((?:\s+\w+:.*\n?)+)/);
+  if (tagyBlockM) {
+    for (const m of tagyBlockM[1].matchAll(/\[(.*?)\]/g)) {
+      tagy.push(...m[1].split(",").map(x => x.trim()).filter(Boolean));
+    }
+  }
+
+  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy };
+}
+
+function cardHtml(r) {
+  const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t) && t !== "akcia-lidl");
+  const tagsHtml = nonTypTags.map(t => `<span class="tag">#${t}</span>`).join("");
+  const stepsHtml = r.postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
+  const macroParts = [];
+  if (r.kcal) macroParts.push(`${r.kcal} kcal`);
+  if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
+  if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
+  if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
+  const macro = macroParts.join(" · ");
+  const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€/porcia` : "";
+  const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
+
+  return `
+    <div class="card">
+      <div class="photo-wrap">
+        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" />
+        ${priceStr ? `<div class="price-badge">${priceStr}</div>` : ""}
+      </div>
+      <div class="card-body">
+        <h3>${escapeHtml(r.nazov)}</h3>
+        <div class="macro-line">${r.cas ? escapeHtml(r.cas) + " · " : ""}${macro}</div>
+        <div class="tags">${tagsHtml}</div>
+        <details class="postup">
+          <summary>Postup (${r.postup.length} krokov)</summary>
+          <ol>${stepsHtml}</ol>
+        </details>
+      </div>
+    </div>`;
+}
+
+function escapeHtml(s) {
+  const div = document.createElement("div");
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+async function loadAll(manual) {
+  const btn = document.getElementById("refreshBtn");
+  const statusLine = document.getElementById("statusLine");
+  const content = document.getElementById("content");
+  btn.disabled = true;
+  statusLine.textContent = manual ? "Obnovujem…" : "Načítavam…";
+
+  try {
+    const listResp = await fetch(`${API_BASE}/contents/recepty?ref=${BRANCH}`, { cache: "no-store" });
+    if (!listResp.ok) throw new Error(`GitHub API vrátilo ${listResp.status}`);
+    const files = (await listResp.json()).filter(f => f.name.endsWith(".md"));
+
+    const recipes = await Promise.all(files.map(async (f) => {
+      const slug = f.name.replace(/\.md$/, "");
+      const rawResp = await fetch(`${RAW_BASE}/recepty/${encodeURIComponent(f.name)}`, { cache: "no-store" });
+      const text = await rawResp.text();
+      const r = text.startsWith("---\n") ? parseYamlRecipe(slug, text) : parseMarkdownRecipe(slug, text);
+      r.typ = primaryTyp(r.tagy);
+      return r;
+    }));
+
+    renderRecipes(recipes);
+    const now = new Date().toLocaleString("sk-SK");
+    statusLine.textContent = `Naposledy načítané: ${now} · ${recipes.length} receptov priamo z GitHubu`;
+  } catch (err) {
+    content.innerHTML = `<div class="error-state">Nepodarilo sa načítať dáta z GitHubu: ${escapeHtml(err.message)}<br>Skús Obnoviť, alebo skontroluj internetové pripojenie.</div>`;
+    statusLine.textContent = "Chyba pri načítaní.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function renderRecipes(recipes) {
+  const content = document.getElementById("content");
+  if (recipes.length === 0) {
+    content.innerHTML = `<div class="empty-state">Zatiaľ žiadne recepty v <code>recepty/</code>.</div>`;
+    return;
+  }
+
+  const prices = recipes.map(r => r.cena).filter(c => c != null);
+  const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+  const under1 = prices.filter(p => p < 1).length;
+
+  const byGroup = {};
+  for (const r of recipes) (byGroup[r.typ] ||= []).push(r);
+  const groupOrder = [...TYP_ORDER, "iné"].filter(t => byGroup[t]);
+
+  const summaryHtml = `
+    <div class="summary">
+      <div class="item"><span class="n">${recipes.length}</span><span class="l">Receptov v databáze</span></div>
+      <div class="item"><span class="n">${avg.toFixed(2)}&nbsp;€</span><span class="l">Priemerná cena/porcia</span></div>
+      <div class="item"><span class="n">${Math.min(...prices).toFixed(2)}–${Math.max(...prices).toFixed(2)}&nbsp;€</span><span class="l">Rozpätie cien</span></div>
+      <div class="item"><span class="n">${under1}/${recipes.length}</span><span class="l">Pod 1&nbsp;€/porcia</span></div>
+    </div>`;
+
+  const groupsHtml = groupOrder.map(typ => `
+    <section class="group">
+      <div class="group-head">
+        <h2>${TYP_LABEL[typ] || typ}</h2>
+        <span class="count">${byGroup[typ].length} ${byGroup[typ].length === 1 ? "recept" : "receptov"}</span>
+      </div>
+      <div class="grid">${byGroup[typ].map(cardHtml).join("")}</div>
+    </section>`).join("");
+
+  content.innerHTML = summaryHtml + groupsHtml;
+}
+
+loadAll(false);
+</script>
+</body>
+</html>
