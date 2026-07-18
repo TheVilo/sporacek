@@ -102,18 +102,21 @@ Recept má viac tagov naraz.
 
 ---
 
-## Artifacty (vizuálne prehľady)
+## Živé stránky (GitHub Pages, nie artifacty)
 
-**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`). Artifacty sú len jeho zobrazenie — nikdy nežijú vlastným životom. Ak sa artifact rozchádza s repom, repo vyhráva a artifact sa prepíše podľa neho.
+**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`, `suroviny.md`). Obe stránky nižšie sú len jeho živé zobrazenie — nikdy neobsahujú dáta, ktoré nie sú v repe, a nikdy sa neprepublikovávajú ručne. Stačí pushnúť zmenu do repa, stránka ju ukáže po obnovení (F5).
 
-Pred vytvorením nového artifactu **vždy over `Artifact list`**, či už niečo podobné neexistuje. Ak áno, **rozšír/aktualizuj ten istý** (rovnaká URL), nevytváraj duplicitu. Pri úprave existujúceho artifactu si najprv over jeho aktuálny obsah proti repu, nie len podľa pamäte z konverzácie.
+**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto dve stránky v `docs/`:
 
-Rozlišuj dva odlišné spôsoby zobrazenia, nemiešaj ich:
+1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, cena, tagy, postup), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov.
+   **URL:** https://thevilo.github.io/sporacek/
+2. **`docs/tyzden.html` — týždenný "social" výstup.** Naviazaný na *konkrétny* leták/obchod/týždeň. Číta `tydne/<rok>-W<týždeň>-<obchod>/data.json` a k receptom naživo dotiahne fotku/postup z `recepty/`. Má prepínač týždňov/obchodov hore (chip pre každý priečinok v `tydne/`).
+   **URL:** https://thevilo.github.io/sporacek/tyzden.html
+   **Bez `data.json` sa týždeň na stránke nezobrazí** — presná štruktúra je v `.claude/skills/tyzdenny-vystup/SKILL.md`.
 
-1. **Databáza receptov** — **NIE JE artifact.** Je to živá stránka `docs/index.html` (GitHub Pages), ktorá si dáta (recepty, fotky, tagy) ťahá naživo priamo z repa cez GitHub API pri každom otvorení/obnovení. **Nikdy sa neprepublikovúva** — stačí pushnúť nový recept/fotku do `recepty/`/`fotky/` a stránka ho ukáže sama po F5. Má vyhľadávanie a filtrovanie podľa tagov.
-   **URL:** https://thevilo.github.io/sporacek/ (po zapnutí GitHub Pages v Settings)
-   Starý artifact „šporáček — databáza receptov" (https://claude.ai/code/artifact/4a74dccc-333b-40d5-ac90-2c43f4bcd1bf) je **zastaraný, nepoužívaj ho** — nahradený touto stránkou.
-2. **Týždenný "social" flow** — zatiaľ prepojené artifacty (🛒 Katalóg → 🍽️ Recepty týždňa → 📋 Nákupný zoznam), naviazané na *jeden konkrétny* leták/týždeň (`tydne/<týždeň>/`). Ukazuje len recepty skutočne vybrané pre daný týždeň, nie celú databázu. Cieľ je zlúčiť to do **jedného** artifactu na týždeň (zatiaľ nedokončené). Každý nový týždeň dostáva vlastné nové URL, zapísané do `tydne/<týždeň>/OVERVIEW.md`.
+### Viacero obchodov
+
+Každý obchod (Lidl, Kaufland, Tesco...) má **vlastný, nezávislý** týždenný výstup — vlastný priečinok `tydne/<rok>-W<týždeň>-<obchod>/`, vlastných 5 receptov, vlastný nákupný zoznam aj social obsah. Nemiešaj obchody do jedného výstupu.
 
 ---
 
