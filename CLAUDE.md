@@ -27,7 +27,8 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 
 | Súbor / priečinok | Na čo je |
 |---|---|
-| `CLAUDE.md` | tento súbor — pravidlá a postup |
+| `CLAUDE.md` | tento súbor — pravidlá jadra, vždy sa načíta |
+| `.claude/skills/` | workflow postupy, načítajú sa len keď sú potrebné |
 | `znalostna-baza/` | brand manuál, obsahová stratégia |
 | `suroviny.md` | **číselník surovín** — jednotné názvy (kritické!) |
 | `recepty/` | jeden súbor = jeden recept |
@@ -77,9 +78,8 @@ Recept má viac tagov naraz.
 
 ### fotka
 - Súbor sa volá podľa **id** (napr. `kremove-kuracie-rizoto-sampinony.jpg`).
-- Recept obsahuje:
-  - `foto_prompt` — zadanie pre generátor (nanobanana), aby sa dala fotka kedykoľvek pregenerovať
-  - `foto_url` — odkaz na hotovú fotku (doplní sa po vygenerovaní)
+- Recept obsahuje `foto_prompt` (zadanie pre generátor) a `foto_url` (odkaz na hotovú fotku).
+- Presná šablóna promptu je v skille `.claude/skills/tyzdenny-vystup/SKILL.md`.
 
 ---
 
@@ -93,39 +93,9 @@ Recept má viac tagov naraz.
 
 ---
 
-## Týždenný postup (keď dostanem leták)
+## Kedy siahnuť po skille
 
-1. **Prečítaj leták** (PDF/screenshot/text) → vypíš akciové produkty s cenami.
-2. **Prehľadaj `recepty/`** → zisti, čo už máme, aby nevznikli duplicity.
-3. **Navrhni 5 obedov (Po–Pi), vždy pre 2 osoby**, podľa pravidiel vyššie.
-   - prednostne použi existujúce recepty z databázy, ak sedia na akciu
-   - nové recepty vytvor len ak treba
-4. **Prepočítaj:**
-   - cenu za porciu pre každé jedlo
-   - kompletný nákupný zoznam s cenami
-   - celkovú cenu nákupu
-   - úsporu oproti bežným cenám
-5. **Ku každému receptu daj `foto_prompt`** (viď nižšie).
-6. **Priprav texty do Stories** (názov jedla + cena za porciu).
-7. **Zapíš:**
-   - nové recepty do `recepty/`
-   - nové suroviny do `suroviny.md`
-   - výstup týždňa do `tydne/RRRR-MM-DD.md`
-
----
-
-## Šablóna foto promptu (pre nanobanana)
-
-```
-Fotorealistická fotografia jedla: [NÁZOV JEDLA], porcia na jednoduchom tanieri.
-Domáca kuchyňa, prirodzené teplé svetlo z okna, drevený alebo svetlý stôl.
-Reálny, útulný, domácky vzhľad — nie reklamná, prehnane naštylizovaná scéna.
-Teplé zemité tóny (piesková, terakota, zelené akcenty), mäkké tiene.
-Pohľad zhora alebo mierne zboku, plytká hĺbka ostrosti.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
-```
+- Spracovanie týždenného letáku (recepty, nákupný zoznam, ceny, stories) → `.claude/skills/tyzdenny-vystup/SKILL.md`. Nenačítavaj ho, ak práve neriešiš týždenný výstup — šetrí to kontext.
 
 ---
 
