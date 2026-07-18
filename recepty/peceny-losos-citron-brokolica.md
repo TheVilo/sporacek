@@ -3,14 +3,24 @@
 **slug:** peceny-losos-citron-brokolica
 **porcie:** 2
 **čas prípravy:** 30 minút
-**cena za porciu:** 2,66 €/osoba
+**cena za porciu:** 2,71 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/peceny-losos-citron-brokolica.jpg  
 
 ---
 
 ## Foto prompt
-"Photorealistic food photography: baked salmon fillet with golden edges, roasted potato chunks and broccoli florets, lemon wedge on the side, on a rustic baking tray. Home kitchen, warm natural window light, wooden table. Cozy, realistic, homemade look — not an overstyled ad shot. Warm earthy tones, soft shadows. Overhead angle, shallow depth of field. Empty space at top for text. No text or logos in the image. Format 9:16."
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: pečený losos so zlatisto zakaramelizovaným povrchom (od záverečného grilovania), vedľa pečené zemiakové kocky a brokolicové ružičky, klin citróna, na plechu/tanieri.
+Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
+Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
+Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.
+Celý záber ostrý, BEZ bokehu/rozostreného pozadia — mobilné fotky nemajú hĺbku ostrosti ako profi objektív.
+Mierne nedokonalý, neštudovaný uhol (zhora alebo tak, ako by človek prirodzene fotil vlastné jedlo).
+ŽIADNE štylizované rekvizity — žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, umelo poukladané bylinky, kvety, sviečky.
+Obyčajná kuchyňa alebo stôl v pozadí, taký, aký reálne je — nie upravený "moodboard".
+Voľné miesto navrchu alebo po strane na text.
+Bez textu a bez loga v obrázku.
+Formát 9:16 (Instagram Stories).
 
 ---
 
@@ -23,10 +33,11 @@
 | Brokolica | 200 g | 0,40 € |
 | Citrón | ½ ks | 0,20 € |
 | Cesnak | 1 strúčik | zásoby |
-| Olivový olej | 2 PL | zásoby |
+| Maslo | 15 g | 0,10 € |
+| Olivový olej | 1 PL | zásoby |
 | Soľ, čierne korenie | — | zásoby |
 
-**Celkom: 5,31 € → 2,66 €/osoba**
+**Celkom: 5,41 € → 2,71 €/osoba**
 
 ---
 
@@ -43,11 +54,11 @@
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Zemiaky nakrájaj na menšie kocky, brokolicu rozdeľ na ružičky.
+1. Lososa vyber z chladničky 15 minút vopred, nech mierne stiahne chlad — prepečie sa rovnomernejšie. Rúru predhrej na 220 °C. Zemiaky nakrájaj na menšie kocky, brokolicu rozdeľ na ružičky.
 2. Zemiaky a brokolicu rozlož na plech vystlaný papierom na pečenie, pokvapkaj olivovým olejom, osoľ. Peč 15 minút.
-3. Olivový olej zmiešaj s prelisovaným cesnakom a šťavou z citróna.
-4. Vyber plech, uvoľni miesto pre lososa. Filé polož na plech, potri citrónovo-cesnakovou zmesou, osoľ, okoreň.
-5. Peč ďalších 12–15 minút, kým losos nie je vo vnútri ružový a pri dotyku sa jemne rozpadá na vločky.
+3. Rozpustené maslo zmiešaj s prelisovaným cesnakom a šťavou z citróna.
+4. Vyber plech, uvoľni miesto pre lososa. Filé polož kožou nadol na plech, potri citrónovo-cesnakovým maslom, osoľ, okoreň.
+5. Peč ďalších 10–12 minút, kým losos nie je takmer hotový. Posledné 2–3 minúty zapni gril (horný ohrev) na vysokú teplotu, nech sa povrch pekne zakaramelizuje do zlatista.
 6. Podávaj hneď, s klinom citróna navrch.
 
 ---
