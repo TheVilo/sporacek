@@ -38,6 +38,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - dyňa
 - zeler
 - zázvor
+- tekvicové semienka
 
 ## Ovocie
 - čučoriedky
@@ -69,11 +70,13 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - soľ
 - čierne korenie
 - sladká paprika
+- údená paprika
 - oregano
 - bazalka
 - petržlenová vňať
 - mletá rasca
 - kari korenie
+- kurkuma
 - bobkový list
 - ocot
 - balzamikový ocot
@@ -86,5 +89,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - múka
 - paradajkový pretlak
 - konzervované paradajky
+- sušené paradajky
+- čili vločky
 - bujón (kocka)
 - kokosové mlieko

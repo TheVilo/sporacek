@@ -1,16 +1,26 @@
-# Cícerová polievka so zeleninou
+# Dymová cícerová polievka so zeleninou a citrónom
 
 **slug:** cicerova-polievka-zelenina
 **porcie:** 2
-**čas prípravy:** 25 minút
-**cena za porciu:** 0,95 €/osoba
+**čas prípravy:** 30 minút
+**cena za porciu:** 1,05 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/cicerova-polievka-zelenina.jpg  
 
 ---
 
 ## Foto prompt
-"Photorealistic food photography: chickpea and vegetable soup in a rustic bowl, chunks of carrot and celery visible, warm tomato-tinted broth, steam rising, served with a slice of bread. Home kitchen, warm natural window light, wooden table. Cozy, realistic, homemade look — not an overstyled ad shot. Warm earthy tones, soft shadows. Overhead angle, shallow depth of field. Empty space at top for text. No text or logos in the image. Format 9:16."
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: hustá cícerová polievka so zeleninou v hlbokom tanieri/miske, sýto oranžovo-červený vývar (od údenej papriky a paradajkového pretlaku), viditeľné kúsky mrkvy, zelera a cíceru, navrchu nasekaná petržlenová vňať, kúsok citróna na okraji, para stúpajúca z polievky.
+Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
+Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
+Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.
+Celý záber ostrý, BEZ bokehu/rozostreného pozadia — mobilné fotky nemajú hĺbku ostrosti ako profi objektív.
+Mierne nedokonalý, neštudovaný uhol (zhora alebo tak, ako by človek prirodzene fotil vlastné jedlo).
+ŽIADNE štylizované rekvizity — žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, umelo poukladané bylinky, kvety, sviečky.
+Obyčajná kuchyňa alebo stôl v pozadí, taký, aký reálne je — nie upravený "moodboard".
+Voľné miesto navrchu alebo po strane na text.
+Bez textu a bez loga v obrázku.
+Formát 9:16 (Instagram Stories).
 
 ---
 
@@ -23,13 +33,17 @@
 | Zeler | 100 g | 0,15 € |
 | Cibuľa | 100 g | 0,10 € |
 | Konzervované paradajky | 200 g | 0,50 € |
+| Paradajkový pretlak | 1 PL | 0,10 € |
 | Cesnak | 2 strúčiky | zásoby |
 | Mletá rasca | ½ ČL | zásoby |
+| Údená paprika | 1 ČL | zásoby |
 | Bujón (kocka) | 1 ks | zásoby |
+| Citrón | ½ ks | zásoby |
+| Petržlenová vňať | pár vetvičiek | zásoby |
 | Olivový olej | 1 PL | zásoby |
 | Soľ | — | zásoby |
 
-**Celkom: 1,90 € → 0,95 €/osoba**
+**Celkom: 2,10 € → 1,05 €/osoba**
 
 ---
 
@@ -37,21 +51,21 @@
 
 | | |
 |---|---|
-| Energia | ~230 kcal |
+| Energia | ~260 kcal |
 | Bielkoviny | 11 g |
-| Sacharidy | 32 g |
-| Tuky | 7 g |
+| Sacharidy | 34 g |
+| Tuky | 8 g |
 
 ---
 
 ## Postup
 
-1. Cibuľu, mrkvu a zeler nakrájaj nadrobno a orestuj na oleji 5 minút.
-2. Pridaj prelisovaný cesnak a rascu, krátko opraž.
+1. Cibuľu, mrkvu a zeler nakrájaj nadrobno a orestuj na oleji 5 minút, kým zmäknú.
+2. Pridaj prelisovaný cesnak, rascu a paradajkový pretlak, opraž 1 minútu, kým pretlak stmavne a zvonia (to dodá polievke hĺbku). Vmiešaj údenú papriku, krátko opraž.
 3. Vsyp scedený cícer, pridaj konzervované paradajky, bujón a 500 ml vody. Premiešaj.
 4. Priveď do varu, zníž teplotu a dus 15 minút, kým zelenina nezmäkne.
-5. Dochuť soľou a korením. Ak chceš hustejšiu textúru, časť polievky rozmixuj tyčovým mixérom.
-6. Podávaj s chlebom.
+5. Odstav z ohňa, vytlač šťavu z polovice citróna. Dochuť soľou. Ak chceš hustejšiu textúru, časť polievky rozmixuj tyčovým mixérom.
+6. Podávaj posypanú čerstvou petržlenovou vňaťou, s krajcom chleba.
 
 ---
 
