@@ -1,16 +1,26 @@
-# Rýchly tuniakový šalát so zemiakmi a vajcom
+# Tuniakový šalát so zemiakmi, vajcom a horčicovým dresingom
 
 **slug:** tuniakovy-salat-zemiaky-vajce
 **porcie:** 2
-**čas prípravy:** 20 minút
-**cena za porciu:** 1,70 €/osoba
+**čas prípravy:** 25 minút
+**cena za porciu:** 1,73 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/tuniakovy-salat-zemiaky-vajce.jpg  
 
 ---
 
 ## Foto prompt
-"Photorealistic food photography: quick tuna salad with boiled potato chunks, halved hard-boiled eggs, red bell pepper strips, drizzled with olive oil, on a simple white plate. Home kitchen, warm natural window light, wooden table. Cozy, realistic, homemade look — not an overstyled ad shot. Warm earthy tones, soft shadows. Overhead angle, shallow depth of field. Empty space at top or side for text. No text or logos in the image. Format 9:16."
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: tuniakový šalát so zemiakmi, prekrojenými vajcami s mierne tečúcim žĺtkom, prúžkami papriky a červenej cibule, na jednoduchom bielom tanieri.
+Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
+Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
+Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.
+Celý záber ostrý, BEZ bokehu/rozostreného pozadia — mobilné fotky nemajú hĺbku ostrosti ako profi objektív.
+Mierne nedokonalý, neštudovaný uhol (zhora alebo tak, ako by človek prirodzene fotil vlastné jedlo).
+ŽIADNE štylizované rekvizity — žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, umelo poukladané bylinky, kvety, sviečky.
+Obyčajná kuchyňa alebo stôl v pozadí, taký, aký reálne je — nie upravený "moodboard".
+Voľné miesto navrchu alebo po strane na text.
+Bez textu a bez loga v obrázku.
+Formát 9:16 (Instagram Stories).
 
 ---
 
@@ -23,11 +33,12 @@
 | Vajcia | 2 ks | 0,40 € |
 | Paprika | 150 g | 0,33 € |
 | Červená cibuľa | ¼ ks | zásoby |
-| Olivový olej | 1 PL | zásoby |
+| Horčica | 1 ČL | zásoby |
+| Olivový olej | 2 PL | zásoby |
 | Balzamikový ocot | 1 ČL | zásoby |
 | Soľ, čierne korenie | — | zásoby |
 
-**Celkom: 3,39 € → 1,70 €/osoba**
+**Celkom: 3,45 € → 1,73 €/osoba**
 
 ---
 
@@ -35,21 +46,22 @@
 
 | | |
 |---|---|
-| Energia | ~380 kcal |
+| Energia | ~390 kcal |
 | Bielkoviny | 28 g |
 | Sacharidy | 25 g |
-| Tuky | 18 g |
+| Tuky | 19 g |
 
 ---
 
 ## Postup
 
-1. Zemiaky uvar v šupke domäkka (cca 20 minút), scedi, olúpaj a nakrájaj na kocky.
-2. Vajcia uvar natvrdo (9–10 minút), olúpaj a rozkrájaj na štvrtiny.
-3. Papriku a červenú cibuľu nakrájaj na kocky/prúžky.
-4. Tuniak scedi a rozdrob vidličkou.
-5. Všetko zmiešaj v mise, zalej olivovým olejom a balzamikovým octom, dochuť soľou a korením.
-6. Podávaj vlažné alebo studené.
+1. Zemiaky uvar v šupke domäkka (cca 18–20 minút).
+2. Kým sa zemiaky varia, priprav dresing: horčicu, olivový olej a balzamikový ocot dôkladne vymiešaj vidličkou alebo v pohári s vrchnákom (potriasaním), kým sa spojí do hladka. Osoľ, okoreň.
+3. Vajcia uvar 8 minút od varu pre jemne krémový, mierne tečúci žĺtok (chuťovo aj vizuálne lepšie ako natvrdo uvarené). Ihneď scho pod studenou vodou, olúpaj a rozkrájaj na štvrtiny.
+4. Horúce zemiaky scedi, olúpaj a nakrájaj na kocky. Zalej ich rovno horúce dvoma lyžicami dresingu a premiešaj — horúce zemiaky nasajú chuť oveľa lepšie ako studené.
+5. Papriku a červenú cibuľu nakrájaj na kocky/prúžky. Tuniak scedi a rozdrob vidličkou.
+6. Všetko zmiešaj v mise, zalej zvyšným dresingom. Navrch polož vajcia.
+7. Podávaj vlažné alebo studené.
 
 ---
 
