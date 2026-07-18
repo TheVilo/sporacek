@@ -55,3 +55,11 @@
 | Streda 15.7. | Bravčové karé s marhuľovou glazúrou | 0,67 € | ~57 % |
 | Štvrtok 16.7. | Krémová dyňová polievka | 0,62 € | ~50 % |
 | Piatok 17.7. | Letný šalát s broskýňami a mozzarellou | 0,66 € | ~56 % |
+
+---
+
+## Artifacty tohto týždňa (social flow)
+
+- 🛒 Katalóg: https://claude.ai/code/artifact/f7fc205d-d627-489c-90b5-5d6123a4dd8c
+- 🍽️ Recepty: https://claude.ai/code/artifact/f67ff573-0b9a-4873-842d-db859e751d9e
+- 📋 Nákupný zoznam: https://claude.ai/code/artifact/ae076e17-28b1-4400-9d0a-64a636c0831c
