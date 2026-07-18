@@ -1,16 +1,26 @@
-# Plnená cuketa s mletým mäsom a ryžou
+# Plnená cuketa s mletým mäsom, ryžou a zapečeným syrom
 
 **slug:** plnena-cuketa-mlete-maso  
 **porcie:** 2  
-**čas prípravy:** 40 minút  
-**cena za porciu:** 0,71 €/osoba  
+**čas prípravy:** 45 minút  
+**cena za porciu:** 0,94 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/plnena-cuketa-mlete-maso.jpg  
 
 ---
 
 ## Foto prompt
-"Stuffed zucchini halves filled with seasoned ground meat and rice, baked golden-brown, white ceramic plate, fresh cherry tomatoes, natural side light, rustic wooden table, food photography"
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: plnené polovice cukety s mletým mäsom a ryžou, navrchu roztopený zlatistý zapečený syr, na bielom tanieri.
+Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
+Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
+Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.
+Celý záber ostrý, BEZ bokehu/rozostreného pozadia — mobilné fotky nemajú hĺbku ostrosti ako profi objektív.
+Mierne nedokonalý, neštudovaný uhol (zhora alebo tak, ako by človek prirodzene fotil vlastné jedlo).
+ŽIADNE štylizované rekvizity — žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, umelo poukladané bylinky, kvety, sviečky.
+Obyčajná kuchyňa alebo stôl v pozadí, taký, aký reálne je — nie upravený "moodboard".
+Voľné miesto navrchu alebo po strane na text.
+Bez textu a bez loga v obrázku.
+Formát 9:16 (Instagram Stories).
 
 ---
 
@@ -18,15 +28,17 @@
 
 | Surovina | Množstvo | Cena |
 |---|---|---|
-| Cuketa | 1 ks | 0,49 € |
+| Cuketa | 1 ks (väčšia) | 0,49 € |
 | Mleté bravčové mäso | 200 g | 0,66 € |
-| Guľatozrnná ryža | 50 g | 0,07 € |
-| Strapcové paradajky | 100 g | 0,20 € |
+| Ryža | 50 g | 0,07 € |
+| Paradajky | 100 g | 0,20 € |
 | Cibuľa | ½ ks | zásoby |
+| Cesnak | 1 strúčik | zásoby |
+| Syr | 60 g | 0,45 € |
 | Olivový olej | 1 PL | zásoby |
 | Soľ, korenie, oregano | — | zásoby |
 
-**Celkom: 1,42 € → 0,71 €/osoba**
+**Celkom: 1,87 € → 0,94 €/osoba**
 
 ---
 
@@ -34,20 +46,22 @@
 
 | | |
 |---|---|
-| Energia | ~320 kcal |
-| Bielkoviny | 22 g |
+| Energia | ~370 kcal |
+| Bielkoviny | 25 g |
 | Sacharidy | 28 g |
-| Tuky | 9 g |
+| Tuky | 15 g |
 
 ---
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu. Dužinu odlož.
-2. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj mäso a opeč do hneda (5–7 min). Osoľ, okoreň.
-3. Pridaj dužinu z cukety, paradajky a uvarenú ryžu. Premiešaj.
-4. Naplň vydlabané cukety zmesou. Daj do pekáča, podlej 50 ml vody.
-5. Peč 25 minút do zlatista. Podávaj hneď.
+1. Ryžu uvar podľa návodu na obale. Rúru predhrej na 200 °C.
+2. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu (nechaj asi 0,5 cm hrubé steny, nech sa polovice nepretrhnú). Dužinu nakrájaj nadrobno a odlož.
+3. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj prelisovaný cesnak a mäso, opeč do hneda (5–7 min). Osoľ, okoreň, pridaj oregano.
+4. Pridaj nakrájanú dužinu z cukety a paradajky, dus 3–4 minúty, kým dužina zmäkne. Vmiešaj uvarenú ryžu.
+5. Naplň vydlabané polovice cukety zmesou (pokojne s kopcom, plnka sa pri pečení mierne zmrští). Daj do pekáča, podlej 50 ml vody.
+6. Peč 20 minút prikryté alobalom, potom posyp navrchu strúhaným syrom a peč ešte 8–10 minút bez alobalu, kým syr nie je roztopený a zlatistý.
+7. Podávaj hneď.
 
 ---
 

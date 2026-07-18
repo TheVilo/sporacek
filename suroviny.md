@@ -38,11 +38,15 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - dyňa
 - zeler
 - zázvor
-- tekvicové semienka
 
 ## Ovocie
 - čučoriedky
 - marhule
+
+## Orechy a semienka
+- vlašské orechy
+- tekvicové semienka
+- makové semienka
 
 ## Strukoviny a obilniny
 - šošovica
@@ -73,6 +77,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - údená paprika
 - oregano
 - bazalka
+- tymian
 - petržlenová vňať
 - mletá rasca
 - kari korenie
@@ -84,6 +89,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - horčičné semienko
 - cukor kryštálový
 - cukor trstinový
+- med
 - citrón
 - strúhanka
 - múka
