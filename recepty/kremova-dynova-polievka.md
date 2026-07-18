@@ -5,6 +5,7 @@
 **čas prípravy:** 30 minút  
 **cena za porciu:** 0,58 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/kremova-dynova-polievka.jpg  
 
 ---
 

@@ -5,6 +5,7 @@
 **čas prípravy:** 20 minút
 **cena za porciu:** 1,70 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/tuniakovy-salat-zemiaky-vajce.jpg  
 
 ---
 

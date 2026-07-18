@@ -5,6 +5,7 @@
 **čas prípravy:** 55 minút
 **cena za porciu:** 0,79 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/pecena-bravcova-krkovicka-paprika-cibula.jpg  
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: kremove-kuracie-rizoto-sampinony
 nazov: Krémové kuracie rizoto so šampiňónmi
-foto_url: ""
+foto_url: "fotky/kremove-kuracie-rizoto-sampinony.jpg"
 foto_prompt: "Fotorealistická fotografia jedla: krémové kuracie rizoto so šampiňónmi, porcia na jednoduchom tanieri. Domáca kuchyňa, prirodzené teplé svetlo z okna, drevený stôl. Reálny, útulný, domácky vzhľad — nie reklamná scéna. Teplé zemité tóny, mäkké tiene. Pohľad mierne zboku, plytká hĺbka ostrosti. Voľné miesto navrchu na text. Bez textu a bez loga. Formát 9:16."
 pocet_porcii: 2
 cena_za_porciu: 1.98

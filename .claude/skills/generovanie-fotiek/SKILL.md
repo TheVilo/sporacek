@@ -5,7 +5,7 @@ description: Použi vždy, keď treba vygenerovať fotku jedla pre recept (foto_
 
 # Generovanie fotiek receptov (Gemini / nanobanana)
 
-Fotky sa **negenerujú do repa** (`CLAUDE.md`) — vygeneruj ich mimo verzovania (napr. do scratchpadu), použi ich (napr. v artifacte alebo na upload), a do receptu zapíš len `foto_url` po nahratí niekam, kde je fotka dostupná.
+Fotky **sú súčasťou repa** (priečinok `fotky/`, viď `CLAUDE.md`) — generuj ich do dočasného súboru, over si ich, potom ulož do `fotky/<id>.jpg`, commitni a pushni. Cez GitHub/git pull sa dostanú aj do lokálnej zložky `sporacek`.
 
 ## Čo je treba
 
@@ -67,5 +67,5 @@ for part in resp.candidates[0].content.parts:
 ## Po vygenerovaní
 
 1. Over si obrázok (prezri si ho) — food fotka musí vyzerať domácky/reálne, nie ako reklama.
-2. Ulož fotku niekam, kde bude mať verejný/dostupný odkaz (zatiaľ nemáme vyriešené trvalé hosťovanie — rieš to podľa aktuálnej potreby, napr. priložením do artifactu alebo poslaním používateľovi).
-3. Doplň `foto_url` v `.md` súbore receptu.
+2. Ulož fotku do `fotky/<id>.jpg` v repe (formát JPG, konvertuj ak treba). Fotky **sú súčasťou repa** — commitni a pushni ich, nech sa cez GitHub/git pull dostanú aj do lokálnej zložky `sporacek` na počítači.
+3. Doplň `foto_url` v `.md` súbore receptu ako relatívnu cestu, napr. `foto_url: fotky/<id>.jpg`.

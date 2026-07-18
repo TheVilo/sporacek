@@ -5,6 +5,7 @@
 **čas prípravy:** 10 minút (bez varenia!)  
 **cena za porciu:** 0,56 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/letny-salat-broskyne-mozzarella.jpg  
 
 ---
 

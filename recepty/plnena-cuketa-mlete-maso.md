@@ -5,6 +5,7 @@
 **čas prípravy:** 40 minút  
 **cena za porciu:** 0,71 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/plnena-cuketa-mlete-maso.jpg  
 
 ---
 

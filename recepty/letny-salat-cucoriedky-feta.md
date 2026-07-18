@@ -5,6 +5,7 @@
 **čas prípravy:** 15 minút
 **cena za porciu:** 1,28 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
+**foto_url:** fotky/letny-salat-cucoriedky-feta.jpg  
 
 ---
 

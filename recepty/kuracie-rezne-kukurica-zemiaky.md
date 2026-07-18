@@ -5,6 +5,7 @@
 **čas prípravy:** 25 minút  
 **cena za porciu:** 0,58 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.  
+**foto_url:** fotky/kuracie-rezne-kukurica-zemiaky.jpg  
 **⚡ Kukurica platí LEN v utorok 14. 7.!**
 
 ---
