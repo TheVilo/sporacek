@@ -50,6 +50,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 
 ## Strukoviny a obilniny
 - šošovica
+- červená šošovica
 - fazuľa
 - cícer
 - ryža
@@ -79,6 +80,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - bazalka
 - tymian
 - petržlenová vňať
+- čerstvý koriander
 - mletá rasca
 - kari korenie
 - kurkuma
