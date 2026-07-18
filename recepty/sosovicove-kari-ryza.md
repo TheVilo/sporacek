@@ -5,6 +5,7 @@
 **čas prípravy:** 30 minút
 **cena za porciu:** 0,95 €/osoba
 **týždeň:** — (mimo týždenného letáku)
+**foto_url:** fotky/sosovicove-kari-ryza.jpg  
 
 ---
 

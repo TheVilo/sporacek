@@ -5,6 +5,7 @@
 **čas prípravy:** 30 minút
 **cena za porciu:** 2,66 €/osoba
 **týždeň:** — (mimo týždenného letáku)
+**foto_url:** fotky/peceny-losos-citron-brokolica.jpg  
 
 ---
 

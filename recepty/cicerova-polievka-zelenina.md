@@ -5,6 +5,7 @@
 **čas prípravy:** 25 minút
 **cena za porciu:** 0,95 €/osoba
 **týždeň:** — (mimo týždenného letáku)
+**foto_url:** fotky/cicerova-polievka-zelenina.jpg  
 
 ---
 
