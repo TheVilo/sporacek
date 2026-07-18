@@ -49,4 +49,4 @@
 ---
 
 ## Tagy
-`#bravčové` `#marhule` `#glazúra` `#letné` `#šporáček` `#akcia-lidl`
+`#večera` `#bravčové` `#sýte` `#lacné` `#akcia-lidl`

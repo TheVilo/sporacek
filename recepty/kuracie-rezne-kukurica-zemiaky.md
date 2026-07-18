@@ -50,4 +50,4 @@
 ---
 
 ## Tagy
-`#kuracie` `#kukurica` `#zemiaky` `#rýchle` `#šporáček` `#akcia-lidl` `#utorok-akcia`
+`#večera` `#kura` `#vysoký-proteín` `#sýte` `#lacné` `#akcia-lidl`

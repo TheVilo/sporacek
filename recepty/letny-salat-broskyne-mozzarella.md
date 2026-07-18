@@ -51,4 +51,4 @@ Tip: Funguje aj ako rýchle predjedlo pred grilom. Nikto neuverí, že to stálo
 ---
 
 ## Tagy
-`#šalát` `#bez varenia` `#letné` `#vegetariánske` `#šporáček` `#akcia-lidl`
+`#šalát` `#bezmäsité` `#vegetariánske` `#ľahké` `#do-20-minút` `#lacné` `#akcia-lidl`

@@ -51,4 +51,4 @@
 ---
 
 ## Tagy
-`#hlavné jedlo` `#zelenina` `#bravčové` `#rúra` `#šporáček` `#akcia-lidl`
+`#večera` `#bravčové` `#sýte` `#do-rúry` `#lacné` `#akcia-lidl`

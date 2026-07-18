@@ -51,4 +51,4 @@ Tip: Zvyšok smotany vyšľahaj a daj na polievku ako dekoráciu.
 ---
 
 ## Tagy
-`#polievka` `#dyňa` `#vegánske` `#zdravé` `#šporáček` `#akcia-lidl`
+`#polievka` `#bezmäsité` `#vegetariánske` `#ľahké` `#lacné` `#akcia-lidl`
