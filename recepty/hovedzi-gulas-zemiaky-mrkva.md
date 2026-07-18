@@ -3,14 +3,24 @@
 **slug:** hovedzi-gulas-zemiaky-mrkva
 **porcie:** 2
 **čas prípravy:** 90 minút
-**cena za porciu:** 2,08 €/osoba
+**cena za porciu:** 2,13 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/hovedzi-gulas-zemiaky-mrkva.jpg  
 
 ---
 
 ## Foto prompt
-"Photorealistic food photography: rich beef goulash stew with tender chunks of meat, potatoes and carrots, deep reddish-brown paprika sauce, served in a rustic bowl with a slice of bread. Home kitchen, warm natural window light, wooden table. Cozy, realistic, homemade look — not an overstyled ad shot. Warm earthy tones, soft shadows. Slight side angle, shallow depth of field. Empty space at top for text. No text or logos in the image. Format 9:16."
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: hustý hovädzí guláš s kúskami mäsa, zemiakov a mrkvy v hlbokej miske, sýto červenohnedá paprikovo-paradajková omáčka, navrchu posypaný čerstvou petržlenovou vňaťou, vedľa krajec chleba.
+Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
+Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
+Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.
+Celý záber ostrý, BEZ bokehu/rozostreného pozadia — mobilné fotky nemajú hĺbku ostrosti ako profi objektív.
+Mierne nedokonalý, neštudovaný uhol (zhora alebo tak, ako by človek prirodzene fotil vlastné jedlo).
+ŽIADNE štylizované rekvizity — žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, umelo poukladané bylinky, kvety, sviečky.
+Obyčajná kuchyňa alebo stôl v pozadí, taký, aký reálne je — nie upravený "moodboard".
+Voľné miesto navrchu alebo po strane na text.
+Bez textu a bez loga v obrázku.
+Formát 9:16 (Instagram Stories).
 
 ---
 
@@ -25,11 +35,14 @@
 | Cesnak | 2 strúčiky | zásoby |
 | Sladká paprika | 1 PL | zásoby |
 | Mletá rasca | ½ ČL | zásoby |
+| Paradajkový pretlak | 1 PL | 0,10 € |
+| Bobkový list | 2 ks | zásoby |
 | Bujón (kocka) | 1 ks | zásoby |
+| Petržlenová vňať | pár vetvičiek | zásoby |
 | Olivový olej | 2 PL | zásoby |
 | Soľ, čierne korenie | — | zásoby |
 
-**Celkom: 4,16 € → 2,08 €/osoba**
+**Celkom: 4,26 € → 2,13 €/osoba**
 
 ---
 
@@ -48,9 +61,9 @@
 
 1. Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlatista (7–10 minút).
 2. Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán (7–10 minút).
-3. Zníž teplotu, vmiešaj prelisovaný cesnak, sladkú papriku a rascu. Zalej vodou alebo vývarom, aby bolo mäso ponorené. Priveď do varu, prikry a dus na miernom ohni 40 minút.
-4. Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a dus ďalších 30–40 minút, kým mäso nie je mäkké.
-5. Dochuť soľou a čiernym korením. Podávaj s krajcom chleba.
+3. Odstav panvicu z ohňa (dôležité — na horúcom povrchu paprika horkne), vmiešaj prelisovaný cesnak, sladkú papriku, rascu a paradajkový pretlak. Vráť na oheň, krátko opraž a hneď zalej vodou alebo vývarom, aby bolo mäso ponorené. Pridaj bobkový list. Priveď do varu, prikry a dus na miernom ohni 40 minút.
+4. Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a dus ďalších 30–40 minút, kým mäso nie je mäkké a omáčka hustá.
+5. Vyber bobkový list. Dochuť soľou a čiernym korením. Podávaj posypané čerstvou petržlenovou vňaťou, s krajcom chleba.
 
 ---
 

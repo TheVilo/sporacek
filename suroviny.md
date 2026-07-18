@@ -38,6 +38,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - dyňa
 - zeler
 - zázvor
+- tekvicové semienka
 
 ## Ovocie
 - čučoriedky
@@ -75,6 +76,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - petržlenová vňať
 - mletá rasca
 - kari korenie
+- kurkuma
 - bobkový list
 - ocot
 - balzamikový ocot
