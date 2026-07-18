@@ -37,6 +37,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - šampiňóny
 - dyňa
 - zeler
+- zázvor
 
 ## Ovocie
 - čučoriedky
@@ -77,6 +78,9 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - ocot
 - balzamikový ocot
 - horčica
+- horčičné semienko
+- cukor kryštálový
+- cukor trstinový
 - citrón
 - strúhanka
 - múka
