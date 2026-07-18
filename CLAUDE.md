@@ -108,12 +108,12 @@ Recept má viac tagov naraz.
 
 Pred vytvorením nového artifactu **vždy over `Artifact list`**, či už niečo podobné neexistuje. Ak áno, **rozšír/aktualizuj ten istý** (rovnaká URL), nevytváraj duplicitu. Pri úprave existujúceho artifactu si najprv over jeho aktuálny obsah proti repu, nie len podľa pamäte z konverzácie.
 
-Rozlišuj dva odlišné typy artifactov, nemiešaj ich:
+Rozlišuj dva odlišné spôsoby zobrazenia, nemiešaj ich:
 
-1. **Databáza receptov** (samostatný artifact, mimo social flow) — prehľad *všetkých* receptov v `recepty/` (fotka, cena, tagy, postup). Rastie priebežne s databázou. Pri pridaní receptu ho **doplň** do artifactu, negeneruj nanovo fotky/dáta receptov, ktoré už existujú — šetrí to tokeny.
-   **Kanonická URL (jedna, stále rovnaká, aktualizuje sa v mieste):** https://claude.ai/code/artifact/4a74dccc-333b-40d5-ac90-2c43f4bcd1bf
-2. **Týždenný "social" flow** (prepojené artifacty: 🛒 Katalóg → 🍽️ Recepty týždňa → 📋 Nákupný zoznam → 📱 Social) — úzko naviazaný na *jeden konkrétny* leták/týždeň (`tydne/<týždeň>/`). Ukazuje len tie recepty, ktoré boli pre daný týždeň skutočne vybrané/schválené — nie celú databázu. Každý krok linkuje na susedné kroky (spoločný `flow-nav` pás hore). Pri zmene výberu receptov na daný týždeň **aktualizuj všetky kroky flow**, nech si navzájom nesedia.
-   **Každý nový týždeň dostáva vlastné nové URL** (nepreťažuj URL z minulého týždňa — je to historický záznam). URL aktuálneho/posledného týždňa zapíš do `tydne/<týždeň>/OVERVIEW.md`.
+1. **Databáza receptov** — **NIE JE artifact.** Je to živá stránka `docs/index.html` (GitHub Pages), ktorá si dáta (recepty, fotky, tagy) ťahá naživo priamo z repa cez GitHub API pri každom otvorení/obnovení. **Nikdy sa neprepublikovúva** — stačí pushnúť nový recept/fotku do `recepty/`/`fotky/` a stránka ho ukáže sama po F5. Má vyhľadávanie a filtrovanie podľa tagov.
+   **URL:** https://thevilo.github.io/sporacek/ (po zapnutí GitHub Pages v Settings)
+   Starý artifact „šporáček — databáza receptov" (https://claude.ai/code/artifact/4a74dccc-333b-40d5-ac90-2c43f4bcd1bf) je **zastaraný, nepoužívaj ho** — nahradený touto stránkou.
+2. **Týždenný "social" flow** — zatiaľ prepojené artifacty (🛒 Katalóg → 🍽️ Recepty týždňa → 📋 Nákupný zoznam), naviazané na *jeden konkrétny* leták/týždeň (`tydne/<týždeň>/`). Ukazuje len recepty skutočne vybrané pre daný týždeň, nie celú databázu. Cieľ je zlúčiť to do **jedného** artifactu na týždeň (zatiaľ nedokončené). Každý nový týždeň dostáva vlastné nové URL, zapísané do `tydne/<týždeň>/OVERVIEW.md`.
 
 ---
 
