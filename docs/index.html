@@ -39,6 +39,13 @@
   }
   .refresh-btn:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
   .refresh-btn:disabled { opacity: .6; cursor: wait; }
+  .top-actions { display: flex; align-items: center; gap: 8px; }
+  .nav-link {
+    font-family: inherit; font-size: .8rem; font-weight: 700; color: var(--green-ink); text-decoration: none;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
+    padding: 7px 16px; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .nav-link:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
   .status-line { font-size: .78rem; color: var(--text-muted); margin-bottom: 18px; }
 
   .controls { margin-bottom: 26px; }
@@ -106,7 +113,10 @@
       <div class="eyebrow">Šporáček · databáza receptov</div>
       <h1>Všetky recepty</h1>
     </div>
-    <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
+    <div class="top-actions">
+      <a class="nav-link" href="tyzden.html">📱 Týždenný výstup</a>
+      <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
+    </div>
   </div>
   <div class="sub">Táto stránka si dáta ťahá naživo priamo z GitHub repa (<code>recepty/</code>, <code>fotky/</code>) — pri každom otvorení alebo obnovení vidíš vždy aktuálny stav, bez potreby prekódovávania.</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
