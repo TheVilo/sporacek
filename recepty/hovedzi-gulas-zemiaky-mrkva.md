@@ -5,6 +5,7 @@
 **čas prípravy:** 90 minút
 **cena za porciu:** 2,08 €/osoba
 **týždeň:** — (mimo týždenného letáku)
+**foto_url:** fotky/hovedzi-gulas-zemiaky-mrkva.jpg  
 
 ---
 
