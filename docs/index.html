@@ -51,12 +51,13 @@
       <div>
         <div class="label">Recept</div>
         <h3 id="lightboxTitle"></h3>
+        <div class="prompt-hint" id="lightboxSlug"></div>
       </div>
       <div id="lightboxPromptSection">
         <div class="label">Foto prompt</div>
         <div class="prompt-text" id="lightboxPromptText"></div>
         <button class="copy-btn" id="lightboxCopyBtn" onclick="copyLightboxPrompt(this)">📋 Kopírovať prompt</button>
-        <div class="prompt-hint">Nepáči sa foto? Skopíruj prompt, pošli mi ho v chate s poznámkou čo zmeniť.</div>
+        <div class="prompt-hint">Nepáči sa foto? Skopíruj prompt aj s ID receptu a pošli mi ho v chate s poznámkou čo zmeniť.</div>
       </div>
     </div>
   </div>
@@ -79,19 +80,22 @@ function primaryTyp(tags) {
 }
 
 let lightboxPrompt = "";
+let lightboxSlug = "";
 
 function openLightboxForRecipe(slug) {
   const r = allRecipes.find(r => r.slug === slug);
   if (!r) return;
   const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
-  openLightbox(photoUrl, r.nazov, r.foto_prompt);
+  openLightbox(photoUrl, r.nazov, r.foto_prompt, r.slug);
 }
 
-function openLightbox(src, nazov, prompt) {
+function openLightbox(src, nazov, prompt, slug) {
   const lb = document.getElementById("lightbox");
   document.getElementById("lightboxImg").src = src;
   document.getElementById("lightboxImg").alt = nazov || "";
   document.getElementById("lightboxTitle").textContent = nazov || "";
+  lightboxSlug = slug || "";
+  document.getElementById("lightboxSlug").textContent = lightboxSlug ? `ID: ${lightboxSlug}` : "";
   lightboxPrompt = prompt || "";
   const section = document.getElementById("lightboxPromptSection");
   document.getElementById("lightboxPromptText").textContent = lightboxPrompt;
@@ -105,7 +109,8 @@ function closeLightbox(e) {
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
 
 function copyLightboxPrompt(btn) {
-  navigator.clipboard.writeText(lightboxPrompt).then(() => {
+  const text = lightboxSlug ? `Recept ID: ${lightboxSlug}\n\n${lightboxPrompt}` : lightboxPrompt;
+  navigator.clipboard.writeText(text).then(() => {
     const original = btn.textContent;
     btn.textContent = "✓ Skopírované";
     btn.classList.add("copied");
