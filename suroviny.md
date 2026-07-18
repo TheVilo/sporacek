@@ -73,6 +73,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - údená paprika
 - oregano
 - bazalka
+- tymian
 - petržlenová vňať
 - mletá rasca
 - kari korenie
