@@ -101,6 +101,13 @@ Recept má viac tagov naraz.
 
 ---
 
+## Artifacty (vizuálne prehľady)
+
+- Pred vytvorením nového artifactu **vždy over `Artifact list`**, či už niečo podobné neexistuje (napr. prehľad týždňa/receptov). Ak áno, **rozšír/aktualizuj ten istý** (rovnaká URL), nevytváraj duplicitu.
+- Artifact „šporáček — týždeň [dátum]" slúži ako živý prehľad receptov s fotkami, cenou a postupom — aktualizuj jeho obsah, keď pribudnú recepty, namiesto nového artifactu.
+
+---
+
 ## Dôležité upozornenia
 
 - **Leták je len dočasný vstup.** Automatický zber akciových produktov stavia programátor — my ho tu neriešime a neukladáme dlhodobo.
