@@ -10,7 +10,7 @@
 ---
 
 ## Foto prompt
-Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: Bravčové karé s marhuľovou glazúrou.
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: Bravčové karé s marhuľovou glazúrou, podávané s krajcom chleba (bez prílohy typu zemiaková kaša či fazuľky — tie recept neobsahuje).
 Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
 Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
 Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.

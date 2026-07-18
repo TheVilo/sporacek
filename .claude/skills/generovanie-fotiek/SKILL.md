@@ -15,6 +15,10 @@ Vyhýbaj sa: bokehu/rozostrenému pozadiu, plátenym obrúskom, vintage doskám 
 
 Presná šablóna promptu je v `.claude/skills/tyzdenny-vystup/SKILL.md` — použi ju vždy, aj mimo týždenného letáku.
 
+## Kritické: fotka musí zodpovedať receptu — najprv si ho celý prečítaj
+
+Pred písaním/použitím `foto_prompt` si **vždy prečítaj celý `.md` súbor receptu** (suroviny aj postup), nie len jeho existujúci `foto_prompt`. Model si často domyslí prílohy, ktoré recept vôbec neobsahuje (napr. zemiaková kaša, fazuľky) — na fotke smie byť **len to, čo je v recepte** (suroviny + spôsob podávania z postupu, napr. "podávaj s chlebom alebo ryžou"). Ak `foto_prompt` v recepte spomína niečo, čo tam nepatrí, over to a oprav.
+
 ## Čo je treba
 
 - **`GEMINI_API_KEY`** v premennej prostredia. Ak nie je nastavená, popros o ňu používateľa (Google AI Studio → API key). Zatiaľ sa nedá trvalo uložiť ako env premenná tohto prostredia, takže ju na začiatku session treba dostať znova.
