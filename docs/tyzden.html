@@ -80,12 +80,18 @@ function escapeHtml(s) {
 
 let lightboxPrompt = "";
 let lightboxSlug = "";
+let photoVersions = {};
+
+function photoUrlFor(slug) {
+  const v = photoVersions[slug];
+  return `${RAW_BASE}/fotky/${encodeURIComponent(slug)}.jpg${v ? "?v=" + v.slice(0, 8) : ""}`;
+}
 
 function openLightboxForRecipe(slug) {
   const m = currentMeals.find(m => m.slug === slug);
   const r = m?.recipe;
   if (!r) return;
-  const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
+  const photoUrl = photoUrlFor(r.slug);
   openLightbox(photoUrl, r.nazov, r.foto_prompt, r.slug);
 }
 
@@ -182,6 +188,18 @@ async function loadWeekList(manual) {
   try {
     const listResp = await fetch(`${API_BASE}/contents/tydne?ref=${BRANCH}`, { cache: "no-store" });
     if (!listResp.ok) throw new Error(`GitHub API vrátilo ${listResp.status}`);
+
+    try {
+      const photoListResp = await fetch(`${API_BASE}/contents/fotky?ref=${BRANCH}`, { cache: "no-store" });
+      if (photoListResp.ok) {
+        const photoFiles = await photoListResp.json();
+        photoVersions = {};
+        for (const pf of photoFiles) {
+          if (pf.name.endsWith(".jpg")) photoVersions[pf.name.replace(/\.jpg$/, "")] = pf.sha;
+        }
+      }
+    } catch (e) { /* verzovanie fotiek je len optimalizácia cachovania, chyba tu nesmie zhodiť stránku */ }
+
     const dirs = (await listResp.json()).filter(f => f.type === "dir");
     dirs.sort((a, b) => b.name.localeCompare(a.name));
     weeks = dirs.map(d => ({ folder: d.name }));
@@ -247,7 +265,7 @@ function mealCardHtml(m) {
   if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
   if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
   if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
-  const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
+  const photoUrl = photoUrlFor(r.slug);
   const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€<span> / porcia</span>` : "";
   const nonTypTags = r.tagy.filter(t => !["večera","obed","šalát","polievka","jednohrnec","akcia-lidl"].includes(t));
   return `
