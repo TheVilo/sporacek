@@ -88,6 +88,7 @@ Recept má viac tagov naraz.
 
 1. **Jednoduchý** — málo krokov, bežné vybavenie kuchyne.
 2. **Z akciových surovín** — základ tvoria suroviny, ktoré sú práve v akcii. Ale **akciové ≠ chudobné.** Šporáček nie je "jedlo pre chudobných" — je to chutné jedlo postavené na tom, čo je práve výhodné kúpiť, prispôsobené tomu, čo si človek vyberie (napr. "fitness" → vysoký proteín/ľahšie, "rodinné" → sýte a vydatné). Nikdy nerob recept zámerne chudobný/nudný len preto, že je lacný.
+   **Poradie myslenia:** najprv poriadny, chutný recept (aký by si našiel na dobrom kuchárskom webe) — až potom sa pozri, ktoré jeho suroviny sú v akcii a dajú sa tak uvariť lacnejšie. Nikdy nie naopak ("čo je najlacnejšie, to hodím na tanier a nazvem to jedlom" — napr. mäso + krajec chleba, len aby to bolo pod 1 €). Šporáček učí ľudí variť dobre **a zároveň** šetriť — nie variť chudobne.
 3. **Chutný a zdravý** — recept musí byť taký, že by si ho človek naozaj chcel navariť a zjesť, nielen taký, čo "stačí". Inšpiruj sa **reálnymi receptami z netu** (rovnako ako pri `.claude/skills/novy-recept/SKILL.md`), neskladaj kroky nazlepšie od stola.
 4. **Prekrývajúce sa suroviny** — v rámci týždňa sa suroviny opakujú, nič sa nevyhodí.
 5. **Realistický** — jedlo, ktoré si bežný človek naozaj uvarí.
