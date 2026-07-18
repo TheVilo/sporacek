@@ -43,7 +43,23 @@
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
-  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <div class="lightbox-media">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <div class="lightbox-panel">
+      <div>
+        <div class="label">Recept</div>
+        <h3 id="lightboxTitle"></h3>
+      </div>
+      <div id="lightboxPromptSection">
+        <div class="label">Foto prompt</div>
+        <div class="prompt-text" id="lightboxPromptText"></div>
+        <button class="copy-btn" id="lightboxCopyBtn" onclick="copyLightboxPrompt(this)">📋 Kopírovať prompt</button>
+        <div class="prompt-hint">Nepáči sa foto? Skopíruj prompt, pošli mi ho v chate s poznámkou čo zmeniť.</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -62,11 +78,24 @@ function primaryTyp(tags) {
   return "iné";
 }
 
-function openLightbox(src, alt) {
+let lightboxPrompt = "";
+
+function openLightboxForRecipe(slug) {
+  const r = allRecipes.find(r => r.slug === slug);
+  if (!r) return;
+  const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
+  openLightbox(photoUrl, r.nazov, r.foto_prompt);
+}
+
+function openLightbox(src, nazov, prompt) {
   const lb = document.getElementById("lightbox");
-  const img = document.getElementById("lightboxImg");
-  img.src = src;
-  img.alt = alt || "";
+  document.getElementById("lightboxImg").src = src;
+  document.getElementById("lightboxImg").alt = nazov || "";
+  document.getElementById("lightboxTitle").textContent = nazov || "";
+  lightboxPrompt = prompt || "";
+  const section = document.getElementById("lightboxPromptSection");
+  document.getElementById("lightboxPromptText").textContent = lightboxPrompt;
+  section.style.display = lightboxPrompt ? "" : "none";
   lb.classList.add("open");
 }
 function closeLightbox(e) {
@@ -75,9 +104,8 @@ function closeLightbox(e) {
 }
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
 
-function copyPrompt(btn, slug) {
-  const text = allRecipes.find(r => r.slug === slug)?.foto_prompt || "";
-  navigator.clipboard.writeText(text).then(() => {
+function copyLightboxPrompt(btn) {
+  navigator.clipboard.writeText(lightboxPrompt).then(() => {
     const original = btn.textContent;
     btn.textContent = "✓ Skopírované";
     btn.classList.add("copied");
@@ -162,20 +190,11 @@ function cardHtml(r) {
   const macro = macroParts.join(" · ");
   const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€/porcia` : "";
   const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
-  const promptHtml = r.foto_prompt ? `
-    <details class="prompt-box">
-      <summary>✏️ Foto prompt</summary>
-      <div class="prompt-box-inner">
-        <div class="prompt-text">${escapeHtml(r.foto_prompt)}</div>
-        <button class="copy-btn" onclick="copyPrompt(this, '${r.slug.replace(/'/g, "\\'")}')">📋 Kopírovať prompt</button>
-        <div class="prompt-hint">Nepáči sa foto? Skopíruj prompt, pošli mi ho v chate s poznámkou čo zmeniť.</div>
-      </div>
-    </details>` : "";
 
   return `
     <div class="card">
       <div class="photo-wrap">
-        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightbox('${photoUrl}', '${escapeHtml(r.nazov).replace(/'/g, "\\'")}')" />
+        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightboxForRecipe('${r.slug.replace(/'/g, "\\'")}')" />
         ${priceStr ? `<div class="price-badge">${priceStr}</div>` : ""}
       </div>
       <div class="card-body">
@@ -186,7 +205,6 @@ function cardHtml(r) {
           <summary>Postup (${r.postup.length} krokov)</summary>
           <ol>${stepsHtml}</ol>
         </details>
-        ${promptHtml}
       </div>
     </div>`;
 }
