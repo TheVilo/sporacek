@@ -8,103 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --green: #204432; --green-ink: #16301f; --terracotta: #BA5F3F; --sand: #E7D6B4;
-    --paper: #FAF6EE; --surface: #FFFFFF; --text: #21301f; --text-muted: #5b6b57;
-    --border: #ddd0b8; --shadow: 0 1px 2px rgba(32,68,50,.07), 0 8px 20px rgba(32,68,50,.07);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --green: #7cb99a; --green-ink: #eaf3ec; --terracotta: #e28a61; --sand: #cbb98f;
-      --paper: #131f19; --surface: #1b2b21; --text: #eef2ea; --text-muted: #a9b8a4;
-      --border: #34463b; --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 26px rgba(0,0,0,.3); }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--text);
-    font-family: 'Plus Jakarta Sans', -apple-system, "Segoe UI", ui-sans-serif, Roboto, Helvetica, Arial, sans-serif;
-    font-variant-numeric: tabular-nums; line-height: 1.5; font-weight: 500;
-  }
-  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 22px 64px; }
-
-  .top-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
-  .eyebrow { text-transform: uppercase; letter-spacing: .09em; font-size: .72rem; color: var(--terracotta); font-weight: 700; }
-  h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 6px; color: var(--green-ink); text-wrap: balance; letter-spacing: -0.01em; }
-  .sub { color: var(--text-muted); font-size: .95rem; margin-bottom: 22px; max-width: 65ch; }
-
-  .refresh-btn {
-    font-family: inherit; font-size: .8rem; font-weight: 700; color: var(--green-ink);
-    background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
-    padding: 7px 16px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
-  }
-  .refresh-btn:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
-  .refresh-btn:disabled { opacity: .6; cursor: wait; }
-  .top-actions { display: flex; align-items: center; gap: 8px; }
-  .nav-link {
-    font-family: inherit; font-size: .8rem; font-weight: 700; color: var(--green-ink); text-decoration: none;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
-    padding: 7px 16px; display: inline-flex; align-items: center; gap: 6px;
-  }
-  .nav-link:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
-  .status-line { font-size: .78rem; color: var(--text-muted); margin-bottom: 18px; }
-
-  .controls { margin-bottom: 26px; }
-  .search-input {
-    width: 100%; font-family: inherit; font-size: .92rem; padding: 10px 14px; margin-bottom: 10px;
-    border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text);
-  }
-  .search-input:focus { outline: 2px solid var(--terracotta); outline-offset: 1px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
-  .chip {
-    font-family: inherit; border: 1px solid var(--border); background: var(--surface); color: var(--text);
-    padding: 6px 13px; border-radius: 100px; font-size: .8rem; cursor: pointer; white-space: nowrap;
-  }
-  .chip .n { opacity: .65; font-variant-numeric: tabular-nums; }
-  .chip[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--paper); font-weight: 700; }
-  .chip-clear { font-size: .8rem; color: var(--terracotta); font-weight: 700; cursor: pointer; background: none; border: none; font-family: inherit; padding: 6px 4px; }
-
-  .summary {
-    background: var(--green); color: var(--paper); border-radius: 18px;
-    padding: 22px 26px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
-    gap: 18px; margin-bottom: 34px; box-shadow: var(--shadow);
-  }
-  .summary .item .n { font-size: 1.6rem; font-weight: 800; display: block; letter-spacing: -0.01em; }
-  .summary .item .l { font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; font-weight: 600; }
-
-  section.group { margin-bottom: 40px; }
-  .group-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-  .group-head h2 { font-size: 1.15rem; font-weight: 800; color: var(--green-ink); margin: 0; }
-  .group-head .count { font-size: .8rem; color: var(--text-muted); font-weight: 600; }
-
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
-  .photo-wrap { position: relative; aspect-ratio: 4 / 3.2; overflow: hidden; background: var(--sand); }
-  .photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .price-badge { position: absolute; top: 10px; right: 10px; background: var(--surface); color: var(--green-ink); font-weight: 800; font-size: .82rem; padding: 5px 11px; border-radius: 100px; box-shadow: var(--shadow); }
-
-  .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-  .card h3 { margin: 0; font-size: 1.02rem; line-height: 1.3; color: var(--green-ink); font-weight: 700; text-wrap: balance; }
-  .macro-line { font-size: .78rem; color: var(--text-muted); }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { font-size: .68rem; padding: 3px 9px; border-radius: 100px; border: 1px solid var(--border); color: var(--text-muted); background: color-mix(in srgb, var(--sand) 25%, var(--surface)); font-weight: 600; }
-
-  details.postup { margin-top: auto; border-top: 1px dashed var(--border); padding-top: 10px; }
-  details.postup summary { cursor: pointer; font-weight: 700; font-size: .82rem; color: var(--terracotta); list-style: none; display: flex; align-items: center; gap: 6px; user-select: none; }
-  details.postup summary::-webkit-details-marker { display: none; }
-  details.postup summary::before { content: "▸"; display: inline-block; transition: transform .15s ease; font-size: .7rem; }
-  details.postup[open] summary::before { transform: rotate(90deg); }
-  details.postup ol { margin: 10px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
-  details.postup ol li::marker { color: var(--terracotta); font-weight: 700; }
-
-  .empty-state, .error-state { padding: 60px 20px; text-align: center; color: var(--text-muted); }
-  .error-state { color: var(--terracotta); }
-  .skeleton { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; height: 320px; animation: pulse 1.4s ease-in-out infinite; }
-  @keyframes pulse { 0%, 100% { opacity: .6; } 50% { opacity: .3; } }
-
-  footer.cta { margin-top: 36px; padding: 18px 22px; border: 1px dashed var(--border); border-radius: 14px; background: var(--surface); font-size: .85rem; color: var(--text-muted); }
-  footer.cta b { color: var(--green-ink); }
-  footer.cta code { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); padding: 1px 6px; border-radius: 4px; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
@@ -137,6 +41,11 @@
   </footer>
 </div>
 
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
 <script>
 const OWNER = "TheVilo";
 const REPO = "sporacek";
@@ -151,6 +60,29 @@ const TYP_TAGS = new Set(["večera", "obed", "šalát", "polievka", "jednohrnec"
 function primaryTyp(tags) {
   for (const t of TYP_ORDER) if (tags.includes(t)) return t;
   return "iné";
+}
+
+function openLightbox(src, alt) {
+  const lb = document.getElementById("lightbox");
+  const img = document.getElementById("lightboxImg");
+  img.src = src;
+  img.alt = alt || "";
+  lb.classList.add("open");
+}
+function closeLightbox(e) {
+  if (e) e.stopPropagation();
+  document.getElementById("lightbox").classList.remove("open");
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+function copyPrompt(btn, slug) {
+  const text = allRecipes.find(r => r.slug === slug)?.foto_prompt || "";
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.textContent;
+    btn.textContent = "✓ Skopírované";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1500);
+  });
 }
 
 function parseMarkdownRecipe(slug, text) {
@@ -178,7 +110,10 @@ function parseMarkdownRecipe(slug, text) {
     tagy = [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]);
   }
 
-  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy };
+  const promptM = text.match(/## Foto prompt\s*\n"?([^\n]+?)"?\s*\n/);
+  const foto_prompt = promptM ? promptM[1].trim() : "";
+
+  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt };
 }
 
 function parseYamlRecipe(slug, text) {
@@ -209,7 +144,10 @@ function parseYamlRecipe(slug, text) {
     }
   }
 
-  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy };
+  const promptM = fm.match(/foto_prompt:\s*"?([^\n]+?)"?\s*\n/);
+  const foto_prompt = promptM ? promptM[1].trim() : "";
+
+  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt };
 }
 
 function cardHtml(r) {
@@ -224,11 +162,20 @@ function cardHtml(r) {
   const macro = macroParts.join(" · ");
   const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€/porcia` : "";
   const photoUrl = `${RAW_BASE}/fotky/${encodeURIComponent(r.slug)}.jpg`;
+  const promptHtml = r.foto_prompt ? `
+    <details class="prompt-box">
+      <summary>✏️ Foto prompt</summary>
+      <div class="prompt-box-inner">
+        <div class="prompt-text">${escapeHtml(r.foto_prompt)}</div>
+        <button class="copy-btn" onclick="copyPrompt(this, '${r.slug.replace(/'/g, "\\'")}')">📋 Kopírovať prompt</button>
+        <div class="prompt-hint">Nepáči sa foto? Skopíruj prompt, pošli mi ho v chate s poznámkou čo zmeniť.</div>
+      </div>
+    </details>` : "";
 
   return `
     <div class="card">
       <div class="photo-wrap">
-        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" />
+        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightbox('${photoUrl}', '${escapeHtml(r.nazov).replace(/'/g, "\\'")}')" />
         ${priceStr ? `<div class="price-badge">${priceStr}</div>` : ""}
       </div>
       <div class="card-body">
@@ -239,6 +186,7 @@ function cardHtml(r) {
           <summary>Postup (${r.postup.length} krokov)</summary>
           <ol>${stepsHtml}</ol>
         </details>
+        ${promptHtml}
       </div>
     </div>`;
 }
