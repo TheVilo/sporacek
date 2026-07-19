@@ -3,7 +3,6 @@
 **slug:** plnena-cuketa-mlete-maso  
 **porcie:** 2  
 **čas prípravy:** 45 minút  
-**cena za porciu:** 0,94 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/plnena-cuketa-mlete-maso.jpg  
 
@@ -26,19 +25,17 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Cuketa | 1 ks (väčšia) | 0,49 € |
-| Mleté bravčové mäso | 200 g | 0,66 € |
-| Ryža | 50 g | 0,07 € |
-| Paradajky | 100 g | 0,20 € |
-| Cibuľa | ½ ks | zásoby |
-| Cesnak | 1 strúčik | zásoby |
-| Syr | 60 g | 0,45 € |
-| Olivový olej | 1 PL | zásoby |
-| Soľ, korenie, oregano | — | zásoby |
-
-**Celkom: 1,87 € → 0,94 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Cuketa | 1 ks (väčšia) |
+| Mleté bravčové mäso | 200 g |
+| Ryža | 50 g |
+| Paradajky | 100 g |
+| Cibuľa | ½ ks |
+| Cesnak | 1 strúčik |
+| Syr | 60 g |
+| Olivový olej | 1 PL |
+| Soľ, korenie, oregano | — |
 
 ---
 
@@ -66,4 +63,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#bravčové` `#sýte` `#do-rúry` `#lacné` `#akcia-lidl`
+`#večera` `#bravčové` `#sýte` `#do-rúry` `#akcia-lidl`

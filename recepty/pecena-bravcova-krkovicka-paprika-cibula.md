@@ -3,7 +3,6 @@
 **slug:** pecena-bravcova-krkovicka-paprika-cibula
 **porcie:** 2
 **čas prípravy:** 70 minút (z toho 20 min marinovanie)
-**cena za porciu:** 0,80 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/pecena-bravcova-krkovicka-paprika-cibula.jpg  
 
@@ -26,20 +25,18 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Bravčová krkovička | 300 g | 0,90 € |
-| Paprika | 200 g | 0,44 € |
-| Cibuľa | 150 g | 0,03 € |
-| Zemiaky | 300 g | 0,21 € |
-| Cesnak | 2 strúčiky | zásoby |
-| Sladká paprika | 1 ČL | zásoby |
-| Mletá rasca | ½ ČL | zásoby |
-| Olivový olej | 2 PL | zásoby |
-| Petržlenová vňať | pár vetvičiek | zásoby |
-| Soľ, čierne korenie, bobkový list | — | zásoby |
-
-**Celkom: 1,58 € → 0,79 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Bravčová krkovička | 300 g |
+| Paprika | 200 g |
+| Cibuľa | 150 g |
+| Zemiaky | 300 g |
+| Cesnak | 2 strúčiky |
+| Sladká paprika | 1 ČL |
+| Mletá rasca | ½ ČL |
+| Olivový olej | 2 PL |
+| Petržlenová vňať | pár vetvičiek |
+| Soľ, čierne korenie, bobkový list | — |
 
 ---
 
@@ -65,4 +62,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#bravčové` `#do-rúry` `#jednohrnec` `#sýte` `#lacné` `#akcia-lidl`
+`#večera` `#bravčové` `#do-rúry` `#jednohrnec` `#sýte` `#akcia-lidl`

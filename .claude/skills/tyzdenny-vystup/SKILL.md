@@ -23,10 +23,11 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
    - prednostne použi existujúce recepty z databázy, ak sedia na akciu
    - nové recepty vytvor len ak sa v databáze nenájde nič vhodné
 4. **Prepočítaj:**
-   - cenu za porciu pre každé jedlo
+   - cenu za porciu pre každé jedlo — recept sám cenu neobsahuje (viď CLAUDE.md), takže ju vždy dopočítaš teraz: vezmi jeho suroviny + množstvá a oceň ich podľa tohto letáku (akciová cena, ak je surovina v akcii; bežná odhadovaná cena, ak nie je)
    - kompletný nákupný zoznam s cenami
    - celkovú cenu nákupu
    - úsporu oproti bežným cenám
+   - vypočítanú cenu za porciu zapíš **len do `tydne/<týždeň>/` výstupu** (`data.json` pole `recepty[].cena`, `OVERVIEW.md`, `NAKUPNY-ZOZNAM.md`, `SOCIAL-PLAN.md`) — **nikdy späť do `recepty/<slug>.md`**
 5. **Ku každému novému receptu daj `foto_prompt`** (šablóna nižšie) a vygeneruj fotku (`.claude/skills/generovanie-fotiek/SKILL.md`). Existujúce recepty nefotografuj znova.
 6. **Priprav texty do Stories** (názov jedla + cena za porciu) a feed posty.
 7. **Zapíš do `tydne/<rok>-W<týždeň>-<obchod>/`:**
@@ -51,7 +52,7 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
     {"nazov": "Marhule", "stara_cena": 4.49, "akciova_cena": 1.99, "zlava": "-55%", "kategoria": "Ovocie a zelenina", "flag": ""}
   ],
   "recepty": [
-    {"den": "Pondelok 13. 7.", "slug": "plnena-cuketa-mlete-maso"}
+    {"den": "Pondelok 13. 7.", "slug": "plnena-cuketa-mlete-maso", "cena": 0.94}
   ],
   "nakupny_zoznam": {
     "skupiny": [

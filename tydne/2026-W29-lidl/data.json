@@ -167,23 +167,28 @@
   "recepty": [
     {
       "den": "Pondelok 13. 7.",
-      "slug": "plnena-cuketa-mlete-maso"
+      "slug": "plnena-cuketa-mlete-maso",
+      "cena": 0.94
     },
     {
       "den": "Utorok 14. 7. ⚡",
-      "slug": "kuracie-rezne-kukurica-zemiaky"
+      "slug": "kuracie-rezne-kukurica-zemiaky",
+      "cena": 0.64
     },
     {
       "den": "Streda 15. 7.",
-      "slug": "bravčove-kare-marhuľova-glazura"
+      "slug": "bravčove-kare-marhuľova-glazura",
+      "cena": 0.95
     },
     {
       "den": "Štvrtok 16. 7.",
-      "slug": "kremova-dynova-polievka"
+      "slug": "kremova-dynova-polievka",
+      "cena": 0.73
     },
     {
       "den": "Piatok 17. 7.",
-      "slug": "letny-salat-broskyne-mozzarella"
+      "slug": "letny-salat-broskyne-mozzarella",
+      "cena": 0.56
     }
   ],
   "nakupny_zoznam": {

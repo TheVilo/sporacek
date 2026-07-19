@@ -3,7 +3,6 @@
 **slug:** peceny-losos-citron-brokolica
 **porcie:** 2
 **čas prípravy:** 30 minút
-**cena za porciu:** 2,71 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/peceny-losos-citron-brokolica.jpg  
 
@@ -26,18 +25,16 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Losos | 300 g | 4,50 € |
-| Zemiaky | 300 g | 0,21 € |
-| Brokolica | 200 g | 0,40 € |
-| Citrón | ½ ks | 0,20 € |
-| Cesnak | 1 strúčik | zásoby |
-| Maslo | 15 g | 0,10 € |
-| Olivový olej | 1 PL | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 5,41 € → 2,71 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Losos | 300 g |
+| Zemiaky | 300 g |
+| Brokolica | 200 g |
+| Citrón | ½ ks |
+| Cesnak | 1 strúčik |
+| Maslo | 15 g |
+| Olivový olej | 1 PL |
+| Soľ, čierne korenie | — |
 
 ---
 
@@ -64,4 +61,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#ryba` `#do-rúry` `#ľahké` `#vysoký-proteín` `#stredné`
+`#večera` `#ryba` `#do-rúry` `#ľahké` `#vysoký-proteín`

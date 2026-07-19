@@ -3,7 +3,6 @@
 **slug:** sosovicove-kari-ryza
 **porcie:** 2
 **čas prípravy:** 30 minút
-**cena za porciu:** 1,03 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/sosovicove-kari-ryza.jpg  
 
@@ -26,22 +25,20 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Červená šošovica | 200 g | 0,55 € |
-| Ryža | 150 g | 0,20 € |
-| Cibuľa | 100 g | 0,10 € |
-| Konzervované paradajky | 200 g | 0,50 € |
-| Kokosové mlieko | 200 ml | 0,60 € |
-| Cesnak | 2 strúčiky | zásoby |
-| Zázvor | kúsok (~1 cm) | 0,10 € |
-| Kari korenie | 1 ČL | zásoby |
-| Mletá rasca | ½ ČL | zásoby |
-| Čerstvý koriander | pár vetvičiek | zásoby |
-| Olivový olej | 1 PL | zásoby |
-| Soľ | — | zásoby |
-
-**Celkom: 2,05 € → 1,03 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Červená šošovica | 200 g |
+| Ryža | 150 g |
+| Cibuľa | 100 g |
+| Konzervované paradajky | 200 g |
+| Kokosové mlieko | 200 ml |
+| Cesnak | 2 strúčiky |
+| Zázvor | kúsok (~1 cm) |
+| Kari korenie | 1 ČL |
+| Mletá rasca | ½ ČL |
+| Čerstvý koriander | pár vetvičiek |
+| Olivový olej | 1 PL |
+| Soľ | — |
 
 ---
 
@@ -68,4 +65,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#obed` `#bezmäsité` `#strukoviny` `#vegetariánske` `#lacné`
+`#večera` `#obed` `#bezmäsité` `#strukoviny` `#vegetariánske`

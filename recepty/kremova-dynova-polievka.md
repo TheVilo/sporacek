@@ -3,7 +3,6 @@
 **slug:** kremova-dynova-polievka  
 **porcie:** 2  
 **čas prípravy:** 40 minút  
-**cena za porciu:** 0,73 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/kremova-dynova-polievka.jpg  
 
@@ -26,17 +25,15 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Červená dyňa bezjadierková | 500 g | 0,90 € |
-| Smotana na šľahanie | 60 ml | 0,31 € |
-| Cibuľa | ½ ks | zásoby |
-| Zázvor | kúsok (~1 cm) | 0,10 € |
-| Tekvicové semienka | 1 PL | 0,15 € |
-| Olivový olej | 1 PL | zásoby |
-| Soľ, kurkuma | — | zásoby |
-
-**Celkom: 1,46 € → 0,73 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Červená dyňa bezjadierková | 500 g |
+| Smotana na šľahanie | 60 ml |
+| Cibuľa | ½ ks |
+| Zázvor | kúsok (~1 cm) |
+| Tekvicové semienka | 1 PL |
+| Olivový olej | 1 PL |
+| Soľ, kurkuma | — |
 
 ---
 
@@ -63,4 +60,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#polievka` `#bezmäsité` `#vegetariánske` `#ľahké` `#lacné` `#akcia-lidl`
+`#polievka` `#bezmäsité` `#vegetariánske` `#ľahké` `#akcia-lidl`

@@ -3,7 +3,6 @@
 **slug:** tuniakovy-salat-zemiaky-vajce
 **porcie:** 2
 **čas prípravy:** 25 minút
-**cena za porciu:** 1,73 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/tuniakovy-salat-zemiaky-vajce.jpg  
 
@@ -26,19 +25,17 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Tuniak v konzerve | 195 g (3×65 g) | 2,49 € |
-| Zemiaky | 250 g | 0,17 € |
-| Vajcia | 2 ks | 0,40 € |
-| Paprika | 150 g | 0,33 € |
-| Červená cibuľa | ¼ ks | zásoby |
-| Horčica | 1 ČL | zásoby |
-| Olivový olej | 2 PL | zásoby |
-| Balzamikový ocot | 1 ČL | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 3,45 € → 1,73 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Tuniak v konzerve | 195 g (3×65 g) |
+| Zemiaky | 250 g |
+| Vajcia | 2 ks |
+| Paprika | 150 g |
+| Červená cibuľa | ¼ ks |
+| Horčica | 1 ČL |
+| Olivový olej | 2 PL |
+| Balzamikový ocot | 1 ČL |
+| Soľ, čierne korenie | — |
 
 ---
 
@@ -66,4 +63,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#obed` `#ryba` `#do-20-minút` `#vysoký-proteín` `#stredné` `#akcia-lidl`
+`#obed` `#ryba` `#do-20-minút` `#vysoký-proteín` `#akcia-lidl`

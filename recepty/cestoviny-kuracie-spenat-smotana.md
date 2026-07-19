@@ -3,7 +3,6 @@
 **slug:** cestoviny-kuracie-spenat-smotana
 **porcie:** 2
 **čas prípravy:** 30 minút
-**cena za porciu:** 1,75 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/cestoviny-kuracie-spenat-smotana.jpg  
 
@@ -26,21 +25,19 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Kuracie prsia | 300 g | 1,80 € |
-| Cestoviny | 200 g | 0,30 € |
-| Špenát | 150 g | 0,38 € |
-| Smotana na varenie | 150 ml | 0,39 € |
-| Parmezán | 30 g | 0,45 € |
-| Sušené paradajky | 40 g | 0,35 € |
-| Cibuľa | ¼ ks | zásoby |
-| Cesnak | 2 strúčiky | zásoby |
-| Čili vločky | štipka | zásoby |
-| Olivový olej | 1 PL | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 3,50 € → 1,75 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Kuracie prsia | 300 g |
+| Cestoviny | 200 g |
+| Špenát | 150 g |
+| Smotana na varenie | 150 ml |
+| Parmezán | 30 g |
+| Sušené paradajky | 40 g |
+| Cibuľa | ¼ ks |
+| Cesnak | 2 strúčiky |
+| Čili vločky | štipka |
+| Olivový olej | 1 PL |
+| Soľ, čierne korenie | — |
 
 ---
 
@@ -68,4 +65,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#obed` `#kura` `#vysoký-proteín` `#sýte` `#stredné`
+`#večera` `#obed` `#kura` `#vysoký-proteín` `#sýte`

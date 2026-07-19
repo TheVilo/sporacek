@@ -140,8 +140,6 @@ function copyLightboxPrompt(btn) {
 function parseMarkdownRecipe(slug, text) {
   const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
   const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
-  const cenaM = text.match(/\*\*cena za porciu:\*\*\s*([\d,]+)\s*€/);
-  const cena = cenaM ? parseFloat(cenaM[1].replace(",", ".")) : null;
   const kcal = (text.match(/Energia\s*\|\s*~?(\d+)\s*kcal/) || [, null])[1];
   const bielkoviny = (text.match(/Bielkoviny\s*\|\s*(\d+)\s*g/) || [, null])[1];
   const sacharidy = (text.match(/Sacharidy\s*\|\s*(\d+)\s*g/) || [, null])[1];
@@ -166,7 +164,7 @@ function parseMarkdownRecipe(slug, text) {
   const foto_prompt = promptM ? promptM[1].trim() : "";
   const suroviny = parseSuroviny(text);
 
-  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
+  return { slug, nazov, cas, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
 }
 
 function parseSuroviny(text) {
@@ -174,19 +172,16 @@ function parseSuroviny(text) {
   if (!secM) return [];
   const cellsOf = (line) => line.slice(1, -1).split("|").map(c => c.trim());
   const lines = secM[1].split("\n").map(l => l.trim()).filter(l => l.startsWith("|") && l.endsWith("|"));
-  if (lines.length < 3) return [];
-  const header = cellsOf(lines[0]);
+  if (lines.length < 2) return [];
   return lines.slice(2).map(cellsOf)
     .filter(c => c[0])
-    .map(c => ({ nazov: c[0], mnozstvo: c[1] || "", extra: c[2] || "", extraLabel: header[2] || "" }));
+    .map(c => ({ nazov: c[0], mnozstvo: c[1] || "" }));
 }
 
 function parseYamlRecipe(slug, text) {
   const fmM = text.match(/^---\n([\s\S]+?)\n---/);
   const fm = fmM ? fmM[1] : "";
   const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
-  const cenaM = fm.match(/cena_za_porciu:\s*([\d.]+)/);
-  const cena = cenaM ? parseFloat(cenaM[1]) : null;
   const kcal = (fm.match(/kcal:\s*(\d+)/) || [, null])[1];
   const bielkoviny = (fm.match(/bielkoviny_g:\s*(\d+)/) || [, null])[1];
   const sacharidy = (fm.match(/sacharidy_g:\s*(\d+)/) || [, null])[1];
@@ -213,36 +208,26 @@ function parseYamlRecipe(slug, text) {
   const foto_prompt = promptM ? promptM[1].trim() : "";
   const suroviny = parseSuroviny(text);
 
-  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
-}
-
-function ingredientRightHtml(s) {
-  const extra = (s.extra || "").trim();
-  const qty = escapeHtml(s.mnozstvo);
-  if (!extra || extra === "zásoby" || extra.toLowerCase() === "nie") return qty;
-  if (extra.toLowerCase() === "áno") return `${qty} <span class="ingr-badge">🏷️ akcia</span>`;
-  return `${qty} <span class="ingr-price">${escapeHtml(extra)}</span>`;
+  return { slug, nazov, cas: "", kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
 }
 
 function cardHtml(r) {
   const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t) && t !== "akcia-lidl");
   const tagsHtml = nonTypTags.map(t => `<span class="tag">#${t}</span>`).join("");
   const stepsHtml = r.postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
-  const ingredientsHtml = r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${ingredientRightHtml(s)}</span></li>`).join("");
+  const ingredientsHtml = r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${escapeHtml(s.mnozstvo)}</span></li>`).join("");
   const macroParts = [];
   if (r.kcal) macroParts.push(`${r.kcal} kcal`);
   if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
   if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
   if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
   const macro = macroParts.join(" · ");
-  const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€/porcia` : "";
   const photoUrl = photoUrlFor(r.slug);
 
   return `
     <div class="card">
       <div class="photo-wrap">
         <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightboxForRecipe('${r.slug.replace(/'/g, "\\'")}')" />
-        ${priceStr ? `<div class="price-badge">${priceStr}</div>` : ""}
       </div>
       <div class="card-body">
         <h3>${escapeHtml(r.nazov)}</h3>
@@ -372,9 +357,6 @@ function renderRecipes(recipes, totalCount) {
     return;
   }
 
-  const prices = recipes.map(r => r.cena).filter(c => c != null);
-  const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
-  const under1 = prices.filter(p => p < 1).length;
   const filterActive = recipes.length !== totalCount;
 
   const byGroup = {};
@@ -384,9 +366,6 @@ function renderRecipes(recipes, totalCount) {
   const summaryHtml = `
     <div class="summary">
       <div class="item"><span class="n">${recipes.length}${filterActive ? ` / ${totalCount}` : ""}</span><span class="l">${filterActive ? "Vyhovuje filtru" : "Receptov v databáze"}</span></div>
-      <div class="item"><span class="n">${avg.toFixed(2)}&nbsp;€</span><span class="l">Priemerná cena/porcia</span></div>
-      <div class="item"><span class="n">${Math.min(...prices).toFixed(2)}–${Math.max(...prices).toFixed(2)}&nbsp;€</span><span class="l">Rozpätie cien</span></div>
-      <div class="item"><span class="n">${under1}/${recipes.length}</span><span class="l">Pod 1&nbsp;€/porcia</span></div>
     </div>`;
 
   const groupsHtml = groupOrder.map(typ => `

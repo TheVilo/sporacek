@@ -3,7 +3,6 @@
 **slug:** cicerova-polievka-zelenina
 **porcie:** 2
 **čas prípravy:** 30 minút
-**cena za porciu:** 1,05 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/cicerova-polievka-zelenina.jpg  
 
@@ -26,24 +25,22 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Cícer | 240 g (1 konzerva) | 1,00 € |
-| Mrkva | 150 g | 0,15 € |
-| Zeler | 100 g | 0,15 € |
-| Cibuľa | 100 g | 0,10 € |
-| Konzervované paradajky | 200 g | 0,50 € |
-| Paradajkový pretlak | 1 PL | 0,10 € |
-| Cesnak | 2 strúčiky | zásoby |
-| Mletá rasca | ½ ČL | zásoby |
-| Údená paprika | 1 ČL | zásoby |
-| Bujón (kocka) | 1 ks | zásoby |
-| Citrón | ½ ks | zásoby |
-| Petržlenová vňať | pár vetvičiek | zásoby |
-| Olivový olej | 1 PL | zásoby |
-| Soľ | — | zásoby |
-
-**Celkom: 2,10 € → 1,05 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Cícer | 240 g (1 konzerva) |
+| Mrkva | 150 g |
+| Zeler | 100 g |
+| Cibuľa | 100 g |
+| Konzervované paradajky | 200 g |
+| Paradajkový pretlak | 1 PL |
+| Cesnak | 2 strúčiky |
+| Mletá rasca | ½ ČL |
+| Údená paprika | 1 ČL |
+| Bujón (kocka) | 1 ks |
+| Citrón | ½ ks |
+| Petržlenová vňať | pár vetvičiek |
+| Olivový olej | 1 PL |
+| Soľ | — |
 
 ---
 
@@ -70,4 +67,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#polievka` `#strukoviny` `#vegetariánske` `#ľahké` `#lacné`
+`#polievka` `#strukoviny` `#vegetariánske` `#ľahké`

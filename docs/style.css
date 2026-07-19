@@ -83,7 +83,6 @@ section.group { margin-bottom: 40px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
 .card .photo-wrap { aspect-ratio: 4 / 3.2; }
-.price-badge { position: absolute; top: 10px; right: 10px; background: var(--surface); color: var(--green-ink); font-weight: 800; font-size: .82rem; padding: 5px 11px; border-radius: 100px; box-shadow: var(--shadow); }
 .card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .card h3 { margin: 0; font-size: 1.02rem; line-height: 1.3; color: var(--green-ink); font-weight: 700; text-wrap: balance; }
 .macro-line { font-size: .78rem; color: var(--text-muted); }
@@ -121,8 +120,6 @@ details.postup ul.ingredients li { display: flex; justify-content: space-between
 details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight: 700; }
 .ingr-name { flex: 1; }
 .ingr-qty { color: var(--text-muted); white-space: nowrap; }
-.ingr-price { color: var(--terracotta); }
-.ingr-badge { font-size: .84rem; }
 
 /* lightbox - Facebook-style: photo left, info panel right */
 .lightbox {

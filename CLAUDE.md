@@ -66,13 +66,13 @@ Používaj len tieto skupiny, nevymýšľaj nové hodnoty:
 - **surovina:** kura, bravčové, hovädzie, ryba, bezmäsité, strukoviny
 - **výživa:** vegetariánske, vysoký-proteín, ľahké, sýte
 - **náročnosť:** do-20-minút, do-rúry, jednohrnec
-- **cena:** lacné (pod 1 €/porcia), stredné
 
-Recept má viac tagov naraz.
+Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri nižšie.)
 
-### cena za porciu
-- Je to **snapshot** — počítaná z cien v danom týždni.
-- Trvalé sú suroviny a množstvá; cenu vieme kedykoľvek prepočítať podľa aktuálneho letáku.
+### recept nikdy neobsahuje cenu
+- Recept má **len suroviny a množstvá**, nikdy cenu (ani za surovinu, ani za porciu, ani "Celkom"). Cena akejkoľvek suroviny sa mení každý týždeň — keby bola napísaná v recepte, zastarala by hneď a niekto by ju musel ručne opravovať naprieč desiatkami receptov.
+- Cena sa počíta **až v momente použitia** — pri spracovaní týždenného letáku (`.claude/skills/tyzdenny-vystup/SKILL.md`, tam ide do `tydne/<týždeň>/`) alebo pri akomkoľvek inom custom požiadavke ("Lidl, talianske recepty pre 2 na 2 dni, len raňajky a večere") — presne to, čo neskôr bude robiť appka automaticky.
+- Recepty samotné (`recepty/`) sú tak **navždy nezastarateľná databáza**: suroviny + množstvá + postup + fotka. Ničím časovo podmieneným.
 
 ### nutričné hodnoty
 - **Odhad**, nie lekársky presné údaje. Vždy uvádzať ako približné.
@@ -109,7 +109,7 @@ Recept má viac tagov naraz.
 
 **Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto dve stránky v `docs/`:
 
-1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, cena, tagy, postup), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov.
+1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, suroviny, tagy, postup — bez ceny, tá sa počíta len na úrovni týždňa), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov.
    **URL:** https://thevilo.github.io/sporacek/
 2. **`docs/tyzden.html` — týždenný "social" výstup.** Naviazaný na *konkrétny* leták/obchod/týždeň. Číta `tydne/<rok>-W<týždeň>-<obchod>/data.json` a k receptom naživo dotiahne fotku/postup z `recepty/`. Má prepínač týždňov/obchodov hore (chip pre každý priečinok v `tydne/`).
    **URL:** https://thevilo.github.io/sporacek/tyzden.html

@@ -3,7 +3,6 @@
 **slug:** hovedzi-gulas-zemiaky-mrkva
 **porcie:** 2
 **čas prípravy:** 90 minút
-**cena za porciu:** 2,13 €/osoba
 **týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/hovedzi-gulas-zemiaky-mrkva.jpg  
 
@@ -26,23 +25,21 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Hovädzie mäso | 400 g | 3,60 € |
-| Cibuľa | 200 g | 0,20 € |
-| Zemiaky | 300 g | 0,21 € |
-| Mrkva | 150 g | 0,15 € |
-| Cesnak | 2 strúčiky | zásoby |
-| Sladká paprika | 1 PL | zásoby |
-| Mletá rasca | ½ ČL | zásoby |
-| Paradajkový pretlak | 1 PL | 0,10 € |
-| Bobkový list | 2 ks | zásoby |
-| Bujón (kocka) | 1 ks | zásoby |
-| Petržlenová vňať | pár vetvičiek | zásoby |
-| Olivový olej | 2 PL | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 4,26 € → 2,13 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Hovädzie mäso | 400 g |
+| Cibuľa | 200 g |
+| Zemiaky | 300 g |
+| Mrkva | 150 g |
+| Cesnak | 2 strúčiky |
+| Sladká paprika | 1 PL |
+| Mletá rasca | ½ ČL |
+| Paradajkový pretlak | 1 PL |
+| Bobkový list | 2 ks |
+| Bujón (kocka) | 1 ks |
+| Petržlenová vňať | pár vetvičiek |
+| Olivový olej | 2 PL |
+| Soľ, čierne korenie | — |
 
 ---
 
@@ -68,4 +65,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#hovädzie` `#jednohrnec` `#sýte` `#stredné`
+`#večera` `#hovädzie` `#jednohrnec` `#sýte`

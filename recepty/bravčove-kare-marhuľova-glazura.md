@@ -3,7 +3,6 @@
 **slug:** bravčove-kare-marhuľova-glazura  
 **porcie:** 2  
 **čas prípravy:** 35 minút  
-**cena za porciu:** 0,95 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/bravčove-kare-marhuľova-glazura.jpg  
 
@@ -26,20 +25,18 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Bravčové karé (bez kosti) | 2 kotlety (~320 g) | 0,95 € |
-| Marhule | 250 g | 0,50 € |
-| Cibuľa | 1/2 ks | zásoby |
-| Zázvor | kúsok (~1 cm) | 0,10 € |
-| Ryža | 150 g | 0,25 € |
-| Horčičné semienko | 1/2 ČL | zásoby |
-| Ocot | 2 PL | zásoby |
-| Cukor trstinový | 1 PL | zásoby |
-| Olivový olej | 1 PL | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 1,90 € → 0,95 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Bravčové karé (bez kosti) | 2 kotlety (~320 g) |
+| Marhule | 250 g |
+| Cibuľa | 1/2 ks |
+| Zázvor | kúsok (~1 cm) |
+| Ryža | 150 g |
+| Horčičné semienko | 1/2 ČL |
+| Ocot | 2 PL |
+| Cukor trstinový | 1 PL |
+| Olivový olej | 1 PL |
+| Soľ, čierne korenie | — |
 
 ---
 

@@ -140,8 +140,6 @@ function copyLightboxPrompt(btn) {
 function parseMarkdownRecipe(slug, text) {
   const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
   const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
-  const cenaM = text.match(/\*\*cena za porciu:\*\*\s*([\d,]+)\s*€/);
-  const cena = cenaM ? parseFloat(cenaM[1].replace(",", ".")) : null;
   const kcal = (text.match(/Energia\s*\|\s*~?(\d+)\s*kcal/) || [, null])[1];
   const bielkoviny = (text.match(/Bielkoviny\s*\|\s*(\d+)\s*g/) || [, null])[1];
   const sacharidy = (text.match(/Sacharidy\s*\|\s*(\d+)\s*g/) || [, null])[1];
@@ -158,7 +156,7 @@ function parseMarkdownRecipe(slug, text) {
   const promptM = text.match(/## Foto prompt\s*\n"?([^\n]+?)"?\s*\n/);
   const foto_prompt = promptM ? promptM[1].trim() : "";
   const suroviny = parseSuroviny(text);
-  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
+  return { slug, nazov, cas, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
 }
 
 function parseSuroviny(text) {
@@ -166,19 +164,16 @@ function parseSuroviny(text) {
   if (!secM) return [];
   const cellsOf = (line) => line.slice(1, -1).split("|").map(c => c.trim());
   const lines = secM[1].split("\n").map(l => l.trim()).filter(l => l.startsWith("|") && l.endsWith("|"));
-  if (lines.length < 3) return [];
-  const header = cellsOf(lines[0]);
+  if (lines.length < 2) return [];
   return lines.slice(2).map(cellsOf)
     .filter(c => c[0])
-    .map(c => ({ nazov: c[0], mnozstvo: c[1] || "", extra: c[2] || "", extraLabel: header[2] || "" }));
+    .map(c => ({ nazov: c[0], mnozstvo: c[1] || "" }));
 }
 
 function parseYamlRecipe(slug, text) {
   const fmM = text.match(/^---\n([\s\S]+?)\n---/);
   const fm = fmM ? fmM[1] : "";
   const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
-  const cenaM = fm.match(/cena_za_porciu:\s*([\d.]+)/);
-  const cena = cenaM ? parseFloat(cenaM[1]) : null;
   const kcal = (fm.match(/kcal:\s*(\d+)/) || [, null])[1];
   const bielkoviny = (fm.match(/bielkoviny_g:\s*(\d+)/) || [, null])[1];
   const sacharidy = (fm.match(/sacharidy_g:\s*(\d+)/) || [, null])[1];
@@ -197,7 +192,7 @@ function parseYamlRecipe(slug, text) {
   const promptM = fm.match(/foto_prompt:\s*"?([^\n]+?)"?\s*\n/);
   const foto_prompt = promptM ? promptM[1].trim() : "";
   const suroviny = parseSuroviny(text);
-  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
+  return { slug, nazov, cas: "", kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
 }
 
 async function fetchRecipe(slug) {
@@ -284,14 +279,6 @@ async function selectWeek(folder) {
   }
 }
 
-function ingredientRightHtml(s) {
-  const extra = (s.extra || "").trim();
-  const qty = escapeHtml(s.mnozstvo);
-  if (!extra || extra === "zásoby" || extra.toLowerCase() === "nie") return qty;
-  if (extra.toLowerCase() === "áno") return `${qty} <span class="ingr-badge">🏷️ akcia</span>`;
-  return `${qty} <span class="ingr-price">${escapeHtml(extra)}</span>`;
-}
-
 function mealCardHtml(m) {
   const r = m.recipe;
   if (!r) return `<div class="meal"><div class="meal-body"><div class="meal-day">${escapeHtml(m.den)}</div><h3>${escapeHtml(m.slug)} (recept sa nenašiel)</h3></div></div>`;
@@ -301,7 +288,7 @@ function mealCardHtml(m) {
   if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
   if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
   const photoUrl = photoUrlFor(r.slug);
-  const priceStr = r.cena != null ? `${r.cena.toFixed(2)}&nbsp;€<span> / porcia</span>` : "";
+  const priceStr = m.cena != null ? `${Number(m.cena).toFixed(2)}&nbsp;€<span> / porcia</span>` : "";
   const nonTypTags = r.tagy.filter(t => !["večera","obed","šalát","polievka","jednohrnec","akcia-lidl"].includes(t));
   return `
     <div class="meal">
@@ -314,7 +301,7 @@ function mealCardHtml(m) {
         <div class="tags">${nonTypTags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("")}</div>
         ${r.suroviny.length ? `<details class="postup">
           <summary>Suroviny (${r.suroviny.length})</summary>
-          <ul class="ingredients">${r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${ingredientRightHtml(s)}</span></li>`).join("")}</ul>
+          <ul class="ingredients">${r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${escapeHtml(s.mnozstvo)}</span></li>`).join("")}</ul>
         </details>` : ""}
         <details class="postup">
           <summary>Postup (${r.postup.length} krokov)</summary>

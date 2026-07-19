@@ -3,7 +3,6 @@
 **slug:** letny-salat-cucoriedky-feta
 **porcie:** 2
 **čas prípravy:** 20 minút
-**cena za porciu:** 1,55 €/osoba
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/letny-salat-cucoriedky-feta.jpg  
 
@@ -26,20 +25,18 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Špenát | 100 g | 0,70 € |
-| Čučoriedky | 125 g | 0,75 € |
-| Syr feta | 100 g | 1,10 € |
-| Červená cibuľa | ¼ ks | zásoby |
-| Vlašské orechy | 30 g | 0,30 € |
-| Med | 2 ČL | zásoby |
-| Citrón | ½ ks | zásoby |
-| Horčica | ½ ČL | zásoby |
-| Olivový olej | 2 PL | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 3,10 € → 1,55 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Špenát | 100 g |
+| Čučoriedky | 125 g |
+| Syr feta | 100 g |
+| Červená cibuľa | ¼ ks |
+| Vlašské orechy | 30 g |
+| Med | 2 ČL |
+| Citrón | ½ ks |
+| Horčica | ½ ČL |
+| Olivový olej | 2 PL |
+| Soľ, čierne korenie | — |
 
 ---
 
@@ -65,4 +62,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#šalát` `#vegetariánske` `#ľahké` `#do-20-minút` `#stredné` `#akcia-lidl`
+`#šalát` `#vegetariánske` `#ľahké` `#do-20-minút` `#akcia-lidl`

@@ -3,7 +3,6 @@
 **slug:** kuracie-rezne-kukurica-zemiaky  
 **porcie:** 2  
 **čas prípravy:** 30 minút  
-**cena za porciu:** 0,65 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.  
 **foto_url:** fotky/kuracie-rezne-kukurica-zemiaky.jpg  
 **⚡ Kukurica platí LEN v utorok 14. 7.!**
@@ -27,17 +26,15 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Kuracie prsia | 300 g | 0,72 € |
-| Lahôdková kukurica | 1 ks | 0,19 € |
-| Zemiaky skoré | 200 g | 0,14 € |
-| Maslo | 35 g | 0,23 € |
-| Cesnak | 2 strúčiky | zásoby |
-| Tymian (alebo oregano) | pár vetvičiek/½ ČL | zásoby |
-| Soľ, korenie | — | zásoby |
-
-**Celkom: 1,28 € → 0,64 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Kuracie prsia | 300 g |
+| Lahôdková kukurica | 1 ks |
+| Zemiaky skoré | 200 g |
+| Maslo | 35 g |
+| Cesnak | 2 strúčiky |
+| Tymian (alebo oregano) | pár vetvičiek/½ ČL |
+| Soľ, korenie | — |
 
 ---
 
@@ -65,4 +62,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#kura` `#vysoký-proteín` `#sýte` `#lacné` `#akcia-lidl`
+`#večera` `#kura` `#vysoký-proteín` `#sýte` `#akcia-lidl`

@@ -3,7 +3,6 @@
 **slug:** letny-salat-broskyne-mozzarella  
 **porcie:** 2  
 **čas prípravy:** 20 minút  
-**cena za porciu:** 0,58 €/osoba  
 **týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/letny-salat-broskyne-mozzarella.jpg  
 
@@ -26,17 +25,15 @@ Formát 9:16 (Instagram Stories).
 
 ## Suroviny (pre 2 osoby)
 
-| Surovina | Množstvo | Cena |
-|---|---|---|
-| Broskyne | 2 ks (~250 g) | 0,33 € |
-| Mozzarella Classic | 245 g | 0,79 € |
-| Balzamikový ocot | 3 PL | zásoby |
-| Cukor kryštálový | 1 ČL | zásoby |
-| Olivový olej | 2 PL | zásoby |
-| Bazalka | pár lístkov | zásoby |
-| Soľ, čierne korenie | — | zásoby |
-
-**Celkom: 1,12 € → 0,56 €/osoba**
+| Surovina | Množstvo |
+|---|---|
+| Broskyne | 2 ks (~250 g) |
+| Mozzarella Classic | 245 g |
+| Balzamikový ocot | 3 PL |
+| Cukor kryštálový | 1 ČL |
+| Olivový olej | 2 PL |
+| Bazalka | pár lístkov |
+| Soľ, čierne korenie | — |
 
 ---
 
@@ -64,4 +61,4 @@ Tip: Redukciu si pokojne priprav aj vo väčšom množstve dopredu, vydrží v c
 ---
 
 ## Tagy
-`#šalát` `#bezmäsité` `#vegetariánske` `#ľahké` `#do-20-minút` `#lacné` `#akcia-lidl`
+`#šalát` `#bezmäsité` `#vegetariánske` `#ľahké` `#do-20-minút` `#akcia-lidl`
