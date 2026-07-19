@@ -1,0 +1,263 @@
+{
+  "obchod": "Kaufland",
+  "tyzden": "29/2026",
+  "platnost": "2026-07-16 - 2026-07-22",
+  "katalog_zvyraznenia": [
+    {
+      "nazov": "Losos fileta s kožou",
+      "stara_cena": 2.29,
+      "akciova_cena": 1.39,
+      "zlava": "-39%",
+      "kategoria": "Mäso a ryby",
+      "flag": "cena za 100 g"
+    },
+    {
+      "nazov": "Kuracie horné alebo dolné stehná",
+      "stara_cena": 3.99,
+      "akciova_cena": 2.55,
+      "zlava": "-36%",
+      "kategoria": "Mäso a ryby",
+      "flag": ""
+    },
+    {
+      "nazov": "Bravčová krkovička v marináde",
+      "stara_cena": 7.49,
+      "akciova_cena": 4.99,
+      "zlava": "-33%",
+      "kategoria": "Mäso a ryby",
+      "flag": "750 g balenie"
+    },
+    {
+      "nazov": "Paprika biela",
+      "stara_cena": 2.99,
+      "akciova_cena": 1.39,
+      "zlava": "-53%",
+      "kategoria": "Ovocie a zelenina",
+      "flag": ""
+    },
+    {
+      "nazov": "Zemiaky konzumné skoré",
+      "stara_cena": 4.99,
+      "akciova_cena": 3.19,
+      "zlava": "-36%",
+      "kategoria": "Ovocie a zelenina",
+      "flag": "5 kg balenie"
+    },
+    {
+      "nazov": "Cibuľa červená",
+      "stara_cena": 0.79,
+      "akciova_cena": 0.49,
+      "zlava": "-38%",
+      "kategoria": "Ovocie a zelenina",
+      "flag": "500 g balenie"
+    },
+    {
+      "nazov": "Citróny",
+      "stara_cena": 1.99,
+      "akciova_cena": 1.39,
+      "zlava": "-30%",
+      "kategoria": "Ovocie a zelenina",
+      "flag": "500 g balenie"
+    },
+    {
+      "nazov": "Šampiňóny krémové",
+      "stara_cena": 1.19,
+      "akciova_cena": 0.89,
+      "zlava": "-25%",
+      "kategoria": "Ovocie a zelenina",
+      "flag": "250 g balenie"
+    },
+    {
+      "nazov": "Vajcia M z podstielkového chovu",
+      "stara_cena": 3.19,
+      "akciova_cena": 1.69,
+      "zlava": "-47%",
+      "kategoria": "Mliečne a vajcia",
+      "flag": "10 ks"
+    },
+    {
+      "nazov": "Parmigiano Reggiano 32% strúhaný",
+      "stara_cena": 2.99,
+      "akciova_cena": 2.49,
+      "zlava": "-17%",
+      "kategoria": "Mliečne a vajcia",
+      "flag": "100 g"
+    },
+    {
+      "nazov": "Maslo 82%",
+      "stara_cena": 1.99,
+      "akciova_cena": 1.49,
+      "zlava": "-25%",
+      "kategoria": "Mliečne a vajcia",
+      "flag": "250 g"
+    },
+    {
+      "nazov": "Tuniak filety v olivovom oleji",
+      "stara_cena": 3.29,
+      "akciova_cena": 2.39,
+      "zlava": "-27%",
+      "kategoria": "Trvanlivé a základ",
+      "flag": "3×70 g"
+    },
+    {
+      "nazov": "Calrose ryža",
+      "stara_cena": 2.69,
+      "akciova_cena": 1.89,
+      "zlava": "-30%",
+      "kategoria": "Trvanlivé a základ",
+      "flag": "1 kg"
+    },
+    {
+      "nazov": "Olivový olej extra panenský",
+      "stara_cena": 11.79,
+      "akciova_cena": 7.69,
+      "zlava": "-35%",
+      "kategoria": "Trvanlivé a základ",
+      "flag": "1 l"
+    }
+  ],
+  "recepty": [
+    {
+      "den": "Pondelok 20. 7.",
+      "slug": "kremove-kuracie-rizoto-sampinony",
+      "cena": 1.84
+    },
+    {
+      "den": "Utorok 21. 7.",
+      "slug": "peceny-losos-citron-brokolica",
+      "cena": 2.65
+    },
+    {
+      "den": "Streda 22. 7.",
+      "slug": "pecena-bravcova-krkovicka-paprika-cibula",
+      "cena": 1.68
+    },
+    {
+      "den": "Štvrtok 23. 7.",
+      "slug": "plnena-paprika-mletym-masom-ryzou",
+      "cena": 2.13
+    },
+    {
+      "den": "Piatok 24. 7.",
+      "slug": "tuniakovy-salat-zemiaky-vajce",
+      "cena": 1.75
+    }
+  ],
+  "nakupny_zoznam": {
+    "skupiny": [
+      {
+        "nazov": "Ryby a mäso (akciové)",
+        "polozky": [
+          { "nazov": "losos fileta s kožou", "mnozstvo": "300 g", "cena": 4.17 },
+          { "nazov": "kuracie horné/dolné stehná", "mnozstvo": "300 g", "cena": 0.77 },
+          { "nazov": "bravčová krkovička v marináde", "mnozstvo": "750 g bal.", "cena": 4.99 }
+        ]
+      },
+      {
+        "nazov": "Zelenina a ovocie (akciové)",
+        "polozky": [
+          { "nazov": "paprika biela", "mnozstvo": "~850 g", "cena": 1.18 },
+          { "nazov": "zemiaky konzumné skoré", "mnozstvo": "5 kg bal.", "cena": 3.19 },
+          { "nazov": "cibuľa červená", "mnozstvo": "500 g bal.", "cena": 0.49 },
+          { "nazov": "citróny", "mnozstvo": "500 g bal.", "cena": 1.39 },
+          { "nazov": "šampiňóny krémové", "mnozstvo": "250 g bal.", "cena": 0.89 }
+        ]
+      },
+      {
+        "nazov": "Mliečne a vajcia (akciové)",
+        "polozky": [
+          { "nazov": "vajcia M", "mnozstvo": "10 ks", "cena": 1.69 },
+          { "nazov": "parmezán (Parmigiano Reggiano)", "mnozstvo": "100 g", "cena": 2.49 },
+          { "nazov": "maslo", "mnozstvo": "250 g", "cena": 1.49 }
+        ]
+      },
+      {
+        "nazov": "Trvanlivé (akciové)",
+        "polozky": [
+          { "nazov": "tuniak v olivovom oleji", "mnozstvo": "3×70 g", "cena": 2.39 },
+          { "nazov": "ryža (Calrose)", "mnozstvo": "1 kg", "cena": 1.89 }
+        ]
+      },
+      {
+        "nazov": "Mimo akcie (recepty ich potrebujú, v letáku nie sú)",
+        "polozky": [
+          { "nazov": "bravčové mleté mäso", "mnozstvo": "~500 g", "cena": 2.25 },
+          { "nazov": "brokolica", "mnozstvo": "~200 g", "cena": 0.5 },
+          { "nazov": "paradajkový pretlak", "mnozstvo": "100 g", "cena": 0.6 },
+          { "nazov": "bujón (kocky)", "mnozstvo": "~2,5 ks", "cena": 0.25 }
+        ]
+      },
+      {
+        "nazov": "Zásoby (ak nemáš doma)",
+        "polozky": [
+          { "nazov": "olivový olej extra panenský", "mnozstvo": "1 l", "cena": 7.69 },
+          { "nazov": "cesnak", "mnozstvo": "hlávka", "cena": 0.6 },
+          { "nazov": "horčica", "mnozstvo": "350 g", "cena": 0.79 },
+          { "nazov": "sladká paprika (korenie)", "mnozstvo": "balenie", "cena": 1.29 },
+          { "nazov": "mletá rasca", "mnozstvo": "balenie", "cena": 1.29 },
+          { "nazov": "bobkový list", "mnozstvo": "balenie", "cena": 0.99 },
+          { "nazov": "petržlenová vňať (čerstvá)", "mnozstvo": "2 zväzky", "cena": 1.2 }
+        ]
+      }
+    ],
+    "poznamka": "Zemiaky (5 kg), cibuľa (500 g), citróny (500 g), šampiňóny (250 g), parmezán (100 g), maslo (250 g), ryža (1 kg) a olivový olej (1 l) sú väčšie balenia — tento týždeň sa spotrebuje len časť, zvyšok ostáva na ďalšie týždne. Bravčová krkovička v marináde (750 g) sa použije len z 300 g, zvyšok sa dá zmraziť. Vajcia (10 ks) použiješ len 2 — zvyšok na raňajky. Kaufland katalóg platí 16.7.–22.7., nákup preto stihni najneskôr v stredu 22.7."
+  },
+  "social": {
+    "stories": [
+      {
+        "den": "Pondelok 20. 7.",
+        "recept": "🍚 Krémové kuracie rizoto so šampiňónmi",
+        "slide1": "Kuracie stehná mínus 36 %.\nŠampiňóny mínus 25 %.\nParmezán, maslo a trpezlivosť urobia zvyšok.\nRizoto bez jedinej smotany.",
+        "slide2": "🍚 Krémové kuracie rizoto so šampiňónmi\n⏱ 35 minút · 💰 1,84 €/porcia · 🧈 Krémové vďaka maslu a parmezánu, nie smotane",
+        "cta": "Recept v bio / swipe up"
+      },
+      {
+        "den": "Utorok 21. 7.",
+        "recept": "🐟 Pečený losos s citrónom, zemiakmi a brokolicou",
+        "slide1": "Losos mínus 39 %.\nÁno, aj ryba sa dá navariť lacnejšie ako si myslíš.\nCitrón, cesnak, rúra. Hotovo.",
+        "slide2": "🐟 Pečený losos s citrónom a brokolicou\n⏱ 30 minút · 💰 2,65 €/porcia · ✨ Drahšia večera týždňa, aj tak stojí za to",
+        "cta": "Celý recept v bio"
+      },
+      {
+        "den": "Streda 22. 7.",
+        "recept": "🍖 Marinovaná pečená krkovička s paprikou a cibuľou",
+        "slide1": "Krkovička v marináde mínus 33 %.\nPaprika mínus 53 %.\nVšetko na jeden plech, do rúry, hotovo.",
+        "slide2": "🍖 Krkovička s paprikou, cibuľou a zemiakmi\n⏱ 70 minút (väčšinu času v rúre) · 💰 1,68 €/porcia · 🍽️ Jednohrnec, minimum umývania",
+        "cta": "Recept čaká na teba v bio"
+      },
+      {
+        "den": "Štvrtok 23. 7.",
+        "recept": "🫑 Plnená paprika s mletým mäsom a ryžou",
+        "slide1": "Biela paprika mínus 53 %.\nRyža mínus 30 %.\nKlasika, na ktorú sa nikdy neomrzí.",
+        "slide2": "🫑 Plnená paprika s mletým mäsom a ryžou\n⏱ 45 minút · 💰 2,13 €/porcia · 🍅 V paradajkovej omáčke",
+        "cta": "Recept v bio"
+      },
+      {
+        "den": "Piatok 24. 7.",
+        "recept": "🥗 Tuniakový šalát so zemiakmi, vajcom a horčicovým dresingom",
+        "slide1": "Piatok, varenie nechceme.\nVajcia mínus 47 %.\nTuniak, zemiaky, vajce, horčica. 25 minút a je hotovo.",
+        "slide2": "🥗 Tuniakový šalát so zemiakmi a vajcom\n⏱ 25 minút · 💰 1,75 €/porcia · 🥚 Vajcia natvrdo aj namäkko — podľa chuti",
+        "cta": "Recept v bio — víkend si užiješ bez varenia"
+      }
+    ],
+    "feed_posty": [
+      {
+        "nazov": "Katalóg fakt (streda)",
+        "text": "Kaufland tento týždeň (16.7.–22.7.) dáva lososa za tretinu ceny dole a bielu papriku za polovicu.\n\nMy sme z toho poskladali 5 večerí pre 2 osoby — od rýchleho tuniakového šalátu až po pečeného lososa, ktorý vyzerá ako z reštaurácie.\n\nNie každý týždeň vyjde na pár centov za porciu — niekedy je akcia na drahšiu surovinu (ako tento týždeň losos) a to je v poriadku. Aj drahšia večera sa oplatí uvariť, keď je na akcii.\n\nToto je celý trik Šporáčka: pozrieme sa, čo je práve výhodné, a poskladáme z toho jedlo, ktoré chutí — nie najlacnejšie možné na tanieri.\n\n#šporáček #kaufland #smartnakupovanie #lacnévarenie #slovensko"
+      },
+      {
+        "nazov": "Shopping Tips karusel (piatok, 4 slidy)",
+        "text": "Slide 1 — Hook: Ako nakúpiť v Kauflande a mať z toho celý týždeň jedla.\n\nSlide 2 — Tip #1: Kaufland katalóg beží od štvrtka do stredy, nie pondelok-nedeľa ako iné reťazce. Naplánuj si nákup na začiatok tohto okna.\n\nSlide 3 — Tip #2: Väčšie balenia (5 kg zemiaky, 1 kg ryža, 1 l olej) sa oplatia, aj keď recept potrebuje len časť — zvyšok použiješ budúci týždeň, nič sa nevyhodí.\n\nSlide 4 — Záver: Šporáček robí toto za teba každý týždeň. Leták → recepty → nákupný zoznam. Followuj.\n\n#šporáček #shoppingtip #kaufland #smart #slovensko"
+      },
+      {
+        "nazov": "Sobotný Savings Summary (sobota 25. 7.)",
+        "text": "📊 Tento týždeň v číslach\n\n5 receptov. 10 porcií. Akcie z Kauflandu 16.–22. 7.\n\nKrémové kuracie rizoto — 1,84 €/porcia\nPečený losos s citrónom — 2,65 €/porcia\nKrkovička s paprikou — 1,68 €/porcia\nPlnená paprika — 2,13 €/porcia\nTuniakový šalát — 1,75 €/porcia\n\nPriemerná porcia tento týždeň: 2,01 €\n\nDrahšie ako minulý týždeň? Áno — tento týždeň bola najvýhodnejšia akcia na lososa, a dobrá ryba proste stojí viac aj v akcii. Aj tak sme na nákupe ušetrili cez 14 €.\n\n#šporáček #weeklyrecap #savings #kaufland"
+      }
+    ]
+  },
+  "suhrn": {
+    "plan_spolu": 20.10,
+    "uspora": 14.19,
+    "priemer_porcia": 2.01
+  }
+}
