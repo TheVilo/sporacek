@@ -84,7 +84,8 @@ let allSlides = []; // {canvas, name}
 // Načítava sa cez RAW_BASE (rovnako ako fotky) — CORS-clean, aby canvas export (PNG) nepadol. PNG má prednosť pred SVG.
 const LOGO_LIGHT_CANDIDATES = ["logo-light.png", "logo-light.svg", "logo.png", "logo.svg"].map(f => `${RAW_BASE}/brand/${f}`);
 const LOGO_DARK_CANDIDATES = ["logo-dark.png", "logo-dark.svg", "logo.png", "logo.svg"].map(f => `${RAW_BASE}/brand/${f}`);
-let logoLight = null, logoDark = null;
+const MARK_GREEN_CANDIDATES = ["mark-green.png", "mark-green.svg"].map(f => `${RAW_BASE}/brand/${f}`);
+let logoLight = null, logoDark = null, markGreen = null;
 
 async function tryLoadFirst(cands) {
   for (const src of cands) {
@@ -93,7 +94,11 @@ async function tryLoadFirst(cands) {
   return null;
 }
 async function loadLogos() {
-  [logoLight, logoDark] = await Promise.all([tryLoadFirst(LOGO_LIGHT_CANDIDATES), tryLoadFirst(LOGO_DARK_CANDIDATES)]);
+  [logoLight, logoDark, markGreen] = await Promise.all([
+    tryLoadFirst(LOGO_LIGHT_CANDIDATES),
+    tryLoadFirst(LOGO_DARK_CANDIDATES),
+    tryLoadFirst(MARK_GREEN_CANDIDATES),
+  ]);
 }
 
 function escapeHtml(s) {
@@ -213,9 +218,16 @@ function drawWordmark(ctx, x, y, variant) {
 }
 
 function drawFooter(ctx) {
-  ctx.font = `700 32px ${FONT}`; ctx.textBaseline = "alphabetic";
-  ctx.textAlign = "left"; ctx.fillStyle = C.green; ctx.fillText("🥕 šporáček", 64, 1868);
-  ctx.textAlign = "right"; ctx.fillStyle = C.muted; ctx.fillText("recepty.sporacek.sk", W - 64, 1868);
+  const baseline = 1868;
+  if (markGreen) {
+    const h = 46, w = h * (markGreen.width / markGreen.height);
+    ctx.drawImage(markGreen, 64, baseline - h + 6, w, h);
+  } else {
+    ctx.font = `800 40px ${FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+    ctx.fillStyle = C.green; ctx.fillText("šporáček", 64, baseline);
+  }
+  ctx.font = `700 30px ${FONT}`; ctx.textBaseline = "alphabetic";
+  ctx.textAlign = "right"; ctx.fillStyle = C.muted; ctx.fillText("recepty.sporacek.sk", W - 64, baseline);
   ctx.textAlign = "left";
 }
 

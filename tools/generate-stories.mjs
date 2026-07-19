@@ -113,13 +113,19 @@ async function main() {
     }
     await page.waitForTimeout(600);
 
+    // JPEG (q0.92) pre commitované súbory — fotka sa komprimuje rádovo lepšie než PNG,
+    // repo sa nenafukuje; pre Instagram/FB Stories je to plne postačujúca kvalita.
     const slides = await page.evaluate(() => {
       const names = window.__storyNames || [];
       const cvs = [...document.querySelectorAll(".cv canvas")];
-      return cvs.map((c, i) => ({ name: names[i], data: c.toDataURL("image/png") }));
+      return cvs.map((c, i) => ({
+        name: (names[i] || `slide-${i + 1}.png`).replace(/\.png$/i, ".jpg"),
+        data: c.toDataURL("image/jpeg", 0.92),
+      }));
     });
 
     const outDir = path.join(REPO, "tydne", folder, "stories");
+    fs.rmSync(outDir, { recursive: true, force: true }); // zmaž staré (aj prípadné .png z minula)
     fs.mkdirSync(outDir, { recursive: true });
     for (const s of slides) {
       if (!s.name || !s.data) continue;
@@ -130,7 +136,7 @@ async function main() {
   }
 
   await browser.close();
-  console.log(`Hotovo — ${total} PNG súborov.`);
+  console.log(`Hotovo — ${total} JPG súborov.`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
