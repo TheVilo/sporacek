@@ -151,8 +151,21 @@ function parseMarkdownRecipe(slug, text) {
 
   const promptM = text.match(/## Foto prompt\s*\n"?([^\n]+?)"?\s*\n/);
   const foto_prompt = promptM ? promptM[1].trim() : "";
+  const suroviny = parseSuroviny(text);
 
-  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt };
+  return { slug, nazov, cas, cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
+}
+
+function parseSuroviny(text) {
+  const secM = text.match(/## Suroviny[^\n]*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  if (!secM) return [];
+  const cellsOf = (line) => line.slice(1, -1).split("|").map(c => c.trim());
+  const lines = secM[1].split("\n").map(l => l.trim()).filter(l => l.startsWith("|") && l.endsWith("|"));
+  if (lines.length < 3) return [];
+  const header = cellsOf(lines[0]);
+  return lines.slice(2).map(cellsOf)
+    .filter(c => c[0])
+    .map(c => ({ nazov: c[0], mnozstvo: c[1] || "", extra: c[2] || "", extraLabel: header[2] || "" }));
 }
 
 function parseYamlRecipe(slug, text) {
@@ -185,14 +198,24 @@ function parseYamlRecipe(slug, text) {
 
   const promptM = fm.match(/foto_prompt:\s*"?([^\n]+?)"?\s*\n/);
   const foto_prompt = promptM ? promptM[1].trim() : "";
+  const suroviny = parseSuroviny(text);
 
-  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt };
+  return { slug, nazov, cas: "", cena, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
+}
+
+function ingredientRightHtml(s) {
+  const extra = (s.extra || "").trim();
+  const qty = escapeHtml(s.mnozstvo);
+  if (!extra || extra === "zásoby" || extra.toLowerCase() === "nie") return qty;
+  if (extra.toLowerCase() === "áno") return `${qty} <span class="ingr-badge">🏷️ akcia</span>`;
+  return `${qty} <span class="ingr-price">${escapeHtml(extra)}</span>`;
 }
 
 function cardHtml(r) {
   const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t) && t !== "akcia-lidl");
   const tagsHtml = nonTypTags.map(t => `<span class="tag">#${t}</span>`).join("");
   const stepsHtml = r.postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
+  const ingredientsHtml = r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${ingredientRightHtml(s)}</span></li>`).join("");
   const macroParts = [];
   if (r.kcal) macroParts.push(`${r.kcal} kcal`);
   if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
@@ -212,6 +235,10 @@ function cardHtml(r) {
         <h3>${escapeHtml(r.nazov)}</h3>
         <div class="macro-line">${r.cas ? escapeHtml(r.cas) + " · " : ""}${macro}</div>
         <div class="tags">${tagsHtml}</div>
+        ${r.suroviny.length ? `<details class="postup">
+          <summary>Suroviny (${r.suroviny.length})</summary>
+          <ul class="ingredients">${ingredientsHtml}</ul>
+        </details>` : ""}
         <details class="postup">
           <summary>Postup (${r.postup.length} krokov)</summary>
           <ol>${stepsHtml}</ol>

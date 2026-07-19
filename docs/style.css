@@ -116,6 +116,13 @@ details.postup summary::before { content: "▸"; display: inline-block; transiti
 details.postup[open] summary::before { transform: rotate(90deg); }
 details.postup ol { margin: 10px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
 details.postup ol li::marker { color: var(--terracotta); font-weight: 700; }
+details.postup ul.ingredients { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0; font-size: .84rem; color: var(--text); }
+details.postup ul.ingredients li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--border); }
+details.postup ul.ingredients li:last-child { border-bottom: none; }
+.ingr-name { flex: 1; }
+.ingr-qty { color: var(--text-muted); white-space: nowrap; font-weight: 600; }
+.ingr-price { color: var(--terracotta); font-weight: 700; }
+.ingr-badge { font-size: .74rem; }
 
 /* lightbox - Facebook-style: photo left, info panel right */
 .lightbox {
