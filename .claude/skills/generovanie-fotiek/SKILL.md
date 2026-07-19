@@ -7,11 +7,11 @@ description: Použi vždy, keď treba vygenerovať fotku jedla pre recept (foto_
 
 Fotky **sú súčasťou repa** (priečinok `fotky/`, viď `CLAUDE.md`) — generuj ich do dočasného súboru, over si ich, potom ulož do `fotky/<id>.jpg`, commitni a pushni. Cez GitHub/git pull sa dostanú aj do lokálnej zložky `sporacek`.
 
-## Kritická, nemeniteľná podmienka: amatérska mobilná fotka, nie umelecká food photography
+## Kritická, nemeniteľná podmienka: amatérska mobilná fotka od človeka s citom pre detail — nie profi food photography, ale ani chudobná/zanedbaná scéna
 
-Fotky **musia vyzerať ako bežný telefónny odfotok jedla tesne pred jedením** — presne také, aké ľudia posielajú na WhatsApp alebo dávajú do Instagram Stories. **Nie** naštylizovaná, profesionálne nasvietená "food photography" scéna.
+Fotky **musia vyzerať ako telefónny odfotok jedla tesne pred jedením od človeka, čo má vkus** — presne také, aké dáva na Instagram Stories niekto, kto vie dobre navariť aj pekne naaranžovať, ale nie je profesionálny food štylista. **Nie** naštylizovaná, profesionálne nasvietená reklamná "food photography" scéna, **ale ani** ošarpaná/neupratená/chudobne pôsobiaca kuchyňa.
 
-Vyhýbaj sa: bokehu/rozostrenému pozadiu, plátenym obrúskom, vintage doskám na krájanie, fľašiam vína, umelo poukladaným bylinkám/kvetom/sviečkam, "zlatému" naaranžovanému svetlu. Namiesto toho: ostrý celý záber, obyčajná kuchyňa/stôl taký, aký reálne je, mierne nedokonalý uhol, bežné (aj nerovnomerné) domáce svetlo.
+Vyhýbaj sa: bokehu/rozostrenému pozadiu, plátenym obrúskom, vintage doskám na krájanie, fľašiam vína, umelo poukladaným bylinkám/kvetom/sviečkam, "zlatému" naaranžovanému svetlu — ale rovnako sa vyhýbaj starej/ošarpanej kuchyni a nedbalo hodenému jedlu na tanier. Namiesto toho: ostrý celý záber, **moderná, pekná** kuchyňa/stôl, jedlo mierne a prirodzene naaranžované, živé sýte farby a dobrý kontrast (ako z dnešného telefónu, ktorý fotku automaticky vylepší), prirodzený mierne neštudovaný uhol.
 
 Presná šablóna promptu je v `.claude/skills/tyzdenny-vystup/SKILL.md` — použi ju vždy, aj mimo týždenného letáku.
 
