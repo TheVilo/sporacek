@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): opečené kuracie prsia so zlatohnedou kôrkou (poliate cesnakovo-tymiánovým maslom), vedľa varená kukurica na kolotoči potretá maslom a maslové zemiaky, na jednoduchom tanieri.
+Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): opečené kuracie prsia so zlatohnedou kôrkou (poliate cesnakovo-tymiánovým maslom), vedľa varená kukurica na kolotoči potretá maslom a celé varené zemiaky (NIE zemiaková kaša/pyré — zemiaky sú celé alebo prekrojené na polovicu, s kúskom masla), na jednoduchom tanieri.
 Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
 Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
 Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
