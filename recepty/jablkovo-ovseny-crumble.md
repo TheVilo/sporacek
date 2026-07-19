@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): upečený jablkový crumble v zapekacej mise, zlatistá drobivá ovsená kôrka navrchu (POZOR: žiadne orechy v posype ani ako posyp navrchu — recept obsahuje len jablká, citrón, med, škoricu, ovsené vločky, múku, maslo a trstinový cukor), na okrajoch mierne bublajúca jablková šťava, para stúpajúca z teplého koláča.
+Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): upečený jablkový crumble v zapekacej mise, zlatistá drobivá ovsená kôrka navrchu (POZOR: žiadne orechy v posype ani ako posyp navrchu, žiadna zmrzlina ani šľahačka na servírovanie — recept obsahuje len jablká, citrón, med, škoricu, ovsené vločky, múku, maslo a trstinový cukor, nič iné), na okrajoch mierne bublajúca jablková šťava, para stúpajúca z teplého koláča. Žiadny práškový cukor ani cukrová poleva navrchu — kôrka je len prirodzene zlatohnedá od pečenia.
 Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
 Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
 Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
