@@ -10,7 +10,7 @@
 ---
 
 ## Foto prompt
-Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: upečená bravčová krkovička s karamelizovanými okrajmi, farebné pásiky papriky, cibuľa a zlatisté zemiaky, všetko na plechu/pekáči so stopami po pečení, posypané čerstvou vňaťou.
+Realistická fotka jedla odfotená mobilom, akoby ju spravil bežný človek doma tesne pred jedlom: 2 tenšie upečené plátky bravčovej krkovičky (nie jeden celý veľký kus mäsa vcelku — krkovička je narezaná na plátky pred pečením) s karamelizovanými okrajmi, farebné pásiky papriky, cibuľa a zlatisté zemiaky, všetko na plechu/pekáči so stopami po pečení, posypané čerstvou vňaťou.
 Obyčajný tanier na kuchynskom stole alebo pracovnej doske — nie štylizovaná scéna.
 Vyzerá presne ako obyčajný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
 Bežné, mierne nerovnomerné domáce svetlo (stropné alebo denné z okna) — nie naaranžované "zlaté" svetlo.

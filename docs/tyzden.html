@@ -49,7 +49,10 @@
       <div>
         <div class="label">Recept</div>
         <h3 id="lightboxTitle"></h3>
-        <div class="prompt-hint" id="lightboxSlug"></div>
+        <div class="id-row">
+          <div class="prompt-hint" id="lightboxSlug"></div>
+          <button class="copy-btn copy-btn-small" id="lightboxCopyIdBtn" onclick="copyLightboxId(this)">📋 Kopírovať ID</button>
+        </div>
       </div>
       <div id="lightboxPromptSection">
         <div class="label">Foto prompt</div>
@@ -113,6 +116,16 @@ function closeLightbox(e) {
   document.getElementById("lightbox").classList.remove("open");
 }
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+function copyLightboxId(btn) {
+  if (!lightboxSlug) return;
+  navigator.clipboard.writeText(lightboxSlug).then(() => {
+    const original = btn.textContent;
+    btn.textContent = "✓ Skopírované";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1500);
+  });
+}
 
 function copyLightboxPrompt(btn) {
   const text = lightboxSlug ? `Recept ID: ${lightboxSlug}\n\n${lightboxPrompt}` : lightboxPrompt;

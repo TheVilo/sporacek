@@ -151,6 +151,9 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 .copy-btn:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
 .copy-btn.copied { color: var(--green); border-color: var(--green); }
 .prompt-hint { font-size: .74rem; color: var(--text-muted); font-style: italic; }
+.id-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.id-row .prompt-hint { margin: 0; }
+.copy-btn-small { padding: 4px 10px; font-size: .7rem; }
 .lightbox-close {
   position: absolute; top: 18px; right: 22px; font-size: 1.6rem; color: #fff; background: none; border: none; cursor: pointer;
   width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
