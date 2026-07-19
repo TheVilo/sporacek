@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): hladký tmavý čokoládový puding v miske, lesklý povrch, bez viditeľných kúskov avokáda.
+Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): hladký tmavý čokoládový puding v miske, lesklý povrch, bez viditeľných kúskov avokáda (POZOR: žiadna smotana/jogurt navrchu, žiadne semienka ako posyp — recept obsahuje len avokádo, kakao, med, mlieko, vanilkový extrakt, soľ, všetko rozmixované dohladka; ako garnish stačí lístok mäty alebo trocha kakaa poprášeného navrchu).
 Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
 Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
 Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.

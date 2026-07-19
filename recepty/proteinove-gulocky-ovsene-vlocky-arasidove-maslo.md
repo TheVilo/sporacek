@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): hromádka malých proteínových guľôčok z ovsených vločiek a arašidového masla na tanieri, mierne matný povrch s viditeľnými kúskami vločiek.
+Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): hromádka malých proteínových guľôčok z ovsených vločiek, arašidového masla a kakaa na tanieri — guľôčky sú **celé tmavohnedé/čokoládové** (kakao je zamiešané priamo v ceste, nie polevou navrchu), mierne matný povrch s viditeľnými kúskami ovsených vločiek. Ako garnish použi len rozsypané ovsené vločky okolo taniera (POZOR: žiadne čokoládové kúsky/chips, žiadne orechy/pistácie posypané navrchu, žiadne sezamové semienka — v recepte je len ovsené vločky, arašidové maslo, med, kakao, škorica, soľ).
 Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
 Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
 Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
