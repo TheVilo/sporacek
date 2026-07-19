@@ -113,3 +113,4 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - čili vločky
 - bujón (kocka)
 - kokosové mlieko
+- tahini (sezamová pasta)
