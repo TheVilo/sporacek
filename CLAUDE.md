@@ -34,8 +34,24 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `recepty/` | jeden súbor = jeden recept |
 | `fotky/` | fotky receptov, pomenované podľa id (napr. `kremove-kuracie-rizoto-sampinony.jpg`) |
 | `tydne/` | výstup týždňa (leták → recepty → nákup → úspora) |
+| `ceny/` | **cenová databáza** — celý zoznam potravinových surovín z každého spracovaného letáku, s cenou, dátumom, obchodom (pozri nižšie) |
+| `katalogy/` | vstupné PDF letákov + surové/pracovné extrakcie (pracovný vstup, nie zdroj pravdy — tým je `ceny/`) |
 
 Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync automaticky ukladajú aj lokálne. Recept v `foto_url` drží relatívnu cestu (napr. `fotky/kremove-kuracie-rizoto-sampinony.jpg`).
+
+---
+
+## Cenová databáza (`ceny/`)
+
+**Účel:** dlhodobý dátový základ pre porovnávanie cien naprieč časom a obchodmi (napr. "marhule boli v júli o 55 % lacnejšie ako v priemere"). Iný účel než `tydne/` — `tydne/` má len úzky výber receptov/highlightov pre daný týždeň, `ceny/` má **celý** zoznam potravinových položiek z letáku, nech sa dá spätne dotazovať.
+
+**Pravidlo:** pri každom spracovanom letáku (nezávisle od toho, či sa z neho robí aj týždenný recept-výstup) ulož **celý zoznam potravinových surovín** do `ceny/<obchod>-<dátum-začiatku-platnosti>.json`, napr. `ceny/kaufland-2026-07-16.json`. Jeden leták = jeden nový súbor (neprepisuje sa, história sa hromadí).
+
+**Schéma** (JSON): koreň `{ obchod, platnost_tyzdenna_default, pocet_stran_v_katalogu, pocet_potravinovych_polozok, poznamka_metodika, polozky[] }`; každá položka `{ strana, nazov, mnozstvo, povodna_cena, zlava, zlavnena_cena, platnost, poznamka, obchod, zdroj_kontroly, kategoria }`. Kategórie (pevná sada, nevymýšľaj nové): `Mäso a ryby`, `Ovocie a zelenina`, `Mliečne a vajcia`, `Trvanlivé a základ`, `Orechy a sladkosti`, `Pečivo a pekáreň`.
+
+**Scope — len skutočné suroviny na varenie.** Vynechaj alkohol, nápoje, chipsy/snacky, žuvačky, hotové sladkosti/zmrzliny, sladké hotové pečivo, kozmetiku/drogériu, domáce potreby, krmivo, detskú výživu/plienky, proteínové doplnky, elektroniku/odevy/záhradu. Platí rovnako naprieč obchodmi.
+
+**Vzťah k `suroviny.md`:** `ceny/` je širší než číselník receptov — obsahuje všetko z letáku, aj veci, čo (zatiaľ) nie sú v žiadnom recepte. Do `suroviny.md` pridávaj surovinu až keď sa reálne použije v recepte.
 
 ---
 
@@ -106,15 +122,19 @@ Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri n
 
 ## Živé stránky (GitHub Pages, nie artifacty)
 
-**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`, `suroviny.md`). Obe stránky nižšie sú len jeho živé zobrazenie — nikdy neobsahujú dáta, ktoré nie sú v repe, a nikdy sa neprepublikovávajú ručne. Stačí pushnúť zmenu do repa, stránka ju ukáže po obnovení (F5).
+**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`, `ceny/`, `suroviny.md`). Všetky tri stránky nižšie sú len jeho živé zobrazenie — nikdy neobsahujú dáta, ktoré nie sú v repe, a nikdy sa neprepublikovávajú ručne. Stačí pushnúť zmenu do repa, stránka ju ukáže po obnovení (F5).
 
-**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto dve stránky v `docs/`:
+Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`docs/CNAME`). Pages servuje z priečinka `docs/` na `main`.
 
-1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, suroviny, tagy, postup — bez ceny, tá sa počíta len na úrovni týždňa), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov.
-   **URL:** https://thevilo.github.io/sporacek/
+**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto tri stránky v `docs/`:
+
+1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, suroviny, tagy, postup — bez ceny, tá sa počíta len na úrovni týždňa), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov. Toto je tá trvalá databáza, z ktorej sa recepty párujú s akciovými surovinami.
+   **URL:** https://recepty.sporacek.sk/
 2. **`docs/tyzden.html` — týždenný "social" výstup.** Naviazaný na *konkrétny* leták/obchod/týždeň. Číta `tydne/<rok>-W<týždeň>-<obchod>/data.json` a k receptom naživo dotiahne fotku/postup z `recepty/`. Má prepínač týždňov/obchodov hore (chip pre každý priečinok v `tydne/`).
-   **URL:** https://thevilo.github.io/sporacek/tyzden.html
+   **URL:** https://recepty.sporacek.sk/tyzden.html
    **Bez `data.json` sa týždeň na stránke nezobrazí** — presná štruktúra je v `.claude/skills/tyzdenny-vystup/SKILL.md`.
+3. **`docs/ceny.html` — cenová databáza.** Prehľad cien surovín naprieč obchodmi a časom, naživo zo všetkých `ceny/*.json`. Tabuľka (filter podľa obchodu/kategórie/hľadania, čo je v akcii) + graf vývoja ceny po kliknutí na surovinu. Rastie automaticky s každým novým súborom v `ceny/`.
+   **URL:** https://recepty.sporacek.sk/ceny.html
 
 ### Viacero obchodov
 

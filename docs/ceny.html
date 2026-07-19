@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>šporáček — cenová databáza</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏷️</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <div class="eyebrow">Šporáček · cenová databáza</div>
+      <h1>Ceny surovín</h1>
+    </div>
+    <div class="top-actions">
+      <a class="nav-link" href="index.html">📚 Databáza receptov</a>
+      <a class="nav-link" href="tyzden.html">📱 Týždenný výstup</a>
+      <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
+    </div>
+  </div>
+  <div class="sub">Každý spracovaný leták pridá do <code>ceny/</code> jeden súbor s celým zoznamom surovín. Táto stránka ich číta naživo z GitHubu a umožňuje porovnávať ceny naprieč obchodmi a časom. Klikni na surovinu → uvidíš vývoj jej ceny.</div>
+  <div class="status-line" id="statusLine">Načítavam…</div>
+
+  <div class="controls" id="controls" style="display:none">
+    <input type="text" class="search-input" id="searchInput" placeholder="Hľadať surovinu…" autocomplete="off" />
+    <div class="chips" id="storeChips"></div>
+    <div class="chips" id="catChips" style="margin-top:8px"></div>
+    <label class="cmp-toggle"><input type="checkbox" id="cmpOnly" onchange="applyFilters()" /> Len suroviny, ktoré sa dajú porovnať (≥2 záznamy)</label>
+  </div>
+
+  <div id="content">
+    <div class="skeleton" style="height:120px"></div>
+  </div>
+
+  <footer class="cta">
+    Zdroj pravdy je vždy repo <code>github.com/TheVilo/sporacek</code> (priečinok <code>ceny/</code>). Táto stránka sa nikdy neukladá — je to len živé zobrazenie. Nový leták = nový súbor v <code>ceny/</code> a graf sa predĺži sám.
+  </footer>
+</div>
+
+<div class="modal" id="chartModal" onclick="closeModal()">
+  <div class="modal-inner" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const OWNER = "TheVilo";
+const REPO = "sporacek";
+const BRANCH = "main";
+const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
+
+const CAT_ORDER = ["Mäso a ryby", "Ovocie a zelenina", "Mliečne a vajcia", "Trvanlivé a základ", "Orechy a sladkosti", "Pečivo a pekáreň"];
+const STORE_COLORS = ["#BA5F3F", "#204432", "#3f6fba", "#b08a1e", "#7a3fba", "#3fba9c"];
+
+let allItems = [];   // flat list of every price record
+let groups = [];     // items grouped by normalized name
+let storeColorMap = {};
+let activeStores = new Set();
+let activeCats = new Set();
+
+function escapeHtml(s) {
+  const d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML;
+}
+function stripDiacritics(s) {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+// conservative key: lowercase, no diacritics, drop parentheticals + standalone percentages, collapse space
+function nameKey(nazov) {
+  let s = stripDiacritics(nazov.toLowerCase());
+  s = s.replace(/\([^)]*\)/g, " ");
+  s = s.replace(/\b\d+([.,]\d+)?\s*%/g, " ");
+  s = s.replace(/[^a-z0-9]+/g, " ").trim();
+  return s;
+}
+function startDate(platnost) {
+  const m = (platnost || "").match(/\d{4}-\d{2}-\d{2}/);
+  return m ? m[0] : "";
+}
+function fmtEur(n) {
+  return (typeof n === "number") ? n.toFixed(2).replace(".", ",") + " €" : "—";
+}
+function fmtOld(v) {
+  if (v == null) return "";
+  if (Array.isArray(v)) return v.map(x => fmtEur(x)).join(" / ");
+  return fmtEur(v);
+}
+
+async function loadAll(manual) {
+  const btn = document.getElementById("refreshBtn");
+  const statusLine = document.getElementById("statusLine");
+  const content = document.getElementById("content");
+  btn.disabled = true;
+  statusLine.textContent = manual ? "Obnovujem…" : "Načítavam…";
+
+  try {
+    const listResp = await fetch(`${API_BASE}/contents/ceny?ref=${BRANCH}`, { cache: "no-store" });
+    if (!listResp.ok) throw new Error(`GitHub API vrátilo ${listResp.status}`);
+    const files = (await listResp.json()).filter(f => f.name.endsWith(".json"));
+
+    const catalogs = await Promise.all(files.map(async (f) => {
+      const raw = await fetch(`${RAW_BASE}/ceny/${encodeURIComponent(f.name)}`, { cache: "no-store" });
+      return raw.json();
+    }));
+
+    allItems = [];
+    for (const cat of catalogs) {
+      for (const p of (cat.polozky || [])) {
+        allItems.push({
+          nazov: p.nazov,
+          key: nameKey(p.nazov),
+          obchod: p.obchod || cat.obchod,
+          kategoria: p.kategoria || "Ostatné",
+          mnozstvo: p.mnozstvo || "",
+          cena: p.zlavnena_cena,
+          povodna: p.povodna_cena,
+          zlava: p.zlava,
+          platnost: p.platnost || cat.platnost_tyzdenna_default,
+          date: startDate(p.platnost || cat.platnost_tyzdenna_default),
+          poznamka: p.poznamka || "",
+        });
+      }
+    }
+
+    // group by normalized name
+    const byKey = {};
+    for (const it of allItems) (byKey[it.key] ||= []).push(it);
+    groups = Object.values(byKey).map(items => {
+      items.sort((a, b) => a.date.localeCompare(b.date));
+      const cats = {}; for (const i of items) cats[i.kategoria] = (cats[i.kategoria] || 0) + 1;
+      const kategoria = Object.keys(cats).sort((a, b) => cats[b] - cats[a])[0];
+      const prices = items.map(i => i.cena).filter(c => typeof c === "number");
+      const stores = [...new Set(items.map(i => i.obchod))];
+      const dates = [...new Set(items.map(i => i.date))];
+      return {
+        key: items[0].key,
+        nazov: items.reduce((a, b) => a.nazov.length <= b.nazov.length ? a : b).nazov,
+        kategoria, items, stores, dates,
+        min: Math.min(...prices), max: Math.max(...prices),
+        comparable: (stores.length > 1 || dates.length > 1),
+      };
+    });
+
+    // stores + colors
+    const stores = [...new Set(allItems.map(i => i.obchod))].sort();
+    storeColorMap = {};
+    stores.forEach((s, i) => storeColorMap[s] = STORE_COLORS[i % STORE_COLORS.length]);
+
+    activeStores = new Set([...activeStores].filter(s => stores.includes(s)));
+    const cats = [...new Set(allItems.map(i => i.kategoria))];
+    activeCats = new Set([...activeCats].filter(c => cats.includes(c)));
+
+    buildChips(stores);
+    document.getElementById("controls").style.display = allItems.length ? "" : "none";
+    applyFilters();
+
+    const now = new Date().toLocaleString("sk-SK");
+    statusLine.textContent = `Naposledy načítané: ${now} · ${allItems.length} cien z ${files.length} letákov (${stores.length} obchodov) priamo z GitHubu`;
+  } catch (err) {
+    content.innerHTML = `<div class="error-state">Nepodarilo sa načítať dáta z GitHubu: ${escapeHtml(err.message)}<br>Skús Obnoviť, alebo skontroluj internetové pripojenie.</div>`;
+    statusLine.textContent = "Chyba pri načítaní.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function buildChips(stores) {
+  const storeCounts = {}; for (const i of allItems) storeCounts[i.obchod] = (storeCounts[i.obchod] || 0) + 1;
+  document.getElementById("storeChips").innerHTML = stores.map(s => `
+    <button class="chip" style="--chip:${storeColorMap[s]}" aria-pressed="${activeStores.has(s)}" onclick="toggleStore('${s.replace(/'/g, "\\'")}')">
+      <span class="dot" style="background:${storeColorMap[s]}"></span>${escapeHtml(s)} <span class="n">${storeCounts[s]}</span>
+    </button>`).join("");
+
+  const catCounts = {}; for (const i of allItems) catCounts[i.kategoria] = (catCounts[i.kategoria] || 0) + 1;
+  const cats = Object.keys(catCounts).sort((a, b) => (CAT_ORDER.indexOf(a) + 1 || 99) - (CAT_ORDER.indexOf(b) + 1 || 99));
+  document.getElementById("catChips").innerHTML = cats.map(c => `
+    <button class="chip" aria-pressed="${activeCats.has(c)}" onclick="toggleCat('${c.replace(/'/g, "\\'")}')">
+      ${escapeHtml(c)} <span class="n">${catCounts[c]}</span>
+    </button>`).join("");
+}
+
+function toggleStore(s) { activeStores.has(s) ? activeStores.delete(s) : activeStores.add(s); refreshChips(); applyFilters(); }
+function toggleCat(c) { activeCats.has(c) ? activeCats.delete(c) : activeCats.add(c); refreshChips(); applyFilters(); }
+function refreshChips() {
+  buildChips([...new Set(allItems.map(i => i.obchod))].sort());
+}
+
+function applyFilters() {
+  const q = stripDiacritics(document.getElementById("searchInput").value.trim().toLowerCase());
+  const cmpOnly = document.getElementById("cmpOnly").checked;
+  let list = groups.slice();
+  if (cmpOnly) list = list.filter(g => g.comparable);
+  if (activeCats.size) list = list.filter(g => g.items.some(i => activeCats.has(i.kategoria)));
+  if (activeStores.size) list = list.filter(g => g.items.some(i => activeStores.has(i.obchod)));
+  if (q) list = list.filter(g => stripDiacritics(g.nazov.toLowerCase()).includes(q));
+  render(list);
+}
+document.getElementById("searchInput").addEventListener("input", applyFilters);
+
+function storeVisible(it) {
+  if (activeStores.size && !activeStores.has(it.obchod)) return false;
+  if (activeCats.size && !activeCats.has(it.kategoria)) return false;
+  return true;
+}
+
+function render(list) {
+  const content = document.getElementById("content");
+  if (!groups.length) { content.innerHTML = `<div class="empty-state">Zatiaľ žiadne ceny v <code>ceny/</code>.</div>`; return; }
+  if (!list.length) { content.innerHTML = `<div class="empty-state">Žiadna surovina nezodpovedá filtru.</div>`; return; }
+
+  const shown = list.map(g => g.items.filter(storeVisible)).flat();
+  const prices = shown.map(i => i.cena).filter(c => typeof c === "number");
+  const comparableCount = list.filter(g => g.comparable).length;
+  const summary = `
+    <div class="summary">
+      <div class="item"><span class="n">${list.length}</span><span class="l">Surovín vo výbere</span></div>
+      <div class="item"><span class="n">${shown.length}</span><span class="l">Cenových záznamov</span></div>
+      <div class="item"><span class="n">${comparableCount}</span><span class="l">Dá sa porovnať</span></div>
+      <div class="item"><span class="n">${prices.length ? fmtEur(prices.reduce((a,b)=>a+b,0)/prices.length) : "—"}</span><span class="l">Priemerná cena</span></div>
+    </div>`;
+
+  // group rows by category
+  const byCat = {};
+  for (const g of list) (byCat[g.kategoria] ||= []).push(g);
+  const catOrder = Object.keys(byCat).sort((a, b) => (CAT_ORDER.indexOf(a) + 1 || 99) - (CAT_ORDER.indexOf(b) + 1 || 99));
+
+  const sections = catOrder.map(cat => {
+    const rows = byCat[cat].sort((a, b) => a.nazov.localeCompare(b.nazov, "sk")).map(g => {
+      const recs = g.items.filter(storeVisible);
+      if (!recs.length) return "";
+      const priceCells = recs.map(it => `
+        <span class="pc" title="${escapeHtml(it.mnozstvo)}${it.poznamka ? " · " + escapeHtml(it.poznamka) : ""}">
+          <span class="pc-dot" style="background:${storeColorMap[it.obchod]}"></span>
+          <b>${fmtEur(it.cena)}</b>
+          ${it.zlava ? `<i class="off">${escapeHtml(it.zlava)}</i>` : ""}
+          <em>${escapeHtml(it.obchod)} · ${escapeHtml(it.date)}</em>
+        </span>`).join("");
+      return `
+        <div class="prow ${g.comparable ? "cmp" : ""}" onclick="openChart('${g.key.replace(/'/g, "\\'")}')">
+          <div class="prow-name">${escapeHtml(g.nazov)}${g.comparable ? `<span class="cmp-badge">📈 ${g.stores.length > 1 ? g.stores.length + " obchody" : g.dates.length + " týždne"}</span>` : ""}</div>
+          <div class="prow-prices">${priceCells}</div>
+        </div>`;
+    }).join("");
+    return `
+      <section class="group">
+        <div class="group-head"><h2>${escapeHtml(cat)}</h2><span class="count">${byCat[cat].length}</span></div>
+        <div class="ptable">${rows}</div>
+      </section>`;
+  }).join("");
+
+  content.innerHTML = summary + sections;
+}
+
+/* ---- price history chart (inline SVG) ---- */
+function openChart(key) {
+  const g = groups.find(x => x.key === key);
+  if (!g) return;
+  const body = document.getElementById("modalBody");
+  const recs = g.items.slice().sort((a, b) => a.date.localeCompare(b.date) || a.obchod.localeCompare(b.obchod));
+  body.innerHTML = `
+    <div class="modal-head">
+      <div class="eyebrow">Cenový vývoj</div>
+      <h3>${escapeHtml(g.nazov)}</h3>
+      <div class="modal-sub">${escapeHtml(g.kategoria)} · ${g.stores.length} ${g.stores.length === 1 ? "obchod" : "obchody/obchodov"} · ${g.dates.length} ${g.dates.length === 1 ? "termín" : "termíny/termínov"}</div>
+    </div>
+    ${chartSvg(recs)}
+    <div class="occ">
+      ${recs.map(it => `
+        <div class="occ-row">
+          <span class="occ-dot" style="background:${storeColorMap[it.obchod]}"></span>
+          <span class="occ-store">${escapeHtml(it.obchod)}</span>
+          <span class="occ-date">${escapeHtml(it.date)}</span>
+          <span class="occ-price"><b>${fmtEur(it.cena)}</b>${it.povodna != null ? ` <s>${fmtOld(it.povodna)}</s>` : ""}${it.zlava ? ` <i>${escapeHtml(it.zlava)}</i>` : ""}</span>
+          <span class="occ-qty">${escapeHtml(it.mnozstvo)}${it.poznamka ? " · " + escapeHtml(it.poznamka) : ""}</span>
+        </div>`).join("")}
+    </div>
+    ${g.comparable ? "" : `<div class="note-box">Túto surovinu máme zatiaľ len z jedného letáku. Graf sa rozrastie, keď pribudne ďalší leták s rovnakou surovinou.</div>`}
+  `;
+  document.getElementById("chartModal").classList.add("open");
+}
+function closeModal() { document.getElementById("chartModal").classList.remove("open"); }
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+function chartSvg(recs) {
+  const pts = recs.filter(r => typeof r.cena === "number");
+  if (pts.length < 2) {
+    const only = pts[0];
+    return `<div class="chart-single">Zatiaľ jediný cenový bod: <b>${only ? fmtEur(only.cena) : "—"}</b>${only ? ` (${escapeHtml(only.obchod)}, ${escapeHtml(only.date)})` : ""}</div>`;
+  }
+  const W = 560, H = 240, padL = 46, padR = 16, padT = 18, padB = 34;
+  const dates = [...new Set(pts.map(p => p.date))].sort();
+  const xOf = d => dates.length === 1 ? (padL + (W - padL - padR) / 2)
+    : padL + (dates.indexOf(d) / (dates.length - 1)) * (W - padL - padR);
+  const prices = pts.map(p => p.cena);
+  let lo = Math.min(...prices), hi = Math.max(...prices);
+  if (lo === hi) { lo -= 0.5; hi += 0.5; }
+  const pad = (hi - lo) * 0.15; lo -= pad; hi += pad;
+  const yOf = v => padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB);
+
+  // gridlines (y)
+  const ticks = 4;
+  let grid = "";
+  for (let i = 0; i <= ticks; i++) {
+    const v = lo + (hi - lo) * i / ticks;
+    const y = yOf(v);
+    grid += `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W - padR}" y2="${y.toFixed(1)}" class="grid"/>`;
+    grid += `<text x="${padL - 8}" y="${(y + 3).toFixed(1)}" class="ylab">${v.toFixed(2)}</text>`;
+  }
+  // x labels
+  let xlab = dates.map(d => `<text x="${xOf(d).toFixed(1)}" y="${H - 12}" class="xlab">${d.slice(5)}</text>`).join("");
+
+  // one line per store
+  const byStore = {};
+  for (const p of pts) (byStore[p.obchod] ||= []).push(p);
+  let series = "";
+  for (const [store, arr] of Object.entries(byStore)) {
+    arr.sort((a, b) => a.date.localeCompare(b.date));
+    const color = storeColorMap[store] || "#888";
+    if (arr.length > 1) {
+      const d = arr.map((p, i) => `${i ? "L" : "M"}${xOf(p.date).toFixed(1)} ${yOf(p.cena).toFixed(1)}`).join(" ");
+      series += `<path d="${d}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>`;
+    }
+    series += arr.map(p => `<circle cx="${xOf(p.date).toFixed(1)}" cy="${yOf(p.cena).toFixed(1)}" r="5" fill="${color}"><title>${escapeHtml(store)} · ${p.date} · ${fmtEur(p.cena)}</title></circle>`).join("");
+    series += arr.map(p => `<text x="${xOf(p.date).toFixed(1)}" y="${(yOf(p.cena) - 10).toFixed(1)}" class="plab" fill="${color}">${p.cena.toFixed(2)}</text>`).join("");
+  }
+  const legend = Object.keys(byStore).map(s => `<span class="lg"><span class="lg-dot" style="background:${storeColorMap[s]}"></span>${escapeHtml(s)}</span>`).join("");
+
+  return `
+    <div class="chart-legend">${legend}</div>
+    <svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Graf vývoja ceny">
+      ${grid}${xlab}${series}
+    </svg>`;
+}
+
+loadAll(false);
+</script>
+</body>
+</html>
