@@ -47,7 +47,7 @@
   <div class="status-line" id="statusLine">Hľadám dostupné týždne…</div>
 
   <div class="story-intro">
-    Hotové <b>1080×1920</b> obrázky do Instagram / Facebook Stories — poskladané naživo z fotky receptu, ceny za porciu a textu zo <code>social.stories</code> daného týždňa. Ku každému dňu vzniknú <b>2 slidy</b>: <b>hook</b> (stmavená fotka + pútavá veta) a <b>recept</b> (názov, cena/porcia a úspora, ak je v dátach <code>bezna_cena</code>). Stiahni PNG a rovno postni.
+    Hotové <b>1080×1920</b> obrázky do Instagram / Facebook Stories — poskladané naživo z fotky receptu, ceny za porciu a textu zo <code>social.stories</code> daného týždňa. Ku každému dňu vzniknú <b>2 slidy</b>: <b>hook</b> (stmavená fotka + pútavá veta) a <b>recept</b> (názov, cena/porcia a úspora, ak je v dátach <code>bezna_cena</code>), plus <b>1× nákupný zoznam</b> za celý týždeň. Stiahni PNG a rovno postni.
   </div>
 
   <div class="allbar" id="allbar" style="display:none">
@@ -308,6 +308,80 @@ function drawCard(story, cena, bezna, photo) {
   return c;
 }
 
+/* ---------- slide: NÁKUPNÝ ZOZNAM (receipt-style) ---------- */
+function drawShopping(data) {
+  const c = newCanvas(), ctx = c.getContext("2d");
+  ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+
+  // zelená hlavička s oblým spodkom
+  const headH = 300;
+  roundRectBottom(ctx, 0, 0, W, headH, 56); ctx.fillStyle = C.green; ctx.fill();
+  drawWordmark(ctx, 56, 96, "light", 48);
+  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  ctx.font = `800 66px ${FONT}`; ctx.fillStyle = C.sand; ctx.fillText("Nákupný zoznam", 56, 208);
+  ctx.font = `700 32px ${FONT}`; ctx.fillStyle = "rgba(250,246,238,0.85)";
+  ctx.fillText(`${data.obchod} · ${data.platnost}`, 56, 258);
+
+  const groups = (data.nakupny_zoznam && data.nakupny_zoznam.skupiny) || [];
+  const totalItems = groups.reduce((s, g) => s + ((g.polozky || []).length), 0);
+  const bodyTop = headH + 44, footerTop = 1650, avail = footerTop - bodyTop;
+
+  // auto-fit veľkosti podľa počtu položiek
+  let fi = 34, itemH, headLineH, gap;
+  for (fi = 34; fi >= 22; fi -= 2) {
+    itemH = Math.round(fi * 1.34); headLineH = Math.round(fi * 1.55); gap = Math.round(fi * 0.7);
+    const needed = groups.length * (headLineH + gap) + totalItems * itemH;
+    if (needed <= avail) break;
+  }
+
+  let y = bodyTop;
+  for (const g of groups) {
+    y += headLineH;
+    ctx.font = `800 ${Math.round(fi * 0.82)}px ${FONT}`; ctx.fillStyle = C.terra;
+    ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+    ctx.fillText((g.nazov || "").toUpperCase(), 56, y - 10);
+    ctx.strokeStyle = "rgba(32,68,50,0.14)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(56, y + 2); ctx.lineTo(W - 56, y + 2); ctx.stroke();
+    for (const it of (g.polozky || [])) {
+      y += itemH;
+      ctx.textAlign = "left"; ctx.fillStyle = C.green; ctx.font = `600 ${fi}px ${FONT}`;
+      const name = it.nazov || "";
+      ctx.fillText(name, 56, y);
+      const nameW = ctx.measureText(name).width;
+      if (it.mnozstvo) {
+        ctx.font = `500 ${Math.round(fi * 0.8)}px ${FONT}`; ctx.fillStyle = C.muted;
+        ctx.fillText("  " + it.mnozstvo, 56 + nameW + 6, y);
+      }
+      if (it.cena != null) {
+        ctx.font = `800 ${fi}px ${FONT}`; ctx.fillStyle = C.green; ctx.textAlign = "right";
+        ctx.fillText(`${formatEur(it.cena)} €`, W - 56, y);
+      }
+    }
+    y += gap;
+  }
+
+  // pätička: cena jedál + úspora (dvojriadkovo, nech je jasné že plan = jedlá, nie súčet položiek)
+  const s = data.suhrn || {};
+  const nrec = (data.recepty || []).length;
+  ctx.textBaseline = "alphabetic";
+  if (s.plan_spolu != null) {
+    ctx.textAlign = "left";
+    ctx.font = `700 28px ${FONT}`; ctx.fillStyle = C.muted;
+    ctx.fillText(nrec ? `${nrec} receptov · ${nrec * 2} porcií` : "Plán jedál", 56, 1706);
+    ctx.font = `800 52px ${FONT}`; ctx.fillStyle = C.green;
+    ctx.fillText(`jedlá ${formatEur(s.plan_spolu)} €`, 56, 1758);
+  }
+  if (s.uspora != null) {
+    ctx.textAlign = "right";
+    ctx.font = `700 28px ${FONT}`; ctx.fillStyle = C.muted; ctx.fillText("oproti bežným cenám", W - 56, 1706);
+    ctx.font = `800 52px ${FONT}`; ctx.fillStyle = C.terra; ctx.fillText(`ušetríš ~${formatEur(s.uspora)} €`, W - 56, 1758);
+  }
+  if (markGreen) { const h = 42, w = h * (markGreen.width / markGreen.height); ctx.drawImage(markGreen, 56, 1868 - h + 6, w, h); }
+  ctx.font = `700 30px ${FONT}`; ctx.textAlign = "right"; ctx.fillStyle = C.muted; ctx.fillText("recepty.sporacek.sk", W - 56, 1868);
+  ctx.textAlign = "left";
+  return c;
+}
+
 /* ---------- download ---------- */
 function downloadCanvas(canvas, name) {
   canvas.toBlob((blob) => {
@@ -469,7 +543,28 @@ async function selectWeek(folder) {
       allSlides.push({ canvas: c1, name: n1 }, { canvas: c2, name: n2 });
     }
 
-    document.getElementById("allHint").textContent = `${allSlides.length} slidov · ${stories.length} dní × 2`;
+    // nákupný zoznam – jeden slide na týždeň
+    if (data.nakupny_zoznam && (data.nakupny_zoznam.skupiny || []).length) {
+      content.insertAdjacentHTML("beforeend", `
+        <div class="story-set">
+          <div class="set-head">Nákupný zoznam</div>
+          <div class="set-name">Celý týždeň · ${escapeHtml(data.obchod)}</div>
+          <div class="slides">
+            <figure class="slide">
+              <div class="cv loading" id="cv-nakup"></div>
+              <button class="dl-btn" id="dl-nakup">⬇︎ Nákupný zoznam</button>
+            </figure>
+          </div>
+        </div>`);
+      const cs = drawShopping(data);
+      const ns = `sporacek-${storeSlug}-w${weekSlug}-nakup.png`;
+      const wrapS = document.getElementById("cv-nakup");
+      wrapS.classList.remove("loading"); wrapS.appendChild(cs);
+      document.getElementById("dl-nakup").onclick = () => downloadCanvas(cs, ns);
+      allSlides.push({ canvas: cs, name: ns });
+    }
+
+    document.getElementById("allHint").textContent = `${allSlides.length} slidov · ${stories.length} receptov × 2 + nákupný zoznam`;
     document.getElementById("allbar").style.display = "flex";
     // háčik pre automatizované generovanie (tools/generate-stories.mjs) — poradie sedí s .cv canvas v DOM
     window.__storyNames = allSlides.map(s => s.name);

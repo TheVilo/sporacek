@@ -80,7 +80,7 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
 
 ## Vizuálne Stories (obrázky)
 
-Po zapísaní `data.json` vygeneruj aj obrázkové Stories: `node tools/generate-stories.mjs <priečinok-týždňa>` → uloží 1080×1920 JPG do `tydne/<týždeň>/stories/` (2 na deň: `-hook` a `-recept`). Skladajú sa z `social.stories`, fotky receptu, `cena`/`bezna_cena` a loga z `brand/`. Commitni ich spolu s týždňom. Náhľad aj ručné sťahovanie: `docs/stories.html` (recepty.sporacek.sk/stories.html).
+Po zapísaní `data.json` vygeneruj aj obrázkové Stories: `node tools/generate-stories.mjs <priečinok-týždňa>` → uloží 1080×1920 JPG do `tydne/<týždeň>/stories/` (na deň 2: `-hook` a `-recept`, plus 1× `-nakup` = nákupný zoznam za týždeň). Skladajú sa z `social.stories`, `nakupny_zoznam`, `suhrn`, fotky receptu, `cena`/`bezna_cena` a loga z `brand/`. Commitni ich spolu s týždňom. Náhľad aj ručné sťahovanie: `docs/stories.html` (recepty.sporacek.sk/stories.html).
 
 ## Šablóna foto promptu (pre nanobanana)
 
