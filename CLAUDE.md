@@ -126,7 +126,7 @@ Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri n
 
 Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`docs/CNAME`). Pages servuje z priečinka `docs/` na `main`.
 
-**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto tri stránky v `docs/`:
+**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto štyri stránky v `docs/`:
 
 1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, suroviny, tagy, postup — bez ceny, tá sa počíta len na úrovni týždňa), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov. Toto je tá trvalá databáza, z ktorej sa recepty párujú s akciovými surovinami.
    **URL:** https://recepty.sporacek.sk/
@@ -135,6 +135,9 @@ Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`d
    **Bez `data.json` sa týždeň na stránke nezobrazí** — presná štruktúra je v `.claude/skills/tyzdenny-vystup/SKILL.md`.
 3. **`docs/ceny.html` — cenová databáza.** Prehľad cien surovín naprieč obchodmi a časom, naživo zo všetkých `ceny/*.json`. Tabuľka (filter podľa obchodu/kategórie/hľadania, čo je v akcii) + graf vývoja ceny po kliknutí na surovinu. Rastie automaticky s každým novým súborom v `ceny/`.
    **URL:** https://recepty.sporacek.sk/ceny.html
+4. **`docs/vyber.html` — zostav týždeň.** Interaktívny nástroj na výber receptov pre týždenný výstup — vyberieš obchod, stránka pri každom recepte naživo prepočíta, koľko jeho surovín je práve v akcii (porovnaním `recepty/*.md` surovín s `ceny/<obchod>-*.json`), zoradí podľa zhody a dá vyfiltrovať podľa tagov. Zaškrtneš recepty, tlačidlo "Skopírovať výber" skopíruje zoznam do schránky — ten sa potom pošle v chate a z neho sa spracuje `tydne/<týždeň>/` presne podľa `.claude/skills/tyzdenny-vystup/SKILL.md` (táto stránka nič sama neukladá, je to len pomôcka na výber, nie generátor výstupu — GitHub Pages nevie zapisovať do repa).
+   **URL:** https://recepty.sporacek.sk/vyber.html
+   Zhoda surovín je len heuristika podľa názvu (nie vždy presná) — finálne ceny/výber vždy over pri zostavovaní týždňa.
 
 ### Viacero obchodov
 

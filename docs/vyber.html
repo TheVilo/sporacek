@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>šporáček — zostav týždeň</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <div class="eyebrow">Šporáček · zostav týždeň</div>
+      <h1>Zostav si týždeň sám</h1>
+    </div>
+    <div class="top-actions">
+      <a class="nav-link" href="index.html">📚 Databáza receptov</a>
+      <a class="nav-link" href="tyzden.html">📱 Týždenný výstup</a>
+      <a class="nav-link" href="ceny.html">🏷️ Ceny surovín</a>
+      <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
+    </div>
+  </div>
+  <div class="sub">Vyber obchod, uvidíš pri každom recepte, koľko jeho surovín je práve v akcii. Vyfiltruj podľa štýlu (raňajky/večera, vysoký-proteín, jednohrnec…) a zaškrtni recepty, ktoré chceš na týždeň. Táto stránka nič neukladá — na konci si výber skopíruješ a pošleš mi ho v chate, ja z neho spravím hotový týždenný výstup (nákupný zoznam, ceny, social).</div>
+  <div class="status-line" id="statusLine">Načítavam…</div>
+
+  <div class="week-picker" id="storePicker"></div>
+  <div class="store-hint" id="storeHint" style="display:none"></div>
+
+  <div class="controls" id="controls" style="display:none">
+    <input type="text" class="search-input" id="searchInput" placeholder="Hľadať podľa názvu…" autocomplete="off" />
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div id="content">
+    <div class="grid">
+      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+  </div>
+
+  <div class="selection-bar" id="selectionBar">
+    <div><span class="sel-count" id="selCount">0</span> vybraných receptov</div>
+    <div class="actions">
+      <button class="clear-sel" onclick="clearSelection()">Vyčistiť výber</button>
+      <button class="copy-sel" id="copySelBtn" onclick="copySelection()">📋 Skopírovať výber pre chat</button>
+    </div>
+  </div>
+
+  <footer class="cta">
+    Zdroj pravdy je vždy repo <code>github.com/TheVilo/sporacek</code> (<code>recepty/</code>, <code>ceny/</code>). Zhoda so surovinami v akcii je len odhad podľa názvu (nie vždy presný) — over si to pri finálnom výstupe.
+  </footer>
+</div>
+
+<script>
+const OWNER = "TheVilo";
+const REPO = "sporacek";
+const BRANCH = "main";
+const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
+
+const TYP_ORDER = ["raňajky", "desiata", "obed", "olovrant", "večera", "dezert", "šalát", "polievka"];
+const TYP_LABEL = { "raňajky": "Raňajky", "desiata": "Desiata", "olovrant": "Olovrant", "dezert": "Dezerty", "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
+const TYP_TAGS = new Set(["raňajky", "desiata", "olovrant", "dezert", "večera", "obed", "šalát", "polievka", "jednohrnec"]);
+
+function primaryTyp(tags) {
+  for (const t of TYP_ORDER) if (tags.includes(t)) return t;
+  return "iné";
+}
+
+function escapeHtml(s) {
+  const div = document.createElement("div");
+  div.textContent = s == null ? "" : String(s);
+  return div.innerHTML;
+}
+function stripDiacritics(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+function nameKey(nazov) {
+  let s = stripDiacritics((nazov || "").toLowerCase());
+  s = s.replace(/\([^)]*\)/g, " ");
+  s = s.replace(/\b\d+([.,]\d+)?\s*%/g, " ");
+  s = s.replace(/[^a-z0-9]+/g, " ").trim();
+  return s;
+}
+function fmtEur(n) { return (typeof n === "number") ? n.toFixed(2).replace(".", ",") + " €" : "—"; }
+
+function matchIngredient(ingrNazov, catalogItems) {
+  const key = nameKey(ingrNazov);
+  if (key.length < 4) return null;
+  let best = null, bestDiff = Infinity;
+  for (const it of catalogItems) {
+    const itKey = nameKey(it.nazov);
+    if (itKey.length < 4) continue;
+    if (itKey === key || itKey.includes(key) || key.includes(itKey)) {
+      const diff = Math.abs(itKey.length - key.length);
+      if (diff < bestDiff) { best = it; bestDiff = diff; }
+    }
+  }
+  return best;
+}
+
+function parseSuroviny(text) {
+  const secM = text.match(/## Suroviny[^\n]*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  if (!secM) return [];
+  const cellsOf = (line) => line.slice(1, -1).split("|").map(c => c.trim());
+  const lines = secM[1].split("\n").map(l => l.trim()).filter(l => l.startsWith("|") && l.endsWith("|"));
+  if (lines.length < 2) return [];
+  return lines.slice(2).map(cellsOf)
+    .filter(c => c[0])
+    .map(c => ({ nazov: c[0], mnozstvo: c[1] || "" }));
+}
+
+function parseMarkdownRecipe(slug, text) {
+  const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
+  const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
+  const tagyM = text.match(/## Tagy\s*\n(.+)/);
+  let tagy = [];
+  if (tagyM) tagy = [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]);
+  const suroviny = parseSuroviny(text);
+  return { slug, nazov, cas, tagy, suroviny };
+}
+
+function parseYamlRecipe(slug, text) {
+  const fmM = text.match(/^---\n([\s\S]+?)\n---/);
+  const fm = fmM ? fmM[1] : "";
+  const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
+  let tagy = [];
+  const tagyBlockM = fm.match(/tagy:\n((?:\s+\w+:.*\n?)+)/);
+  if (tagyBlockM) {
+    for (const m of tagyBlockM[1].matchAll(/\[(.*?)\]/g)) {
+      tagy.push(...m[1].split(",").map(x => x.trim()).filter(Boolean));
+    }
+  }
+  const suroviny = parseSuroviny(text);
+  return { slug, nazov, cas: "", tagy, suroviny };
+}
+
+let allRecipes = [];
+let photoVersions = {};
+let catalogsByStore = {};   // obchod -> [catalog, ...] sorted newest first
+let selectedStore = null;
+let selectedCatalog = null;
+let activeTags = new Set();
+let searchQuery = "";
+let selectedSlugs = new Set();
+
+function photoUrlFor(slug) {
+  const v = photoVersions[slug];
+  return `${RAW_BASE}/fotky/${encodeURIComponent(slug)}.jpg${v ? "?v=" + v.slice(0, 8) : ""}`;
+}
+
+async function loadAll(manual) {
+  const btn = document.getElementById("refreshBtn");
+  const statusLine = document.getElementById("statusLine");
+  const content = document.getElementById("content");
+  btn.disabled = true;
+  statusLine.textContent = manual ? "Obnovujem…" : "Načítavam…";
+
+  try {
+    const [recListResp, cenyListResp] = await Promise.all([
+      fetch(`${API_BASE}/contents/recepty?ref=${BRANCH}`, { cache: "no-store" }),
+      fetch(`${API_BASE}/contents/ceny?ref=${BRANCH}`, { cache: "no-store" }),
+    ]);
+    if (!recListResp.ok) throw new Error(`GitHub API vrátilo ${recListResp.status}`);
+    const recFiles = (await recListResp.json()).filter(f => f.name.endsWith(".md"));
+
+    try {
+      const photoListResp = await fetch(`${API_BASE}/contents/fotky?ref=${BRANCH}`, { cache: "no-store" });
+      if (photoListResp.ok) {
+        const photoFiles = await photoListResp.json();
+        photoVersions = {};
+        for (const pf of photoFiles) if (pf.name.endsWith(".jpg")) photoVersions[pf.name.replace(/\.jpg$/, "")] = pf.sha;
+      }
+    } catch (e) { /* cache-busting je len optimalizácia, nesmie zhodiť stránku */ }
+
+    allRecipes = await Promise.all(recFiles.map(async (f) => {
+      const slug = f.name.replace(/\.md$/, "");
+      const rawResp = await fetch(`${RAW_BASE}/recepty/${encodeURIComponent(f.name)}`, { cache: "no-store" });
+      const text = await rawResp.text();
+      const r = text.startsWith("---\n") ? parseYamlRecipe(slug, text) : parseMarkdownRecipe(slug, text);
+      r.typ = primaryTyp(r.tagy);
+      return r;
+    }));
+
+    catalogsByStore = {};
+    if (cenyListResp.ok) {
+      const cenyFiles = (await cenyListResp.json()).filter(f => f.name.endsWith(".json"));
+      const catalogs = await Promise.all(cenyFiles.map(async (f) => {
+        const raw = await fetch(`${RAW_BASE}/ceny/${encodeURIComponent(f.name)}`, { cache: "no-store" });
+        return raw.json();
+      }));
+      for (const cat of catalogs) {
+        const store = cat.obchod || "?";
+        (catalogsByStore[store] ||= []).push(cat);
+      }
+      for (const store in catalogsByStore) {
+        catalogsByStore[store].sort((a, b) => (b.platnost_tyzdenna_default || "").localeCompare(a.platnost_tyzdenna_default || ""));
+      }
+    }
+
+    buildStorePicker();
+    buildChips();
+    document.getElementById("controls").style.display = allRecipes.length ? "" : "none";
+    applyFilters();
+    const now = new Date().toLocaleString("sk-SK");
+    statusLine.textContent = `Naposledy načítané: ${now} · ${allRecipes.length} receptov, ${Object.keys(catalogsByStore).length} obchodov s cenami`;
+  } catch (err) {
+    content.innerHTML = `<div class="error-state">Nepodarilo sa načítať dáta z GitHubu: ${escapeHtml(err.message)}<br>Skús Obnoviť, alebo skontroluj internetové pripojenie.</div>`;
+    statusLine.textContent = "Chyba pri načítaní.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function buildStorePicker() {
+  const stores = Object.keys(catalogsByStore).sort();
+  const picker = document.getElementById("storePicker");
+  if (!stores.length) { picker.innerHTML = ""; return; }
+  picker.innerHTML = stores.map(s => `
+    <button class="week-chip" aria-pressed="${selectedStore === s}" onclick="selectStore('${s.replace(/'/g, "\\'")}')">${escapeHtml(s)}</button>`).join("");
+  if (!selectedStore && stores.length) selectStore(stores[0], true);
+}
+
+function selectStore(store, silent) {
+  selectedStore = store;
+  selectedCatalog = (catalogsByStore[store] || [])[0] || null;
+  const hint = document.getElementById("storeHint");
+  if (selectedCatalog) {
+    hint.style.display = "";
+    hint.innerHTML = `Vybraný katalóg: <b>${escapeHtml(store)}</b>, platnosť ${escapeHtml(selectedCatalog.platnost_tyzdenna_default || "?")} · ${selectedCatalog.pocet_potravinovych_polozok || (selectedCatalog.polozky || []).length} položiek. Zhoda surovín nižšie je prepočítaná voči tomuto letáku.`;
+  } else {
+    hint.style.display = "none";
+  }
+  buildStorePicker();
+  if (!silent) applyFilters();
+}
+
+function buildChips() {
+  const counts = {};
+  for (const r of allRecipes) for (const t of r.tagy) counts[t] = (counts[t] || 0) + 1;
+  const tags = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+  const chipsEl = document.getElementById("chips");
+  const chipsHtml = tags.map(t => `
+    <button class="chip" data-tag="${escapeHtml(t)}" aria-pressed="${activeTags.has(t)}" onclick="toggleTag('${t.replace(/'/g, "\\'")}')">
+      #${escapeHtml(t)} <span class="n">${counts[t]}</span>
+    </button>`).join("");
+  const clearHtml = activeTags.size ? `<button class="chip-clear" onclick="clearTags()">Zrušiť filter ✕</button>` : "";
+  chipsEl.innerHTML = chipsHtml + clearHtml;
+}
+
+function toggleTag(tag) {
+  if (activeTags.has(tag)) activeTags.delete(tag); else activeTags.add(tag);
+  buildChips();
+  applyFilters();
+}
+function clearTags() { activeTags.clear(); buildChips(); applyFilters(); }
+
+function normalize(s) { return s.toLowerCase(); }
+
+function computeMatches(recipes) {
+  const items = selectedCatalog ? (selectedCatalog.polozky || []) : [];
+  return recipes.map(r => {
+    if (!selectedCatalog) return { ...r, matchCount: 0, matchPct: 0, matches: [] };
+    const matches = [];
+    for (const s of r.suroviny) {
+      const m = matchIngredient(s.nazov, items);
+      if (m) matches.push({ ingr: s.nazov, catalogNazov: m.nazov, cena: m.zlavnena_cena, zlava: m.zlava });
+    }
+    const total = r.suroviny.length || 1;
+    return { ...r, matchCount: matches.length, matchPct: Math.round((matches.length / total) * 100), matches };
+  });
+}
+
+function applyFilters() {
+  searchQuery = normalize(document.getElementById("searchInput").value.trim());
+  let filtered = allRecipes;
+  if (activeTags.size) filtered = filtered.filter(r => [...activeTags].every(t => r.tagy.includes(t)));
+  if (searchQuery) filtered = filtered.filter(r => normalize(r.nazov).includes(searchQuery));
+  filtered = computeMatches(filtered);
+  if (selectedCatalog) filtered.sort((a, b) => b.matchCount - a.matchCount || a.nazov.localeCompare(b.nazov));
+  renderRecipes(filtered, allRecipes.length);
+  updateSelectionBar();
+}
+document.getElementById("searchInput").addEventListener("input", applyFilters);
+
+function toggleSelect(slug) {
+  if (selectedSlugs.has(slug)) selectedSlugs.delete(slug); else selectedSlugs.add(slug);
+  applyFilters();
+}
+function clearSelection() { selectedSlugs.clear(); applyFilters(); }
+
+function updateSelectionBar() {
+  const bar = document.getElementById("selectionBar");
+  const count = selectedSlugs.size;
+  document.getElementById("selCount").textContent = count;
+  bar.classList.toggle("show", count > 0);
+}
+
+function copySelection() {
+  const chosen = allRecipes.filter(r => selectedSlugs.has(r.slug));
+  const byMatch = computeMatches(chosen);
+  let text = `Šporáček — výber receptov pre týždeň\n`;
+  if (selectedCatalog) text += `Obchod: ${selectedStore} (platnosť ${selectedCatalog.platnost_tyzdenna_default || "?"})\n`;
+  text += `\n`;
+  byMatch.forEach((r, i) => {
+    text += `${i + 1}. ${r.nazov} (${r.slug})`;
+    if (selectedCatalog) text += ` — ${r.matchCount}/${r.suroviny.length} surovín v akcii`;
+    text += `\n`;
+  });
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById("copySelBtn");
+    const original = btn.textContent;
+    btn.textContent = "✓ Skopírované";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1800);
+  });
+}
+
+function cardHtml(r) {
+  const selected = selectedSlugs.has(r.slug);
+  const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t));
+  const tagsHtml = nonTypTags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("");
+  const photoUrl = photoUrlFor(r.slug);
+
+  let matchBadge = "";
+  let matchListHtml = "";
+  if (selectedCatalog) {
+    matchBadge = r.matchCount > 0
+      ? `<div class="match-badge match-yes">🔥 ${r.matchCount}/${r.suroviny.length} surovín v akcii (${r.matchPct}%)</div>`
+      : `<div class="match-badge match-no">Žiadna surovina tento týždeň v akcii</div>`;
+    if (r.matches.length) {
+      matchListHtml = `<details class="postup">
+        <summary>Akciové suroviny (${r.matches.length})</summary>
+        <ul class="ingredients">${r.matches.map(m => `<li><span class="ingr-name">${escapeHtml(m.ingr)}</span><span class="ingr-qty">${fmtEur(m.cena)}</span></li>`).join("")}</ul>
+      </details>`;
+    }
+  }
+
+  return `
+    <div class="card ${selected ? "selected" : ""}">
+      <div class="photo-wrap">
+        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" />
+      </div>
+      <div class="card-body">
+        <label class="select-row">
+          <input type="checkbox" ${selected ? "checked" : ""} onchange="toggleSelect('${r.slug.replace(/'/g, "\\'")}')" />
+          <h3>${escapeHtml(r.nazov)}</h3>
+        </label>
+        <div class="macro-line">${r.cas ? escapeHtml(r.cas) : ""}</div>
+        ${matchBadge}
+        <div class="tags">${tagsHtml}</div>
+        ${matchListHtml}
+      </div>
+    </div>`;
+}
+
+function renderRecipes(recipes, totalCount) {
+  const content = document.getElementById("content");
+  if (allRecipes.length === 0) {
+    content.innerHTML = `<div class="empty-state">Zatiaľ žiadne recepty v <code>recepty/</code>.</div>`;
+    return;
+  }
+  if (recipes.length === 0) {
+    content.innerHTML = `<div class="empty-state">Žiadny recept nezodpovedá filtru/hľadaniu.</div>`;
+    return;
+  }
+
+  const filterActive = recipes.length !== totalCount;
+  const byGroup = {};
+  for (const r of recipes) (byGroup[r.typ] ||= []).push(r);
+  const groupOrder = [...TYP_ORDER, "iné"].filter(t => byGroup[t]);
+
+  const summaryHtml = `
+    <div class="summary">
+      <div class="item"><span class="n">${recipes.length}${filterActive ? ` / ${totalCount}` : ""}</span><span class="l">${filterActive ? "Vyhovuje filtru" : "Receptov v databáze"}</span></div>
+      <div class="item"><span class="n">${selectedSlugs.size}</span><span class="l">Vybraných na týždeň</span></div>
+    </div>`;
+
+  const groupsHtml = groupOrder.map(typ => `
+    <section class="group">
+      <div class="group-head">
+        <h2>${TYP_LABEL[typ] || typ}</h2>
+        <span class="count">${byGroup[typ].length} ${byGroup[typ].length === 1 ? "recept" : "receptov"}</span>
+      </div>
+      <div class="grid">${byGroup[typ].map(cardHtml).join("")}</div>
+    </section>`).join("");
+
+  content.innerHTML = summaryHtml + groupsHtml;
+}
+
+loadAll(false);
+</script>
+</body>
+</html>

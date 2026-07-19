@@ -18,10 +18,12 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
 ## Postup
 
 1. **Prečítaj leták** (PDF/screenshot/text) → vypíš akciové produkty s cenami.
-2. **Prehľadaj celú `recepty/`** (najrýchlejšie cez živé vyhľadávanie na `docs/index.html`) → toto je hlavný krok, nie formalita. Databáza receptov časom rastie a jej zmyslom je práve to, aby sa dala takto prehľadávať — nový týždeň sa má primárne **skladať z toho, čo už existuje** a sedí na aktuálnu akciu, nie z rovno vymyslených nových receptov.
+2. **Zisti, ktoré recepty sa majú použiť:**
+   - **Ak používateľ prišiel s výberom z `docs/vyber.html`** (skopírovaný zoznam receptov s ID) — použi presne tie, over si ich v `recepty/`, netreba znova prehľadávať celú databázu.
+   - **Inak prehľadaj celú `recepty/`** (najrýchlejšie cez živé vyhľadávanie na `docs/index.html`, prípadne rovno cez `docs/vyber.html` pre daný obchod) → toto je hlavný krok, nie formalita. Databáza receptov časom rastie a jej zmyslom je práve to, aby sa dala takto prehľadávať — nový týždeň sa má primárne **skladať z toho, čo už existuje** a sedí na aktuálnu akciu, nie z rovno vymyslených nových receptov.
 3. **Navrhni 5 obedov (Po–Pi), vždy pre 2 osoby**, podľa pravidiel z CLAUDE.md.
    - prednostne použi existujúce recepty z databázy, ak sedia na akciu
-   - nové recepty vytvor len ak sa v databáze nenájde nič vhodné
+   - nové recepty vytvor len ak sa v databáze nenájde nič vhodné (alebo ak si o to používateľ vyslovene povie)
 4. **Prepočítaj:**
    - cenu za porciu pre každé jedlo — recept sám cenu neobsahuje (viď CLAUDE.md), takže ju vždy dopočítaš teraz: vezmi jeho suroviny + množstvá a oceň ich podľa tohto letáku (akciová cena, ak je surovina v akcii; bežná odhadovaná cena, ak nie je)
    - kompletný nákupný zoznam s cenami

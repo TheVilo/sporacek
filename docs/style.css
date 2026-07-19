@@ -251,3 +251,25 @@ footer.cta code { background: color-mix(in srgb, var(--sand) 30%, var(--surface)
 .occ-price i { color: var(--terracotta); font-style: normal; font-weight: 700; font-size: .74rem; }
 .occ-qty { grid-column: 1 / -1; color: var(--text-muted); font-size: .74rem; padding-left: 22px; }
 @media (min-width: 560px) { .occ-qty { grid-column: 4; padding-left: 0; } }
+
+/* ===== zostav týždeň (vyber.html) ===== */
+.select-row { display: flex; align-items: flex-start; gap: 8px; }
+.select-row input[type="checkbox"] { width: 18px; height: 18px; margin-top: 3px; accent-color: var(--green); cursor: pointer; flex-shrink: 0; }
+.select-row h3 { margin: 0; }
+.card.selected { border-color: var(--green); box-shadow: 0 0 0 2px var(--green), var(--shadow); }
+.match-badge { font-size: .78rem; font-weight: 700; padding: 6px 10px; border-radius: 10px; width: fit-content; }
+.match-badge.match-yes { background: color-mix(in srgb, var(--green) 18%, var(--surface)); color: var(--green-ink); }
+.match-badge.match-no { background: color-mix(in srgb, var(--sand) 25%, var(--surface)); color: var(--text-muted); font-weight: 600; }
+.selection-bar {
+  position: sticky; bottom: 16px; z-index: 6; display: none; align-items: center; justify-content: space-between;
+  gap: 12px; background: var(--green); color: var(--paper); border-radius: 16px; padding: 14px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25); margin-top: 24px; flex-wrap: wrap;
+}
+.selection-bar.show { display: flex; }
+.selection-bar .sel-count { font-weight: 800; }
+.selection-bar .actions { display: flex; gap: 8px; }
+.selection-bar button { font-family: inherit; font-size: .82rem; font-weight: 700; border-radius: 100px; padding: 8px 16px; cursor: pointer; border: 1px solid transparent; }
+.selection-bar .copy-sel { background: var(--paper); color: var(--green-ink); }
+.selection-bar .copy-sel.copied { background: var(--terracotta); color: #fff; }
+.selection-bar .clear-sel { background: transparent; color: var(--paper); border-color: rgba(255,255,255,.4); }
+.store-hint { font-size: .85rem; color: var(--text-muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 12px; padding: 12px 16px; margin-bottom: 18px; }
