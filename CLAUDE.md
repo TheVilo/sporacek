@@ -126,7 +126,7 @@ Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri n
 
 Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`docs/CNAME`). Pages servuje z priečinka `docs/` na `main`.
 
-**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto štyri stránky v `docs/`:
+**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto stránky v `docs/`:
 
 1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, suroviny, tagy, postup — bez ceny, tá sa počíta len na úrovni týždňa), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov. Toto je tá trvalá databáza, z ktorej sa recepty párujú s akciovými surovinami.
    **URL:** https://recepty.sporacek.sk/
@@ -138,6 +138,22 @@ Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`d
 4. **`docs/vyber.html` — zostav týždeň.** Interaktívny nástroj na výber receptov pre týždenný výstup — vyberieš obchod, stránka pri každom recepte naživo prepočíta, koľko jeho surovín je práve v akcii (porovnaním `recepty/*.md` surovín s `ceny/<obchod>-*.json`), zoradí podľa zhody a dá vyfiltrovať podľa tagov. Zaškrtneš recepty, tlačidlo "Skopírovať výber" skopíruje zoznam do schránky — ten sa potom pošle v chate a z neho sa spracuje `tydne/<týždeň>/` presne podľa `.claude/skills/tyzdenny-vystup/SKILL.md` (táto stránka nič sama neukladá, je to len pomôcka na výber, nie generátor výstupu — GitHub Pages nevie zapisovať do repa).
    **URL:** https://recepty.sporacek.sk/vyber.html
    Zhoda surovín je len heuristika podľa názvu (nie vždy presná) — finálne ceny/výber vždy over pri zostavovaní týždňa.
+5. **`docs/stories.html` — vizuálne Stories.** Poskladá hotové **1080×1920 PNG** obrázky do Instagram/Facebook Stories z toho istého `tydne/<týždeň>/data.json` (sekcia `social.stories`) + fotky receptu + `cena/porcia`. Ku každému dňu 2 slidy: **hook** (pútavá cena) a **recept** (názov, cena/porcia, CTA). Renderuje na canvas, dá stiahnuť PNG (jeden alebo všetky). Prepínač týždňov/obchodov ako `tyzden.html`.
+   **URL:** https://recepty.sporacek.sk/stories.html
+
+### Generovanie Stories do repa (`tools/generate-stories.mjs`)
+
+`docs/stories.html` je zároveň **render engine**. Skript `tools/generate-stories.mjs` poženie tú istú stránku v headless Chromiu (Playwright, offline — GitHub API/raw presmerované na lokálne súbory) a uloží PNG do `tydne/<týždeň>/stories/`. Jeden zdroj pravdy = to HTML, žiadny duplicitný kresliaci kód.
+- `node tools/generate-stories.mjs` — všetky týždne; `node tools/generate-stories.mjs 2026-W29-lidl` — konkrétny.
+- Po vygenerovaní commitni `tydne/<týždeň>/stories/*.png`.
+
+### Logo (`brand/`)
+
+Logo pre Stories je **drop-in**: `stories.html` aj generátor ho hľadajú v priečinku `brand/` (koreň repa), načítané cez RAW (CORS-clean, nech canvas export nepadne). Prednosť má PNG (pri exporte najbezpečnejšie), s priehľadným pozadím:
+- `brand/logo-light.png` — svetlá verzia na fotku/tmavé pozadie (hook slide, hlavička recept slidu),
+- `brand/logo-dark.png` — tmavá verzia na krémový panel,
+- alebo jednotné `brand/logo.png` pre obe.
+Kým súbor chýba, padne to na textový placeholder „🥕 šporáček". **Pri pridaní/zmene loga preregeneruj Stories** (`tools/generate-stories.mjs`).
 
 ### Viacero obchodov
 
