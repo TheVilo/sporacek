@@ -79,7 +79,7 @@ Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync 
 Používaj len tieto skupiny, nevymýšľaj nové hodnoty:
 
 - **typ:** obed, večera, raňajky, desiata, olovrant, dezert, polievka, šalát, jednohrnec
-- **surovina:** kura, bravčové, hovädzie, ryba, bezmäsité, strukoviny
+- **surovina:** kura, bravčové, hovädzie, ryba, morčacie, morské-plody, bezmäsité, strukoviny
 - **výživa:** vegetariánske, vysoký-proteín, ľahké, sýte
 - **náročnosť:** do-20-minút, do-rúry, jednohrnec
 

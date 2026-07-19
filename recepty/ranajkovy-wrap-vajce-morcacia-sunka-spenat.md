@@ -49,4 +49,4 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 ---
 
 ## Tagy
-`#raňajky` `#vysoký-proteín` `#do-20-minút`
+`#raňajky` `#morčacie` `#vysoký-proteín` `#do-20-minút`

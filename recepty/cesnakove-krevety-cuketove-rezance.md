@@ -51,4 +51,4 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 ---
 
 ## Tagy
-`#večera` `#vysoký-proteín` `#ľahké` `#do-20-minút` `#jednohrnec`
+`#večera` `#morské-plody` `#vysoký-proteín` `#ľahké` `#do-20-minút` `#jednohrnec`

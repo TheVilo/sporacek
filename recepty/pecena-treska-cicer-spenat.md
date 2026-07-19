@@ -51,4 +51,4 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Oven-
 ---
 
 ## Tagy
-`#večera` `#strukoviny` `#vysoký-proteín` `#ľahké` `#do-rúry`
+`#večera` `#ryba` `#strukoviny` `#vysoký-proteín` `#ľahké` `#do-rúry`

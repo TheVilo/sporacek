@@ -52,4 +52,4 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 ---
 
 ## Tagy
-`#večera` `#vysoký-proteín` `#ľahké`
+`#večera` `#morčacie` `#vysoký-proteín` `#ľahké`
