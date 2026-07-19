@@ -42,11 +42,16 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 ## Ovocie
 - čučoriedky
 - marhule
+- avokádo
+- jablká
+- banán
 
 ## Orechy a semienka
 - vlašské orechy
 - tekvicové semienka
 - makové semienka
+- arašidové maslo
+- chia semienka
 
 ## Strukoviny a obilniny
 - šošovica
@@ -67,6 +72,8 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - syr feta
 - parmezán
 - jogurt biely
+- grécky jogurt
+- tvaroh
 - maslo
 
 ## Základy a koreniny
@@ -95,6 +102,11 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - citrón
 - strúhanka
 - múka
+- ovsená múka
+- prášok do pečiva
+- škorica
+- kakao
+- vanilkový extrakt
 - paradajkový pretlak
 - konzervované paradajky
 - sušené paradajky

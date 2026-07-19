@@ -289,7 +289,7 @@ function mealCardHtml(m) {
   if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
   const photoUrl = photoUrlFor(r.slug);
   const priceStr = m.cena != null ? `${Number(m.cena).toFixed(2)}&nbsp;€<span> / porcia</span>` : "";
-  const nonTypTags = r.tagy.filter(t => !["raňajky","večera","obed","šalát","polievka","jednohrnec"].includes(t));
+  const nonTypTags = r.tagy.filter(t => !["raňajky","desiata","olovrant","dezert","večera","obed","šalát","polievka","jednohrnec"].includes(t));
   return `
     <div class="meal">
       <div class="photo-wrap"><img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightboxForRecipe('${r.slug.replace(/'/g, "\\'")}')" /></div>

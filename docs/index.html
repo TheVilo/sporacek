@@ -73,9 +73,9 @@ const BRANCH = "main";
 const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
 
-const TYP_ORDER = ["raňajky", "večera", "obed", "šalát", "polievka"];
-const TYP_LABEL = { "raňajky": "Raňajky", "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
-const TYP_TAGS = new Set(["raňajky", "večera", "obed", "šalát", "polievka", "jednohrnec"]);
+const TYP_ORDER = ["raňajky", "desiata", "obed", "olovrant", "večera", "dezert", "šalát", "polievka"];
+const TYP_LABEL = { "raňajky": "Raňajky", "desiata": "Desiata", "olovrant": "Olovrant", "dezert": "Dezerty", "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
+const TYP_TAGS = new Set(["raňajky", "desiata", "olovrant", "dezert", "večera", "obed", "šalát", "polievka", "jednohrnec"]);
 
 function primaryTyp(tags) {
   for (const t of TYP_ORDER) if (tags.includes(t)) return t;
