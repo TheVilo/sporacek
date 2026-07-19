@@ -18,10 +18,10 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
 ## Postup
 
 1. **Prečítaj leták** (PDF/screenshot/text) → vypíš akciové produkty s cenami.
-2. **Prehľadaj `recepty/`** (najrýchlejšie cez živé vyhľadávanie na `docs/index.html`) → zisti, čo už máme, aby nevznikli duplicity a aby sa prednostne použili existujúce recepty.
+2. **Prehľadaj celú `recepty/`** (najrýchlejšie cez živé vyhľadávanie na `docs/index.html`) → toto je hlavný krok, nie formalita. Databáza receptov časom rastie a jej zmyslom je práve to, aby sa dala takto prehľadávať — nový týždeň sa má primárne **skladať z toho, čo už existuje** a sedí na aktuálnu akciu, nie z rovno vymyslených nových receptov.
 3. **Navrhni 5 obedov (Po–Pi), vždy pre 2 osoby**, podľa pravidiel z CLAUDE.md.
    - prednostne použi existujúce recepty z databázy, ak sedia na akciu
-   - nové recepty vytvor len ak treba
+   - nové recepty vytvor len ak sa v databáze nenájde nič vhodné
 4. **Prepočítaj:**
    - cenu za porciu pre každé jedlo
    - kompletný nákupný zoznam s cenami
@@ -35,6 +35,10 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
    - `SOCIAL-PLAN.md` — Stories a feed texty (pre človeka)
    - `data.json` — **strojovo čitateľná verzia** pre `docs/tyzden.html` (živá stránka), presná štruktúra nižšie. Bez tohto súboru sa týždeň na stránke nezobrazí.
    - nové recepty do `recepty/`, nové suroviny do `suroviny.md`
+
+## Recepty sú zdroj pravdy — `tydne/` je len odvodený pohľad
+
+`OVERVIEW.md`, `NAKUPNY-ZOZNAM.md`, `SOCIAL-PLAN.md` aj `data.json` sú **výstup vypočítaný z aktuálneho stavu `recepty/`** v momente písania, nie samostatne udržiavaný obsah. Ak sa neskôr recept použitý v už publikovanom týždni zmení (iné suroviny, iná cena — napr. pri prerábaní na chutnejšiu verziu), staré čísla v `tydne/<ten-týždeň>/` sa tým pádom rozídu s realitou. Keď si to všimneš (alebo ťa na to upozorní používateľ), **prepočítaj celý dotknutý týždeň nanovo** z aktuálnych receptov — neopravuj len jedno číslo, cena/suroviny sa menia v celom nákupnom zozname aj súhrne naraz.
 
 ## Štruktúra `data.json`
 

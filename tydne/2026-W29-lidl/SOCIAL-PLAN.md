@@ -5,7 +5,7 @@
 
 ## DENNÉ STORIES
 
-### Pondelok 13. 7. — Plnená cuketa s mletým mäsom
+### Pondelok 13. 7. — Plnená cuketa s mletým mäsom a zapečeným syrom
 
 **Vizuál:** Polovice plnenej cukety v rúre, zlatohnedé, šafranovo svietiace.
 
@@ -16,9 +16,9 @@
 > Nie, nevynechali sme nič.
 
 **Story text (slide 2):**
-> 🥒 Plnená cuketa s mäsom a ryžou
-> ⏱ 40 minút
-> 💰 0,75 €/porcia
+> 🥒 Plnená cuketa s mäsom, ryžou a zapečeným syrom
+> ⏱ 45 minút
+> 💰 0,94 €/porcia
 > 👨‍👩‍👧‍👦 Nakŕmiš 4 ľudí
 
 **CTA:** Recept v bio / swipe up / odkaz v stories
@@ -36,18 +36,18 @@
 > (Bežne 1,29 €.)
 
 **Story text (slide 2):**
-> 🌽 Kuracie rezne + kukurica + zemiaky
-> ⏱ 25 minút
-> 💰 0,65 €/porcia
+> 🌽 Maslovo-cesnakové kura + kukurica + zemiaky
+> ⏱ 30 minút
+> 💰 0,64 €/porcia
 > ⚡ Kukurica platí LEN dnes do zatvárania!
 
 **CTA:** Bež do Lidlu ešte dnes!
 
 ---
 
-### Streda 15. 7. — Bravčové karé s marhuľovou glazúrou
+### Streda 15. 7. — Bravčové karé s marhuľovým chutney
 
-**Vizuál:** Plátky karé s lesklou marhuľovou omáčkou, čerstvé marhule vedľa.
+**Vizuál:** Plátky karé na ryži, lesklé marhuľové chutney s kúskami cibule a zázvoru.
 
 **Story text (slide 1):**
 > Bravčové karé mínus 45 %.
@@ -56,49 +56,49 @@
 > Matematika, ktorá sa oplatí.
 
 **Story text (slide 2):**
-> 🍑 Karé s marhuľovou glazúrou
-> ⏱ 30 minút
-> 💰 0,67 €/porcia
+> 🍑 Karé s marhuľovým chutney a ryžou
+> ⏱ 35 minút
+> 💰 0,95 €/porcia
 > ✨ Vyzerá ako z reštaurácie
 
 **CTA:** Celý recept v bio
 
 ---
 
-### Štvrtok 16. 7. — Krémová dyňová polievka
+### Štvrtok 16. 7. — Krémová pečená dyňová polievka
 
-**Vizuál:** Oranžová polievka v bielej miske, smotanová špirála na vrchu, záber zhora.
+**Vizuál:** Oranžová polievka v bielej miske, smotanová špirála a opražené tekvicové semienka navrchu, záber zhora.
 
 **Story text (slide 1):**
 > Červená dyňa za 1,79 €/kg.
-> Štyri porcie polievky za 2,46 €.
-> Jedna porcia = 62 centov.
+> Štyri porcie polievky za necelé tri eurá.
+> Jedna porcia = 73 centov.
 > Meno tohto receptu je matematika.
 
 **Story text (slide 2):**
-> 🎃 Krémová dyňová polievka
-> ⏱ 30 minút
-> 💰 0,62 €/porcia
+> 🎃 Krémová pečená dyňová polievka so zázvorom
+> ⏱ 40 minút
+> 💰 0,73 €/porcia
 > 🌱 Bez mäsa, plná chute
 
 **CTA:** Recept čaká na teba v bio
 
 ---
 
-### Piatok 17. 7. — Letný šalát s broskýňami a mozzarellou
+### Piatok 17. 7. — Letný šalát s broskyňami a mozzarellou
 
-**Vizuál:** Broskyne a mozzarella na bielom tanieri, med, bazalka, svetlé letné svetlo.
+**Vizuál:** Broskyne a mozzarella na bielom tanieri, lesklé línie balzamikovej redukcie, bazalka, svetlé letné svetlo.
 
 **Story text (slide 1):**
 > Piatok.
 > Varenie nechceme.
 > Broskyne za 0,99 €, mozzarella za 0,79 €.
-> Šalát za 10 minút. Hotovo.
+> Šalát za 20 minút (väčšinu času čaká redukcia na sporáku). Hotovo.
 
 **Story text (slide 2):**
-> 🍑🧀 Broskyne + mozzarella + med + olej
-> ⏱ 10 minút (fakt)
-> 💰 0,66 €/porcia
+> 🍑🧀 Broskyne + mozzarella + balzamiková redukcia
+> ⏱ 20 minút
+> 💰 0,56 €/porcia
 > 0 % namáhania, 100 % chute
 
 **CTA:** Recept v bio — ale ani ho nepotrebuješ
@@ -167,18 +167,15 @@
 >
 > 5 receptov. 13 porcií. Akcie z Lidlu 13.–19. 7.
 >
-> | Recept | Cena/porcia | Ušetrili sme* |
-> |---|---|---|
-> | Plnená cuketa | 0,75 € | ~46 % |
-> | Kuracie rezne + kukurica | 0,65 € | ~57 % |
-> | Karé s marhuľami | 0,67 € | ~57 % |
-> | Dyňová polievka | 0,62 € | ~50 % |
-> | Broskynový šalát | 0,66 € | ~56 % |
+> | Recept | Cena/porcia |
+> |---|---|
+> | Plnená cuketa so syrom | 0,94 € |
+> | Kuracie prsia + kukurica | 0,64 € |
+> | Karé s marhuľovým chutney | 0,95 € |
+> | Dyňová polievka | 0,73 € |
+> | Broskyňový šalát | 0,56 € |
 >
-> *vs. bežné ceny mimo akcie
->
-> Priemerná porcia tento týždeň: **0,67 €**
-> Keby sme kupovali bez akcie: ~**1,50 €/porcia**
+> Priemerná porcia tento týždeň: **0,76 €**
 >
 > Na jednom týždni sme ušetrili kľudne **10–15 €** na rodinu.
 >
@@ -194,9 +191,9 @@
 
 | Deň | Formát | Obsah |
 |---|---|---|
-| Po 13.7. | Stories | Plnená cuketa — 0,75 €/porcia |
+| Po 13.7. | Stories | Plnená cuketa so syrom — 0,94 €/porcia |
 | Ut 14.7. | Stories ⚡ | Kuracie + kukurica DNES LEN 0,19€ |
-| St 15.7. | Stories + Feed | Karé s marhuľami + Food Waste post |
-| Št 16.7. | Stories | Dyňová polievka — 0,62 €/porcia |
-| Pi 17.7. | Stories + Feed | Broskynový šalát + Shopping Tips karusel |
+| St 15.7. | Stories + Feed | Karé s marhuľovým chutney + Food Waste post |
+| Št 16.7. | Stories | Dyňová polievka — 0,73 €/porcia |
+| Pi 17.7. | Stories + Feed | Broskyňový šalát + Shopping Tips karusel |
 | So 19.7. | Stories + Feed | Savings Summary týždeň 29 |

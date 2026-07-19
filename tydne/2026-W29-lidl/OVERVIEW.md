@@ -48,13 +48,15 @@
 
 ## 5 receptov na tento týždeň
 
-| Deň | Recept | Cena/porcia | Úspora |
-|---|---|---|---|
-| Pondelok 13.7. | Plnená cuketa s mletým mäsom | 0,75 € | ~46 % |
-| Utorok 14.7. | Kuracie rezne s kukuricou ⚡ | 0,65 € | ~57 % |
-| Streda 15.7. | Bravčové karé s marhuľovou glazúrou | 0,67 € | ~57 % |
-| Štvrtok 16.7. | Krémová dyňová polievka | 0,62 € | ~50 % |
-| Piatok 17.7. | Letný šalát s broskýňami a mozzarellou | 0,66 € | ~56 % |
+| Deň | Recept | Cena/porcia |
+|---|---|---|
+| Pondelok 13.7. | Plnená cuketa s mletým mäsom, ryžou a zapečeným syrom | 0,94 € |
+| Utorok 14.7. | Maslovo-cesnakové kuracie prsia s kukuricou a zemiakmi ⚡ | 0,64 € |
+| Streda 15.7. | Bravčové karé s marhuľovým chutney a ryžou | 0,95 € |
+| Štvrtok 16.7. | Krémová pečená dyňová polievka so zázvorom | 0,73 € |
+| Piatok 17.7. | Letný šalát s broskyňami, mozzarellou a balzamikovou redukciou | 0,56 € |
+
+*Ceny sú prepočítané z aktuálnych receptov v databáze (`recepty/`) — vždy sedia s tým, čo je tam napísané, nie sú to samostatne udržiavané čísla.*
 
 ---
 
