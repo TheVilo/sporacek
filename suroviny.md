@@ -18,6 +18,10 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - tuniak v konzerve
 - losos
 - bravčové karé
+- morčacie prsia
+- morčacia šunka
+- krevety
+- treska
 
 ## Zelenina
 - cibuľa
@@ -38,6 +42,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - dyňa
 - zeler
 - zázvor
+- kukurica (konzervovaná)
 
 ## Ovocie
 - čučoriedky
@@ -45,6 +50,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - avokádo
 - jablká
 - banán
+- maliny
 
 ## Orechy a semienka
 - vlašské orechy
@@ -57,16 +63,21 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - šošovica
 - červená šošovica
 - fazuľa
+- čierna fazuľa (konzervovaná)
 - cícer
 - ryža
 - cestoviny
 - celozrnné cestoviny
 - kuskus
 - ovsené vločky
+- quinoa
+- ryžové rezance
+- celozrnná tortilla
 
 ## Mliečne a vajcia
 - vajcia
 - mlieko
+- mandľové mlieko
 - smotana na varenie
 - syr
 - syr feta
@@ -114,3 +125,5 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - bujón (kocka)
 - kokosové mlieko
 - tahini (sezamová pasta)
+- sezamový olej
+- sezamové semienka
