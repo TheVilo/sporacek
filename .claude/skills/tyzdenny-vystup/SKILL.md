@@ -76,17 +76,17 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
 
 ## Šablóna foto promptu (pre nanobanana)
 
-**Kritická podmienka: fotka musí vyzerať ako amatérska mobilná fotka od človeka s citom pre detail, NIE ako profesionálna/umelecká food photography a NIE ako chudobná/zanedbaná scéna.** Toto je nezmeniteľná požiadavka pri každom recepte — bežný, ale gastronomicky zručný človek odfotí telefónom svoje jedlo tesne pred jedením v peknej modernej kuchyni, nie štylista jedla pre časopis, ale ani niekto, komu je jedno, ako to vyzerá.
+**Kritická podmienka: fotka musí vyzerať ako fotka z obľúbeného kuchárskeho blogu/food Instagramu (napr. Running to the Kitchen, BBC Good Food, Delish), NIE ako sterilná komerčná reklama, ale ani ako narýchlo odfotený amatérsky telefónny snímok.** Toto je aktuálna, overená požiadavka pri každom recepte (overené na vzorkách, potvrdené referenčnými fotkami) — chutné, vkusne naaranžované, prirodzene osvetlené jedlo, aké fotí niekto s citom pre food styling, no stále doma, nie v štúdiu.
 
 ```
-Realistická fotka jedla odfotená moderným mobilným telefónom (dnešné telefóny automaticky vylepšujú farby a kontrast), akoby ju spravil bežný, ale gastronomicky zručný človek doma tesne pred jedlom: [NÁZOV JEDLA].
-Pekný tanier na kuchynskom stole alebo pracovnej doske v modernej, peknej domácej kuchyni — nie štylizovaná reklamná scéna, ale ani ošarpané/staré prostredie.
-Jedlo je mierne, prirodzene naaranžované — vidno, že človek dbá na to, ako jedlo vyzerá, hoci to nie je scéna pre časopis.
-Vyzerá presne ako pekný Instagram Stories/WhatsApp odfotok, NIE profesionálna food photography.
-Živé, sýte farby a dobrý kontrast/svetlo, prirodzené (denné z okna alebo stropné) — nie ploché/podexponované, ale ani umelo naaranžované "zlaté" svetlo.
-Celý záber ostrý, BEZ výrazného bokehu/rozostreného pozadia — mobilná fotka, nie profi objektív s hĺbkou ostrosti.
-Prirodzený, mierne neštudovaný uhol, ako by človek fotil vlastné jedlo, no s dobrým citom pre kompozíciu.
-Minimalistické reálne rekvizity sú v poriadku v malej miere (napr. obyčajný pohár, príbor) — ale ŽIADNY umelo naaranžovaný "food styling" moodboard (žiadne plátené obrúsky, vintage dosky na krájanie, fľaše vína, dekoratívne kvety, sviečky, bylinky navyše).
+Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): [NÁZOV JEDLA].
+Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
+Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
+Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
+Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
+Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
+Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
+Živé, sýte, chutné farby.
 Voľné miesto navrchu alebo po strane na text.
 Bez textu a bez loga v obrázku.
 Formát 9:16 (Instagram Stories).

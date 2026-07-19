@@ -7,11 +7,15 @@ description: Použi vždy, keď treba vygenerovať fotku jedla pre recept (foto_
 
 Fotky **sú súčasťou repa** (priečinok `fotky/`, viď `CLAUDE.md`) — generuj ich do dočasného súboru, over si ich, potom ulož do `fotky/<id>.jpg`, commitni a pushni. Cez GitHub/git pull sa dostanú aj do lokálnej zložky `sporacek`.
 
-## Kritická, nemeniteľná podmienka: amatérska mobilná fotka od človeka s citom pre detail — nie profi food photography, ale ani chudobná/zanedbaná scéna
+## Kritická, nemeniteľná podmienka: štýl kuchárskeho blogu/Instagramu — chutné, vkusné, ale nie sterilná reklama
 
-Fotky **musia vyzerať ako telefónny odfotok jedla tesne pred jedením od človeka, čo má vkus** — presne také, aké dáva na Instagram Stories niekto, kto vie dobre navariť aj pekne naaranžovať, ale nie je profesionálny food štylista. **Nie** naštylizovaná, profesionálne nasvietená reklamná "food photography" scéna, **ale ani** ošarpaná/neupratená/chudobne pôsobiaca kuchyňa.
+Fotky **musia vyzerať ako fotka z obľúbeného kuchárskeho blogu alebo food Instagramu** — presne taký štýl ako majú weby typu Running to the Kitchen, BBC Good Food, Delish. **Nie** amatérsky narýchlo odfotený telefónny snímok, **ale ani** sterilná komerčná reklamná studio scéna.
 
-Vyhýbaj sa: bokehu/rozostrenému pozadiu, plátenym obrúskom, vintage doskám na krájanie, fľašiam vína, umelo poukladaným bylinkám/kvetom/sviečkam, "zlatému" naaranžovanému svetlu — ale rovnako sa vyhýbaj starej/ošarpanej kuchyni a nedbalo hodenému jedlu na tanier. Namiesto toho: ostrý celý záber, **moderná, pekná** kuchyňa/stôl, jedlo mierne a prirodzene naaranžované, živé sýte farby a dobrý kontrast (ako z dnešného telefónu, ktorý fotku automaticky vylepší), prirodzený mierne neštudovaný uhol.
+Povolené a žiadané: prirodzené jasné denné svetlo (často s teplými slnečnými odleskami), jedlo pekne a chutne naaranžované s jemným garnišom (čerstvé bylinky, sezam, nastrúhaný syr...), fotené zhora alebo z uhla 3/4, vkusné reálne rekvizity v primeranej miere (plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja), mierny prirodzený bokeh na pozadí je v poriadku. Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — nie sterilné biele štúdio.
+
+Nikdy ale: prehnane geometrické/umelé aranžovanie, prehnane veľa rekvizít naraz (max 2-3), text alebo logo v obrázku.
+
+Presná šablóna promptu je v `.claude/skills/tyzdenny-vystup/SKILL.md` — použi ju vždy, aj mimo týždenného letáku.
 
 Presná šablóna promptu je v `.claude/skills/tyzdenny-vystup/SKILL.md` — použi ju vždy, aj mimo týždenného letáku.
 
