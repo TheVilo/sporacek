@@ -24,13 +24,17 @@
       <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
     </div>
   </div>
-  <div class="sub">Vyber obchod, uvidíš pri každom recepte, koľko jeho surovín je práve v akcii. Vyfiltruj podľa štýlu (raňajky/večera, vysoký-proteín, jednohrnec…) a zaškrtni recepty, ktoré chceš na týždeň. Táto stránka nič neukladá — na konci si výber skopíruješ a pošleš mi ho v chate, ja z neho spravím hotový týždenný výstup (nákupný zoznam, ceny, social).</div>
+  <div class="sub">Vyber obchod a štýl (raňajky/večera, vysoký-proteín, jednohrnec…) — stránka ti hneď automaticky navrhne top receptov s najlepšou zhodou s aktuálnym letákom (zaškrtnuté nižšie). Jednotlivé recepty vieš ručne vymeniť. Táto stránka nič neukladá — na konci si výber skopíruješ a pošleš mi ho v chate, ja z neho spravím hotový týždenný výstup (nákupný zoznam, ceny, social).</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
 
   <div class="week-picker" id="storePicker"></div>
   <div class="store-hint" id="storeHint" style="display:none"></div>
 
   <div class="controls" id="controls" style="display:none">
+    <div class="count-row">
+      <label for="recipeCount">Navrhni <input type="number" id="recipeCount" value="5" min="1" max="15" onchange="autoPickTop()" /> receptov s najlepšou zhodou</label>
+      <button class="nav-link" onclick="autoPickTop()">🔮 Navrhnúť znova</button>
+    </div>
     <input type="text" class="search-input" id="searchInput" placeholder="Hľadať podľa názvu…" autocomplete="off" />
     <div class="chips" id="chips"></div>
   </div>
@@ -202,7 +206,7 @@ async function loadAll(manual) {
     buildStorePicker();
     buildChips();
     document.getElementById("controls").style.display = allRecipes.length ? "" : "none";
-    applyFilters();
+    autoPickTop();
     const now = new Date().toLocaleString("sk-SK");
     statusLine.textContent = `Naposledy načítané: ${now} · ${allRecipes.length} receptov, ${Object.keys(catalogsByStore).length} obchodov s cenami`;
   } catch (err) {
@@ -233,7 +237,7 @@ function selectStore(store, silent) {
     hint.style.display = "none";
   }
   buildStorePicker();
-  if (!silent) applyFilters();
+  if (!silent) autoPickTop();
 }
 
 function buildChips() {
@@ -252,9 +256,20 @@ function buildChips() {
 function toggleTag(tag) {
   if (activeTags.has(tag)) activeTags.delete(tag); else activeTags.add(tag);
   buildChips();
+  autoPickTop();
+}
+function clearTags() { activeTags.clear(); buildChips(); autoPickTop(); }
+
+function autoPickTop() {
+  let filtered = allRecipes;
+  if (activeTags.size) filtered = filtered.filter(r => [...activeTags].every(t => r.tagy.includes(t)));
+  filtered = computeMatches(filtered);
+  if (selectedCatalog) filtered.sort((a, b) => b.matchCount - a.matchCount || a.nazov.localeCompare(b.nazov));
+  const countInput = document.getElementById("recipeCount");
+  const n = Math.max(1, parseInt(countInput ? countInput.value : "5", 10) || 5);
+  selectedSlugs = new Set(filtered.slice(0, n).map(r => r.slug));
   applyFilters();
 }
-function clearTags() { activeTags.clear(); buildChips(); applyFilters(); }
 
 function normalize(s) { return s.toLowerCase(); }
 
