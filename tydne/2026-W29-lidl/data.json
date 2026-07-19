@@ -168,27 +168,32 @@
     {
       "den": "Pondelok 13. 7.",
       "slug": "plnena-cuketa-mlete-maso",
-      "cena": 0.94
+      "cena": 0.94,
+      "bezna_cena": 1.74
     },
     {
       "den": "Utorok 14. 7. ⚡",
       "slug": "kuracie-rezne-kukurica-zemiaky",
-      "cena": 0.64
+      "cena": 0.64,
+      "bezna_cena": 1.45
     },
     {
       "den": "Streda 15. 7.",
       "slug": "bravčove-kare-marhuľova-glazura",
-      "cena": 0.95
+      "cena": 0.95,
+      "bezna_cena": 1.80
     },
     {
       "den": "Štvrtok 16. 7.",
       "slug": "kremova-dynova-polievka",
-      "cena": 0.73
+      "cena": 0.73,
+      "bezna_cena": 1.35
     },
     {
       "den": "Piatok 17. 7.",
       "slug": "letny-salat-broskyne-mozzarella",
-      "cena": 0.56
+      "cena": 0.56,
+      "bezna_cena": 1.25
     }
   ],
   "nakupny_zoznam": {

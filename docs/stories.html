@@ -47,7 +47,7 @@
   <div class="status-line" id="statusLine">Hľadám dostupné týždne…</div>
 
   <div class="story-intro">
-    Hotové <b>1080×1920</b> obrázky do Instagram / Facebook Stories — poskladané naživo z fotky receptu, ceny za porciu a textu zo <code>social.stories</code> daného týždňa. Ku každému dňu vzniknú <b>2 slidy</b>: <b>hook</b> (pútavá cena) a <b>recept</b> (názov, cena/porcia, CTA). Stiahni PNG a rovno postni.
+    Hotové <b>1080×1920</b> obrázky do Instagram / Facebook Stories — poskladané naživo z fotky receptu, ceny za porciu a textu zo <code>social.stories</code> daného týždňa. Ku každému dňu vzniknú <b>2 slidy</b>: <b>hook</b> (stmavená fotka + pútavá veta) a <b>recept</b> (názov, cena/porcia a úspora, ak je v dátach <code>bezna_cena</code>). Stiahni PNG a rovno postni.
   </div>
 
   <div class="allbar" id="allbar" style="display:none">
@@ -85,7 +85,8 @@ let allSlides = []; // {canvas, name}
 const LOGO_LIGHT_CANDIDATES = ["logo-light.png", "logo-light.svg", "logo.png", "logo.svg"].map(f => `${RAW_BASE}/brand/${f}`);
 const LOGO_DARK_CANDIDATES = ["logo-dark.png", "logo-dark.svg", "logo.png", "logo.svg"].map(f => `${RAW_BASE}/brand/${f}`);
 const MARK_GREEN_CANDIDATES = ["mark-green.png", "mark-green.svg"].map(f => `${RAW_BASE}/brand/${f}`);
-let logoLight = null, logoDark = null, markGreen = null;
+const MARK_WHITE_CANDIDATES = ["mark-white.png", "mark-white.svg"].map(f => `${RAW_BASE}/brand/${f}`);
+let logoLight = null, logoDark = null, markGreen = null, markWhite = null;
 
 async function tryLoadFirst(cands) {
   for (const src of cands) {
@@ -94,10 +95,11 @@ async function tryLoadFirst(cands) {
   return null;
 }
 async function loadLogos() {
-  [logoLight, logoDark, markGreen] = await Promise.all([
+  [logoLight, logoDark, markGreen, markWhite] = await Promise.all([
     tryLoadFirst(LOGO_LIGHT_CANDIDATES),
     tryLoadFirst(LOGO_DARK_CANDIDATES),
     tryLoadFirst(MARK_GREEN_CANDIDATES),
+    tryLoadFirst(MARK_WHITE_CANDIDATES),
   ]);
 }
 
@@ -151,17 +153,6 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.arcTo(x, y, x + w, y, r);
   ctx.closePath();
 }
-function roundRectTop(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x, y + h);
-  ctx.lineTo(x, y + r);
-  ctx.arcTo(x, y, x + r, y, r);
-  ctx.lineTo(x + w - r, y);
-  ctx.arcTo(x + w, y, x + w, y + r, r);
-  ctx.lineTo(x + w, y + h);
-  ctx.closePath();
-}
-
 function wrapLines(ctx, srcLines, font, maxW) {
   ctx.font = font;
   const out = [];
@@ -178,150 +169,142 @@ function wrapLines(ctx, srcLines, font, maxW) {
   return out;
 }
 
-function drawPill(ctx, text, opt) {
-  const font = opt.font || `700 34px ${FONT}`;
-  ctx.font = font;
-  const h = opt.h || 64, padX = opt.padX != null ? opt.padX : h * 0.5;
-  const tw = ctx.measureText(text).width;
-  const w = tw + padX * 2;
-  let x = opt.x;
-  if (opt.center) x = (W - w) / 2;
-  else if (x == null && opt.right != null) x = W - opt.right - w;
-  const y = opt.y;
-  roundRect(ctx, x, y, w, h, h / 2); ctx.fillStyle = opt.bg; ctx.fill();
-  ctx.fillStyle = opt.fg; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-  ctx.fillText(text, x + padX, y + h / 2 + 2);
-  ctx.textBaseline = "alphabetic";
-  return { x, y, w, h };
+// oblé len spodné rohy (fotka na recept slide)
+function roundRectBottom(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + w, y);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
+  ctx.lineTo(x + r, y + h);
+  ctx.arcTo(x, y + h, x, y + h - r, r);
+  ctx.closePath();
 }
 
-function pillFontFit(ctx, text, maxTextW, weight, startSize) {
+// odstráni emoji z názvu (v dizajne je čistý pieskový text bez emoji)
+function cleanTitle(s) {
+  return (s || "").replace(/\p{Extended_Pictographic}/gu, "").replace(/[️‍]/g, "").replace(/\s+/g, " ").trim();
+}
+
+// zmenší veľkosť písma názvu, kým sa nezmestí do maxLines riadkov
+function fitTitleSize(ctx, text, maxW, maxLines, startSize) {
   let s = startSize;
-  while (s > 24) {
-    ctx.font = `${weight} ${s}px ${FONT}`;
-    if (ctx.measureText(text).width <= maxTextW) break;
-    s -= 2;
+  while (s > 44) {
+    if (wrapLines(ctx, [text], `800 ${s}px ${FONT}`, maxW).length <= maxLines) break;
+    s -= 4;
   }
-  return `${weight} ${s}px ${FONT}`;
+  return s;
 }
 
-// x,y = ľavý dolný roh (baseline) loga/textu; variant "light" (na fotku) alebo "dark" (na krémový panel)
-function drawWordmark(ctx, x, y, variant) {
+// logo vľavo hore; x,y = ľavý dolný roh (baseline). variant "light"/"dark"
+function drawWordmark(ctx, x, y, variant, h) {
+  h = h || 60;
   const logo = variant === "dark" ? logoDark : logoLight;
-  if (logo) {
-    const h = 60, w = h * (logo.width / logo.height);
-    ctx.drawImage(logo, x, y - h + 6, w, h);
-    return;
-  }
-  ctx.font = `800 46px ${FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-  ctx.fillStyle = variant === "dark" ? C.green : C.paper; ctx.fillText("🥕 šporáček", x, y);
+  if (logo) { ctx.drawImage(logo, x, y - h + 6, h * (logo.width / logo.height), h); return; }
+  ctx.font = `800 ${Math.round(h * 0.72)}px ${FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  ctx.fillStyle = variant === "dark" ? C.green : C.paper; ctx.fillText("šporáček", x, y);
 }
 
-function drawFooter(ctx) {
-  const baseline = 1868;
-  if (markGreen) {
-    const h = 46, w = h * (markGreen.width / markGreen.height);
-    ctx.drawImage(markGreen, 64, baseline - h + 6, w, h);
-  } else {
-    ctx.font = `800 40px ${FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-    ctx.fillStyle = C.green; ctx.fillText("šporáček", 64, baseline);
-  }
-  ctx.font = `700 30px ${FONT}`; ctx.textBaseline = "alphabetic";
-  ctx.textAlign = "right"; ctx.fillStyle = C.muted; ctx.fillText("recepty.sporacek.sk", W - 64, baseline);
-  ctx.textAlign = "left";
+// logo centrované; baselineY = spodný okraj
+function drawLogoCentered(ctx, variant, baselineY, h) {
+  const logo = variant === "dark" ? logoDark : logoLight;
+  if (logo) { const w = h * (logo.width / logo.height); ctx.drawImage(logo, (W - w) / 2, baselineY - h, w, h); return; }
+  ctx.font = `800 ${Math.round(h * 0.72)}px ${FONT}`; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+  ctx.fillStyle = variant === "dark" ? C.green : C.paper; ctx.fillText("šporáček", W / 2, baselineY); ctx.textAlign = "left";
 }
 
-/* ---------- slide 1: HOOK (fotka + pútavá cena) ---------- */
+// terakota cenový pill: [biela značka]  1,98 / PORCIA
+function drawPricePill(ctx, cena, x, y) {
+  const label = (cena != null ? formatEur(cena) : "") + " / PORCIA";
+  const h = 78, padX = 30, gap = 16, iconH = 46;
+  ctx.font = `800 34px ${FONT}`;
+  const tw = ctx.measureText(label).width;
+  const iconW = markWhite ? iconH * (markWhite.width / markWhite.height) : 0;
+  const w = padX + iconW + (iconW ? gap : 0) + tw + padX;
+  roundRect(ctx, x, y, w, h, h / 2); ctx.fillStyle = C.terra; ctx.fill();
+  if (markWhite) ctx.drawImage(markWhite, x + padX, y + (h - iconH) / 2, iconW, iconH);
+  ctx.fillStyle = "#fff"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+  ctx.fillText(label, x + padX + iconW + (iconW ? gap : 0), y + h / 2 + 2);
+  ctx.textBaseline = "alphabetic";
+  return { w, h };
+}
+
+/* ---------- slide 1: HOOK (stmavená fotka + text + logo) ---------- */
 function drawHook(story, photo) {
   const c = newCanvas(), ctx = c.getContext("2d");
   if (photo) drawCover(ctx, photo, 0, 0, W, H); else placeholder(ctx, 0, 0, W, H);
 
-  // spodný gradient pre čitateľnosť textu
-  let g = ctx.createLinearGradient(0, 620, 0, H);
-  g.addColorStop(0, "rgba(20,30,22,0)");
-  g.addColorStop(0.5, "rgba(20,30,22,0.68)");
-  g.addColorStop(1, "rgba(14,24,17,0.95)");
+  // celoplošné stmavenie + silnejší spodok pre logo
+  ctx.fillStyle = "rgba(16,26,18,0.52)"; ctx.fillRect(0, 0, W, H);
+  let g = ctx.createLinearGradient(0, H - 560, 0, H);
+  g.addColorStop(0, "rgba(16,26,18,0)"); g.addColorStop(1, "rgba(16,26,18,0.8)");
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  // horný gradient pre logo
-  let gt = ctx.createLinearGradient(0, 0, 0, 320);
-  gt.addColorStop(0, "rgba(14,24,17,0.55)"); gt.addColorStop(1, "rgba(14,24,17,0)");
-  ctx.fillStyle = gt; ctx.fillRect(0, 0, W, 320);
 
-  drawWordmark(ctx, 64, 100, "light");
-  drawPill(ctx, story.den, { right: 64, y: 66, h: 60, bg: C.terra, fg: "#fff", font: `700 32px ${FONT}` });
+  // hook text – biely, centrovaný, v hornej-strednej časti
+  let size = 66, lh, lines;
+  do {
+    lines = wrapLines(ctx, (story.slide1 || "").split("\n"), `800 ${size}px ${FONT}`, W - 200);
+    lh = Math.round(size * 1.36);
+    if (lines.length * lh <= 1120) break;
+    size -= 3;
+  } while (size > 40);
+  ctx.font = `800 ${size}px ${FONT}`; ctx.fillStyle = C.paper; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+  let y = Math.round(H * 0.40 - (lines.length * lh) / 2 + size * 0.8);
+  for (const ln of lines) { ctx.fillText(ln, W / 2, y); y += lh; }
+  ctx.textAlign = "left";
 
-  // hook text dole
-  const font = `800 70px ${FONT}`;
-  const lines = wrapLines(ctx, (story.slide1 || "").split("\n"), font, W - 128);
-  const lh = 88;
-  const blockH = lines.length * lh;
-  let baseY = H - 150 - blockH + 68;
-  // terakota akcentová linka nad textom
-  ctx.fillStyle = C.terra; roundRect(ctx, 64, baseY - 66, 96, 12, 6); ctx.fill();
-  ctx.font = font; ctx.fillStyle = C.paper; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-  for (const ln of lines) { ctx.fillText(ln, 64, baseY); baseY += lh; }
-
-  ctx.font = `700 30px ${FONT}`; ctx.fillStyle = "rgba(250,246,238,0.82)";
-  ctx.textAlign = "right"; ctx.fillText("recepty.sporacek.sk", W - 64, H - 66); ctx.textAlign = "left";
+  // biele logo dole v strede
+  drawLogoCentered(ctx, "light", H - 140, 58);
   return c;
 }
 
-/* ---------- slide 2: RECEPT (fotka + názov + cena/porcia + CTA) ---------- */
-function drawCard(story, cena, photo) {
+/* ---------- slide 2: RECEPT (zelené pozadie, fotka, názov, cena, úspora) ---------- */
+function drawCard(story, cena, bezna, photo) {
   const c = newCanvas(), ctx = c.getContext("2d");
-  ctx.fillStyle = C.paper; ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = C.green; ctx.fillRect(0, 0, W, H);
 
-  const photoH = 950, panelTop = 900;
+  // fotka s oblými spodnými rohmi
+  const photoH = 1270;
+  ctx.save();
+  roundRectBottom(ctx, 0, 0, W, photoH, 64); ctx.clip();
   if (photo) drawCover(ctx, photo, 0, 0, W, photoH); else placeholder(ctx, 0, 0, W, photoH);
+  let g = ctx.createLinearGradient(0, photoH - 460, 0, photoH);
+  g.addColorStop(0, "rgba(16,26,18,0)"); g.addColorStop(1, "rgba(16,26,18,0.72)");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, photoH);
+  // horný gradient pre logo
+  let gt = ctx.createLinearGradient(0, 0, 0, 220);
+  gt.addColorStop(0, "rgba(16,26,18,0.5)"); gt.addColorStop(1, "rgba(16,26,18,0)");
+  ctx.fillStyle = gt; ctx.fillRect(0, 0, W, 220);
+  ctx.restore();
 
-  // krémový panel s oblými hornými rohmi
-  roundRectTop(ctx, 0, panelTop, W, H - panelTop, 56); ctx.fillStyle = C.paper; ctx.fill();
+  // malé biele logo hore vľavo
+  drawWordmark(ctx, 56, 92, "light", 48);
 
-  // logo hore na fotke
-  let gt = ctx.createLinearGradient(0, 0, 0, 240);
-  gt.addColorStop(0, "rgba(14,24,17,0.5)"); gt.addColorStop(1, "rgba(14,24,17,0)");
-  ctx.fillStyle = gt; ctx.fillRect(0, 0, W, 240);
-  drawWordmark(ctx, 64, 100, "light");
+  // cenový pill dole na fotke
+  drawPricePill(ctx, cena, 56, photoH - 118);
 
-  // deň – pill straddle cez okraj panela
-  drawPill(ctx, story.den, { x: 64, y: panelTop - 32, h: 64, bg: C.terra, fg: "#fff", font: `700 34px ${FONT}` });
+  // názov – pieskový, veľký, dole vľavo na zelenej
+  const title = cleanTitle(story.recept) || cleanTitle(story.slide2.split("\n")[0]) || "Recept";
+  const size = fitTitleSize(ctx, title, W - 112, 3, 96);
+  const titleLines = wrapLines(ctx, [title], `800 ${size}px ${FONT}`, W - 112);
+  const lh = Math.round(size * 1.08);
+  ctx.font = `800 ${size}px ${FONT}`; ctx.fillStyle = C.sand; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+  let y = photoH + 128;
+  for (const ln of titleLines) { ctx.fillText(ln, 56, y); y += lh; }
 
-  // názov
-  const titleFont = `800 62px ${FONT}`;
-  const titleLines = wrapLines(ctx, [story.recept || ""], titleFont, W - 128);
-  ctx.font = titleFont; ctx.fillStyle = C.green; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
-  let y = panelTop + 132;
-  for (const ln of titleLines) { ctx.fillText(ln, 64, y); y += 78; }
-
-  // meta z 2. riadku slide2: "⏱ 40 minút · 💰 0,75 €/porcia · 👨‍👩‍👧‍👦 Nakŕmiš 4 ľudí"
-  const metaLine = (story.slide2 || "").split("\n")[1] || "";
-  const parts = metaLine.split("·").map(s => s.trim()).filter(Boolean);
-  const chipParts = parts.filter(p => !p.includes("€"));
-  const priceStr = (cena != null ? formatEur(cena) : (parts.find(p => p.includes("€")) || "").replace(/[^0-9,]/g, "")) + " €";
-
-  // veľká cena/porcia (hero)
-  y += 46;
-  ctx.font = `800 104px ${FONT}`; ctx.fillStyle = C.terra; ctx.fillText(priceStr, 64, y);
-  const pw = ctx.measureText(priceStr).width;
-  ctx.font = `700 40px ${FONT}`; ctx.fillStyle = C.muted; ctx.fillText("/ porcia", 64 + pw + 20, y - 6);
-
-  // chipy (čas, porcie) – s wrapom
-  y += 44;
-  let cx = 64;
-  for (const p of chipParts) {
-    ctx.font = `700 34px ${FONT}`;
-    const wNeeded = ctx.measureText(p).width + 64;
-    if (cx + wNeeded > W - 48) { cx = 64; y += 78; }
-    const pill = drawPill(ctx, p, { x: cx, y: y, h: 64, bg: C.sand, fg: C.green, font: `700 34px ${FONT}` });
-    cx += pill.w + 16;
+  // úspora (voliteľné) – "bežne 1,74 €  ušetríš 46 %"
+  if (bezna && cena != null && bezna > cena) {
+    const pct = Math.round((1 - cena / bezna) * 100);
+    y += 24;
+    ctx.font = `700 42px ${FONT}`; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+    const a = `bežne ${formatEur(bezna)} €`;
+    ctx.fillStyle = "rgba(231,214,180,0.55)"; ctx.fillText(a, 56, y);
+    const aw = ctx.measureText(a).width;
+    ctx.strokeStyle = "rgba(231,214,180,0.55)"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(56, y - 14); ctx.lineTo(56 + aw, y - 14); ctx.stroke();
+    ctx.fillStyle = C.terra; ctx.font = `800 42px ${FONT}`;
+    ctx.fillText(`   ušetríš ${pct} %`, 56 + aw, y);
   }
-
-  // CTA pill (zelená, centrovaná dole)
-  const ctaText = "→ " + (story.cta || "Recept v bio");
-  const ctaFont = pillFontFit(ctx, ctaText, W - 200, "800", 42);
-  drawPill(ctx, ctaText, { center: true, y: 1688, h: 96, bg: C.green, fg: C.paper, font: ctaFont });
-
-  drawFooter(ctx);
   return c;
 }
 
@@ -464,12 +447,13 @@ async function selectWeek(folder) {
       if (!rec && st.den) rec = recepty.find(r => r.den && r.den.slice(0, 3) === st.den.slice(0, 3));
       const slug = rec && rec.slug;
       const cena = rec ? rec.cena : null;
+      const bezna = rec ? (rec.bezna_cena != null ? rec.bezna_cena : null) : null;
 
       let photo = null;
       if (slug) { try { photo = await loadImage(photoUrlFor(slug)); } catch (e) { photo = null; } }
 
       const c1 = drawHook(st, photo);
-      const c2 = drawCard(st, cena, photo);
+      const c2 = drawCard(st, cena, bezna, photo);
 
       const base = `sporacek-${storeSlug}-w${weekSlug}-${String(i + 1).padStart(2, "0")}-${slug || slugify(st.recept)}`;
       const n1 = `${base}-hook.png`, n2 = `${base}-recept.png`;

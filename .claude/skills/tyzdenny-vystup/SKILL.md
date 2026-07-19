@@ -54,7 +54,7 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
     {"nazov": "Marhule", "stara_cena": 4.49, "akciova_cena": 1.99, "zlava": "-55%", "kategoria": "Ovocie a zelenina", "flag": ""}
   ],
   "recepty": [
-    {"den": "Pondelok 13. 7.", "slug": "plnena-cuketa-mlete-maso", "cena": 0.94}
+    {"den": "Pondelok 13. 7.", "slug": "plnena-cuketa-mlete-maso", "cena": 0.94, "bezna_cena": 1.74}
   ],
   "nakupny_zoznam": {
     "skupiny": [
@@ -75,6 +75,12 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
 ```
 
 `recepty[].slug` musí presne sedieť s id v `recepty/<slug>.md` — stránka si fotku aj postup dotiahne odtiaľ naživo, netreba ich duplikovať do `data.json`.
+
+`recepty[].cena` = cena za porciu z akciových cien. `recepty[].bezna_cena` (voliteľné) = cena za porciu **bez akcie** (bežné/nezľavnené ceny tých istých surovín) — z nej sa na Stories dopočíta úspora („bežne 1,74 € → ušetríš 46 %"). Počítaj ju rovnakou metodikou ako `cena`, len s bežnými cenami surovín namiesto akciových; ak bežné ceny nevieš spoľahlivo určiť, pole vynechaj (úspora sa jednoducho nezobrazí). **Nevymýšľaj** — radšej vynechaj, než uviesť nepodložené číslo.
+
+## Vizuálne Stories (obrázky)
+
+Po zapísaní `data.json` vygeneruj aj obrázkové Stories: `node tools/generate-stories.mjs <priečinok-týždňa>` → uloží 1080×1920 JPG do `tydne/<týždeň>/stories/` (2 na deň: `-hook` a `-recept`). Skladajú sa z `social.stories`, fotky receptu, `cena`/`bezna_cena` a loga z `brand/`. Commitni ich spolu s týždňom. Náhľad aj ručné sťahovanie: `docs/stories.html` (recepty.sporacek.sk/stories.html).
 
 ## Šablóna foto promptu (pre nanobanana)
 

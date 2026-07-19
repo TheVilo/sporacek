@@ -120,27 +120,32 @@
     {
       "den": "Pondelok 20. 7.",
       "slug": "kremove-kuracie-rizoto-sampinony",
-      "cena": 1.84
+      "cena": 1.84,
+      "bezna_cena": 3.2
     },
     {
       "den": "Utorok 21. 7.",
       "slug": "peceny-losos-citron-brokolica",
-      "cena": 2.65
+      "cena": 2.65,
+      "bezna_cena": 4.5
     },
     {
       "den": "Streda 22. 7.",
       "slug": "pecena-bravcova-krkovicka-paprika-cibula",
-      "cena": 1.68
+      "cena": 1.68,
+      "bezna_cena": 3.0
     },
     {
       "den": "Štvrtok 23. 7.",
       "slug": "plnena-paprika-mletym-masom-ryzou",
-      "cena": 2.13
+      "cena": 2.13,
+      "bezna_cena": 3.7
     },
     {
       "den": "Piatok 24. 7.",
       "slug": "tuniakovy-salat-zemiaky-vajce",
-      "cena": 1.75
+      "cena": 1.75,
+      "bezna_cena": 2.9
     }
   ],
   "nakupny_zoznam": {
@@ -148,55 +153,151 @@
       {
         "nazov": "Ryby a mäso (akciové)",
         "polozky": [
-          { "nazov": "losos fileta s kožou", "mnozstvo": "300 g", "cena": 4.17 },
-          { "nazov": "kuracie horné/dolné stehná", "mnozstvo": "300 g", "cena": 0.77 },
-          { "nazov": "bravčová krkovička v marináde", "mnozstvo": "750 g bal.", "cena": 4.99 }
+          {
+            "nazov": "losos fileta s kožou",
+            "mnozstvo": "300 g",
+            "cena": 4.17
+          },
+          {
+            "nazov": "kuracie horné/dolné stehná",
+            "mnozstvo": "300 g",
+            "cena": 0.77
+          },
+          {
+            "nazov": "bravčová krkovička v marináde",
+            "mnozstvo": "750 g bal.",
+            "cena": 4.99
+          }
         ]
       },
       {
         "nazov": "Zelenina a ovocie (akciové)",
         "polozky": [
-          { "nazov": "paprika biela", "mnozstvo": "~850 g", "cena": 1.18 },
-          { "nazov": "zemiaky konzumné skoré", "mnozstvo": "5 kg bal.", "cena": 3.19 },
-          { "nazov": "cibuľa červená", "mnozstvo": "500 g bal.", "cena": 0.49 },
-          { "nazov": "citróny", "mnozstvo": "500 g bal.", "cena": 1.39 },
-          { "nazov": "šampiňóny krémové", "mnozstvo": "250 g bal.", "cena": 0.89 }
+          {
+            "nazov": "paprika biela",
+            "mnozstvo": "~850 g",
+            "cena": 1.18
+          },
+          {
+            "nazov": "zemiaky konzumné skoré",
+            "mnozstvo": "5 kg bal.",
+            "cena": 3.19
+          },
+          {
+            "nazov": "cibuľa červená",
+            "mnozstvo": "500 g bal.",
+            "cena": 0.49
+          },
+          {
+            "nazov": "citróny",
+            "mnozstvo": "500 g bal.",
+            "cena": 1.39
+          },
+          {
+            "nazov": "šampiňóny krémové",
+            "mnozstvo": "250 g bal.",
+            "cena": 0.89
+          }
         ]
       },
       {
         "nazov": "Mliečne a vajcia (akciové)",
         "polozky": [
-          { "nazov": "vajcia M", "mnozstvo": "10 ks", "cena": 1.69 },
-          { "nazov": "parmezán (Parmigiano Reggiano)", "mnozstvo": "100 g", "cena": 2.49 },
-          { "nazov": "maslo", "mnozstvo": "250 g", "cena": 1.49 }
+          {
+            "nazov": "vajcia M",
+            "mnozstvo": "10 ks",
+            "cena": 1.69
+          },
+          {
+            "nazov": "parmezán (Parmigiano Reggiano)",
+            "mnozstvo": "100 g",
+            "cena": 2.49
+          },
+          {
+            "nazov": "maslo",
+            "mnozstvo": "250 g",
+            "cena": 1.49
+          }
         ]
       },
       {
         "nazov": "Trvanlivé (akciové)",
         "polozky": [
-          { "nazov": "tuniak v olivovom oleji", "mnozstvo": "3×70 g", "cena": 2.39 },
-          { "nazov": "ryža (Calrose)", "mnozstvo": "1 kg", "cena": 1.89 }
+          {
+            "nazov": "tuniak v olivovom oleji",
+            "mnozstvo": "3×70 g",
+            "cena": 2.39
+          },
+          {
+            "nazov": "ryža (Calrose)",
+            "mnozstvo": "1 kg",
+            "cena": 1.89
+          }
         ]
       },
       {
         "nazov": "Mimo akcie (recepty ich potrebujú, v letáku nie sú)",
         "polozky": [
-          { "nazov": "bravčové mleté mäso", "mnozstvo": "~500 g", "cena": 2.25 },
-          { "nazov": "brokolica", "mnozstvo": "~200 g", "cena": 0.5 },
-          { "nazov": "paradajkový pretlak", "mnozstvo": "100 g", "cena": 0.6 },
-          { "nazov": "bujón (kocky)", "mnozstvo": "~2,5 ks", "cena": 0.25 }
+          {
+            "nazov": "bravčové mleté mäso",
+            "mnozstvo": "~500 g",
+            "cena": 2.25
+          },
+          {
+            "nazov": "brokolica",
+            "mnozstvo": "~200 g",
+            "cena": 0.5
+          },
+          {
+            "nazov": "paradajkový pretlak",
+            "mnozstvo": "100 g",
+            "cena": 0.6
+          },
+          {
+            "nazov": "bujón (kocky)",
+            "mnozstvo": "~2,5 ks",
+            "cena": 0.25
+          }
         ]
       },
       {
         "nazov": "Zásoby (ak nemáš doma)",
         "polozky": [
-          { "nazov": "olivový olej extra panenský", "mnozstvo": "1 l", "cena": 7.69 },
-          { "nazov": "cesnak", "mnozstvo": "hlávka", "cena": 0.6 },
-          { "nazov": "horčica", "mnozstvo": "350 g", "cena": 0.79 },
-          { "nazov": "sladká paprika (korenie)", "mnozstvo": "balenie", "cena": 1.29 },
-          { "nazov": "mletá rasca", "mnozstvo": "balenie", "cena": 1.29 },
-          { "nazov": "bobkový list", "mnozstvo": "balenie", "cena": 0.99 },
-          { "nazov": "petržlenová vňať (čerstvá)", "mnozstvo": "2 zväzky", "cena": 1.2 }
+          {
+            "nazov": "olivový olej extra panenský",
+            "mnozstvo": "1 l",
+            "cena": 7.69
+          },
+          {
+            "nazov": "cesnak",
+            "mnozstvo": "hlávka",
+            "cena": 0.6
+          },
+          {
+            "nazov": "horčica",
+            "mnozstvo": "350 g",
+            "cena": 0.79
+          },
+          {
+            "nazov": "sladká paprika (korenie)",
+            "mnozstvo": "balenie",
+            "cena": 1.29
+          },
+          {
+            "nazov": "mletá rasca",
+            "mnozstvo": "balenie",
+            "cena": 1.29
+          },
+          {
+            "nazov": "bobkový list",
+            "mnozstvo": "balenie",
+            "cena": 0.99
+          },
+          {
+            "nazov": "petržlenová vňať (čerstvá)",
+            "mnozstvo": "2 zväzky",
+            "cena": 1.2
+          }
         ]
       }
     ],
@@ -256,7 +357,7 @@
     ]
   },
   "suhrn": {
-    "plan_spolu": 20.10,
+    "plan_spolu": 20.1,
     "uspora": 14.19,
     "priemer_porcia": 2.01
   }
