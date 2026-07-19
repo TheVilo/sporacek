@@ -2,7 +2,7 @@
 id: plnena-paprika-mletym-masom-ryzou
 nazov: Plnená paprika s mletým mäsom a ryžou
 foto_url: "fotky/plnena-paprika-mletym-masom-ryzou.jpg"
-foto_prompt: "Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: plnené papriky s mletým mäsom a ryžou v paradajkovej omáčke, fotené priamo v tmavom hrnci/panvici, v ktorej sa varili, položenom na drevenej doske vedľa sporáka. Záber kolmo zhora. Prirodzené denné svetlo, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok kuchynskej utierky, varecha vedľa hrnca, drobné škvrny od varenia. Pôsobí to ako skutočná domácnosť tesne po dovarení, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+foto_prompt: "A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Bell peppers stuffed with seasoned ground pork and rice, braised in tomato sauce (one pepper halved to show the filling), in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with extra tomato sauce. A casually draped linen cloth with a modern matte silver fork nearby. The glossy tomato sauce coats the peppers appetizingly. Soft, airy natural window light. No text, no logo, no watermark in the image."
 pocet_porcii: 2
 tagy:
   typ: [večera]

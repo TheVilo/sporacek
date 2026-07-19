@@ -8,17 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): hromádka malých proteínových guľôčok z ovsených vločiek, arašidového masla a kakaa na tanieri — guľôčky sú **celé tmavohnedé/čokoládové** (kakao je zamiešané priamo v ceste, nie polevou navrchu), mierne matný povrch s viditeľnými kúskami ovsených vločiek. Ako garnish použi len rozsypané ovsené vločky okolo taniera (POZOR: žiadne čokoládové kúsky/chips, žiadne orechy/pistácie posypané navrchu, žiadne sezamové semienka — v recepte je len ovsené vločky, arašidové maslo, med, kakao, škorica, soľ).
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+A bright, high-end editorial food photo with a lived-in feel, vertical 9:16 format. A stack of dark chocolate-brown protein energy balls made from oats, peanut butter, honey and cocoa, with a light dusting of cinnamon, on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. A small side dish with rolled oats sits in the softly blurred background. Crisp, diffused daylight. Important: the balls are uniformly dark brown throughout from the cocoa mixed into the dough — no chocolate chips, no nuts, no pistachios, no sesame seeds anywhere, only oats and cinnamon as texture/garnish (these are not in the recipe). No text, no logo, no watermark in the image.
 
 ---
 

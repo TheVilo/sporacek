@@ -8,17 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): 2 tenšie upečené plátky bravčovej krkovičky (nie jeden celý veľký kus mäsa vcelku — krkovička je narezaná na plátky pred pečením) s karamelizovanými okrajmi, farebné pásiky papriky, cibuľa a zlatisté zemiaky, všetko na plechu/pekáči so stopami po pečení, posypané čerstvou vňaťou.
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Sliced roasted pork neck (2-3 thin slices, not one whole cut of meat) with caramelized edges, colorful bell pepper strips, onion wedges and golden roasted potatoes, served in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. The table isn't empty; a few scattered pieces of raw bell pepper strips and garlic cloves, and a pinch of salt add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the caramelized roasted pork and vegetables, garnished with fresh parsley. Film grain. No text, no logo, no watermark in the image.
 
 ---
 

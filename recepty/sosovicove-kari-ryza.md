@@ -8,17 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): krémové oranžovo-červené šošovicové karí na bielej ryži v jednoduchej miske, posypané čerstvým koriandrom, para stúpajúca z jedla.
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of creamy orange-red red lentil curry with ginger and coconut milk, served over steamed white rice, in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The glossy, creamy curry is sharply focused. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of coconut milk. A modern brushed steel fork rests on a casually draped light grey linen napkin. Natural scattered dry red lentils and fresh coriander leaves add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 
