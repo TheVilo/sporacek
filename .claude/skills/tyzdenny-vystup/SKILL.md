@@ -76,18 +76,4 @@ Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `ty
 
 ## Šablóna foto promptu (pre nanobanana)
 
-**Kritická podmienka: fotka musí vyzerať ako fotka z obľúbeného kuchárskeho blogu/food Instagramu (napr. Running to the Kitchen, BBC Good Food, Delish), NIE ako sterilná komerčná reklama, ale ani ako narýchlo odfotený amatérsky telefónny snímok.** Toto je aktuálna, overená požiadavka pri každom recepte (overené na vzorkách, potvrdené referenčnými fotkami) — chutné, vkusne naaranžované, prirodzene osvetlené jedlo, aké fotí niekto s citom pre food styling, no stále doma, nie v štúdiu.
-
-```
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): [NÁZOV JEDLA].
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
-```
+Presný 2-krokový proces (analýza receptu → anglický opis jedla → jedna z 10 kompozičných šablón "Modern Editorial & Elevated Lifestyle") je v `.claude/skills/generovanie-fotiek/SKILL.md`, sekcia "Foto prompt — 2-krokový proces". Použi ho vždy, aj pre nové recepty vzniknuté z týždenného letáku — nedrž si tu vlastnú kópiu šablóny, nech sa časom nerozíde s aktuálnou verziou.
