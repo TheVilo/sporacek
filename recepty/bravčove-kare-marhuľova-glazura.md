@@ -3,7 +3,6 @@
 **slug:** bravčove-kare-marhuľova-glazura  
 **porcie:** 2  
 **čas prípravy:** 35 minút  
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/bravčove-kare-marhuľova-glazura.jpg  
 
 ---
@@ -63,4 +62,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#bravčové` `#sýte` `#akcia-lidl`
+`#večera` `#bravčové` `#sýte`

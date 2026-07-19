@@ -3,7 +3,6 @@
 **slug:** cestoviny-kuracie-spenat-smotana
 **porcie:** 2
 **čas prípravy:** 30 minút
-**týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/cestoviny-kuracie-spenat-smotana.jpg  
 
 ---

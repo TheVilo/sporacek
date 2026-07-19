@@ -3,7 +3,6 @@
 **slug:** letny-salat-broskyne-mozzarella  
 **porcie:** 2  
 **čas prípravy:** 20 minút  
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/letny-salat-broskyne-mozzarella.jpg  
 
 ---
@@ -61,4 +60,4 @@ Tip: Redukciu si pokojne priprav aj vo väčšom množstve dopredu, vydrží v c
 ---
 
 ## Tagy
-`#šalát` `#bezmäsité` `#vegetariánske` `#ľahké` `#do-20-minút` `#akcia-lidl`
+`#šalát` `#bezmäsité` `#vegetariánske` `#ľahké` `#do-20-minút`

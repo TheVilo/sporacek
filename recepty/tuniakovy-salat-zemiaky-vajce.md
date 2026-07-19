@@ -3,7 +3,6 @@
 **slug:** tuniakovy-salat-zemiaky-vajce
 **porcie:** 2
 **čas prípravy:** 25 minút
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/tuniakovy-salat-zemiaky-vajce.jpg  
 
 ---
@@ -63,4 +62,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#obed` `#ryba` `#do-20-minút` `#vysoký-proteín` `#akcia-lidl`
+`#obed` `#ryba` `#do-20-minút` `#vysoký-proteín`

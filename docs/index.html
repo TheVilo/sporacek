@@ -73,9 +73,9 @@ const BRANCH = "main";
 const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
 
-const TYP_ORDER = ["večera", "obed", "šalát", "polievka"];
-const TYP_LABEL = { "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
-const TYP_TAGS = new Set(["večera", "obed", "šalát", "polievka", "jednohrnec"]);
+const TYP_ORDER = ["raňajky", "večera", "obed", "šalát", "polievka"];
+const TYP_LABEL = { "raňajky": "Raňajky", "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
+const TYP_TAGS = new Set(["raňajky", "večera", "obed", "šalát", "polievka", "jednohrnec"]);
 
 function primaryTyp(tags) {
   for (const t of TYP_ORDER) if (tags.includes(t)) return t;
@@ -212,7 +212,7 @@ function parseYamlRecipe(slug, text) {
 }
 
 function cardHtml(r) {
-  const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t) && t !== "akcia-lidl");
+  const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t));
   const tagsHtml = nonTypTags.map(t => `<span class="tag">#${t}</span>`).join("");
   const stepsHtml = r.postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
   const ingredientsHtml = r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${escapeHtml(s.mnozstvo)}</span></li>`).join("");

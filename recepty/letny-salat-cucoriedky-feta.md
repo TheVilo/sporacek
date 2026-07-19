@@ -3,7 +3,6 @@
 **slug:** letny-salat-cucoriedky-feta
 **porcie:** 2
 **čas prípravy:** 20 minút
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/letny-salat-cucoriedky-feta.jpg  
 
 ---
@@ -62,4 +61,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#šalát` `#vegetariánske` `#ľahké` `#do-20-minút` `#akcia-lidl`
+`#šalát` `#vegetariánske` `#ľahké` `#do-20-minút`

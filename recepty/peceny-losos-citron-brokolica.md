@@ -3,7 +3,6 @@
 **slug:** peceny-losos-citron-brokolica
 **porcie:** 2
 **čas prípravy:** 30 minút
-**týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/peceny-losos-citron-brokolica.jpg  
 
 ---

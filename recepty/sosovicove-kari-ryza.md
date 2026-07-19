@@ -3,7 +3,6 @@
 **slug:** sosovicove-kari-ryza
 **porcie:** 2
 **čas prípravy:** 30 minút
-**týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/sosovicove-kari-ryza.jpg  
 
 ---

@@ -3,7 +3,6 @@
 **slug:** plnena-cuketa-mlete-maso  
 **porcie:** 2  
 **čas prípravy:** 45 minút  
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/plnena-cuketa-mlete-maso.jpg  
 
 ---
@@ -63,4 +62,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#bravčové` `#sýte` `#do-rúry` `#akcia-lidl`
+`#večera` `#bravčové` `#sýte` `#do-rúry`

@@ -3,7 +3,6 @@
 **slug:** pecena-bravcova-krkovicka-paprika-cibula
 **porcie:** 2
 **čas prípravy:** 70 minút (z toho 20 min marinovanie)
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/pecena-bravcova-krkovicka-paprika-cibula.jpg  
 
 ---
@@ -62,4 +61,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#bravčové` `#do-rúry` `#jednohrnec` `#sýte` `#akcia-lidl`
+`#večera` `#bravčové` `#do-rúry` `#jednohrnec` `#sýte`

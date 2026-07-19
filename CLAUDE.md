@@ -62,17 +62,18 @@ Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync 
 ### tagy (na rýchle vyhľadávanie)
 Používaj len tieto skupiny, nevymýšľaj nové hodnoty:
 
-- **typ:** obed, večera, polievka, šalát, jednohrnec
+- **typ:** obed, večera, raňajky, polievka, šalát, jednohrnec
 - **surovina:** kura, bravčové, hovädzie, ryba, bezmäsité, strukoviny
 - **výživa:** vegetariánske, vysoký-proteín, ľahké, sýte
 - **náročnosť:** do-20-minút, do-rúry, jednohrnec
 
-Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri nižšie.)
+Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri nižšie.) Taxonómia sa dá časom rozšíriť, keď pribudne typ jedla, ktorý do žiadnej skupiny nesedí — priebežne, nie dopredu "pre istotu".
 
-### recept nikdy neobsahuje cenu
+### recept nikdy neobsahuje cenu ani väzbu na konkrétny týždeň/obchod
 - Recept má **len suroviny a množstvá**, nikdy cenu (ani za surovinu, ani za porciu, ani "Celkom"). Cena akejkoľvek suroviny sa mení každý týždeň — keby bola napísaná v recepte, zastarala by hneď a niekto by ju musel ručne opravovať naprieč desiatkami receptov.
 - Cena sa počíta **až v momente použitia** — pri spracovaní týždenného letáku (`.claude/skills/tyzdenny-vystup/SKILL.md`, tam ide do `tydne/<týždeň>/`) alebo pri akomkoľvek inom custom požiadavke ("Lidl, talianske recepty pre 2 na 2 dni, len raňajky a večere") — presne to, čo neskôr bude robiť appka automaticky.
-- Recepty samotné (`recepty/`) sú tak **navždy nezastarateľná databáza**: suroviny + množstvá + postup + fotka. Ničím časovo podmieneným.
+- To isté platí pre čokoľvek iné viazané na konkrétny obchod/dátum — pole "týždeň", tag `#akcia-lidl`, poznámka "platí len v utorok" a podobne. **Toto všetko patrí výhradne do `tydne/<týždeň>/`, nikdy do `recepty/<slug>.md`** — aj keď recept práve vznikol z konkrétneho letáku, časom ho použijeme v mnohých ďalších týždňoch aj obchodoch.
+- Recepty samotné (`recepty/`) sú tak **navždy nezastarateľná databáza**: suroviny + množstvá + postup + fotka + tagy z taxonómie. Ničím časovo ani obchodovo podmieneným.
 
 ### nutričné hodnoty
 - **Odhad**, nie lekársky presné údaje. Vždy uvádzať ako približné.

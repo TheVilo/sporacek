@@ -3,7 +3,6 @@
 **slug:** hovedzi-gulas-zemiaky-mrkva
 **porcie:** 2
 **čas prípravy:** 90 minút
-**týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/hovedzi-gulas-zemiaky-mrkva.jpg  
 
 ---

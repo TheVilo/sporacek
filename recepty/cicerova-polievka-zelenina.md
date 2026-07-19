@@ -3,7 +3,6 @@
 **slug:** cicerova-polievka-zelenina
 **porcie:** 2
 **čas prípravy:** 30 minút
-**týždeň:** — (mimo týždenného letáku)
 **foto_url:** fotky/cicerova-polievka-zelenina.jpg  
 
 ---

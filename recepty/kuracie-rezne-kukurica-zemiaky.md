@@ -3,9 +3,7 @@
 **slug:** kuracie-rezne-kukurica-zemiaky  
 **porcie:** 2  
 **čas prípravy:** 30 minút  
-**týždeň:** 29/2026 · Lidl 13.–19. 7.  
 **foto_url:** fotky/kuracie-rezne-kukurica-zemiaky.jpg  
-**⚡ Kukurica platí LEN v utorok 14. 7.!**
 
 ---
 
@@ -62,4 +60,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#večera` `#kura` `#vysoký-proteín` `#sýte` `#akcia-lidl`
+`#večera` `#kura` `#vysoký-proteín` `#sýte`

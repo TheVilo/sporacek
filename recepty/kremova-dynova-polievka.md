@@ -3,7 +3,6 @@
 **slug:** kremova-dynova-polievka  
 **porcie:** 2  
 **čas prípravy:** 40 minút  
-**týždeň:** 29/2026 · Lidl 13.–19. 7.
 **foto_url:** fotky/kremova-dynova-polievka.jpg  
 
 ---
@@ -60,4 +59,4 @@ Formát 9:16 (Instagram Stories).
 ---
 
 ## Tagy
-`#polievka` `#bezmäsité` `#vegetariánske` `#ľahké` `#akcia-lidl`
+`#polievka` `#bezmäsité` `#vegetariánske` `#ľahké`
