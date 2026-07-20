@@ -49,7 +49,7 @@
       <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
     </div>
   </div>
-  <div class="sub">Pripravené texty a grafiky pre Instagram/Facebook — nič receptové, len všeobecný obsah. Skopíruj text alebo si rovno stiahni hotový obrázok pre Story alebo Post. Cenové fakty sa počítajú naživo z <code>ceny/</code> a rastú s každým novým letákom, tipy a brand posty priebežne pridávam do <code>social/</code>.</div>
+  <div class="sub">Pripravené texty a grafiky pre Instagram/Facebook — recepty z databázy aj všeobecný obsah. Skopíruj text alebo si rovno stiahni hotový obrázok pre Story alebo Post. Cenové fakty sa počítajú naživo z <code>ceny/</code>, recepty z <code>recepty/</code> a <code>fotky/</code>, tipy a brand posty priebežne pridávam do <code>social/</code>.</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
 
   <div class="controls" id="controls" style="display:none">
@@ -72,8 +72,8 @@ const BRANCH = "main";
 const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
 
-const CAT_LABEL = { fakt: "Fakty o cenách", tip: "Tipy na nákup", brand: "Šporáček" };
-const CAT_ORDER = ["fakt", "tip", "brand"];
+const CAT_LABEL = { fakt: "Fakty o cenách", recept: "Recepty", tip: "Tipy na nákup", brand: "Šporáček" };
+const CAT_ORDER = ["fakt", "recept", "tip", "brand"];
 
 let allCards = [];
 let activeCats = new Set();
@@ -105,6 +105,13 @@ function parseSurovinyOnly(text) {
   const lines = secM[1].split("\n").map(l => l.trim()).filter(l => l.startsWith("|") && l.endsWith("|"));
   if (lines.length < 2) return [];
   return lines.slice(2).map(cellsOf).filter(c => c[0]).map(c => c[0]);
+}
+function parseRecipeMeta(slug, text) {
+  const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
+  const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
+  const tagyM = text.match(/## Tagy\s*\n(.+)/);
+  const tagy = tagyM ? [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]) : [];
+  return { slug, nazov, cas, tagy, suroviny: parseSurovinyOnly(text) };
 }
 function findPhotoForIngredient(nazov, recipesWithPhoto) {
   const key = nameKey(nazov);
@@ -160,8 +167,11 @@ function buildPriceFacts(catalogs) {
     facts.push({
       id: `fakt-zlava-${nameKey(p.nazov)}-${p.obchod}`.replace(/\s+/g, "-"),
       kategoria: "fakt",
+      factType: "zlava",
       eyebrow: "Cenový fakt",
       matchNazov: p.nazov,
+      statNumber: `−${p.pct}%`,
+      statLabel: `${p.nazov} · ${p.obchod}`,
       hook: `${p.nazov}: −${p.pct}% v ${p.obchod}`,
       caption: `${p.nazov} má tento týždeň zľavu −${p.pct}% (${p.obchod}): ${fmtEur(p.povodna_cena)} → ${fmtEur(p.zlavnena_cena)}${p.mnozstvo ? " · " + p.mnozstvo : ""}${note}. Oplatí sa skontrolovať, či máš podobnú akciu aj vo svojom obchode.`,
     });
@@ -194,7 +204,13 @@ function buildPriceFacts(catalogs) {
     facts.push({
       id: `fakt-porovnanie-${c.key}`.replace(/\s+/g, "-"),
       kategoria: "fakt",
+      factType: "porovnanie",
       eyebrow: "Cenový fakt",
+      matchNazov: c.cheapest.nazov,
+      ingredientName: c.cheapest.nazov,
+      left: { obchod: c.cheapest.obchod, cena: fmtEur(c.cheapest.zlavnena_cena) },
+      right: { obchod: c.priciest.obchod, cena: fmtEur(c.priciest.zlavnena_cena) },
+      diffLabel: `rozdiel ${fmtEur(c.diff)}`,
       hook: `${c.cheapest.nazov}: rozdiel ${fmtEur(c.diff)} medzi obchodmi`,
       caption: `${c.cheapest.nazov} stojí tento týždeň od ${fmtEur(c.cheapest.zlavnena_cena)} (${c.cheapest.obchod}) do ${fmtEur(c.priciest.zlavnena_cena)} (${c.priciest.obchod}) — rozdiel ${c.pctDiff}%. Oplatí sa porovnať, kým ideš nakupovať.`,
     });
@@ -244,13 +260,23 @@ async function loadAll(manual) {
         const slug = f.name.replace(/\.md$/, "");
         const raw = await fetch(`${RAW_BASE}/recepty/${encodeURIComponent(f.name)}`, { cache: "no-store" });
         const text = await raw.text();
-        return { slug, suroviny: parseSurovinyOnly(text) };
+        return parseRecipeMeta(slug, text);
       }));
     }
     const photoSlugs = [...photoSlugSet];
 
+    const recipeCards = recipesWithPhoto.map(r => ({
+      id: `recept-${r.slug}`,
+      kategoria: "recept",
+      eyebrow: "Z databázy receptov",
+      hook: r.nazov,
+      caption: `${r.nazov}${r.cas ? " — hotové za " + r.cas : ""}. Recept aj s postupom nájdeš v databáze na šporáček.sk. 🍽️`,
+      photoSlug: r.slug,
+    }));
+
     allCards = [
       ...priceFacts.map(f => ({ ...f, photoSlug: (f.matchNazov && findPhotoForIngredient(f.matchNazov, recipesWithPhoto)) || pickPhotoForId(f.id, photoSlugs) })),
+      ...recipeCards,
       ...(tipy.polozky || []).map(t => ({ ...t, kategoria: "tip", eyebrow: "Tip na nákup", photoSlug: pickPhotoForId(t.id, photoSlugs) })),
       ...(brand.polozky || []).map(b => ({ ...b, kategoria: "brand", eyebrow: "Šporáček", photoSlug: pickPhotoForId(b.id, photoSlugs) })),
     ];
@@ -260,7 +286,7 @@ async function loadAll(manual) {
     applyFilters();
 
     const now = new Date().toLocaleString("sk-SK");
-    statusLine.textContent = `Naposledy načítané: ${now} · ${allCards.length} pripravených postov (${priceFacts.length} cenových faktov naživo, ${tipy.polozky?.length || 0} tipov, ${brand.polozky?.length || 0} brand postov)`;
+    statusLine.textContent = `Naposledy načítané: ${now} · ${allCards.length} pripravených postov (${priceFacts.length} cenových faktov naživo, ${recipeCards.length} receptov, ${tipy.polozky?.length || 0} tipov, ${brand.polozky?.length || 0} brand postov)`;
   } catch (err) {
     content.innerHTML = `<div class="error-state">Nepodarilo sa načítať dáta z GitHubu: ${escapeHtml(err.message)}<br>Skús Obnoviť, alebo skontroluj internetové pripojenie.</div>`;
     statusLine.textContent = "Chyba pri načítaní.";
@@ -370,6 +396,271 @@ function wrapLines(ctx, text, maxWidth) {
   return lines;
 }
 
+/* ---- 6 rotating templates, inspired by common food-brand/stat-card/comparison Instagram layouts ---- */
+const COLORS = { green: "#1c3527", greenText: "#204432", cream: "#E7D6B4", paper: "#FAF6EE", terracotta: "#BA5F3F" };
+
+function fitText(ctx, text, maxWidth, startSize, minSize, weight) {
+  let size = startSize;
+  ctx.font = `${weight} ${size}px ${FONT_FAMILY}`;
+  let lines = wrapLines(ctx, text, maxWidth);
+  while (lines.length > 5 && size > minSize) {
+    size -= 4;
+    ctx.font = `${weight} ${size}px ${FONT_FAMILY}`;
+    lines = wrapLines(ctx, text, maxWidth);
+  }
+  return { size, lines };
+}
+function drawEyebrow(ctx, text, x, y, align, color, size) {
+  ctx.textAlign = align;
+  ctx.fillStyle = color;
+  ctx.font = `800 ${size}px ${FONT_FAMILY}`;
+  ctx.fillText((text || "šporáček").toUpperCase(), x, y);
+  const barW = size * 3;
+  ctx.fillRect(align === "center" ? x - barW / 2 : x, y + size * 0.55, barW, 4);
+}
+function drawLogo(ctx, x, y, W, onLight, align) {
+  align = align || "left";
+  if (!onLight && logoImg.naturalWidth) {
+    const logoW = W * 0.26;
+    const logoH = logoW * (logoImg.naturalHeight / logoImg.naturalWidth);
+    ctx.drawImage(logoImg, align === "center" ? x - logoW / 2 : x, y - logoH * 0.75, logoW, logoH);
+  } else {
+    ctx.textAlign = align;
+    ctx.fillStyle = onLight ? COLORS.greenText : COLORS.paper;
+    ctx.font = `800 ${W * 0.036}px ${FONT_FAMILY}`;
+    ctx.fillText("šporáček", x, y);
+  }
+}
+
+// T1 — full-bleed photo (or flat color), bottom gradient, LEFT-aligned headline
+function drawFullbleed(ctx, item, photo, W, H) {
+  if (photo) {
+    drawCover(ctx, photo, W, H);
+    const grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, "rgba(15,26,19,.4)");
+    grad.addColorStop(0.55, "rgba(15,26,19,.25)");
+    grad.addColorStop(1, "rgba(15,26,19,.92)");
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+  } else {
+    ctx.fillStyle = item.kategoria === "fakt" ? COLORS.cream : COLORS.green;
+    ctx.fillRect(0, 0, W, H);
+  }
+  const onLight = !photo && item.kategoria === "fakt";
+  const pad = W * 0.09;
+  const { size, lines } = fitText(ctx, item.hook, W - pad * 2, W * 0.085, 42, "800");
+  const lineHeight = size * 1.18;
+  const blockHeight = lines.length * lineHeight;
+  const centerY = H * 0.78;
+  const startY = centerY - blockHeight / 2 + size * 0.36;
+
+  drawEyebrow(ctx, item.eyebrow, pad, startY - blockHeight / 2 - H * 0.045, "left", COLORS.terracotta, W * 0.03);
+  ctx.textAlign = "left";
+  ctx.fillStyle = onLight ? COLORS.greenText : COLORS.paper;
+  ctx.font = `800 ${size}px ${FONT_FAMILY}`;
+  lines.forEach((line, i) => ctx.fillText(line, pad, startY + i * lineHeight));
+
+  drawLogo(ctx, pad, startY + blockHeight - size * 0.36 + H * 0.075, W, onLight, "left");
+}
+
+// T2 — photo fills top ~60%, solid brand-color block fills bottom with centered text
+function drawColorblock(ctx, item, photo, W, H) {
+  const photoH = Math.round(H * 0.6);
+  const blockColor = hashStr(item.id + "cb") % 2 ? COLORS.terracotta : COLORS.green;
+  if (photo) {
+    ctx.save();
+    ctx.beginPath(); ctx.rect(0, 0, W, photoH); ctx.clip();
+    drawCover(ctx, photo, W, photoH);
+    ctx.restore();
+  } else {
+    ctx.fillStyle = COLORS.cream;
+    ctx.fillRect(0, 0, W, photoH);
+  }
+  ctx.fillStyle = blockColor;
+  ctx.fillRect(0, photoH, W, H - photoH);
+
+  const cx = W / 2, pad = W * 0.09;
+  const zoneTop = photoH, zoneH = H - photoH;
+  drawEyebrow(ctx, item.eyebrow, cx, zoneTop + zoneH * 0.22, "center", "rgba(255,255,255,.75)", W * 0.028);
+
+  const { size, lines } = fitText(ctx, item.hook, W - pad * 2, W * 0.075, 36, "800");
+  ctx.textAlign = "center";
+  ctx.fillStyle = COLORS.paper;
+  const lineHeight = size * 1.16;
+  const blockHeight = lines.length * lineHeight;
+  const textCenterY = zoneTop + zoneH * 0.58;
+  const startY = textCenterY - blockHeight / 2 + size * 0.36;
+  lines.forEach((line, i) => ctx.fillText(line, cx, startY + i * lineHeight));
+
+  drawLogo(ctx, cx, zoneTop + zoneH * 0.92, W, false, "center");
+}
+
+// T3 — no photo, oversized stat number as the hero (best for a single discount %)
+function drawBignum(ctx, item, photo, W, H) {
+  ctx.fillStyle = COLORS.green;
+  ctx.fillRect(0, 0, W, H);
+  const cx = W / 2;
+  drawEyebrow(ctx, item.eyebrow, cx, H * 0.22, "center", COLORS.terracotta, W * 0.032);
+
+  const statText = item.statNumber || item.hook;
+  let size = W * 0.26;
+  ctx.font = `800 ${size}px ${FONT_FAMILY}`;
+  while (ctx.measureText(statText).width > W * 0.86 && size > 60) { size -= 6; ctx.font = `800 ${size}px ${FONT_FAMILY}`; }
+  ctx.textAlign = "center";
+  ctx.fillStyle = COLORS.paper;
+  const numberY = H * 0.46;
+  ctx.fillText(statText, cx, numberY);
+
+  const { size: labelSize, lines } = fitText(ctx, item.statLabel || item.hook, W * 0.78, W * 0.05, 30, "700");
+  ctx.font = `700 ${labelSize}px ${FONT_FAMILY}`;
+  ctx.fillStyle = "rgba(250,246,238,.9)";
+  const lh = labelSize * 1.3;
+  const labelStartY = numberY + W * 0.09;
+  lines.forEach((line, i) => ctx.fillText(line, cx, labelStartY + i * lh));
+
+  drawLogo(ctx, cx, H * 0.9, W, false, "center");
+}
+
+// T4 — diagonal split, store-vs-store price comparison (only for factType "porovnanie")
+function drawSplit(ctx, item, photo, W, H) {
+  const cx = W / 2;
+  const skew = W * 0.12;
+  ctx.fillStyle = COLORS.green;
+  ctx.fillRect(0, 0, W, H);
+  ctx.fillStyle = "#5c2f1f";
+  ctx.beginPath();
+  ctx.moveTo(cx + skew, 0); ctx.lineTo(W, 0); ctx.lineTo(W, H); ctx.lineTo(cx - skew, H);
+  ctx.closePath(); ctx.fill();
+
+  ctx.textAlign = "center";
+  drawEyebrow(ctx, item.eyebrow, cx, H * 0.1, "center", COLORS.terracotta, W * 0.03);
+  const { size, lines } = fitText(ctx, item.ingredientName || item.hook, W * 0.7, W * 0.055, 30, "800");
+  ctx.fillStyle = COLORS.paper;
+  const lh = size * 1.2;
+  lines.forEach((line, i) => ctx.fillText(line, cx, H * 0.19 + i * lh));
+
+  // price text is right/left-anchored away from center (not centered on the side midpoint),
+  // so long prices never run under the middle badge regardless of digit count
+  const sideY = { store: H * 0.4, price: H * 0.49, tag: H * 0.55 };
+  const clearance = W * 0.18;
+  [
+    { edge: cx - clearance, align: "right", data: item.left, tag: "lacnejšie" },
+    { edge: cx + clearance, align: "left", data: item.right, tag: "drahšie" },
+  ].forEach(side => {
+    ctx.textAlign = side.align;
+    ctx.font = `700 ${W * 0.028}px ${FONT_FAMILY}`;
+    ctx.fillStyle = "rgba(250,246,238,.85)";
+    ctx.fillText((side.data?.obchod || "").toUpperCase(), side.edge, sideY.store);
+
+    let priceSize = W * 0.085;
+    ctx.font = `800 ${priceSize}px ${FONT_FAMILY}`;
+    const maxPriceWidth = W * 0.3;
+    while (ctx.measureText(side.data?.cena || "").width > maxPriceWidth && priceSize > 40) {
+      priceSize -= 4;
+      ctx.font = `800 ${priceSize}px ${FONT_FAMILY}`;
+    }
+    ctx.fillStyle = COLORS.paper;
+    ctx.fillText(side.data?.cena || "", side.edge, sideY.price);
+
+    ctx.font = `700 ${W * 0.024}px ${FONT_FAMILY}`;
+    ctx.fillStyle = "rgba(250,246,238,.7)";
+    ctx.fillText(side.tag, side.edge, sideY.tag);
+  });
+
+  const badgeR = W * 0.13, badgeCy = H * 0.47;
+  ctx.beginPath(); ctx.arc(cx, badgeCy, badgeR, 0, Math.PI * 2);
+  ctx.fillStyle = COLORS.terracotta; ctx.fill();
+  ctx.font = `800 ${W * 0.026}px ${FONT_FAMILY}`;
+  ctx.fillStyle = COLORS.paper;
+  const diffLines = wrapLines(ctx, item.diffLabel || "", badgeR * 1.6);
+  const dlh = W * 0.03;
+  const dStartY = badgeCy - ((diffLines.length - 1) * dlh) / 2 + dlh * 0.32;
+  diffLines.forEach((l, i) => ctx.fillText(l, cx, dStartY + i * dlh));
+
+  drawLogo(ctx, cx, H * 0.9, W, false, "center");
+}
+
+// T5 — polaroid-style framed photo with a caption strip below the frame
+function drawPolaroid(ctx, item, photo, W, H) {
+  ctx.fillStyle = COLORS.cream;
+  ctx.fillRect(0, 0, W, H);
+  const cx = W / 2;
+  const borderSide = W * 0.08;
+  const frameW = W - borderSide * 2;
+  const frameTop = H * 0.1;
+  const naturalH = photo ? frameW * (photo.height / photo.width) : frameW * 1.1;
+  const finalFrameH = Math.min(naturalH, H * 0.56);
+
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(borderSide - 14, frameTop - 14, frameW + 28, finalFrameH + 28);
+  if (photo) {
+    ctx.save();
+    ctx.beginPath(); ctx.rect(borderSide, frameTop, frameW, finalFrameH); ctx.clip();
+    const scale = Math.max(frameW / photo.width, finalFrameH / photo.height);
+    const w = photo.width * scale, h = photo.height * scale;
+    ctx.drawImage(photo, borderSide + (frameW - w) / 2, frameTop + (finalFrameH - h) / 2, w, h);
+    ctx.restore();
+  } else {
+    ctx.fillStyle = COLORS.cream;
+    ctx.fillRect(borderSide, frameTop, frameW, finalFrameH);
+  }
+
+  const cxEyebrowY = frameTop + finalFrameH + 14 + W * 0.05;
+  drawEyebrow(ctx, item.eyebrow, cx, cxEyebrowY, "center", COLORS.terracotta, W * 0.03);
+
+  const { size, lines } = fitText(ctx, item.hook, W - borderSide * 2 - 20, W * 0.075, 34, "800");
+  ctx.textAlign = "center";
+  ctx.fillStyle = COLORS.greenText;
+  const lh = size * 1.2;
+  const y = cxEyebrowY + W * 0.07;
+  lines.forEach((line, i) => ctx.fillText(line, cx, y + i * lh));
+
+  drawLogo(ctx, cx, H * 0.94, W, true, "center");
+}
+
+// T6 — circular photo badge in a corner + oversized headline filling the rest
+function drawBadge(ctx, item, photo, W, H) {
+  ctx.fillStyle = hashStr(item.id + "badge") % 2 ? COLORS.terracotta : COLORS.green;
+  ctx.fillRect(0, 0, W, H);
+  const badgeR = W * 0.16, badgeCx = W * 0.24, badgeCy = H * 0.2;
+  if (photo) {
+    ctx.save();
+    ctx.beginPath(); ctx.arc(badgeCx, badgeCy, badgeR, 0, Math.PI * 2); ctx.clip();
+    const scale = Math.max((badgeR * 2) / photo.width, (badgeR * 2) / photo.height);
+    const w = photo.width * scale, h = photo.height * scale;
+    ctx.drawImage(photo, badgeCx - w / 2, badgeCy - h / 2, w, h);
+    ctx.restore();
+    ctx.beginPath(); ctx.arc(badgeCx, badgeCy, badgeR, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(255,255,255,.9)"; ctx.lineWidth = W * 0.012; ctx.stroke();
+  }
+
+  const pad = W * 0.09;
+  drawEyebrow(ctx, item.eyebrow, pad, H * 0.36, "left", "rgba(255,255,255,.8)", W * 0.03);
+  const { size, lines } = fitText(ctx, item.hook, W - pad * 2, W * 0.11, 46, "800");
+  ctx.textAlign = "left";
+  ctx.fillStyle = COLORS.paper;
+  const lh = size * 1.14;
+  const y = H * 0.44;
+  lines.forEach((line, i) => ctx.fillText(line, pad, y + i * lh));
+
+  drawLogo(ctx, pad, H * 0.94, W, false, "left");
+}
+
+const TEMPLATE_POOLS = {
+  fakt: ["bignum", "fullbleed"],
+  recept: ["colorblock", "polaroid"],
+  tip: ["fullbleed", "colorblock", "badge"],
+  brand: ["fullbleed", "colorblock", "badge"],
+};
+function templateFor(item) {
+  if (item.factType === "porovnanie") return "split";
+  const pool = TEMPLATE_POOLS[item.kategoria] || ["fullbleed"];
+  return pool[hashStr(item.id) % pool.length];
+}
+const TEMPLATE_DRAWERS = {
+  fullbleed: drawFullbleed, colorblock: drawColorblock, bignum: drawBignum,
+  split: drawSplit, polaroid: drawPolaroid, badge: drawBadge,
+};
+
 async function renderGraphic(item, mode) {
   await ensureFonts();
   await logoReady;
@@ -378,64 +669,8 @@ async function renderGraphic(item, mode) {
   const canvas = document.createElement("canvas");
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext("2d");
-
-  const isFact = item.kategoria === "fakt";
-  const accent = "#BA5F3F";
-  const cx = W / 2;
-
-  if (photo) {
-    // real recipe photo as background, dark gradient so text stays legible
-    drawCover(ctx, photo, W, H);
-    const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, "rgba(15,26,19,.55)");
-    grad.addColorStop(0.45, "rgba(15,26,19,.35)");
-    grad.addColorStop(1, "rgba(15,26,19,.88)");
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, W, H);
-  } else {
-    // fallback: plain brand-color background when no photo is available
-    ctx.fillStyle = isFact ? "#E7D6B4" : "#1c3527";
-    ctx.fillRect(0, 0, W, H);
-  }
-  const textColor = (photo || !isFact) ? "#FAF6EE" : "#204432";
-  ctx.textAlign = "center";
-
-  // eyebrow
-  const eyebrowY = H * (mode === "story" ? 0.15 : 0.18);
-  ctx.fillStyle = accent;
-  ctx.font = `800 ${W * 0.032}px ${FONT_FAMILY}`;
-  ctx.fillText((item.eyebrow || "šporáček").toUpperCase(), cx, eyebrowY);
-  ctx.fillRect(cx - W * 0.05, eyebrowY + H * 0.02, W * 0.1, 4);
-
-  // hook, centered, shrink-to-fit
-  ctx.fillStyle = textColor;
-  let fontSize = W * 0.09;
-  const maxWidth = W * 0.82;
-  ctx.font = `800 ${fontSize}px ${FONT_FAMILY}`;
-  let lines = wrapLines(ctx, item.hook, maxWidth);
-  while (lines.length > 5 && fontSize > 40) {
-    fontSize -= 4;
-    ctx.font = `800 ${fontSize}px ${FONT_FAMILY}`;
-    lines = wrapLines(ctx, item.hook, maxWidth);
-  }
-  const lineHeight = fontSize * 1.2;
-  const blockHeight = lines.length * lineHeight;
-  const centerY = mode === "story" ? H * 0.5 : H * 0.46;
-  let startY = centerY - blockHeight / 2 + fontSize * 0.36;
-  lines.forEach((line, i) => ctx.fillText(line, cx, startY + i * lineHeight));
-
-  // wordmark / logo bottom
-  const bottomY = H * (mode === "story" ? 0.9 : 0.87);
-  if (!photo && isFact) {
-    ctx.fillStyle = "#204432";
-    ctx.font = `800 ${W * 0.038}px ${FONT_FAMILY}`;
-    ctx.fillText("šporáček", cx, bottomY);
-  } else if (logoImg.naturalWidth) {
-    const logoW = W * 0.28;
-    const logoH = logoW * (logoImg.naturalHeight / logoImg.naturalWidth);
-    ctx.drawImage(logoImg, cx - logoW / 2, bottomY - logoH * 0.75, logoW, logoH);
-  }
-
+  const drawer = TEMPLATE_DRAWERS[templateFor(item)] || drawFullbleed;
+  drawer(ctx, item, photo, W, H);
   return canvas;
 }
 

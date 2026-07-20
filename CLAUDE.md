@@ -58,17 +58,20 @@ Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync 
 
 ## Social obsah (`social/`)
 
-**Účel:** `docs/social.html` je databáza *všeobecného* social obsahu — nie receptov. Slúži len na to, aby si tam vždy našiel hotový text a grafiku na Instagram/Facebook a rovno si to stiahol. Tri zdroje, tri rôzne mechanizmy:
+**Účel:** `docs/social.html` je databáza pripraveného social obsahu — hotový text a grafika na Instagram/Facebook na priame stiahnutie. Štyri zdroje:
 
 1. **Fakty o cenách** — počítané **naživo v prehliadači** priamo z `ceny/*.json` (najväčšie aktuálne zľavy + cenové porovnanie tej istej suroviny naprieč obchodmi tento týždeň). Nič sa nezapisuje, rastie to samo s každým novým letákom. Položky s podmienkou v `poznamka` (kupón, vernostná karta, min. nákup) sa buď vynechajú z rebríčka, alebo sa podmienka pridá do textu — nikdy sa nesmie ukázať zľava bez tejto podmienky, bola by zavádzajúca.
-2. **Tipy na nákup** — evergreen, `social/tipy.json`. Nie viazané na konkrétny leták/týždeň/recept (na to je `tydne/`).
-3. **Brand/misia posty** — evergreen, `social/brand.json`. Princíp, tón, engagement — v duchu `znalostna-baza/brand-manual.md` (banka claimov, tón hlasu).
+2. **Recepty** — naživo z `recepty/` + `fotky/` (rovnaký zdroj ako `docs/index.html`). Jedna karta na recept, foto je vždy vlastná fotka receptu (nie náhodná).
+3. **Tipy na nákup** — evergreen, `social/tipy.json`. Nie viazané na konkrétny leták/týždeň/recept (na to je `tydne/`).
+4. **Brand/misia posty** — evergreen, `social/brand.json`. Princíp, tón, engagement — v duchu `znalostna-baza/brand-manual.md` (banka claimov, tón hlasu).
 
-**Schéma** oboch JSON súborov: koreň `{ kategoria, poznamka, polozky[] }`, každá položka `{ id, hook, caption }` — `hook` je krátky text na grafiku (max ~12 slov), `caption` je dlhší text na skopírovanie k postu.
+**Schéma** oboch JSON súborov (`tipy.json`, `brand.json`): koreň `{ kategoria, poznamka, polozky[] }`, každá položka `{ id, hook, caption }` — `hook` je krátky text na grafiku (max ~12 slov), `caption` je dlhší text na skopírovanie k postu.
 
 **Pravidlo pri pridávaní tipov/brand postov:** rešpektuj `znalostna-baza/brand-manual.md` tón hlasu aj "NIKDY nehovoríme" pravidlá (žiadna appka/sťahovanie/čakacia listina vo fáze 1, žiadne moralizovanie o šetrení, žiadne "kríza/drahota", vždy konkrétne, nie abstraktné rady).
 
-**Grafika sa negeneruje cez AI ani neukladá do repa** — `docs/social.html` ju vyrenderuje priamo v prehliadači (canvas, farby a logo šporáčka) pri kliknutí na "Story"/"Post" a rovno spustí stiahnutie. Toto je zámerne iný mechanizmus než `foto_url` fotky jedla (tie *sú* generované cez Gemini a *sú* v repe, pozri `generovanie-fotiek/SKILL.md`) — tu ide o textovú/brandovú grafiku, nie o fotku jedla, AI image model by presný text nevykreslil spoľahlivo.
+**Grafika sa negeneruje cez AI ani neukladá do repa** — `docs/social.html` ju vyrenderuje priamo v prehliadači (canvas) pri kliknutí na "Story"/"Post" a rovno spustí stiahnutie. Toto je zámerne iný mechanizmus než `foto_url` fotky jedla (tie *sú* generované cez Gemini a *sú* v repe, pozri `generovanie-fotiek/SKILL.md`) — tu ide o kompozíciu z existujúcej fotky + textu, AI image model by presný text nevykreslil spoľahlivo.
+
+**6 striedajúcich sa dizajnových šablón** (nie jeden univerzálny vzhľad) — `fullbleed` (fotka na celú plochu + gradient, text zarovnaný vľavo), `colorblock` (fotka hore ~60 %, farebný blok dole s textom), `bignum` (bez fotky, obrovské číslo/percento ako hlavný prvok — pre jednu zľavu), `split` (diagonálne rozdelenie na dve farby, cena vs. cena — len pre medziobchodné porovnanie), `polaroid` (fotka orámovaná bielym okrajom, popis pod rámom), `badge` (kruhový fotka-odznak v rohu + veľký nadpis). Šablóna sa vyberá deterministicky podľa `id` karty (rovnaký post = vždy rovnaká šablóna), rozdelené podľa vhodnosti: `fakt` (zľava) → bignum/fullbleed, `fakt` (porovnanie) → vždy split, `recept` → colorblock/polaroid, `tip`/`brand` → fullbleed/colorblock/badge.
 
 ---
 
@@ -155,7 +158,7 @@ Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`d
 4. **`docs/vyber.html` — zostav týždeň.** Interaktívny nástroj na výber receptov pre týždenný výstup — vyberieš obchod, stránka pri každom recepte naživo prepočíta, koľko jeho surovín je práve v akcii (porovnaním `recepty/*.md` surovín s `ceny/<obchod>-*.json`), zoradí podľa zhody a dá vyfiltrovať podľa tagov. Zaškrtneš recepty, tlačidlo "Skopírovať výber" skopíruje zoznam do schránky — ten sa potom pošle v chate a z neho sa spracuje `tydne/<týždeň>/` presne podľa `.claude/skills/tyzdenny-vystup/SKILL.md` (táto stránka nič sama neukladá, je to len pomôcka na výber, nie generátor výstupu — GitHub Pages nevie zapisovať do repa).
    **URL:** https://recepty.sporacek.sk/vyber.html
    Zhoda surovín je len heuristika podľa názvu (nie vždy presná) — finálne ceny/výber vždy over pri zostavovaní týždňa.
-5. **`docs/social.html` — hotové posty a stories (všeobecné, nie receptové).** Fakty o cenách počítané naživo z `ceny/*.json` + evergreen tipy/brand posty z `social/tipy.json` a `social/brand.json`. Každá karta má "Kopírovať text" a "Story"/"Post" tlačidlo — grafika sa vyrenderuje priamo v prehliadači (canvas) a rovno stiahne, nič sa negeneruje cez AI ani neukladá do repa. Pozri `## Social obsah (social/)` vyššie pre presnú schému a pravidlá pri pridávaní tipov.
+5. **`docs/social.html` — hotové posty a stories.** Fakty o cenách počítané naživo z `ceny/*.json` + recepty naživo z `recepty/`/`fotky/` + evergreen tipy/brand posty z `social/tipy.json` a `social/brand.json`. Každá karta má "Kopírovať text" a "Story"/"Post" tlačidlo — grafika sa vyrenderuje priamo v prehliadači (canvas, jedna zo 6 striedajúcich sa šablón) a rovno stiahne, nič sa negeneruje cez AI ani neukladá do repa. Pozri `## Social obsah (social/)` vyššie pre presnú schému a pravidlá pri pridávaní tipov.
    **URL:** https://recepty.sporacek.sk/social.html
 
 ### Viacero obchodov
