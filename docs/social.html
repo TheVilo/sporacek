@@ -96,6 +96,38 @@ function parsePct(zlava) {
   return m ? parseFloat(m[1].replace(",", ".")) : null;
 }
 
+/* ---- photo matching: pick a real recipe photo for each card ---- */
+function photoUrlFor(slug) { return `${RAW_BASE}/fotky/${encodeURIComponent(slug)}.jpg`; }
+function parseSurovinyOnly(text) {
+  const secM = text.match(/## Suroviny[^\n]*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  if (!secM) return [];
+  const cellsOf = (line) => line.slice(1, -1).split("|").map(c => c.trim());
+  const lines = secM[1].split("\n").map(l => l.trim()).filter(l => l.startsWith("|") && l.endsWith("|"));
+  if (lines.length < 2) return [];
+  return lines.slice(2).map(cellsOf).filter(c => c[0]).map(c => c[0]);
+}
+function findPhotoForIngredient(nazov, recipesWithPhoto) {
+  const key = nameKey(nazov);
+  if (!key) return null;
+  for (const r of recipesWithPhoto) {
+    for (const ing of r.suroviny) {
+      const rKey = nameKey(ing);
+      if (rKey.length < 4) continue;
+      if (key.includes(rKey) || rKey.includes(key)) return r.slug;
+    }
+  }
+  return null;
+}
+function hashStr(s) {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+function pickPhotoForId(id, photoSlugs) {
+  if (!photoSlugs.length) return null;
+  return photoSlugs[hashStr(id) % photoSlugs.length];
+}
+
 /* ---- price facts, computed live from ceny/*.json ---- */
 function buildPriceFacts(catalogs) {
   // latest file per store (by platnost start date)
@@ -129,6 +161,7 @@ function buildPriceFacts(catalogs) {
       id: `fakt-zlava-${nameKey(p.nazov)}-${p.obchod}`.replace(/\s+/g, "-"),
       kategoria: "fakt",
       eyebrow: "Cenový fakt",
+      matchNazov: p.nazov,
       hook: `${p.nazov}: −${p.pct}% v ${p.obchod}`,
       caption: `${p.nazov} má tento týždeň zľavu −${p.pct}% (${p.obchod}): ${fmtEur(p.povodna_cena)} → ${fmtEur(p.zlavnena_cena)}${p.mnozstvo ? " · " + p.mnozstvo : ""}${note}. Oplatí sa skontrolovať, či máš podobnú akciu aj vo svojom obchode.`,
     });
@@ -178,10 +211,12 @@ async function loadAll(manual) {
   statusLine.textContent = manual ? "Obnovujem…" : "Načítavam…";
 
   try {
-    const [tipyRaw, brandRaw, cenyListResp] = await Promise.all([
+    const [tipyRaw, brandRaw, cenyListResp, recipeListResp, photoListResp] = await Promise.all([
       fetch(`${RAW_BASE}/social/tipy.json`, { cache: "no-store" }),
       fetch(`${RAW_BASE}/social/brand.json`, { cache: "no-store" }),
       fetch(`${API_BASE}/contents/ceny?ref=${BRANCH}`, { cache: "no-store" }),
+      fetch(`${API_BASE}/contents/recepty?ref=${BRANCH}`, { cache: "no-store" }),
+      fetch(`${API_BASE}/contents/fotky?ref=${BRANCH}`, { cache: "no-store" }),
     ]);
     const tipy = tipyRaw.ok ? await tipyRaw.json() : { polozky: [] };
     const brand = brandRaw.ok ? await brandRaw.json() : { polozky: [] };
@@ -195,10 +230,29 @@ async function loadAll(manual) {
       priceFacts = buildPriceFacts(catalogs);
     }
 
+    // photos: used as backgrounds for the graphics instead of plain color
+    const photoSlugSet = new Set();
+    if (photoListResp.ok) {
+      for (const pf of await photoListResp.json()) {
+        if (pf.name.endsWith(".jpg")) photoSlugSet.add(pf.name.replace(/\.jpg$/, ""));
+      }
+    }
+    let recipesWithPhoto = [];
+    if (recipeListResp.ok && photoSlugSet.size) {
+      const recipeFiles = (await recipeListResp.json()).filter(f => f.name.endsWith(".md") && photoSlugSet.has(f.name.replace(/\.md$/, "")));
+      recipesWithPhoto = await Promise.all(recipeFiles.map(async (f) => {
+        const slug = f.name.replace(/\.md$/, "");
+        const raw = await fetch(`${RAW_BASE}/recepty/${encodeURIComponent(f.name)}`, { cache: "no-store" });
+        const text = await raw.text();
+        return { slug, suroviny: parseSurovinyOnly(text) };
+      }));
+    }
+    const photoSlugs = [...photoSlugSet];
+
     allCards = [
-      ...priceFacts,
-      ...(tipy.polozky || []).map(t => ({ ...t, kategoria: "tip", eyebrow: "Tip na nákup" })),
-      ...(brand.polozky || []).map(b => ({ ...b, kategoria: "brand", eyebrow: "Šporáček" })),
+      ...priceFacts.map(f => ({ ...f, photoSlug: (f.matchNazov && findPhotoForIngredient(f.matchNazov, recipesWithPhoto)) || pickPhotoForId(f.id, photoSlugs) })),
+      ...(tipy.polozky || []).map(t => ({ ...t, kategoria: "tip", eyebrow: "Tip na nákup", photoSlug: pickPhotoForId(t.id, photoSlugs) })),
+      ...(brand.polozky || []).map(b => ({ ...b, kategoria: "brand", eyebrow: "Šporáček", photoSlug: pickPhotoForId(b.id, photoSlugs) })),
     ];
 
     buildChips();
@@ -247,6 +301,7 @@ function render(list) {
       <div class="social-grid">
         ${byCat[cat].map(c => `
           <div class="social-card">
+            ${c.photoSlug ? `<div class="social-thumb"><img src="${photoUrlFor(c.photoSlug)}" alt="" loading="lazy" onerror="this.closest('.social-thumb').style.display='none'" /></div>` : ""}
             <div class="social-eyebrow">${escapeHtml(c.eyebrow || "")}</div>
             <div class="social-hook">${escapeHtml(c.hook)}</div>
             <div class="social-caption">${escapeHtml(c.caption)}</div>
@@ -276,6 +331,23 @@ const logoImg = new Image();
 logoImg.src = "assets/logo-sporacek-biela.png";
 const logoReady = new Promise(res => { logoImg.onload = res; logoImg.onerror = res; });
 
+const photoImgCache = {};
+function loadPhoto(slug) {
+  if (!slug) return Promise.resolve(null);
+  if (photoImgCache[slug]) return photoImgCache[slug];
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  const p = new Promise(res => { img.onload = () => res(img); img.onerror = () => res(null); });
+  img.src = photoUrlFor(slug);
+  photoImgCache[slug] = p;
+  return p;
+}
+function drawCover(ctx, img, W, H) {
+  const scale = Math.max(W / img.width, H / img.height);
+  const w = img.width * scale, h = img.height * scale;
+  ctx.drawImage(img, (W - w) / 2, (H - h) / 2, w, h);
+}
+
 async function ensureFonts() {
   try {
     await Promise.all([
@@ -301,19 +373,31 @@ function wrapLines(ctx, text, maxWidth) {
 async function renderGraphic(item, mode) {
   await ensureFonts();
   await logoReady;
+  const photo = await loadPhoto(item.photoSlug);
   const W = 1080, H = mode === "story" ? 1920 : 1080;
   const canvas = document.createElement("canvas");
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext("2d");
 
   const isFact = item.kategoria === "fakt";
-  const bg = isFact ? "#E7D6B4" : "#1c3527";
-  const textColor = isFact ? "#204432" : "#FAF6EE";
   const accent = "#BA5F3F";
   const cx = W / 2;
 
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, W, H);
+  if (photo) {
+    // real recipe photo as background, dark gradient so text stays legible
+    drawCover(ctx, photo, W, H);
+    const grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, "rgba(15,26,19,.55)");
+    grad.addColorStop(0.45, "rgba(15,26,19,.35)");
+    grad.addColorStop(1, "rgba(15,26,19,.88)");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+  } else {
+    // fallback: plain brand-color background when no photo is available
+    ctx.fillStyle = isFact ? "#E7D6B4" : "#1c3527";
+    ctx.fillRect(0, 0, W, H);
+  }
+  const textColor = (photo || !isFact) ? "#FAF6EE" : "#204432";
   ctx.textAlign = "center";
 
   // eyebrow
@@ -342,7 +426,7 @@ async function renderGraphic(item, mode) {
 
   // wordmark / logo bottom
   const bottomY = H * (mode === "story" ? 0.9 : 0.87);
-  if (isFact) {
+  if (!photo && isFact) {
     ctx.fillStyle = "#204432";
     ctx.font = `800 ${W * 0.038}px ${FONT_FAMILY}`;
     ctx.fillText("šporáček", cx, bottomY);

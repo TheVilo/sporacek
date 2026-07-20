@@ -246,7 +246,9 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 
 /* ===== social (social.html) ===== */
 .social-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.social-thumb { margin: -16px -18px 4px; aspect-ratio: 16 / 9; background: var(--sand); }
+.social-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .social-eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; }
 .social-hook { font-size: 1.02rem; font-weight: 800; color: var(--green-ink); line-height: 1.3; text-wrap: balance; }
 .social-caption { font-size: .85rem; color: var(--text-muted); line-height: 1.5; flex: 1; }
