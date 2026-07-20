@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A vibrant, warm editorial food photo, 9:16 format, blending cozy minimalism with a lived-in lifestyle aesthetic. A rich golden chickpea and cauliflower curry in a creamy coconut sauce, served in a minimalist matte bowl next to a small mound of fluffy white rice, on a smooth wood table. Fresh coriander leaves scattered on top and a lime wedge on the side. A softly wrinkled linen napkin and modern cutlery nearby. Warm, soft side lighting.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A rich golden chickpea and cauliflower curry in a creamy coconut sauce, viewed directly from above, in a minimalist matte ceramic bowl on a clean, smooth light wood table, with a small mound of fluffy white rice pressed into the edge of the same bowl. Fresh coriander leaves scattered on top and a lime wedge resting on the rim. A softly wrinkled neutral linen napkin lies beneath a modern matte spoon. Crisp, diffused natural daylight. Film grain. No text, no logo, no watermark in the image.
 
 ---
 

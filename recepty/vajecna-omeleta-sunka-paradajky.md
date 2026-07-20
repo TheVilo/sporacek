@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, appetizing breakfast editorial photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. A golden folded omelette filled with visible pieces of ham and tomato, served on a minimalist matte plate on a smooth wood table. A few cherry tomatoes and fresh chives scattered on the plate, a softly wrinkled linen napkin beneath, and a cup of coffee softly blurred in the background. Crisp morning light. No text, no logo, no watermark in the image.
+A bright, appetizing breakfast editorial photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. A golden folded omelette filled with visible diced ham, diced tomato, and melted grated cheese, served on a minimalist matte plate on a smooth wood table. Garnished with fresh chopped parsley (not chives). A few extra diced tomato pieces scattered on the plate, a softly wrinkled linen napkin beneath, and a cup of coffee softly blurred in the background. Crisp morning light. No text, no logo, no watermark in the image.
 
 ---
 

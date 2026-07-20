@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph, vertical 9:16, embracing warm minimalism. A steaming cup of golden ginger-lemon tea with lemon slices and fresh ginger pieces floating inside, in a minimalist matte ceramic mug on a smooth light oak table. A softly draped, slightly messy light grey linen napkin lies nearby. Blurred background features a small contemporary dish of honey. Scattered fresh ginger slices sit on the table for an authentic, elevated home cooking vibe. Soft diffused daylight with visible steam. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A steaming cup of golden ginger-lemon tea with lemon slices and fresh ginger coins floating inside, viewed directly from above, in a minimalist matte ceramic mug on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath. A small contemporary dish of honey and a few whole cinnamon-colored ginger root pieces sit nearby for an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the rising steam. Film grain. No text, no logo, no watermark in the image.
 
 ---
 
