@@ -22,6 +22,9 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - morčacia šunka
 - krevety
 - treska
+- klobása
+- hovädzia sviečkovica
+- šunka
 
 ## Zelenina
 - cibuľa
@@ -43,6 +46,9 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - zeler
 - zázvor
 - kukurica (konzervovaná)
+- kyslá kapusta
+- sušené hríby
+- kyslé uhorky
 
 ## Ovocie
 - čučoriedky
@@ -86,6 +92,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - grécky jogurt
 - tvaroh
 - maslo
+- bryndza
 
 ## Základy a koreniny
 - olivový olej
@@ -127,3 +134,4 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - tahini (sezamová pasta)
 - sezamový olej
 - sezamové semienka
+- tatárska omáčka
