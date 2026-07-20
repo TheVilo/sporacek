@@ -25,6 +25,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - klobása
 - hovädzia sviečkovica
 - šunka
+- bravčové rebierka
 
 ## Zelenina
 - cibuľa
@@ -87,6 +88,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - smotana na varenie
 - syr
 - syr feta
+- haloumi
 - parmezán
 - jogurt biely
 - grécky jogurt
@@ -104,6 +106,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - oregano
 - bazalka
 - tymian
+- mäta
 - petržlenová vňať
 - čerstvý koriander
 - mletá rasca
