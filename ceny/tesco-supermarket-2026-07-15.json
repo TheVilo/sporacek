@@ -1,5 +1,5 @@
 {
-  "obchod": "Tesco",
+  "obchod": "Tesco supermarket",
   "platnost_tyzdenna_default": "2026-07-15 - 2026-07-21",
   "pocet_stran_v_katalogu": 33,
   "pocet_potravinovych_polozok": 107,
@@ -14,7 +14,7 @@
       "zlavnena_cena": 2.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -27,7 +27,7 @@
       "zlavnena_cena": 1.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -40,7 +40,7 @@
       "zlavnena_cena": 1.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "kupón v aplikácii",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -53,7 +53,7 @@
       "zlavnena_cena": 3.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -66,7 +66,7 @@
       "zlavnena_cena": 3.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -79,7 +79,7 @@
       "zlavnena_cena": 5.29,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -92,7 +92,7 @@
       "zlavnena_cena": 5.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -105,7 +105,7 @@
       "zlavnena_cena": 3.09,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -118,7 +118,7 @@
       "zlavnena_cena": 1.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -131,7 +131,7 @@
       "zlavnena_cena": 1.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -144,7 +144,7 @@
       "zlavnena_cena": 5.29,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -157,7 +157,7 @@
       "zlavnena_cena": 12.5,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -170,7 +170,7 @@
       "zlavnena_cena": 2.39,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -183,7 +183,7 @@
       "zlavnena_cena": 8.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -196,7 +196,7 @@
       "zlavnena_cena": 3.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -209,7 +209,7 @@
       "zlavnena_cena": 5.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -222,7 +222,7 @@
       "zlavnena_cena": 2.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -235,7 +235,7 @@
       "zlavnena_cena": 6.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -248,7 +248,7 @@
       "zlavnena_cena": 35.9,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -261,7 +261,7 @@
       "zlavnena_cena": 1.29,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -274,7 +274,7 @@
       "zlavnena_cena": 2.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -287,7 +287,7 @@
       "zlavnena_cena": 4.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -300,7 +300,7 @@
       "zlavnena_cena": 4.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -313,7 +313,7 @@
       "zlavnena_cena": 3.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -326,7 +326,7 @@
       "zlavnena_cena": 2.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -339,7 +339,7 @@
       "zlavnena_cena": 2.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -352,7 +352,7 @@
       "zlavnena_cena": 3.39,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -365,7 +365,7 @@
       "zlavnena_cena": 1.05,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -378,7 +378,7 @@
       "zlavnena_cena": 1.39,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -391,7 +391,7 @@
       "zlavnena_cena": 1.09,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -404,7 +404,7 @@
       "zlavnena_cena": 0.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mäso a ryby"
     },
@@ -417,7 +417,7 @@
       "zlavnena_cena": 0.55,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -430,7 +430,7 @@
       "zlavnena_cena": 1.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -443,7 +443,7 @@
       "zlavnena_cena": 1.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -456,7 +456,7 @@
       "zlavnena_cena": 0.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -469,7 +469,7 @@
       "zlavnena_cena": 2.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -482,7 +482,7 @@
       "zlavnena_cena": 0.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -495,7 +495,7 @@
       "zlavnena_cena": 1.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -508,7 +508,7 @@
       "zlavnena_cena": 0.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -521,7 +521,7 @@
       "zlavnena_cena": 2.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -534,7 +534,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -547,7 +547,7 @@
       "zlavnena_cena": 0.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -560,7 +560,7 @@
       "zlavnena_cena": 0.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -573,7 +573,7 @@
       "zlavnena_cena": 1.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -586,7 +586,7 @@
       "zlavnena_cena": 1.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -599,7 +599,7 @@
       "zlavnena_cena": 2.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -612,7 +612,7 @@
       "zlavnena_cena": 1.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -625,7 +625,7 @@
       "zlavnena_cena": 1.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -638,7 +638,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -651,7 +651,7 @@
       "zlavnena_cena": 1.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Ovocie a zelenina"
     },
@@ -664,7 +664,7 @@
       "zlavnena_cena": 1.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -677,7 +677,7 @@
       "zlavnena_cena": 0.75,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "kupón v aplikácii",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -690,7 +690,7 @@
       "zlavnena_cena": 2.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -703,7 +703,7 @@
       "zlavnena_cena": 1.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -716,7 +716,7 @@
       "zlavnena_cena": 3.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -729,7 +729,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -742,7 +742,7 @@
       "zlavnena_cena": 1.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -755,7 +755,7 @@
       "zlavnena_cena": 3.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -768,7 +768,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -781,7 +781,7 @@
       "zlavnena_cena": 2.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -794,7 +794,7 @@
       "zlavnena_cena": 0.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -807,7 +807,7 @@
       "zlavnena_cena": 1.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -820,7 +820,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -833,7 +833,7 @@
       "zlavnena_cena": 1.39,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -846,7 +846,7 @@
       "zlavnena_cena": 0.35,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -859,7 +859,7 @@
       "zlavnena_cena": 0.55,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -872,7 +872,7 @@
       "zlavnena_cena": 0.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -885,7 +885,7 @@
       "zlavnena_cena": 1.09,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -898,7 +898,7 @@
       "zlavnena_cena": 1.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -911,7 +911,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -924,7 +924,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -937,7 +937,7 @@
       "zlavnena_cena": 1.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -950,7 +950,7 @@
       "zlavnena_cena": 3.85,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -963,7 +963,7 @@
       "zlavnena_cena": 2.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -976,7 +976,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -989,7 +989,7 @@
       "zlavnena_cena": 3.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1002,7 +1002,7 @@
       "zlavnena_cena": 4.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1015,7 +1015,7 @@
       "zlavnena_cena": 1.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1028,7 +1028,7 @@
       "zlavnena_cena": 1.69,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1041,7 +1041,7 @@
       "zlavnena_cena": 2.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1054,7 +1054,7 @@
       "zlavnena_cena": 1.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1067,7 +1067,7 @@
       "zlavnena_cena": 2.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1080,7 +1080,7 @@
       "zlavnena_cena": 1.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Mliečne a vajcia"
     },
@@ -1093,7 +1093,7 @@
       "zlavnena_cena": 0.72,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "kupón v aplikácii",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1106,7 +1106,7 @@
       "zlavnena_cena": 0.35,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1119,7 +1119,7 @@
       "zlavnena_cena": 1.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1132,7 +1132,7 @@
       "zlavnena_cena": 1.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1145,7 +1145,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1158,7 +1158,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1171,7 +1171,7 @@
       "zlavnena_cena": 0.45,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1184,7 +1184,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1197,7 +1197,7 @@
       "zlavnena_cena": 0.3,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1210,7 +1210,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1223,7 +1223,7 @@
       "zlavnena_cena": 1.59,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1236,7 +1236,7 @@
       "zlavnena_cena": 2.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1249,7 +1249,7 @@
       "zlavnena_cena": 1.49,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1262,7 +1262,7 @@
       "zlavnena_cena": 0.79,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1275,7 +1275,7 @@
       "zlavnena_cena": 0.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1288,7 +1288,7 @@
       "zlavnena_cena": 0.33,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1301,7 +1301,7 @@
       "zlavnena_cena": 0.27,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Trvanlivé a základ"
     },
@@ -1314,7 +1314,7 @@
       "zlavnena_cena": 6.19,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Orechy a sladkosti"
     },
@@ -1327,7 +1327,7 @@
       "zlavnena_cena": 1.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "Clubcard",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Orechy a sladkosti"
     },
@@ -1340,7 +1340,7 @@
       "zlavnena_cena": 0.73,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "cena pri kúpe 4 ks (3+1)",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Pečivo a pekáreň"
     },
@@ -1353,7 +1353,7 @@
       "zlavnena_cena": 0.92,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "cena pri kúpe 5 ks (4+1)",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Pečivo a pekáreň"
     },
@@ -1366,7 +1366,7 @@
       "zlavnena_cena": 1.99,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Pečivo a pekáreň"
     },
@@ -1379,7 +1379,7 @@
       "zlavnena_cena": 1.89,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Pečivo a pekáreň"
     },
@@ -1392,7 +1392,7 @@
       "zlavnena_cena": 1.75,
       "platnost": "2026-07-15 - 2026-07-21",
       "poznamka": "",
-      "obchod": "Tesco",
+      "obchod": "Tesco supermarket",
       "zdroj_kontroly": "textová extrakcia (PyMuPDF) + ručná kontrola",
       "kategoria": "Pečivo a pekáreň"
     }
