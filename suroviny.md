@@ -58,6 +58,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - jablká
 - banán
 - maliny
+- jahody
 
 ## Orechy a semienka
 - vlašské orechy
@@ -89,6 +90,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - syr
 - syr feta
 - haloumi
+- mozzarella
 - parmezán
 - jogurt biely
 - grécky jogurt
@@ -107,6 +109,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - bazalka
 - tymian
 - mäta
+- rozmarín
 - petržlenová vňať
 - čerstvý koriander
 - mletá rasca
@@ -122,9 +125,12 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - med
 - citrón
 - strúhanka
+- chlieb
 - múka
+- celozrnná múka
 - ovsená múka
 - prášok do pečiva
+- droždie
 - škorica
 - kakao
 - vanilkový extrakt
