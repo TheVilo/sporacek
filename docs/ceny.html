@@ -11,6 +11,15 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="logo-emoji">🥕</span> šporáček</a>
+  <nav class="site-nav">
+    <a href="index.html">Databáza receptov</a>
+    <a href="tyzden.html">Týždenný výstup</a>
+    <a href="ceny.html" class="active">Ceny surovín</a>
+    <a href="vyber.html">Zostav týždeň</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="top-row">
     <div>
@@ -18,9 +27,6 @@
       <h1>Ceny surovín</h1>
     </div>
     <div class="top-actions">
-      <a class="nav-link" href="index.html">📚 Databáza receptov</a>
-      <a class="nav-link" href="tyzden.html">📱 Týždenný výstup</a>
-      <a class="nav-link" href="vyber.html">🧮 Zostav týždeň</a>
       <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
     </div>
   </div>

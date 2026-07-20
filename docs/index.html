@@ -11,6 +11,15 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="logo-emoji">🥕</span> šporáček</a>
+  <nav class="site-nav">
+    <a href="index.html" class="active">Databáza receptov</a>
+    <a href="tyzden.html">Týždenný výstup</a>
+    <a href="ceny.html">Ceny surovín</a>
+    <a href="vyber.html">Zostav týždeň</a>
+  </nav>
+</header>
 <div class="wrap">
   <div class="top-row">
     <div>
@@ -18,12 +27,10 @@
       <h1>Všetky recepty</h1>
     </div>
     <div class="top-actions">
-      <a class="nav-link" href="tyzden.html">📱 Týždenný výstup</a>
-      <a class="nav-link" href="ceny.html">🏷️ Ceny surovín</a>
-      <a class="nav-link" href="vyber.html">🧮 Zostav týždeň</a>
       <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
     </div>
   </div>
+  <div class="cat-nav" id="catNav" style="display:none"></div>
   <div class="sub">Táto stránka si dáta ťahá naživo priamo z GitHub repa (<code>recepty/</code>, <code>fotky/</code>) — pri každom otvorení alebo obnovení vidíš vždy aktuálny stav, bez potreby prekódovávania.</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
 
@@ -75,12 +82,26 @@ const BRANCH = "main";
 const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
 
-const TYP_ORDER = ["raňajky", "desiata", "obed", "olovrant", "večera", "dezert", "šalát", "polievka"];
-const TYP_LABEL = { "raňajky": "Raňajky", "desiata": "Desiata", "olovrant": "Olovrant", "dezert": "Dezerty", "večera": "Večere", "obed": "Obedy", "šalát": "Šaláty", "polievka": "Polievky", "iné": "Ostatné" };
-const TYP_TAGS = new Set(["raňajky", "desiata", "olovrant", "dezert", "večera", "obed", "šalát", "polievka", "jednohrnec"]);
+// raw "typ" tag hodnoty z receptov, v poradí podľa akej kategórie majú prednosť pri viacnásobnom tagovaní
+// (napr. recept s #obed aj #polievka patrí do Polievok, nie do Hlavných jedál)
+const RAW_TYP_PRIORITY = ["raňajky", "polievka", "šalát", "predjedlo", "príloha", "nápoj", "pečivo", "dezert", "desiata", "olovrant", "obed", "večera"];
+// viacero raw tagov sa zobrazuje ako jedna kategória (obed + večera = Hlavné jedlá, desiata + olovrant = Desiata a olovrant)
+const GROUP_MAP = {
+  "raňajky": "raňajky", "polievka": "polievka", "šalát": "šalát",
+  "predjedlo": "predjedlo", "príloha": "príloha", "nápoj": "nápoj", "pečivo": "pečivo", "dezert": "dezert",
+  "desiata": "desiata-olovrant", "olovrant": "desiata-olovrant",
+  "obed": "hlavne-jedla", "večera": "hlavne-jedla",
+};
+const TYP_ORDER = ["raňajky", "desiata-olovrant", "polievka", "šalát", "predjedlo", "hlavne-jedla", "príloha", "nápoj", "pečivo", "dezert"];
+const TYP_LABEL = {
+  "raňajky": "Raňajky", "desiata-olovrant": "Desiata a olovrant", "polievka": "Polievky", "šalát": "Šaláty",
+  "predjedlo": "Predjedlá", "hlavne-jedla": "Hlavné jedlá", "príloha": "Prílohy", "nápoj": "Nápoje",
+  "pečivo": "Pečivo", "dezert": "Dezerty", "iné": "Ostatné",
+};
+const TYP_TAGS = new Set([...RAW_TYP_PRIORITY, "jednohrnec"]);
 
 function primaryTyp(tags) {
-  for (const t of TYP_ORDER) if (tags.includes(t)) return t;
+  for (const t of RAW_TYP_PRIORITY) if (tags.includes(t)) return GROUP_MAP[t];
   return "iné";
 }
 
@@ -371,7 +392,7 @@ function renderRecipes(recipes, totalCount) {
     </div>`;
 
   const groupsHtml = groupOrder.map(typ => `
-    <section class="group">
+    <section class="group" id="cat-${typ}">
       <div class="group-head">
         <h2>${TYP_LABEL[typ] || typ}</h2>
         <span class="count">${byGroup[typ].length} ${byGroup[typ].length === 1 ? "recept" : "receptov"}</span>
@@ -380,6 +401,22 @@ function renderRecipes(recipes, totalCount) {
     </section>`).join("");
 
   content.innerHTML = summaryHtml + groupsHtml;
+
+  // kruhový nav pás hore (len keď nie je aktívny filter/hľadanie, nech dáva zmysel ako "skoč na kategóriu")
+  const catNavEl = document.getElementById("catNav");
+  if (!filterActive && groupOrder.length > 1) {
+    catNavEl.style.display = "";
+    catNavEl.innerHTML = groupOrder.map(typ => {
+      const rep = byGroup[typ][0];
+      return `
+        <a href="#cat-${typ}">
+          <div class="cat-photo"><img src="${photoUrlFor(rep.slug)}" alt="" loading="lazy" onerror="this.parentElement.style.background='var(--sand)'" /></div>
+          <div class="cat-label">${TYP_LABEL[typ] || typ}</div>
+        </a>`;
+    }).join("");
+  } else {
+    catNavEl.style.display = "none";
+  }
 }
 
 loadAll(false);
