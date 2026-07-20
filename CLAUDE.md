@@ -137,6 +137,7 @@ Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri n
 - Spracovanie týždenného letáku (recepty, nákupný zoznam, ceny, stories) → `.claude/skills/tyzdenny-vystup/SKILL.md`. Nenačítavaj ho, ak práve neriešiš týždenný výstup — šetrí to kontext.
 - Generovanie fotky k receptu (foto_url) → `.claude/skills/generovanie-fotiek/SKILL.md`. Obsahuje presný funkčný postup (SDK, nie curl) aj časté chyby, nech sa nezisťuje nanovo v každej session.
 - Pridanie nového receptu mimo týždenného letáku → `.claude/skills/novy-recept/SKILL.md`. Recepty sa hľadajú na internete (nevymýšľajú sa) a píšu prirodzenou slovenčinou.
+- Spracovanie letáku do cenovej databázy `ceny/` (overenie JSON-u z Gemini alebo import z PDF) → `.claude/skills/ceny-z-letaku/SKILL.md`. Obsahuje hotový Gemini prompt aj postup na kontrolu (vnútornú + náhodnú proti PDF) a import.
 
 ---
 
