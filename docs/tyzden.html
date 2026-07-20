@@ -28,9 +28,9 @@
   <div class="status-line" id="statusLine">Hľadám dostupné týždne…</div>
 
   <nav class="tabs" id="tabs" style="display:none">
-    <a class="tab" href="#katalog">🛒 Akcia</a>
+    <a class="tab" id="tabKatalog" href="#katalog">🛒 Akcia</a>
     <a class="tab" href="#recepty">🍽️ Recepty</a>
-    <a class="tab" href="#zoznam">📋 Nákupný zoznam</a>
+    <a class="tab" id="tabZoznam" href="#zoznam">📋 Nákupný zoznam</a>
     <a class="tab" href="#social">📱 Social obsah</a>
   </nav>
 
@@ -359,21 +359,26 @@ function feedCardHtml(f) {
 function renderWeek(data, meals) {
   const content = document.getElementById("content");
   const s = data.suhrn || {};
+  const hasKatalog = (data.katalog_zvyraznenia || []).length > 0;
+  const hasZoznam = (data.nakupny_zoznam?.skupiny || []).length > 0;
+
+  document.getElementById("tabKatalog").style.display = hasKatalog ? "" : "none";
+  document.getElementById("tabZoznam").style.display = hasZoznam ? "" : "none";
 
   const summaryHtml = `
     <div class="summary">
       <div class="item"><span class="n">${s.plan_spolu != null ? s.plan_spolu.toFixed(2) + "&nbsp;€" : "—"}</span><span class="l">Plán spolu</span></div>
-      <div class="item"><span class="n">${s.uspora != null ? "~" + s.uspora.toFixed(2) + "&nbsp;€" : "—"}</span><span class="l">Úspora na nákupe</span></div>
+      ${s.uspora != null ? `<div class="item"><span class="n">~${s.uspora.toFixed(2)}&nbsp;€</span><span class="l">Úspora na nákupe</span></div>` : ""}
       <div class="item"><span class="n">${s.priemer_porcia != null ? s.priemer_porcia.toFixed(2) + "&nbsp;€" : "—"}</span><span class="l">Priemer / porcia</span></div>
       <div class="item"><span class="n">${meals.length}×2</span><span class="l">Porcií spolu</span></div>
     </div>`;
 
-  const katalogHtml = `
+  const katalogHtml = hasKatalog ? `
     <section id="katalog">
       <h2>🛒 Kľúčové akciové suroviny</h2>
       <div class="section-sub">${escapeHtml(data.obchod)} · platnosť ${escapeHtml(data.platnost)}</div>
-      <div class="cat-grid">${(data.katalog_zvyraznenia || []).map(catCardHtml).join("")}</div>
-    </section>`;
+      <div class="cat-grid">${data.katalog_zvyraznenia.map(catCardHtml).join("")}</div>
+    </section>` : "";
 
   const receptyHtml = `
     <section id="recepty">
@@ -382,13 +387,13 @@ function renderWeek(data, meals) {
       <div class="meals">${meals.map(mealCardHtml).join("")}</div>
     </section>`;
 
-  const zoznamHtml = `
+  const zoznamHtml = hasZoznam ? `
     <section id="zoznam">
       <h2>📋 Nákupný zoznam</h2>
       <div class="section-sub">Pre ${meals.length} jedál (2 osoby) · bez základnej výbavy</div>
-      ${(data.nakupny_zoznam?.skupiny || []).map(shoppingGroupHtml).join("")}
+      ${data.nakupny_zoznam.skupiny.map(shoppingGroupHtml).join("")}
       ${data.nakupny_zoznam?.poznamka ? `<div class="note-box">${escapeHtml(data.nakupny_zoznam.poznamka)}</div>` : ""}
-    </section>`;
+    </section>` : "";
 
   const socialHtml = `
     <section id="social">

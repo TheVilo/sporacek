@@ -15,6 +15,19 @@ Ak dostaneš katalógy z viacerých obchodov (Lidl, Kaufland, Tesco...) naraz al
 
 Formát: `tydne/<rok>-W<týždeň>-<obchod>/` (napr. `tydne/2026-W29-lidl/`, `tydne/2026-W29-kaufland/`). Obchod malými písmenami bez diakritiky.
 
+## Rýchly výber bez letáku
+
+Niekedy nie je k dispozícii aktuálny leták, ale treba rýchlo social obsah (Stories) na budovanie povedomia — napr. na vetu "priprav 5 receptov a stories na tento týždeň" bez priloženého letáku. V tom prípade:
+
+1. Vyber 5 receptov priamo z `recepty/` (živé vyhľadávanie cez `docs/index.html`), nie z letáku.
+   - Uprednostni rozmanitosť: mix typov (obed/večera/šalát/polievka), nie 5× to isté.
+   - Skontroluj priečinky v `tydne/`, ktoré recepty sa použili nedávno, a vyhni sa ich opakovaniu.
+2. **Nevymýšľaj úsporu ani akciové ceny.** Bez reálneho letáku nemáme čo porovnávať — tvrdenie o úspore by bolo nepravdivé. Cena za porciu sa berie z `cena_za_porciu` v recepte (je to stále platný snapshot z minulého výpočtu).
+3. Priprav Stories rovnako ako pri letáku (názov jedla + cena za porciu), len bez "akcia/úspora" rámca — napr. namiesto "ušetríš X €" použi tón typu "chutné a lacné, X €/porcia".
+4. Zapíš do `tydne/<rok>-W<týždeň>-vyber/` (namiesto názvu obchodu `vyber`):
+   - rovnaká štruktúra `data.json` ako pri letáku, ale `katalog_zvyraznenia`, `nakupny_zoznam` a `suhrn.uspora` **vynechaj** (prázdne pole / `null`) — `docs/tyzden.html` tieto sekcie pri chýbajúcich dátach automaticky skryje.
+   - `obchod` v `data.json` nastav na `"Výber z databázy"`.
+
 ## Postup
 
 1. **Prečítaj leták** (PDF/screenshot/text) → vypíš akciové produkty s cenami.
