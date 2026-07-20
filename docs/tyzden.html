@@ -11,6 +11,34 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="index.html"><img src="assets/logo-sporacek-biela.png" alt="šporáček" /></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+  <nav class="site-nav" id="siteNav">
+    <a href="index.html">Databáza receptov</a>
+    <a href="tyzden.html" class="active">Týždenný výstup</a>
+    <a href="ceny.html">Ceny surovín</a>
+    <a href="vyber.html">Čo navariť</a>
+    <a href="social.html">Social</a>
+  </nav>
+</header>
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  var nav = document.getElementById('siteNav');
+  if (!btn || !nav) return;
+  function closeNav(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function toggleNav(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); toggleNav(); });
+  document.addEventListener('click', function(e){
+    if (nav.classList.contains('open') && !nav.contains(e.target) && e.target !== btn) closeNav();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
+})();
+</script>
 <div class="wrap">
   <div class="top-row">
     <div>
@@ -18,9 +46,6 @@
       <h1 id="pageTitle">Načítavam…</h1>
     </div>
     <div class="top-actions">
-      <a class="nav-link" href="index.html">📚 Databáza receptov</a>
-      <a class="nav-link" href="ceny.html">🏷️ Ceny surovín</a>
-      <a class="nav-link" href="vyber.html">🧮 Zostav týždeň</a>
       <button class="refresh-btn" id="refreshBtn" onclick="loadWeekList(true)">⟳ Obnoviť</button>
     </div>
   </div>

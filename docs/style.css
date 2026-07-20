@@ -16,6 +16,49 @@ body {
   font-variant-numeric: tabular-nums; line-height: 1.55; font-weight: 500;
 }
 
+/* site header - logo + nav, same on every šporáček page */
+/* tmavozelené pozadie natrvalo (nie podľa svetlej/tmavej témy) - logo je biela verzia, potrebuje tmavé pozadie vždy */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  padding: 10px 22px; background: #1c3527; border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.site-header .brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.site-header .brand img { height: 30px; width: auto; display: block; }
+.site-nav { display: flex; gap: 2px; flex-wrap: wrap; }
+.site-nav a {
+  font-family: inherit; font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.75); text-decoration: none;
+  padding: 8px 14px; border-radius: 100px; white-space: nowrap;
+}
+.site-nav a:hover { background: rgba(255,255,255,.1); color: #fff; }
+.site-nav a.active { background: rgba(255,255,255,.16); color: #fff; }
+
+/* hamburger toggle - mobile only */
+.nav-toggle { display: none; position: relative; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 0; flex-shrink: 0; border-radius: 8px; }
+.nav-toggle:hover { background: rgba(255,255,255,.1); }
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+  position: absolute; left: 9px; right: 9px; height: 2px; background: #fff; border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle span { top: 19px; }
+.nav-toggle span::before { content: ""; top: -7px; }
+.nav-toggle span::after { content: ""; top: 7px; }
+.nav-toggle[aria-expanded="true"] span { background: transparent; }
+.nav-toggle[aria-expanded="true"] span::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span::after { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+  .site-nav {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 20;
+    flex-direction: column; gap: 2px; background: #1c3527;
+    padding: 8px 14px 14px; border-bottom: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 12px 24px rgba(0,0,0,.2);
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 12px 14px; }
+}
+
 /* shared page shell - same width on every šporáček page */
 .wrap { max-width: 1100px; margin: 0 auto; padding: 32px 22px 64px; }
 
@@ -78,6 +121,14 @@ section.group { margin-bottom: 40px; }
 }
 .summary .item .n { font-size: 1.6rem; font-weight: 800; display: block; letter-spacing: -0.01em; }
 .summary .item .l { font-size: .74rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; font-weight: 600; }
+
+/* category nav strip (databáza receptov) */
+.cat-nav { display: flex; gap: 18px; overflow-x: auto; padding: 6px 2px 20px; margin-bottom: 6px; -webkit-overflow-scrolling: touch; }
+.cat-nav a { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; width: 84px; }
+.cat-nav .cat-photo { width: 76px; height: 76px; border-radius: 50%; overflow: hidden; background: var(--sand); border: 2px solid var(--surface); box-shadow: var(--shadow); transition: box-shadow .15s ease; }
+.cat-nav .cat-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cat-nav a:hover .cat-photo { box-shadow: 0 0 0 2px var(--green); }
+.cat-nav .cat-label { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .03em; color: var(--text); text-align: center; line-height: 1.25; }
 
 /* recipe grid (databáza receptov) */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
@@ -192,6 +243,16 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 .cta-line { font-size: .8rem; color: var(--terracotta); font-weight: 700; margin-top: 6px; }
 .feed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 14px; white-space: pre-line; font-size: .87rem; }
 .feed-card h4 { margin: 0 0 10px; font-size: 1rem; color: var(--green-ink); white-space: normal; }
+
+/* ===== social (social.html) ===== */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.social-thumb { margin: -16px -18px 4px; aspect-ratio: 16 / 9; background: var(--sand); }
+.social-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.social-eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; }
+.social-hook { font-size: 1.02rem; font-weight: 800; color: var(--green-ink); line-height: 1.3; text-wrap: balance; }
+.social-caption { font-size: .85rem; color: var(--text-muted); line-height: 1.5; flex: 1; }
+.social-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 
 .empty-state, .error-state { padding: 60px 20px; text-align: center; color: var(--text-muted); }
 .error-state { color: var(--terracotta); }

@@ -2,7 +2,7 @@
 id: fasirky-jogurtovo-cesnakova-omacka
 nazov: Fašírky s jogurtovo-cesnakovou omáčkou a uhorkovým šalátom
 foto_url: "fotky/fasirky-jogurtovo-cesnakova-omacka.jpg"
-foto_prompt: "Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: domáce fašírky s bielou jogurtovo-cesnakovou omáčkou a uhorkovým šalátom, porcia na svetlohnedom keramickom tanieri. Záber kolmo zhora, na drevenom kuchynskom stole. V zábere čiastočne vidno ruku držiacu vidličku. Prirodzené denné svetlo, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok látkového obrúska, drobné omrvinky na stole. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+foto_prompt: "A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden pan-fried meat patties (fašírky) topped with a creamy white yogurt-garlic sauce, served next to a fresh diced cucumber salad, in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. A pinch of fresh dill and a few cucumber slices scattered nearby add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight. Film grain. No text, no logo, no watermark in the image."
 pocet_porcii: 2
 tagy:
   typ: [obed]

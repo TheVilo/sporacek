@@ -36,6 +36,7 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `tydne/` | výstup týždňa (leták → recepty → nákup → úspora) |
 | `ceny/` | **cenová databáza** — celý zoznam potravinových surovín z každého spracovaného letáku, s cenou, dátumom, obchodom (pozri nižšie) |
 | `katalogy/` | vstupné PDF letákov + surové/pracovné extrakcie (pracovný vstup, nie zdroj pravdy — tým je `ceny/`) |
+| `social/` | **všeobecný social obsah** — evergreen tipy a brand posty, nie viazané na recept/leták/týždeň (pozri nižšie) |
 
 Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync automaticky ukladajú aj lokálne. Recept v `foto_url` drží relatívnu cestu (napr. `fotky/kremove-kuracie-rizoto-sampinony.jpg`).
 
@@ -52,6 +53,25 @@ Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync 
 **Scope — len skutočné suroviny na varenie.** Vynechaj alkohol, nápoje, chipsy/snacky, žuvačky, hotové sladkosti/zmrzliny, sladké hotové pečivo, kozmetiku/drogériu, domáce potreby, krmivo, detskú výživu/plienky, proteínové doplnky, elektroniku/odevy/záhradu. Platí rovnako naprieč obchodmi.
 
 **Vzťah k `suroviny.md`:** `ceny/` je širší než číselník receptov — obsahuje všetko z letáku, aj veci, čo (zatiaľ) nie sú v žiadnom recepte. Do `suroviny.md` pridávaj surovinu až keď sa reálne použije v recepte.
+
+---
+
+## Social obsah (`social/`)
+
+**Účel:** `docs/social.html` je databáza pripraveného social obsahu — hotový text a grafika na Instagram/Facebook na priame stiahnutie. Štyri zdroje:
+
+1. **Fakty o cenách** — počítané **naživo v prehliadači** priamo z `ceny/*.json` (najväčšie aktuálne zľavy + cenové porovnanie tej istej suroviny naprieč obchodmi tento týždeň). Nič sa nezapisuje, rastie to samo s každým novým letákom. Položky s podmienkou v `poznamka` (kupón, vernostná karta, min. nákup) sa buď vynechajú z rebríčka, alebo sa podmienka pridá do textu — nikdy sa nesmie ukázať zľava bez tejto podmienky, bola by zavádzajúca.
+2. **Recepty** — naživo z `recepty/` + `fotky/` (rovnaký zdroj ako `docs/index.html`). Jedna karta na recept, foto je vždy vlastná fotka receptu (nie náhodná).
+3. **Tipy na nákup** — evergreen, `social/tipy.json`. Nie viazané na konkrétny leták/týždeň/recept (na to je `tydne/`).
+4. **Brand/misia posty** — evergreen, `social/brand.json`. Princíp, tón, engagement — v duchu `znalostna-baza/brand-manual.md` (banka claimov, tón hlasu).
+
+**Schéma** oboch JSON súborov (`tipy.json`, `brand.json`): koreň `{ kategoria, poznamka, polozky[] }`, každá položka `{ id, hook, caption }` — `hook` je krátky text na grafiku (max ~12 slov), `caption` je dlhší text na skopírovanie k postu.
+
+**Pravidlo pri pridávaní tipov/brand postov:** rešpektuj `znalostna-baza/brand-manual.md` tón hlasu aj "NIKDY nehovoríme" pravidlá (žiadna appka/sťahovanie/čakacia listina vo fáze 1, žiadne moralizovanie o šetrení, žiadne "kríza/drahota", vždy konkrétne, nie abstraktné rady).
+
+**Grafika sa negeneruje cez AI ani neukladá do repa** — `docs/social.html` ju vyrenderuje priamo v prehliadači (canvas) pri kliknutí na "Story"/"Post" a rovno spustí stiahnutie. Toto je zámerne iný mechanizmus než `foto_url` fotky jedla (tie *sú* generované cez Gemini a *sú* v repe, pozri `generovanie-fotiek/SKILL.md`) — tu ide o kompozíciu z existujúcej fotky + textu, AI image model by presný text nevykreslil spoľahlivo.
+
+**6 striedajúcich sa dizajnových šablón** (nie jeden univerzálny vzhľad) — `fullbleed` (fotka na celú plochu + gradient, text zarovnaný vľavo), `colorblock` (fotka hore ~60 %, farebný blok dole s textom), `bignum` (bez fotky, obrovské číslo/percento ako hlavný prvok — pre jednu zľavu), `split` (diagonálne rozdelenie na dve farby, cena vs. cena — len pre medziobchodné porovnanie), `polaroid` (fotka orámovaná bielym okrajom, popis pod rámom), `badge` (kruhový fotka-odznak v rohu + veľký nadpis). Šablóna sa vyberá deterministicky podľa `id` karty (rovnaký post = vždy rovnaká šablóna), rozdelené podľa vhodnosti: `fakt` (zľava) → bignum/fullbleed, `fakt` (porovnanie) → vždy split, `recept` → colorblock/polaroid, `tip`/`brand` → fullbleed/colorblock/badge.
 
 ---
 
@@ -78,7 +98,7 @@ Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync 
 ### tagy (na rýchle vyhľadávanie)
 Používaj len tieto skupiny, nevymýšľaj nové hodnoty:
 
-- **typ:** obed, večera, raňajky, desiata, olovrant, dezert, polievka, šalát, jednohrnec
+- **typ:** obed, večera, raňajky, desiata, olovrant, dezert, polievka, šalát, jednohrnec, predjedlo, príloha, nápoj, pečivo
 - **surovina:** kura, bravčové, hovädzie, ryba, morčacie, morské-plody, bezmäsité, strukoviny
 - **výživa:** vegetariánske, vysoký-proteín, ľahké, sýte
 - **náročnosť:** do-20-minút, do-rúry, jednohrnec
@@ -122,11 +142,11 @@ Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri n
 
 ## Živé stránky (GitHub Pages, nie artifacty)
 
-**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`, `ceny/`, `suroviny.md`). Všetky tri stránky nižšie sú len jeho živé zobrazenie — nikdy neobsahujú dáta, ktoré nie sú v repe, a nikdy sa neprepublikovávajú ručne. Stačí pushnúť zmenu do repa, stránka ju ukáže po obnovení (F5).
+**Zdroj pravdy je vždy repo** (`recepty/`, `fotky/`, `tydne/`, `ceny/`, `social/`, `suroviny.md`). Všetky stránky nižšie sú len jeho živé zobrazenie — nikdy neobsahujú dáta, ktoré nie sú v repe, a nikdy sa neprepublikovávajú ručne. Stačí pushnúť zmenu do repa, stránka ju ukáže po obnovení (F5).
 
 Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`docs/CNAME`). Pages servuje z priečinka `docs/` na `main`.
 
-**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili tieto štyri stránky v `docs/`:
+**Claude Artifacty pre šporáček viac nepoužívaj** (staré URL z predošlej fázy sú zastarané a ignoruj ich) — všetko nahradili týchto päť stránok v `docs/`:
 
 1. **`docs/index.html` — databáza receptov.** Prehľad *všetkých* receptov (fotka, suroviny, tagy, postup — bez ceny, tá sa počíta len na úrovni týždňa), naživo z `recepty/` a `fotky/`. Má vyhľadávanie podľa názvu a filtrovanie podľa tagov. Toto je tá trvalá databáza, z ktorej sa recepty párujú s akciovými surovinami.
    **URL:** https://recepty.sporacek.sk/
@@ -135,9 +155,11 @@ Stránky bežia cez GitHub Pages na **custom doméne `recepty.sporacek.sk`** (`d
    **Bez `data.json` sa týždeň na stránke nezobrazí** — presná štruktúra je v `.claude/skills/tyzdenny-vystup/SKILL.md`.
 3. **`docs/ceny.html` — cenová databáza.** Prehľad cien surovín naprieč obchodmi a časom, naživo zo všetkých `ceny/*.json`. Tabuľka (filter podľa obchodu/kategórie/hľadania, čo je v akcii) + graf vývoja ceny po kliknutí na surovinu. Rastie automaticky s každým novým súborom v `ceny/`.
    **URL:** https://recepty.sporacek.sk/ceny.html
-4. **`docs/vyber.html` — zostav týždeň.** Interaktívny nástroj na výber receptov pre týždenný výstup — vyberieš obchod, stránka pri každom recepte naživo prepočíta, koľko jeho surovín je práve v akcii (porovnaním `recepty/*.md` surovín s `ceny/<obchod>-*.json`), zoradí podľa zhody a dá vyfiltrovať podľa tagov. Zaškrtneš recepty, tlačidlo "Skopírovať výber" skopíruje zoznam do schránky — ten sa potom pošle v chate a z neho sa spracuje `tydne/<týždeň>/` presne podľa `.claude/skills/tyzdenny-vystup/SKILL.md` (táto stránka nič sama neukladá, je to len pomôcka na výber, nie generátor výstupu — GitHub Pages nevie zapisovať do repa).
+4. **`docs/vyber.html` — "Čo navariť" (predtým "zostav týždeň", premenované — nie je viazané na konkrétny týždeň).** Vyberieš obchod a štýl jedla (tagy), stránka pri každom recepte naživo prepočíta **odhadovanú cenu za porciu**: napáruje suroviny receptu (`recepty/*.md`) na položky letáku (`ceny/<obchod>-*.json`) podľa názvu, prevedie množstvo receptu (g/ml/ks, PL/ČL odhadom) na rovnakú jednotku ako balenie v letáku a vynásobí cenou za jednotku. Recept dostane cenu len keď sa takto vie oceniť aspoň polovica surovín ("spoľahlivé") — inak sa ukáže "cenu sa nepodarilo spoľahlivo odhadnúť" namiesto zavádzajúceho čísla. Recepty sa zoraďujú od najlacnejšieho (spoľahlivé) po nespoľahlivé. Zaškrtneš recepty, tlačidlo "Skopírovať výber" skopíruje zoznam (aj s cenou) do schránky — ten sa potom pošle v chate a z neho sa spracuje `tydne/<týždeň>/` presne podľa `.claude/skills/tyzdenny-vystup/SKILL.md` (táto stránka nič sama neukladá — GitHub Pages nevie zapisovať do repa).
    **URL:** https://recepty.sporacek.sk/vyber.html
-   Zhoda surovín je len heuristika podľa názvu (nie vždy presná) — finálne ceny/výber vždy over pri zostavovaní týždňa.
+   Párovanie aj prepočet množstva sú heuristika podľa názvu/textu (nie vždy presná) — finálne ceny vždy over pri zostavovaní týždňa.
+5. **`docs/social.html` — hotové posty a stories.** Fakty o cenách počítané naživo z `ceny/*.json` + recepty naživo z `recepty/`/`fotky/` + evergreen tipy/brand posty z `social/tipy.json` a `social/brand.json`. Každá karta má "Kopírovať text" a "Story"/"Post" tlačidlo — grafika sa vyrenderuje priamo v prehliadači (canvas, jedna zo 6 striedajúcich sa šablón) a rovno stiahne, nič sa negeneruje cez AI ani neukladá do repa. Pozri `## Social obsah (social/)` vyššie pre presnú schému a pravidlá pri pridávaní tipov.
+   **URL:** https://recepty.sporacek.sk/social.html
 
 ### Viacero obchodov
 

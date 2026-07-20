@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, wider modern editorial table scene, 9:16 format, blending warm minimalism and a lived-in lifestyle aesthetic. A vibrant green smoothie bowl made from spinach, banana and Greek yogurt, topped with blueberries and pumpkin seeds, in a centerpiece minimalist matte bowl on a smooth wood table. The scene is rich but clean: a softly wrinkled linen napkin, a spoon, a small side bowl of extra blueberries, and a modern drinking glass. A few extra pumpkin seeds scattered near the bowl for garnish. Natural window light. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of a vibrant green smoothie bowl made from spinach, banana and Greek yogurt, topped with fresh blueberries and pumpkin seeds, in a sleek matte ceramic bowl on a smooth light oak table, filling most of the frame, capturing an elevated home cooking aesthetic. The topping is sharply focused. To add life, the background is beautifully blurred, showing a small contemporary dish of extra blueberries and a modern water glass. A modern matte spoon rests on a casually draped light grey linen napkin. Scattered pumpkin seeds add a credible, lived-in feel. Soft daylight.
 
 ---
 

@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph, vertical 9:16, embracing warm minimalism. A fresh serving of Slovak bryndzové halušky — soft grated-potato dumplings coated in creamy sheep cheese, topped with crispy bacon bits — in a minimalist matte black ceramic bowl on a smooth light oak table. A softly draped, slightly messy light grey linen napkin lies nearby with a sleek matte black spoon. Blurred background features a small contemporary dipping bowl of extra bryndza cheese. Scattered crispy bacon crumbs sit on the table for an authentic, elevated home cooking vibe. Soft diffused daylight. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial food photograph, vertical 9:16, embracing warm minimalism. Authentic Slovak bryndzové halušky: small, irregular, torn/blobby potato dumplings (not smooth uniform gnocchi, bumpy uneven surface), fully coated and tossed through with a pale ivory/light yellowish bryndza sheep-cheese sauce so every dumpling is covered (not a separate white dollop on top). Crispy diced bacon (škvarky) poured over the top together with its rendered golden fat, drizzling down into the dish. Served in a minimalist matte black ceramic bowl on a smooth light oak table. A softly draped, slightly messy light grey linen napkin lies nearby with a sleek matte black spoon. Scattered crispy bacon crumbs sit on the table for an authentic, elevated home cooking vibe. Soft diffused daylight. No text, no logo, no watermark in the image.
 
 ---
 

@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph, vertical 9:16, embracing warm minimalism. A fresh serving of creamy chia seed pudding made with almond milk, layered with Greek yogurt and topped with fresh raspberries, in a minimalist matte black ceramic bowl on a smooth light oak table. A softly draped, slightly messy light grey linen napkin lies nearby with a sleek matte black spoon. Blurred background features a small contemporary dipping bowl of extra raspberries. Scattered chia seeds sit on the table for an authentic, elevated home cooking vibe. Soft diffused daylight. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A fresh serving of creamy chia seed pudding made with almond milk, viewed directly from above, layered with a swirl of Greek yogurt and topped with fresh raspberries, in a minimalist matte ceramic bowl on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte spoon. A small side dish of extra raspberries and a few scattered chia seeds add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight. Film grain. No text, no logo, no watermark in the image.
 
 ---
 
