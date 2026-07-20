@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>šporáček — zostav týždeň</title>
+<title>šporáček — čo navariť lacno</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <a href="index.html">Databáza receptov</a>
     <a href="tyzden.html">Týždenný výstup</a>
     <a href="ceny.html">Ceny surovín</a>
-    <a href="vyber.html" class="active">Zostav týždeň</a>
+    <a href="vyber.html" class="active">Čo navariť</a>
     <a href="social.html">Social</a>
   </nav>
 </header>
@@ -42,14 +42,14 @@
 <div class="wrap">
   <div class="top-row">
     <div>
-      <div class="eyebrow">Šporáček · zostav týždeň</div>
-      <h1>Zostav si týždeň sám</h1>
+      <div class="eyebrow">Šporáček · čo navariť</div>
+      <h1>Čo navariť lacno</h1>
     </div>
     <div class="top-actions">
       <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
     </div>
   </div>
-  <div class="sub">Vyber obchod a štýl (raňajky/večera, vysoký-proteín, jednohrnec…) — stránka ti hneď automaticky navrhne top receptov s najlepšou zhodou s aktuálnym letákom (zaškrtnuté nižšie). Jednotlivé recepty vieš ručne vymeniť. Táto stránka nič neukladá — na konci si výber skopíruješ a pošleš mi ho v chate, ja z neho spravím hotový týždenný výstup (nákupný zoznam, ceny, social).</div>
+  <div class="sub">Vyber obchod a štýl jedla (raňajky/večera, vysoký-proteín, jednohrnec…) — stránka prepočíta odhadovanú cenu za porciu pre každý recept podľa aktuálneho letáku a zoradí ich od najlacnejšieho. Jednotlivé recepty vieš ručne vymeniť. Cena je len odhad (spoľahlivosť závisí od toho, koľko surovín sa podarilo napárovať na leták) — táto stránka nič neukladá, na konci si výber skopíruješ a pošleš mi ho v chate.</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
 
   <div class="week-picker" id="storePicker"></div>
@@ -57,7 +57,7 @@
 
   <div class="controls" id="controls" style="display:none">
     <div class="count-row">
-      <label for="recipeCount">Navrhni <input type="number" id="recipeCount" value="5" min="1" max="15" onchange="autoPickTop()" /> receptov s najlepšou zhodou</label>
+      <label for="recipeCount">Navrhni <input type="number" id="recipeCount" value="5" min="1" max="15" onchange="autoPickTop()" /> najlacnejších receptov</label>
       <button class="nav-link" onclick="autoPickTop()">🔮 Navrhnúť znova</button>
     </div>
     <input type="text" class="search-input" id="searchInput" placeholder="Hľadať podľa názvu…" autocomplete="off" />
@@ -79,7 +79,7 @@
   </div>
 
   <footer class="cta">
-    Zdroj pravdy je vždy repo <code>github.com/TheVilo/sporacek</code> (<code>recepty/</code>, <code>ceny/</code>). Zhoda so surovinami v akcii je len odhad podľa názvu (nie vždy presný) — over si to pri finálnom výstupe.
+    Zdroj pravdy je vždy repo <code>github.com/TheVilo/sporacek</code> (<code>recepty/</code>, <code>ceny/</code>). Cena za porciu je odhad — párovanie surovín podľa názvu aj prepočet množstva (g/ml/ks) je heuristika, nie vždy presná. Over si finálnu cenu pri finálnom výstupe.
   </footer>
 </div>
 
@@ -129,6 +129,66 @@ function matchIngredient(ingrNazov, catalogItems) {
   return best;
 }
 
+/* ---- cena za porciu: odhad z package-size letáku + množstva v recepte ---- */
+function parsePackageSize(mnozstvo) {
+  if (!mnozstvo) return null;
+  const s = mnozstvo.toLowerCase();
+  if (/cena\s*za\s*1\s*kg/.test(s)) return { qty: 1000, unit: "g" };
+  if (/cena\s*za\s*1\s*l\b/.test(s)) return { qty: 1000, unit: "ml" };
+  const m = s.match(/(\d+[.,]?\d*)\s*(kg|g|ml|l|ks)\b/);
+  if (!m) return null;
+  let qty = parseFloat(m[1].replace(",", "."));
+  const unit = m[2];
+  if (unit === "kg") return { qty: qty * 1000, unit: "g" };
+  if (unit === "l") return { qty: qty * 1000, unit: "ml" };
+  return { qty, unit };
+}
+function parseRecipeQty(mnozstvo, pkgUnitHint) {
+  if (!mnozstvo) return null;
+  const s = mnozstvo.toLowerCase();
+  let m = s.match(/(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)/);
+  if (m) {
+    let qty = parseFloat(m[1].replace(",", "."));
+    let unit = m[2];
+    if (unit.startsWith("strúčik") || unit.startsWith("balen")) unit = "ks";
+    if (unit === "kg") return { qty: qty * 1000, unit: "g" };
+    if (unit === "l") return { qty: qty * 1000, unit: "ml" };
+    return { qty, unit };
+  }
+  // PL/ČL nemajú v letáku priamy ekvivalent — hrubý odhad, jednotku (g vs ml) prevezme
+  // z napárovanej položky letáku (olej/ocot sa predáva na ml, korenie/cukor na g)
+  m = s.match(/(\d+[.,]?\d*)\s*(pl|čl)\b/);
+  if (m) {
+    const qty = parseFloat(m[1].replace(",", "."));
+    const per = m[2] === "pl" ? 15 : 5;
+    const unit = pkgUnitHint === "ml" ? "ml" : "g";
+    return { qty: qty * per, unit, approx: true };
+  }
+  return null; // "štipka", "podľa chuti", "—" a pod. — necenené
+}
+function priceIngredient(ingr, catalogItems) {
+  const match = matchIngredient(ingr.nazov, catalogItems);
+  if (!match || typeof match.zlavnena_cena !== "number") return { found: !!match, priced: false, catalogNazov: match?.nazov };
+  const pkg = parsePackageSize(match.mnozstvo);
+  if (!pkg || !pkg.qty) return { found: true, priced: false, catalogNazov: match.nazov, cena: match.zlavnena_cena };
+  const recipeQty = parseRecipeQty(ingr.mnozstvo, pkg.unit);
+  if (!recipeQty || recipeQty.unit !== pkg.unit) return { found: true, priced: false, catalogNazov: match.nazov, cena: match.zlavnena_cena };
+  const pricePerUnit = match.zlavnena_cena / pkg.qty;
+  return { found: true, priced: true, catalogNazov: match.nazov, cena: match.zlavnena_cena, cost: pricePerUnit * recipeQty.qty, approx: !!recipeQty.approx };
+}
+function computeRecipePrice(recipe, catalogItems) {
+  let total = 0, pricedCount = 0, foundCount = 0;
+  const breakdown = recipe.suroviny.map(s => {
+    const r = priceIngredient(s, catalogItems);
+    if (r.found) foundCount++;
+    if (r.priced) { total += r.cost; pricedCount++; }
+    return { ingr: s.nazov, mnozstvo: s.mnozstvo, ...r };
+  });
+  const totalCount = recipe.suroviny.length || 1;
+  const reliable = pricedCount / totalCount >= 0.5;
+  return { totalPrice: total, perPortion: total / (recipe.porcie || 1), pricedCount, foundCount, totalCount, reliable, breakdown };
+}
+
 function parseSuroviny(text) {
   const secM = text.match(/## Suroviny[^\n]*\n([\s\S]+?)(?=\n---|\n## |$)/);
   if (!secM) return [];
@@ -143,17 +203,19 @@ function parseSuroviny(text) {
 function parseMarkdownRecipe(slug, text) {
   const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
   const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
+  const porcie = parseInt((text.match(/\*\*porcie:\*\*\s*(\d+)/) || [, "1"])[1], 10) || 1;
   const tagyM = text.match(/## Tagy\s*\n(.+)/);
   let tagy = [];
   if (tagyM) tagy = [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]);
   const suroviny = parseSuroviny(text);
-  return { slug, nazov, cas, tagy, suroviny };
+  return { slug, nazov, cas, porcie, tagy, suroviny };
 }
 
 function parseYamlRecipe(slug, text) {
   const fmM = text.match(/^---\n([\s\S]+?)\n---/);
   const fm = fmM ? fmM[1] : "";
   const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
+  const porcie = parseInt((fm.match(/pocet_porcii:\s*(\d+)/) || [, "1"])[1], 10) || 1;
   let tagy = [];
   const tagyBlockM = fm.match(/tagy:\n((?:\s+\w+:.*\n?)+)/);
   if (tagyBlockM) {
@@ -162,7 +224,7 @@ function parseYamlRecipe(slug, text) {
     }
   }
   const suroviny = parseSuroviny(text);
-  return { slug, nazov, cas: "", tagy, suroviny };
+  return { slug, nazov, cas: "", porcie, tagy, suroviny };
 }
 
 let allRecipes = [];
@@ -289,7 +351,7 @@ function autoPickTop() {
   let filtered = allRecipes;
   if (activeTags.size) filtered = filtered.filter(r => [...activeTags].every(t => r.tagy.includes(t)));
   filtered = computeMatches(filtered);
-  if (selectedCatalog) filtered.sort((a, b) => b.matchCount - a.matchCount || a.nazov.localeCompare(b.nazov));
+  if (selectedCatalog) filtered = sortByPrice(filtered);
   const countInput = document.getElementById("recipeCount");
   const n = Math.max(1, parseInt(countInput ? countInput.value : "5", 10) || 5);
   selectedSlugs = new Set(filtered.slice(0, n).map(r => r.slug));
@@ -301,14 +363,17 @@ function normalize(s) { return s.toLowerCase(); }
 function computeMatches(recipes) {
   const items = selectedCatalog ? (selectedCatalog.polozky || []) : [];
   return recipes.map(r => {
-    if (!selectedCatalog) return { ...r, matchCount: 0, matchPct: 0, matches: [] };
-    const matches = [];
-    for (const s of r.suroviny) {
-      const m = matchIngredient(s.nazov, items);
-      if (m) matches.push({ ingr: s.nazov, catalogNazov: m.nazov, cena: m.zlavnena_cena, zlava: m.zlava });
-    }
-    const total = r.suroviny.length || 1;
-    return { ...r, matchCount: matches.length, matchPct: Math.round((matches.length / total) * 100), matches };
+    if (!selectedCatalog) return { ...r, priceInfo: null };
+    return { ...r, priceInfo: computeRecipePrice(r, items) };
+  });
+}
+function sortByPrice(recipes) {
+  return recipes.slice().sort((a, b) => {
+    const pa = a.priceInfo, pb = b.priceInfo;
+    if (!pa || !pb) return a.nazov.localeCompare(b.nazov, "sk");
+    if (pa.reliable !== pb.reliable) return pa.reliable ? -1 : 1;
+    if (pa.reliable && pb.reliable) return pa.perPortion - pb.perPortion;
+    return a.nazov.localeCompare(b.nazov, "sk");
   });
 }
 
@@ -318,7 +383,7 @@ function applyFilters() {
   if (activeTags.size) filtered = filtered.filter(r => [...activeTags].every(t => r.tagy.includes(t)));
   if (searchQuery) filtered = filtered.filter(r => normalize(r.nazov).includes(searchQuery));
   filtered = computeMatches(filtered);
-  if (selectedCatalog) filtered.sort((a, b) => b.matchCount - a.matchCount || a.nazov.localeCompare(b.nazov));
+  if (selectedCatalog) filtered = sortByPrice(filtered);
   renderRecipes(filtered, allRecipes.length);
   updateSelectionBar();
 }
@@ -339,13 +404,17 @@ function updateSelectionBar() {
 
 function copySelection() {
   const chosen = allRecipes.filter(r => selectedSlugs.has(r.slug));
-  const byMatch = computeMatches(chosen);
-  let text = `Šporáček — výber receptov pre týždeň\n`;
+  const byPrice = computeMatches(chosen);
+  let text = `Šporáček — výber receptov\n`;
   if (selectedCatalog) text += `Obchod: ${selectedStore} (platnosť ${selectedCatalog.platnost_tyzdenna_default || "?"})\n`;
   text += `\n`;
-  byMatch.forEach((r, i) => {
+  byPrice.forEach((r, i) => {
     text += `${i + 1}. ${r.nazov} (${r.slug})`;
-    if (selectedCatalog) text += ` — ${r.matchCount}/${r.suroviny.length} surovín v akcii`;
+    if (r.priceInfo) {
+      text += r.priceInfo.reliable
+        ? ` — ~${fmtEur(r.priceInfo.perPortion)}/porcia (odhad, ${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`
+        : ` — cenu sa nepodarilo spoľahlivo odhadnúť (${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`;
+    }
     text += `\n`;
   });
   navigator.clipboard.writeText(text).then(() => {
@@ -365,14 +434,15 @@ function cardHtml(r) {
 
   let matchBadge = "";
   let matchListHtml = "";
-  if (selectedCatalog) {
-    matchBadge = r.matchCount > 0
-      ? `<div class="match-badge match-yes">🔥 ${r.matchCount}/${r.suroviny.length} surovín v akcii (${r.matchPct}%)</div>`
-      : `<div class="match-badge match-no">Žiadna surovina tento týždeň v akcii</div>`;
-    if (r.matches.length) {
+  if (selectedCatalog && r.priceInfo) {
+    const p = r.priceInfo;
+    matchBadge = p.reliable
+      ? `<div class="match-badge match-yes">💶 ~${fmtEur(p.perPortion)} / porcia <span class="prompt-hint">(odhad, ${p.pricedCount}/${p.totalCount} surovín napárovaných)</span></div>`
+      : `<div class="match-badge match-no">Cenu sa nepodarilo spoľahlivo odhadnúť (${p.pricedCount}/${p.totalCount} surovín napárovaných)</div>`;
+    if (p.breakdown.some(b => b.found)) {
       matchListHtml = `<details class="postup">
-        <summary>Akciové suroviny (${r.matches.length})</summary>
-        <ul class="ingredients">${r.matches.map(m => `<li><span class="ingr-name">${escapeHtml(m.ingr)}</span><span class="ingr-qty">${fmtEur(m.cena)}</span></li>`).join("")}</ul>
+        <summary>Rozpis cien surovín</summary>
+        <ul class="ingredients">${p.breakdown.map(b => `<li><span class="ingr-name">${escapeHtml(b.ingr)}</span><span class="ingr-qty">${b.priced ? fmtEur(b.cost) + (b.approx ? " (odhad)" : "") : (b.found ? "nedá sa prepočítať" : "nenašlo sa v letáku")}</span></li>`).join("")}</ul>
       </details>`;
     }
   }
@@ -414,7 +484,7 @@ function renderRecipes(recipes, totalCount) {
   const summaryHtml = `
     <div class="summary">
       <div class="item"><span class="n">${recipes.length}${filterActive ? ` / ${totalCount}` : ""}</span><span class="l">${filterActive ? "Vyhovuje filtru" : "Receptov v databáze"}</span></div>
-      <div class="item"><span class="n">${selectedSlugs.size}</span><span class="l">Vybraných na týždeň</span></div>
+      <div class="item"><span class="n">${selectedSlugs.size}</span><span class="l">Vybraných receptov</span></div>
     </div>`;
 
   const groupsHtml = groupOrder.map(typ => `
