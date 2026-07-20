@@ -2,7 +2,7 @@
 id: plnena-paprika-mletym-masom-ryzou
 nazov: Plnená paprika s mletým mäsom a ryžou
 foto_url: "fotky/plnena-paprika-mletym-masom-ryzou.jpg"
-foto_prompt: "A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Bell peppers stuffed with seasoned ground pork and rice, braised in tomato sauce (one pepper halved to show the filling), in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with extra tomato sauce. A casually draped linen cloth with a modern matte silver fork nearby. The glossy tomato sauce coats the peppers appetizingly. Soft, airy natural window light. No text, no logo, no watermark in the image."
+foto_prompt: "A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Authentic Slovak plnená paprika: whole bell peppers stuffed with seasoned ground pork and rice, fully submerged and swimming in a generous, thin, glossy, soup-like smooth tomato sauce (like a stew, not a thick paste dolloped on top) — one pepper halved to show the filling, in a deep modern matte bowl, centered on a smooth oak table. A casually draped linen cloth with a modern matte silver spoon nearby, since this is eaten like a soup. Soft, airy natural window light. No text, no logo, no watermark in the image."
 pocet_porcii: 2
 tagy:
   typ: [večera]

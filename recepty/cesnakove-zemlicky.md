@@ -1,9 +1,9 @@
-# Cesnakové rožky
+# Cesnakové žemličky
 
-**slug:** cesnakove-rozky
+**slug:** cesnakove-zemlicky
 **porcie:** 6
 **čas prípravy:** 1 hodina 40 minút
-**foto_url:** fotky/cesnakove-rozky.jpg
+**foto_url:** fotky/cesnakove-zemlicky.jpg
 
 ---
 
@@ -12,7 +12,7 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 
 ---
 
-## Suroviny (na 12 rožkov, cca 6 porcií)
+## Suroviny (na 12 žemličiek, cca 6 porcií)
 
 | Surovina | Množstvo |
 |---|---|
@@ -47,8 +47,8 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 4. Cesto rozdeľ na 12 rovnakých kúskov, vytvaruj guľôčky, ulož na plech s odstupom.
 5. Prikry, nechaj ešte 20 minút kysnúť. Rúru predhrej na 190 °C.
 6. Zvyšné maslo prelisuj s cesnakom a nasekanou petržlenovou vňaťou.
-7. Rožky potri rozšľahaným vajcom, peč 15–18 minút do zlatista.
-8. Horúce rožky potri cesnakovým maslom.
+7. Žemličky potri rozšľahaným vajcom, peč 15–18 minút do zlatista.
+8. Horúce žemličky potri cesnakovým maslom.
 
 ---
 
