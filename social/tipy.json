@@ -1,0 +1,46 @@
+{
+  "kategoria": "tip",
+  "poznamka": "Všeobecné, evergreen tipy na nákup/šetrenie — nie viazané na konkrétny leták/týždeň/recept. hook = krátky text na grafiku, caption = dlhší text na skopírovanie k postu.",
+  "polozky": [
+    {
+      "id": "kupuj-podla-sezony",
+      "hook": "Sezónne = vždy lacnejšie",
+      "caption": "Ovocie a zelenina mimo sezóny stoja pokojne aj dvojnásobok. Marhule, čerešne, paradajky, tekvica — počkaj na ich sezónu a namiesto dovážaného draho kúp domáce a lacné. 🍑"
+    },
+    {
+      "id": "cena-za-kilo-nie-zlava",
+      "hook": "Pozri sa na cenu za kilo, nie na %",
+      "caption": "Zľava −40 % nič neznamená, ak bola pôvodná cena umelo vysoká. Vždy porovnaj cenu za kilo alebo liter naprieč obchodmi — to je jediné číslo, ktoré ťa nesklame."
+    },
+    {
+      "id": "nakupuj-podla-letaku-nie-naopak",
+      "hook": "Najprv akcia, potom recept",
+      "caption": "Neplánuj jedálniček a potom nakupuj drahé suroviny naň. Pozri sa, čo je práve v akcii, a až potom vymysli, čo z toho navaríš. Otočí to celý rozpočet na jedlo."
+    },
+    {
+      "id": "mrazenie-akcia",
+      "hook": "Akcia na mäso? Kúp viac, zamraz",
+      "caption": "Keď je mäso alebo ryba výrazne v akcii, kľudne kúp na 2-3 týždne dopredu a rozporcuj do mrazáku. Ušetríš aj čas, aj peniaze pri ďalšom nákupe."
+    },
+    {
+      "id": "privatna-znacka",
+      "hook": "Vlastná značka obchodu ≠ horšia kvalita",
+      "caption": "Väčšinou ide o rovnakú surovinu ako značkový produkt, len bez marketingového obalu navyše. Skús aspoň raz zameniť a porovnať chuť aj cenu."
+    },
+    {
+      "id": "zvysky-druhe-jedlo",
+      "hook": "Zvyšky = hotové druhé jedlo",
+      "caption": "Zostala varená ryža, kúsok zeleniny, kúsok mäsa? To je základ na smaženú ryžu, polievku alebo plnku. Nič sa nemusí vyhodiť, keď vieš, čo s tým."
+    },
+    {
+      "id": "nenakupuj-hladny",
+      "hook": "Nechoď do obchodu hladný/á",
+      "caption": "Znie to ako klišé, ale funguje to — hladný nákup skončí plným košíkom vecí, ktoré si vôbec neplánoval/a kúpiť. Najedz sa doma, potom choď na nákup."
+    },
+    {
+      "id": "porovnavaj-obchody",
+      "hook": "Rovnaká surovina, iná cena",
+      "caption": "Ten istý druh mäsa alebo zeleniny vie mať medzi obchodmi rozdiel aj cez euro na kilo v tom istom týždni. Oplatí sa občas porovnať, nie chodiť vždy do toho istého."
+    }
+  ]
+}

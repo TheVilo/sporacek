@@ -244,6 +244,14 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 .feed-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 14px; white-space: pre-line; font-size: .87rem; }
 .feed-card h4 { margin: 0 0 10px; font-size: 1rem; color: var(--green-ink); white-space: normal; }
 
+/* ===== social (social.html) ===== */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.social-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.social-eyebrow { font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; }
+.social-hook { font-size: 1.02rem; font-weight: 800; color: var(--green-ink); line-height: 1.3; text-wrap: balance; }
+.social-caption { font-size: .85rem; color: var(--text-muted); line-height: 1.5; flex: 1; }
+.social-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
 .empty-state, .error-state { padding: 60px 20px; text-align: center; color: var(--text-muted); }
 .error-state { color: var(--terracotta); }
 .skeleton { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; height: 320px; animation: pulse 1.4s ease-in-out infinite; }

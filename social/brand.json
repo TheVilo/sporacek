@@ -1,0 +1,36 @@
+{
+  "kategoria": "brand",
+  "poznamka": "Evergreen brand/misia posty — princíp, tón, engagement. Rešpektuj brand-manual.md 'NIKDY nehovoríme' pravidlá (žiadna appka/sťahovanie, žiadne moralizovanie, žiadne 'kríza/drahota'). hook = krátky text na grafiku, caption = dlhší text na skopírovanie k postu.",
+  "polozky": [
+    {
+      "id": "akcia-napad-nakup",
+      "hook": "Akcia → nápad → nákup",
+      "caption": "Takto to má byť vždy v tomto poradí. Najprv sa pozrieš, čo je výhodné, potom vymyslíš jedlo, a až nakoniec ideš nakúpiť presne to, čo treba. Nie naopak."
+    },
+    {
+      "id": "nechybaju-peniaze",
+      "hook": "Nechýbajú peniaze. Chýba nápad.",
+      "caption": "Väčšina ľudí nemíňa viac, lebo musí — míňa viac, lebo nevie, čo navariť z toho, čo má doma alebo čo je práve v akcii. Tak siahne po tom istom, drahšom variante."
+    },
+    {
+      "id": "nie-jedlo-pre-chudobnych",
+      "hook": "Šetriť ≠ jesť horšie",
+      "caption": "Šporáček nie je o odriekaní. Ide o to postaviť poriadne, chutné jedlo na tom, čo je práve výhodné kúpiť — nie hodiť na tanier najlacnejšie veci a nazvať to večerou."
+    },
+    {
+      "id": "engagement-akcia-bez-napadu",
+      "hook": "Kúpil/a si niečo v akcii a nevedel/a čo s tým?",
+      "caption": "Napíš do komentára, čo ti doma leží a nevieš, čo z toho navariť — skúsime spolu vymyslieť nápad. 👇"
+    },
+    {
+      "id": "sikovnost-nie-obeta",
+      "hook": "Šikovnosť, nie obeta",
+      "caption": "Nejde o to utiahnuť opasok. Ide o to nakupovať s rozumom a vždy vedieť, čo z toho navariť — bez pocitu viny okolo jedla alebo peňazí."
+    },
+    {
+      "id": "co-kupit-co-navarit-kolko-usetris",
+      "hook": "Čo kúpiť. Čo navariť. Koľko ušetríš.",
+      "caption": "Presne v tomto poradí premýšľame o každom jedle. Sleduj nás, nech aj tebe nabudúce v obchode hneď napadne, čo z akcie navariť."
+    }
+  ]
+}

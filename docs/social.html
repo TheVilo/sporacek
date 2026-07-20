@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>šporáček — social</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📣</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><img src="assets/logo-sporacek-biela.png" alt="šporáček" /></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+  <nav class="site-nav" id="siteNav">
+    <a href="index.html">Databáza receptov</a>
+    <a href="tyzden.html">Týždenný výstup</a>
+    <a href="ceny.html">Ceny surovín</a>
+    <a href="vyber.html">Zostav týždeň</a>
+    <a href="social.html" class="active">Social</a>
+  </nav>
+</header>
+<script>
+(function(){
+  var btn = document.getElementById('navToggle');
+  var nav = document.getElementById('siteNav');
+  if (!btn || !nav) return;
+  function closeNav(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+  function toggleNav(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); toggleNav(); });
+  document.addEventListener('click', function(e){
+    if (nav.classList.contains('open') && !nav.contains(e.target) && e.target !== btn) closeNav();
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
+})();
+</script>
+<div class="wrap">
+  <div class="top-row">
+    <div>
+      <div class="eyebrow">Šporáček · social</div>
+      <h1>Hotové posty a stories</h1>
+    </div>
+    <div class="top-actions">
+      <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
+    </div>
+  </div>
+  <div class="sub">Pripravené texty a grafiky pre Instagram/Facebook — nič receptové, len všeobecný obsah. Skopíruj text alebo si rovno stiahni hotový obrázok pre Story alebo Post. Cenové fakty sa počítajú naživo z <code>ceny/</code> a rastú s každým novým letákom, tipy a brand posty priebežne pridávam do <code>social/</code>.</div>
+  <div class="status-line" id="statusLine">Načítavam…</div>
+
+  <div class="controls" id="controls" style="display:none">
+    <div class="chips" id="catChips"></div>
+  </div>
+
+  <div id="content">
+    <div class="skeleton" style="height:120px"></div>
+  </div>
+
+  <footer class="cta">
+    Zdroj pravdy je vždy repo <code>github.com/TheVilo/sporacek</code> (priečinky <code>social/</code> a <code>ceny/</code>). Táto stránka sa nikdy neukladá — je to len živé zobrazenie. Grafiky sa generujú priamo v prehliadači pri stiahnutí, nikde sa neukladajú.
+  </footer>
+</div>
+
+<script>
+const OWNER = "TheVilo";
+const REPO = "sporacek";
+const BRANCH = "main";
+const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
+
+const CAT_LABEL = { fakt: "Fakty o cenách", tip: "Tipy na nákup", brand: "Šporáček" };
+const CAT_ORDER = ["fakt", "tip", "brand"];
+
+let allCards = [];
+let activeCats = new Set();
+
+function escapeHtml(s) {
+  const d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML;
+}
+function stripDiacritics(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+function nameKey(nazov) {
+  let s = stripDiacritics(nazov.toLowerCase());
+  s = s.replace(/\([^)]*\)/g, " ");
+  s = s.replace(/\b\d+([.,]\d+)?\s*%/g, " ");
+  s = s.replace(/[^a-z0-9]+/g, " ").trim();
+  return s;
+}
+function fmtEur(n) { return (typeof n === "number") ? n.toFixed(2).replace(".", ",") + " €" : "—"; }
+function parsePct(zlava) {
+  if (!zlava) return null;
+  const m = String(zlava).match(/(\d+([.,]\d+)?)/);
+  return m ? parseFloat(m[1].replace(",", ".")) : null;
+}
+
+/* ---- price facts, computed live from ceny/*.json ---- */
+function buildPriceFacts(catalogs) {
+  // latest file per store (by platnost start date)
+  const byStore = {};
+  for (const cat of catalogs) {
+    const store = cat.obchod;
+    const date = (cat.platnost_tyzdenna_default || "").match(/\d{4}-\d{2}-\d{2}/);
+    const key = date ? date[0] : "";
+    if (!byStore[store] || key > byStore[store].key) byStore[store] = { key, cat };
+  }
+  const latest = Object.values(byStore).map(x => x.cat);
+
+  const facts = [];
+
+  // 1) top discounts this week — skip deals gated behind a coupon/loyalty card/min. nákup,
+  // their "% zľava" isn't a plain walk-in price and would be misleading without heavy caveats
+  const CONDITIONAL_RE = /kup[oó]n|karty?\b|aktiv[aá]ci|min\.?\s*n[aá]kup|n[aá]kup nad/i;
+  const discounts = [];
+  for (const cat of latest) {
+    for (const p of (cat.polozky || [])) {
+      const pct = parsePct(p.zlava);
+      if (pct != null && typeof p.zlavnena_cena === "number" && !CONDITIONAL_RE.test(p.poznamka || "")) {
+        discounts.push({ ...p, obchod: p.obchod || cat.obchod, pct });
+      }
+    }
+  }
+  discounts.sort((a, b) => b.pct - a.pct);
+  discounts.slice(0, 10).forEach((p, i) => {
+    const note = p.poznamka ? ` (${p.poznamka})` : "";
+    facts.push({
+      id: `fakt-zlava-${nameKey(p.nazov)}-${p.obchod}`.replace(/\s+/g, "-"),
+      kategoria: "fakt",
+      eyebrow: "Cenový fakt",
+      hook: `${p.nazov}: −${p.pct}% v ${p.obchod}`,
+      caption: `${p.nazov} má tento týždeň zľavu −${p.pct}% (${p.obchod}): ${fmtEur(p.povodna_cena)} → ${fmtEur(p.zlavnena_cena)}${p.mnozstvo ? " · " + p.mnozstvo : ""}${note}. Oplatí sa skontrolovať, či máš podobnú akciu aj vo svojom obchode.`,
+    });
+  });
+
+  // 2) cross-store price comparison this week (same coupon/card exclusion as above)
+  const byKey = {};
+  for (const cat of latest) {
+    for (const p of (cat.polozky || [])) {
+      if (typeof p.zlavnena_cena !== "number") continue;
+      if (CONDITIONAL_RE.test(p.poznamka || "")) continue;
+      const key = nameKey(p.nazov);
+      (byKey[key] ||= []).push({ ...p, obchod: p.obchod || cat.obchod });
+    }
+  }
+  const comparisons = [];
+  for (const [key, items] of Object.entries(byKey)) {
+    const stores = new Set(items.map(i => i.obchod));
+    if (stores.size < 2) continue;
+    const prices = items.map(i => i.zlavnena_cena);
+    const min = Math.min(...prices), max = Math.max(...prices);
+    const diff = max - min;
+    if (diff <= 0) continue;
+    const cheapest = items.find(i => i.zlavnena_cena === min);
+    const priciest = items.find(i => i.zlavnena_cena === max);
+    comparisons.push({ key, diff, cheapest, priciest, pctDiff: Math.round((diff / max) * 100) });
+  }
+  comparisons.sort((a, b) => b.diff - a.diff);
+  comparisons.slice(0, 8).forEach(c => {
+    facts.push({
+      id: `fakt-porovnanie-${c.key}`.replace(/\s+/g, "-"),
+      kategoria: "fakt",
+      eyebrow: "Cenový fakt",
+      hook: `${c.cheapest.nazov}: rozdiel ${fmtEur(c.diff)} medzi obchodmi`,
+      caption: `${c.cheapest.nazov} stojí tento týždeň od ${fmtEur(c.cheapest.zlavnena_cena)} (${c.cheapest.obchod}) do ${fmtEur(c.priciest.zlavnena_cena)} (${c.priciest.obchod}) — rozdiel ${c.pctDiff}%. Oplatí sa porovnať, kým ideš nakupovať.`,
+    });
+  });
+
+  return facts;
+}
+
+async function loadAll(manual) {
+  const btn = document.getElementById("refreshBtn");
+  const statusLine = document.getElementById("statusLine");
+  const content = document.getElementById("content");
+  btn.disabled = true;
+  statusLine.textContent = manual ? "Obnovujem…" : "Načítavam…";
+
+  try {
+    const [tipyRaw, brandRaw, cenyListResp] = await Promise.all([
+      fetch(`${RAW_BASE}/social/tipy.json`, { cache: "no-store" }),
+      fetch(`${RAW_BASE}/social/brand.json`, { cache: "no-store" }),
+      fetch(`${API_BASE}/contents/ceny?ref=${BRANCH}`, { cache: "no-store" }),
+    ]);
+    const tipy = tipyRaw.ok ? await tipyRaw.json() : { polozky: [] };
+    const brand = brandRaw.ok ? await brandRaw.json() : { polozky: [] };
+    let priceFacts = [];
+    if (cenyListResp.ok) {
+      const files = (await cenyListResp.json()).filter(f => f.name.endsWith(".json"));
+      const catalogs = await Promise.all(files.map(async (f) => {
+        const raw = await fetch(`${RAW_BASE}/ceny/${encodeURIComponent(f.name)}`, { cache: "no-store" });
+        return raw.json();
+      }));
+      priceFacts = buildPriceFacts(catalogs);
+    }
+
+    allCards = [
+      ...priceFacts,
+      ...(tipy.polozky || []).map(t => ({ ...t, kategoria: "tip", eyebrow: "Tip na nákup" })),
+      ...(brand.polozky || []).map(b => ({ ...b, kategoria: "brand", eyebrow: "Šporáček" })),
+    ];
+
+    buildChips();
+    document.getElementById("controls").style.display = allCards.length ? "" : "none";
+    applyFilters();
+
+    const now = new Date().toLocaleString("sk-SK");
+    statusLine.textContent = `Naposledy načítané: ${now} · ${allCards.length} pripravených postov (${priceFacts.length} cenových faktov naživo, ${tipy.polozky?.length || 0} tipov, ${brand.polozky?.length || 0} brand postov)`;
+  } catch (err) {
+    content.innerHTML = `<div class="error-state">Nepodarilo sa načítať dáta z GitHubu: ${escapeHtml(err.message)}<br>Skús Obnoviť, alebo skontroluj internetové pripojenie.</div>`;
+    statusLine.textContent = "Chyba pri načítaní.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function buildChips() {
+  const counts = {};
+  for (const c of allCards) counts[c.kategoria] = (counts[c.kategoria] || 0) + 1;
+  const cats = CAT_ORDER.filter(c => counts[c]);
+  document.getElementById("catChips").innerHTML = cats.map(c => `
+    <button class="chip" aria-pressed="${activeCats.has(c)}" onclick="toggleCat('${c}')">
+      ${escapeHtml(CAT_LABEL[c] || c)} <span class="n">${counts[c]}</span>
+    </button>`).join("");
+}
+function toggleCat(c) { activeCats.has(c) ? activeCats.delete(c) : activeCats.add(c); buildChips(); applyFilters(); }
+
+function applyFilters() {
+  let list = allCards.slice();
+  if (activeCats.size) list = list.filter(c => activeCats.has(c.kategoria));
+  render(list);
+}
+
+function render(list) {
+  const content = document.getElementById("content");
+  if (!allCards.length) { content.innerHTML = `<div class="empty-state">Zatiaľ žiadny social obsah.</div>`; return; }
+  if (!list.length) { content.innerHTML = `<div class="empty-state">Žiadny post nezodpovedá filtru.</div>`; return; }
+
+  const byCat = {};
+  for (const c of list) (byCat[c.kategoria] ||= []).push(c);
+  const order = CAT_ORDER.filter(c => byCat[c]);
+
+  content.innerHTML = order.map(cat => `
+    <section class="group">
+      <div class="group-head"><h2>${escapeHtml(CAT_LABEL[cat] || cat)}</h2><span class="count">${byCat[cat].length}</span></div>
+      <div class="social-grid">
+        ${byCat[cat].map(c => `
+          <div class="social-card">
+            <div class="social-eyebrow">${escapeHtml(c.eyebrow || "")}</div>
+            <div class="social-hook">${escapeHtml(c.hook)}</div>
+            <div class="social-caption">${escapeHtml(c.caption)}</div>
+            <div class="social-actions">
+              <button class="copy-btn copy-btn-small" onclick="copyCaption('${c.id}', this)">📋 Kopírovať text</button>
+              <button class="copy-btn copy-btn-small" onclick="downloadGraphic('${c.id}', 'story', this)">🖼 Story</button>
+              <button class="copy-btn copy-btn-small" onclick="downloadGraphic('${c.id}', 'post', this)">🖼 Post</button>
+            </div>
+          </div>`).join("")}
+      </div>
+    </section>`).join("");
+}
+
+function copyCaption(id, btn) {
+  const item = allCards.find(c => c.id === id);
+  if (!item) return;
+  navigator.clipboard.writeText(item.caption).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = "✓ Skopírované"; btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove("copied"); }, 1500);
+  });
+}
+
+/* ---- canvas graphic generator ---- */
+const FONT_FAMILY = '"Plus Jakarta Sans", sans-serif';
+const logoImg = new Image();
+logoImg.src = "assets/logo-sporacek-biela.png";
+const logoReady = new Promise(res => { logoImg.onload = res; logoImg.onerror = res; });
+
+async function ensureFonts() {
+  try {
+    await Promise.all([
+      document.fonts.load('800 80px ' + FONT_FAMILY),
+      document.fonts.load('800 32px ' + FONT_FAMILY),
+    ]);
+  } catch (e) { /* font loading is best-effort */ }
+}
+
+function wrapLines(ctx, text, maxWidth) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let cur = "";
+  for (const w of words) {
+    const test = cur ? cur + " " + w : w;
+    if (ctx.measureText(test).width > maxWidth && cur) { lines.push(cur); cur = w; }
+    else cur = test;
+  }
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+async function renderGraphic(item, mode) {
+  await ensureFonts();
+  await logoReady;
+  const W = 1080, H = mode === "story" ? 1920 : 1080;
+  const canvas = document.createElement("canvas");
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext("2d");
+
+  const isFact = item.kategoria === "fakt";
+  const bg = isFact ? "#E7D6B4" : "#1c3527";
+  const textColor = isFact ? "#204432" : "#FAF6EE";
+  const accent = "#BA5F3F";
+  const cx = W / 2;
+
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+  ctx.textAlign = "center";
+
+  // eyebrow
+  const eyebrowY = H * (mode === "story" ? 0.15 : 0.18);
+  ctx.fillStyle = accent;
+  ctx.font = `800 ${W * 0.032}px ${FONT_FAMILY}`;
+  ctx.fillText((item.eyebrow || "šporáček").toUpperCase(), cx, eyebrowY);
+  ctx.fillRect(cx - W * 0.05, eyebrowY + H * 0.02, W * 0.1, 4);
+
+  // hook, centered, shrink-to-fit
+  ctx.fillStyle = textColor;
+  let fontSize = W * 0.09;
+  const maxWidth = W * 0.82;
+  ctx.font = `800 ${fontSize}px ${FONT_FAMILY}`;
+  let lines = wrapLines(ctx, item.hook, maxWidth);
+  while (lines.length > 5 && fontSize > 40) {
+    fontSize -= 4;
+    ctx.font = `800 ${fontSize}px ${FONT_FAMILY}`;
+    lines = wrapLines(ctx, item.hook, maxWidth);
+  }
+  const lineHeight = fontSize * 1.2;
+  const blockHeight = lines.length * lineHeight;
+  const centerY = mode === "story" ? H * 0.5 : H * 0.46;
+  let startY = centerY - blockHeight / 2 + fontSize * 0.36;
+  lines.forEach((line, i) => ctx.fillText(line, cx, startY + i * lineHeight));
+
+  // wordmark / logo bottom
+  const bottomY = H * (mode === "story" ? 0.9 : 0.87);
+  if (isFact) {
+    ctx.fillStyle = "#204432";
+    ctx.font = `800 ${W * 0.038}px ${FONT_FAMILY}`;
+    ctx.fillText("šporáček", cx, bottomY);
+  } else if (logoImg.naturalWidth) {
+    const logoW = W * 0.28;
+    const logoH = logoW * (logoImg.naturalHeight / logoImg.naturalWidth);
+    ctx.drawImage(logoImg, cx - logoW / 2, bottomY - logoH * 0.75, logoW, logoH);
+  }
+
+  return canvas;
+}
+
+async function downloadGraphic(id, mode, btn) {
+  const item = allCards.find(c => c.id === id);
+  if (!item) return;
+  const origText = btn.textContent;
+  btn.textContent = "…"; btn.disabled = true;
+  try {
+    const canvas = await renderGraphic(item, mode);
+    await new Promise(resolve => canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `sporacek-${item.id}-${mode}.png`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000);
+      resolve();
+    }, "image/png"));
+  } finally {
+    btn.textContent = origText; btn.disabled = false;
+  }
+}
+
+loadAll(false);
+</script>
+</body>
+</html>
