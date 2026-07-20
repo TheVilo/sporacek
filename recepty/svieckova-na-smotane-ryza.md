@@ -27,6 +27,7 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 | Smotana na varenie | 200 ml |
 | Bobkový list | 2 ks |
 | Ryža | 150 g |
+| Brusnicová omáčka | 2 PL (na podávanie) |
 | Soľ, čierne korenie | — |
 
 ---
@@ -49,7 +50,7 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 3. Do hrnca s opečenou zeleninou vmiešaj horčicu a ocot, minútu opraž, potom prilej 500 ml vody s bujónom. Pridaj bobkový list.
 4. Vlož opečené mäso späť, prikry a duste na miernom ohni (alebo v rúre na 180 °C) 1,5–2 hodiny, kým mäso nie je mäkké.
 5. Mäso vyber, zeleninovú omáčku rozmixuj dohladka, precedi cez sitko, vmiešaj smotanu a prehrej (nevar prudko).
-6. Mäso nakrájaj na plátky, zalej horúcou omáčkou, podávaj s uvarenou ryžou.
+6. Mäso nakrájaj na plátky, zalej horúcou omáčkou, podávaj s uvarenou ryžou a lyžicou brusnicovej omáčky.
 
 ---
 

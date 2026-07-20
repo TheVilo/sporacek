@@ -135,3 +135,4 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - sezamový olej
 - sezamové semienka
 - tatárska omáčka
+- brusnicová omáčka

@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of traditional Slovak kapustnica — a hearty sauerkraut soup with sliced smoked sausage and rehydrated dried mushrooms, rustic and steaming — in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The soup is sharply focused. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of extra sausage slices. A modern brushed steel spoon rests on a casually draped light grey linen napkin. Natural scattered dried mushroom pieces add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of traditional Slovak kapustnica — a hearty sauerkraut soup where clearly visible shredded sauerkraut strands fill the broth alongside sliced smoked sausage and rehydrated dried mushroom pieces, rustic and steaming — in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The shredded cabbage must be clearly visible throughout the broth, not just sausage and mushrooms. The soup is sharply focused. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of extra sausage slices. A modern brushed steel spoon rests on a casually draped light grey linen napkin. Natural scattered dried mushroom pieces add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 

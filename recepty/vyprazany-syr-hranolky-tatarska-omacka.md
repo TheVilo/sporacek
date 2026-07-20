@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden breaded fried cheese with crispy potato fries and a side of tartar sauce and a lemon wedge, served in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. The table isn't empty; a few scattered breadcrumbs and a pinch of salt add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the golden crust. Film grain. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden breaded fried cheese — thick round/oval discs of cheese in a crispy breadcrumb crust (not sticks or fingers, clearly round cheese slices, one cut open showing melted stringy cheese inside) — with crispy potato fries and a side of tartar sauce and a lemon wedge, served in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. The table isn't empty; a few scattered breadcrumbs and a pinch of salt add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the golden crust. Film grain. No text, no logo, no watermark in the image.
 
 ---
 
