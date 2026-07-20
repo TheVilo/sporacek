@@ -53,6 +53,8 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - tekvica hokkaido
 - olivy
 - šalát (hlávkový)
+- kaleráb
+- karfiol
 
 ## Ovocie
 - čučoriedky
@@ -63,6 +65,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - maliny
 - jahody
 - datle
+- broskyne
 
 ## Orechy a semienka
 - vlašské orechy
@@ -102,6 +105,8 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - tvaroh
 - maslo
 - bryndza
+- hermelín
+- mascarpone
 
 ## Základy a koreniny
 - olivový olej
@@ -115,6 +120,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - tymian
 - mäta
 - rozmarín
+- kôpor
 - petržlenová vňať
 - čerstvý koriander
 - mletá rasca
@@ -152,3 +158,4 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - sezamové semienka
 - tatárska omáčka
 - brusnicová omáčka
+- sušienky
