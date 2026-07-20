@@ -50,6 +50,9 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - kyslá kapusta
 - sušené hríby
 - kyslé uhorky
+- tekvica hokkaido
+- olivy
+- šalát (hlávkový)
 
 ## Ovocie
 - čučoriedky
@@ -59,6 +62,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - banán
 - maliny
 - jahody
+- datle
 
 ## Orechy a semienka
 - vlašské orechy
@@ -91,6 +95,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - syr feta
 - haloumi
 - mozzarella
+- cheddar
 - parmezán
 - jogurt biely
 - grécky jogurt
@@ -126,9 +131,11 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - citrón
 - strúhanka
 - chlieb
+- burger žemle
 - múka
 - celozrnná múka
 - ovsená múka
+- lístkové cesto
 - prášok do pečiva
 - droždie
 - škorica
