@@ -49,7 +49,7 @@
       <button class="refresh-btn" id="refreshBtn" onclick="loadAll(true)">⟳ Obnoviť</button>
     </div>
   </div>
-  <div class="sub">Vyber obchod a štýl jedla (raňajky/večera, vysoký-proteín, jednohrnec…) — stránka prepočíta odhadovanú cenu za porciu pre každý recept podľa aktuálneho letáku a zoradí ich od najlacnejšieho. Jednotlivé recepty vieš ručne vymeniť. Cena je len odhad (spoľahlivosť závisí od toho, koľko surovín sa podarilo napárovať na leták) — táto stránka nič neukladá, na konci si výber skopíruješ a pošleš mi ho v chate.</div>
+  <div class="sub">Vyber obchod a štýl jedla (raňajky/večera, vysoký-proteín, jednohrnec…) — stránka ukáže len recepty, ktorých suroviny sú v aktuálnom letáku a dá sa im spoľahlivo dopočítať cena za porciu, zoradené od najlacnejšieho. Jednotlivé recepty vieš ručne vymeniť. Cena je len odhad — táto stránka nič neukladá, na konci si výber skopíruješ a pošleš mi ho v chate.</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
 
   <div class="week-picker" id="storePicker"></div>
@@ -351,7 +351,7 @@ function autoPickTop() {
   let filtered = allRecipes;
   if (activeTags.size) filtered = filtered.filter(r => [...activeTags].every(t => r.tagy.includes(t)));
   filtered = computeMatches(filtered);
-  if (selectedCatalog) filtered = sortByPrice(filtered);
+  if (selectedCatalog) filtered = sortByPrice(filtered.filter(r => r.priceInfo && r.priceInfo.reliable));
   const countInput = document.getElementById("recipeCount");
   const n = Math.max(1, parseInt(countInput ? countInput.value : "5", 10) || 5);
   selectedSlugs = new Set(filtered.slice(0, n).map(r => r.slug));
@@ -368,13 +368,7 @@ function computeMatches(recipes) {
   });
 }
 function sortByPrice(recipes) {
-  return recipes.slice().sort((a, b) => {
-    const pa = a.priceInfo, pb = b.priceInfo;
-    if (!pa || !pb) return a.nazov.localeCompare(b.nazov, "sk");
-    if (pa.reliable !== pb.reliable) return pa.reliable ? -1 : 1;
-    if (pa.reliable && pb.reliable) return pa.perPortion - pb.perPortion;
-    return a.nazov.localeCompare(b.nazov, "sk");
-  });
+  return recipes.slice().sort((a, b) => a.priceInfo.perPortion - b.priceInfo.perPortion);
 }
 
 function applyFilters() {
@@ -383,7 +377,7 @@ function applyFilters() {
   if (activeTags.size) filtered = filtered.filter(r => [...activeTags].every(t => r.tagy.includes(t)));
   if (searchQuery) filtered = filtered.filter(r => normalize(r.nazov).includes(searchQuery));
   filtered = computeMatches(filtered);
-  if (selectedCatalog) filtered = sortByPrice(filtered);
+  if (selectedCatalog) filtered = sortByPrice(filtered.filter(r => r.priceInfo && r.priceInfo.reliable));
   renderRecipes(filtered, allRecipes.length);
   updateSelectionBar();
 }
@@ -411,9 +405,7 @@ function copySelection() {
   byPrice.forEach((r, i) => {
     text += `${i + 1}. ${r.nazov} (${r.slug})`;
     if (r.priceInfo) {
-      text += r.priceInfo.reliable
-        ? ` — ~${fmtEur(r.priceInfo.perPortion)}/porcia (odhad, ${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`
-        : ` — cenu sa nepodarilo spoľahlivo odhadnúť (${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`;
+      text += ` — ~${fmtEur(r.priceInfo.perPortion)}/porcia (odhad, ${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`;
     }
     text += `\n`;
   });
@@ -436,9 +428,7 @@ function cardHtml(r) {
   let matchListHtml = "";
   if (selectedCatalog && r.priceInfo) {
     const p = r.priceInfo;
-    matchBadge = p.reliable
-      ? `<div class="match-badge match-yes">💶 ~${fmtEur(p.perPortion)} / porcia <span class="prompt-hint">(odhad, ${p.pricedCount}/${p.totalCount} surovín napárovaných)</span></div>`
-      : `<div class="match-badge match-no">Cenu sa nepodarilo spoľahlivo odhadnúť (${p.pricedCount}/${p.totalCount} surovín napárovaných)</div>`;
+    matchBadge = `<div class="match-badge match-yes">💶 ~${fmtEur(p.perPortion)} / porcia <span class="prompt-hint">(odhad, ${p.pricedCount}/${p.totalCount} surovín napárovaných)</span></div>`;
     if (p.breakdown.some(b => b.found)) {
       matchListHtml = `<details class="postup">
         <summary>Rozpis cien surovín</summary>
@@ -472,7 +462,9 @@ function renderRecipes(recipes, totalCount) {
     return;
   }
   if (recipes.length === 0) {
-    content.innerHTML = `<div class="empty-state">Žiadny recept nezodpovedá filtru/hľadaniu.</div>`;
+    content.innerHTML = selectedCatalog
+      ? `<div class="empty-state">Žiadny recept nemá dosť surovín v aktuálnom letáku (${escapeHtml(selectedStore)}) na spoľahlivý odhad ceny. Skús iný obchod alebo zruš filter tagov.</div>`
+      : `<div class="empty-state">Žiadny recept nezodpovedá filtru/hľadaniu.</div>`;
     return;
   }
 
