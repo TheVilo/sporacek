@@ -113,6 +113,7 @@ function nameKey(nazov) {
   return s;
 }
 function fmtEur(n) { return (typeof n === "number") ? n.toFixed(2).replace(".", ",") + " €" : "—"; }
+function fmtPorcia(n) { return fmtEur(n) + " / porcia"; }
 
 function matchIngredient(ingrNazov, catalogItems) {
   const key = nameKey(ingrNazov);
@@ -405,7 +406,7 @@ function copySelection() {
   byPrice.forEach((r, i) => {
     text += `${i + 1}. ${r.nazov} (${r.slug})`;
     if (r.priceInfo) {
-      text += ` — ~${fmtEur(r.priceInfo.perPortion)}/porcia (odhad, ${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`;
+      text += ` — ~${fmtPorcia(r.priceInfo.perPortion)} (odhad, ${r.priceInfo.pricedCount}/${r.priceInfo.totalCount} surovín napárovaných)`;
     }
     text += `\n`;
   });
@@ -424,11 +425,15 @@ function cardHtml(r) {
   const tagsHtml = nonTypTags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("");
   const photoUrl = photoUrlFor(r.slug);
 
-  let matchBadge = "";
+  const macroBits = [];
+  if (r.cas) macroBits.push(escapeHtml(r.cas));
+
+  let priceBadge = "";
   let matchListHtml = "";
   if (selectedCatalog && r.priceInfo) {
     const p = r.priceInfo;
-    matchBadge = `<div class="match-badge match-yes">💶 ~${fmtEur(p.perPortion)} / porcia <span class="prompt-hint">(odhad, ${p.pricedCount}/${p.totalCount} surovín napárovaných)</span></div>`;
+    priceBadge = `<div class="price-badge">${fmtPorcia(p.perPortion)}</div>`;
+    macroBits.push(`odhad z ${p.pricedCount}/${p.totalCount} surovín v akcii`);
     if (p.breakdown.some(b => b.found)) {
       matchListHtml = `<details class="postup">
         <summary>Rozpis cien surovín</summary>
@@ -441,14 +446,14 @@ function cardHtml(r) {
     <div class="card ${selected ? "selected" : ""}">
       <div class="photo-wrap">
         <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" />
+        ${priceBadge}
       </div>
       <div class="card-body">
         <label class="select-row">
           <input type="checkbox" ${selected ? "checked" : ""} onchange="toggleSelect('${r.slug.replace(/'/g, "\\'")}')" />
           <h3>${escapeHtml(r.nazov)}</h3>
         </label>
-        <div class="macro-line">${r.cas ? escapeHtml(r.cas) : ""}</div>
-        ${matchBadge}
+        <div class="macro-line">${macroBits.join(" · ")}</div>
         <div class="tags">${tagsHtml}</div>
         ${matchListHtml}
       </div>
