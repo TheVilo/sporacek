@@ -8,17 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): opečené kuracie prsia so zlatohnedou kôrkou (poliate cesnakovo-tymiánovým maslom), vedľa varená kukurica na kolotoči potretá maslom a celé varené zemiaky (NIE zemiaková kaša/pyré — zemiaky sú celé alebo prekrojené na polovicu, s kúskom masla), na jednoduchom tanieri.
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of a pan-seared chicken breast with a golden-brown crust, glazed with garlic-thyme butter, in a sleek matte ceramic plate on a smooth light oak table, capturing an elevated home cooking aesthetic. Next to it, whole boiled potatoes (not mashed) with a knob of butter, and buttered corn on the cob. The chicken is sharply focused. To add life, the background is beautifully blurred, showing a small contemporary dish of extra thyme. A modern brushed steel fork and knife rest on a casually draped light grey linen napkin. Fresh thyme sprigs and visible garlic bits add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 
