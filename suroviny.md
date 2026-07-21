@@ -26,6 +26,10 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - hovädzia sviečkovica
 - šunka
 - bravčové rebierka
+- hovädzí rib-eye steak
+- jahňacie kotletky
+- kačacie prsia
+- parmská šunka
 
 ## Zelenina
 - cibuľa
@@ -55,6 +59,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - šalát (hlávkový)
 - kaleráb
 - karfiol
+- špargľa
 
 ## Ovocie
 - čučoriedky
@@ -66,6 +71,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - jahody
 - datle
 - broskyne
+- pomaranč
 
 ## Orechy a semienka
 - vlašské orechy
