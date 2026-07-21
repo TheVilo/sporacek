@@ -30,6 +30,8 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - jahňacie kotletky
 - kačacie prsia
 - parmská šunka
+- párky
+- pangasius
 
 ## Zelenina
 - cibuľa
@@ -150,6 +152,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - lístkové cesto
 - prášok do pečiva
 - droždie
+- cesto na pizzu
 - škorica
 - kakao
 - vanilkový extrakt
