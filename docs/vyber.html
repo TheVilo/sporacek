@@ -83,6 +83,34 @@
   </footer>
 </div>
 
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <div class="lightbox-media">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <div class="lightbox-panel">
+      <div>
+        <div class="label">Recept</div>
+        <h3 id="lightboxTitle"></h3>
+        <div class="id-row">
+          <div class="prompt-hint" id="lightboxSlug"></div>
+          <button class="copy-btn copy-btn-small" onclick="copyLightboxId(this)">📋 Kopírovať ID</button>
+          <button class="copy-btn copy-btn-small" onclick="copyLightboxPrompt(this)">📋 Kopírovať prompt</button>
+        </div>
+      </div>
+      <div class="lightbox-section" id="lightboxSurovinySection">
+        <div class="label">Suroviny</div>
+        <ul class="ingredients" id="lightboxSuroviny"></ul>
+      </div>
+      <div class="lightbox-section" id="lightboxPostupSection">
+        <div class="label">Postup</div>
+        <ol id="lightboxPostup"></ol>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 const OWNER = "TheVilo";
 const REPO = "sporacek";
@@ -201,15 +229,32 @@ function parseSuroviny(text) {
     .map(c => ({ nazov: c[0], mnozstvo: c[1] || "" }));
 }
 
+function parsePostup(text) {
+  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  const postup = [];
+  if (postupM) for (const line of postupM[1].trim().split("\n")) {
+    const m = line.trim().match(/^\d+\.\s*(.+)$/);
+    if (m) postup.push(m[1].trim());
+  }
+  return postup;
+}
+
 function parseMarkdownRecipe(slug, text) {
   const nazov = (text.match(/^#\s+(.+)$/m) || [, slug])[1].trim();
   const cas = (text.match(/\*\*čas prípravy:\*\*\s*([^\n]+)/) || [, ""])[1].trim();
   const porcie = parseInt((text.match(/\*\*porcie:\*\*\s*(\d+)/) || [, "1"])[1], 10) || 1;
+  const kcal = (text.match(/Energia\s*\|\s*~?(\d+)\s*kcal/) || [, null])[1];
+  const bielkoviny = (text.match(/Bielkoviny\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const sacharidy = (text.match(/Sacharidy\s*\|\s*(\d+)\s*g/) || [, null])[1];
+  const tuky = (text.match(/Tuky\s*\|\s*(\d+)\s*g/) || [, null])[1];
   const tagyM = text.match(/## Tagy\s*\n(.+)/);
   let tagy = [];
   if (tagyM) tagy = [...tagyM[1].matchAll(/`#([^`]+)`/g)].map(m => m[1]);
+  const promptM = text.match(/## Foto prompt\s*\n"?([^\n]+?)"?\s*\n/);
+  const foto_prompt = promptM ? promptM[1].trim() : "";
   const suroviny = parseSuroviny(text);
-  return { slug, nazov, cas, porcie, tagy, suroviny };
+  const postup = parsePostup(text);
+  return { slug, nazov, cas, porcie, kcal, bielkoviny, sacharidy, tuky, tagy, foto_prompt, suroviny, postup };
 }
 
 function parseYamlRecipe(slug, text) {
@@ -217,6 +262,10 @@ function parseYamlRecipe(slug, text) {
   const fm = fmM ? fmM[1] : "";
   const nazov = (fm.match(/nazov:\s*(.+)/) || [, slug])[1].trim();
   const porcie = parseInt((fm.match(/pocet_porcii:\s*(\d+)/) || [, "1"])[1], 10) || 1;
+  const kcal = (fm.match(/kcal:\s*(\d+)/) || [, null])[1];
+  const bielkoviny = (fm.match(/bielkoviny_g:\s*(\d+)/) || [, null])[1];
+  const sacharidy = (fm.match(/sacharidy_g:\s*(\d+)/) || [, null])[1];
+  const tuky = (fm.match(/tuky_g:\s*(\d+)/) || [, null])[1];
   let tagy = [];
   const tagyBlockM = fm.match(/tagy:\n((?:\s+\w+:.*\n?)+)/);
   if (tagyBlockM) {
@@ -224,8 +273,11 @@ function parseYamlRecipe(slug, text) {
       tagy.push(...m[1].split(",").map(x => x.trim()).filter(Boolean));
     }
   }
+  const promptM = fm.match(/foto_prompt:\s*"?([^\n]+?)"?\s*\n/);
+  const foto_prompt = promptM ? promptM[1].trim() : "";
   const suroviny = parseSuroviny(text);
-  return { slug, nazov, cas: "", porcie, tagy, suroviny };
+  const postup = parsePostup(text);
+  return { slug, nazov, cas: "", porcie, kcal, bielkoviny, sacharidy, tuky, tagy, foto_prompt, suroviny, postup };
 }
 
 let allRecipes = [];
@@ -236,10 +288,63 @@ let selectedCatalog = null;
 let activeTags = new Set();
 let searchQuery = "";
 let selectedSlugs = new Set();
+let lightboxPrompt = "";
+let lightboxSlug = "";
 
 function photoUrlFor(slug) {
   const v = photoVersions[slug];
   return `${RAW_BASE}/fotky/${encodeURIComponent(slug)}.jpg${v ? "?v=" + v.slice(0, 8) : ""}`;
+}
+
+function openLightboxForRecipe(slug) {
+  const r = allRecipes.find(r => r.slug === slug);
+  if (!r) return;
+  openLightbox(r);
+}
+
+function openLightbox(r) {
+  const lb = document.getElementById("lightbox");
+  document.getElementById("lightboxImg").src = photoUrlFor(r.slug);
+  document.getElementById("lightboxImg").alt = r.nazov || "";
+  document.getElementById("lightboxTitle").textContent = r.nazov || "";
+  lightboxSlug = r.slug || "";
+  document.getElementById("lightboxSlug").textContent = lightboxSlug ? `ID: ${lightboxSlug}` : "";
+  lightboxPrompt = r.foto_prompt || "";
+
+  const suroviny = r.suroviny || [];
+  document.getElementById("lightboxSurovinySection").style.display = suroviny.length ? "" : "none";
+  document.getElementById("lightboxSuroviny").innerHTML = suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${escapeHtml(s.mnozstvo)}</span></li>`).join("");
+
+  const postup = r.postup || [];
+  document.getElementById("lightboxPostupSection").style.display = postup.length ? "" : "none";
+  document.getElementById("lightboxPostup").innerHTML = postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
+
+  lb.classList.add("open");
+}
+function closeLightbox(e) {
+  if (e) e.stopPropagation();
+  document.getElementById("lightbox").classList.remove("open");
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+
+function copyLightboxId(btn) {
+  if (!lightboxSlug) return;
+  navigator.clipboard.writeText(lightboxSlug).then(() => {
+    const original = btn.textContent;
+    btn.textContent = "✓ Skopírované";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1500);
+  });
+}
+
+function copyLightboxPrompt(btn) {
+  const text = lightboxSlug ? `Recept ID: ${lightboxSlug}\n\n${lightboxPrompt}` : lightboxPrompt;
+  navigator.clipboard.writeText(text).then(() => {
+    const original = btn.textContent;
+    btn.textContent = "✓ Skopírované";
+    btn.classList.add("copied");
+    setTimeout(() => { btn.textContent = original; btn.classList.remove("copied"); }, 1500);
+  });
 }
 
 async function loadAll(manual) {
@@ -425,15 +530,20 @@ function cardHtml(r) {
   const tagsHtml = nonTypTags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("");
   const photoUrl = photoUrlFor(r.slug);
 
-  const macroBits = [];
-  if (r.cas) macroBits.push(escapeHtml(r.cas));
+  const macroParts = [];
+  if (r.kcal) macroParts.push(`${r.kcal} kcal`);
+  if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
+  if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
+  if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
+  const macro = macroParts.join(" · ");
 
   let priceBadge = "";
+  let priceHint = "";
   let matchListHtml = "";
   if (selectedCatalog && r.priceInfo) {
     const p = r.priceInfo;
     priceBadge = `<div class="price-badge">${fmtPorcia(p.perPortion)}</div>`;
-    macroBits.push(`odhad z ${p.pricedCount}/${p.totalCount} surovín v akcii`);
+    priceHint = `odhad z ${p.pricedCount}/${p.totalCount} surovín v akcii`;
     if (p.breakdown.some(b => b.found)) {
       matchListHtml = `<details class="postup">
         <summary>Rozpis cien surovín</summary>
@@ -445,7 +555,7 @@ function cardHtml(r) {
   return `
     <div class="card ${selected ? "selected" : ""}">
       <div class="photo-wrap">
-        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" />
+        <img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightboxForRecipe('${r.slug.replace(/'/g, "\\'")}')" />
         ${priceBadge}
       </div>
       <div class="card-body">
@@ -453,8 +563,10 @@ function cardHtml(r) {
           <input type="checkbox" ${selected ? "checked" : ""} onchange="toggleSelect('${r.slug.replace(/'/g, "\\'")}')" />
           <h3>${escapeHtml(r.nazov)}</h3>
         </label>
-        <div class="macro-line">${macroBits.join(" · ")}</div>
         <div class="tags">${tagsHtml}</div>
+        ${r.cas ? `<div class="time-line">⏱️ ${escapeHtml(r.cas)}</div>` : ""}
+        ${macro ? `<div class="macro-line">${macro}</div>` : ""}
+        ${priceHint ? `<div class="macro-line">${priceHint}</div>` : ""}
         ${matchListHtml}
       </div>
     </div>`;

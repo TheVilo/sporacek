@@ -81,14 +81,17 @@
         <h3 id="lightboxTitle"></h3>
         <div class="id-row">
           <div class="prompt-hint" id="lightboxSlug"></div>
-          <button class="copy-btn copy-btn-small" id="lightboxCopyIdBtn" onclick="copyLightboxId(this)">📋 Kopírovať ID</button>
+          <button class="copy-btn copy-btn-small" onclick="copyLightboxId(this)">📋 Kopírovať ID</button>
+          <button class="copy-btn copy-btn-small" onclick="copyLightboxPrompt(this)">📋 Kopírovať prompt</button>
         </div>
       </div>
-      <div id="lightboxPromptSection">
-        <div class="label">Foto prompt</div>
-        <div class="prompt-text" id="lightboxPromptText"></div>
-        <button class="copy-btn" id="lightboxCopyBtn" onclick="copyLightboxPrompt(this)">📋 Kopírovať prompt</button>
-        <div class="prompt-hint">Nepáči sa foto? Skopíruj prompt aj s ID receptu a pošli mi ho v chate s poznámkou čo zmeniť.</div>
+      <div class="lightbox-section" id="lightboxSurovinySection">
+        <div class="label">Suroviny</div>
+        <ul class="ingredients" id="lightboxSuroviny"></ul>
+      </div>
+      <div class="lightbox-section" id="lightboxPostupSection">
+        <div class="label">Postup</div>
+        <ol id="lightboxPostup"></ol>
       </div>
     </div>
   </div>
@@ -136,21 +139,26 @@ function photoUrlFor(slug) {
 function openLightboxForRecipe(slug) {
   const r = allRecipes.find(r => r.slug === slug);
   if (!r) return;
-  const photoUrl = photoUrlFor(r.slug);
-  openLightbox(photoUrl, r.nazov, r.foto_prompt, r.slug);
+  openLightbox(r);
 }
 
-function openLightbox(src, nazov, prompt, slug) {
+function openLightbox(r) {
   const lb = document.getElementById("lightbox");
-  document.getElementById("lightboxImg").src = src;
-  document.getElementById("lightboxImg").alt = nazov || "";
-  document.getElementById("lightboxTitle").textContent = nazov || "";
-  lightboxSlug = slug || "";
+  document.getElementById("lightboxImg").src = photoUrlFor(r.slug);
+  document.getElementById("lightboxImg").alt = r.nazov || "";
+  document.getElementById("lightboxTitle").textContent = r.nazov || "";
+  lightboxSlug = r.slug || "";
   document.getElementById("lightboxSlug").textContent = lightboxSlug ? `ID: ${lightboxSlug}` : "";
-  lightboxPrompt = prompt || "";
-  const section = document.getElementById("lightboxPromptSection");
-  document.getElementById("lightboxPromptText").textContent = lightboxPrompt;
-  section.style.display = lightboxPrompt ? "" : "none";
+  lightboxPrompt = r.foto_prompt || "";
+
+  const suroviny = r.suroviny || [];
+  document.getElementById("lightboxSurovinySection").style.display = suroviny.length ? "" : "none";
+  document.getElementById("lightboxSuroviny").innerHTML = suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${escapeHtml(s.mnozstvo)}</span></li>`).join("");
+
+  const postup = r.postup || [];
+  document.getElementById("lightboxPostupSection").style.display = postup.length ? "" : "none";
+  document.getElementById("lightboxPostup").innerHTML = postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
+
   lb.classList.add("open");
 }
 function closeLightbox(e) {
@@ -256,8 +264,6 @@ function parseYamlRecipe(slug, text) {
 function cardHtml(r) {
   const nonTypTags = r.tagy.filter(t => !TYP_TAGS.has(t));
   const tagsHtml = nonTypTags.map(t => `<span class="tag">#${t}</span>`).join("");
-  const stepsHtml = r.postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
-  const ingredientsHtml = r.suroviny.map(s => `<li><span class="ingr-name">${escapeHtml(s.nazov)}</span><span class="ingr-qty">${escapeHtml(s.mnozstvo)}</span></li>`).join("");
   const macroParts = [];
   if (r.kcal) macroParts.push(`${r.kcal} kcal`);
   if (r.bielkoviny) macroParts.push(`B: ${r.bielkoviny} g`);
@@ -273,16 +279,9 @@ function cardHtml(r) {
       </div>
       <div class="card-body">
         <h3>${escapeHtml(r.nazov)}</h3>
-        <div class="macro-line">${r.cas ? escapeHtml(r.cas) + " · " : ""}${macro}</div>
         <div class="tags">${tagsHtml}</div>
-        ${r.suroviny.length ? `<details class="postup">
-          <summary>Suroviny (${r.suroviny.length})</summary>
-          <ul class="ingredients">${ingredientsHtml}</ul>
-        </details>` : ""}
-        <details class="postup">
-          <summary>Postup (${r.postup.length} krokov)</summary>
-          <ol>${stepsHtml}</ol>
-        </details>
+        ${r.cas ? `<div class="time-line">⏱️ ${escapeHtml(r.cas)}</div>` : ""}
+        ${macro ? `<div class="macro-line">${macro}</div>` : ""}
       </div>
     </div>`;
 }
