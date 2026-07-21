@@ -107,6 +107,7 @@ function escapeHtml(s) {
   div.textContent = s == null ? "" : String(s);
   return div.innerHTML;
 }
+function fmtPorcia(n) { return n.toFixed(2).replace(".", ",") + " € / porcia"; }
 
 let lightboxPrompt = "";
 let lightboxSlug = "";
@@ -315,15 +316,14 @@ function mealCardHtml(m) {
   if (r.sacharidy) macroParts.push(`S: ${r.sacharidy} g`);
   if (r.tuky) macroParts.push(`T: ${r.tuky} g`);
   const photoUrl = photoUrlFor(r.slug);
-  const priceStr = m.cena != null ? `${Number(m.cena).toFixed(2)}&nbsp;€<span> / porcia</span>` : "";
+  const priceBadge = m.cena != null ? `<div class="price-badge">${fmtPorcia(Number(m.cena))}</div>` : "";
   const nonTypTags = r.tagy.filter(t => !["raňajky","desiata","olovrant","dezert","večera","obed","šalát","polievka","jednohrnec"].includes(t));
   return `
     <div class="meal">
-      <div class="photo-wrap"><img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightboxForRecipe('${r.slug.replace(/'/g, "\\'")}')" /></div>
+      <div class="photo-wrap"><img src="${photoUrl}" alt="${escapeHtml(r.nazov)}" loading="lazy" onerror="this.closest('.photo-wrap').style.display='none'" onclick="openLightboxForRecipe('${r.slug.replace(/'/g, "\\'")}')" />${priceBadge}</div>
       <div class="meal-body">
         <div class="meal-day">${escapeHtml(m.den)}</div>
         <h3>${escapeHtml(r.nazov)}</h3>
-        ${priceStr ? `<div class="price-line">${priceStr}</div>` : ""}
         <div class="macro-line">${r.cas ? escapeHtml(r.cas) + " · " : ""}${macroParts.join(" · ")}</div>
         <div class="tags">${nonTypTags.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("")}</div>
         ${r.suroviny.length ? `<details class="postup">
