@@ -46,8 +46,12 @@ jobs:
           GEMINI_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.use_gemini) && secrets.GEMINI_API_KEY || '' }}
         run: python scripts/crawl_ceny.py --all --sample
 
+      # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
+      # Workflow permissions zapnuté "Allow GitHub Actions to create and approve
+      # pull requests". Bez toho zlyhá s "GitHub Actions is not permitted to
+      # create or approve pull requests" (vetva sa síce pushne, ale PR sa neotvorí).
       - name: Otvor Pull Request s novými cenami
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: zber-cien/auto
           commit-message: "Automatický zber cien (crawl4ai)"
