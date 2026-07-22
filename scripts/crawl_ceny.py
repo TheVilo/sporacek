@@ -357,13 +357,16 @@ async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[
         from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
         strat = JsonCssExtractionStrategy(store["schema"])
     elif mode == "llm":
+        from crawl4ai import LLMConfig
         from crawl4ai.extraction_strategy import LLMExtractionStrategy
         key = api_key or os.environ.get("GEMINI_API_KEY")
         if not key:
             print(f"⏭  {store['obchod']}: llm režim potrebuje GEMINI_API_KEY — preskočené.")
             return []
+        # crawl4ai ≥0.4: provider/api_token sa už nezadávajú priamo, ale cez
+        # llm_config=LLMConfig(...). Starý zápis padal na 'provider is deprecated'.
         strat = LLMExtractionStrategy(
-            provider="gemini/gemini-2.0-flash", api_token=key,
+            llm_config=LLMConfig(provider="gemini/gemini-2.0-flash", api_token=key),
             schema=_LLM_SCHEMA, extraction_type="schema", instruction=_LLM_INSTRUKCIA)
 
     run = CrawlerRunConfig(extraction_strategy=strat) if strat else CrawlerRunConfig()
