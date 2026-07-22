@@ -116,7 +116,20 @@ def parse_recipe_qty(mnozstvo, pkg_unit_hint):
     if not mnozstvo:
         return None
     s = mnozstvo.lower()
-    m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)", s)
+    # POZOR: lyžica/lyžička kontroluj PRED generickými jednotkami — inak by
+    # „1 lyžica" chytilo „l" (liter) zo slova lyžica. PL/ČL = objemový odhad.
+    m = re.search(r"(\d+[.,]?\d*)\s*(čl|čajov\w*\s*lyžičk\w*|lyžičk\w*)\b", s)
+    if m:
+        qty = float(m.group(1).replace(",", "."))
+        unit = "ml" if pkg_unit_hint == "ml" else "g"
+        return {"qty": qty * 5, "unit": unit, "approx": True}
+    m = re.search(r"(\d+[.,]?\d*)\s*(pl|polievkov\w*\s*lyžic\w*|lyžic\w*)\b", s)
+    if m:
+        qty = float(m.group(1).replace(",", "."))
+        unit = "ml" if pkg_unit_hint == "ml" else "g"
+        return {"qty": qty * 15, "unit": unit, "approx": True}
+    # generické jednotky — \b zabráni, aby „l" chytilo začiatok iného slova
+    m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)\b", s)
     if m:
         qty = float(m.group(1).replace(",", "."))
         unit = m.group(2)
@@ -127,12 +140,6 @@ def parse_recipe_qty(mnozstvo, pkg_unit_hint):
         if unit == "l":
             return {"qty": qty * 1000, "unit": "ml"}
         return {"qty": qty, "unit": unit}
-    m = re.search(r"(\d+[.,]?\d*)\s*(pl|čl)\b", s)
-    if m:
-        qty = float(m.group(1).replace(",", "."))
-        per = 15 if m.group(2) == "pl" else 5
-        unit = "ml" if pkg_unit_hint == "ml" else "g"
-        return {"qty": qty * per, "unit": unit, "approx": True}
     return None
 
 # ---------- matcher: názov (leták/recept) -> id suroviny ----------
@@ -277,7 +284,9 @@ def main():
         trv = extra.get("trvanlivost") or DEFAULT_TRV_BY_CAT.get(c["kategoria"], "trvanlive")
         alias_all = [c["nazov"]] + list(extra.get("aliasy", []))
         s = {"id": c["id"], "nazov": c["nazov"], "kategoria": c["kategoria"],
-             "jednotka": unit, "trvanlivost": trv, "_alias_all": alias_all, "ceny": []}
+             "jednotka": unit, "trvanlivost": trv,
+             "gramy_za_ks": extra.get("gramy_za_ks"),  # priem. hmotnosť 1 ks (na prepočet a špajžu)
+             "_alias_all": alias_all, "ceny": []}
         suroviny.append(s)
         id_index[c["id"]] = s
 
@@ -366,11 +375,20 @@ def main():
                     "cena_v_recepte": None,
                 }
                 rq = parse_recipe_qty(ing["mnozstvo"], bp["balenie_jednotka"])
-                if rq and rq["unit"] == bp["balenie_jednotka"]:
-                    cost = (bp["zlavnena_cena"] / bp["balenie_qty"]) * rq["qty"]
+                # koľko z balenia (v jeho jednotke) recept spotrebuje
+                qty_pkg = None
+                gpk = id_index[iid].get("gramy_za_ks")
+                if rq and bp["balenie_qty"]:
+                    if rq["unit"] == bp["balenie_jednotka"]:
+                        qty_pkg = rq["qty"]
+                    elif rq["unit"] == "ks" and bp["balenie_jednotka"] == "g" and gpk:
+                        qty_pkg = rq["qty"] * gpk  # ks -> gramy cez priemernú hmotnosť
+                if qty_pkg is not None:
+                    cost = (bp["zlavnena_cena"] / bp["balenie_qty"]) * qty_pkg
                     spolu += cost
                     priced += 1
                     item["cena_v_recepte"] = round(cost, 2)
+                    item["mnozstvo_g"] = round(qty_pkg) if bp["balenie_jednotka"] in ("g", "ml") else None
                     # najneskoršie od / najskoršie do pre spoločnú platnosť
                     if bp["platnost_od"]:
                         plat_od = max(plat_od, bp["platnost_od"]) if plat_od else bp["platnost_od"]
