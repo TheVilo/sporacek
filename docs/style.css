@@ -75,6 +75,8 @@ h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 6px; c
 }
 .refresh-btn:hover, .nav-link:hover { background: color-mix(in srgb, var(--sand) 30%, var(--surface)); }
 .refresh-btn:disabled { opacity: .6; cursor: wait; }
+.zber-btn { border-color: color-mix(in srgb, var(--green-ink) 35%, var(--border)); }
+.zber-btn:hover { background: color-mix(in srgb, var(--green-ink) 10%, var(--surface)); }
 .status-line { font-size: .78rem; color: var(--text-muted); margin-bottom: 18px; }
 
 /* search + tag filter (databáza receptov) */
