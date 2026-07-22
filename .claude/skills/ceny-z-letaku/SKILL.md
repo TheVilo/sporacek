@@ -84,24 +84,16 @@ Skriptom (Python) preveď a skontroluj:
 
 ---
 
-## C) Automatický zber cez crawl4ai (`scripts/crawl_ceny.py`)
+## C) Automatický zber cez crawl4ai (GitHub Actions)
 
-Namiesto ručného Gemini kroku (časť A) sa vstupný JSON dá vygenerovať automaticky cez **crawl4ai** — LLM-friendly crawler, ktorý stránku obchodu prevedie na štruktúrovaný JSON priamo v `ceny/` schéme.
+Namiesto ručného Gemini kroku (časť A) sa vstupný JSON generuje automaticky cez **crawl4ai** (`scripts/crawl_ceny.py`) — LLM-friendly crawler, ktorý stránku obchodu prevedie na štruktúrovaný JSON priamo v `ceny/` schéme.
 
-**Dôležité — kde beží:** crawl4ai **NEbeží vnútri Claude Code na webe** — sieťová politika tohto prostredia blokuje weby obchodov (proxy vracia `403` na CONNECT). Skript sa preto spúšťa **lokálne u používateľa** (alebo na serveri s otvorenou sieťou). Sem do repa príde len hotový `ceny/*.json`, ktorý potom prejde kontrolou z časti B — presne ako dnes JSON z Gemini. Toto je v súlade s `CLAUDE.md` (*„automatický zber stavia programátor"*).
+**Kde beží:** na **serveroch GitHubu** cez workflow `.github/workflows/zber-cien.yml` (týždenne v štvrtok + tlačidlo „Run workflow"). **NEbeží vnútri Claude Code na webe** (sieťová politika blokuje weby obchodov, `403` na CONNECT) ani lokálne u používateľa. Workflow výstup **nezapisuje rovno do main**, ale otvorí **Pull Request** (`ceny/*.json`) — ten prejde kontrolou z časti B a až potom sa mergne. V súlade s `CLAUDE.md` (*„automatický zber stavia programátor"*).
 
-**Dva režimy** (pole `mode` v `STORES` v skripte):
-- `css` — z **e-shopu**, kde je cena priamo v HTML. **Nepoužíva LLM = zadarmo.** Typicky **bežné (needzľavnené) ceny** → doplnia diery pri oceňovaní receptov vo `vyber.html` (surovina, ktorá nie je v akcii, dostane referenčnú cenu). Bežná cena = v schéme len cena bez zľavy (`zlava: ""`, `povodna_cena: null`), odlíšená cez `zdroj_kontroly`/`poznamka` — netreba meniť schému ani `ceny.html`.
-- `llm` — z **vizuálneho web-letáku**, kde treba OCR/porozumenie. Používa **Gemini Flash** (najlacnejší, zlomky centa za leták), fallback keď css nestačí. Typicky **akciové ceny**.
+**Typ ceny** (pole `typ` v `STORES` v skripte):
+- `akciova` — z **web-letáku** (dočasné akciové ceny).
+- `bezna` — z **e-shopu** (bežné needzľavnené ceny) → doplnia diery pri oceňovaní receptov vo `vyber.html`. V schéme len cena bez zľavy (`zlava: ""`, `povodna_cena: null`), odlíšená cez `zdroj_kontroly`/`poznamka` — netreba meniť schému ani `ceny.html`.
 
-**Postup pre používateľa (lokálne):**
-```bash
-pip install -r scripts/requirements-crawl.txt
-playwright install chromium
-export GEMINI_API_KEY=...            # len pre llm režim
-python scripts/crawl_ceny.py kaufland-eshop    # css, zadarmo
-python scripts/crawl_ceny.py kaufland-letak    # llm, Gemini
-```
-Nový obchod = pridať záznam do `STORES` v skripte. **CSS selektory sú per-web** a treba ich overiť v prehliadači (F12) na konkrétnom e-shope — v skripte sú len ilustračné.
+Extrakcia ide cez **Gemini Flash** pre oboje (netreba ladiť CSS selektory, len URL). Nový obchod = pridať záznam do `STORES` (obchod + typ + url). Workflow potrebuje GitHub secret **`GEMINI_API_KEY`**.
 
-**Moja rola po zbere:** výstup `scripts/crawl_ceny.py` (aj keď vznikol automaticky) **nikdy neberiem naslepo** — prejde rovnakou kontrolou ako Gemini JSON: vnútorná kontrola (časť B.1), náhodná kontrola vzorky proti zdroju (B.2), normalizácia a import (B.3), commit (B.4). Heuristická kategorizácia a scope filter v skripte kontrolu **nenahrádzajú**, len uľahčujú.
+**Moja rola pri PR z workflowu:** obsah PR (aj keď vznikol automaticky) **nikdy nemergujem naslepo** — prejde rovnakou kontrolou ako Gemini JSON: vnútorná kontrola (B.1), náhodná kontrola vzorky proti zdroju (B.2), oprava zjavných chýb (B.3). Heuristická kategorizácia a scope filter v skripte kontrolu **nenahrádzajú**, len uľahčujú. Po kontrole PR mergnem (alebo doň pushnem opravy).

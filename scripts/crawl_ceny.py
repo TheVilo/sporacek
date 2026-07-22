@@ -2,33 +2,25 @@
 """
 crawl_ceny.py — automatický zber cien surovín cez crawl4ai do formátu `ceny/*.json`.
 
-POZOR: tento skript beží LOKÁLNE u teba (alebo na serveri s otvorenou sieťou),
-NIE vnútri Claude Code na webe — tam sieťová politika blokuje weby obchodov.
-Výstupný `ceny/<...>.json` sa potom commitne do repa a prejde kontrolou podľa
-skillu `.claude/skills/ceny-z-letaku/SKILL.md` (časť C).
+Určené primárne pre **GitHub Actions** (`.github/workflows/zber-cien.yml`) —
+beží na serveroch GitHubu, kde je otvorená sieť. NEbeží vnútri Claude Code na
+webe (sieťová politika blokuje weby obchodov) a netreba ho spúšťať lokálne.
+Výstupné `ceny/*.json` workflow zabalí do Pull Requestu, ktorý prejde kontrolou
+podľa skillu `.claude/skills/ceny-z-letaku/SKILL.md` (časť C) a potom sa mergne.
 
-Dva režimy podľa toho, čo ťaháme (viď `CLAUDE.md` → Cenová databáza):
+Extrakcia ide cez **Gemini Flash** (LLM) — netreba ladiť CSS selektory, stačí URL.
+Typ ceny podľa zdroja (viď `CLAUDE.md` → Cenová databáza):
 
-  * css  — z e-shopu obchodu, kde je cena priamo v HTML. NEPOUŽÍVA LLM = zadarmo.
-           Typicky BEŽNÉ (needzľavnené) ceny → doplnia diery pri oceňovaní receptov.
-  * llm  — z vizuálneho web-letáku, kde treba OCR/porozumenie. Používa Gemini Flash
-           (najlacnejší), fallback keď css nestačí. Typicky AKCIOVÉ ceny.
+  * akciova — z web-letáku obchodu (dočasné akciové ceny)
+  * bezna   — z e-shopu obchodu (bežné ceny → doplnia diery pri oceňovaní receptov)
 
 Použitie:
-    # najprv jednorazovo (lokálne):
-    pip install -r scripts/requirements-crawl.txt
-    playwright install chromium
+    python scripts/crawl_ceny.py --all                 # všetky obchody (workflow)
+    python scripts/crawl_ceny.py kaufland-letak        # jeden obchod
+    python scripts/crawl_ceny.py --all --dry-run       # nič neuloží, len vypíše
 
-    # potom:
-    python scripts/crawl_ceny.py kaufland-eshop            # css režim (zadarmo)
-    python scripts/crawl_ceny.py kaufland-letak            # llm režim (Gemini)
-    python scripts/crawl_ceny.py kaufland-eshop --dry-run  # neuloží, len vypíše
-
-LLM režim potrebuje kľúč:  export GEMINI_API_KEY=...   (alebo --api-key)
-
-Nová konfigurácia obchodu = pridaj záznam do STORES nižšie. Selektory pre css
-režim si over v prehliadači (F12 → Inspect) na konkrétnom e-shope — každý web
-je iný a bez živého prístupu ich nevieme uhádnuť za teba.
+Potrebuje Gemini kľúč:  env GEMINI_API_KEY  (v Actions je to GitHub secret).
+Nový obchod = pridaj záznam do STORES nižšie (obchod + typ + url).
 """
 from __future__ import annotations
 
@@ -134,34 +126,39 @@ def _cislo(x) -> float | None:
 
 
 # ── Konfigurácia obchodov ────────────────────────────────────────────────────
-# Selektory sú ILUSTRAČNÉ — over si ich v prehliadači na konkrétnom e-shope.
-# schema.fields: name = kľúč vo výstupe, selector = CSS, type = "text"/"attribute".
+# Každý záznam: obchod, url, typ ("akciova" z letáku / "bezna" z e-shopu).
+# Extrakcia ide cez Gemini (LLM) — netreba ladiť CSS selektory, len dať URL.
+# Kľúč = <obchod>-<typ>, napr. "kaufland-letak", "kaufland-eshop".
+#
+# >>> URL doplní používateľ (pošle zoznam obchodov + linky). Zatiaľ placeholdery. <<<
 STORES = {
-    "kaufland-eshop": {
-        "obchod": "Kaufland",
-        "mode": "css",
-        "url": "https://www.kaufland.sk/aktualne-ponuky.html",  # over reálnu URL
-        "zdroj_kontroly": "crawl4ai e-shop (CSS)",
-        "poznamka_default": "bežná cena z e-shopu",
-        "schema": {
-            "name": "produkty",
-            "baseSelector": "article.product, div.product-tile",  # kontajner produktu
-            "fields": [
-                {"name": "nazov", "selector": ".product-title, h3", "type": "text"},
-                {"name": "zlavnena_cena", "selector": ".price, .product-price", "type": "text"},
-                {"name": "povodna_cena", "selector": ".price--old, .strikethrough", "type": "text"},
-                {"name": "mnozstvo", "selector": ".product-unit, .base-price", "type": "text"},
-            ],
-        },
-    },
     "kaufland-letak": {
         "obchod": "Kaufland",
-        "mode": "llm",
-        "url": "https://www.kaufland.sk/prospekt.html",  # over reálnu URL web-letáku
-        "zdroj_kontroly": "crawl4ai + Gemini (web-leták)",
-        "poznamka_default": "",
+        "typ": "akciova",
+        "url": "TODO-doplnit-link-na-letak",
     },
+    "kaufland-eshop": {
+        "obchod": "Kaufland",
+        "typ": "bezna",
+        "url": "TODO-doplnit-link-na-eshop",
+    },
+    # Lidl, Tesco, COOP, Billa, Terno... pribudnú rovnako, keď dôjdu linky.
 }
+
+# Odvodené polia podľa typu ceny (do schémy `ceny/`).
+TYP_META = {
+    "akciova": {"zdroj_kontroly": "crawl4ai + Gemini (web-leták)", "poznamka_default": ""},
+    "bezna": {"zdroj_kontroly": "crawl4ai + Gemini (e-shop)",
+              "poznamka_default": "bežná cena z e-shopu"},
+}
+
+
+def _store(kluc: str) -> dict:
+    """Doplní odvodené polia (zdroj_kontroly, poznamka_default, mode) k STORES záznamu."""
+    s = dict(STORES[kluc])
+    s.setdefault("mode", "llm")
+    s.update(TYP_META[s["typ"]])
+    return s
 
 
 def normalizuj_polozku(raw: dict, store: dict, platnost: str) -> dict | None:
@@ -264,39 +261,58 @@ async def crawl(store: dict, api_key: str | None) -> tuple[list[dict], int]:
     return raw, 0
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser(description="Zber cien cez crawl4ai do ceny/*.json")
-    ap.add_argument("store", choices=list(STORES), help="ktorý obchod/režim")
-    ap.add_argument("--api-key", help="Gemini API kľúč (alebo env GEMINI_API_KEY)")
-    ap.add_argument("--platnost", help="'YYYY-MM-DD - YYYY-MM-DD' (inak auto)")
-    ap.add_argument("--out", help="cesta k výstupu (inak ceny/<store>-<dátum>.json)")
-    ap.add_argument("--dry-run", action="store_true", help="neuloží, len vypíše zhrnutie")
-    args = ap.parse_args()
-
-    store = STORES[args.store]
-    platnost = args.platnost or tyzden_platnost()
-
-    raw, strany = asyncio.run(crawl(store, args.api_key))
+def spracuj(kluc: str, platnost: str, api_key: str | None, dry_run: bool) -> bool:
+    """Zber jedného obchodu → uloží ceny/<kluc>-<dátum>.json. Vráti True ak sa niečo uložilo."""
+    store = _store(kluc)
+    if str(store["url"]).startswith("TODO"):
+        print(f"⏭  {kluc}: preskočené (nemá URL — doplň link do STORES).")
+        return False
+    raw, strany = asyncio.run(crawl(store, api_key))
     polozky = [p for p in (normalizuj_polozku(r, store, platnost) for r in raw) if p]
     if not polozky:
-        sys.exit("Nič sa nevyextrahovalo — over URL a selektory pre tento obchod.")
+        print(f"⚠  {kluc}: nič sa nevyextrahovalo (over URL / stránku).")
+        return False
 
     data = poskladaj_json(polozky, store, platnost, strany)
-    print(f"✓ {len(polozky)} položiek | {store['obchod']} | {store['mode']} | {platnost}")
+    print(f"✓ {kluc}: {len(polozky)} položiek | {store['obchod']} | {store['typ']} | {platnost}")
     for kat in KATEGORIE:
         n = sum(1 for p in polozky if p["kategoria"] == kat)
         if n:
-            print(f"    {kat}: {n}")
-
-    if args.dry_run:
-        print("\n(dry-run — neukladám)")
-        return
-
+            print(f"      {kat}: {n}")
+    if dry_run:
+        return False
     zaciatok = platnost.split(" - ")[0]
-    out = Path(args.out) if args.out else CENY_DIR / f"{args.store}-{zaciatok}.json"
+    out = CENY_DIR / f"{kluc}-{zaciatok}.json"
     out.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"\n→ uložené: {out.relative_to(REPO)}")
-    print("  Ďalej: skontroluj podľa skillu ceny-z-letaku (časť C) a commitni.")
+    print(f"      → {out.relative_to(REPO)}")
+    return True
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Zber cien cez crawl4ai do ceny/*.json")
+    g = ap.add_mutually_exclusive_group(required=True)
+    g.add_argument("store", nargs="?", choices=list(STORES), help="ktorý obchod")
+    g.add_argument("--all", action="store_true", help="všetky obchody (pre GitHub Actions)")
+    ap.add_argument("--api-key", help="Gemini API kľúč (alebo env GEMINI_API_KEY)")
+    ap.add_argument("--platnost", help="'YYYY-MM-DD - YYYY-MM-DD' (inak auto)")
+    ap.add_argument("--dry-run", action="store_true", help="neuloží, len vypíše zhrnutie")
+    args = ap.parse_args()
+
+    platnost = args.platnost or tyzden_platnost()
+    kluce = list(STORES) if args.all else [args.store]
+
+    ulozene = 0
+    for kluc in kluce:
+        try:
+            ulozene += spracuj(kluc, platnost, args.api_key, args.dry_run)
+        except SystemExit:
+            raise
+        except Exception as e:  # jeden obchod nech nezhodí celý beh
+            print(f"✗ {kluc}: chyba — {e}")
+
+    if not args.dry_run and ulozene:
+        print(f"\nUložených {ulozene} súborov. Ďalej: kontrola podľa skillu "
+              "ceny-z-letaku (časť C), potom merge.")
 
 
 if __name__ == "__main__":

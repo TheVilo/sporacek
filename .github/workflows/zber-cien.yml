@@ -1,0 +1,56 @@
+name: Zber cien (crawl4ai)
+
+# Automatický zber cien surovín z letákov a e-shopov cez scripts/crawl_ceny.py.
+# Beží na serveroch GitHubu (otvorená sieť) — týždenne aj na tlačidlo.
+# Výsledok NEcommituje rovno do main, ale otvorí Pull Request, ktorý sa
+# skontroluje podľa skillu ceny-z-letaku (časť C) a až potom mergne.
+
+on:
+  schedule:
+    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky)
+  workflow_dispatch:         # tlačidlo "Run workflow" v záložke Actions
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: zber-cien
+  cancel-in-progress: false
+
+jobs:
+  zber:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Inštalácia závislostí
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements-crawl.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Zber cien
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/crawl_ceny.py --all
+
+      - name: Otvor Pull Request s novými cenami
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: zber-cien/auto
+          commit-message: "Automatický zber cien (crawl4ai)"
+          title: "Automatický zber cien — na kontrolu"
+          body: |
+            Automaticky vygenerované súbory `ceny/*.json` z týždenného zberu (crawl4ai + Gemini).
+
+            **Pred mergnutím prejsť kontrolou** podľa skillu `.claude/skills/ceny-z-letaku/SKILL.md`
+            (časť B/C): vnútorná kontrola, náhodná kontrola vzorky proti zdroju, oprava zjavných chýb.
+
+            Zber je heuristika — ceny a kategórie treba overiť, nemergovať naslepo.
+          labels: zber-cien
+          delete-branch: true
