@@ -391,8 +391,10 @@ def _parse_json_array(txt: str) -> list[dict]:
 def _kimbino_strany(html: str) -> list[str]:
     """Z HTML letáka na Kimbine vytiahne URL plných obrázkov strán (0.jpg, 1.jpg…)."""
     import re as _re
+    # pozor: URL obsahuje filters:format(webp):quality(65) — v triede znakov NESMIE
+    # byť ')' , inak sa vzor zastaví na zátvorke a nenájde nič. Hranica = úvodzovka/medzera.
     pat = _re.compile(
-        r'https://eu\.kimbicdn\.com/thumbor/[^"\'\s)]+?/sk/data/\d+/\d+/(\d+)\.jpg[^"\'\s)]*')
+        r'https://eu\.kimbicdn\.com/thumbor/[^"\'\s]+?/sk/data/\d+/\d+/(\d+)\.jpg[^"\'\s]*')
     seen: dict[int, str] = {}
     for m in pat.finditer(html):
         page = int(m.group(1))
