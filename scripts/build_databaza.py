@@ -42,6 +42,16 @@ DEFAULT_UNIT_BY_CAT = {
     "Mliečne a vajcia": "g", "Základy a koreniny": "g",
 }
 
+# trvanlivosť: "cerstve" (kúpiť čerstvé na tento týždeň) vs "trvanlive"
+# (odkladá sa do špajze, kúpi sa raz a vydrží). Základ podľa kategórie,
+# výnimky (konzervy, skladovateľná zelenina, pečivo…) v aliasy.json.
+DEFAULT_TRV_BY_CAT = {
+    "Mäso a ryby": "cerstve", "Zelenina": "cerstve", "Ovocie": "cerstve",
+    "Mliečne a vajcia": "cerstve",
+    "Orechy a semienka": "trvanlive", "Strukoviny a obilniny": "trvanlive",
+    "Základy a koreniny": "trvanlive",
+}
+
 def slugify(nazov):
     s = strip_dia(nazov.lower())
     s = re.sub(r"\([^)]*\)", " ", s)
@@ -195,9 +205,10 @@ def main():
     for c in canonical:
         extra = aliasy.get(c["id"], {})
         unit = extra.get("jednotka") or DEFAULT_UNIT_BY_CAT.get(c["kategoria"], "g")
+        trv = extra.get("trvanlivost") or DEFAULT_TRV_BY_CAT.get(c["kategoria"], "trvanlive")
         alias_all = [c["nazov"]] + list(extra.get("aliasy", []))
         s = {"id": c["id"], "nazov": c["nazov"], "kategoria": c["kategoria"],
-             "jednotka": unit, "_alias_all": alias_all, "ceny": []}
+             "jednotka": unit, "trvanlivost": trv, "_alias_all": alias_all, "ceny": []}
         suroviny.append(s)
         id_index[c["id"]] = s
 
@@ -267,22 +278,36 @@ def main():
         for obchod in stores:
             spolu, priced = 0.0, 0
             plat_od, plat_do = None, None
+            nakup = []  # konkrétny produkt na kúpu (so značkou) — pre nákupný zoznam
             for ing in r["suroviny"]:
-                if not ing.get("id"):
+                iid = ing.get("id")
+                if not iid:
                     continue
-                bp = best_price_for(ing["id"], obchod)
+                bp = best_price_for(iid, obchod)
                 if not bp:
                     continue
+                item = {
+                    "id": iid,
+                    "surovina": id_index[iid]["nazov"],
+                    "kupit": bp["nazov_v_letaku"],   # konkrétny produkt/značka z letáku
+                    "balenie": bp["mnozstvo"],
+                    "cena_balenia": bp["zlavnena_cena"],
+                    "podmienka": bp["podmienka"],
+                    "trvanlivost": id_index[iid]["trvanlivost"],
+                    "cena_v_recepte": None,
+                }
                 rq = parse_recipe_qty(ing["mnozstvo"], bp["balenie_jednotka"])
-                if not rq or rq["unit"] != bp["balenie_jednotka"]:
-                    continue
-                spolu += (bp["zlavnena_cena"] / bp["balenie_qty"]) * rq["qty"]
-                priced += 1
-                # najskoršie do / najneskoršie od pre spoločnú platnosť
-                if bp["platnost_od"]:
-                    plat_od = max(plat_od, bp["platnost_od"]) if plat_od else bp["platnost_od"]
-                if bp["platnost_do"]:
-                    plat_do = min(plat_do, bp["platnost_do"]) if plat_do else bp["platnost_do"]
+                if rq and rq["unit"] == bp["balenie_jednotka"]:
+                    cost = (bp["zlavnena_cena"] / bp["balenie_qty"]) * rq["qty"]
+                    spolu += cost
+                    priced += 1
+                    item["cena_v_recepte"] = round(cost, 2)
+                    # najneskoršie od / najskoršie do pre spoločnú platnosť
+                    if bp["platnost_od"]:
+                        plat_od = max(plat_od, bp["platnost_od"]) if plat_od else bp["platnost_od"]
+                    if bp["platnost_do"]:
+                        plat_do = min(plat_do, bp["platnost_do"]) if plat_do else bp["platnost_do"]
+                nakup.append(item)
             if priced == 0:
                 continue
             spolahlive = priced >= max(1, (total + 1) // 2)  # aspoň polovica surovín
@@ -294,6 +319,7 @@ def main():
                 "spolahlive": spolahlive,
                 "platnost_od": plat_od,
                 "platnost_do": plat_do,
+                "nakup": nakup,
             })
         ceny_za_porciu.sort(key=lambda x: (not x["spolahlive"], x["cena_za_porciu"]))
         r["ceny_za_porciu"] = ceny_za_porciu
