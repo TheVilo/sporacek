@@ -174,11 +174,32 @@ def parse_recipes():
     out = []
     for f in sorted(glob.glob("recepty/*.md")):
         t = open(f, encoding="utf-8").read()
-        slug = (re.search(r"\*\*slug:\*\*\s*(\S+)", t) or [None, os.path.basename(f)[:-3]])[1]
-        nazov = (re.search(r"^#\s+(.+)$", t, re.M) or [None, slug])[1].strip()
-        porcie = int((re.search(r"\*\*porcie:\*\*\s*(\d+)", t) or [None, "1"])[1])
-        foto = (re.search(r"\*\*foto_url:\*\*\s*(\S+)", t) or [None, None])[1]
+        # recepty existujú v dvoch formátoch: (a) markdown s **bold** poľami a
+        # ## Tagy, (b) YAML frontmatter (---). Každé pole skúsime oboma spôsobmi.
+        def first(*pats, cast=None, default=None):
+            for p in pats:
+                m = re.search(p, t, re.M)
+                if m:
+                    v = m.group(1).strip().strip('"')
+                    return cast(v) if cast else v
+            return default
+
+        slug = first(r"\*\*slug:\*\*\s*(\S+)", r"^id:\s*(\S+)",
+                     default=os.path.basename(f)[:-3])
+        nazov = first(r"^nazov:\s*(.+)$", r"^#\s+(.+)$", default=slug)
+        porcie = first(r"\*\*porcie:\*\*\s*(\d+)", r"^pocet_porcii:\s*(\d+)",
+                       r"## Suroviny\s*\((?:pre\s*)?(\d+)", cast=int, default=1)
+        foto = first(r"foto_url:\**\s*\"?([^\"\n]+?)\"?\s*$")
+        cas = first(r"\*\*čas prípravy:\*\*\s*([^\n]+)", r"^cas_pripravy:\s*(.+)$")
+
+        # tagy: buď `#tag` (markdown), alebo frontmatter blok tagy:
         tagy = re.findall(r"`#([^`]+)`", t)
+        if not tagy:
+            fmTagy = re.search(r"^tagy:\s*\n((?:\s+\w+:.*\n?)+)", t, re.M)
+            if fmTagy:
+                for grp in re.findall(r"\[(.*?)\]", fmTagy.group(1)):
+                    tagy += [x.strip() for x in grp.split(",") if x.strip()]
+
         secM = re.search(r"## Suroviny[^\n]*\n(.+?)(?=\n---|\n## |$)", t, re.S)
         ingr = []
         if secM:
@@ -190,8 +211,33 @@ def parse_recipes():
                 if len(cells) < 2 or cells[0].lower() in ("surovina", ""):
                     continue
                 ingr.append({"nazov": cells[0], "mnozstvo": cells[1]})
+
+        # postup (kroky)
+        postup = []
+        pM = re.search(r"## Postup\s*\n(.+?)(?=\n---|\n## |$)", t, re.S)
+        if pM:
+            for line in pM.group(1).splitlines():
+                m = re.match(r"^\s*\d+\.\s*(.+)$", line)
+                if m:
+                    postup.append(m.group(1).strip())
+
+        # nutričné hodnoty (na porciu, odhad) — tabuľka alebo frontmatter
+        def num(*pats):
+            for p in pats:
+                m = re.search(p, t, re.M)
+                if m:
+                    return int(m.group(1))
+            return None
+        nutricne = {
+            "kcal": num(r"Energia\s*\|\s*~?(\d+)\s*kcal", r"^\s*kcal:\s*(\d+)"),
+            "bielkoviny_g": num(r"Bielkoviny\s*\|\s*~?(\d+)\s*g", r"^\s*bielkoviny_g:\s*(\d+)"),
+            "sacharidy_g": num(r"Sacharidy\s*\|\s*~?(\d+)\s*g", r"^\s*sacharidy_g:\s*(\d+)"),
+            "tuky_g": num(r"Tuky\s*\|\s*~?(\d+)\s*g", r"^\s*tuky_g:\s*(\d+)"),
+        }
+
         out.append({"slug": slug, "nazov": nazov, "porcie": porcie,
-                    "foto_url": foto, "tagy": tagy, "suroviny": ingr})
+                    "cas_pripravy": cas, "foto_url": foto, "tagy": tagy,
+                    "suroviny": ingr, "postup": postup, "nutricne": nutricne})
     return out
 
 # ======================================================================

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generovane": "2026-07-22T10:08:08Z",
+    "generovane": "2026-07-22T10:14:29Z",
     "zdroj": "scripts/build_databaza.py — generované, needituj ručne",
     "pocet_surovin": 146,
     "pocet_receptov": 109,
@@ -8443,6 +8443,7 @@
       "slug": "azijske-hovadzie-rezance-zelenina",
       "nazov": "Ázijské hovädzie rezance so zeleninou",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/azijske-hovadzie-rezance-zelenina.jpg",
       "tagy": [
         "večera",
@@ -8507,6 +8508,22 @@
           "id": "sezamove-semienka"
         }
       ],
+      "postup": [
+        "Ryžové rezance priprav podľa návodu na obale (zvyčajne namočiť v horúcej vode 5–8 minút), scedi.",
+        "Hovädzie mäso nakrájaj na tenké prúžky, ideálne naprieč vláknami — mäso zostane jemnejšie.",
+        "Papriku, mrkvu a cibuľu nakrájaj na tenké prúžky/plátky.",
+        "V miske zmiešaj sójovú omáčku, med a nastrúhaný zázvor na omáčku.",
+        "Panvicu/wok rozpáľ na vysokom ohni s trochou sezamového oleja. Hovädzie opekaj 1–2 minúty, kým získa farbu, vyber z panvice.",
+        "Na tej istej panvici opeč cibuľu, mrkvu a cesnak 1 minútu, pridaj papriku, opekaj ďalšie 2 minúty, nech zelenina zostane chrumkavá.",
+        "Vráť mäso späť, prilej omáčku, pridaj rezance a rýchlo premiešaj, kým sa všetko prehreje a rezance sa obalia omáčkou.",
+        "Podávaj posypané sezamovými semienkami."
+      ],
+      "nutricne": {
+        "kcal": 480,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 50,
+        "tuky_g": 16
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -8821,6 +8838,7 @@
       "slug": "bravcovy-rezen-obalovany-zemiakova-kasa",
       "nazov": "Bravčový rezeň obalovaný so zemiakovou kašou",
       "porcie": 2,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/bravcovy-rezen-obalovany-zemiakova-kasa.jpg",
       "tagy": [
         "večera",
@@ -8879,6 +8897,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Plátky karé rozklep na rovnomernú hrúbku (cca 0,5 cm), osoľ a okoreň.",
+        "Priprav si tri misky: múku, rozšľahané vajcia, strúhanku. Každý rezeň postupne obaľ v múke, vajci a strúhanke.",
+        "Zemiaky uvar v osolenej vode domäkka, scedi, rozšťuchaj alebo prepasíruj. Vmiešaj teplé mlieko a maslo, dochuť soľou, kým nezískaš hladkú kašu.",
+        "Na panvici rozohrej dostatok oleja, rezne vypráž 3–4 minúty z každej strany do zlatista a chrumkava.",
+        "Vyprážané rezne polož na papierovú utierku, nech odkvapká prebytočný olej.",
+        "Podávaj so zemiakovou kašou a klinom citróna."
+      ],
+      "nutricne": {
+        "kcal": 640,
+        "bielkoviny_g": 40,
+        "sacharidy_g": 50,
+        "tuky_g": 30
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -9353,6 +9385,7 @@
       "slug": "bravčove-kare-marhuľova-glazura",
       "nazov": "Bravčové karé s marhuľovým chutney a ryžou",
       "porcie": 2,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/bravčove-kare-marhuľova-glazura.jpg",
       "tagy": [
         "večera",
@@ -9411,6 +9444,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Ryžu daj variť podľa návodu na obale.",
+        "Na oleji v hrnčeku krátko opraž horčičné semienko (asi 30 sekúnd, kým začne \"poskakovať\"), pridaj nadrobno nakrájanú cibuľu a dus 3 minúty do zmäknutia.",
+        "Pridaj nastrúhaný zázvor, marhule nakrájané nadrobno, cukor a ocot. Dus na miernom ohni 12–15 minút, občas premiešaj, kým marhule úplne zmäknú a chutney zhustne do lesklej, mierne lepkavej konzistencie. Osoľ, okoreň.",
+        "Kým sa chutney dusí, karé osuš, osoľ a okoreň z oboch strán. Na oleji na vysokom ohni opekaj 3–4 minúty z každej strany bez hýbania, kým nechytí zlatohnedú kôrku.",
+        "Karé nechaj 3 minúty odpočinúť, potom nakrájaj na plátky.",
+        "Na tanier daj ryžu, navrch plátky karé a lyžicu teplého marhuľového chutney."
+      ],
+      "nutricne": {
+        "kcal": 520,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 58,
+        "tuky_g": 16
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -9745,6 +9792,7 @@
       "slug": "brokolicova-kremova-polievka",
       "nazov": "Brokolicová krémová polievka",
       "porcie": 4,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/brokolicova-kremova-polievka.jpg",
       "tagy": [
         "polievka",
@@ -9794,6 +9842,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cibuľu a cesnak jemne nasekaj, zemiaky nakrájaj na kocky, brokolicu rozdeľ na ružičky.",
+        "Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.",
+        "Pridaj zemiaky, zalej 900 ml vody, pridaj bujón, var 10 minút.",
+        "Pridaj brokolicu, var ďalších 7–8 minút, kým nie je mäkká.",
+        "Rozmixuj tyčovým mixérom na hladkú konzistenciu.",
+        "Vmiešaj smotanu, osoľ a okoreň podľa chuti."
+      ],
+      "nutricne": {
+        "kcal": 190,
+        "bielkoviny_g": 6,
+        "sacharidy_g": 16,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -10108,6 +10170,7 @@
       "slug": "bruschetta-paradajky-bazalka",
       "nazov": "Bruschetta s paradajkami a bazalkou",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/bruschetta-paradajky-bazalka.jpg",
       "tagy": [
         "predjedlo",
@@ -10152,6 +10215,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Paradajky nakrájaj na drobné kocky, osoľ a nechaj 10 minút odstáť v cedníku, nech pustia prebytočnú šťavu.",
+        "Odkvapkané paradajky zmiešaj s natrhanou bazalkou, 2 PL olivového oleja, balzamikovým octom, soľou a korením.",
+        "Plátky chleba opeč na suchej panvici alebo v hriankovači do zlatista.",
+        "Teplé plátky potri prekrojeným strúčikom cesnaku, pokvapkaj zvyšným olivovým olejom.",
+        "Navrch nalož paradajkovú zmes, podávaj hneď, kým je pečivo chrumkavé."
+      ],
+      "nutricne": {
+        "kcal": 260,
+        "bielkoviny_g": 6,
+        "sacharidy_g": 30,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -10323,6 +10399,7 @@
       "slug": "bryndzove-halusky-slanina",
       "nazov": "Bryndzové halušky so slaninou",
       "porcie": 2,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/bryndzove-halusky-slanina.jpg",
       "tagy": [
         "obed",
@@ -10361,6 +10438,20 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Zemiaky ošúp a najemno nastrúhaj (na najjemnejšom strúhadle), osoľ.",
+        "Postupne prisýpaj múku a vmiešaj vajce, vypracuj hustejšie cesto — správnu konzistenciu spoznáš podľa toho, že v ňom ostane stáť varecha.",
+        "Slaninu nakrájaj na kocky a opeč na suchej panvici do chrumkava.",
+        "Cesto pretláčaj cez haluškové sitko (alebo dosku a nôž) priamo do vriacej osolenej vody. Keď halušky vyplávajú na povrch, sú hotové (cca 2–3 minúty), vyber ich dierovanou lyžicou.",
+        "Bryndzu rozmiešaj s troškou horúcej vody z varenia halušiek, nech je krémovejšia.",
+        "Horúce halušky premiešaj s bryndzou, navrch pridaj opečenú slaninu aj s výpekom."
+      ],
+      "nutricne": {
+        "kcal": 650,
+        "bielkoviny_g": 22,
+        "sacharidy_g": 70,
+        "tuky_g": 30
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -10725,6 +10816,7 @@
       "slug": "caprese-spizy-paradajky-mozzarella-bazalka",
       "nazov": "Caprese špízy s balzamikovou glazúrou",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/caprese-spizy-paradajky-mozzarella-bazalka.jpg",
       "tagy": [
         "predjedlo",
@@ -10764,6 +10856,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Balzamikový ocot priveď v malom hrnčeku do varu a duš na miernom ohni 5–7 minút, kým zredukuje na hustejší sirup (glazúru). Nechaj vychladnúť, zhustne ešte viac.",
+        "Cherry paradajky umy, mozzarellové guličky scedi.",
+        "Na malé špajle striedavo napichaj paradajku, lístok bazalky prekrojený na polovicu a mozzarellovú guličku.",
+        "Naaranžuj na tanier, pokvapkaj olivovým olejom a balzamikovou glazúrou.",
+        "Jemne osoľ a okoreň, podávaj hneď."
+      ],
+      "nutricne": {
+        "kcal": 180,
+        "bielkoviny_g": 9,
+        "sacharidy_g": 8,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -10967,6 +11072,7 @@
       "slug": "cesnakove-krevety-cuketove-rezance",
       "nazov": "Cesnakové krevety s cuketovými rezancami",
       "porcie": 2,
+      "cas_pripravy": "20 minút",
       "foto_url": "fotky/cesnakove-krevety-cuketove-rezance.jpg",
       "tagy": [
         "večera",
@@ -11023,6 +11129,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cuketu nakrájaj na rezance špirálovačom alebo julienne strúhadlom (prípadne tenko na pásiky nožom).",
+        "Krevety osuš papierovou utierkou (kľúčové pre pekné opečenie, nie dusenie), osoľ a okoreň.",
+        "Na panvici rozpáľ olivový olej na vysokom ohni. Krevety opeč 2–3 minúty z každej strany do ružova, vyber z panvice.",
+        "Na tej istej panvici rozpusti maslo, pridaj prelisovaný cesnak a čili vločky, krátko opraž (30 sekúnd), nech nezhorí.",
+        "Pridaj cuketové rezance, opekaj 3–4 minúty za miešania, kým mierne zmäknú, ale zostanú al dente.",
+        "Vráť krevety späť na panvicu, prilej citrónovú šťavu, premiešaj a hneď podávaj posypané petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 290,
+        "bielkoviny_g": 30,
+        "sacharidy_g": 10,
+        "tuky_g": 15
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -11306,6 +11426,7 @@
       "slug": "cesnakove-pecene-zemiaky-rozmarin",
       "nazov": "Cesnakové pečené zemiaky s rozmarínom",
       "porcie": 2,
+      "cas_pripravy": "45 minút",
       "foto_url": "fotky/cesnakove-pecene-zemiaky-rozmarin.jpg",
       "tagy": [
         "príloha",
@@ -11339,6 +11460,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 210 °C. Zemiaky umy (netreba šúpať), nakrájaj na klinky rovnakej veľkosti.",
+        "Premiešaj s olivovým olejom, soľou a korením, rozlož na plech v jednej vrstve.",
+        "Pridaj neošúpané strúčiky cesnaku a vetvičky rozmarínu medzi zemiaky.",
+        "Peč 35–40 minút, v polovici obráť, kým zemiaky nie sú zlatisté a chrumkavé na okrajoch.",
+        "Podávaj rovno z plechu — mäkký pečený cesnak sa dá vytlačiť zo šupky priamo k zemiakom."
+      ],
+      "nutricne": {
+        "kcal": 280,
+        "bielkoviny_g": 5,
+        "sacharidy_g": 40,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -11501,6 +11635,7 @@
       "slug": "cesnakove-zemlicky",
       "nazov": "Cesnakové žemličky",
       "porcie": 6,
+      "cas_pripravy": "1 hodina 40 minút",
       "foto_url": "fotky/cesnakove-zemlicky.jpg",
       "tagy": [
         "pečivo",
@@ -11553,6 +11688,22 @@
           "id": "cukor-krystalovy"
         }
       ],
+      "postup": [
+        "Droždie rozmiešaj vo vlažnom mlieku s cukrom, nechaj 10 minút postáť, kým sa nevytvorí pena.",
+        "Múku, soľ, polovicu rozpusteného masla a kvások spracuj na hladké cesto (rukami 8–10 minút alebo v mixéri s hákom 5 minút).",
+        "Cesto prikry, nechaj kysnúť na teplom mieste 1 hodinu, kým nezdvojnásobí objem.",
+        "Cesto rozdeľ na 12 rovnakých kúskov, vytvaruj guľôčky, ulož na plech s odstupom.",
+        "Prikry, nechaj ešte 20 minút kysnúť. Rúru predhrej na 190 °C.",
+        "Zvyšné maslo prelisuj s cesnakom a nasekanou petržlenovou vňaťou.",
+        "Žemličky potri rozšľahaným vajcom, peč 15–18 minút do zlatista.",
+        "Horúce žemličky potri cesnakovým maslom."
+      ],
+      "nutricne": {
+        "kcal": 280,
+        "bielkoviny_g": 7,
+        "sacharidy_g": 42,
+        "tuky_g": 9
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -11946,6 +12097,7 @@
       "slug": "cestoviny-kuracie-spenat-smotana",
       "nazov": "Krémové toskánske cestoviny s kuracím, sušenými paradajkami a špenátom",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/cestoviny-kuracie-spenat-smotana.jpg",
       "tagy": [
         "večera",
@@ -12011,6 +12163,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cestoviny uvar podľa návodu na obale v osolenej vode. Pred scedením si odlož šálku vody z varenia.",
+        "Kuracie prsia nakrájaj na prúžky, osuš, osoľ a okoreň. Na oleji na vysokom ohni opeč 4–5 minút (nepreplňuj panvicu, aby sa kura opieklo a nedusilo), potom vyber z panvice.",
+        "Na tej istej panvici zniž oheň, orestuj nadrobno nakrájanú cibuľu (2 minúty), prelisovaný cesnak a sušené paradajky nakrájané na prúžky (1 minúta), kým sa uvoľní vôňa.",
+        "Zalej smotanou, pridaj čili vločky. Zníž na mierny oheň — smotana nesmie prudko vrieť, inak sa zrazí.",
+        "Vmiešaj špenát, nech zvädne (1–2 minúty). Odstav z ohňa, vmiešaj čerstvo nastrúhaný parmezán.",
+        "Vráť kura do panvice, pridaj scedené cestoviny. Ak je omáčka hustá, prilej trochu odloženej vody z varenia, kým sa hodvábne nespojí s cestovinami.",
+        "Podávaj hneď, posyp ďalším parmezánom."
+      ],
+      "nutricne": {
+        "kcal": 600,
+        "bielkoviny_g": 42,
+        "sacharidy_g": 56,
+        "tuky_g": 24
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
@@ -12405,6 +12572,7 @@
       "slug": "chia-puding-maliny-mandlove-mlieko",
       "nazov": "Chia puding s malinami a mandľovým mliekom",
       "porcie": 2,
+      "cas_pripravy": "5 minút (+ cez noc chladenie)",
       "foto_url": "fotky/chia-puding-maliny-mandlove-mlieko.jpg",
       "tagy": [
         "raňajky",
@@ -12444,6 +12612,18 @@
           "id": "grecky-jogurt"
         }
       ],
+      "postup": [
+        "V miske alebo pohári zmiešaj chia semienka, mandľové mlieko, med a vanilkový extrakt. Dôkladne prešľahaj metličkou, nech sa semienka nezhlukujú.",
+        "Nechaj 10 minút postáť, znova premiešaj (rozbiješ zhluky, ktoré sa medzitým vytvorili).",
+        "Prikry a daj do chladničky aspoň na 4 hodiny, ideálne cez noc — semienka napučia a zmes zhustne na krémový puding.",
+        "Pred podávaním rozdeľ do pohárov/miskičiek, prevrstvi gréckym jogurtom (ak používaš) a malinami navrchu."
+      ],
+      "nutricne": {
+        "kcal": 260,
+        "bielkoviny_g": 9,
+        "sacharidy_g": 28,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -12566,6 +12746,7 @@
       "slug": "cicerova-polievka-zelenina",
       "nazov": "Dymová cícerová polievka so zeleninou a citrónom",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/cicerova-polievka-zelenina.jpg",
       "tagy": [
         "polievka",
@@ -12645,6 +12826,20 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Cibuľu, mrkvu a zeler nakrájaj nadrobno a orestuj na oleji 5 minút, kým zmäknú.",
+        "Pridaj prelisovaný cesnak, rascu a paradajkový pretlak, opraž 1 minútu, kým pretlak stmavne a zvonia (to dodá polievke hĺbku). Vmiešaj údenú papriku, krátko opraž.",
+        "Vsyp scedený cícer, pridaj konzervované paradajky, bujón a 500 ml vody. Premiešaj.",
+        "Priveď do varu, zníž teplotu a dus 15 minút, kým zelenina nezmäkne.",
+        "Odstav z ohňa, vytlač šťavu z polovice citróna. Dochuť soľou. Ak chceš hustejšiu textúru, časť polievky rozmixuj tyčovým mixérom.",
+        "Podávaj posypanú čerstvou petržlenovou vňaťou, s krajcom chleba."
+      ],
+      "nutricne": {
+        "kcal": 260,
+        "bielkoviny_g": 11,
+        "sacharidy_g": 34,
+        "tuky_g": 8
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -12999,6 +13194,7 @@
       "slug": "ciserove-kari-karfiol-ryza",
       "nazov": "Cícerové karí s karfiolom a ryžou",
       "porcie": 4,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/ciserove-kari-karfiol-ryza.jpg",
       "tagy": [
         "večera",
@@ -13080,6 +13276,21 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Ryžu uvar podľa návodu na obale.",
+        "Cibuľu, cesnak a zázvor jemne nasekaj. Karfiol rozdeľ na menšie ružičky.",
+        "Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, zázvor, kari korenie a kurkumu, krátko opraž.",
+        "Pridaj karfiol, konzervované paradajky a kokosové mlieko, premiešaj.",
+        "Dus na miernom ohni 15 minút, kým karfiol nezmäkne.",
+        "Pridaj cícer, prehrej ďalších 5 minút, osoľ podľa chuti.",
+        "Podávaj s ryžou, posyp čerstvým koriandrom a pokvapkaj citrónovou šťavou."
+      ],
+      "nutricne": {
+        "kcal": 480,
+        "bielkoviny_g": 15,
+        "sacharidy_g": 62,
+        "tuky_g": 18
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -13464,6 +13675,7 @@
       "slug": "citronova-limonada-mata",
       "nazov": "Domáca citrónová limonáda s mätou",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/citronova-limonada-mata.jpg",
       "tagy": [
         "nápoj",
@@ -13498,6 +13710,19 @@
           "id": "muka"
         }
       ],
+      "postup": [
+        "Citróny vytlač, šťavu precedi (odstráni sa dužina a jadierka).",
+        "Citrónovú šťavu zmiešaj s medom, kým sa med rozpustí (funguje lepšie vo vlažnej vode).",
+        "Zmes prelej do džbánu, dolej vodou.",
+        "Pridaj plátky citróna a natrhané lístky mäty.",
+        "Nechaj vychladiť v chladničke aspoň 30 minút, podávaj s ľadom."
+      ],
+      "nutricne": {
+        "kcal": 90,
+        "bielkoviny_g": 0,
+        "sacharidy_g": 24,
+        "tuky_g": 0
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -13587,6 +13812,7 @@
       "slug": "cokoladovy-avokadovy-puding",
       "nazov": "Čokoládový avokádový puding",
       "porcie": 2,
+      "cas_pripravy": "10 minút (+ 30 min chladenie)",
       "foto_url": "fotky/cokoladovy-avokadovy-puding.jpg",
       "tagy": [
         "dezert",
@@ -13625,6 +13851,18 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Avokádo rozpolti, dužinu vyber a daj do mixéra alebo vysokej nádoby na tyčový mixér.",
+        "Pridaj kakao, med, mlieko, vanilkový extrakt a štipku soli. Mixuj asi 20 sekúnd.",
+        "Zoškrab steny nádoby a mixuj znova — opakuj, kým je puding úplne hladký, bez hrudiek avokáda. Ak je príliš hustý, pridaj ešte lyžicu mlieka.",
+        "Rozlož do misiek a daj do chladničky aspoň na 30 minút stuhnúť. Podávaj studené."
+      ],
+      "nutricne": {
+        "kcal": 330,
+        "bielkoviny_g": 4,
+        "sacharidy_g": 30,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -13818,6 +14056,7 @@
       "slug": "cucoriedkove-proteinove-muffiny",
       "nazov": "Čučoriedkové proteínové muffiny",
       "porcie": 4,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/cucoriedkove-proteinove-muffiny.jpg",
       "tagy": [
         "dezert",
@@ -13876,6 +14115,21 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 180 °C, formu na muffiny vystel papierovými košíčkami.",
+        "V miske zmiešaj vajcia, grécky jogurt, med, rozpustené maslo a vanilkový extrakt do hladka.",
+        "Pridaj ovsenú múku, prášok do pečiva, škoricu a soľ. Zľahka premiešaj lyžicou len kým sa cesto spojí — prehnané miešanie by muffiny spravilo tuhé.",
+        "Opatrne vmiešaj čučoriedky (ak sú mrazené, nerozmrazuj ich, hneď zamiešaj do cesta).",
+        "Rozlož cesto do košíčkov asi do ¾ výšky.",
+        "Peč 18–20 minút, kým špáradlo vypichnuté do stredu vyjde suché.",
+        "Nechaj vychladnúť aspoň 10 minút pred podávaním."
+      ],
+      "nutricne": {
+        "kcal": 220,
+        "bielkoviny_g": 9,
+        "sacharidy_g": 30,
+        "tuky_g": 7
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco supermarket",
@@ -14220,6 +14474,7 @@
       "slug": "cucoriedkovy-cheesecake-bez-pecenia",
       "nazov": "Čučoriedkový cheesecake bez pečenia",
       "porcie": 8,
+      "cas_pripravy": "30 minút + chladenie cez noc",
       "foto_url": "fotky/cucoriedkovy-cheesecake-bez-pecenia.jpg",
       "tagy": [
         "dezert",
@@ -14267,6 +14522,20 @@
           "id": "citron"
         }
       ],
+      "postup": [
+        "Sušienky rozdrv na jemné omrvinky, zmiešaj s rozpusteným maslom.",
+        "Zmes vtlač na dno formy s odnímateľným okrajom, daj chladiť do chladničky.",
+        "Mascarpone vyšľahaj s cukrom do hladka, postupne vmiešaj smotanu a šľahaj do zhustnutia.",
+        "Krém rozotri na vychladnutý korpus, uhlaď a daj chladiť do chladničky aspoň na 4 hodiny (najlepšie cez noc).",
+        "Polovicu čučoriedok povar s medom a citrónovou šťavou 5 minút, kým nezhustnú, nechaj vychladnúť.",
+        "Cheesecake pred podávaním ozdob čučoriedkovou omáčkou a zvyšnými čerstvými čučoriedkami."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 5,
+        "sacharidy_g": 28,
+        "tuky_g": 27
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -14711,6 +14980,7 @@
       "slug": "cuketove-placky-jogurtovo-cesnakova-omacka",
       "nazov": "Cuketové placky s jogurtovo-cesnakovou omáčkou",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/cuketove-placky-jogurtovo-cesnakova-omacka.jpg",
       "tagy": [
         "obed",
@@ -14759,6 +15029,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cuketu nastrúhaj nahrubo, posoľ a nechaj 10 minút postáť, nech pustí vodu. Vodu potom poriadne vytlač rukami alebo cez utierku (kľúčové, inak sú placky rozmočené).",
+        "K cuketa pridaj vajcia, múku, rozdrobenú fetu a prelisovaný strúčik cesnaku, premiešaj na hustejšie cesto.",
+        "Na panvici rozohrej olej. Naberačkou tvaruj placky, opekaj 3–4 minúty z každej strany do zlatista.",
+        "Zvyšný cesnak prelisuj do jogurtu, osoľ, premiešaj na omáčku.",
+        "Podávaj teplé placky s jogurtovo-cesnakovou omáčkou."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 16,
+        "sacharidy_g": 28,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -15053,6 +15336,7 @@
       "slug": "datle-plnene-arasidovym-maslom",
       "nazov": "Datle plnené arašidovým maslom",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/datle-plnene-arasidovym-maslom.jpg",
       "tagy": [
         "desiata",
@@ -15078,12 +15362,25 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Datle pozdĺžne prerež, vyber kôstku.",
+        "Do každej datle vlož lyžičku arašidového masla.",
+        "Jemne posyp štipkou morskej soli (zvýrazní sladkosť datlí).",
+        "Podávaj hneď, alebo vychladené z chladničky."
+      ],
+      "nutricne": {
+        "kcal": 260,
+        "bielkoviny_g": 7,
+        "sacharidy_g": 38,
+        "tuky_g": 10
+      },
       "ceny_za_porciu": []
     },
     {
       "slug": "domaci-celozrnny-chlieb",
       "nazov": "Domáci celozrnný chlieb",
       "porcie": 8,
+      "cas_pripravy": "3 hodiny (z toho väčšinu času kysnutie bez zásahu)",
       "foto_url": "fotky/domaci-celozrnny-chlieb.jpg",
       "tagy": [
         "pečivo",
@@ -15126,6 +15423,21 @@
           "id": "olivovy-olej"
         }
       ],
+      "postup": [
+        "Droždie rozmiešaj vo vlažnej vode s medom, nechaj 10 minút postáť, kým sa na povrchu nevytvorí pena.",
+        "V mise zmiešaj celozrnnú múku, múku a soľ. Pridaj kvások a olivový olej, vypracuj hladké cesto (rukami cca 8–10 minút, alebo v mixéri s hákom 5 minút).",
+        "Cesto daj do vymastenej misy, prikry utierkou, nechaj kysnúť na teplom mieste 1–1,5 hodiny, kým nezdvojnásobí objem.",
+        "Cesto vyklop, prevaľkaj (vytlač vzduch), vytvaruj do bochníka, ulož na plech s papierom na pečenie. Prikry a nechaj ešte 30 minút kysnúť.",
+        "Rúru predhrej na 220 °C. Vrch bochníka narež ostrým nožom.",
+        "Peč 30–35 minút, kým chlieb nie je zlatohnedý a pri poklepaní na spodok znie dutý zvuk.",
+        "Nechaj úplne vychladnúť na mriežke pred krájaním."
+      ],
+      "nutricne": {
+        "kcal": 200,
+        "bielkoviny_g": 6,
+        "sacharidy_g": 38,
+        "tuky_g": 2
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -15339,6 +15651,7 @@
       "slug": "dusena-bravcova-krkovicka-hubova-omacka",
       "nazov": "Dusená bravčová krkovička s hubovou omáčkou",
       "porcie": 4,
+      "cas_pripravy": "1 hodina 10 minút",
       "foto_url": "fotky/dusena-bravcova-krkovicka-hubova-omacka.jpg",
       "tagy": [
         "večera",
@@ -15397,6 +15710,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Krkovičku nakrájaj na hrubšie plátky, osoľ a okoreň.",
+        "Na olivovom oleji opeč mäso zo všetkých strán dozlata, vyber z panvice.",
+        "Na tom istom oleji opraž cibuľu do sklovita, pridaj cesnak a nakrájané šampiňóny, opekaj 5 minút.",
+        "Posyp múkou, krátko opraž, zalej 300 ml vody s rozdrveným bujónom.",
+        "Vráť mäso späť do omáčky, prikry a dusaj na miernom ohni 45–50 minút, kým nie je krkovička mäkká.",
+        "Na záver vmiešaj smotanu, prehrej, dochuť soľou a korením.",
+        "Podávaj posypané petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 490,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 8,
+        "tuky_g": 36
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -15750,6 +16078,7 @@
       "slug": "dusena-ryza-bylinky-citron",
       "nazov": "Dusená ryža s bylinkami a citrónom",
       "porcie": 2,
+      "cas_pripravy": "25 minút",
       "foto_url": "fotky/dusena-ryza-bylinky-citron.jpg",
       "tagy": [
         "príloha",
@@ -15789,6 +16118,19 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Ryžu prepláchni pod studenou vodou, kým voda nie je čistá (zbaví sa prebytočného škrobu).",
+        "Uvar podľa návodu na obale v osolenej vode.",
+        "Do horúcej uvarenej ryže vmiešaj maslo, nastrúhanú citrónovú kôru a trochu citrónovej šťavy.",
+        "Pridaj nasekanú petržlenovú vňať a koriander, jemne premiešaj vidličkou (nech sa zrniečka nerozdrvia).",
+        "Podávaj hneď, s klinom citróna."
+      ],
+      "nutricne": {
+        "kcal": 290,
+        "bielkoviny_g": 5,
+        "sacharidy_g": 52,
+        "tuky_g": 7
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -16071,10 +16413,16 @@
     },
     {
       "slug": "fasirky-jogurtovo-cesnakova-omacka",
-      "nazov": "fasirky-jogurtovo-cesnakova-omacka",
-      "porcie": 1,
-      "foto_url": null,
-      "tagy": [],
+      "nazov": "Fašírky s jogurtovo-cesnakovou omáčkou a uhorkovým šalátom",
+      "porcie": 2,
+      "cas_pripravy": null,
+      "foto_url": "fotky/fasirky-jogurtovo-cesnakova-omacka.jpg",
+      "tagy": [
+        "obed",
+        "bravčové",
+        "sýte",
+        "vysoký-proteín"
+      ],
       "suroviny": [
         {
           "nazov": "bravčové mleté mäso",
@@ -16127,10 +16475,23 @@
           "id": "olivovy-olej"
         }
       ],
+      "postup": [
+        "Cibuľu najemno nasekaj, primiešaj k mletému mäsu spolu s vajcom, strúhankou, soľou a korením.",
+        "Z hmoty vytvaruj menšie fašírky, opeč na oleji z oboch strán dozlata a dopeč pod pokrievkou.",
+        "Uhorku nastrúhaj alebo nakrájaj na kocky, zľahka posoľ.",
+        "Jogurt zmiešaj s prelisovaným cesnakom a troškou soli na omáčku.",
+        "Podávaj fašírky s jogurtovo-cesnakovou omáčkou a uhorkovým šalátom."
+      ],
+      "nutricne": {
+        "kcal": 450,
+        "bielkoviny_g": 30,
+        "sacharidy_g": 20,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
-          "cena_za_porciu": 0.49,
+          "cena_za_porciu": 0.24,
           "napar_surovin": 1,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16161,7 +16522,7 @@
         },
         {
           "obchod": "Tesco hypermarket",
-          "cena_za_porciu": 0.6,
+          "cena_za_porciu": 0.3,
           "napar_surovin": 2,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16212,7 +16573,7 @@
         },
         {
           "obchod": "Tesco supermarket",
-          "cena_za_porciu": 0.6,
+          "cena_za_porciu": 0.3,
           "napar_surovin": 2,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16243,7 +16604,7 @@
         },
         {
           "obchod": "Kaufland",
-          "cena_za_porciu": 15.55,
+          "cena_za_porciu": 7.77,
           "napar_surovin": 2,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16294,7 +16655,7 @@
         },
         {
           "obchod": "BILLA",
-          "cena_za_porciu": 16.23,
+          "cena_za_porciu": 8.11,
           "napar_surovin": 2,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16335,7 +16696,7 @@
         },
         {
           "obchod": "Lidl",
-          "cena_za_porciu": 20.64,
+          "cena_za_porciu": 10.32,
           "napar_surovin": 3,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16396,7 +16757,7 @@
         },
         {
           "obchod": "COOP",
-          "cena_za_porciu": 24.07,
+          "cena_za_porciu": 12.03,
           "napar_surovin": 4,
           "spolu_surovin": 10,
           "spolahlive": false,
@@ -16461,6 +16822,7 @@
       "slug": "fazulova-polievka-klobasa",
       "nazov": "Fazuľová polievka s klobásou",
       "porcie": 4,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/fazulova-polievka-klobasa.jpg",
       "tagy": [
         "polievka",
@@ -16535,6 +16897,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Klobásu nakrájaj na kolieska, mrkvu, zeler, cibuľu a zemiaky na kocky.",
+        "Na olivovom oleji opekaj klobásu 3–4 minúty, kým nepustí farbu, vyber a odlož.",
+        "Na tom istom oleji opraž cibuľu, mrkvu a zeler 5 minút.",
+        "Pridaj cesnak a sladkú papriku, krátko opraž.",
+        "Zalej 1,2 l vody, pridaj bujón, bobkový list a zemiaky, var 15 minút.",
+        "Pridaj fazuľu a opečenú klobásu, var ďalších 10 minút, kým nie sú zemiaky mäkké.",
+        "Osoľ, okoreň, podávaj posypanú petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 34,
+        "tuky_g": 19
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -16939,6 +17316,7 @@
       "slug": "francuzsky-toast-skorica-med",
       "nazov": "Francúzsky toast so škoricou a medom",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/francuzsky-toast-skorica-med.jpg",
       "tagy": [
         "raňajky",
@@ -16982,6 +17360,18 @@
           "id": "vanilkovy-extrakt"
         }
       ],
+      "postup": [
+        "V hlbokom tanieri rozšľahaj vajcia s mliekom, škoricou a vanilkovým extraktom.",
+        "Plátky chleba máčaj v zmesi z oboch strán, nech nasajú.",
+        "Na panvici rozpusti maslo, opekaj plátky 2–3 minúty z každej strany do zlatista.",
+        "Podávaj položené na tanieri, pokvapkané medom a poprášené škoricou."
+      ],
+      "nutricne": {
+        "kcal": 430,
+        "bielkoviny_g": 17,
+        "sacharidy_g": 48,
+        "tuky_g": 18
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -17305,6 +17695,7 @@
       "slug": "gazpacho-studena-paradajkova-polievka",
       "nazov": "Gazpacho — studená paradajková polievka",
       "porcie": 2,
+      "cas_pripravy": "20 minút (+ 2 hodiny chladenia)",
       "foto_url": "fotky/gazpacho-studena-paradajkova-polievka.jpg",
       "tagy": [
         "obed",
@@ -17360,6 +17751,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Paradajky spar v horúcej vode 30 sekúnd, ošúp a nakrájaj na kúsky.",
+        "Polovicu uhorky a papriky odlož bokom na neskoršiu ozdobu, zvyšok nakrájaj na kúsky.",
+        "Do mixéra daj paradajky, nakrájanú uhorku, papriku, cesnak, cibuľu, olivový olej, ocot a strúhanku (na zjemnenie a zahustenie).",
+        "Rozmixuj dohladka, dochuť soľou a korením.",
+        "Prikry a daj chladiť do chladničky aspoň 2 hodiny.",
+        "Podávaj vychladené, s odloženou uhorkou a paprikou nakrájanou na drobné kocky navrchu, pokvapkané olivovým olejom."
+      ],
+      "nutricne": {
+        "kcal": 180,
+        "bielkoviny_g": 3,
+        "sacharidy_g": 15,
+        "tuky_g": 13
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -17663,6 +18068,7 @@
       "slug": "grecky-jogurt-broskyne-granola",
       "nazov": "Grécky jogurt s broskyňami a medovo-orechovou granolou",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/grecky-jogurt-broskyne-granola.jpg",
       "tagy": [
         "raňajky",
@@ -17708,6 +18114,19 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Na suchej panvici opraž ovsené vločky a nahrubo nasekané vlašské orechy 3–4 minúty na strednom ohni, kým zvonia a mierne zhnednú.",
+        "Pridaj 1 PL medu, štipku soli a škorice, miešaj 1–2 minúty, kým sa med rozpustí a granola sa mierne skaramelizuje. Vyklop na tanier a nechaj vychladnúť — pri chladnutí skrehne a bude chrumkavá.",
+        "Broskyne nakrájaj na kocky.",
+        "Do pohárov alebo misiek naskladaj vrstvy: polovicu gréckeho jogurtu, polovicu broskýň, posyp granolou. Zopakuj druhú vrstvu.",
+        "Navrch pokvapkaj zvyšným medom. Podávaj hneď, kým je granola chrumkavá."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 40,
+        "tuky_g": 17
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -17961,6 +18380,7 @@
       "slug": "grilovana-zelenina-haloumi",
       "nazov": "Grilovaná zelenina s haloumi syrom",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/grilovana-zelenina-haloumi.jpg",
       "tagy": [
         "večera",
@@ -18009,6 +18429,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Haloumi nakrájaj na hrubšie plátky (cca 1 cm). Cuketu na pozdĺžne plátky, papriku na prúžky, cibuľu na hrubšie krúžky.",
+        "Zeleninu premiešaj s polovicou olivového oleja, soľou a korením.",
+        "Grilovaciu panvicu alebo gril rozohrej na vysokú teplotu. Zeleninu grilluj 3–4 minúty z každej strany, kým má pekné grilovacie pásiky a je mäkká. Odlož nabok.",
+        "Plátky haloumi potri zvyšným olejom, grilluj 1–2 minúty z každej strany, kým má zlatistú kôrku (haloumi sa pri vyššej teplote nerozteká, preto sa dobre grilluje).",
+        "Grilovanú zeleninu a haloumi rozlož na tanier, pokvapkaj citrónovou šťavou, posyp natrhanou bazalkou."
+      ],
+      "nutricne": {
+        "kcal": 420,
+        "bielkoviny_g": 22,
+        "sacharidy_g": 14,
+        "tuky_g": 30
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -18190,6 +18623,7 @@
       "slug": "grilovane-bravcove-rebierka-kukurica",
       "nazov": "Grilované bravčové rebierka s kukuricou",
       "porcie": 2,
+      "cas_pripravy": "1 hodina 30 minút (z toho väčšinu času pečenie bez zásahu)",
       "foto_url": "fotky/grilovane-bravcove-rebierka-kukurica.jpg",
       "tagy": [
         "večera",
@@ -18243,6 +18677,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rebierka osoľ, okoreň a zabaľ do alobalu. Peč v rúre na 160 °C asi 1 hodinu, kým mäso zmäkne.",
+        "Medzitým priprav glazúru: paradajkový pretlak, med, ocot, údenú papriku a prelisovaný cesnak zmiešaj dohladka.",
+        "Rebierka vybaľ z alobalu, potri glazúrou zo všetkých strán.",
+        "Grilovaciu panvicu alebo gril rozohrej na strednú-vysokú teplotu. Rebierka grilluj 8–10 minút, priebežne obracaj a potieraj zvyšnou glazúrou, kým nemajú lesklý karamelizovaný povrch.",
+        "Kukuricu uvar 8–10 minút v osolenej vode, potom krátko grilluj spolu s rebierkami, kým nezíska pekné pásiky. Potri maslom.",
+        "Podávaj rebierka s grilovanou kukuricou."
+      ],
+      "nutricne": {
+        "kcal": 680,
+        "bielkoviny_g": 42,
+        "sacharidy_g": 30,
+        "tuky_g": 42
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -18516,6 +18964,7 @@
       "slug": "grilovane-broskyne-med-mata-jogurt",
       "nazov": "Grilované broskyne s medom, mätou a gréckym jogurtom",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/grilovane-broskyne-med-mata-jogurt.jpg",
       "tagy": [
         "dezert",
@@ -18550,6 +18999,19 @@
           "id": "vlasske-orechy"
         }
       ],
+      "postup": [
+        "Broskyne prekroj na polovice, vyber kôstku.",
+        "Grilovaciu panvicu rozohrej na strednú-vysokú teplotu (bez oleja). Broskyne grilluj rezom nadol 3–4 minúty, kým nemajú pekné karamelizované pásiky.",
+        "Grécky jogurt rozdeľ na dna tanierov.",
+        "Navrch polož teplé grilované broskyne.",
+        "Pokvapkaj medom, posyp nasekanými vlašskými orechmi a natrhanými lístkami mäty."
+      ],
+      "nutricne": {
+        "kcal": 280,
+        "bielkoviny_g": 10,
+        "sacharidy_g": 32,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -18732,6 +19194,7 @@
       "slug": "grilovane-kuracie-spizy-paprika-cuketa",
       "nazov": "Grilované kuracie špízy s paprikou a cuketou",
       "porcie": 2,
+      "cas_pripravy": "35 minút (+ 30 min marinovania)",
       "foto_url": "fotky/grilovane-kuracie-spizy-paprika-cuketa.jpg",
       "tagy": [
         "večera",
@@ -18791,6 +19254,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kuracie prsia nakrájaj na väčšie kocky. V miske zmiešaj olivový olej, citrónovú šťavu, prelisovaný cesnak, oregano, údenú papriku, soľ a korenie. Kura v marináde nechaj aspoň 30 minút (ideálne dlhšie v chladničke).",
+        "Papriku, cuketu a cibuľu nakrájaj na kúsky podobnej veľkosti ako kura.",
+        "Striedavo napichaj kura a zeleninu na špajle (ak používaš drevené, namoč ich vopred do vody, nech nezhoria).",
+        "Grilovaciu panvicu alebo gril rozohrej na vysokú teplotu.",
+        "Špízy grilluj 10–12 minút, priebežne obracaj, kým kura nie je prepečené a zelenina má pekné grilovacie pásiky.",
+        "Podávaj s klinom citróna."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 40,
+        "sacharidy_g": 12,
+        "tuky_g": 18
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -19114,6 +19591,7 @@
       "slug": "grilovane-kuracie-stehna-kalerabovy-salat",
       "nazov": "Grilované kuracie stehná s kalerábovým šalátom",
       "porcie": 4,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/grilovane-kuracie-stehna-kalerabovy-salat.jpg",
       "tagy": [
         "večera",
@@ -19163,6 +19641,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kuracie stehná potri olivovým olejom, osoľ a okoreň, nechaj 10 minút odležať.",
+        "Kaleráb a jablko ošúp a nastrúhaj nahrubo, pokvapkaj citrónovou šťavou, aby nezhnedli.",
+        "Kalerábovo-jablkovú zmes premiešaj s jogurtom, osoľ podľa chuti.",
+        "Kuracie stehná grilluj na rozohriatej panvici alebo grile 6–7 minút z každej strany, kým nie sú prepečené a kožka chrumkavá.",
+        "Podávaj stehná s kalerábovým šalátom, posyp čerstvou petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 420,
+        "bielkoviny_g": 34,
+        "sacharidy_g": 12,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -19517,6 +20008,7 @@
       "slug": "grilovane-morcacie-prsia-quinoa-zelenina",
       "nazov": "Grilované morčacie prsia s quinoa a grilovanou zeleninou",
       "porcie": 2,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/grilovane-morcacie-prsia-quinoa-zelenina.jpg",
       "tagy": [
         "večera",
@@ -19576,6 +20068,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Quinou dôkladne prepláchni pod studenou vodou (odstráni horkastú chuť), uvar podľa návodu (pomer cca 1:2 s vodou, 15 minút, potom nechaj 5 minút postáť pod pokrievkou).",
+        "Morčacie prsia rozkroj vodorovne na tenšie plátky, potri zmesou oleja, prelisovaného cesnaku, oregana, soli a korenia. Nechaj 10 minút marinovať.",
+        "Cuketu a papriku nakrájaj na hrubšie plátky/prúžky.",
+        "Na rozohriatej grilovacej panvici opekaj morčacie prsia 4–5 minút z každej strany, kým nie sú prepečené a majú pekné grilovacie pásiky. Nechaj 5 minút odpočívať, potom nakrájaj na plátky.",
+        "Na tej istej panvici opeč cuketu, papriku a cherry paradajky 5–6 minút, kým zmäknú a mierne zoškvarnú.",
+        "Servíruj morčacie prsia na quinoi, obložené grilovanou zeleninou, pokvapkané citrónovou šťavou."
+      ],
+      "nutricne": {
+        "kcal": 460,
+        "bielkoviny_g": 42,
+        "sacharidy_g": 40,
+        "tuky_g": 14
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -19919,6 +20425,7 @@
       "slug": "horuca-cokolada",
       "nazov": "Horúca čokoláda",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/horuca-cokolada.jpg",
       "tagy": [
         "nápoj",
@@ -19947,6 +20454,19 @@
           "id": "skorica"
         }
       ],
+      "postup": [
+        "Mlieko zohrej v hrnci na miernom ohni, nenechaj zovrieť.",
+        "Kakao a cukor rozmiešaj s trochou teplého mlieka na hladkú pastu (zabráni to hrudkám).",
+        "Pastu vlej späť do hrnca s mliekom, za stáleho miešania prihrievaj 3–4 minúty, kým zhustne.",
+        "Podľa chuti dochuť škoricou.",
+        "Nalej do hrnčekov, podávaj horúce."
+      ],
+      "nutricne": {
+        "kcal": 190,
+        "bielkoviny_g": 8,
+        "sacharidy_g": 26,
+        "tuky_g": 6
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -20130,6 +20650,7 @@
       "slug": "hovadzi-perkelt-cestoviny",
       "nazov": "Hovädzí perkelt s cestovinami",
       "porcie": 4,
+      "cas_pripravy": "1 hodina 30 minút",
       "foto_url": "fotky/hovadzi-perkelt-cestoviny.jpg",
       "tagy": [
         "večera",
@@ -20194,6 +20715,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Hovädzie mäso nakrájaj na väčšie kocky, osoľ a okoreň.",
+        "Na olivovom oleji opeč mäso zo všetkých strán dozlata, vyber z hrnca.",
+        "Na tom istom oleji opraž cibuľu do sklovita, odstav z ohňa a vmiešaj sladkú papriku (nech nezhorkne).",
+        "Pridaj cesnak, nakrájanú papriku, paradajkový pretlak a mäso späť, zalej 400 ml vody s rozdrveným bujónom.",
+        "Prikry a dusaj na miernom ohni 1 hodinu, kým nie je mäso mäkké, priebežne premiešaj a podľa potreby prilej vodu.",
+        "Medzitým uvar cestoviny v osolenej vode podľa návodu na obale.",
+        "Perkelt podávaj na cestovinách, posypaný petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 560,
+        "bielkoviny_g": 36,
+        "sacharidy_g": 52,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
@@ -20578,6 +21114,7 @@
       "slug": "hovadzi-rib-eye-steak-bylinkove-maslo-sparglou",
       "nazov": "Hovädzí rib-eye steak s bylinkovým maslom a grilovanou špargľou",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/hovadzi-rib-eye-steak-bylinkove-maslo-sparglou.jpg",
       "tagy": [
         "večera",
@@ -20621,6 +21158,22 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Steaky vyber z chladničky aspoň 30 minút pred pečením, nech dosiahnu izbovú teplotu. Osuš papierovou utierkou, výdatne osoľ a okoreň.",
+        "Maslo zmiešaj s prelisovaným cesnakom a nasekaným rozmarínom, vytvaruj do válčeka a daj chladiť.",
+        "Špargľu zbav dreveného konca, premiešaj s olivovým olejom, soľou a korením.",
+        "Panvicu (najlepšie liatinovú) rozpáľ nasucho dokiaľ nezačne mierne dymiť.",
+        "Steaky opekaj 3–4 minúty z každej strany (podľa hrúbky a požadovanej prepečenosti), priebežne polievaj vytekajúcim tukom.",
+        "Na inej panvici alebo grile opeč špargľu 4–5 minút, kým je jemne opečená a stále na skus.",
+        "Steaky nechaj 5 minút odpočívať pod alobalom, potom navrch polož plátok bylinkového masla.",
+        "Podávaj so špargľou."
+      ],
+      "nutricne": {
+        "kcal": 680,
+        "bielkoviny_g": 48,
+        "sacharidy_g": 6,
+        "tuky_g": 50
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -20834,6 +21387,7 @@
       "slug": "hovadzi-vyvar-rezance",
       "nazov": "Hovädzí vývar s rezancami",
       "porcie": 4,
+      "cas_pripravy": "2 hodiny",
       "foto_url": "fotky/hovadzi-vyvar-rezance.jpg",
       "tagy": [
         "polievka",
@@ -20881,6 +21435,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Hovädzie mäso vlož do hrnca, zalej 2 l studenej vody, priveď k varu a zbieraj penu.",
+        "Pridaj mrkvu, zeler, cibuľu (aj v šupke, pre farbu) a bobkový list, osoľ.",
+        "Var na miernom ohni 1,5–2 hodiny, kým nie je mäso mäkké, priebežne zbieraj penu.",
+        "Mäso a zeleninu vyber, vývar precedi.",
+        "Mrkvu nakrájaj na kolieska a vráť do precedeného vývaru.",
+        "Cestoviny uvar v osolenej vode zvlášť podľa návodu na obale.",
+        "Do misiek daj cestoviny, zalej horúcim vývarom s mrkvou, posyp petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 28,
+        "sacharidy_g": 26,
+        "tuky_g": 10
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -21155,6 +21724,7 @@
       "slug": "hovadzi-wellington-hubova-duxelles",
       "nazov": "Hovädzí Wellington s hubovou duxelles",
       "porcie": 4,
+      "cas_pripravy": "1 hodina 30 minút",
       "foto_url": "fotky/hovadzi-wellington-hubova-duxelles.jpg",
       "tagy": [
         "večera",
@@ -21219,6 +21789,22 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Sviečkovicu osoľ, okoreň, na rozohriatom oleji rýchlo opeč zo všetkých strán dozlata (2–3 minúty spolu), nechaj vychladnúť a potri horčicou.",
+        "Šampiňóny nasekaj najemno (alebo v mixéri), spolu s cesnakom opekaj na suchej panvici 8–10 minút, kým sa odparí všetka tekutina a vznikne hustá hmota (duxelles), osoľ, okoreň, pridaj tymian, nechaj vychladnúť.",
+        "Na potravinovú fóliu poukladaj vedľa seba plátky parmskej šunky, navrch rozotri hubovú duxelles.",
+        "Na duxelles polož sviečkovicu, pomocou fólie pevne zroluj do valca, konce fólie zatoč, daj na 20 minút do chladničky stuhnúť.",
+        "Rúru predhrej na 200 °C. Lístkové cesto rozvin na pomúčenej doske, vybaľ mäso z fólie a zaroluj do cesta, okraje zatlač a prebytočné cesto odstrihni.",
+        "Wellington potri rozšľahaným vajcom, po povrchu urob nožom jemné dekoratívne zárezy.",
+        "Peč 30–35 minút do zlatista (na strednú prepečenosť mäsa vnútri).",
+        "Pred krájaním nechaj 10 minút odpočívať."
+      ],
+      "nutricne": {
+        "kcal": 680,
+        "bielkoviny_g": 40,
+        "sacharidy_g": 42,
+        "tuky_g": 36
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
@@ -21553,6 +22139,7 @@
       "slug": "hovadzie-burgery-cheddar",
       "nazov": "Hovädzie burgery s cheddarom",
       "porcie": 4,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/hovadzie-burgery-cheddar.jpg",
       "tagy": [
         "večera",
@@ -21608,6 +22195,20 @@
           "id": "olivovy-olej"
         }
       ],
+      "postup": [
+        "Mleté mäso osoľ, okoreň a rukami rozdeľ na 4 rovnaké guľky, sploštené na placky o niečo väčšie ako žemle (pri pečení sa zmenšia).",
+        "Panvicu rozohrej s olivovým olejom na vysokej teplote, placky opekaj 3–4 minúty z každej strany.",
+        "Minútu pred koncom polož na každú placku plátok cheddaru, nech sa rozpustí.",
+        "Žemle prekroj a opeč na suchej panvici z vnútornej strany do zlatista.",
+        "Cibuľu a paradajky nakrájaj na kolieska.",
+        "Žemľu potri horčicou, poukladaj šalát, burger s roztopeným cheddarom, paradajku a cibuľu."
+      ],
+      "nutricne": {
+        "kcal": 610,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 34,
+        "tuky_g": 34
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco supermarket",
@@ -21901,6 +22502,7 @@
       "slug": "hovadzie-roladky-slanina-kysle-uhorky",
       "nazov": "Hovädzie roládky plnené slaninou a kyslými uhorkami",
       "porcie": 4,
+      "cas_pripravy": "1 hodina 30 minút",
       "foto_url": "fotky/hovadzie-roladky-slanina-kysle-uhorky.jpg",
       "tagy": [
         "večera",
@@ -21954,6 +22556,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Plátky hovädzieho mäsa jemne naklepni, osoľ, okoreň a potri horčicou.",
+        "Na každý plátok polož plátok slaniny, kúsok kyslej uhorky a trochu nakrájanej cibule.",
+        "Zroluj a zopni špáradlom.",
+        "Na olivovom oleji opeč roládky zo všetkých strán dozlata.",
+        "Zalej 400 ml vody, prikry a dusaj na miernom ohni 55–60 minút, kým nie sú mäkké.",
+        "Roládky vyber, šťavu zahusti múkou rozmiešanou v troche studenej vody, prevar do zhustnutia.",
+        "Roládky nakrájaj na plátky, polej omáčkou a posyp petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 460,
+        "bielkoviny_g": 40,
+        "sacharidy_g": 6,
+        "tuky_g": 30
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
@@ -22288,6 +22905,7 @@
       "slug": "hovedzi-gulas-zemiaky-mrkva",
       "nazov": "Poctivý hovädzí guláš so zemiakmi a mrkvou",
       "porcie": 2,
+      "cas_pripravy": "90 minút",
       "foto_url": "fotky/hovedzi-gulas-zemiaky-mrkva.jpg",
       "tagy": [
         "večera",
@@ -22362,6 +22980,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlatista (7–10 minút).",
+        "Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán (7–10 minút).",
+        "Odstav panvicu z ohňa (dôležité — na horúcom povrchu paprika horkne), vmiešaj prelisovaný cesnak, sladkú papriku, rascu a paradajkový pretlak. Vráť na oheň, krátko opraž a hneď zalej vodou alebo vývarom, aby bolo mäso ponorené. Pridaj bobkový list. Priveď do varu, prikry a dus na miernom ohni 40 minút.",
+        "Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a dus ďalších 30–40 minút, kým mäso nie je mäkké a omáčka hustá.",
+        "Vyber bobkový list. Dochuť soľou a čiernym korením. Podávaj posypané čerstvou petržlenovou vňaťou, s krajcom chleba."
+      ],
+      "nutricne": {
+        "kcal": 420,
+        "bielkoviny_g": 35,
+        "sacharidy_g": 25,
+        "tuky_g": 18
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -22696,6 +23327,7 @@
       "slug": "hummus-mrkva-uhorka",
       "nazov": "Krémový cícerový hummus s mrkvou a uhorkou",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/hummus-mrkva-uhorka.jpg",
       "tagy": [
         "olovrant",
@@ -22753,6 +23385,19 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Cícer scedi a prepláchni pod vodou.",
+        "Tahini a šťavu z citróna daj do vysokej nádoby, mixuj tyčovým mixérom asi 1 minútu, kým zmes zbelie a zhustne — toto \"vyšľahanie\" je základ krémovej textúry.",
+        "Pridaj cícer, prelisovaný cesnak, rascu, soľ a polovicu oleja. Mixuj do hladka, priebežne pridávaj studenú vodu po lyžiciach (asi 3–4 PL), kým hummus nezhustne do vzdušnej, krémovej konzistencie.",
+        "Predaj do misky, lyžicou urob špirálovité priehlbiny a zalej zvyšným olivovým olejom.",
+        "Mrkvu a uhorku nakrájaj na tyčinky. Podávaj spolu s hummusom."
+      ],
+      "nutricne": {
+        "kcal": 290,
+        "bielkoviny_g": 9,
+        "sacharidy_g": 26,
+        "tuky_g": 17
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -22944,6 +23589,7 @@
       "slug": "jablkovo-ovseny-crumble",
       "nazov": "Jablkovo-ovsený crumble",
       "porcie": 2,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/jablkovo-ovseny-crumble.jpg",
       "tagy": [
         "dezert",
@@ -22991,6 +23637,19 @@
           "id": "cukor-trstinovy"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 190 °C. Jablká ošúp a nakrájaj nadrobno (kúsky veľkosti čučoriedky, aby rýchlo zmäkli). Zmiešaj s citrónovou šťavou, medom a polovicou škorice. Rozlož do zapekacej misy.",
+        "Vo väčšej miske zmiešaj ovsené vločky, múku, cukor trstinový a zvyšnú škoricu. Pridaj studené maslo nakrájané na kocky a rukami ho vmasíruj do suchej zmesi, kým vznikne drobivá omrvinková štruktúra — nie hladké cesto.",
+        "Rozlož omrvinky rovnomerne navrch jabĺk.",
+        "Peč 25–30 minút, kým je vrch zlatistý a jablká na okrajoch bublú.",
+        "Nechaj 5 minút mierne vychladnúť. Podávaj teplé, prípadne s lyžicou gréckeho jogurtu."
+      ],
+      "nutricne": {
+        "kcal": 400,
+        "bielkoviny_g": 5,
+        "sacharidy_g": 55,
+        "tuky_g": 18
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -23325,6 +23984,7 @@
       "slug": "jahnacie-kotletky-rozmarin-zemiakovy-gratin",
       "nazov": "Jahňacie kotletky s rozmarínom a zemiakovým gratinom",
       "porcie": 4,
+      "cas_pripravy": "1 hodina 15 minút",
       "foto_url": "fotky/jahnacie-kotletky-rozmarin-zemiakovy-gratin.jpg",
       "tagy": [
         "večera",
@@ -23379,6 +24039,22 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 180 °C. Zapekaciu misu vymasti maslom.",
+        "Zemiaky ošúp a nakrájaj na tenké plátky (najlepšie na mandolíne).",
+        "Smotanu prevar s 2 prelisovanými strúčikmi cesnaku, osoľ a okoreň.",
+        "Zemiaky poukladaj v misy do vrstiev, zalej smotanou, navrch posyp syrom.",
+        "Peč 45–50 minút, kým sú zemiaky mäkké a povrch zlatistý.",
+        "Kotletky osoľ, okoreň, potri olivovým olejom so zvyšným prelisovaným cesnakom a nasekaným rozmarínom.",
+        "Na rozohriatej panvici opekaj kotletky 3–4 minúty z každej strany (podľa hrúbky), kým majú zlatistú kôrku.",
+        "Nechaj 5 minút odpočívať, podávaj so zemiakovým gratinom."
+      ],
+      "nutricne": {
+        "kcal": 620,
+        "bielkoviny_g": 34,
+        "sacharidy_g": 34,
+        "tuky_g": 38
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -23753,6 +24429,7 @@
       "slug": "jahodovo-bananove-smoothie",
       "nazov": "Jahodovo-banánové smoothie",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/jahodovo-bananove-smoothie.jpg",
       "tagy": [
         "nápoj",
@@ -23787,6 +24464,19 @@
           "id": "med"
         }
       ],
+      "postup": [
+        "Jahody umy a zbav stopiek. Banány olúp.",
+        "Všetky suroviny daj do mixéra: jahody, banán, jogurt, mlieko a med.",
+        "Mixuj do hladka a peny, kým nezískaš hustú, ale piteľnú konzistenciu.",
+        "Podľa potreby dolej trochu mlieka, ak je príliš husté.",
+        "Nalej do pohárov, podávaj hneď vychladené."
+      ],
+      "nutricne": {
+        "kcal": 220,
+        "bielkoviny_g": 7,
+        "sacharidy_g": 38,
+        "tuky_g": 4
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -24031,6 +24721,7 @@
       "slug": "jahodovo-matovy-sorbet",
       "nazov": "Jahodovo-mätový sorbet",
       "porcie": 4,
+      "cas_pripravy": "20 minút + mrazenie",
       "foto_url": "fotky/jahodovo-matovy-sorbet.jpg",
       "tagy": [
         "dezert",
@@ -24059,6 +24750,19 @@
           "id": "mata"
         }
       ],
+      "postup": [
+        "Jahody umy, odstráň stopky a rozmixuj s cukrom a citrónovou šťavou na hladké pyré.",
+        "Pyré preceď cez sitko, aby sa odstránili semienka.",
+        "Zmes prelej do plytkej nádoby a daj do mrazničky.",
+        "Každých 30–40 minút zmes previdličkou premiešaj, aby sa nevytvorili veľké ľadové kryštáliky — opakuj 3–4-krát počas 3–4 hodín mrazenia.",
+        "Pred podávaním nechaj sorbet 5 minút zmäknúť pri izbovej teplote, podávaj ozdobený lístkami mäty."
+      ],
+      "nutricne": {
+        "kcal": 90,
+        "bielkoviny_g": 1,
+        "sacharidy_g": 22,
+        "tuky_g": 0
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -24272,6 +24976,7 @@
       "slug": "jogurtovy-parfait-jahody-ovsene-vlocky",
       "nazov": "Jogurtový parfait s jahodami a ovsenými vločkami",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/jogurtovy-parfait-jahody-ovsene-vlocky.jpg",
       "tagy": [
         "raňajky",
@@ -24300,6 +25005,18 @@
           "id": "med"
         }
       ],
+      "postup": [
+        "Jahody umy, odstráň stopky a nakrájaj na kocky, časť odlož na ozdobenie.",
+        "Grécky jogurt zmiešaj s polovicou medu.",
+        "Do pohára vrstvi: jogurt, ovsené vločky, jahody — opakuj vrstvy, kým nespotrebuješ suroviny.",
+        "Navrch pokvapkaj zvyšným medom a ozdob odloženými jahodami."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 40,
+        "tuky_g": 8
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco supermarket",
@@ -24463,6 +25180,7 @@
       "slug": "kacacie-prsia-pomarancova-omacka-zemiakove-pyre",
       "nazov": "Kačacie prsia s pomarančovou omáčkou a zemiakovým pyré",
       "porcie": 2,
+      "cas_pripravy": "45 minút",
       "foto_url": "fotky/kacacie-prsia-pomarancova-omacka-zemiakove-pyre.jpg",
       "tagy": [
         "večera",
@@ -24511,6 +25229,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kožu kačacích pŕs nakrížuj ostrým nožom (bez zarezania do mäsa), osoľ a okoreň zo všetkých strán.",
+        "Kačacie prsia daj kožou nadol na studenú panvicu, postupne rozohrievaj na strednom ohni 8–10 minút, kým sa vytopí tuk a koža je chrumkavá a zlatistá.",
+        "Obráť a opekaj ešte 4–5 minút z druhej strany (na strednú prepečenosť). Vyber, nechaj 5 minút odpočívať pod alobalom.",
+        "Zemiaky uvar v osolenej vode do mäkka, scedi a rozmixuj s maslom a mliekom na hladké pyré, osoľ.",
+        "Z pomarančov vytlač šťavu, prepasíruj tuk z panvice okrem 1 PL, vlej pomarančovú šťavu a med.",
+        "Omáčku prevar na miernom ohni 5–6 minút, kým mierne zhustne.",
+        "Kačacie prsia nakrájaj na šikmé plátky, podávaj na zemiakovom pyré, polej pomarančovou omáčkou a ozdob tymianom."
+      ],
+      "nutricne": {
+        "kcal": 590,
+        "bielkoviny_g": 36,
+        "sacharidy_g": 42,
+        "tuky_g": 30
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -24805,6 +25538,7 @@
       "slug": "kalerabova-polievka-zemiaky",
       "nazov": "Kalerábová polievka so zemiakmi",
       "porcie": 4,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/kalerabova-polievka-zemiaky.jpg",
       "tagy": [
         "polievka",
@@ -24862,6 +25596,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kaleráb, zemiaky a mrkvu ošúp a nakrájaj na kocky. Cibuľu a cesnak jemne nasekaj.",
+        "Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.",
+        "Pridaj kaleráb, zemiaky a mrkvu, zalej 1 l vody, pridaj bujón.",
+        "Var 20–25 minút, kým nie je zelenina mäkká.",
+        "Časť polievky rozmixuj tyčovým mixérom priamo v hrnci, nech zhustne, ale zostanú aj kúsky zeleniny.",
+        "Vmiešaj smotanu, osoľ a okoreň podľa chuti, podávaj posypanú petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 210,
+        "bielkoviny_g": 5,
+        "sacharidy_g": 24,
+        "tuky_g": 10
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -25236,6 +25984,7 @@
       "slug": "kapustnica-klobasa-hriby",
       "nazov": "Kapustnica s klobásou a hríbami",
       "porcie": 2,
+      "cas_pripravy": "1 hodina",
       "foto_url": "fotky/kapustnica-klobasa-hriby.jpg",
       "tagy": [
         "obed",
@@ -25300,6 +26049,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Sušené hríby zalej horúcou vodou a nechaj aspoň 15 minút napučať, potom scedi (vodu si odlož).",
+        "Klobásu nakrájaj na kolieska. Cibuľu najemno nakrájaj.",
+        "Na oleji opeč cibuľu do sklovita, pridaj klobásu, opeč, kým pustí trochu tuku.",
+        "Pridaj prelisovaný cesnak, krátko opraž, potom stiahni z ohňa a vmiešaj sladkú papriku (nech nezhorí).",
+        "Prilej vodu z hríbov aj ďalšiu vodu (cca 800 ml), pridaj scedenú kyslú kapustu, hríby a bobkový list.",
+        "Priveď do varu, pridaj na kocky nakrájané zemiaky, dus 30–40 minút na miernom ohni do mäkka.",
+        "Na záver vmiešaj smotanu, dochuť soľou a korením, chvíľu prehrej (nevar prudko, nech sa smotana nezrazí)."
+      ],
+      "nutricne": {
+        "kcal": 420,
+        "bielkoviny_g": 16,
+        "sacharidy_g": 25,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -25624,6 +26388,7 @@
       "slug": "karamelizovana-mrkva-med-tymian",
       "nazov": "Karamelizovaná mrkva s medom a tymianom",
       "porcie": 2,
+      "cas_pripravy": "25 minút",
       "foto_url": "fotky/karamelizovana-mrkva-med-tymian.jpg",
       "tagy": [
         "príloha",
@@ -25658,6 +26423,18 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Mrkvu ošúp, prekrojenú pozdĺžne na polovice alebo štvrtiny (podľa hrúbky).",
+        "V hrnci alebo na panvici rozpusti maslo, pridaj mrkvu, dus pod pokrievkou 8–10 minút na miernom ohni, kým mierne zmäkne.",
+        "Odkryj, pridaj med a tymian, zvýš teplotu a opekaj ďalších 5–8 minút bez pokrievky, priebežne premiešavaj, kým mrkva získa lesklý karamelizovaný povrch.",
+        "Dochuť soľou a korením, podávaj hneď."
+      ],
+      "nutricne": {
+        "kcal": 180,
+        "bielkoviny_g": 2,
+        "sacharidy_g": 28,
+        "tuky_g": 7
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -25851,6 +26628,7 @@
       "slug": "karfiolova-kremova-polievka",
       "nazov": "Karfiolová krémová polievka",
       "porcie": 4,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/karfiolova-kremova-polievka.jpg",
       "tagy": [
         "polievka",
@@ -25899,6 +26677,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cibuľu a cesnak jemne nasekaj, zemiaky nakrájaj na kocky, karfiol rozdeľ na ružičky.",
+        "Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.",
+        "Pridaj zemiaky, zalej 900 ml vody, pridaj bujón, var 10 minút.",
+        "Pridaj karfiol, var ďalších 10–12 minút, kým nie je mäkký.",
+        "Rozmixuj tyčovým mixérom na hladkú konzistenciu.",
+        "Vmiešaj smotanu, osoľ a okoreň podľa chuti."
+      ],
+      "nutricne": {
+        "kcal": 200,
+        "bielkoviny_g": 6,
+        "sacharidy_g": 18,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -26263,6 +27055,7 @@
       "slug": "kralovske-krevety-parmezanove-rizoto",
       "nazov": "Kráľovské krevety na parmezánovom rizote",
       "porcie": 2,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/kralovske-krevety-parmezanove-rizoto.jpg",
       "tagy": [
         "večera",
@@ -26326,6 +27119,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Bujón rozpusti v 900 ml horúcej vody, udržiavaj teplý na miernom ohni.",
+        "Cibuľu najemno nakrájaj, na 1 PL olivového oleja opraž do sklovita.",
+        "Pridaj ryžu, opraž 1–2 minúty, kým zosklovatie.",
+        "Postupne prilievaj naberačku horúceho vývaru, za stáleho miešania nechaj vsiaknuť, potom prilej ďalšiu — opakuj 18–20 minút, kým je ryža mäkká, ale stále na skus.",
+        "Krevety osoľ, okoreň, na zvyšnom oleji a polovici masla opekaj 1–2 minúty z každej strany, kým sú ružové a nepriehľadné, pridaj prelisovaný cesnak na poslednú minútu.",
+        "Do hotového rizota vmiešaj zvyšné maslo a parmezán, dochuť soľou a korením.",
+        "Rizoto rozlož do misiek, navrch polož opečené krevety, posyp petržlenovou vňaťou a podávaj s klinom citróna."
+      ],
+      "nutricne": {
+        "kcal": 610,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 68,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -26750,6 +27558,7 @@
       "slug": "kremova-dynova-polievka",
       "nazov": "Krémová pečená dyňová polievka so zázvorom",
       "porcie": 2,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/kremova-dynova-polievka.jpg",
       "tagy": [
         "polievka",
@@ -26794,6 +27603,20 @@
           "id": "kurkuma"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 220 °C. Dyňu ošúpaj, nakrájaj na kocky ~2 cm, rozlož na plech, pokvapkaj polovicou oleja, osoľ. Peč 20–25 minút, kým nezmäkne a okraje mierne nezhnednú — pečením získa oveľa hlbšiu chuť ako varením.",
+        "Kým sa dyňa pečie, na zvyšku oleja orestuj nadrobno nakrájanú cibuľu 3 minúty. Pridaj nastrúhaný zázvor a kurkumu, krátko opraž.",
+        "Na suchej panvici opraž tekvicové semienka 2–3 minúty, kým začnú popraskávať a zvoniť. Odlož nabok.",
+        "Upečenú dyňu pridaj k cibuľke, zalej 400 ml vody. Priveď do varu a var 5 minút, aby sa chute spojili.",
+        "Mixuj tyčovým mixérom do hladka. Vlej smotanu, premiešaj, povar 2 minúty. Dochuť soľou.",
+        "Podávaj posypanú opraženými tekvicovými semienkami, prípadne s kvapkou smotany navrchu."
+      ],
+      "nutricne": {
+        "kcal": 175,
+        "bielkoviny_g": 3,
+        "sacharidy_g": 21,
+        "tuky_g": 9
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -27076,10 +27899,17 @@
     },
     {
       "slug": "kremove-kuracie-rizoto-sampinony",
-      "nazov": "kremove-kuracie-rizoto-sampinony",
-      "porcie": 1,
-      "foto_url": null,
-      "tagy": [],
+      "nazov": "Krémové kuracie rizoto so šampiňónmi",
+      "porcie": 2,
+      "cas_pripravy": null,
+      "foto_url": "fotky/kremove-kuracie-rizoto-sampinony.jpg",
+      "tagy": [
+        "obed",
+        "kura",
+        "sýte",
+        "vysoký-proteín",
+        "jednohrnec"
+      ],
       "suroviny": [
         {
           "nazov": "kuracie stehná",
@@ -27142,10 +27972,27 @@
           "id": "petrzlenova-vnat"
         }
       ],
+      "postup": [
+        "V hrnci zohrej 700 ml vody s bujónovými kockami a udržuj ju počas celého varenia horúcu (takmer vriacu) na vedľajšom horáku — horúci vývar je kľúčový pre správnu krémovú textúru rizota.",
+        "Cibuľu a cesnak nakrájaj najemno. Na oleji a polovici masla opeč do sklovita (3–4 minúty).",
+        "Pridaj kuracie stehná nakrájané na kocky, opeč zo všetkých strán do zlatista (5–6 minút). Vyber z hrnca a odlož nabok.",
+        "Do toho istého hrnca pridaj nakrájané šampiňóny, opekaj na vyššom ohni 5 minút, kým pustia vodu a tá sa odparí — nech sa začnú aj mierne opekať, nie len dusiť.",
+        "Vsyp ryžu, opekaj 2 minúty za stáleho miešania (zrniečka musia byť horúce a mierne sklovité) — tento krok sa nazýva tostatúra a je základom krémovej textúry.",
+        "Prilievaj horúci vývar naberačku po naberačke, za stáleho miešania. Vždy počkaj, kým sa tekutina takmer celá vstrebe, až potom prilej ďalšiu naberačku. Trvá to 18–20 minút.",
+        "Keď je ryža al dente (mierne na skus) a rizoto má hustú, tečúcu konzistenciu, vráť kura do hrnca a odstav z ohňa.",
+        "Vmiešaj studené maslo nakrájané na kocky a parmezán rázným miešaním (tzv. mantecatura) — vznikne lesklá, krémová textúra úplne bez smotany.",
+        "Dochuť soľou a korením, nechaj minútu odstáť. Podávaj hneď, posypané petržlenovou vňaťou a ďalším parmezánom."
+      ],
+      "nutricne": {
+        "kcal": 540,
+        "bielkoviny_g": 35,
+        "sacharidy_g": 58,
+        "tuky_g": 17
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
-          "cena_za_porciu": 10.24,
+          "cena_za_porciu": 5.12,
           "napar_surovin": 6,
           "spolu_surovin": 12,
           "spolahlive": true,
@@ -27236,7 +28083,7 @@
         },
         {
           "obchod": "COOP",
-          "cena_za_porciu": 14.35,
+          "cena_za_porciu": 7.17,
           "napar_surovin": 6,
           "spolu_surovin": 12,
           "spolahlive": true,
@@ -27317,7 +28164,7 @@
         },
         {
           "obchod": "Tesco hypermarket",
-          "cena_za_porciu": 1.0,
+          "cena_za_porciu": 0.5,
           "napar_surovin": 2,
           "spolu_surovin": 12,
           "spolahlive": false,
@@ -27378,7 +28225,7 @@
         },
         {
           "obchod": "Tesco supermarket",
-          "cena_za_porciu": 1.0,
+          "cena_za_porciu": 0.5,
           "napar_surovin": 2,
           "spolu_surovin": 12,
           "spolahlive": false,
@@ -27419,7 +28266,7 @@
         },
         {
           "obchod": "Terno",
-          "cena_za_porciu": 2.23,
+          "cena_za_porciu": 1.12,
           "napar_surovin": 2,
           "spolu_surovin": 12,
           "spolahlive": false,
@@ -27470,7 +28317,7 @@
         },
         {
           "obchod": "BILLA",
-          "cena_za_porciu": 9.33,
+          "cena_za_porciu": 4.67,
           "napar_surovin": 4,
           "spolu_surovin": 12,
           "spolahlive": false,
@@ -27531,7 +28378,7 @@
         },
         {
           "obchod": "Lidl",
-          "cena_za_porciu": 10.84,
+          "cena_za_porciu": 5.42,
           "napar_surovin": 4,
           "spolu_surovin": 12,
           "spolahlive": false,
@@ -27606,6 +28453,7 @@
       "slug": "kuraci-perkelt-cestoviny",
       "nazov": "Kurací perkelt s cestovinami",
       "porcie": 2,
+      "cas_pripravy": "50 minút",
       "foto_url": "fotky/kuraci-perkelt-cestoviny.jpg",
       "tagy": [
         "večera",
@@ -27665,6 +28513,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kuracie stehná nakrájaj na väčšie kusy, osoľ, okoreň.",
+        "Cibuľu najemno nakrájaj, na oleji opeč do sklovita. Pridaj mäso, opeč zo všetkých strán.",
+        "Stiahni z ohňa, vmiešaj sladkú papriku, krátko premiešaj, nech nezhorí.",
+        "Pridaj nakrájanú papriku, paradajky a prelisovaný cesnak. Prilej trochu vody, prikry a duste 30–35 minút, kým mäso zmäkne.",
+        "Na záver vmiešaj smotanu, prehrej (nevar prudko).",
+        "Medzitým uvar cestoviny podľa návodu na obale.",
+        "Podávaj perkelt na cestovinách."
+      ],
+      "nutricne": {
+        "kcal": 560,
+        "bielkoviny_g": 35,
+        "sacharidy_g": 50,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -28129,6 +28992,7 @@
       "slug": "kuracie-curry-kokosove-mlieko-ryza",
       "nazov": "Kuracie curry s kokosovým mliekom a ryžou",
       "porcie": 4,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/kuracie-curry-kokosove-mlieko-ryza.jpg",
       "tagy": [
         "večera",
@@ -28203,6 +29067,21 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Ryžu uvar podľa návodu na obale.",
+        "Cibuľu, cesnak a zázvor jemne nasekaj. Kuracie prsia nakrájaj na kocky, papriku na prúžky.",
+        "Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, zázvor, kari korenie a kurkumu, krátko opraž, kým nezavonia.",
+        "Pridaj kuracie mäso, opekaj 4–5 minút, kým nezbelie zo všetkých strán.",
+        "Pridaj papriku a kokosové mlieko, premiešaj, osoľ.",
+        "Dus na miernom ohni 15 minút, kým sa omáčka nezahustí a mäso nie je mäkké.",
+        "Podávaj s ryžou, posyp čerstvým koriandrom a pokvapkaj citrónovou šťavou."
+      ],
+      "nutricne": {
+        "kcal": 540,
+        "bielkoviny_g": 36,
+        "sacharidy_g": 52,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -28667,6 +29546,7 @@
       "slug": "kuracie-fajitas-bowl-cierna-fazula-kukurica-avokado",
       "nazov": "Kuracie fajitas bowl s čiernou fazuľou, kukuricou a avokádom",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/kuracie-fajitas-bowl-cierna-fazula-kukurica-avokado.jpg",
       "tagy": [
         "večera",
@@ -28747,6 +29627,22 @@
           "id": "cerstvy-koriander"
         }
       ],
+      "postup": [
+        "Ryžu uvar podľa návodu na obale.",
+        "Kuracie prsia nakrájaj na prúžky, papriku a cibuľu tiež na prúžky.",
+        "Kuracie prúžky posyp sladkou paprikou, rascou, údenou paprikou, soľou a korením, premiešaj.",
+        "Na panvici rozpáľ olej, opekaj kuracie mäso 5–6 minút do zlatista a prepečenia, vyber z panvice.",
+        "Na tej istej panvici opeč papriku a cibuľu 4–5 minút do mäkka s miernym opečením na okrajoch.",
+        "Fazuľu scedi a prepláchni, spolu s kukuricou krátko prehrej na panvici.",
+        "Do misiek rozlož ryžu, na ňu kuracie mäso, opečenú zeleninu, fazuľu, kukuricu a plátky avokáda.",
+        "Pokvapkaj citrónovou šťavou, posyp čerstvým koriandrom."
+      ],
+      "nutricne": {
+        "kcal": 520,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 55,
+        "tuky_g": 16
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
@@ -29169,10 +30065,16 @@
     },
     {
       "slug": "kuracie-prsia-paradajkova-omacka-cestoviny",
-      "nazov": "kuracie-prsia-paradajkova-omacka-cestoviny",
-      "porcie": 1,
-      "foto_url": null,
-      "tagy": [],
+      "nazov": "Kuracie prsia v paradajkovej omáčke s cestovinami",
+      "porcie": 2,
+      "cas_pripravy": null,
+      "foto_url": "fotky/kuracie-prsia-paradajkova-omacka-cestoviny.jpg",
+      "tagy": [
+        "obed",
+        "kura",
+        "sýte",
+        "vysoký-proteín"
+      ],
       "suroviny": [
         {
           "nazov": "kuracie prsia",
@@ -29220,10 +30122,24 @@
           "id": "bazalka"
         }
       ],
+      "postup": [
+        "Kuracie prsia nakrájaj na kocky, osoľ a okoreň.",
+        "Na olivovom oleji opeč kuracie mäso dozlata, vyber z panvice.",
+        "Na tom istom oleji opeč prelisovaný cesnak, pridaj nakrájané paradajky a duš 8–10 minút do zmäknutia.",
+        "Vráť mäso späť do omáčky, pridaj bazalku a dochuť.",
+        "Medzitým uvar cestoviny podľa návodu na obale.",
+        "Podávaj cestoviny s omáčkou a mäsom, posyp strúhaným parmezánom."
+      ],
+      "nutricne": {
+        "kcal": 560,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 55,
+        "tuky_g": 18
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
-          "cena_za_porciu": 20.55,
+          "cena_za_porciu": 10.27,
           "napar_surovin": 5,
           "spolu_surovin": 9,
           "spolahlive": true,
@@ -29294,7 +30210,7 @@
         },
         {
           "obchod": "COOP",
-          "cena_za_porciu": 31.48,
+          "cena_za_porciu": 15.74,
           "napar_surovin": 5,
           "spolu_surovin": 9,
           "spolahlive": true,
@@ -29365,7 +30281,7 @@
         },
         {
           "obchod": "Terno",
-          "cena_za_porciu": 0.49,
+          "cena_za_porciu": 0.25,
           "napar_surovin": 1,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -29386,7 +30302,7 @@
         },
         {
           "obchod": "Tesco hypermarket",
-          "cena_za_porciu": 3.71,
+          "cena_za_porciu": 1.85,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -29447,7 +30363,7 @@
         },
         {
           "obchod": "Tesco supermarket",
-          "cena_za_porciu": 3.71,
+          "cena_za_porciu": 1.85,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -29488,7 +30404,7 @@
         },
         {
           "obchod": "BILLA",
-          "cena_za_porciu": 19.28,
+          "cena_za_porciu": 9.64,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -29529,7 +30445,7 @@
         },
         {
           "obchod": "Lidl",
-          "cena_za_porciu": 21.6,
+          "cena_za_porciu": 10.8,
           "napar_surovin": 4,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -29594,6 +30510,7 @@
       "slug": "kuracie-rezne-karfiol-maslo",
       "nazov": "Kuracie rezne s karfiolom na masle",
       "porcie": 4,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/kuracie-rezne-karfiol-maslo.jpg",
       "tagy": [
         "obed",
@@ -29646,6 +30563,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kuracie prsia rozkrojaj na plátky, naklepni na tenšie rezne, osoľ a okoreň.",
+        "Postupne obaľuj v múke, rozšľahanom vajci a strúhanke.",
+        "Na oleji smaž rezne 3–4 minúty z každej strany do zlatista, osuš na papierovej utierke.",
+        "Karfiol rozdeľ na ružičky a var v osolenej vode 8–10 minút, kým je ešte na skus.",
+        "Uvarený karfiol premiešaj s rozpusteným maslom, osoľ a okoreň.",
+        "Podávaj rezne s karfiolom a citrónom."
+      ],
+      "nutricne": {
+        "kcal": 520,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 32,
+        "tuky_g": 24
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -30070,6 +31001,7 @@
       "slug": "kuracie-rezne-kukurica-zemiaky",
       "nazov": "Maslovo-cesnakové kuracie prsia s kukuricou a zemiakmi",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/kuracie-rezne-kukurica-zemiaky.jpg",
       "tagy": [
         "večera",
@@ -30114,6 +31046,21 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Kuracie prsia rozkroj vodorovne na polovicu (motýlik) alebo rozklep na rovnomernú hrúbku ~1,5 cm — vďaka tomu sa neprepečú nerovnomerne. Osoľ a okoreň z oboch strán, nechaj 5 minút odpočívať.",
+        "Zemiaky uvar v osolenej vode 15–18 minút do mäkka. Scedi, pridaj kúsok masla.",
+        "Kukuricu uvar v osolenej vode 8–10 minút.",
+        "Na panvici rozpáľ trochu oleja/masla na strednom-vysokom ohni. Kuracie prsia opekaj 5–6 minút z prvej strany bez hýbania, kým sa samé neuvoľnia od dna, potom otoč a opekaj ešte 4–5 minút.",
+        "V posledných 2 minútach pridaj zvyšok masla, prelisovaný cesnak a tymian. Panvicu mierne nakláňaj a rozpusteným maslom kuracie prsia priebežne polievaj (klasický reštauračný trik na šťavnatosť aj chuť).",
+        "Kura nechaj 3 minúty odpočívať. Kukuricu osuš, potri zvyšným maslom so soľou.",
+        "Podávaj kura s maslovými zemiakmi a kukuricou, prelej zvyšným cesnakovým maslom z panvice."
+      ],
+      "nutricne": {
+        "kcal": 400,
+        "bielkoviny_g": 34,
+        "sacharidy_g": 35,
+        "tuky_g": 13
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -30468,6 +31415,7 @@
       "slug": "kuskusovy-salat-grilovana-zelenina-feta",
       "nazov": "Kuskusový šalát s grilovanou zeleninou a fetou",
       "porcie": 2,
+      "cas_pripravy": "25 minút",
       "foto_url": "fotky/kuskusovy-salat-grilovana-zelenina-feta.jpg",
       "tagy": [
         "obed",
@@ -30522,6 +31470,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kuskus zalej rovnakým množstvom vriacej osolenej vody, prikry a nechaj 5 minút napučať, potom prevoľni vidličkou.",
+        "Cuketu a papriku nakrájaj na kúsky, na panvici alebo grile opeč 5–6 minút do mäkka s miernym opečením na okrajoch.",
+        "Cherry paradajky prekroj na polovice.",
+        "Kuskus premiešaj s grilovanou zeleninou, paradajkami a polovicou fety.",
+        "Zalej olivovým olejom a citrónovou šťavou, dochuť soľou a korením.",
+        "Navrch posyp zvyšnou fetou a natrhanou bazalkou."
+      ],
+      "nutricne": {
+        "kcal": 440,
+        "bielkoviny_g": 14,
+        "sacharidy_g": 48,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -30753,6 +31715,7 @@
       "slug": "letny-ovocny-pohar-tvaroh-granola",
       "nazov": "Letný ovocný pohár s tvarohom a granolou",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/letny-ovocny-pohar-tvaroh-granola.jpg",
       "tagy": [
         "raňajky",
@@ -30802,6 +31765,19 @@
           "id": "mata"
         }
       ],
+      "postup": [
+        "Tvaroh rozmixuj s gréckym jogurtom a medom dohladka.",
+        "Broskyňu nakrájaj na kocky.",
+        "Ovsené vločky nasucho opraž na panvici 2–3 minúty do zlatista a chrumkava (voliteľné, zvýrazní to chuť), nechaj vychladnúť.",
+        "Do pohárov vrstvi tvarohový krém, čučoriedky, kocky broskyne a opražené vločky, opakuj vrstvy.",
+        "Navrch posyp nasekanými vlašskými orechmi a ozdob lístkom mäty."
+      ],
+      "nutricne": {
+        "kcal": 340,
+        "bielkoviny_g": 20,
+        "sacharidy_g": 35,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -31176,6 +32152,7 @@
       "slug": "letny-salat-broskyne-mozzarella",
       "nazov": "Letný šalát s broskyňami, mozzarellou a balzamikovou redukciou",
       "porcie": 2,
+      "cas_pripravy": "20 minút",
       "foto_url": "fotky/letny-salat-broskyne-mozzarella.jpg",
       "tagy": [
         "šalát",
@@ -31221,6 +32198,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Balzamikový ocot a cukor daj do malého hrnčeka, priveď k varu a na miernom ohni redukuj 8–10 minút, kým nezhustne do sirupovej konzistencie (mala by pomaly stekať z lyžice). Nechaj vychladnúť — pri chladnutí ešte zhustne.",
+        "Broskyne umyj, nakrájaj na plátky. Mozzarellu osuš a natrhaj na kusy.",
+        "Striedaj broskyne a mozzarellu na tanieri.",
+        "Pokvapkaj olivovým olejom a tenkými líniami vychladnutej balzamikovej redukcie.",
+        "Posyp bazalkou, soľou a čerstvo mletým čiernym korením. Ihneď podávaj."
+      ],
+      "nutricne": {
+        "kcal": 215,
+        "bielkoviny_g": 11,
+        "sacharidy_g": 15,
+        "tuky_g": 13
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -31504,6 +32494,7 @@
       "slug": "letny-salat-cucoriedky-feta",
       "nazov": "Letný šalát so špenátom, čučoriedkami, fetou a karamelizovanými orechmi",
       "porcie": 2,
+      "cas_pripravy": "20 minút",
       "foto_url": "fotky/letny-salat-cucoriedky-feta.jpg",
       "tagy": [
         "šalát",
@@ -31563,6 +32554,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Na suchej panvici na strednom ohni opraž vlašské orechy 2 minúty. Pridaj 1 ČL medu a štipku soli, miešaj 1–2 minúty, kým orechy karamelizujú a med sa rozpustí do lesklej polevy. Vyklop na papier na pečenie, nechaj vychladnúť a rozlám na kúsky.",
+        "V malej miske vymiešaj dresing: šťavu z citróna, zvyšný med, horčicu a olivový olej.",
+        "Špenát umy, osuš a rozlož na tanier. Čučoriedky umy a rozlož po špenáte.",
+        "Fetu nakrájaj na kocky, pridaj na šalát. Červenú cibuľu nakrájaj najemno, posyp šalát.",
+        "Zalej dresingom, navrch pridaj karamelizované orechy. Podávaj hneď, kým sú orechy chrumkavé."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 11,
+        "sacharidy_g": 20,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -31917,6 +32921,7 @@
       "slug": "marhulovy-galette",
       "nazov": "Marhuľový galette",
       "porcie": 2,
+      "cas_pripravy": "55 minút",
       "foto_url": "fotky/marhulovy-galette.jpg",
       "tagy": [
         "dezert",
@@ -31959,6 +32964,21 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Múku, studené maslo nakrájané na kocky, cukor a soľ rýchlo spracuj (rukami alebo v mixéri) na drobivé cesto, vypracuj do gule, zabaľ do fólie a daj na 20 minút do chladničky.",
+        "Rúru predhrej na 200 °C.",
+        "Marhule prekroj na polovice, zbav kôstky, nakrájaj na štvrtiny. Premiešaj s cukrom a škoricou.",
+        "Cesto rozvaľkaj na kolo (cca 30 cm), preneste na plech s papierom na pečenie.",
+        "Do stredu rozlož marhule, nechaj voľný okraj cca 5 cm.",
+        "Okraj cesta voľne preklop cez okraje ovocia (typický neupravený tvar galette), potri rozšľahaným vajcom a posyp cukrom.",
+        "Peč 30–35 minút, kým cesto nie je zlatisté a marhule mäkké."
+      ],
+      "nutricne": {
+        "kcal": 460,
+        "bielkoviny_g": 8,
+        "sacharidy_g": 50,
+        "tuky_g": 25
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -32312,6 +33332,7 @@
       "slug": "melonovy-salat-feta-mata",
       "nazov": "Melónový šalát s fetou a mätou",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/melonovy-salat-feta-mata.jpg",
       "tagy": [
         "šalát",
@@ -32355,6 +33376,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Dyňu nakrájaj na kocky, zbav prípadných semienok.",
+        "Syr feta nakrájaj alebo rozdrob na väčšie kúsky.",
+        "Červenú cibuľu nakrájaj na tenké pol-krúžky.",
+        "Na tanier rozlož dyňu, fetu a cibuľu, posyp natrhanými lístkami mäty.",
+        "Pokvapkaj olivovým olejom a balzamikovým octom, jemne osoľ a okoreň.",
+        "Podávaj hneď, vychladené."
+      ],
+      "nutricne": {
+        "kcal": 220,
+        "bielkoviny_g": 8,
+        "sacharidy_g": 18,
+        "tuky_g": 13
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -32559,6 +33594,7 @@
       "slug": "morcacie-prsia-smotanova-omacka-cestoviny",
       "nazov": "Morčacie prsia so smotanovou omáčkou a cestovinami",
       "porcie": 4,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/morcacie-prsia-smotanova-omacka-cestoviny.jpg",
       "tagy": [
         "obed",
@@ -32613,6 +33649,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cestoviny uvar v osolenej vode podľa návodu na obale.",
+        "Morčacie prsia nakrájaj na prúžky, osoľ a okoreň.",
+        "Na olivovom oleji opekaj morčacie mäso 5–6 minút, kým nezbelie, vyber z panvice.",
+        "Na tom istom oleji opraž šampiňóny a cesnak 5 minút.",
+        "Pridaj morčacie mäso späť, zalej smotanou, prevar 3–4 minúty do zhustnutia.",
+        "Vmiešaj uvarené cestoviny, dochuť soľou a korením.",
+        "Podávaj posypané parmezánom a petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 560,
+        "bielkoviny_g": 40,
+        "sacharidy_g": 50,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -32967,6 +34018,7 @@
       "slug": "omeleta-spenat-feta",
       "nazov": "Vzdušná vaječná omeleta so špenátom a syrom feta",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/omeleta-spenat-feta.jpg",
       "tagy": [
         "raňajky",
@@ -33002,6 +34054,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Špenát krátko orestuj na panvici na kúsku masla 2 minúty, kým zvädne a pustí vodu. Preosuš papierovou utierkou (mokrý špenát by omeletu rozmočil) a odlož.",
+        "Vajcia rozšľahaj vidličkou dôkladne aspoň 30 sekúnd, kým sú penivé — vzduch v nich zaistí nadýchanosť. Osoľ, okoreň.",
+        "Na panvici rozpusti zvyšok masla na strednom ohni. Vlej polovicu vaječnej zmesi (na 1 porciu), nechaj 10 sekúnd stuhnúť na okraji.",
+        "Lopatkou sťahuj okraje smerom do stredu a panvicu nakláňaj, nech surové vajce stečie na uvoľnené miesto. Opakuj, kým je omeleta väčšinou stuhnutá, ale mierne lesklá navrchu.",
+        "Navrch polož polovicu špenátu a rozdrobenej fety, preklop na polovicu a nechaj 30 sekúnd dopiecť.",
+        "Zopakuj s druhou porciou. Podávaj hneď, kým je omeleta teplá a nadýchaná."
+      ],
+      "nutricne": {
+        "kcal": 290,
+        "bielkoviny_g": 20,
+        "sacharidy_g": 3,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -33205,6 +34271,7 @@
       "slug": "ovsena-kasa-cucoriedky-arasidove-maslo",
       "nazov": "Proteínová ovsená kaša s čučoriedkami a arašidovým maslom",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/ovsena-kasa-cucoriedky-arasidove-maslo.jpg",
       "tagy": [
         "raňajky",
@@ -33259,6 +34326,18 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Ovsené vločky, nakrájaný banán a štipku soli daj do hrnca, zalej mliekom.",
+        "Prihrievaj na strednom ohni 8–10 minút, priebežne miešaj, kým tekutina nevsiakne a banán sa rozvarí do krémova. Vmiešaj škoricu.",
+        "Odstav z ohňa a vmiešaj grécky jogurt — pridáva krémovosť aj bielkoviny, ale nesmie sa variť (zrazil by sa).",
+        "Rozlož do misiek, navrch daj čučoriedky, lyžicu arašidového masla a podľa chuti kvapku medu."
+      ],
+      "nutricne": {
+        "kcal": 440,
+        "bielkoviny_g": 17,
+        "sacharidy_g": 55,
+        "tuky_g": 16
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -33553,6 +34632,7 @@
       "slug": "paradajkova-polievka-smotana",
       "nazov": "Paradajková polievka so smotanou",
       "porcie": 4,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/paradajkova-polievka-smotana.jpg",
       "tagy": [
         "polievka",
@@ -33606,6 +34686,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cibuľu a cesnak jemne nasekaj, na olivovom oleji opraž do sklovita.",
+        "Pridaj konzervované paradajky, rozdrvený bujón, cukor a 300 ml vody, premiešaj.",
+        "Dus na miernom ohni 15 minút.",
+        "Rozmixuj tyčovým mixérom na hladkú krémovú konzistenciu.",
+        "Vmiešaj smotanu, osoľ a okoreň podľa chuti, krátko prevar.",
+        "Podávaj posypanú čerstvou bazalkou."
+      ],
+      "nutricne": {
+        "kcal": 210,
+        "bielkoviny_g": 4,
+        "sacharidy_g": 16,
+        "tuky_g": 14
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -33889,6 +34983,7 @@
       "slug": "pecena-bravcova-krkovicka-paprika-cibula",
       "nazov": "Marinovaná pečená bravčová krkovička s paprikou a cibuľou",
       "porcie": 2,
+      "cas_pripravy": "70 minút (z toho 20 min marinovanie)",
       "foto_url": "fotky/pecena-bravcova-krkovicka-paprika-cibula.jpg",
       "tagy": [
         "večera",
@@ -33949,6 +35044,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Krkovičku nakrájaj na plátky. V miske zmiešaj olivový olej, prelisovaný cesnak, sladkú papriku, rascu, soľ a korenie — touto marinádou mäso dôkladne potri z oboch strán. Nechaj marinovať aspoň 20 minút pri izbovej teplote (ideálne dlhšie v chladničke, ak máš čas).",
+        "Rúru predhrej na 220 °C. Zemiaky nakrájaj na kocky, rozlož na plech a peč samotné 10 minút (potrebujú náskok, inak zostanú tvrdé, kým sa ostatné prepečie).",
+        "Papriku nakrájaj na prúžky, cibuľu na mesiačiky. Pridaj k zemiakom spolu s marinovanou krkovičkou a bobkovým listom, všetko premiešaj.",
+        "Peč ďalších 30–35 minút do zlatista, v polovici obráť.",
+        "Podávaj posypané čerstvou petržlenovou vňaťou priamo z pekáča."
+      ],
+      "nutricne": {
+        "kcal": 430,
+        "bielkoviny_g": 26,
+        "sacharidy_g": 20,
+        "tuky_g": 27
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -34303,6 +35411,7 @@
       "slug": "pecena-ovsena-kasa-jablko-skorica",
       "nazov": "Pečená ovsená kaša s jablkom a škoricou",
       "porcie": 4,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/pecena-ovsena-kasa-jablko-skorica.jpg",
       "tagy": [
         "raňajky",
@@ -34351,6 +35460,21 @@
           "id": "maslo"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 190 °C. Zapekaciu misu vymasti maslom.",
+        "Jablká nakrájaj na tenké plátky, polovicu odlož na ozdobenie.",
+        "V miske zmiešaj ovsené vločky, prášok do pečiva a škoricu.",
+        "V druhej nádobe rozšľahaj vajcia, mlieko a med.",
+        "Spoj suchú a tekutú zmes, vmiešaj polovicu nakrájaných jabĺk.",
+        "Zmes prelej do zapekacej misy, navrch poukladaj zvyšné plátky jabĺk.",
+        "Peč 25–30 minút, kým povrch nie je zlatistý a stred pevný."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 12,
+        "sacharidy_g": 48,
+        "tuky_g": 9
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco supermarket",
@@ -34695,6 +35819,7 @@
       "slug": "pecena-treska-cicer-spenat",
       "nazov": "Pečená treska s cícerom a špenátom",
       "porcie": 2,
+      "cas_pripravy": "35 minút",
       "foto_url": "fotky/pecena-treska-cicer-spenat.jpg",
       "tagy": [
         "večera",
@@ -34751,6 +35876,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 200 °C.",
+        "V zapekacej mise zmiešaj cícer, prekrojené cherry paradajky, prelisovaný cesnak, údenú papriku, 2 PL oleja, soľ a korenie.",
+        "Zapekaciu misu s cícerom daj piecť na 10 minút, nech sa paradajky mierne rozpustia a cícer prehreje.",
+        "Vyber z rúry, primiešaj špenát (zvädne od tepla), navrch polož osolené a okorenené filety tresky, pokvapkané zvyšným olejom.",
+        "Peč ďalších 12–15 minút, kým treska nie je krehká a rozpadáva sa vidličkou.",
+        "Podávaj s klinom citróna."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 28,
+        "tuky_g": 13
+      },
       "ceny_za_porciu": [
         {
           "obchod": "BILLA",
@@ -35004,6 +36143,7 @@
       "slug": "pecene-bbq-rebierka-hranolky",
       "nazov": "Pečené BBQ rebierka s domácimi hranolkami",
       "porcie": 4,
+      "cas_pripravy": "1 hodina 20 minút",
       "foto_url": "fotky/pecene-bbq-rebierka-hranolky.jpg",
       "tagy": [
         "večera",
@@ -35058,6 +36198,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 160 °C. Rebierka osoľ, okoreň a potri zmesou sladkej a údenej papriky.",
+        "Rebierka zabaľ do alobalu a peč 60 minút, kým nie sú mäkké.",
+        "Zemiaky nakrájaj na hranolky, premiešaj s olivovým olejom a soľou, rozlož na plech.",
+        "Priprav BBQ glazúru: zmiešaj med, horčicu a prelisovaný cesnak.",
+        "Zvýš teplotu rúry na 220 °C. Rebierka rozbaľ, potri glazúrou a spolu s hranolkami peč ďalších 15–20 minút, kým rebierka nie sú lesklé a karamelizované a hranolky zlatisté."
+      ],
+      "nutricne": {
+        "kcal": 650,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 48,
+        "tuky_g": 34
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -35350,10 +36503,16 @@
     },
     {
       "slug": "pecene-bravcove-kare-zemiaky-cuketa",
-      "nazov": "pecene-bravcove-kare-zemiaky-cuketa",
-      "porcie": 1,
-      "foto_url": null,
-      "tagy": [],
+      "nazov": "Pečené bravčové karé so zemiakmi a cuketou",
+      "porcie": 2,
+      "cas_pripravy": null,
+      "foto_url": "fotky/pecene-bravcove-kare-zemiaky-cuketa.jpg",
+      "tagy": [
+        "večera",
+        "bravčové",
+        "sýte",
+        "do-rúry"
+      ],
       "suroviny": [
         {
           "nazov": "bravčové karé",
@@ -35401,10 +36560,24 @@
           "id": "oregano"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 190 °C. Zemiaky ošúp a nakrájaj na štvrtiny, cuketu na hrubšie kolieska, cibuľu na klinčeky.",
+        "Bravčové karé osoľ, okoreň a potri prelisovaným cesnakom a oreganom.",
+        "Zemiaky a cibuľu premiešaj s olivovým olejom a soľou, rozlož na plech.",
+        "Na zeleninu polož karé, pridaj cuketu okolo mäsa.",
+        "Pec 45–50 minút, kým mäso nie je prepečené a zemiaky mäkké. V polovici pečenia zeleninu premiešaj.",
+        "Pred krájaním nechaj mäso 5 minút odpočinúť."
+      ],
+      "nutricne": {
+        "kcal": 480,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 35,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco supermarket",
-          "cena_za_porciu": 1.45,
+          "cena_za_porciu": 0.72,
           "napar_surovin": 1,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -35425,7 +36598,7 @@
         },
         {
           "obchod": "Terno",
-          "cena_za_porciu": 1.51,
+          "cena_za_porciu": 0.76,
           "napar_surovin": 2,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -35466,7 +36639,7 @@
         },
         {
           "obchod": "Kaufland",
-          "cena_za_porciu": 17.02,
+          "cena_za_porciu": 8.51,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -35527,7 +36700,7 @@
         },
         {
           "obchod": "BILLA",
-          "cena_za_porciu": 17.78,
+          "cena_za_porciu": 8.89,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -35578,7 +36751,7 @@
         },
         {
           "obchod": "Lidl",
-          "cena_za_porciu": 20.8,
+          "cena_za_porciu": 10.4,
           "napar_surovin": 4,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -35649,7 +36822,7 @@
         },
         {
           "obchod": "COOP",
-          "cena_za_porciu": 25.58,
+          "cena_za_porciu": 12.79,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -35704,6 +36877,7 @@
       "slug": "pecene-kuracie-stehna-citron-zemiaky",
       "nazov": "Pečené kuracie stehná s citrónom a zemiakmi",
       "porcie": 2,
+      "cas_pripravy": "55 minút",
       "foto_url": "fotky/pecene-kuracie-stehna-citron-zemiaky.jpg",
       "tagy": [
         "večera",
@@ -35748,6 +36922,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 200 °C. Zemiaky nakrájaj na klinky, cesnak prelisuj.",
+        "Kuracie stehná osuš papierovou utierkou (kľúčové pre chrumkavú kožu), osoľ a okoreň zo všetkých strán.",
+        "Zemiaky premiešaj s polovicou olivového oleja, soľou, oreganom a prelisovaným cesnakom, rozlož na plech.",
+        "Na zemiaky polož kuracie stehná kožou nahor, pokvapkaj zvyšným olivovým olejom.",
+        "Citrón nakrájaj na plátky, rozlož medzi kuracie stehná a zemiaky.",
+        "Peč 40–45 minút, kým je koža na kuracom chrumkavá a zlatistá a zemiaky mäkké."
+      ],
+      "nutricne": {
+        "kcal": 520,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 32,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -36000,6 +37188,7 @@
       "slug": "peceny-losos-citron-brokolica",
       "nazov": "Pečený losos s citrónom, zemiakmi a brokolicou",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/peceny-losos-citron-brokolica.jpg",
       "tagy": [
         "večera",
@@ -36050,6 +37239,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Lososa vyber z chladničky 15 minút vopred, nech mierne stiahne chlad — prepečie sa rovnomernejšie. Rúru predhrej na 220 °C. Zemiaky nakrájaj na menšie kocky, brokolicu rozdeľ na ružičky.",
+        "Zemiaky a brokolicu rozlož na plech vystlaný papierom na pečenie, pokvapkaj olivovým olejom, osoľ. Peč 15 minút.",
+        "Rozpustené maslo zmiešaj s prelisovaným cesnakom a šťavou z citróna.",
+        "Vyber plech, uvoľni miesto pre lososa. Filé polož kožou nadol na plech, potri citrónovo-cesnakovým maslom, osoľ, okoreň.",
+        "Peč ďalších 10–12 minút, kým losos nie je takmer hotový. Posledné 2–3 minúty zapni gril (horný ohrev) na vysokú teplotu, nech sa povrch pekne zakaramelizuje do zlatista.",
+        "Podávaj hneď, s klinom citróna navrch."
+      ],
+      "nutricne": {
+        "kcal": 430,
+        "bielkoviny_g": 34,
+        "sacharidy_g": 25,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -36424,6 +37627,7 @@
       "slug": "peceny-losos-karfiolove-pyre",
       "nazov": "Pečený losos s karfiolovým pyré",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/peceny-losos-karfiolove-pyre.jpg",
       "tagy": [
         "večera",
@@ -36473,6 +37677,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 200 °C. Karfiol rozdeľ na ružičky a var v osolenej vode 12–15 minút, kým nie je mäkký.",
+        "Uvarený karfiol scedi a rozmixuj s maslom a mliekom na hladké pyré, osoľ a okoreň.",
+        "Lososové filety osoľ, okoreň a pokvapkaj olivovým olejom.",
+        "Peč 12–14 minút, kým je losos práve prepečený a koža chrumkavá.",
+        "Podávaj lososa na karfiolovom pyré, s citrónom a čerstvým kôprom."
+      ],
+      "nutricne": {
+        "kcal": 460,
+        "bielkoviny_g": 34,
+        "sacharidy_g": 10,
+        "tuky_g": 30
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -36885,10 +38102,17 @@
     },
     {
       "slug": "peceny-losos-zemiaky-cuketa",
-      "nazov": "peceny-losos-zemiaky-cuketa",
-      "porcie": 1,
-      "foto_url": null,
-      "tagy": [],
+      "nazov": "Pečený losos so zemiakmi a cuketou",
+      "porcie": 2,
+      "cas_pripravy": null,
+      "foto_url": "fotky/peceny-losos-zemiaky-cuketa.jpg",
+      "tagy": [
+        "večera",
+        "ryba",
+        "ľahké",
+        "vysoký-proteín",
+        "do-rúry"
+      ],
       "suroviny": [
         {
           "nazov": "losos",
@@ -36936,10 +38160,24 @@
           "id": "petrzlenova-vnat"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 200 °C. Zemiaky nakrájaj na plátky, cuketu na polmesiačiky.",
+        "Zeleninu premiešaj s olivovým olejom, soľou a korením, rozlož na plech a pec 15 minút.",
+        "Lososa osoľ, okoreň a polož na plech k predpečenej zelenine.",
+        "Pridaj plátky citróna a prelisovaný cesnak na rybu.",
+        "Pec ďalších 12–15 minút, kým losos nie je hotový a zelenina mäkká.",
+        "Pred podávaním posyp čerstvou petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 490,
+        "bielkoviny_g": 35,
+        "sacharidy_g": 30,
+        "tuky_g": 24
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
-          "cena_za_porciu": 4.77,
+          "cena_za_porciu": 2.39,
           "napar_surovin": 1,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -36990,7 +38228,7 @@
         },
         {
           "obchod": "Tesco supermarket",
-          "cena_za_porciu": 4.77,
+          "cena_za_porciu": 2.39,
           "napar_surovin": 1,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -37021,7 +38259,7 @@
         },
         {
           "obchod": "Terno",
-          "cena_za_porciu": 7.49,
+          "cena_za_porciu": 3.74,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -37062,7 +38300,7 @@
         },
         {
           "obchod": "Kaufland",
-          "cena_za_porciu": 19.87,
+          "cena_za_porciu": 9.93,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -37123,7 +38361,7 @@
         },
         {
           "obchod": "BILLA",
-          "cena_za_porciu": 20.51,
+          "cena_za_porciu": 10.25,
           "napar_surovin": 3,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -37174,7 +38412,7 @@
         },
         {
           "obchod": "COOP",
-          "cena_za_porciu": 23.58,
+          "cena_za_porciu": 11.79,
           "napar_surovin": 2,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -37225,7 +38463,7 @@
         },
         {
           "obchod": "Lidl",
-          "cena_za_porciu": 23.64,
+          "cena_za_porciu": 11.82,
           "napar_surovin": 4,
           "spolu_surovin": 9,
           "spolahlive": false,
@@ -37300,6 +38538,7 @@
       "slug": "plnena-cuketa-mlete-maso",
       "nazov": "Plnená cuketa s mletým mäsom, ryžou a zapečeným syrom",
       "porcie": 2,
+      "cas_pripravy": "45 minút",
       "foto_url": "fotky/plnena-cuketa-mlete-maso.jpg",
       "tagy": [
         "večera",
@@ -37354,6 +38593,21 @@
           "id": "oregano"
         }
       ],
+      "postup": [
+        "Ryžu uvar podľa návodu na obale. Rúru predhrej na 200 °C.",
+        "Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu (nechaj asi 0,5 cm hrubé steny, nech sa polovice nepretrhnú). Dužinu nakrájaj nadrobno a odlož.",
+        "Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj prelisovaný cesnak a mäso, opeč do hneda (5–7 min). Osoľ, okoreň, pridaj oregano.",
+        "Pridaj nakrájanú dužinu z cukety a paradajky, dus 3–4 minúty, kým dužina zmäkne. Vmiešaj uvarenú ryžu.",
+        "Naplň vydlabané polovice cukety zmesou (pokojne s kopcom, plnka sa pri pečení mierne zmrští). Daj do pekáča, podlej 50 ml vody.",
+        "Peč 20 minút prikryté alobalom, potom posyp navrchu strúhaným syrom a peč ešte 8–10 minút bez alobalu, kým syr nie je roztopený a zlatistý.",
+        "Podávaj hneď."
+      ],
+      "nutricne": {
+        "kcal": 370,
+        "bielkoviny_g": 25,
+        "sacharidy_g": 28,
+        "tuky_g": 15
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -37736,10 +38990,16 @@
     },
     {
       "slug": "plnena-paprika-mletym-masom-ryzou",
-      "nazov": "plnena-paprika-mletym-masom-ryzou",
-      "porcie": 1,
-      "foto_url": null,
-      "tagy": [],
+      "nazov": "Plnená paprika s mletým mäsom a ryžou",
+      "porcie": 2,
+      "cas_pripravy": null,
+      "foto_url": "fotky/plnena-paprika-mletym-masom-ryzou.jpg",
+      "tagy": [
+        "večera",
+        "bravčové",
+        "sýte",
+        "jednohrnec"
+      ],
       "suroviny": [
         {
           "nazov": "bravčové mleté mäso",
@@ -37797,10 +39057,25 @@
           "id": "sladka-paprika"
         }
       ],
+      "postup": [
+        "Paprikám odkrojí vrchnák a vyčisti jadrovník, aby vznikli \"misky\" na plnenie.",
+        "Cibuľu a cesnak najemno nakrájaj, opeč na oleji do sklovita.",
+        "Pridaj mleté mäso, opeč dozlata, osoľ a okoreň sladkou paprikou.",
+        "Primiešaj surovú ryžu a polovicu paradajkového pretlaku, premiešaj.",
+        "Naplň papriky zmesou, ulož do hrnca alebo pekáča.",
+        "Zvyšný pretlak rozmiešaj s vodou a bujónom, zalej papriky do polovice výšky.",
+        "Duste pod pokrievkou (alebo pečte v rúre) 35–40 minút, kým ryža a paprika nezmäknú."
+      ],
+      "nutricne": {
+        "kcal": 520,
+        "bielkoviny_g": 28,
+        "sacharidy_g": 45,
+        "tuky_g": 24
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
-          "cena_za_porciu": 0.84,
+          "cena_za_porciu": 0.42,
           "napar_surovin": 1,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -37851,7 +39126,7 @@
         },
         {
           "obchod": "Tesco supermarket",
-          "cena_za_porciu": 0.84,
+          "cena_za_porciu": 0.42,
           "napar_surovin": 1,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -37882,7 +39157,7 @@
         },
         {
           "obchod": "Terno",
-          "cena_za_porciu": 2.54,
+          "cena_za_porciu": 1.27,
           "napar_surovin": 2,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -37933,7 +39208,7 @@
         },
         {
           "obchod": "Kaufland",
-          "cena_za_porciu": 16.33,
+          "cena_za_porciu": 8.16,
           "napar_surovin": 3,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -37994,7 +39269,7 @@
         },
         {
           "obchod": "BILLA",
-          "cena_za_porciu": 17.18,
+          "cena_za_porciu": 8.59,
           "napar_surovin": 3,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -38045,7 +39320,7 @@
         },
         {
           "obchod": "Lidl",
-          "cena_za_porciu": 21.58,
+          "cena_za_porciu": 10.79,
           "napar_surovin": 4,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -38116,7 +39391,7 @@
         },
         {
           "obchod": "COOP",
-          "cena_za_porciu": 24.37,
+          "cena_za_porciu": 12.19,
           "napar_surovin": 3,
           "spolu_surovin": 11,
           "spolahlive": false,
@@ -38171,6 +39446,7 @@
       "slug": "plnene-sampinony-syr-slanina",
       "nazov": "Plnené šampiňóny so syrom a slaninou",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/plnene-sampinony-syr-slanina.jpg",
       "tagy": [
         "predjedlo",
@@ -38214,6 +39490,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 200 °C. Šampiňónom opatrne vylom nožičky (odlož si ich), klobúčiky osuš.",
+        "Slaninu a odložené nožičky šampiňónov nakrájaj najemno, opeč na panvici do chrumkava.",
+        "Zmiešaj s prelisovaným cesnakom, polovicou syra a nasekanou petržlenovou vňaťou.",
+        "Klobúčiky šampiňónov ulož na plech, zľahka potri olivovým olejom, osoľ a okoreň.",
+        "Naplň zmesou slaniny a syra, navrch posyp zvyšným syrom.",
+        "Peč 15–18 minút, kým syr nie je roztopený a zlatistý."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 6,
+        "tuky_g": 24
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -38498,6 +39788,7 @@
       "slug": "proteinove-gulocky-ovsene-vlocky-arasidove-maslo",
       "nazov": "Proteínové guľôčky z ovsených vločiek a arašidového masla",
       "porcie": 4,
+      "cas_pripravy": "15 minút (+ 30 min chladenie)",
       "foto_url": "fotky/proteinove-gulocky-ovsene-vlocky-arasidove-maslo.jpg",
       "tagy": [
         "desiata",
@@ -38536,6 +39827,19 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Arašidové maslo a med v miske dôkladne premiešaj do hladka.",
+        "Pridaj ovsené vločky, kakao, škoricu a soľ, premiešaj, kým sa všetko spojí do lepkavého cesta (ak je príliš husté na miešanie, pridaj lyžičku vody).",
+        "Rukami tvaruj guľôčky veľkosti vlašského orecha — vyjde ich asi 12.",
+        "Ulož na tanier a daj do chladničky aspoň na 30 minút stuhnúť.",
+        "Skladuj v chladničke v uzavretej nádobe až týždeň — ideálne na rýchlu desiatu alebo olovrant."
+      ],
+      "nutricne": {
+        "kcal": 300,
+        "bielkoviny_g": 9,
+        "sacharidy_g": 28,
+        "tuky_g": 17
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -38647,6 +39951,7 @@
       "slug": "proteinove-palacinky-banan-ovsene-vlocky",
       "nazov": "Proteínové ovsené palacinky s banánom",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/proteinove-palacinky-banan-ovsene-vlocky.jpg",
       "tagy": [
         "raňajky",
@@ -38701,6 +40006,19 @@
           "id": "med"
         }
       ],
+      "postup": [
+        "Banány, vajcia, ovsené vločky, prášok do pečiva, škoricu a soľ rozmixuj tyčovým alebo stolným mixérom do hladkého cesta. Nechaj 5 minút odstáť, nech vločky napučia.",
+        "Na panvici rozpusti trochu masla na strednom ohni.",
+        "Naberačkou nalievaj menšie placky, opekaj 2–3 minúty z každej strany, kým sa na povrchu netvoria bublinky a spodok je zlatistý.",
+        "Opatrne obráť a dopeč z druhej strany.",
+        "Podávaj vrstvené na tanieri, ozdobené čučoriedkami a pokvapkané medom."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 45,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -39045,6 +40363,7 @@
       "slug": "ranajkovy-wrap-vajce-morcacia-sunka-spenat",
       "nazov": "Raňajkový wrap s vajcom, morčacou šunkou a špenátom",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/ranajkovy-wrap-vajce-morcacia-sunka-spenat.jpg",
       "tagy": [
         "raňajky",
@@ -39089,6 +40408,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Vajcia rozšľahaj so soľou a korením.",
+        "Na masle opeč miešané vajcia na strednom ohni do mäkka.",
+        "V poslednej minúte prihoď špenát, nech mierne zvädne.",
+        "Tortilly krátko ohrej na suchej panvici, nech sú ohybné.",
+        "Na každú tortillu rozlož vajíčkovú zmes, plátky morčacej šunky a strúhaný syr.",
+        "Zaroluj do wrapu (okraje podvi dovnútra) a prekroj na polovicu."
+      ],
+      "nutricne": {
+        "kcal": 410,
+        "bielkoviny_g": 28,
+        "sacharidy_g": 25,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -39373,6 +40706,7 @@
       "slug": "saksuka-vajcia-paradajky",
       "nazov": "Šakšuka — vajcia v pikantnej paradajkovej omáčke",
       "porcie": 2,
+      "cas_pripravy": "25 minút",
       "foto_url": "fotky/saksuka-vajcia-paradajky.jpg",
       "tagy": [
         "raňajky",
@@ -39437,6 +40771,20 @@
           "id": "petrzlenova-vnat"
         }
       ],
+      "postup": [
+        "Cibuľu a papriku nakrájaj na kocky. Na oleji restuj 5 minút do zmäknutia.",
+        "Pridaj prelisovaný cesnak, rascu, sladkú papriku a čili vločky, krátko opraž (30 sekúnd), nech sa uvoľní vôňa.",
+        "Prilej konzervované paradajky, rozšúchaj drevenou varechou, dochuť soľou a korením. Dus 10 minút na miernom ohni, kým omáčka zhustne.",
+        "Varechou urob v omáčke 4 malé jamky, do každej rozklepni vajce.",
+        "Prikry pokrievkou a dus ešte 5–8 minút, kým bielok stuhne a žĺtok zostane tekutý (alebo dlhšie, podľa chuti).",
+        "Posyp čerstvou vňaťou a podávaj priamo z panvice."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 18,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -39710,6 +41058,7 @@
       "slug": "segedinsky-gulas-ryza",
       "nazov": "Segedínsky guláš s ryžou",
       "porcie": 2,
+      "cas_pripravy": "1 hodina 10 minút",
       "foto_url": "fotky/segedinsky-gulas-ryza.jpg",
       "tagy": [
         "večera",
@@ -39774,6 +41123,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Bravčovú krkovičku nakrájaj na kocky, osoľ, okoreň.",
+        "Na oleji opeč najemno nakrájanú cibuľu do sklovita, pridaj prelisovaný cesnak, krátko opraž.",
+        "Pridaj mäso, opeč zo všetkých strán dozlata.",
+        "Stiahni z ohňa, vmiešaj sladkú papriku (nech nezhorí), potom prilej vodu, aby mäso bolo takmer zakryté. Pridaj bobkový list, priveď do varu a dus pod pokrievkou 20 minút.",
+        "Kyslú kapustu scedi, pridaj k mäsu, podľa potreby dolej vodu. Duste ďalších 20–25 minút, kým mäso a kapusta zmäknú.",
+        "Múku rozmiešaj do hladka so smotanou, vmiešaj do guláša, prever 10 minút na miernom ohni.",
+        "Podávaj s uvarenou ryžou."
+      ],
+      "nutricne": {
+        "kcal": 540,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 35,
+        "tuky_g": 28
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Terno",
@@ -40128,6 +41492,7 @@
       "slug": "slaninove-pagace",
       "nazov": "Slaninové pagáče",
       "porcie": 6,
+      "cas_pripravy": "45 minút",
       "foto_url": "fotky/slaninove-pagace.jpg",
       "tagy": [
         "pečivo",
@@ -40175,6 +41540,21 @@
           "id": "cukor-krystalovy"
         }
       ],
+      "postup": [
+        "Slaninu nakrájaj najemno, opeč na panvici do chrumkava, nechaj vychladnúť.",
+        "Droždie rozmiešaj vo vlažnom mlieku s cukrom, nechaj 10 minút postáť, kým sa nevytvorí pena.",
+        "Múku, soľ, rozpustené maslo, kvások a vychladenú slaninu (aj s výpekom) spracuj na hladké cesto.",
+        "Cesto prikry a nechaj kysnúť na teplom mieste 45 minút, kým nezdvojnásobí objem.",
+        "Rúru predhrej na 200 °C. Cesto rozvaľkaj na hrúbku cca 1,5 cm, vykrajuj kolieska (pohárom alebo formičkou).",
+        "Povrch pokrížuj nožom, potri rozšľahaným vajcom.",
+        "Peč 18–20 minút, kým pagáče nie sú zlatisté."
+      ],
+      "nutricne": {
+        "kcal": 340,
+        "bielkoviny_g": 10,
+        "sacharidy_g": 38,
+        "tuky_g": 16
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -40609,6 +41989,7 @@
       "slug": "slepaci-vyvar-rezance",
       "nazov": "Slepačí vývar s domácimi rezancami",
       "porcie": 2,
+      "cas_pripravy": "1 hodina 10 minút",
       "foto_url": "fotky/slepaci-vyvar-rezance.jpg",
       "tagy": [
         "obed",
@@ -40658,6 +42039,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Kuracie stehná daj do hrnca, zalej cca 1,2 l studenej vody, priveď pomaly do varu. Pravidelne zbieraj penu z povrchu — kľúčové pre číry vývar.",
+        "Pridaj celú ošúpanú cibuľu, bobkový list, soľ a korenie. Var na miernom ohni 45–60 minút.",
+        "Mrkvu a zeler nakrájaj na kolieska/kocky, pridaj do vývaru v poslednej tretine varenia, kým nezmäknú.",
+        "Mäso vyber, odstráň kosti, mäso natrhaj na kúsky a vráť späť do vývaru.",
+        "Cestoviny uvar samostatne podľa návodu, pridaj do taniera až pri podávaní, nech vývar zostane číry.",
+        "Podávaj posypané čerstvou petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 320,
+        "bielkoviny_g": 28,
+        "sacharidy_g": 22,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -40972,6 +42367,7 @@
       "slug": "smoothie-bowl-broskyne-cucoriedky",
       "nazov": "Smoothie bowl s broskyňami a čučoriedkami",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/smoothie-bowl-broskyne-cucoriedky.jpg",
       "tagy": [
         "raňajky",
@@ -41005,6 +42401,18 @@
           "id": "ovsene-vlocky"
         }
       ],
+      "postup": [
+        "Jednu broskyňu, polovicu čučoriedok a banán rozmixuj s gréckym jogurtom na hladký krém.",
+        "Krém rozlej do dvoch misiek.",
+        "Druhú broskyňu nakrájaj na plátky.",
+        "Navrch poukladaj plátky broskyne, zvyšné čučoriedky a posyp ovsenými vločkami."
+      ],
+      "nutricne": {
+        "kcal": 260,
+        "bielkoviny_g": 12,
+        "sacharidy_g": 44,
+        "tuky_g": 5
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -41259,6 +42667,7 @@
       "slug": "smoothie-bowl-spenat-banan-protein",
       "nazov": "Zelené smoothie bowl so špenátom, banánom a proteínom",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/smoothie-bowl-spenat-banan-protein.jpg",
       "tagy": [
         "raňajky",
@@ -41303,6 +42712,18 @@
           "id": "tekvicove-semienka"
         }
       ],
+      "postup": [
+        "Banány deň vopred nakrájaj na kolieska a zmraz — vďaka tomu bude smoothie bowl hustý ako zmrzlina, nie riedky.",
+        "Do mixéra daj špenát, zmrazený banán, grécky jogurt, mandľové mlieko a arašidové maslo.",
+        "Mixuj do hladka, podľa potreby prilievaj po lyžiciach mandľové mlieko, kým nezískaš hustú, lyžicou nedeliteľnú konzistenciu.",
+        "Rozdeľ do misiek a ozdob čučoriedkami a tekvicovými semienkami."
+      ],
+      "nutricne": {
+        "kcal": 310,
+        "bielkoviny_g": 16,
+        "sacharidy_g": 38,
+        "tuky_g": 11
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -41477,6 +42898,7 @@
       "slug": "sosovicove-kari-ryza",
       "nazov": "Krémové šošovicové karí so zázvorom a ryžou",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/sosovicove-kari-ryza.jpg",
       "tagy": [
         "večera",
@@ -41547,6 +42969,20 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Ryžu uvar podľa návodu na obale.",
+        "Cibuľu a cesnak nakrájaj najemno a orestuj na oleji do sklovita (asi 3 minúty). Pridaj nastrúhaný zázvor, dus ďalšiu minútu.",
+        "Pridaj kari korenie a rascu, krátko opraž (30 sekúnd) za stáleho miešania, nech sa uvoľní vôňa a korenie nezhorí.",
+        "Vsyp červenú šošovicu, pridaj konzervované paradajky, kokosové mlieko a 300 ml vody. Premiešaj.",
+        "Priveď do varu, zníž teplotu a dus 15–18 minút (červená šošovica zmäkne rýchlejšie ako klasická), kým sa rozvarí do krémova. Priebežne premiešavaj.",
+        "Dochuť soľou a podávaj na ryži, posypané čerstvým koriandrom."
+      ],
+      "nutricne": {
+        "kcal": 420,
+        "bielkoviny_g": 17,
+        "sacharidy_g": 60,
+        "tuky_g": 12
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -41779,6 +43215,7 @@
       "slug": "spanielsky-vtak-ryza",
       "nazov": "Španielsky vták s ryžou",
       "porcie": 2,
+      "cas_pripravy": "1 hodina 20 minút",
       "foto_url": "fotky/spanielsky-vtak-ryza.jpg",
       "tagy": [
         "večera",
@@ -41847,6 +43284,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Plátky hovädzieho mäsa rozklep na tenko, osoľ, okoreň a potri horčicou.",
+        "Na každý plátok polož plátok šunky, polovicu uvareného vajca a kyslú uhorku nakrájanú na prúžky.",
+        "Mäso zroluj a zopni špáradlom alebo previaž niťou.",
+        "Slaninu nakrájaj na kocky, opeč na oleji, pridaj nakrájanú cibuľu, opeč do sklovita.",
+        "Rolky opeč zo všetkých strán dozlata. Prilej vodu, aby boli rolky takmer zakryté, prikry a duste 45–60 minút do mäkka.",
+        "Rolky vyber, omáčku zahusti múkou rozmiešanou so smotanou, prever 5 minút.",
+        "Rolky nakrájaj na kolieska, zalej omáčkou, podávaj s uvarenou ryžou."
+      ],
+      "nutricne": {
+        "kcal": 530,
+        "bielkoviny_g": 40,
+        "sacharidy_g": 38,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -42371,6 +43823,7 @@
       "slug": "svieckova-na-smotane-ryza",
       "nazov": "Sviečková na smotane s ryžou",
       "porcie": 2,
+      "cas_pripravy": "3 hodiny (z toho 4-6 hodín marinovania vopred)",
       "foto_url": "fotky/svieckova-na-smotane-ryza.jpg",
       "tagy": [
         "večera",
@@ -42444,6 +43897,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Mrkvu, zeler a cibuľu nastrúhaj nahrubo. Polovicu daj na dno hrnca, na ňu polož mäso, zalej rozpusteným maslom, navrch daj zvyšnú zeleninu. Prikry a nechaj marinovať v chladničke aspoň 4–6 hodín, ideálne cez noc.",
+        "Mäso vyber zo zeleniny, osuš, na panvici opeč zo všetkých strán dozlata. Na výpeku opeč aj zeleninu dozlata.",
+        "Do hrnca s opečenou zeleninou vmiešaj horčicu a ocot, minútu opraž, potom prilej 500 ml vody s bujónom. Pridaj bobkový list.",
+        "Vlož opečené mäso späť, prikry a duste na miernom ohni (alebo v rúre na 180 °C) 1,5–2 hodiny, kým mäso nie je mäkké.",
+        "Mäso vyber, zeleninovú omáčku rozmixuj dohladka, precedi cez sitko, vmiešaj smotanu a prehrej (nevar prudko).",
+        "Mäso nakrájaj na plátky, zalej horúcou omáčkou, podávaj s uvarenou ryžou a lyžicou brusnicovej omáčky."
+      ],
+      "nutricne": {
+        "kcal": 520,
+        "bielkoviny_g": 38,
+        "sacharidy_g": 40,
+        "tuky_g": 22
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -42868,6 +44335,7 @@
       "slug": "syrove-tycinky-listkove-cesto",
       "nazov": "Syrové tyčinky z lístkového cesta",
       "porcie": 6,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/syrove-tycinky-listkove-cesto.jpg",
       "tagy": [
         "pečivo",
@@ -42901,6 +44369,20 @@
           "id": "udena-paprika"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 200 °C. Lístkové cesto rozvin na pomúčenej doske.",
+        "Polovicu cesta potri rozšľahaným vajcom, posyp zmesou syra, parmezánu a údenej papriky.",
+        "Prikry druhou polovicou cesta, jemne pritlač valčekom, nech sa syr prilepí.",
+        "Nakrájaj na pásiky široké cca 2 cm, každý pásik niekoľkokrát pretoč (twist).",
+        "Ulož na plech s papierom na pečenie, potri zvyšným vajcom.",
+        "Peč 15–18 minút, kým tyčinky nie sú zlatisté a nadýchané."
+      ],
+      "nutricne": {
+        "kcal": 260,
+        "bielkoviny_g": 9,
+        "sacharidy_g": 18,
+        "tuky_g": 17
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -43145,6 +44627,7 @@
       "slug": "toast-avokado-vajce",
       "nazov": "Toast s avokádom a vajcom naostro",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/toast-avokado-vajce.jpg",
       "tagy": [
         "raňajky",
@@ -43189,6 +44672,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Chlieb opeč v hriankovači alebo na suchej panvici do zlatista.",
+        "Avokádo rozpolti, dužinu vyber a rozmixuj vidličkou na tanieri so šťavou z citróna, soľou a korením — nechaj zámerne mierne hrudkovité, nie hladké pyré.",
+        "Na oleji sma vajcia na panvici, prikry pokrievkou a sma 2–3 minúty na strednom ohni, kým je bielok stuhnutý a žĺtok stále tečúci.",
+        "Toast potri avokádovou zmesou až po okraje, navrch polož vyprážané vajce.",
+        "Posyp čili vločkami a čiernym korením, pokvapkaj olivovým olejom. Podávaj hneď, kým je toast chrumkavý."
+      ],
+      "nutricne": {
+        "kcal": 430,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 30,
+        "tuky_g": 27
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -43482,6 +44978,7 @@
       "slug": "toast-hermelin-brusnicova-omacka",
       "nazov": "Toast s hermelínom a brusnicovou omáčkou",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/toast-hermelin-brusnicova-omacka.jpg",
       "tagy": [
         "raňajky",
@@ -43515,6 +45012,18 @@
           "id": "vlasske-orechy"
         }
       ],
+      "postup": [
+        "Plátky chleba potri maslom z jednej strany.",
+        "Na panvici alebo v hriankovači opeč chlieb z oboch strán do zlatista.",
+        "Hermelín nakrájaj na plátky a polož na horúce toasty, nech sa mierne rozpustí.",
+        "Navrch daj lyžicu brusnicovej omáčky a posyp nasekanými vlašskými orechmi."
+      ],
+      "nutricne": {
+        "kcal": 420,
+        "bielkoviny_g": 16,
+        "sacharidy_g": 30,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -43809,6 +45318,7 @@
       "slug": "treska-na-masle-mrkvove-pyre",
       "nazov": "Treska na masle s mrkvovým pyré",
       "porcie": 2,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/treska-na-masle-mrkvove-pyre.jpg",
       "tagy": [
         "večera",
@@ -43852,6 +45362,19 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Mrkvu ošúp, nakrájaj na kolieska a var v osolenej vode 15 minút, kým nie je mäkká.",
+        "Uvarenú mrkvu scedi a rozmixuj s polovicou masla a mliekom na hladké pyré, osoľ.",
+        "Filety tresky osuš papierovou utierkou, osoľ a okoreň.",
+        "Na panvici rozpusti zvyšné maslo, tresku opekaj 3–4 minúty z každej strany, priebežne polievaj rozpusteným maslom.",
+        "Podávaj tresku na mrkvovom pyré, s citrónom a čerstvým tymianom."
+      ],
+      "nutricne": {
+        "kcal": 380,
+        "bielkoviny_g": 30,
+        "sacharidy_g": 18,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco supermarket",
@@ -44196,6 +45719,7 @@
       "slug": "tuniakovy-salat-zemiaky-vajce",
       "nazov": "Tuniakový šalát so zemiakmi, vajcom a horčicovým dresingom",
       "porcie": 2,
+      "cas_pripravy": "25 minút",
       "foto_url": "fotky/tuniakovy-salat-zemiaky-vajce.jpg",
       "tagy": [
         "obed",
@@ -44250,6 +45774,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Zemiaky uvar v šupke domäkka (cca 18–20 minút).",
+        "Kým sa zemiaky varia, priprav dresing: horčicu, olivový olej a balzamikový ocot dôkladne vymiešaj vidličkou alebo v pohári s vrchnákom (potriasaním), kým sa spojí do hladka. Osoľ, okoreň.",
+        "Vajcia uvar 8 minút od varu pre jemne krémový, mierne tečúci žĺtok (chuťovo aj vizuálne lepšie ako natvrdo uvarené). Ihneď scho pod studenou vodou, olúpaj a rozkrájaj na štvrtiny.",
+        "Horúce zemiaky scedi, olúpaj a nakrájaj na kocky. Zalej ich rovno horúce dvoma lyžicami dresingu a premiešaj — horúce zemiaky nasajú chuť oveľa lepšie ako studené.",
+        "Papriku a červenú cibuľu nakrájaj na kocky/prúžky. Tuniak scedi a rozdrob vidličkou.",
+        "Všetko zmiešaj v mise, zalej zvyšným dresingom. Navrch polož vajcia.",
+        "Podávaj vlažné alebo studené."
+      ],
+      "nutricne": {
+        "kcal": 390,
+        "bielkoviny_g": 28,
+        "sacharidy_g": 25,
+        "tuky_g": 19
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -44644,6 +46183,7 @@
       "slug": "tvarohovo-broskynovy-kolac",
       "nazov": "Tvarohovo-broskyňový koláč",
       "porcie": 8,
+      "cas_pripravy": "1 hodina 10 minút",
       "foto_url": "fotky/tvarohovo-broskynovy-kolac.jpg",
       "tagy": [
         "dezert",
@@ -44691,6 +46231,20 @@
           "id": "vanilkovy-extrakt"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 175 °C. Formu vymasti maslom.",
+        "Vajcia vyšľahaj s cukrom do peny, pridaj tvaroh, múku, prášok do pečiva a vanilkový extrakt, premiešaj do hladka.",
+        "Broskyne nakrájaj na tenšie plátky.",
+        "Cesto vylej do formy, navrch poukladaj plátky broskýň.",
+        "Peč 40–45 minút, kým je povrch zlatistý a stred pevný (skús špáradlom).",
+        "Nechaj vychladnúť vo forme, potom nakrájaj na porcie."
+      ],
+      "nutricne": {
+        "kcal": 230,
+        "bielkoviny_g": 10,
+        "sacharidy_g": 26,
+        "tuky_g": 9
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -45145,6 +46699,7 @@
       "slug": "tvarohovy-krem-cucoriedky-med",
       "nazov": "Tvarohový krém s teplými čučoriedkami a medom",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/tvarohovy-krem-cucoriedky-med.jpg",
       "tagy": [
         "desiata",
@@ -45181,6 +46736,18 @@
           "id": "skorica"
         }
       ],
+      "postup": [
+        "Čučoriedky daj na panvicu na miernom ohni, dus 4–5 minút, kým pustia šťavu a zmäknú do džemovej konzistencie.",
+        "Tvaroh, mlieko a 1 PL medu rozmixuj tyčovým mixérom do hladka a krémova (30–60 sekúnd) — vznikne hladký krém podobný jogurtu, oveľa lepší ako hrudkovitý tvaroh priamo z obalu.",
+        "Rozlož do misiek, navrch daj teplé čučoriedky, zvyšný med a podľa chuti škoricu.",
+        "Podávaj hneď — kontrast teplých čučoriedok a studeného krému funguje najlepšie."
+      ],
+      "nutricne": {
+        "kcal": 220,
+        "bielkoviny_g": 18,
+        "sacharidy_g": 25,
+        "tuky_g": 3
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -45475,6 +47042,7 @@
       "slug": "vajecna-omeleta-sunka-paradajky",
       "nazov": "Vaječná omeleta so šunkou a paradajkami",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/vajecna-omeleta-sunka-paradajky.jpg",
       "tagy": [
         "raňajky",
@@ -45518,6 +47086,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Šunku a paradajky nakrájaj na kocky.",
+        "Vajcia rozšľahaj s trochou soli a čierneho korenia.",
+        "Na panvici rozpusti maslo, vlej rozšľahané vajcia.",
+        "Keď sa okraje začnú zrážať, posyp šunkou, paradajkami a syrom.",
+        "Keď je omeleta takmer hotová, jednu polovicu preklop na druhú.",
+        "Podávaj posypanú petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 360,
+        "bielkoviny_g": 27,
+        "sacharidy_g": 5,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -45902,6 +47484,7 @@
       "slug": "vajecnica-syr-cherry-paradajky",
       "nazov": "Vaječnica so syrom a cherry paradajkami",
       "porcie": 2,
+      "cas_pripravy": "15 minút",
       "foto_url": "fotky/vajecnica-syr-cherry-paradajky.jpg",
       "tagy": [
         "raňajky",
@@ -45940,6 +47523,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cherry paradajky prekroj na polovice.",
+        "Vajcia rozšľahaj s trochou soli a čierneho korenia.",
+        "Na panvici rozpusti maslo, pridaj cherry paradajky a krátko opraž.",
+        "Zalej rozšľahanými vajcami, na miernom ohni pomaly miešaj drevenou varechou, kým sa vajcia nezrazia do mäkkých kúskov.",
+        "Tesne pred dohotovením vmiešaj strúhaný syr, nech sa rozpustí.",
+        "Podávaj posypané petržlenovou vňaťou."
+      ],
+      "nutricne": {
+        "kcal": 350,
+        "bielkoviny_g": 22,
+        "sacharidy_g": 6,
+        "tuky_g": 26
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
@@ -46234,6 +47831,7 @@
       "slug": "vyprazane-rybie-prsty-hranolky",
       "nazov": "Vyprážané rybie prsty s domácimi hranolkami",
       "porcie": 4,
+      "cas_pripravy": "45 minút",
       "foto_url": "fotky/vyprazane-rybie-prsty-hranolky.jpg",
       "tagy": [
         "večera",
@@ -46288,6 +47886,20 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Rúru predhrej na 220 °C. Zemiaky nakrájaj na hranolky, osuš, premiešaj s trochou oleja a soľou a rozlož na plech.",
+        "Pierky zapeč 30–35 minút do zlatista, v polovici obráť.",
+        "Tresku nakrájaj na pásiky (\"prsty\"), osoľ a okoreň.",
+        "Postupne obaľuj v múke, rozšľahanom vajci a nakoniec v strúhanke.",
+        "Na panvici rozohrej olej, rybie prsty smaž 3–4 minúty z každej strany do zlatista a chrumkava.",
+        "Osuš na papierovej utierke, podávaj s hranolkami, citrónom a tatárskou omáčkou."
+      ],
+      "nutricne": {
+        "kcal": 560,
+        "bielkoviny_g": 32,
+        "sacharidy_g": 58,
+        "tuky_g": 20
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Tesco hypermarket",
@@ -46672,6 +48284,7 @@
       "slug": "vyprazany-syr-hranolky-tatarska-omacka",
       "nazov": "Vyprážaný syr s hranolkami a tatárskou omáčkou",
       "porcie": 2,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/vyprazany-syr-hranolky-tatarska-omacka.jpg",
       "tagy": [
         "obed",
@@ -46725,6 +48338,21 @@
           "id": "sol"
         }
       ],
+      "postup": [
+        "Zemiaky nakrájaj na hranolky, opláchni, osuš. Peč v rúre na 200 °C alebo vypráž do zlatista a chrumkava.",
+        "Syr nakrájaj na hrubšie plátky (cca 1,5 cm).",
+        "Priprav si tri misky: múku, rozšľahané vajcia, strúhanku.",
+        "Každý plátok syra obaľ postupne v múke, vajci a strúhanke — pre extra chrumkavú kôrku zopakuj obaľovanie vo vajci a strúhanke ešte raz.",
+        "Vypráž na rozohriatom oleji 2–3 minúty z každej strany do zlatista (syr vo vnútri musí zostať vcelku, nie roztečený).",
+        "Vyprážané plátky polož na papierovú utierku, nech odkvapká prebytočný olej.",
+        "Podávaj s hranolkami, tatárskou omáčkou a klinom citróna."
+      ],
+      "nutricne": {
+        "kcal": 680,
+        "bielkoviny_g": 28,
+        "sacharidy_g": 55,
+        "tuky_g": 38
+      },
       "ceny_za_porciu": [
         {
           "obchod": "COOP",
@@ -47169,6 +48797,7 @@
       "slug": "zapekane-cestoviny-sunka-syr",
       "nazov": "Zapekané cestoviny so šunkou a syrom",
       "porcie": 2,
+      "cas_pripravy": "45 minút",
       "foto_url": "fotky/zapekane-cestoviny-sunka-syr.jpg",
       "tagy": [
         "obed",
@@ -47217,6 +48846,21 @@
           "id": "cierne-korenie"
         }
       ],
+      "postup": [
+        "Cestoviny uvar v osolenej vode al dente, scedi.",
+        "Rúru predhrej na 190 °C. Zapekaciu misu vymasti maslom.",
+        "Šunku nakrájaj na kocky.",
+        "V miske rozšľahaj vajcia so smotanou, prelisovaným cesnakom, soľou a korením.",
+        "Cestoviny premiešaj so šunkou a polovicou syra, presuň do zapekacej misy.",
+        "Zalej vaječno-smotanovou zmesou, navrch posyp zvyšným syrom.",
+        "Zapekaj 20–25 minút do zlatista a bublinkovej kôrky."
+      ],
+      "nutricne": {
+        "kcal": 590,
+        "bielkoviny_g": 30,
+        "sacharidy_g": 55,
+        "tuky_g": 27
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Kaufland",
@@ -47691,6 +49335,7 @@
       "slug": "zazvorovo-citronovy-caj-medom",
       "nazov": "Zázvorovo-citrónový čaj s medom",
       "porcie": 2,
+      "cas_pripravy": "10 minút",
       "foto_url": "fotky/zazvorovo-citronovy-caj-medom.jpg",
       "tagy": [
         "nápoj",
@@ -47720,6 +49365,20 @@
           "id": null
         }
       ],
+      "postup": [
+        "Zázvor ošúp a nakrájaj na tenké plátky.",
+        "Vodu priveď do varu, pridaj zázvor, znížiť teplotu a dus 5–7 minút, nech sa uvoľní chuť.",
+        "Odstav z ohňa, pridaj plátky citróna, nechaj 3 minúty lúhovať.",
+        "Precedi (alebo nechaj zázvor a citrón v čaji, podľa chuti).",
+        "Keď je čaj mierne vychladnutý (nie vriaci, aby sa nezničili účinné látky medu), vmiešaj med.",
+        "Podávaj horúce alebo s ľadom vychladené."
+      ],
+      "nutricne": {
+        "kcal": 50,
+        "bielkoviny_g": 0,
+        "sacharidy_g": 13,
+        "tuky_g": 0
+      },
       "ceny_za_porciu": [
         {
           "obchod": "Lidl",
