@@ -42,7 +42,7 @@ jobs:
       - name: Zber cien
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/crawl_ceny.py kaufland-agg --max-pages 4   # PILOT: test vision na 4 stranách
+        run: python scripts/crawl_ceny.py kaufland-agg --max-pages 4 2>&1 | tee /tmp/zber.log   # PILOT: test vision na 4 stranách
 
       # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
       # Workflow permissions zapnuté "Allow GitHub Actions to create and approve
@@ -63,3 +63,12 @@ jobs:
             Zber je heuristika — ceny a kategórie treba overiť, nemergovať naslepo.
           labels: zber-cien
           delete-branch: true
+
+      # Diagnostika ako POSLEDNÝ krok → v logu je na konci, ľahko sa číta.
+      - name: Výpis logu zberu
+        if: always()
+        run: |
+          echo "===== LOG ZBERU ====="
+          cat /tmp/zber.log || echo "(žiadny log)"
+          echo "===== VYGENEROVANÉ ceny/*agg*.json ====="
+          ls -la ceny/*agg* 2>/dev/null || echo "(žiadny agg súbor)"
