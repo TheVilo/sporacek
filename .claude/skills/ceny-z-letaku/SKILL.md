@@ -1,6 +1,6 @@
 ---
 name: ceny-z-letaku
-description: Použi keď treba spracovať leták obchodu do cenovej databázy (ceny/) — či už z priloženého JSON-u z Gemini na overenie, alebo z PDF letáku. Trigger frázy - "over tento json", "pridaj leták do cien", "skontroluj cenový json z gemini", "spracuj tento leták do ceny", priloženie cenového JSON + PDF letáku. Obsahuje aj hotový Gemini prompt pre používateľa.
+description: Použi keď treba spracovať leták obchodu do cenovej databázy (ceny/) — či už z priloženého JSON-u z Gemini na overenie, z PDF letáku, alebo z automatického zberu cez crawl4ai (scripts/crawl_ceny.py). Trigger frázy - "over tento json", "pridaj leták do cien", "skontroluj cenový json z gemini", "spracuj tento leták do ceny", "crawl4ai", "automatický zber cien", priloženie cenového JSON + PDF letáku. Obsahuje hotový Gemini prompt aj postup na kontrolu a import.
 ---
 
 # Spracovanie letáku do cenovej databázy (`ceny/`)
@@ -81,3 +81,24 @@ Skriptom (Python) preveď a skontroluj:
 ### 4. Commit a push
 - Commitni `ceny/<súbor>.json`. **Push robí používateľ** (má na to prístup, my z tohto prostredia nepushujeme). V zhrnutí uveď, koľko commitov čaká.
 - V zhrnutí ukáž aj stav databázy (počet obchodov, spolu cien, koľko surovín je porovnateľných naprieč obchodmi).
+
+---
+
+## C) Automatický zber cez crawl4ai (GitHub Actions)
+
+Namiesto ručného Gemini kroku (časť A) sa vstupný JSON generuje automaticky cez **crawl4ai** (`scripts/crawl_ceny.py`) — LLM-friendly crawler, ktorý stránku obchodu prevedie na štruktúrovaný JSON priamo v `ceny/` schéme.
+
+**Kde beží:** na **serveroch GitHubu** cez workflow `.github/workflows/zber-cien.yml` (týždenne v štvrtok + tlačidlo „Run workflow"). **NEbeží vnútri Claude Code na webe** (sieťová politika blokuje weby obchodov, `403` na CONNECT) ani lokálne u používateľa. Workflow výstup **nezapisuje rovno do main**, ale otvorí **Pull Request** (`ceny/*.json`) — ten prejde kontrolou z časti B a až potom sa mergne. V súlade s `CLAUDE.md` (*„automatický zber stavia programátor"*).
+
+**Typ ceny** (pole `typ` v `STORES` v skripte):
+- `akciova` — z **web-letáku** (dočasné akciové ceny).
+- `bezna` — z **e-shopu** (bežné needzľavnené ceny) → doplnia diery pri oceňovaní receptov vo `vyber.html`. V schéme len cena bez zľavy (`zlava: ""`, `povodna_cena: null`), odlíšená cez `zdroj_kontroly`/`poznamka` — netreba meniť schému ani `ceny.html`.
+
+**Režim extrakcie** (pole `mode`) — **primárne free, Gemini až keď šporáček zarába**:
+- `jsonld` — **default, ZADARMO, bez kľúča.** Číta schema.org JSON-LD z HTML stránky (`extrahuj_jsonld`). Bez ladenia selektorov. Prvá voľba pre každý obchod.
+- `css` — ZADARMO, ale treba per-web CSS selektory v poli `schema`. Záloha, keď stránka nemá JSON-LD.
+- `llm` — Gemini Flash, potrebuje `GEMINI_API_KEY`. **Nezapínať, kým to nie je nutné** (šetríme, kým nie sú príjmy). LLM obchody sa bez kľúča ticho preskočia.
+
+Workflow beží s `--sample` → do `scripts/_samples/<obchod>-<typ>.md` uloží vzorku stránky (markdown + kus HTML + počet nájdených JSON-LD produktov). Podľa nej sa dá overiť, či `jsonld` funguje, prípadne doladiť `css` selektory — bez toho, aby to Claude musel vidieť naživo. Nový obchod = pridať záznam do `STORES` (obchod + typ + mode + url).
+
+**Moja rola pri PR z workflowu:** obsah PR (aj keď vznikol automaticky) **nikdy nemergujem naslepo** — prejde rovnakou kontrolou ako Gemini JSON: vnútorná kontrola (B.1), náhodná kontrola vzorky proti zdroju (B.2), oprava zjavných chýb (B.3). Heuristická kategorizácia a scope filter v skripte kontrolu **nenahrádzajú**, len uľahčujú. Po kontrole PR mergnem (alebo doň pushnem opravy).
