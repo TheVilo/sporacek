@@ -389,13 +389,29 @@ async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[
         return []
 
     if sample:  # ulož vzorku stránky, nech sa dá doladiť extrakcia
+        import re as _re
         SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
         html = res.html or ""
+        md = res.markdown or ""
         jl = extrahuj_jsonld(html)
+        eur = md.count("€")
+        imgs = _re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', html, _re.I)
+        links = _re.findall(r'<a[^>]+href=["\']([^"\']+)["\']', html, _re.I)
+        # zaujímavé = obrázky letáku / CDN (nie ikony/ads/loga)
+        zaujimave_img = [u for u in imgs if not _re.search(
+            r'\.svg|logo|icon|sprite|avatar|googlesyndication|doubleclick', u, _re.I)][:60]
+        letak_links = [u for u in links if _re.search(
+            r'letak|leaflet|/l/|flyer|akci|katalog', u, _re.I)][:40]
         f = SAMPLES_DIR / f"{store['obchod'].lower()}-{store['typ']}.md"
         f.write_text(
-            f"# Vzorka: {store['url']}\n\nJSON-LD produktov nájdených: {len(jl)}\n\n"
-            f"## Markdown (prvých 4000 znakov)\n\n{(res.markdown or '')[:4000]}\n\n"
+            f"# Vzorka: {store['url']}\n\n"
+            f"JSON-LD produktov: {len(jl)} | výskyt '€' v markdowne: {eur} | "
+            f"dĺžka markdownu: {len(md)} | <img>: {len(imgs)} | <a>: {len(links)}\n\n"
+            f"## Odkazy na leták/katalóg ({len(letak_links)})\n\n"
+            + "\n".join(letak_links) + "\n\n"
+            f"## Obrázky (bez ikon/log/ads, prvých {len(zaujimave_img)})\n\n"
+            + "\n".join(zaujimave_img) + "\n\n"
+            f"## Markdown (prvých 15000 znakov)\n\n{md[:15000]}\n\n"
             f"## HTML (prvých 8000 znakov)\n\n```\n{html[:8000]}\n```\n",
             encoding="utf-8")
         print(f"      vzorka → {f.relative_to(REPO)} (JSON-LD: {len(jl)})")
