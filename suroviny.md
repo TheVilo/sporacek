@@ -160,6 +160,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - bujón (kocka)
 - kokosové mlieko
 - tahini (sezamová pasta)
+- sójová omáčka
 - sezamový olej
 - sezamové semienka
 - tatárska omáčka

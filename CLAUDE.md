@@ -31,6 +31,9 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `.claude/skills/` | workflow postupy, načítajú sa len keď sú potrebné |
 | `znalostna-baza/` | brand manuál, obsahová stratégia |
 | `suroviny.md` | **číselník surovín** — jednotné názvy (kritické!) |
+| `znalostna-baza/aliasy.json` | **kurátorovaná alias-vrstva** — pre každé `id` suroviny (slug zo `suroviny.md`) doplnené aliasy (ako sa volá v letákoch) + základná jednotka. Toto robí párovanie leták↔surovina deterministickým (pozri nižšie). |
+| `scripts/build_databaza.py` | build skript, ktorý spojí `suroviny.md` + `aliasy.json` + `ceny/` + `recepty/` do jednej databázy pre appku |
+| `docs/data/databaza.json` | **generovaná hlavná databáza** (needituj ručne!) — každá surovina s cenami (platnosť od-do, podmienka) + každý recept napárovaný na `id` s cenou za porciu per obchod. Zdroj, z ktorého číta appka (pozri nižšie). |
 | `recepty/` | jeden súbor = jeden recept |
 | `fotky/` | fotky receptov, pomenované podľa id (napr. `kremove-kuracie-rizoto-sampinony.jpg`) |
 | `tydne/` | výstup týždňa (leták → recepty → nákup → úspora) |
@@ -53,6 +56,28 @@ Fotky **sú v repe** (priečinok `fotky/`) — nech sa cez GitHub/git pull sync 
 **Scope — len skutočné suroviny na varenie.** Vynechaj alkohol, nápoje, chipsy/snacky, žuvačky, hotové sladkosti/zmrzliny, sladké hotové pečivo, kozmetiku/drogériu, domáce potreby, krmivo, detskú výživu/plienky, proteínové doplnky, elektroniku/odevy/záhradu. Platí rovnako naprieč obchodmi.
 
 **Vzťah k `suroviny.md`:** `ceny/` je širší než číselník receptov — obsahuje všetko z letáku, aj veci, čo (zatiaľ) nie sú v žiadnom recepte. Do `suroviny.md` pridávaj surovinu až keď sa reálne použije v recepte.
+
+---
+
+## Hlavná databáza pre appku (`docs/data/databaza.json`)
+
+**Účel:** appka (a časom aj stránky) si má **ťahať dáta z jednej databázy**, nie pri každom rendrovaní nanovo hádať, ktorá letáková položka je ktorá surovina. Preto existuje kanonická vrstva, ktorá spája `recept → surovina → cena` **deterministicky cez stabilné `id`**.
+
+**Ako to funguje (3 zdroje pravdy + 1 generovaný výstup):**
+
+1. `suroviny.md` — kanonický zoznam surovín. Z názvu sa robí `id` (slug bez diakritiky, napr. „kuracie prsia" → `kuracie-prsia`). Zdroj pravdy pre to, **ktoré suroviny existujú**.
+2. `znalostna-baza/aliasy.json` — kurátorované **aliasy** (ako sa tá istá surovina volá v letákoch, napr. `kuracie-prsia` ← „Kuracie prsné rezne", „Kuracie rezne") + **základná jednotka** (g/ml/ks). Toto je tá jediná vec, ktorú treba udržiavať ručne — a je to zámerne tak (rovnako ako `suroviny.md`, párovanie je jediné, čo môže systém rozbiť). Aliasy sa porovnávajú normalizovane (bez diakritiky) ako podreťazec; najdlhší alias vyhráva. **Nepoužívaj priveľmi všeobecné aliasy** (napr. samotné „kuracie") — chytali by nesúvisiace položky.
+3. `ceny/*.json` + `recepty/*.md` — cenníky a recepty (bez zmeny, len sa z nich číta).
+
+→ `scripts/build_databaza.py` to spojí do **`docs/data/databaza.json`**: koreň `{ meta, suroviny[], recepty[] }`. Každá surovina má `{ id, nazov, kategoria, jednotka, ceny[] }`, kde každá cena nesie `{ obchod, mnozstvo, balenie_qty, balenie_jednotka, zlavnena_cena, povodna_cena, zlava, platnost_od, platnost_do, podmienka }` — teda **cena + platnosť od-do + podmienka** (napr. „s Lidl Plus"). Každý recept má suroviny napárované na `id` + `ceny_za_porciu[]` per obchod s príznakom `spolahlive` (aspoň polovica surovín oceniteľná). Recept `.md` **naďalej nikdy neobsahuje cenu** — cena vzniká len tu, pri builde.
+
+**Pravidlo:** `docs/data/databaza.json` je **generovaný súbor, needituj ho ručne.** Keď sa zmení `recepty/`, `ceny/`, `suroviny.md` alebo `aliasy.json`, **prebuild-ni** ho:
+```
+python3 scripts/build_databaza.py
+```
+Skript na konci vypíše pokrytie (koľko surovín má cenu, koľko receptov je spoľahlivo ocenených, koľko letákových názvov ostalo nespárovaných) a nespárované názvy uloží do `scripts/.nesparovane.json` (ignorované gitom) — podľa neho vieš dopĺňať aliasy. Nespárované letákové názvy sú z veľkej časti **legitímne mimo záber** (značkové výrobky, nátierky, sladkosti, mäsové rezy mimo číselníka) — dopĺňaj alias len keď ide o surovinu, ktorá **je** v `suroviny.md`.
+
+**Vzťah k `docs/vyber.html`:** stránka `vyber.html` dnes robí to isté párovanie naživo v prehliadači (bez aliasov, len podreťazec). `databaza.json` je presnejšia (má aliasy) a je určená appke; stránky sa na ňu môžu časom prepnúť, aby existovala **jedna** párovacia logika. Dovtedy sú obe konzistentné v princípe (rovnaká normalizácia aj prepočet jednotiek).
 
 ---
 
@@ -138,6 +163,8 @@ Recept má viac tagov naraz. (Cenová kategória zámerne nie je tag — pozri n
 - Generovanie fotky k receptu (foto_url) → `.claude/skills/generovanie-fotiek/SKILL.md`. Obsahuje presný funkčný postup (SDK, nie curl) aj časté chyby, nech sa nezisťuje nanovo v každej session.
 - Pridanie nového receptu mimo týždenného letáku → `.claude/skills/novy-recept/SKILL.md`. Recepty sa hľadajú na internete (nevymýšľajú sa) a píšu prirodzenou slovenčinou.
 - Spracovanie letáku do cenovej databázy `ceny/` (overenie JSON-u z Gemini alebo import z PDF) → `.claude/skills/ceny-z-letaku/SKILL.md`. Obsahuje hotový Gemini prompt aj postup na kontrolu (vnútornú + náhodnú proti PDF) a import.
+
+> **Po každej zmene `ceny/`, `recepty/`, `suroviny.md` alebo `aliasy.json` prebuild-ni hlavnú databázu:** `python3 scripts/build_databaza.py` (pozri sekciu „Hlavná databáza pre appku"). Bez toho ostane `docs/data/databaza.json` zastaraná.
 
 ---
 

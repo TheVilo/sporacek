@@ -1,0 +1,350 @@
+#!/usr/bin/env python3
+"""
+build_databaza.py — postaví hlavnú databázu pre appku (a živé stránky).
+
+Zdroje pravdy (nič sa v nich nemení, len sa z nich číta):
+  - suroviny.md                     kanonický zoznam surovín (názvy + kategórie)
+  - znalostna-baza/aliasy.json      kurátorované aliasy + jednotky (rastie v čase)
+  - ceny/*.json                     cenníky z letákov (cena, platnosť, podmienky)
+  - recepty/*.md                    recepty (suroviny + množstvá, NIKDY cena)
+
+Výstup (generovaný, needituj ručne — vždy sa prepíše týmto skriptom):
+  - docs/data/databaza.json         hlavná databáza pre appku aj stránky
+
+Princíp: každá surovina má stabilné id. Cez id sa deterministicky spája
+recept -> surovina -> cena (platnosť od-do, podmienka). Žiadne fuzzy hádanie
+za behu — párovanie letáku na surovinu drží kurátorovaná alias-vrstva.
+
+Spustenie:  python3 scripts/build_databaza.py
+"""
+import re, json, glob, os, sys, unicodedata
+from datetime import datetime, timezone
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(ROOT)
+
+# ---------- normalizácia názvov (rovnaká logika ako docs/vyber.html) ----------
+def strip_dia(s):
+    return "".join(c for c in unicodedata.normalize("NFD", s or "")
+                   if unicodedata.category(c) != "Mn")
+
+def norm(s):
+    s = strip_dia((s or "").lower())
+    s = re.sub(r"\([^)]*\)", " ", s)          # (konzervovaná), (kocka) ...
+    s = re.sub(r"\b\d+([.,]\d+)?\s*%", " ", s) # 3,5 %
+    s = re.sub(r"[^a-z0-9]+", " ", s).strip()
+    return s
+
+# ---------- kanonické suroviny zo suroviny.md ----------
+DEFAULT_UNIT_BY_CAT = {
+    "Mäso a ryby": "g", "Zelenina": "g", "Ovocie": "g",
+    "Orechy a semienka": "g", "Strukoviny a obilniny": "g",
+    "Mliečne a vajcia": "g", "Základy a koreniny": "g",
+}
+
+def slugify(nazov):
+    s = strip_dia(nazov.lower())
+    s = re.sub(r"\([^)]*\)", " ", s)
+    s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+    return s
+
+def load_canonical():
+    """Vráti zoznam surovín zo suroviny.md: {id, nazov, kategoria}."""
+    out, cat = [], None
+    for line in open("suroviny.md", encoding="utf-8"):
+        line = line.rstrip("\n")
+        h = re.match(r"^##\s+(.+)$", line.strip())
+        if h:
+            cat = h.group(1).strip()
+            continue
+        if line.strip().startswith("- "):
+            nazov = line.strip()[2:].strip()
+            out.append({"id": slugify(nazov), "nazov": nazov, "kategoria": cat})
+    return out
+
+# ---------- kurátorovaná alias-vrstva ----------
+def load_aliasy():
+    p = "znalostna-baza/aliasy.json"
+    if not os.path.exists(p):
+        return {}
+    return json.load(open(p, encoding="utf-8")).get("suroviny", {})
+
+# ---------- cenníky ----------
+def parse_platnost(s):
+    """'2026-07-13 - 2026-07-19' -> ('2026-07-13','2026-07-19')."""
+    if not s:
+        return (None, None)
+    m = re.findall(r"(\d{4}-\d{2}-\d{2})", s)
+    if len(m) >= 2:
+        return (m[0], m[1])
+    if len(m) == 1:
+        return (m[0], m[0])
+    return (None, None)
+
+def parse_package(mnozstvo):
+    """Veľkosť balenia z letáku -> {qty, unit} v základnej jednotke (g/ml/ks)."""
+    if not mnozstvo:
+        return None
+    s = mnozstvo.lower()
+    if re.search(r"cena\s*za\s*1\s*kg", s):
+        return {"qty": 1000, "unit": "g"}
+    if re.search(r"cena\s*za\s*1\s*l\b", s):
+        return {"qty": 1000, "unit": "ml"}
+    m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks)\b", s)
+    if not m:
+        return None
+    qty = float(m.group(1).replace(",", "."))
+    unit = m.group(2)
+    if unit == "kg":
+        return {"qty": qty * 1000, "unit": "g"}
+    if unit == "l":
+        return {"qty": qty * 1000, "unit": "ml"}
+    return {"qty": qty, "unit": unit}
+
+# ---------- množstvo v recepte (rovnaká logika ako docs/vyber.html) ----------
+def parse_recipe_qty(mnozstvo, pkg_unit_hint):
+    if not mnozstvo:
+        return None
+    s = mnozstvo.lower()
+    m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)", s)
+    if m:
+        qty = float(m.group(1).replace(",", "."))
+        unit = m.group(2)
+        if unit.startswith("strúčik") or unit.startswith("balen"):
+            unit = "ks"
+        if unit == "kg":
+            return {"qty": qty * 1000, "unit": "g"}
+        if unit == "l":
+            return {"qty": qty * 1000, "unit": "ml"}
+        return {"qty": qty, "unit": unit}
+    m = re.search(r"(\d+[.,]?\d*)\s*(pl|čl)\b", s)
+    if m:
+        qty = float(m.group(1).replace(",", "."))
+        per = 15 if m.group(2) == "pl" else 5
+        unit = "ml" if pkg_unit_hint == "ml" else "g"
+        return {"qty": qty * per, "unit": unit, "approx": True}
+    return None
+
+# ---------- matcher: názov (leták/recept) -> id suroviny ----------
+class Matcher:
+    def __init__(self, suroviny):
+        # exact index: normovaný alias -> id ; + zoznam (aliasKey,id) na substring
+        self.exact = {}
+        self.phrases = []  # (alias_norm, id) zoradené od najdlhšieho
+        for s in suroviny:
+            for a in s["_alias_all"]:
+                k = norm(a)
+                if len(k) < 3:
+                    continue
+                self.exact.setdefault(k, s["id"])
+                self.phrases.append((k, s["id"]))
+        self.phrases.sort(key=lambda x: -len(x[0]))
+
+    def match(self, nazov):
+        k = norm(nazov)
+        if len(k) < 3:
+            return None
+        if k in self.exact:
+            return self.exact[k]
+        # substring: alias sa nachádza v názve (najdlhší alias vyhráva)
+        for ak, iid in self.phrases:
+            if ak in k:
+                return iid
+        # obrátene: názov je súčasťou aliasu (kratší recept. názov)
+        best, bd = None, 1e9
+        for ak, iid in self.phrases:
+            if k in ak:
+                d = len(ak) - len(k)
+                if d < bd:
+                    best, bd = iid, d
+        return best
+
+# ---------- recepty ----------
+def parse_recipes():
+    out = []
+    for f in sorted(glob.glob("recepty/*.md")):
+        t = open(f, encoding="utf-8").read()
+        slug = (re.search(r"\*\*slug:\*\*\s*(\S+)", t) or [None, os.path.basename(f)[:-3]])[1]
+        nazov = (re.search(r"^#\s+(.+)$", t, re.M) or [None, slug])[1].strip()
+        porcie = int((re.search(r"\*\*porcie:\*\*\s*(\d+)", t) or [None, "1"])[1])
+        foto = (re.search(r"\*\*foto_url:\*\*\s*(\S+)", t) or [None, None])[1]
+        tagy = re.findall(r"`#([^`]+)`", t)
+        secM = re.search(r"## Suroviny[^\n]*\n(.+?)(?=\n---|\n## |$)", t, re.S)
+        ingr = []
+        if secM:
+            for line in secM.group(1).splitlines():
+                line = line.strip()
+                if not line.startswith("|") or set(line) <= set("|-: "):
+                    continue
+                cells = [c.strip() for c in line.strip("|").split("|")]
+                if len(cells) < 2 or cells[0].lower() in ("surovina", ""):
+                    continue
+                ingr.append({"nazov": cells[0], "mnozstvo": cells[1]})
+        out.append({"slug": slug, "nazov": nazov, "porcie": porcie,
+                    "foto_url": foto, "tagy": tagy, "suroviny": ingr})
+    return out
+
+# ======================================================================
+def main():
+    canonical = load_canonical()
+    aliasy = load_aliasy()
+
+    # zostav suroviny s aliasmi + jednotkou
+    suroviny = []
+    id_index = {}
+    for c in canonical:
+        extra = aliasy.get(c["id"], {})
+        unit = extra.get("jednotka") or DEFAULT_UNIT_BY_CAT.get(c["kategoria"], "g")
+        alias_all = [c["nazov"]] + list(extra.get("aliasy", []))
+        s = {"id": c["id"], "nazov": c["nazov"], "kategoria": c["kategoria"],
+             "jednotka": unit, "_alias_all": alias_all, "ceny": []}
+        suroviny.append(s)
+        id_index[c["id"]] = s
+
+    matcher = Matcher(suroviny)
+
+    # ---- cenníky -> ceny k surovinám ----
+    unmatched_catalog = {}
+    catalog_by_store = {}  # obchod -> id -> [polozky s cenou/balením]
+    for f in sorted(glob.glob("ceny/*.json")):
+        d = json.load(open(f, encoding="utf-8"))
+        obchod = d.get("obchod", "?")
+        default_platnost = d.get("platnost_tyzdenna_default")
+        for p in d.get("polozky", []):
+            iid = matcher.match(p["nazov"])
+            if not iid:
+                unmatched_catalog[p["nazov"]] = unmatched_catalog.get(p["nazov"], 0) + 1
+                continue
+            od, do = parse_platnost(p.get("platnost") or default_platnost)
+            pkg = parse_package(p.get("mnozstvo"))
+            rec = {
+                "obchod": obchod,
+                "nazov_v_letaku": p["nazov"],
+                "mnozstvo": p.get("mnozstvo"),
+                "balenie_qty": pkg["qty"] if pkg else None,
+                "balenie_jednotka": pkg["unit"] if pkg else None,
+                "povodna_cena": p.get("povodna_cena"),
+                "zlavnena_cena": p.get("zlavnena_cena"),
+                "zlava": p.get("zlava"),
+                "platnost_od": od,
+                "platnost_do": do,
+                "podmienka": p.get("poznamka") or None,
+                "kategoria_letak": p.get("kategoria"),
+            }
+            id_index[iid]["ceny"].append(rec)
+            catalog_by_store.setdefault(obchod, {}).setdefault(iid, []).append(rec)
+
+    # ---- recepty -> id + cena za porciu per obchod ----
+    recepty = parse_recipes()
+    unmatched_ingr = {}
+    stores = sorted(catalog_by_store.keys())
+
+    def best_price_for(iid, obchod):
+        """Najlepšie oceniteľné balenie danej suroviny v obchode (najnižšia jedn. cena)."""
+        best = None
+        for rec in catalog_by_store.get(obchod, {}).get(iid, []):
+            if not isinstance(rec["zlavnena_cena"], (int, float)):
+                continue
+            if not rec["balenie_qty"]:
+                continue
+            ppu = rec["zlavnena_cena"] / rec["balenie_qty"]
+            if best is None or ppu < best["_ppu"]:
+                best = {**rec, "_ppu": ppu}
+        return best
+
+    for r in recepty:
+        # napáruj suroviny receptu na id
+        for ing in r["suroviny"]:
+            iid = matcher.match(ing["nazov"])
+            if not iid and "," in ing["nazov"]:
+                iid = matcher.match(ing["nazov"].split(",")[0])
+            ing["id"] = iid
+            if not iid:
+                unmatched_ingr[ing["nazov"]] = unmatched_ingr.get(ing["nazov"], 0) + 1
+        # cena za porciu per obchod
+        ceny_za_porciu = []
+        total = len(r["suroviny"])
+        for obchod in stores:
+            spolu, priced = 0.0, 0
+            plat_od, plat_do = None, None
+            for ing in r["suroviny"]:
+                if not ing.get("id"):
+                    continue
+                bp = best_price_for(ing["id"], obchod)
+                if not bp:
+                    continue
+                rq = parse_recipe_qty(ing["mnozstvo"], bp["balenie_jednotka"])
+                if not rq or rq["unit"] != bp["balenie_jednotka"]:
+                    continue
+                spolu += (bp["zlavnena_cena"] / bp["balenie_qty"]) * rq["qty"]
+                priced += 1
+                # najskoršie do / najneskoršie od pre spoločnú platnosť
+                if bp["platnost_od"]:
+                    plat_od = max(plat_od, bp["platnost_od"]) if plat_od else bp["platnost_od"]
+                if bp["platnost_do"]:
+                    plat_do = min(plat_do, bp["platnost_do"]) if plat_do else bp["platnost_do"]
+            if priced == 0:
+                continue
+            spolahlive = priced >= max(1, (total + 1) // 2)  # aspoň polovica surovín
+            ceny_za_porciu.append({
+                "obchod": obchod,
+                "cena_za_porciu": round(spolu / max(1, r["porcie"]), 2),
+                "napar_surovin": priced,
+                "spolu_surovin": total,
+                "spolahlive": spolahlive,
+                "platnost_od": plat_od,
+                "platnost_do": plat_do,
+            })
+        ceny_za_porciu.sort(key=lambda x: (not x["spolahlive"], x["cena_za_porciu"]))
+        r["ceny_za_porciu"] = ceny_za_porciu
+        # vyčisti interné
+        for ing in r["suroviny"]:
+            ing.setdefault("id", None)
+
+    # ---- zapíš databázu ----
+    for s in suroviny:
+        del s["_alias_all"]
+        # zoraď ceny podľa obchodu a dátumu
+        s["ceny"].sort(key=lambda c: (c["obchod"], c.get("platnost_od") or ""))
+
+    out = {
+        "meta": {
+            "generovane": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "zdroj": "scripts/build_databaza.py — generované, needituj ručne",
+            "pocet_surovin": len(suroviny),
+            "pocet_receptov": len(recepty),
+            "obchody": stores,
+        },
+        "suroviny": suroviny,
+        "recepty": recepty,
+    }
+    os.makedirs("docs/data", exist_ok=True)
+    with open("docs/data/databaza.json", "w", encoding="utf-8") as fh:
+        json.dump(out, fh, ensure_ascii=False, indent=2)
+
+    # ---- report pokrytia ----
+    sur_s_cenou = sum(1 for s in suroviny if s["ceny"])
+    ingr_total = sum(len(r["suroviny"]) for r in recepty)
+    ingr_mapped = sum(1 for r in recepty for i in r["suroviny"] if i.get("id"))
+    recepty_ocenene = sum(1 for r in recepty if any(c["spolahlive"] for c in r["ceny_za_porciu"]))
+    print("=" * 60)
+    print("DATABÁZA VYGENEROVANÁ -> docs/data/databaza.json")
+    print("=" * 60)
+    print(f"suroviny (kanonické):        {len(suroviny)}")
+    print(f"  z toho s aspoň 1 cenou:    {sur_s_cenou}")
+    print(f"recepty:                     {len(recepty)}")
+    print(f"  spoľahlivo ocenené (≥1 obchod): {recepty_ocenene}")
+    print(f"suroviny v receptoch:        {ingr_total}")
+    print(f"  napárované na id:          {ingr_mapped} ({100*ingr_mapped//max(1,ingr_total)} %)")
+    print(f"letákové názvy nespárované:  {len(unmatched_catalog)} (z rôznych obchodov)")
+    print()
+    # ulož nespárované pre kuráciu aliasov
+    dbg = "scripts/.nesparovane.json"
+    json.dump({
+        "letak_nesparovane": dict(sorted(unmatched_catalog.items(), key=lambda x: -x[1])),
+        "recept_ingr_nesparovane": dict(sorted(unmatched_ingr.items(), key=lambda x: -x[1])),
+    }, open(dbg, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print(f"(nespárované názvy pre kuráciu -> {dbg})")
+
+if __name__ == "__main__":
+    main()

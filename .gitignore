@@ -1,0 +1,4 @@
+# pracovný debug výstup buildu databázy (zoznam nespárovaných názvov na kuráciu aliasov)
+scripts/.nesparovane.json
+__pycache__/
+*.pyc
