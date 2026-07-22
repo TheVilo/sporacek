@@ -305,7 +305,11 @@ def tyzden_platnost(dnes: date | None = None) -> str:
 
 SAMPLES_DIR = REPO / "scripts" / "_samples"
 
-# Odhad ceny Gemini 2.0 Flash (USD/1M tokenov; približné, real bill je v Google konzole).
+# Gemini model (multimodálny, lacný). Na jednom mieste — používa ho llm aj kimbino
+# režim. Pozor: staršie modely Google priebežne ruší (2.0-flash je už NOT_FOUND).
+GEMINI_MODEL = "gemini/gemini-2.5-flash"
+
+# Odhad ceny Gemini Flash (USD/1M tokenov; približné, real bill je v Google konzole).
 GEMINI_FLASH_USD = {"in": 0.10, "out": 0.40}
 USD_EUR = 0.92
 _COST = {"in": 0, "out": 0}  # kumulatívne tokeny za celý beh
@@ -442,7 +446,7 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
         b64 = base64.b64encode(img).decode()
         try:
             resp = litellm.completion(
-                model="gemini/gemini-2.0-flash", api_key=key, temperature=0,
+                model=GEMINI_MODEL, api_key=key, temperature=0,
                 messages=[{"role": "user", "content": [
                     {"type": "text", "text": _VISION_INSTRUKCIA},
                     {"type": "image_url",
@@ -490,7 +494,7 @@ async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[
         # crawl4ai ≥0.4: provider/api_token sa už nezadávajú priamo, ale cez
         # llm_config=LLMConfig(...). Starý zápis padal na 'provider is deprecated'.
         strat = LLMExtractionStrategy(
-            llm_config=LLMConfig(provider="gemini/gemini-2.0-flash", api_token=key),
+            llm_config=LLMConfig(provider=GEMINI_MODEL, api_token=key),
             schema=_LLM_SCHEMA, extraction_type="schema", instruction=_LLM_INSTRUKCIA)
 
     run = CrawlerRunConfig(extraction_strategy=strat) if strat else CrawlerRunConfig()
