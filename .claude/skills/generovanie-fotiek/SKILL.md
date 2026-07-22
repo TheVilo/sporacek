@@ -7,6 +7,18 @@ description: Použi vždy, keď treba vygenerovať fotku jedla pre recept (foto_
 
 Fotky **sú súčasťou repa** (priečinok `fotky/`, viď `CLAUDE.md`) — generuj ich do dočasného súboru, over si ich, potom ulož do `fotky/<id>.jpg`, commitni a pushni. Cez GitHub/git pull sa dostanú aj do lokálnej zložky `sporacek`.
 
+## ⛔ Poistka: fotka sa NEGENERUJE, kým neprejde tento checklist
+
+Máme **10 kompozičných šablón** zámerne (`## Foto prompt — 2-krokový proces` nižšie). Nie sú voliteľné — to je jednotný vzhľad značky. Vlastný „od oka" napísaný prompt = obídenie mozgu, to nikdy nerob. **Pred každým jedným volaním generátora over všetky body:**
+
+1. **Prečítal som celý `.md` receptu** (suroviny + postup), nie len jeho starý `foto_prompt`.
+2. **Prompt vznikol z jednej z 10 očíslovaných šablón** (krok 1 opis jedla → vložený do konkrétnej šablóny v kroku 2). Viem povedať, ktoré číslo šablóny som použil.
+3. **Šablóny striedam** — dva susedné recepty nemajú rovnakú šablónu; typ jedla sedí k šablóne (polievka → miska zhora, mäso s prílohou → 3/4 alebo 45°, pečivo/dezert → detail vrstiev/mramor).
+4. **Na fotke je LEN to, čo je reálne v recepte** — každá surovina, garniš aj „vedľajšia miska"/`[INÁ INGREDIENCIA]` je skutočná surovina zo zoznamu alebo zo servírovania v postupe. Nič vymyslené navyše (bazalka, ktorá tam nie je, náhodný dip, príloha, čo recept nemá). Ak recept nemá vhodnú „druhú" ingredienciu, tú časť šablóny vynechám, nedomýšľam.
+5. **Finálny šablónový `foto_prompt` uložím do receptu** (`## Foto prompt`), nech je to reprodukovateľné a nabudúce sedí so skillom.
+
+Ak čo i len jeden bod neplatí, prompt oprav a až potom generuj. Po vygenerovaní si obrázok vždy pozri (sekcia „Po vygenerovaní").
+
 ## Kritická, nemeniteľná podmienka: štýl "Modern Editorial & Elevated Lifestyle" — food blog/Instagram, nie sterilná reklama
 
 Fotky **musia vyzerať ako fotka z obľúbeného kuchárskeho blogu alebo food Instagramu** — presne taký štýl ako majú weby typu Running to the Kitchen, BBC Good Food, Delish. **Nie** amatérsky narýchlo odfotený telefónny snímok, **ale ani** sterilná komerčná reklamná studio scéna.
