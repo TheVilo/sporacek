@@ -7,13 +7,8 @@ name: Zber cien (crawl4ai)
 
 on:
   schedule:
-    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky) — vždy FREE
+    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky)
   workflow_dispatch:         # tlačidlo "Run workflow" v záložke Actions
-    inputs:
-      use_gemini:
-        description: "Zapnúť Gemini na letáky (STOJÍ peniaze). Nechaj vypnuté pre free JSON-LD."
-        type: boolean
-        default: false
 
 permissions:
   contents: write
@@ -39,11 +34,14 @@ jobs:
           pip install -r scripts/requirements-crawl.txt
           python -m playwright install --with-deps chromium
 
-      # Gemini kľúč sa injektuje LEN keď je prepínač use_gemini zapnutý (ručný beh).
-      # Týždenný (schedule) beh ho nemá → llm obchody sa preskočia → FREE.
+      # Gemini spracuje vizuálne letáky (akciové ceny). Kľúč sa berie zo secret
+      # GEMINI_API_KEY (Settings → Secrets and variables → Actions). Keď secret
+      # nie je nastavený, llm obchody sa ticho preskočia — beh nezlyhá, len z
+      # letákov nič nepribudne. Gemini Flash je lacný (~centy za beh), skript
+      # na konci vypíše reálnu spotrebu tokenov aj odhad ceny v €.
       - name: Zber cien
         env:
-          GEMINI_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.use_gemini) && secrets.GEMINI_API_KEY || '' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/crawl_ceny.py --all --sample
 
       # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
