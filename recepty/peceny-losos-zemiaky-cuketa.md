@@ -1,22 +1,18 @@
----
-id: peceny-losos-zemiaky-cuketa
-nazov: Pečený losos so zemiakmi a cuketou
-foto_url: "fotky/peceny-losos-zemiaky-cuketa.jpg"
-foto_prompt: "Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: pečený losos so zemiakmi a cuketou, plátok citróna vedľa, porcia na tmavšom oválnom tanieri položenom na drevenej krájacej doske. Záber mierne šikmo zhora, kuchynské pozadie. Prirodzené denné svetlo z okna, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — nôž položený vedľa dosky, drobné omrvinky alebo kvapka oleja na doske. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
-pocet_porcii: 2
-tagy:
-  typ: [večera]
-  surovina: [ryba]
-  vyziva: [ľahké, vysoký-proteín]
-  narocnost: [do-rúry]
-nutricne_hodnoty_na_porciu:   # odhad, nie presné údaje
-  kcal: 490
-  bielkoviny_g: 35
-  sacharidy_g: 30
-  tuky_g: 24
+# Pečený losos so zemiakmi a cuketou
+
+**slug:** peceny-losos-zemiaky-cuketa
+**porcie:** 2
+**čas prípravy:** 40 minút
+**foto_url:** fotky/peceny-losos-zemiaky-cuketa.jpg
+
 ---
 
-## Suroviny (2 porcie)
+## Foto prompt
+"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: pečený losos so zemiakmi a cuketou, plátok citróna vedľa, porcia na tmavšom oválnom tanieri položenom na drevenej krájacej doske. Záber mierne šikmo zhora, kuchynské pozadie. Prirodzené denné svetlo z okna, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — nôž položený vedľa dosky, drobné omrvinky alebo kvapka oleja na doske. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+
+---
+
+## Suroviny (pre 2 osoby)
 
 | Surovina | Množstvo |
 |---|---|
@@ -30,6 +26,19 @@ nutricne_hodnoty_na_porciu:   # odhad, nie presné údaje
 | čierne korenie | podľa chuti |
 | petržlenová vňať | podľa chuti |
 
+---
+
+## Nutričné hodnoty (na porciu, odhad)
+
+| | |
+|---|---|
+| Energia | ~490 kcal |
+| Bielkoviny | 35 g |
+| Sacharidy | 30 g |
+| Tuky | 24 g |
+
+---
+
 ## Postup
 
 1. Rúru predhrej na 200 °C. Zemiaky nakrájaj na plátky, cuketu na polmesiačiky.
@@ -38,3 +47,8 @@ nutricne_hodnoty_na_porciu:   # odhad, nie presné údaje
 4. Pridaj plátky citróna a prelisovaný cesnak na rybu.
 5. Pec ďalších 12–15 minút, kým losos nie je hotový a zelenina mäkká.
 6. Pred podávaním posyp čerstvou petržlenovou vňaťou.
+
+---
+
+## Tagy
+`#večera` `#ryba` `#ľahké` `#vysoký-proteín` `#do-rúry`

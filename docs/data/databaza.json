@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generovane": "2026-07-22T10:14:29Z",
+    "generovane": "2026-07-22T10:21:58Z",
     "zdroj": "scripts/build_databaza.py — generované, needituj ručne",
     "pocet_surovin": 146,
     "pocet_receptov": 109,
@@ -16415,7 +16415,7 @@
       "slug": "fasirky-jogurtovo-cesnakova-omacka",
       "nazov": "Fašírky s jogurtovo-cesnakovou omáčkou a uhorkovým šalátom",
       "porcie": 2,
-      "cas_pripravy": null,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/fasirky-jogurtovo-cesnakova-omacka.jpg",
       "tagy": [
         "obed",
@@ -27901,7 +27901,7 @@
       "slug": "kremove-kuracie-rizoto-sampinony",
       "nazov": "Krémové kuracie rizoto so šampiňónmi",
       "porcie": 2,
-      "cas_pripravy": null,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/kremove-kuracie-rizoto-sampinony.jpg",
       "tagy": [
         "obed",
@@ -30067,7 +30067,7 @@
       "slug": "kuracie-prsia-paradajkova-omacka-cestoviny",
       "nazov": "Kuracie prsia v paradajkovej omáčke s cestovinami",
       "porcie": 2,
-      "cas_pripravy": null,
+      "cas_pripravy": "30 minút",
       "foto_url": "fotky/kuracie-prsia-paradajkova-omacka-cestoviny.jpg",
       "tagy": [
         "obed",
@@ -36505,7 +36505,7 @@
       "slug": "pecene-bravcove-kare-zemiaky-cuketa",
       "nazov": "Pečené bravčové karé so zemiakmi a cuketou",
       "porcie": 2,
-      "cas_pripravy": null,
+      "cas_pripravy": "60 minút",
       "foto_url": "fotky/pecene-bravcove-kare-zemiaky-cuketa.jpg",
       "tagy": [
         "večera",
@@ -38104,7 +38104,7 @@
       "slug": "peceny-losos-zemiaky-cuketa",
       "nazov": "Pečený losos so zemiakmi a cuketou",
       "porcie": 2,
-      "cas_pripravy": null,
+      "cas_pripravy": "40 minút",
       "foto_url": "fotky/peceny-losos-zemiaky-cuketa.jpg",
       "tagy": [
         "večera",
@@ -38992,7 +38992,7 @@
       "slug": "plnena-paprika-mletym-masom-ryzou",
       "nazov": "Plnená paprika s mletým mäsom a ryžou",
       "porcie": 2,
-      "cas_pripravy": null,
+      "cas_pripravy": "50 minút",
       "foto_url": "fotky/plnena-paprika-mletym-masom-ryzou.jpg",
       "tagy": [
         "večera",

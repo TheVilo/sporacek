@@ -170,10 +170,33 @@ class Matcher:
         return best
 
 # ---------- recepty ----------
+# povinné časti štandardného receptu — všetky recepty musia byť rovnaké
+REQUIRED_SECTIONS = ["## Foto prompt", "## Suroviny", "## Nutričné hodnoty",
+                     "## Postup", "## Tagy"]
+
+def check_format(fname, t):
+    """Vráti zoznam odchýlok od štandardného formátu receptu (prázdny = OK)."""
+    problems = []
+    if t.lstrip().startswith("---"):
+        problems.append("začína YAML frontmatterom (---) namiesto '# Názov'")
+    if not re.match(r"^#\s+\S", t.lstrip()):
+        problems.append("nezačína názvom '# ...'")
+    for field in ["**slug:**", "**porcie:**", "**čas prípravy:**", "**foto_url:**"]:
+        if field not in t:
+            problems.append(f"chýba pole {field}")
+    for sec in REQUIRED_SECTIONS:
+        if sec not in t:
+            problems.append(f"chýba sekcia {sec}")
+    return problems
+
 def parse_recipes():
     out = []
+    format_warnings = []
     for f in sorted(glob.glob("recepty/*.md")):
         t = open(f, encoding="utf-8").read()
+        probs = check_format(f, t)
+        if probs:
+            format_warnings.append((os.path.basename(f), probs))
         # recepty existujú v dvoch formátoch: (a) markdown s **bold** poľami a
         # ## Tagy, (b) YAML frontmatter (---). Každé pole skúsime oboma spôsobmi.
         def first(*pats, cast=None, default=None):
@@ -238,7 +261,7 @@ def parse_recipes():
         out.append({"slug": slug, "nazov": nazov, "porcie": porcie,
                     "cas_pripravy": cas, "foto_url": foto, "tagy": tagy,
                     "suroviny": ingr, "postup": postup, "nutricne": nutricne})
-    return out
+    return out, format_warnings
 
 # ======================================================================
 def main():
@@ -292,7 +315,7 @@ def main():
             catalog_by_store.setdefault(obchod, {}).setdefault(iid, []).append(rec)
 
     # ---- recepty -> id + cena za porciu per obchod ----
-    recepty = parse_recipes()
+    recepty, format_warnings = parse_recipes()
     unmatched_ingr = {}
     stores = sorted(catalog_by_store.keys())
 
@@ -409,6 +432,13 @@ def main():
     print(f"suroviny v receptoch:        {ingr_total}")
     print(f"  napárované na id:          {ingr_mapped} ({100*ingr_mapped//max(1,ingr_total)} %)")
     print(f"letákové názvy nespárované:  {len(unmatched_catalog)} (z rôznych obchodov)")
+    if format_warnings:
+        print()
+        print("⚠ RECEPTY MIMO ŠTANDARDNÉHO FORMÁTU (všetky recepty musia byť rovnaké):")
+        for name, probs in format_warnings:
+            print(f"  • {name}: {'; '.join(probs)}")
+    else:
+        print("formát receptov:            ✓ všetkých", len(recepty), "v štandardnom formáte")
     print()
     # ulož nespárované pre kuráciu aliasov
     dbg = "scripts/.nesparovane.json"

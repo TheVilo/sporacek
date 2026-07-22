@@ -110,6 +110,9 @@ Skript na konci vypíše pokrytie (koľko surovín má cenu, koľko receptov je 
 
 ## Pravidlá pre recepty
 
+### formát súboru (jednotný — dôležité)
+**Všetky recepty majú presne rovnakú štruktúru** — nikdy nie polovica takto a polovica inak (napr. YAML frontmatter). Kanonická šablóna je v `.claude/skills/novy-recept/SKILL.md`: `# Názov`, potom `**slug:** **porcie:** **čas prípravy:** **foto_url:**`, a sekcie `## Foto prompt`, `## Suroviny (pre N osoby)`, `## Nutričné hodnoty (na porciu, odhad)`, `## Postup`, `## Tagy`. Žiadne polia navyše (napr. `historia_pouzitia` — recept sa neviaže na dátumy). `scripts/build_databaza.py` formát kontroluje a nahlási každý recept, ktorý sa odchýli — build musí byť bez týchto varovaní.
+
 ### id (technické, večné)
 - Slug z opisného názvu, obsahuje kľúčové suroviny.
   Príklad: „Krémové kuracie rizoto so šampiňónmi" → `kremove-kuracie-rizoto-sampinony`
