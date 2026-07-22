@@ -184,6 +184,16 @@ def extrahuj_jsonld(html: str) -> list[dict]:
 # Kľúč = <obchod>-<typ>, napr. "kaufland-letak", "kaufland-eshop".
 #
 STORES = {
+    # ── PILOT (prieskum): aggregátor letákov ako zdroj pre Kaufland. mode jsonld
+    #    = zadarmo, len stiahne a uloží vzorku (--sample), nech vidíme, čo reálny
+    #    prehliadač na stránke dostane (text produktov vs. len obrázky, anti-bot). ──
+    "kaufland-agg": {
+        "obchod": "Kaufland",
+        "typ": "akciova",
+        "mode": "jsonld",
+        "url": "https://www.kimbino.sk/kaufland/",
+    },
+
     # ── FREE teraz: skutočný e-shop s produktovými stránkami (skúsi JSON-LD) ──
     "billa-eshop": {
         "obchod": "BILLA",
