@@ -59,7 +59,7 @@ KATEGORIA_KEYWORDS = {
         "jablk", "hrušk", "marhul", "broskyn", "slivk", "čeres", "višn", "hrozn",
         "melón", "banán", "pomaranč", "citrón", "jahod", "malin", "čučoried",
         "paradajk", "uhork", "papri", "cibuľ", "cesnak", "zemiak", "mrkv",
-        "kapust", "šalát", "brokolic", "kalerá", "špenát", "avokád", "šampiň",
+        "kapust", "šalát", "brokolic", "kalerá", "karfiol", "špenát", "avokád", "šampiň",
         "hrášok", "fazuľk", "cuket", "baklažán", "reďkov", "petržlen",
     ],
     "Mliečne a vajcia": [
@@ -191,7 +191,8 @@ STORES = {
         "obchod": "Kaufland",
         "typ": "akciova",
         "mode": "kimbino",   # obrázky strán letáku → Gemini vision prečíta ceny
-        "url": "https://www.kimbino.sk/kaufland/kaufland-letak-od-stvrtka-23-07-2026-5440152/",
+        "url": "https://www.kimbino.sk/kaufland/",  # prehľad → sám nájde najnovší leták
+        "kimbino_slug": "kaufland",
     },
 
     # ── FREE teraz: skutočný e-shop s produktovými stránkami (skúsi JSON-LD) ──
@@ -422,9 +423,29 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
                           proxy=proxy or None, ignore_https_errors=True)
     async with AsyncWebCrawler(config=bconf) as crawler:
         res = await crawler.arun(url=store["url"], config=CrawlerRunConfig())
-    if not res.success:
-        print(f"⚠  {store['obchod']}: leták sa nenačítal — {getattr(res, 'error_message', '?')}")
-        return []
+        if not res.success:
+            print(f"⚠  {store['obchod']}: stránka sa nenačítala — "
+                  f"{getattr(res, 'error_message', '?')}")
+            return []
+
+        # Ak je zadaný slug, ber store['url'] ako prehľad obchodu a nájdi na ňom
+        # NAJNOVŠÍ (prvý) celoštátny leták — /<slug>/<slug>-letak-... (nie mestské
+        # varianty <slug>-bratislava-...). Tak sa URL nemusí ručne meniť každý týždeň.
+        slug = store.get("kimbino_slug")
+        if slug:
+            import re as _re
+            m = _re.search(rf'href=["\'](/{slug}/{slug}-letak[^"\']*?)["\']',
+                           res.html or "", _re.I)
+            if not m:
+                print(f"⚠  {store['obchod']}: nenašiel sa odkaz na najnovší leták.")
+                return []
+            letak_url = "https://www.kimbino.sk" + m.group(1)
+            print(f"      {store['obchod']}: najnovší leták → {letak_url}")
+            res = await crawler.arun(url=letak_url, config=CrawlerRunConfig())
+            if not res.success:
+                print(f"⚠  {store['obchod']}: leták sa nenačítal — "
+                      f"{getattr(res, 'error_message', '?')}")
+                return []
 
     strany = _kimbino_strany(res.html or "")
     if not strany:

@@ -42,7 +42,7 @@ jobs:
       - name: Zber cien
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/crawl_ceny.py kaufland-agg --max-pages 4 2>&1 | tee /tmp/zber.log   # PILOT: test vision na 4 stranách
+        run: python scripts/crawl_ceny.py kaufland-agg 2>&1 | tee /tmp/zber.log   # PILOT: celý Kaufland leták
 
       # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
       # Workflow permissions zapnuté "Allow GitHub Actions to create and approve
