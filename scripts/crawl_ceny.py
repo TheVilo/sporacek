@@ -183,21 +183,42 @@ def extrahuj_jsonld(html: str) -> list[dict]:
 #   "llm"    — Gemini, potrebuje GEMINI_API_KEY (až keď ho používateľ dodá)
 # Kľúč = <obchod>-<typ>, napr. "kaufland-letak", "kaufland-eshop".
 #
-# >>> URL doplní používateľ (pošle zoznam obchodov + linky). Zatiaľ placeholdery. <<<
 STORES = {
-    "kaufland-letak": {
-        "obchod": "Kaufland",
-        "typ": "akciova",
-        "mode": "jsonld",
-        "url": "TODO-doplnit-link-na-letak",
-    },
-    "kaufland-eshop": {
-        "obchod": "Kaufland",
+    # ── FREE teraz: skutočný e-shop s produktovými stránkami (skúsi JSON-LD) ──
+    "billa-eshop": {
+        "obchod": "BILLA",
         "typ": "bezna",
         "mode": "jsonld",
-        "url": "TODO-doplnit-link-na-eshop",
+        "url": "https://www.billa.sk/produkty/",
     },
-    # Lidl, Tesco, COOP, Billa, Terno... pribudnú rovnako, keď dôjdu linky.
+
+    # ── Vizuálne letáky/katalógy: štruktúrované ceny nemajú → potrebujú OCR/LLM.
+    #    mode "llm" = kým workflow neinjektuje GEMINI_API_KEY, automaticky sa
+    #    PRESKOČIA (žiadny Gemini, žiadne náklady). Zapnú sa až keď šporáček
+    #    zarába — vtedy stačí vo workflowe odkomentovať GEMINI_API_KEY. ──────────
+    "billa-letak": {
+        "obchod": "BILLA", "typ": "akciova", "mode": "llm",
+        "url": "https://www.billa.sk/letaky-a-akcie",
+    },
+    "lidl-letak": {
+        "obchod": "Lidl", "typ": "akciova", "mode": "llm",
+        "url": "https://www.lidl.sk/c/online-letak/s10008489",
+    },
+    "tesco-hypermarket-letak": {
+        "obchod": "Tesco hypermarket", "typ": "akciova", "mode": "llm",
+        "url": "https://www.tesco.sk/akciove-ponuky/letaky-a-katalogy/tesco-hypermarket-bratislava-zlate-piesky",
+    },
+    "tesco-supermarket-letak": {
+        "obchod": "Tesco supermarket", "typ": "akciova", "mode": "llm",
+        "url": "https://www.tesco.sk/akciove-ponuky/letaky-a-katalogy/tesco-supermarket-zarnovica",
+    },
+    "terno-letak": {
+        "obchod": "Terno", "typ": "akciova", "mode": "llm",
+        "url": "https://terno.sk/sekcia/7-akciovy-letak",
+    },
+    # Pozn.: Lidl a Terno majú LEN letáky (žiadny e-shop) → bežné ceny sa z nich
+    # nedajú ťahať. Tesco má aj e-shop potravín (potravinydomov.itesco.sk) —
+    # ak budeme chcieť bežné Tesco ceny free, pridá sa ako ďalší 'bezna'/jsonld.
 }
 
 # Odvodené polia podľa (typ ceny, mode) — do schémy `ceny/`.
@@ -269,6 +290,38 @@ def tyzden_platnost(dnes: date | None = None) -> str:
 
 SAMPLES_DIR = REPO / "scripts" / "_samples"
 
+# Odhad ceny Gemini 2.0 Flash (USD/1M tokenov; približné, real bill je v Google konzole).
+GEMINI_FLASH_USD = {"in": 0.10, "out": 0.40}
+USD_EUR = 0.92
+_COST = {"in": 0, "out": 0}  # kumulatívne tokeny za celý beh
+
+
+def _zmeraj_cenu(strat) -> None:
+    """Prečíta spotrebu tokenov z LLMExtractionStrategy a pripočíta k _COST."""
+    tu = getattr(strat, "total_usage", None)
+    inp = getattr(tu, "prompt_tokens", 0) or 0
+    out = getattr(tu, "completion_tokens", 0) or 0
+    if not inp and not out:  # fallback: posčítaj z jednotlivých usages
+        for u in getattr(strat, "usages", []) or []:
+            inp += getattr(u, "prompt_tokens", 0) or 0
+            out += getattr(u, "completion_tokens", 0) or 0
+    _COST["in"] += inp
+    _COST["out"] += out
+    if inp or out:
+        eur = (inp / 1e6 * GEMINI_FLASH_USD["in"]
+               + out / 1e6 * GEMINI_FLASH_USD["out"]) * USD_EUR
+        print(f"      Gemini: {inp} vstup + {out} výstup tokenov ≈ {eur:.4f} €")
+
+
+def vypis_celkovu_cenu() -> None:
+    inp, out = _COST["in"], _COST["out"]
+    if not (inp or out):
+        return
+    eur = (inp / 1e6 * GEMINI_FLASH_USD["in"]
+           + out / 1e6 * GEMINI_FLASH_USD["out"]) * USD_EUR
+    print(f"\n💶 Gemini spolu: {inp + out} tokenov (~{inp} vstup / {out} výstup) "
+          f"≈ {eur:.4f} € (odhad; presný účet je v Google AI Studio).")
+
 # LLM extrakčná schéma + inštrukcia (použije sa len v llm režime).
 _LLM_SCHEMA = {
     "type": "array",
@@ -316,6 +369,8 @@ async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[
     run = CrawlerRunConfig(extraction_strategy=strat) if strat else CrawlerRunConfig()
     async with AsyncWebCrawler(config=bconf) as crawler:
         res = await crawler.arun(url=store["url"], config=run)
+    if mode == "llm":
+        _zmeraj_cenu(strat)
     if not res.success:
         print(f"⚠  {store['obchod']}: crawl zlyhal — {getattr(res, 'error_message', '?')}")
         return []
@@ -390,6 +445,7 @@ def main() -> None:
         except Exception as e:  # jeden obchod nech nezhodí celý beh
             print(f"✗ {kluc}: chyba — {e}")
 
+    vypis_celkovu_cenu()
     if not args.dry_run and ulozene:
         print(f"\nUložených {ulozene} súborov. Ďalej: kontrola podľa skillu "
               "ceny-z-letaku (časť C), potom merge.")

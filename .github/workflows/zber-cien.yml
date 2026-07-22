@@ -7,8 +7,13 @@ name: Zber cien (crawl4ai)
 
 on:
   schedule:
-    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky)
+    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky) — vždy FREE
   workflow_dispatch:         # tlačidlo "Run workflow" v záložke Actions
+    inputs:
+      use_gemini:
+        description: "Zapnúť Gemini na letáky (STOJÍ peniaze). Nechaj vypnuté pre free JSON-LD."
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,9 +39,11 @@ jobs:
           pip install -r scripts/requirements-crawl.txt
           python -m playwright install --with-deps chromium
 
-      - name: Zber cien (free JSON-LD; Gemini sa NEvolá, kým je mode 'jsonld')
+      # Gemini kľúč sa injektuje LEN keď je prepínač use_gemini zapnutý (ručný beh).
+      # Týždenný (schedule) beh ho nemá → llm obchody sa preskočia → FREE.
+      - name: Zber cien
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.use_gemini) && secrets.GEMINI_API_KEY || '' }}
         run: python scripts/crawl_ceny.py --all --sample
 
       - name: Otvor Pull Request s novými cenami
