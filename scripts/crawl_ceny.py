@@ -191,7 +191,8 @@ STORES = {
         "obchod": "Kaufland",
         "typ": "akciova",
         "mode": "jsonld",
-        "url": "https://www.kimbino.sk/kaufland/",
+        # prieskum konkrétneho letáku: chceme vidieť URL plných obrázkov strán
+        "url": "https://www.kimbino.sk/kaufland/kaufland-letak-od-stvrtka-23-07-2026-5440152/",
     },
 
     # ── FREE teraz: skutočný e-shop s produktovými stránkami (skúsi JSON-LD) ──
