@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A steaming cup of golden ginger-lemon tea with lemon slices and fresh ginger coins floating inside, viewed directly from above, in a minimalist matte ceramic mug on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath. A small contemporary dish of honey and a few whole cinnamon-colored ginger root pieces sit nearby for an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the rising steam. Film grain. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A cup of golden ginger-lemon tea with lemon slices and fresh ginger coins floating inside, viewed directly from above, in a minimalist matte ceramic mug on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath. A small contemporary dish of honey and a few whole cinnamon-colored ginger root pieces sit nearby for an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight. Film grain. No text, no logo, no watermark in the image. No visible steam or smoke rising from the food.
 
 ---
 

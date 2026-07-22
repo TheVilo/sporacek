@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, modern editorial side-angle close-up, 9:16 format, showcasing elevated home cooking. Showing the appetizing clarity and steam of clear chicken broth with thin egg noodles, carrot and celery root slices, fresh parsley, in a bowl on a smooth light wood surface. A modern matte silver spoon rests naturally at the edge. The background is blurred but shows a sleek glass of water to add realism and a lived-in feel. A few natural pieces of raw carrot and fresh parsley. Soft, airy daylight. No text, no logo, no watermark in the image.
+A bright, modern editorial side-angle close-up, 9:16 format, showcasing elevated home cooking. Showing the appetizing clarity of clear chicken broth with thin egg noodles, carrot and celery root slices, fresh parsley, in a bowl on a smooth light wood surface. A modern matte silver spoon rests naturally at the edge. The background is blurred but shows a sleek glass of water to add realism and a lived-in feel. A few natural pieces of raw carrot and fresh parsley. Soft, airy daylight. No text, no logo, no watermark in the image. No visible steam or smoke rising from the food.
 
 ---
 

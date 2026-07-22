@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. A juicy beef burger with melted cheddar, crisp lettuce and tomato, stacked high in a toasted bun, resting on textured parchment paper in a minimalist matte tray. Modern fries or a small side salad partially visible at the edge of the frame. A softly wrinkled linen napkin and a rustic wooden board beneath. Natural warm side light emphasizing the melted cheese drip. No text, no logo, no watermark in the image.
+A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. A juicy beef burger with melted cheddar, crisp lettuce and tomato, stacked high in a toasted bun, resting on textured parchment paper in a minimalist matte tray. A small side salad partially visible at the edge of the frame. A softly wrinkled linen napkin and a rustic wooden board beneath. Soft, evenly diffused bright daylight emphasizing the melted cheese drip — no harsh directional shadows, no backlit window scene. No text, no logo, no watermark in the image.
 
 ---
 

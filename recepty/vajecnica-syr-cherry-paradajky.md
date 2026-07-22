@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, appetizing breakfast editorial photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Creamy scrambled eggs with melted cheese and halved cherry tomatoes, served on a minimalist matte plate on a smooth wood table. A few whole cherry tomatoes and fresh chives scattered on the plate, a softly wrinkled linen napkin beneath, and a cup of coffee softly blurred in the background. Crisp morning light.
+A bright, appetizing breakfast editorial photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Creamy scrambled eggs with melted cheese and halved cherry tomatoes, served on a minimalist matte plate on a smooth light wood table. A few whole cherry tomatoes and fresh chives scattered on the plate, a softly wrinkled linen napkin beneath. Soft, evenly diffused bright morning light — no harsh shadows, no backlighting. No text, no logo, no watermark in the image.
 
 ---
 

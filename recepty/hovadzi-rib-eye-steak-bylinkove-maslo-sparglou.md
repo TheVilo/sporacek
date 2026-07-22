@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A thick, perfectly seared rib-eye steak with a deep golden-brown crust, sliced to show a juicy pink medium-rare center, topped with a melting pat of herb butter, served on a sleek dark slate plate alongside grilled asparagus spears. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. Fresh rosemary sprigs garnish the steak. Crisp, diffused daylight highlighting the glossy seared crust.
+A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A thick, perfectly seared rib-eye steak with a deep golden-brown crust, sliced to show a juicy pink medium-rare center, topped with a melting pat of herb butter, served on a sleek white plate over a smooth light wood table alongside grilled asparagus spears. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. Fresh rosemary sprigs garnish the steak. Soft, evenly diffused bright daylight highlighting the glossy seared crust — no harsh directional shadows, no dramatic side-lighting. No text, no logo, no watermark in the image.
 
 ---
 
