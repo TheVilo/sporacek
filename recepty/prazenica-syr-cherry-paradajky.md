@@ -1,9 +1,9 @@
-# Vaječnica so syrom a cherry paradajkami
+# Praženica so syrom a cherry paradajkami
 
-**slug:** vajecnica-syr-cherry-paradajky
+**slug:** prazenica-syr-cherry-paradajky
 **porcie:** 2
 **čas prípravy:** 15 minút
-**foto_url:** fotky/vajecnica-syr-cherry-paradajky.jpg
+**foto_url:** fotky/prazenica-syr-cherry-paradajky.jpg
 
 ---
 
