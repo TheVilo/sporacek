@@ -307,7 +307,7 @@ SAMPLES_DIR = REPO / "scripts" / "_samples"
 
 # Gemini model (multimodálny, lacný). Na jednom mieste — používa ho llm aj kimbino
 # režim. Pozor: staršie modely Google priebežne ruší (2.0-flash je už NOT_FOUND).
-GEMINI_MODEL = "gemini/gemini-2.5-flash"
+GEMINI_MODEL = "gemini/gemini-flash-latest"
 
 # Odhad ceny Gemini Flash (USD/1M tokenov; približné, real bill je v Google konzole).
 GEMINI_FLASH_USD = {"in": 0.10, "out": 0.40}
@@ -454,6 +454,16 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
                 ]}])
         except Exception as e:
             print(f"      strana {idx}: Gemini chyba — {e}")
+            if idx == 0:  # pri prvej chybe vypíš dostupné modely, nech sa neháda
+                try:
+                    murl = ("https://generativelanguage.googleapis.com/v1beta/"
+                            f"models?key={key}&pageSize=100")
+                    md = json.loads(urllib.request.urlopen(murl, timeout=30).read())
+                    mods = [m.get("name", "") for m in md.get("models", [])
+                            if "generateContent" in m.get("supportedGenerationMethods", [])]
+                    print("      DOSTUPNÉ MODELY:", ", ".join(mods) or "(žiadne)")
+                except Exception as e2:
+                    print(f"      (zoznam modelov sa nepodaril: {e2})")
             continue
         u = getattr(resp, "usage", None)
         if u:
