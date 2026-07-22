@@ -190,8 +190,7 @@ STORES = {
     "kaufland-agg": {
         "obchod": "Kaufland",
         "typ": "akciova",
-        "mode": "jsonld",
-        # prieskum konkrétneho letáku: chceme vidieť URL plných obrázkov strán
+        "mode": "kimbino",   # obrázky strán letáku → Gemini vision prečíta ceny
         "url": "https://www.kimbino.sk/kaufland/kaufland-letak-od-stvrtka-23-07-2026-5440152/",
     },
 
@@ -232,10 +231,15 @@ STORES = {
     # ak budeme chcieť bežné Tesco ceny free, pridá sa ako ďalší 'bezna'/jsonld.
 }
 
+# Koľko strán letáku maximálne spracovať (0 = všetky). Nastavuje --max-pages,
+# nech sa dá test kimbino režimu spustiť lacno len na pár stranách.
+MAX_PAGES = 0
+
 # Odvodené polia podľa (typ ceny, mode) — do schémy `ceny/`.
 def _zdroj(mode: str) -> str:
     return {"jsonld": "crawl4ai (JSON-LD)", "css": "crawl4ai (CSS)",
-            "llm": "crawl4ai + Gemini"}.get(mode, "crawl4ai")
+            "llm": "crawl4ai + Gemini",
+            "kimbino": "kimbino + Gemini vision"}.get(mode, "crawl4ai")
 
 
 def _store(kluc: str) -> dict:
@@ -352,11 +356,118 @@ _LLM_INSTRUKCIA = (
     "zákazník zaplatí."
 )
 
+# Inštrukcia pre Gemini VISION (číta OBRÁZOK strany letáku) — kimbino režim.
+_VISION_INSTRUKCIA = (
+    "Toto je jedna strana akciového letáku obchodu (obrázok). Vyextrahuj VŠETKY "
+    "potravinové suroviny na varenie, ktoré na strane vidíš, aj s cenami. "
+    "Vynechaj alkohol, nápoje, sirupy, snacky, sladkosti, hotové jedlá, drogériu "
+    "a nepotraviny. Vráť IBA platné JSON pole (nič iné, žiadny text navyše) v tvare "
+    '[{"nazov": "...", "mnozstvo": "...", "povodna_cena": 2.49, "zlava": "-30%", '
+    '"zlavnena_cena": 1.69}]. Ceny ako čísla v eurách (1.69, nie \"169\"). '
+    "povodna_cena = null ak nie je uvedená, zlava = \"\" ak nie je uvedená, "
+    "zlavnena_cena = cena ktorú zákazník zaplatí. Ak na strane nie sú potraviny, "
+    "vráť prázdne pole []."
+)
+
+
+def _parse_json_array(txt: str) -> list[dict]:
+    """Vytiahne JSON pole z odpovede modelu (aj keď je obalené v ```json ... ```)."""
+    if not txt:
+        return []
+    s = txt.strip()
+    if s.startswith("```"):
+        s = s.strip("`")
+        s = s[s.find("\n") + 1:] if "\n" in s else s
+    i, j = s.find("["), s.rfind("]")
+    if i == -1 or j == -1 or j < i:
+        return []
+    try:
+        data = json.loads(s[i:j + 1])
+        return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, ValueError):
+        return []
+
+
+def _kimbino_strany(html: str) -> list[str]:
+    """Z HTML letáka na Kimbine vytiahne URL plných obrázkov strán (0.jpg, 1.jpg…)."""
+    import re as _re
+    pat = _re.compile(
+        r'https://eu\.kimbicdn\.com/thumbor/[^"\'\s)]+?/sk/data/\d+/\d+/(\d+)\.jpg[^"\'\s)]*')
+    seen: dict[int, str] = {}
+    for m in pat.finditer(html):
+        page = int(m.group(1))
+        seen.setdefault(page, m.group(0))
+    return [seen[p] for p in sorted(seen)]
+
+
+async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
+    """Kimbino leták (obrázky strán) → Gemini vision prečíta ceny. Vráti surové položky."""
+    import base64
+    import urllib.request
+    from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+
+    key = api_key or os.environ.get("GEMINI_API_KEY")
+    if not key:
+        print(f"⏭  {store['obchod']}: kimbino režim potrebuje GEMINI_API_KEY — preskočené.")
+        return []
+
+    proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("HTTP_PROXY")
+    bconf = BrowserConfig(headless=True, browser_type="chromium",
+                          proxy=proxy or None, ignore_https_errors=True)
+    async with AsyncWebCrawler(config=bconf) as crawler:
+        res = await crawler.arun(url=store["url"], config=CrawlerRunConfig())
+    if not res.success:
+        print(f"⚠  {store['obchod']}: leták sa nenačítal — {getattr(res, 'error_message', '?')}")
+        return []
+
+    strany = _kimbino_strany(res.html or "")
+    if not strany:
+        print(f"⚠  {store['obchod']}: nenašli sa obrázky strán letáku (over URL).")
+        return []
+    spracuj_n = strany[:MAX_PAGES] if MAX_PAGES else strany
+    print(f"      {store['obchod']}: leták má {len(strany)} strán, spracujem {len(spracuj_n)} "
+          f"(Gemini vision)")
+
+    import litellm
+    out: list[dict] = []
+    for idx, url in enumerate(spracuj_n):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            img = urllib.request.urlopen(req, timeout=30).read()
+        except Exception as e:
+            print(f"      strana {idx}: obrázok sa nestiahol — {e}")
+            continue
+        b64 = base64.b64encode(img).decode()
+        try:
+            resp = litellm.completion(
+                model="gemini/gemini-2.0-flash", api_key=key, temperature=0,
+                messages=[{"role": "user", "content": [
+                    {"type": "text", "text": _VISION_INSTRUKCIA},
+                    {"type": "image_url",
+                     "image_url": {"url": f"data:image/webp;base64,{b64}"}},
+                ]}])
+        except Exception as e:
+            print(f"      strana {idx}: Gemini chyba — {e}")
+            continue
+        u = getattr(resp, "usage", None)
+        if u:
+            _COST["in"] += getattr(u, "prompt_tokens", 0) or 0
+            _COST["out"] += getattr(u, "completion_tokens", 0) or 0
+        prods = _parse_json_array(resp.choices[0].message.content or "")
+        for p in prods:
+            p["strana"] = idx + 1
+        out.extend(prods)
+        print(f"      strana {idx + 1}/{len(spracuj_n)}: {len(prods)} položiek")
+    return out
+
 
 # ── Crawl (importuje crawl4ai až tu, nech testy logiky bežia aj bez neho) ─────
 async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[dict]:
     """Stiahne stránku a vráti surové položky. Bez kľúča: jsonld/css. sample=True uloží vzorku."""
     from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+
+    if store["mode"] == "kimbino":
+        return await crawl_kimbino(store, api_key)
 
     proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("HTTP_PROXY")
     bconf = BrowserConfig(headless=True, browser_type="chromium",
@@ -461,7 +572,12 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="neuloží, len vypíše zhrnutie")
     ap.add_argument("--sample", action="store_true",
                     help="ulož vzorku stránky do scripts/_samples/ (na doladenie extrakcie)")
+    ap.add_argument("--max-pages", type=int, default=0,
+                    help="max. počet strán letáku (kimbino režim); 0 = všetky (lacný test)")
     args = ap.parse_args()
+
+    global MAX_PAGES
+    MAX_PAGES = args.max_pages
 
     platnost = args.platnost or tyzden_platnost()
     kluce = list(STORES) if args.all else [args.store]
