@@ -94,6 +94,11 @@ Namiesto ručného Gemini kroku (časť A) sa vstupný JSON generuje automaticky
 - `akciova` — z **web-letáku** (dočasné akciové ceny).
 - `bezna` — z **e-shopu** (bežné needzľavnené ceny) → doplnia diery pri oceňovaní receptov vo `vyber.html`. V schéme len cena bez zľavy (`zlava: ""`, `povodna_cena: null`), odlíšená cez `zdroj_kontroly`/`poznamka` — netreba meniť schému ani `ceny.html`.
 
-Extrakcia ide cez **Gemini Flash** pre oboje (netreba ladiť CSS selektory, len URL). Nový obchod = pridať záznam do `STORES` (obchod + typ + url). Workflow potrebuje GitHub secret **`GEMINI_API_KEY`**.
+**Režim extrakcie** (pole `mode`) — **primárne free, Gemini až keď šporáček zarába**:
+- `jsonld` — **default, ZADARMO, bez kľúča.** Číta schema.org JSON-LD z HTML stránky (`extrahuj_jsonld`). Bez ladenia selektorov. Prvá voľba pre každý obchod.
+- `css` — ZADARMO, ale treba per-web CSS selektory v poli `schema`. Záloha, keď stránka nemá JSON-LD.
+- `llm` — Gemini Flash, potrebuje `GEMINI_API_KEY`. **Nezapínať, kým to nie je nutné** (šetríme, kým nie sú príjmy). LLM obchody sa bez kľúča ticho preskočia.
+
+Workflow beží s `--sample` → do `scripts/_samples/<obchod>-<typ>.md` uloží vzorku stránky (markdown + kus HTML + počet nájdených JSON-LD produktov). Podľa nej sa dá overiť, či `jsonld` funguje, prípadne doladiť `css` selektory — bez toho, aby to Claude musel vidieť naživo. Nový obchod = pridať záznam do `STORES` (obchod + typ + mode + url).
 
 **Moja rola pri PR z workflowu:** obsah PR (aj keď vznikol automaticky) **nikdy nemergujem naslepo** — prejde rovnakou kontrolou ako Gemini JSON: vnútorná kontrola (B.1), náhodná kontrola vzorky proti zdroju (B.2), oprava zjavných chýb (B.3). Heuristická kategorizácia a scope filter v skripte kontrolu **nenahrádzajú**, len uľahčujú. Po kontrole PR mergnem (alebo doň pushnem opravy).

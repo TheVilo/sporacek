@@ -34,10 +34,10 @@ jobs:
           pip install -r scripts/requirements-crawl.txt
           python -m playwright install --with-deps chromium
 
-      - name: Zber cien
+      - name: Zber cien (free JSON-LD; Gemini sa NEvolá, kým je mode 'jsonld')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/crawl_ceny.py --all
+        run: python scripts/crawl_ceny.py --all --sample
 
       - name: Otvor Pull Request s novými cenami
         uses: peter-evans/create-pull-request@v6

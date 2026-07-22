@@ -8,19 +8,22 @@ webe (sieťová politika blokuje weby obchodov) a netreba ho spúšťať lokáln
 Výstupné `ceny/*.json` workflow zabalí do Pull Requestu, ktorý prejde kontrolou
 podľa skillu `.claude/skills/ceny-z-letaku/SKILL.md` (časť C) a potom sa mergne.
 
-Extrakcia ide cez **Gemini Flash** (LLM) — netreba ladiť CSS selektory, stačí URL.
-Typ ceny podľa zdroja (viď `CLAUDE.md` → Cenová databáza):
+Režimy extrakcie (pole `mode` v STORES) — primárne FREE, Gemini až keď treba:
+  * jsonld — default, ZADARMO, bez kľúča: číta schema.org JSON-LD z HTML
+  * css    — ZADARMO, ale treba per-web selektory v poli `schema`
+  * llm    — Gemini Flash, potrebuje GEMINI_API_KEY (bez kľúča sa preskočí)
 
+Typ ceny (viď `CLAUDE.md` → Cenová databáza):
   * akciova — z web-letáku obchodu (dočasné akciové ceny)
   * bezna   — z e-shopu obchodu (bežné ceny → doplnia diery pri oceňovaní receptov)
 
 Použitie:
     python scripts/crawl_ceny.py --all                 # všetky obchody (workflow)
+    python scripts/crawl_ceny.py --all --sample        # + ulož vzorku stránok
     python scripts/crawl_ceny.py kaufland-letak        # jeden obchod
     python scripts/crawl_ceny.py --all --dry-run       # nič neuloží, len vypíše
 
-Potrebuje Gemini kľúč:  env GEMINI_API_KEY  (v Actions je to GitHub secret).
-Nový obchod = pridaj záznam do STORES nižšie (obchod + typ + url).
+Nový obchod = pridaj záznam do STORES nižšie (obchod + typ + mode + url).
 """
 from __future__ import annotations
 
@@ -125,9 +128,59 @@ def _cislo(x) -> float | None:
         return None
 
 
+# ── JSON-LD extrakcia (zadarmo, bez LLM, bez per-web selektorov) ──────────────
+# Veľa e-shopov vkladá do stránky schema.org dáta v <script type="application/ld+json">.
+# Z nich vieme vytiahnuť názov + cenu bez kľúča aj bez ladenia selektorov.
+def _najdi_produkty(uzol, out: list[dict]) -> None:
+    """Rekurzívne prejde JSON-LD a nazbiera Product/Offer uzly s cenou."""
+    if isinstance(uzol, list):
+        for x in uzol:
+            _najdi_produkty(x, out)
+        return
+    if not isinstance(uzol, dict):
+        return
+    typ = uzol.get("@type", "")
+    typy = typ if isinstance(typ, list) else [typ]
+    if any(t in ("Product", "Offer") for t in typy) or "offers" in uzol:
+        nazov = uzol.get("name") or uzol.get("title")
+        offer = uzol.get("offers", uzol)
+        if isinstance(offer, list):
+            offer = offer[0] if offer else {}
+        cena = None
+        if isinstance(offer, dict):
+            cena = (offer.get("price") or offer.get("lowPrice")
+                    or (offer.get("priceSpecification") or {}).get("price"))
+        if nazov and cena is not None:
+            out.append({"nazov": str(nazov), "zlavnena_cena": cena,
+                        "povodna_cena": None, "mnozstvo": ""})
+    # zanoríme sa do vnútra (napr. @graph, itemListElement)
+    for v in uzol.values():
+        if isinstance(v, (list, dict)):
+            _najdi_produkty(v, out)
+
+
+def extrahuj_jsonld(html: str) -> list[dict]:
+    """Vytiahne produkty zo všetkých JSON-LD blokov v HTML."""
+    import re as _re
+    out: list[dict] = []
+    for m in _re.finditer(
+        r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        html, _re.S | _re.I,
+    ):
+        try:
+            data = json.loads(m.group(1).strip())
+        except (json.JSONDecodeError, ValueError):
+            continue
+        _najdi_produkty(data, out)
+    return out
+
+
 # ── Konfigurácia obchodov ────────────────────────────────────────────────────
-# Každý záznam: obchod, url, typ ("akciova" z letáku / "bezna" z e-shopu).
-# Extrakcia ide cez Gemini (LLM) — netreba ladiť CSS selektory, len dať URL.
+# Každý záznam: obchod, url, typ ("akciova" z letáku / "bezna" z e-shopu), mode.
+# mode:
+#   "jsonld" — default, ZADARMO, bez kľúča, bez selektorov (schema.org v HTML)
+#   "css"    — ZADARMO, ale treba per-web selektory v poli "schema" (záloha)
+#   "llm"    — Gemini, potrebuje GEMINI_API_KEY (až keď ho používateľ dodá)
 # Kľúč = <obchod>-<typ>, napr. "kaufland-letak", "kaufland-eshop".
 #
 # >>> URL doplní používateľ (pošle zoznam obchodov + linky). Zatiaľ placeholdery. <<<
@@ -135,29 +188,30 @@ STORES = {
     "kaufland-letak": {
         "obchod": "Kaufland",
         "typ": "akciova",
+        "mode": "jsonld",
         "url": "TODO-doplnit-link-na-letak",
     },
     "kaufland-eshop": {
         "obchod": "Kaufland",
         "typ": "bezna",
+        "mode": "jsonld",
         "url": "TODO-doplnit-link-na-eshop",
     },
     # Lidl, Tesco, COOP, Billa, Terno... pribudnú rovnako, keď dôjdu linky.
 }
 
-# Odvodené polia podľa typu ceny (do schémy `ceny/`).
-TYP_META = {
-    "akciova": {"zdroj_kontroly": "crawl4ai + Gemini (web-leták)", "poznamka_default": ""},
-    "bezna": {"zdroj_kontroly": "crawl4ai + Gemini (e-shop)",
-              "poznamka_default": "bežná cena z e-shopu"},
-}
+# Odvodené polia podľa (typ ceny, mode) — do schémy `ceny/`.
+def _zdroj(mode: str) -> str:
+    return {"jsonld": "crawl4ai (JSON-LD)", "css": "crawl4ai (CSS)",
+            "llm": "crawl4ai + Gemini"}.get(mode, "crawl4ai")
 
 
 def _store(kluc: str) -> dict:
-    """Doplní odvodené polia (zdroj_kontroly, poznamka_default, mode) k STORES záznamu."""
+    """Doplní odvodené polia (zdroj_kontroly, poznamka_default) k STORES záznamu."""
     s = dict(STORES[kluc])
-    s.setdefault("mode", "llm")
-    s.update(TYP_META[s["typ"]])
+    s.setdefault("mode", "jsonld")
+    s["zdroj_kontroly"] = _zdroj(s["mode"])
+    s["poznamka_default"] = "bežná cena z e-shopu" if s["typ"] == "bezna" else ""
     return s
 
 
@@ -213,61 +267,85 @@ def tyzden_platnost(dnes: date | None = None) -> str:
     return f"{zaciatok.isoformat()} - {koniec.isoformat()}"
 
 
+SAMPLES_DIR = REPO / "scripts" / "_samples"
+
+# LLM extrakčná schéma + inštrukcia (použije sa len v llm režime).
+_LLM_SCHEMA = {
+    "type": "array",
+    "items": {"type": "object", "properties": {
+        "nazov": {"type": "string"},
+        "mnozstvo": {"type": "string"},
+        "povodna_cena": {"type": ["number", "null"]},
+        "zlava": {"type": "string"},
+        "zlavnena_cena": {"type": "number"},
+    }},
+}
+_LLM_INSTRUKCIA = (
+    "Z web-letáku/e-shopu vyextrahuj VŠETKY potravinové suroviny na varenie. "
+    "Vynechaj alkohol, nápoje, sirupy, snacky, sladkosti, hotové jedlá, "
+    "drogériu a nepotraviny. Ceny ako čísla v eurách (1.39, nie '139'). "
+    "povodna_cena = null ak nie je uvedená. zlavnena_cena = cena, ktorú "
+    "zákazník zaplatí."
+)
+
+
 # ── Crawl (importuje crawl4ai až tu, nech testy logiky bežia aj bez neho) ─────
-async def crawl(store: dict, api_key: str | None) -> tuple[list[dict], int]:
+async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[dict]:
+    """Stiahne stránku a vráti surové položky. Bez kľúča: jsonld/css. sample=True uloží vzorku."""
     from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
     proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("HTTP_PROXY")
     bconf = BrowserConfig(headless=True, browser_type="chromium",
                           proxy=proxy or None, ignore_https_errors=True)
 
-    if store["mode"] == "css":
+    strat = None
+    mode = store["mode"]
+    if mode == "css":
         from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
         strat = JsonCssExtractionStrategy(store["schema"])
-    else:
+    elif mode == "llm":
         from crawl4ai.extraction_strategy import LLMExtractionStrategy
         key = api_key or os.environ.get("GEMINI_API_KEY")
         if not key:
-            sys.exit("LLM režim potrebuje GEMINI_API_KEY (alebo --api-key).")
+            print(f"⏭  {store['obchod']}: llm režim potrebuje GEMINI_API_KEY — preskočené.")
+            return []
         strat = LLMExtractionStrategy(
-            provider="gemini/gemini-2.0-flash",  # najlacnejší; zmeň podľa potreby
-            api_token=key,
-            schema={
-                "type": "array",
-                "items": {"type": "object", "properties": {
-                    "nazov": {"type": "string"},
-                    "mnozstvo": {"type": "string"},
-                    "povodna_cena": {"type": ["number", "null"]},
-                    "zlava": {"type": "string"},
-                    "zlavnena_cena": {"type": "number"},
-                }},
-            },
-            extraction_type="schema",
-            instruction=(
-                "Z web-letáku vyextrahuj VŠETKY potravinové suroviny na varenie. "
-                "Vynechaj alkohol, nápoje, sirupy, snacky, sladkosti, hotové jedlá, "
-                "drogériu a nepotraviny. Ceny ako čísla v eurách (1.39, nie '139'). "
-                "povodna_cena = null ak nie je uvedená. zlavnena_cena = cena, ktorú "
-                "zákazník zaplatí."
-            ),
-        )
+            provider="gemini/gemini-2.0-flash", api_token=key,
+            schema=_LLM_SCHEMA, extraction_type="schema", instruction=_LLM_INSTRUKCIA)
 
-    run = CrawlerRunConfig(extraction_strategy=strat)
+    run = CrawlerRunConfig(extraction_strategy=strat) if strat else CrawlerRunConfig()
     async with AsyncWebCrawler(config=bconf) as crawler:
         res = await crawler.arun(url=store["url"], config=run)
     if not res.success:
-        sys.exit(f"Crawl zlyhal: {getattr(res, 'error_message', 'neznáma chyba')}")
-    raw = json.loads(res.extracted_content or "[]")
-    return raw, 0
+        print(f"⚠  {store['obchod']}: crawl zlyhal — {getattr(res, 'error_message', '?')}")
+        return []
+
+    if sample:  # ulož vzorku stránky, nech sa dá doladiť extrakcia
+        SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
+        html = res.html or ""
+        jl = extrahuj_jsonld(html)
+        f = SAMPLES_DIR / f"{store['obchod'].lower()}-{store['typ']}.md"
+        f.write_text(
+            f"# Vzorka: {store['url']}\n\nJSON-LD produktov nájdených: {len(jl)}\n\n"
+            f"## Markdown (prvých 4000 znakov)\n\n{(res.markdown or '')[:4000]}\n\n"
+            f"## HTML (prvých 8000 znakov)\n\n```\n{html[:8000]}\n```\n",
+            encoding="utf-8")
+        print(f"      vzorka → {f.relative_to(REPO)} (JSON-LD: {len(jl)})")
+
+    if mode == "jsonld":
+        return extrahuj_jsonld(res.html or "")
+    return json.loads(res.extracted_content or "[]")
 
 
-def spracuj(kluc: str, platnost: str, api_key: str | None, dry_run: bool) -> bool:
+def spracuj(kluc: str, platnost: str, api_key: str | None,
+            dry_run: bool, sample: bool = False) -> bool:
     """Zber jedného obchodu → uloží ceny/<kluc>-<dátum>.json. Vráti True ak sa niečo uložilo."""
     store = _store(kluc)
     if str(store["url"]).startswith("TODO"):
         print(f"⏭  {kluc}: preskočené (nemá URL — doplň link do STORES).")
         return False
-    raw, strany = asyncio.run(crawl(store, api_key))
+    raw = asyncio.run(crawl(store, api_key, sample=sample))
+    strany = 0
     polozky = [p for p in (normalizuj_polozku(r, store, platnost) for r in raw) if p]
     if not polozky:
         print(f"⚠  {kluc}: nič sa nevyextrahovalo (over URL / stránku).")
@@ -296,6 +374,8 @@ def main() -> None:
     ap.add_argument("--api-key", help="Gemini API kľúč (alebo env GEMINI_API_KEY)")
     ap.add_argument("--platnost", help="'YYYY-MM-DD - YYYY-MM-DD' (inak auto)")
     ap.add_argument("--dry-run", action="store_true", help="neuloží, len vypíše zhrnutie")
+    ap.add_argument("--sample", action="store_true",
+                    help="ulož vzorku stránky do scripts/_samples/ (na doladenie extrakcie)")
     args = ap.parse_args()
 
     platnost = args.platnost or tyzden_platnost()
@@ -304,7 +384,7 @@ def main() -> None:
     ulozene = 0
     for kluc in kluce:
         try:
-            ulozene += spracuj(kluc, platnost, args.api_key, args.dry_run)
+            ulozene += spracuj(kluc, platnost, args.api_key, args.dry_run, args.sample)
         except SystemExit:
             raise
         except Exception as e:  # jeden obchod nech nezhodí celý beh
