@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Thin savory pancakes folded and filled with ham and melting cheese, stacked on a matte plate, one cut open to reveal the gooey cheese and ham inside. Golden lacy edges of the crepes. Natural warm side light, textured linen napkin, rustic wooden board. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of savory pancakes folded and filled with ham and melting cheese in a sleek white ceramic plate on a smooth light oak table, capturing an elevated home cooking aesthetic. The gooey melted cheese and ham filling is sharply focused. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of grated cheese. A modern brushed steel fork rests on a casually draped light grey linen napkin. A pinch of black pepper adds a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 

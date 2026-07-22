@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Golden crispy homemade chicken nuggets piled next to a heap of oven-baked potato fries on a matte plate, a small bowl of dip on the side. Crunchy breaded texture visible, steam rising gently. Natural warm side light, textured linen napkin, rustic wooden board beneath. No text, no logo, no watermark in the image.
+A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing an elevated home cooking style with golden crispy breaded chicken nuggets in a modern matte bowl on a clean oak surface. Right next to it is a contemporary dish of oven-baked potato fries, tying into the meal. A modern brushed fork leans casually on the bowl. A light dusting of sweet paprika scattered naturally on the table for that authentic lifestyle touch. The crunchy golden breaded coating looks vibrant. Soft, welcoming daylight. No text, no logo, no watermark in the image.
 
 ---
 

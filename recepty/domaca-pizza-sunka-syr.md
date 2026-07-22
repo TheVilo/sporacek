@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing overhead editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. A freshly baked homemade pizza with bubbling melted cheese, ham pieces and tomato sauce, cut into slices on a rustic wooden board. A few basil leaves scattered on top, a light dusting of oregano. Golden crispy crust edges. Natural warm side light, soft shadows, textured linen underneath. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A homemade ham and cheese pizza with melted mozzarella and tomato sauce, sliced into pieces, served on a rustic round wooden board on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife. The table isn't empty; a light dusting of dried oregano and a little grated cheese add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the bubbling golden cheese and ham topping. Film grain. No text, no logo, no watermark in the image.
 
 ---
 

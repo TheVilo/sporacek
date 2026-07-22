@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Baked chicken cutlets topped with tomato sauce and bubbling golden melted mozzarella and cheese, in a rustic baking dish, a few basil leaves on top. Juicy tender chicken visible at a cut edge. Natural warm side light, textured linen, wooden board beneath. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial food photograph, vertical 9:16, embracing warm minimalism. A fresh serving of baked chicken cutlets topped with tomato sauce and bubbling golden melted cheese in a minimalist matte black baking dish on a smooth light oak table. A softly draped, slightly messy light grey linen napkin lies nearby with a sleek matte black spoon. Blurred background features a small contemporary dipping bowl of tomato sauce. A pinch of dried oregano sits on the table for an authentic, elevated home cooking vibe. Soft diffused daylight. No text, no logo, no watermark in the image.
 
 ---
 

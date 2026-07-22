@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Golden puff pastry wrapped sausages fresh from the oven, flaky glossy crust brushed with egg wash, arranged on parchment paper. A small bowl of ketchup and mustard beside them. Crispy layered pastry texture visible. Natural warm side light, rustic wooden board, soft linen. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial in-progress cooking snap, 9:16 format. Golden flaky puff-pastry wrapped sausages fresh from the oven resting on a sleek, clean light wood cutting board with an organic, lived-in feel. A modern brushed stainless steel knife sits nearby alongside a golden puff pastry offcut. The background is blurred, showing a modern ceramic pinch bowl of mustard. The glossy egg-washed pastry looks fresh and crisp. Natural, dynamic composition with soft directional daylight. No text, no logo, no watermark in the image.
 
 ---
 

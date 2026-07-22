@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Tender meatballs simmered in a rich glossy tomato sauce, served over a bed of fluffy white rice in a matte bowl, sprinkled with a little grated cheese and basil. The sauce is thick and vibrant red. Natural warm side light, textured linen, wooden board beneath. No text, no logo, no watermark in the image.
+A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Tender meatballs in rich glossy tomato sauce over fluffy white rice in a matte geometric bowl sitting on a clean white quartz kitchen island. A casually wrinkled neutral napkin holds a modern brass fork. The blurred background adds editorial depth with a small dish of grated cheese. A pinch of dried oregano and a dash of pepper on the counter. Crisp, natural side-light highlighting the meatballs coated in thick red sauce. No text, no logo, no watermark in the image.
 
 ---
 

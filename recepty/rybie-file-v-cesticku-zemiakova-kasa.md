@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Golden crispy battered fish fillets next to a smooth scoop of creamy mashed potatoes, a lemon wedge on the side, on a matte plate. Crunchy airy batter texture visible, flaky white fish peeking from a broken piece. Natural warm side light, textured linen, wooden board beneath. No text, no logo, no watermark in the image.
+A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Golden crispy battered fish fillets with creamy mashed potatoes on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. A small side dish with a lemon wedge sits in the softly blurred background. Garnished with a light sprinkle of black pepper. Crisp, diffused daylight. No text, no logo, no watermark in the image.
 
 ---
 

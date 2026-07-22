@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. A creamy potato gratin bake with layers of sliced potato, ham and golden bubbling melted cheese on top, in a rustic ceramic baking dish. A portion scooped out revealing the tender layers. Natural warm side light, textured linen, wooden board beneath. No text, no logo, no watermark in the image.
+A bright, modern editorial side-angle close-up, 9:16 format, showcasing elevated home cooking. Showing the appetizing layers and texture of a creamy potato gratin bake with ham and golden bubbling melted cheese on a smooth light wood surface. A modern matte silver serving spoon rests naturally at the edge. The background is blurred but shows a sleek glass of water to add realism and a lived-in feel. A few natural crumbs of melted cheese and a light sprinkle of black pepper. Soft, airy daylight. No text, no logo, no watermark in the image.
 
 ---
 

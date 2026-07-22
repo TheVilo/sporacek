@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. Glossy sweet and sour chicken pieces with colorful bell peppers in a shiny glaze, served next to a mound of fluffy white rice in a matte bowl. The sauce coats the chicken with a rich amber sheen. Natural warm side light, textured linen, wooden board beneath. No text, no logo, no watermark in the image.
+A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Glossy sweet-and-sour chicken pieces with bell peppers in a shiny sauce in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with fluffy white rice. A casually draped linen cloth with a modern matte silver fork. Scattered strips of bell pepper around the bowl. Soft, airy natural window light. No text, no logo, no watermark in the image.
 
 ---
 

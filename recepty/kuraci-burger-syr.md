@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minimalism with a lived-in lifestyle feel. A juicy breaded chicken burger with melted cheese, crisp lettuce, tomato and a creamy sauce, stacked in a toasted sesame bun on textured parchment. Fries partially visible at the edge. Natural warm side light, rustic wooden board, softly wrinkled linen napkin. No text, no logo, no watermark in the image.
+A bright, wider modern editorial table scene, 9:16 format, blending warm minimalism and a lived-in lifestyle aesthetic. A crispy breaded chicken burger with melted cheese, crisp lettuce and tomato in a toasted sesame bun as the centerpiece on a smooth wood table. The scene is rich but clean: a softly wrinkled linen napkin, modern cutlery, a small side bowl of tartar sauce, and a modern drinking glass. Crisp lettuce peeking generously from the juicy breaded chicken and melted cheese. Natural window light. No text, no logo, no watermark in the image.
 
 ---
 
