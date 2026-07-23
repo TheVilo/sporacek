@@ -97,7 +97,7 @@ Priprav si opis jedla — analyzuj recept podľa týchto pravidiel (rovnaké pra
 
 8. **Mäkké/drobivé suroviny nezobrazuj ako dokonalý geometrický tvar.** Feta, tvaroh, bryndza, mozzarella nikdy nie sú hladký kváder/valec s ostrými hranami — v realite sú drobivé alebo natrhané, s nerovnými okrajmi (feta nalámaná na kusy alebo rozdrobená, mozzarella natrhaná). Vždy to tak opíš (napr. „a rustic, crumbly slab of feta with uneven broken edges").
 
-9. **Slovenské halušky/strapačky = drobné halušky, NIE gnocchi.** Gemini z „potato dumplings" opakovane robí veľké hladké gnocchi. Vždy explicitne píš „traditional Slovak halušky — very small, tiny soft potato dumplings resembling little spätzle or nokedli (short, irregular, torn, ~1–2 cm each), NOT large smooth gnocchi". Platí pre bryndzové halušky, strapačky, halušky s kapustou a pod.
+9. **Slovenské halušky/strapačky = drobné Spätzle, NIE gnocchi.** Gemini z „potato dumplings" robí gnocchi, aj keď pridáš „not gnocchi". Overené riešenie: **vôbec nepoužívaj slová „dumpling" ani „gnocchi" v kladnom zmysle** a oprie to o Spätzle. Použi presne: „Slovak halušky (Slovak-style Spätzle): many tiny, thin, squiggly, irregular soft strands and drops of potato dough, each only about 1–2 cm, with rough torn uneven edges and no defined round shape, looking exactly like small German Spätzle egg noodles — absolutely NOT round gnocchi and NOT smooth oval dumplings". Platí pre bryndzové halušky, strapačky, halušky s kapustou a pod.
 
 Výstup kroku 1: jeden súvislý anglický popisný názov jedla (max 15-20 slov), presne opisujúci, čo reálne leží na tanieri — týmto nahraď `[NAZOV RECEPTU]` v šablóne nižšie.
 
