@@ -53,12 +53,15 @@ výslovnej požiadavky používateľa.
 ### E-maily na doméne (dohodnuté)
 
 Developer účty sa registrujú na doménové adresy (nie súkromný Gmail),
-bez diakritiky, rolové:
+v kuchárskom duchu značky, **vždy bez diakritiky** (`kuchar`, nie „kuchár"
+— pozor, telefón diakritiku rád doplní sám):
 
-- `dev@sporacek.sk` — login/vlastník developer účtov (Google Play, Apple).
+- `kuchar@sporacek.sk` — login/vlastník developer účtov (Google Play, Apple).
   Google účet sa dá vytvoriť s nedomácou adresou („použiť existujúcu").
-- `podpora@sporacek.sk` — verejný support e-mail v Store listingu
+- `kotlik@sporacek.sk` — verejný support e-mail v Store listingu
   (povinný, bude dostávať spam — zámerne iná než login adresa).
+- Navyše aliasy `podpora@` a `info@` presmerované do tej istej schránky ako
+  `kotlik@` — bežné adresy si ľudia domyslia, kuchárske nie; alias nič nestojí.
 - Doména musí poštu reálne prijímať (stačí forwarding — Cloudflare Email
   Routing / registrátor), inak hrozí zmeškanie overovacích/policy mailov
-  a suspendácia účtu. Na dev účte povinne 2FA + záložný telefón/e-mail.
+  a suspendácia účtu. Na účte `kuchar@` povinne 2FA + záložný telefón/e-mail.
