@@ -47,6 +47,7 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 3. **Pri novom recepte over duplicity** (skontroluj `recepty/`) a konzistenciu názvov. `id` je slug bez diakritiky a **nikdy sa nemení** (inak prestane sedieť fotka).
 4. **Po každej zmene `ceny/`, `recepty/`, `suroviny.md` alebo `aliasy.json` prebuild-ni databázu:** `python3 scripts/build_databaza.py` (na `main` to spraví aj Action, ale lokálny rebuild ukáže report pokrytia a formátové varovania hneď). `databaza.json` je **generovaný** — needituj ho ručne a nečítaj ho do kontextu (2,6 MB); keď potrebuješ dáta, čítaj zdroje (`recepty/`, `ceny/`, `suroviny.md`) alebo `docs/data/SCHEMA.md`.
 5. **Recept = poriadne, chutné jedlo**, ktoré sa len postaví na akciových surovinách. Akciové ≠ chudobné. Najprv dobrý recept (inšpirovaný reálnymi z netu), až potom lacnejšie suroviny.
+6. **Hlavné jedlo je vždy kompletné = hlavná zložka + príloha (+ prípadná obloha/šalát).** Nikdy „len mäso". Príloha musí byť reálne v surovinách **aj** v postupe, nie iba spomenutá vetou „podávaj s...". Používateľ si z receptov skladá jedálniček — každý recept musí byť samostatné, hotové jedlo. Ak chceme tú istú hlavnú zložku s inou prílohou (napr. cordon bleu so zemiakmi / ryžou / šalátom), je to **nový samostatný kompletný recept**, nie skladanie dvoch (appka ponúka vždy jeden hotový recept, výber rieši filtrovanie cez tagy).
 
 ## Kedy siahnuť po skille
 
