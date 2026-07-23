@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A hearty meatless potato goulash with cubes of potato and strips of pepper in a rich reddish paprika sauce, topped with fresh parsley, in a deep rustic bowl, on a clean, smooth light wood table. A slice of bread and a softly wrinkled neutral linen napkin beneath a modern matte spoon. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A hearty meatless potato goulash with cubes of potato and strips of pepper in a muted brownish paprika-red sauce, topped with fresh parsley, in a deep rustic bowl on a clean, smooth light wood table. A slice of bread and a softly wrinkled neutral linen napkin beneath a modern matte spoon. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
 
 ---
 

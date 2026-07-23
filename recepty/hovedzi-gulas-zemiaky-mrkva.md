@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A hearty beef goulash with chunks of meat, potato and carrot in a deep bowl, rich reddish-brown paprika-tomato sauce, topped with fresh chopped parsley, with a slice of bread beside it, on a clean, smooth light wood table. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. A softly wrinkled neutral linen napkin lies beneath a modern matte spoon. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial food photograph, vertical 9:16 format. A close-up of a hearty beef goulash with chunks of beef, potato and carrot in a muted brownish paprika-red sauce, topped with fresh chopped parsley, in a rustic ceramic bowl on a smooth light oak table. The background is softly blurred with a modern water glass and a slice of bread. A modern matte spoon rests on a light grey linen napkin. Soft diffused daylight — no harsh shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
 
 ---
 

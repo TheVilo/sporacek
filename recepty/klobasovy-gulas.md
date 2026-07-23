@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A rustic sausage goulash with slices of smoked sausage, chunks of potato and strips of pepper in a rich reddish paprika sauce, in a deep rustic bowl, on a clean, smooth light wood table. A slice of bread and a softly wrinkled neutral linen napkin beneath a modern matte spoon. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
+A bright, wider modern editorial table scene, 9:16 format, warm minimalism and a lived-in feel. A rustic sausage goulash with slices of smoked sausage, chunks of potato and strips of pepper in a muted brownish paprika-red sauce, in a centerpiece matte ceramic bowl on a smooth light wood table. The scene is clean: a softly wrinkled linen napkin, a modern matte spoon and a slice of bread. Natural bright window light — no harsh shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
 
 ---
 

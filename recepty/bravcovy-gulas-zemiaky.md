@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A hearty pork goulash with chunks of pork and potato in a rich reddish-brown paprika sauce, topped with fresh chopped parsley, in a deep rustic bowl, on a clean, smooth light wood table. A slice of bread and a softly wrinkled neutral linen napkin beneath a modern matte spoon. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
+A bright, airy, dynamic 45-degree angle editorial food photo, 9:16 format, elevated home cooking style. A hearty pork goulash with tender chunks of pork and potato in a muted brownish paprika-red sauce, topped with fresh chopped parsley, in a deep rustic ceramic bowl on a clean light oak surface. A slice of bread and a modern matte spoon rest on a casually draped light linen napkin. Soft, welcoming diffused daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
 
 ---
 
