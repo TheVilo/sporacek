@@ -417,13 +417,15 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
             return []
 
         # Ak je zadaný slug, ber store['url'] ako prehľad obchodu a nájdi na ňom
-        # NAJNOVŠÍ (prvý) celoštátny leták — /<slug>/<slug>-letak-... (nie mestské
-        # varianty <slug>-bratislava-...). Tak sa URL nemusí ručne meniť každý týždeň.
+        # NAJNOVŠÍ (prvý) leták: čokoľvek pod /<slug>/ s "letak" v názve — prvý
+        # odkaz na prehľade je vždy najnovší. Presný tvar sa medzi obchodmi líši
+        # (kaufland-letak-..., ale aj tesco-hypermarket-letak-...), preto voľnejší
+        # vzor; prefix /<slug>/ zaručuje, že sa nechytí leták iného obchodu.
         slug = store.get("kimbino_slug")
         if slug:
             import re as _re
             m = _re.search(
-                rf'href=["\'](?:https://www\.kimbino\.sk)?(/{slug}/{slug}-letak[^"\']*?)["\']',
+                rf'href=["\'](?:https://www\.kimbino\.sk)?(/{slug}/[^"\']*letak[^"\']*?)["\']',
                 res.html or "", _re.I)
             if not m:
                 print(f"⚠  {store['obchod']}: nenašiel sa odkaz na najnovší leták.")

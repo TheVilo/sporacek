@@ -12,6 +12,11 @@ on:
   schedule:
     - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky)
   workflow_dispatch:         # tlačidlo "Run workflow" v záložke Actions
+    inputs:
+      obchod:
+        description: "Len jeden obchod (napr. tesco) — na testovanie. Prázdne = všetky."
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -45,7 +50,7 @@ jobs:
       - name: Zber cien
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/crawl_ceny.py --all 2>&1 | tee /tmp/zber.log
+        run: python scripts/crawl_ceny.py ${{ inputs.obchod || '--all' }} 2>&1 | tee /tmp/zber.log
 
       # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
       # Workflow permissions zapnuté "Allow GitHub Actions to create and approve
