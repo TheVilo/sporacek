@@ -32,6 +32,7 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `docs/api/v1/` | **generované** statické API pre appky (Android/iOS) — needituj ručne, robí ho build |
 | `docs/fotky-nahlad/` | **generované** 320 px náhľady fotiek pre zoznamy (`scripts/generate_thumbs.py`) |
 | `docs/app/` | dizajnové tokeny appky (`tokens.json` + web/Compose témy) a style guide — detail `docs/app/README.md` |
+| `docs/app/design-handoff/` | **kompletný design handoff MVP appky** — 24 schválených obrazoviek (`App*.dc.html`), `UI Kit.dc.html`, hotové PNG screenshoty (`screenshots/`), `README.md` s tabuľkou obrazoviek a tokenmi. Zdroj pravdy pre presné hodnoty pri fáze 3 appky (a neskôr). Pôvodne z Claude Design (beta) — ak treba znova exportovať, cez "Export → Project HTML" tam. |
 | `znalostna-baza/plan-appky.md` | **záväzný plán vývoja appky** (fázy, architektúra, čo je rozhodnuté) — čítaj pred každou prácou na appke |
 | `recepty/` | jeden súbor = jeden recept (nikdy neobsahuje cenu) |
 | `fotky/` | fotky receptov, pomenované podľa id (sú v repe) |

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<x-dc>
+<div style="width:100%;height:100%;background:#0E1F16;font-family:'Plus Jakarta Sans',sans-serif;color:#fff;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+
+  <!-- top bar -->
+  <div style="flex:none;padding:18px 18px 12px;display:flex;align-items:center;gap:12px;position:relative;z-index:2;">
+    <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">close</div>
+    <div style="flex:1;text-align:center;font-size:15px;font-weight:800;">Naskenuj účtenku</div>
+    <div style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-size:14px;">?</div>
+  </div>
+
+  <!-- viewfinder -->
+  <div style="flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:24px;">
+    <!-- receipt mock inside frame -->
+    <div style="width:200px;background:#FAF6EE;border-radius:10px;padding:16px 16px 22px;color:#204432;transform:rotate(-3deg);box-shadow:0 24px 50px rgba(0,0,0,0.5);">
+      <div style="text-align:center;font-size:13px;font-weight:800;letter-spacing:0.04em;margin-bottom:2px;">TESCO</div>
+      <div style="text-align:center;font-size:9px;color:#7A8A80;font-weight:600;margin-bottom:12px;">Bratislava · 09.06.2026</div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;font-weight:600;padding:4px 0;border-bottom:1px dashed rgba(32,68,50,0.18);"><span>Kuracie prsia</span><span>2,27</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;font-weight:600;padding:4px 0;border-bottom:1px dashed rgba(32,68,50,0.18);"><span>Parmezán</span><span>2,99</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;font-weight:600;padding:4px 0;border-bottom:1px dashed rgba(32,68,50,0.18);"><span>Ryža arborio</span><span>2,40</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:10px;font-weight:600;padding:4px 0;border-bottom:1px dashed rgba(32,68,50,0.18);"><span>Cibuľa</span><span>0,99</span></div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;padding-top:8px;"><span>SPOLU</span><span>18,40</span></div>
+    </div>
+
+    <!-- corner brackets -->
+    <div style="position:absolute;top:48px;left:36px;width:30px;height:30px;border-top:3px solid #BA5F3F;border-left:3px solid #BA5F3F;border-radius:4px 0 0 0;"></div>
+    <div style="position:absolute;top:48px;right:36px;width:30px;height:30px;border-top:3px solid #BA5F3F;border-right:3px solid #BA5F3F;border-radius:0 4px 0 0;"></div>
+    <div style="position:absolute;bottom:48px;left:36px;width:30px;height:30px;border-bottom:3px solid #BA5F3F;border-left:3px solid #BA5F3F;border-radius:0 0 0 4px;"></div>
+    <div style="position:absolute;bottom:48px;right:36px;width:30px;height:30px;border-bottom:3px solid #BA5F3F;border-right:3px solid #BA5F3F;border-radius:0 0 4px 0;"></div>
+  </div>
+
+  <!-- helper + controls -->
+  <div style="flex:none;padding:0 24px 36px;text-align:center;">
+    <p style="font-size:14px;color:rgba(255,255,255,0.82);font-weight:500;line-height:1.45;max-width:280px;margin:0 auto 22px;">Zarovnaj účtenku do rámika. Overíme, čo si naozaj kúpil v akcii — a koľko si ušetril.</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:28px;">
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.7);width:60px;text-align:right;">Galéria</div>
+      <div style="width:72px;height:72px;border-radius:50%;background:#fff;border:5px solid rgba(255,255,255,0.3);"></div>
+      <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.7);width:60px;text-align:left;">Zadať ručne</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}"></script>
+</body>
+</html>

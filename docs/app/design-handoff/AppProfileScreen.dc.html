@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<x-dc>
+<div style="width:100%;height:100%;background:#FAF6EE;font-family:'Plus Jakarta Sans',sans-serif;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+
+  <div style="flex:1;overflow-y:auto;">
+
+    <!-- profile header -->
+    <div style="background:#204432;padding:26px 20px 24px;color:#E7D6B4;position:relative;overflow:hidden;">
+      <div style="position:absolute;right:-20px;top:-24px;width:120px;height:120px;color:rgba(231,214,180,0.10);"><dc-import name="SporacekMark" hint-size="120px,120px" style="display:block;width:120px;height:120px;color:rgba(231,214,180,0.10);"></dc-import></div>
+      <div style="display:flex;align-items:center;gap:14px;position:relative;z-index:1;">
+        <div style="width:58px;height:58px;border-radius:50%;background:#E7D6B4;color:#204432;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;">M</div>
+        <div style="flex:1;">
+          <div style="font-size:19px;font-weight:800;color:#fff;letter-spacing:-0.01em;">Martina K.</div>
+          <div style="font-size:13px;font-weight:500;opacity:0.82;">martina@email.sk</div>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#E7D6B4;background:rgba(231,214,180,0.16);padding:7px 12px;border-radius:999px;">Upraviť</div>
+      </div>
+      <!-- lifetime savings -->
+      <div style="margin-top:20px;background:rgba(231,214,180,0.12);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:14px;position:relative;z-index:1;">
+        <div><div style="font-size:11px;font-weight:600;opacity:0.85;">Celkovo ušetrené</div><div style="font-size:26px;font-weight:800;color:#fff;letter-spacing:-0.02em;">€312,60</div></div>
+        <div style="width:1px;height:34px;background:rgba(231,214,180,0.2);"></div>
+        <div><div style="font-size:11px;font-weight:600;opacity:0.85;">Navarené jedlá</div><div style="font-size:26px;font-weight:800;color:#fff;letter-spacing:-0.02em;">84</div></div>
+      </div>
+    </div>
+
+    <!-- settings groups -->
+    <div style="padding:18px 18px 0;">
+      <div style="font-size:12px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#7A8A80;margin-bottom:10px;">Sledovanie</div>
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:22px;">
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">monitoring</span><div style="flex:1;font-size:14px;font-weight:700;">Sledované potraviny</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">6 položiek ›</div></div>
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">favorite</span><div style="flex:1;font-size:14px;font-weight:700;">Uložené recepty</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">8 receptov ›</div></div>
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;"><span style="font-size:18px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">receipt_long</span><div style="flex:1;font-size:14px;font-weight:700;">Nákupné zoznamy</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">história ›</div></div>
+      </div>
+
+      <div style="font-size:12px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#7A8A80;margin-bottom:10px;">Nastavenia varenia</div>
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:22px;">
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">shopping_cart</span><div style="flex:1;font-size:14px;font-weight:700;">Obľúbené obchody</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">Tesco, Lidl ›</div></div>
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;">🍽️</span><div style="flex:1;font-size:14px;font-weight:700;">Porcie a jedlá</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">2+1 · 5 dní ›</div></div>
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;"><span style="font-size:18px;">🥗</span><div style="flex:1;font-size:14px;font-weight:700;">Diéta a alergény</div><div style="font-size:13px;color:#BA5F3F;font-weight:700;">2 vylúčené ›</div></div>
+      </div>
+
+      <div style="font-size:12px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#7A8A80;margin-bottom:10px;">Účet</div>
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:22px;">
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">notifications_active</span><div style="flex:1;font-size:14px;font-weight:700;">Upozornenia na akcie</div><div style="width:42px;height:25px;border-radius:999px;background:#204432;position:relative;"><div style="position:absolute;top:2.5px;right:2.5px;width:20px;height:20px;border-radius:50%;background:#fff;"></div></div></div>
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;">💳</span><div style="flex:1;font-size:14px;font-weight:700;">Sporáček Plus</div><span style="background:#E7D6B4;color:#8A6A3E;font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px;">FREE</span></div>
+        <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;"><span style="font-size:18px;">❓</span><div style="flex:1;font-size:14px;font-weight:700;">Pomoc a podpora</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">›</div></div>
+      </div>
+
+      <div style="text-align:center;padding:4px 0 24px;"><span style="font-size:14px;font-weight:700;color:#BA5F3F;">Odhlásiť sa</span><div style="font-size:11px;color:#9AA8A0;font-weight:500;margin-top:8px;">Sporáček v1.0 · MVP</div></div>
+    </div>
+  </div>
+
+  <!-- bottom nav -->
+  <div style="flex:none;display:flex;justify-content:space-around;align-items:center;padding:10px 8px 20px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">home</span><span style="font-size:10px;font-weight:600;">Domov</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">skillet</span><span style="font-size:10px;font-weight:600;">Recepty</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">kitchen</span><span style="font-size:10px;font-weight:600;">Špajza</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">notifications_active</span><span style="font-size:10px;font-weight:600;">Sledujem</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">savings</span><span style="font-size:10px;font-weight:600;">Úspory</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}"></script>
+</body>
+</html>

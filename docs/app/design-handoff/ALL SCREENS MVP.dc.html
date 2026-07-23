@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+  </style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:48px;background:#E8E3D8;color:#204432;">
+
+  <!-- header -->
+  <div style="max-width:880px;margin-bottom:48px;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px;">
+      <div style="height:32px;color:#204432;"><dc-import name="SporacekLogo" hint-size="140px,32px" style="display:block;height:32px;width:140px;color:#204432;"></dc-import></div>
+      <span style="background:#BA5F3F;color:#fff;font-size:12px;font-weight:800;padding:4px 11px;border-radius:999px;">MVP · 24 obrazoviek</span>
+    </div>
+    <h1 style="font-size:40px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-bottom:14px;">Mapa aplikácie podľa typu</h1>
+    <p style="font-size:18px;line-height:1.5;color:#4B6357;font-weight:500;">Hore <span style="color:#BA5F3F;font-weight:800;">hlavný tok</span> — srdce sporáčika od spustenia po varenie. Ostatné obrazovky sú rozdelené do skupín podľa typu: prihlásenie, sledovanie, overenie úspory, nastavenia a stavy systému. Všetko, čo si uložil alebo sleduješ — recepty, potraviny, staré nákupy — má jeden domov v spodnom menu: <strong style="color:#204432;">Sledujem</strong> 🔔.</p>
+  </div>
+
+  <!-- ===================== A · HLAVNÝ TOK ===================== -->
+  <div style="margin-bottom:18px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#BA5F3F;color:#fff;padding:9px 18px;border-radius:999px;">
+      <span style="font-size:14px;font-weight:800;letter-spacing:0.03em;">A · HLAVNÝ TOK</span>
+    </div>
+    <p style="font-size:14px;color:#4B6357;font-weight:600;margin-top:10px;max-width:1000px;line-height:1.45;">Srdce sporáčika. Z domova spustíš <strong style="color:#204432;">nákup</strong>, povieš na čo máš chuť, AI vygeneruje plán aj <strong style="color:#204432;">nákupný zoznam</strong> — ten upravíš a pošleš rodine nakúpiť. Nákup sa uloží aj s receptami. <strong style="color:#BA5F3F;">Variť sa vraciaš až keď nakúpiš.</strong></p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- 01 home -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">01</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Domov · spustenie</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Vstupný bod — povieš čo máš chuť a spustíš sporáčik</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppHomeScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 02 preferences -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">02</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Nastav varenie</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Povieš na čo máš chuť · 1 deň, 1 osoba (MVP)</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppPreferencesScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 03 loading -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">03</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">AI generuje plán</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Zostaví recepty z akcií a overí sklad na serveri</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#204432;"><dc-import name="AppLoadingScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 04 plan -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">04</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Jedálniček na dnes</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Vygenerované jedlá · recept zameníš za iný</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppPlanScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 05 recipes -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">05</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Prehľad receptov</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Vyber recept a pridaj ho na konkrétny deň</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppRecipesScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 06 recipe detail -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">06</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Recept · detail</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Suroviny, postup a cena za porciu</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppRecipeScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 07 list -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">07</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Nákupný zoznam</span></div>
+        <div style="font-size:12px;color:#BA5F3F;font-weight:700;padding-left:34px;line-height:1.3;">Upraviteľný · zdieľaš s rodinou · uloží sa nákup</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppListScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+  </div>
+
+  <!-- sub-divider: cook later -->
+  <div style="margin:-44px 0 18px;display:flex;align-items:center;gap:14px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:#7FA38C;color:#0E1F16;padding:7px 15px;border-radius:999px;"><span style="font-size:13px;font-weight:800;letter-spacing:0.03em;">↩ POTOM — KEĎ NAKÚPIŠ</span></div>
+    <p style="font-size:13px;color:#4B6357;font-weight:600;margin:0;">Nákup máš uložený aj s receptami. Kedykoľvek sa vrátiš a začneš variť.</p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- 08 my shop -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#7FA38C;color:#0E1F16;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">08</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Môj nákup (uložený)</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Uložený nákup s receptami — vyber čo dnes uvaríš</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppShopScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 09 cooking -->
+    <div style="flex:none;width:354px;">
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;"><span style="width:26px;height:26px;border-radius:50%;background:#7FA38C;color:#0E1F16;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">09</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Režim varenia</span></div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;padding-left:34px;line-height:1.3;">Krok za krokom uvaríš podľa receptu</div>
+      </div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#163021;"><dc-import name="AppCookingScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== B · PRIHLÁSENIE & ONBOARDING ===================== -->
+  <div style="margin-bottom:18px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#204432;color:#E7D6B4;padding:8px 16px;border-radius:999px;">
+      <span style="font-size:13px;font-weight:800;letter-spacing:0.04em;">B · PRIHLÁSENIE &amp; ONBOARDING</span>
+    </div>
+    <p style="font-size:14px;color:#4B6357;font-weight:600;margin-top:10px;">Prvé spustenie, vytvorenie účtu a povolenie polohy, aby sporáček našiel obchody v okolí.</p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- 10 welcome -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">10</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Vitajte</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#163021;"><dc-import name="AppWelcomeScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 11 auth -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">11</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Vytvoriť účet</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppAuthScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 12 location -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">12</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Povolenie polohy</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#EDE7DA;"><dc-import name="AppLocationScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== C · SLEDUJEM ===================== -->
+  <div style="margin-bottom:18px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#204432;color:#E7D6B4;padding:8px 16px;border-radius:999px;">
+      <span style="font-size:13px;font-weight:800;letter-spacing:0.04em;">C · SLEDUJEM</span>
+    </div>
+    <p style="font-size:14px;color:#4B6357;font-weight:600;margin-top:10px;max-width:1000px;">Vlastný tab v spodnom menu (🔔 Sledujem). Hub obrazovka odtiaľto vedie na uložené recepty, sledované potraviny s cenovou históriou naprieč obchodmi a všetky staré nákupné zoznamy.</p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- 13 tracking hub -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">13</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Sledujem · hub</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppTrackingScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 14 saved -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">14</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Uložené recepty</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppSavedScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 15 watchlist -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">15</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Sledované potraviny</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppWatchlistScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 16 shopping history -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">16</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Nákupné zoznamy · história</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppShoppingHistoryScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== D · ÚSPORA & OVERENIE ===================== -->
+  <div style="margin-bottom:18px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#204432;color:#E7D6B4;padding:8px 16px;border-radius:999px;">
+      <span style="font-size:13px;font-weight:800;letter-spacing:0.04em;">D · ÚSPORA &amp; OVERENIE</span>
+    </div>
+    <p style="font-size:14px;color:#4B6357;font-weight:600;margin-top:10px;">Overenie reálnej úspory cez sken účtenky, plus mesačný prehľad na tabe 💰 Úspory.</p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- 17 receipt -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">17</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Sken účtenky</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#0E1F16;"><dc-import name="AppReceiptScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 18 done -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">18</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Úspora overená</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#204432;"><dc-import name="AppDoneScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 19 savings -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">19</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Úspora · mesiac</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppSavingsScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== E · ÚČET & NASTAVENIA ===================== -->
+  <div style="margin-bottom:18px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#204432;color:#E7D6B4;padding:8px 16px;border-radius:999px;">
+      <span style="font-size:13px;font-weight:800;letter-spacing:0.04em;">E · ÚČET &amp; NASTAVENIA</span>
+    </div>
+    <p style="font-size:14px;color:#4B6357;font-weight:600;margin-top:10px;">Obľúbené obchody, účet, diéta a alergény — nastavenia, ktoré ladia odporúčania AI.</p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;margin-bottom:64px;">
+
+    <!-- 17 profile -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">20</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Účet &amp; nastavenia</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppProfileScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 18 allergens -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">21</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Diéta &amp; alergény</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppAllergensScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 19 favourite stores -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">22</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Obľúbené obchody</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppStoreScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+  </div>
+
+  <!-- ===================== E · STAVY SYSTÉMU ===================== -->
+  <div style="margin-bottom:18px;">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:#204432;color:#E7D6B4;padding:8px 16px;border-radius:999px;">
+      <span style="font-size:13px;font-weight:800;letter-spacing:0.04em;">F · STAVY SYSTÉMU</span>
+    </div>
+    <p style="font-size:14px;color:#4B6357;font-weight:600;margin-top:10px;">Okrajové stavy hlavného toku — chyba či bez pripojenia a prázdny nákupný zoznam.</p>
+  </div>
+  <div style="display:flex;gap:36px;align-items:flex-start;">
+
+    <!-- 20 error -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">23</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Chyba / bez pripojenia</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#204432;"><dc-import name="AppErrorScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+
+    <!-- 21 empty list -->
+    <div style="flex:none;width:354px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;"><span style="width:26px;height:26px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex:none;">24</span><span style="font-size:15px;font-weight:800;letter-spacing:-0.01em;">Prázdny zoznam</span></div>
+      <div style="width:354px;padding:11px;background:#163021;border-radius:48px;box-shadow:0 30px 60px rgba(22,48,33,0.25);"><div style="width:332px;height:718px;border-radius:38px;overflow:hidden;background:#FAF6EE;"><dc-import name="AppEmptyListScreen" hint-size="332px,718px" style="display:block;width:332px;height:718px;"></dc-import></div></div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

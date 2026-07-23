@@ -19,6 +19,9 @@ výslovnej požiadavky používateľa.
 - **Repository pattern povinne** — obrazovky nevolajú HTTP; výmena
   statického API za ostrý backend = zmena base URL, nie kódu.
 - Rozsah MVP podľa design handoffu: **1 deň, 1 osoba**, 24 obrazoviek.
+  Kompletný handoff (obrazovky + UI Kit + screenshoty) je uložený v repe:
+  `docs/app/design-handoff/` — pôvodne z Claude Design (beta), znovu exportovať
+  odtiaľ cez "Export → Project HTML" ak treba (napr. aktualizovaný dizajn).
 - Detaily pre vývojára: `docs/app/README.md`; dátový kontrakt: `docs/data/SCHEMA.md`.
 
 ## Fázy

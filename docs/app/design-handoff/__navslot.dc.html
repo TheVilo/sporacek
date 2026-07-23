@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="flex:none;display:flex;justify-content:space-around;align-items:center;padding:9px 8px 22px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);font-family:'Plus Jakarta Sans',sans-serif;">
+  <div onClick="{{ onHome }}" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ cHome }};cursor:pointer;"><span style="font-size:19px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">home</span><span style="font-size:10px;font-weight:{{ wHome }};">Domov</span></div>
+  <div onClick="{{ onPlan }}" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ cRecipes }};cursor:pointer;"><span style="font-size:19px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">skillet</span><span style="font-size:10px;font-weight:{{ wRecipes }};">Recepty</span></div>
+  <div onClick="{{ onPantry }}" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ cPantry }};cursor:pointer;position:relative;"><span style="font-size:19px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">kitchen</span><span style="font-size:10px;font-weight:{{ wPantry }};">Špajza</span><sc-if value="{{ hasPantryBadge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-2px;right:2px;width:8px;height:8px;border-radius:50%;background:#BA5F3F;border:1.5px solid #fff;"></span></sc-if></div>
+  <div onClick="{{ onSledujem }}" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ cSledujem }};cursor:pointer;position:relative;"><span style="font-size:19px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">notifications_active</span><span style="font-size:10px;font-weight:{{ wSledujem }};">Sledujem</span><sc-if value="{{ hasBadge }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-2px;right:6px;width:8px;height:8px;border-radius:50%;background:#BA5F3F;border:1.5px solid #fff;"></span></sc-if></div>
+  <div onClick="{{ onSavings }}" style="display:flex;flex-direction:column;align-items:center;gap:3px;color:{{ cSavings }};cursor:pointer;"><span style="font-size:19px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">savings</span><span style="font-size:10px;font-weight:{{ wSavings }};">Úspory</span></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active || "dom";
+    const on = "#204432", off = "#9AA8A0";
+    const is = (k) => active === k;
+    return {
+      onHome: this.props.onHome, onPlan: this.props.onPlan, onPantry: this.props.onPantry,
+      onSledujem: this.props.onSledujem, onSavings: this.props.onSavings,
+      hasBadge: !!this.props.hasBadge, hasPantryBadge: !!this.props.hasPantryBadge,
+      cHome: is("dom") || is("home") ? on : off, wHome: is("dom") || is("home") ? 800 : 600,
+      cRecipes: is("recipes") ? on : off, wRecipes: is("recipes") ? 800 : 600,
+      cPantry: is("pantry") ? on : off, wPantry: is("pantry") ? 800 : 600,
+      cSledujem: is("sledujem") ? on : off, wSledujem: is("sledujem") ? 800 : 600,
+      cSavings: is("savings") ? on : off, wSavings: is("savings") ? 800 : 600,
+    };
+  }
+}
+</script>
+</body>
+</html>

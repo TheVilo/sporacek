@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<x-dc>
+<div style="width:100%;height:100%;background:#FAF6EE;font-family:'Plus Jakarta Sans',sans-serif;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+
+  <!-- header -->
+  <div style="padding:16px 18px 10px;flex:none;">
+    <div style="display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;">Nákupný zoznam</div>
+        <div style="font-size:12px;color:#7A8A80;font-weight:600;">{{ headerSub }}</div>
+      </div>
+      <div onClick="{{ toggleEdit }}" style="font-size:13px;font-weight:800;color:{{ editColor }};background:{{ editBg }};padding:7px 14px;border-radius:999px;cursor:pointer;">{{ editLabel }}</div>
+    </div>
+  </div>
+
+  <!-- share strip -->
+  <div style="padding:0 18px 12px;flex:none;">
+    <div style="display:flex;align-items:center;gap:12px;background:#204432;border-radius:16px;padding:11px 14px;">
+      <div style="display:flex;align-items:center;">
+        <div style="width:30px;height:30px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid #204432;">M</div>
+        <div style="width:30px;height:30px;border-radius:50%;background:#E7D6B4;color:#204432;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid #204432;margin-left:-8px;">Z</div>
+        <div style="width:30px;height:30px;border-radius:50%;background:#7FA38C;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid #204432;margin-left:-8px;">D</div>
+      </div>
+      <div style="flex:1;line-height:1.25;">
+        <div style="font-size:12.5px;font-weight:800;color:#fff;">Zdieľané s rodinou</div>
+        <div style="font-size:11px;font-weight:600;color:rgba(231,214,180,0.8);">Pošli manželku či deti nakúpiť</div>
+      </div>
+      <div style="background:#BA5F3F;color:#fff;font-size:12.5px;font-weight:800;padding:8px 14px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:5px;">↗ Zdieľať</div>
+    </div>
+  </div>
+
+  <!-- summary -->
+  <div style="padding:0 18px 12px;flex:none;">
+    <div style="display:flex;gap:10px;">
+      <div style="flex:1;background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:16px;padding:13px 15px;">
+        <div style="font-size:11px;font-weight:700;color:#7A8A80;">Spolu</div>
+        <div style="font-size:23px;font-weight:800;color:#204432;letter-spacing:-0.02em;">€18,40</div>
+      </div>
+      <div style="flex:1;background:#F0E6D2;border-radius:16px;padding:13px 15px;">
+        <div style="font-size:11px;font-weight:700;color:#8A6A3E;">Ušetríš</div>
+        <div style="font-size:23px;font-weight:800;color:#BA5F3F;letter-spacing:-0.02em;">€6,20</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- list -->
+  <div style="flex:1;overflow-y:auto;padding:4px 18px 14px;">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+      <div style="font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#7A8A80;margin:8px 0 10px;">{{ g.title }}</div>
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:16px;">
+        <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;border-bottom:{{ it.border }};">
+            <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
+              <div onClick="{{ it.onRemove }}" style="width:24px;height:24px;border-radius:50%;background:#F7E3DC;color:#BA5F3F;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;cursor:pointer;flex:none;">−</div>
+            </sc-if>
+            <sc-if value="{{ it.showCheck }}" hint-placeholder-val="{{ true }}">
+              <div onClick="{{ it.onToggle }}" style="width:22px;height:22px;border-radius:7px;cursor:pointer;flex:none;background:{{ it.boxBg }};border:{{ it.boxBorder }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;">{{ it.boxMark }}</div>
+            </sc-if>
+            <div style="flex:1;"><div style="font-size:14px;font-weight:700;text-decoration:{{ it.strike }};color:{{ it.textColor }};">{{ it.name }}</div></div>
+            <sc-if value="{{ it.deal }}" hint-placeholder-val="{{ false }}">
+              <span style="background:#BA5F3F;color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;margin-right:8px;">akcia</span>
+            </sc-if>
+            <sc-if value="{{ it.inPantry }}" hint-placeholder-val="{{ false }}">
+              <span style="background:#EAF1EC;color:#3C5A48;font-size:10px;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:4px;"><span style="font-size:12px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">kitchen</span>máš v špajzi</span>
+            </sc-if>
+            <sc-if value="{{ it.showPrice }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size:14px;font-weight:800;color:{{ it.textColor }};">{{ it.price }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </sc-for>
+
+    <!-- add item (edit mode) -->
+    <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1.5px dashed rgba(32,68,50,0.25);border-radius:14px;padding:6px 8px 6px 14px;">
+        <span style="font-size:16px;color:#7A8A80;">＋</span>
+        <input value="{{ draft }}" onChange="{{ onDraftChange }}" placeholder="Pridaj vlastnú položku…" style="flex:1;border:none;outline:none;font-family:inherit;font-size:14px;font-weight:600;color:#204432;background:transparent;">
+        <div onClick="{{ addItem }}" style="background:#204432;color:#fff;font-size:13px;font-weight:800;padding:9px 15px;border-radius:10px;cursor:pointer;">Pridať</div>
+      </div>
+    </sc-if>
+  </div>
+
+  <!-- sticky action -->
+  <div style="flex:none;padding:12px 18px 14px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+    <button style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:800;padding:14px;border-radius:13px;cursor:pointer;">{{ ctaLabel }}</button>
+  </div>
+
+  <!-- bottom nav -->
+  <div style="flex:none;display:flex;justify-content:space-around;align-items:center;padding:10px 8px 20px;background:#fff;border-top:1px solid rgba(32,68,50,0.06);">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">home</span><span style="font-size:10px;font-weight:600;">Domov</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">skillet</span><span style="font-size:10px;font-weight:600;">Recepty</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">kitchen</span><span style="font-size:10px;font-weight:600;">Špajza</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">notifications_active</span><span style="font-size:10px;font-weight:600;">Sledujem</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">savings</span><span style="font-size:10px;font-weight:600;">Úspory</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}">
+class Component extends DCLogic {
+  state = {
+    editing: false,
+    draft: "",
+    groups: [
+      { title: "Mäso & mliečne", items: [
+        { name: "Kuracie prsia 500 g", price: "€2,27", deal: true, checked: true },
+        { name: "Parmezán 200 g", price: "€2,99", deal: true, checked: false },
+      ]},
+      { title: "Trvanlivé", items: [
+        { name: "Ryža arborio 1 kg", price: "€2,40", deal: false, checked: false },
+        { name: "Cestoviny 500 g", price: "€0,89", deal: false, checked: false },
+        { name: "Vývar 1 l", price: "€1,49", deal: false, checked: false },
+      ]},
+      { title: "Zelenina", items: [
+        { name: "Cibuľa 1 kg", price: "€0,99", deal: false, checked: false },
+        { name: "Cesnak 3 ks", price: "€0,79", deal: false, checked: true, inPantry: true },
+      ]},
+    ],
+  };
+
+  toggleEdit() { this.setState(s => ({ editing: !s.editing })); }
+  setDraft(v) { this.setState({ draft: v }); }
+
+  toggleItem(gi, ii) {
+    this.setState(s => {
+      const groups = s.groups.map((g, x) => x !== gi ? g : {
+        ...g, items: g.items.map((it, y) => y !== ii ? it : { ...it, checked: !it.checked }),
+      });
+      return { groups };
+    });
+  }
+
+  removeItem(gi, ii) {
+    this.setState(s => {
+      const groups = s.groups.map((g, x) => x !== gi ? g : {
+        ...g, items: g.items.filter((_, y) => y !== ii),
+      });
+      return { groups };
+    });
+  }
+
+  addItem() {
+    const name = this.state.draft.trim();
+    if (!name) return;
+    this.setState(s => {
+      const groups = s.groups.slice();
+      const last = { ...groups[groups.length - 1] };
+      last.items = [...last.items, { name, price: "—", deal: false, checked: false }];
+      groups[groups.length - 1] = last;
+      return { groups, draft: "" };
+    });
+  }
+
+  renderVals() {
+    const { editing, draft, groups } = this.state;
+    let count = 0;
+    const outGroups = groups.map((g, gi) => ({
+      title: g.title,
+      items: g.items.map((it, ii) => {
+        count++;
+        const checked = it.checked;
+        return {
+          name: it.name,
+          price: it.price,
+          deal: it.deal,
+          inPantry: !!it.inPantry,
+          showPrice: !it.inPantry,
+          showCheck: !editing,
+          boxBg: checked ? "#204432" : "#fff",
+          boxBorder: checked ? "none" : "1.5px solid rgba(32,68,50,0.2)",
+          boxMark: checked ? "✓" : "",
+          strike: checked ? "line-through" : "none",
+          textColor: checked ? "#9AA8A0" : "#204432",
+          border: ii === g.items.length - 1 ? "none" : "1px solid rgba(32,68,50,0.06)",
+          onToggle: () => this.toggleItem(gi, ii),
+          onRemove: () => this.removeItem(gi, ii),
+        };
+      }),
+    }));
+
+    return {
+      editing,
+      draft,
+      groups: outGroups,
+      headerSub: "Tesco · " + count + " položiek",
+      editLabel: editing ? "Hotovo" : "Upraviť",
+      editColor: editing ? "#fff" : "#BA5F3F",
+      editBg: editing ? "#204432" : "transparent",
+      toggleEdit: () => this.toggleEdit(),
+      onDraftChange: (e) => this.setDraft(e.target.value),
+      addItem: () => this.addItem(),
+      ctaLabel: editing ? "Uložiť zmeny" : "Uložiť nákup · môžeš variť neskôr",
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <style>
+    body { margin:0; }
+    *::-webkit-scrollbar { width:0; height:0; }
+    @keyframes popIn { 0%{transform:scale(0.7);opacity:0;} 60%{transform:scale(1.08);} 100%{transform:scale(1);opacity:1;} }
+    @keyframes sheetUp { from{transform:translateY(100%);} to{transform:translateY(0);} }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes toastUp { from{transform:translateY(60px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+    @keyframes spkFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+    @keyframes spkSpin { to{transform:rotate(360deg);} }
+    @keyframes spkPulse { 0%,100%{transform:scale(1);opacity:1;} 50%{transform:scale(1.06);opacity:0.85;} }
+    @keyframes spkBar { 0%{transform:translateX(-100%);} 100%{transform:translateX(220%);} }
+    @keyframes spkConf { 0%{transform:translateY(-10px) rotate(0);opacity:0;} 20%{opacity:1;} 100%{transform:translateY(60px) rotate(220deg);opacity:0;} }
+  </style>
+</helmet>
+
+<div style="min-height:100vh;width:100%;background:radial-gradient(120% 120% at 50% 0%, #EFE7D6 0%, #E4DAC4 100%);display:flex;flex-direction:column;align-items:center;gap:18px;padding:34px 16px 46px;box-sizing:border-box;font-family:'Plus Jakarta Sans',sans-serif;">
+
+  <div style="text-align:center;">
+    <div style="font-size:13px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:#8A7A55;">Sporáček · funkčný MVP</div>
+    <div style="font-size:13px;font-weight:600;color:#7A8A80;margin-top:4px;">{{ stepLabel }} · klikaj cez celý tok</div>
+  </div>
+
+  <div style="width:414px;height:844px;background:#0E1F16;border-radius:54px;padding:13px;box-shadow:0 40px 80px rgba(20,44,30,0.34);flex:none;box-sizing:border-box;">
+    <div style="width:100%;height:100%;background:#FAF6EE;border-radius:42px;overflow:hidden;position:relative;">
+
+      <div style="position:absolute;top:0;left:0;right:0;height:44px;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 30px;font-size:13px;font-weight:800;color:{{ statusColor }};pointer-events:none;">
+        <span>9:41</span>
+        <span style="font-size:11px;">📶 &nbsp; 100%</span>
+      </div>
+
+      <!-- ============ WELCOME ============ -->
+      <sc-if value="{{ sWelcome }}" hint-placeholder-val="{{ true }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;position:relative;background:#163021;color:#E7D6B4;">
+          <div style="position:absolute;top:-60px;right:-70px;width:240px;height:240px;color:rgba(231,214,180,0.06);"><dc-import name="SporacekMark" hint-size="240px,240px" style="display:block;width:240px;height:240px;color:rgba(231,214,180,0.06);"></dc-import></div>
+          <div style="position:absolute;bottom:200px;left:-70px;width:200px;height:200px;color:rgba(186,95,63,0.10);"><dc-import name="SporacekMark" hint-size="200px,200px" style="display:block;width:200px;height:200px;color:rgba(186,95,63,0.10);"></dc-import></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;position:relative;z-index:1;">
+            <div style="width:88px;height:88px;color:#E7D6B4;margin-bottom:22px;animation:spkFloat 4s ease-in-out infinite;"><dc-import name="SporacekMark" hint-size="88px,88px" style="display:block;width:88px;height:88px;color:#E7D6B4;"></dc-import></div>
+            <div style="height:30px;color:#E7D6B4;margin-bottom:18px;"><dc-import name="SporacekLogo" hint-size="132px,30px" style="display:block;height:30px;width:132px;color:#E7D6B4;"></dc-import></div>
+            <h1 style="font-size:27px;font-weight:800;letter-spacing:-0.03em;line-height:1.1;color:#fff;margin:0 0 12px;">Navar z akcií.<br>Ušetri každý týždeň.</h1>
+            <p style="font-size:14px;line-height:1.5;color:rgba(231,214,180,0.78);font-weight:500;margin:0;max-width:280px;">AI ti z dnešných zliav v tvojom obchode poskladá recepty a nákupný zoznam. Ty len varíš a šetríš.</p>
+          </div>
+          <div style="flex:none;padding:0 26px 6px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;">
+            <div style="display:flex;align-items:center;gap:12px;"><div style="width:34px;height:34px;border-radius:10px;background:rgba(231,214,180,0.12);display:flex;align-items:center;justify-content:center;font-size:16px;">🏷️</div><span style="font-size:13px;font-weight:600;color:#E7D6B4;">Recepty len z toho, čo je práve v akcii</span></div>
+            <div style="display:flex;align-items:center;gap:12px;"><div style="width:34px;height:34px;border-radius:10px;background:rgba(231,214,180,0.12);display:flex;align-items:center;justify-content:center;font-size:16px;font-family:'Material Symbols Outlined';">receipt_long</div><span style="font-size:13px;font-weight:600;color:#E7D6B4;">Hotový nákupný zoznam s cenou za porciu</span></div>
+          </div>
+          <div style="flex:none;padding:20px 24px 34px;position:relative;z-index:1;">
+            <button onClick="{{ toAuth }}" style="width:100%;background:#BA5F3F;color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;padding:16px;border-radius:14px;cursor:pointer;margin-bottom:12px;">Začať šetriť →</button>
+            <div onClick="{{ toAuth }}" style="text-align:center;font-size:13.5px;color:rgba(231,214,180,0.8);font-weight:600;cursor:pointer;">Už mám účet · <span style="color:#fff;font-weight:700;">Prihlásiť sa</span></div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ AUTH ============ -->
+      <sc-if value="{{ sAuth }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;background:#FAF6EE;">
+          <div style="padding:52px 18px 8px;flex:none;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:10px 24px 18px;">
+            <div style="width:44px;height:44px;color:#204432;margin-bottom:18px;"><dc-import name="SporacekMark" hint-size="44px,44px" style="display:block;width:44px;height:44px;color:#204432;"></dc-import></div>
+            <h1 style="font-size:25px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-bottom:8px;color:#204432;">Vytvor si účet</h1>
+            <p style="font-size:14px;color:#4B6357;font-weight:500;line-height:1.4;margin-bottom:22px;">Aby sme ti uložili obchod, preferencie a tvoju úsporu.</p>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+              <button onClick="{{ toLocation }}" style="width:100%;background:#fff;border:1.5px solid rgba(32,68,50,0.14);font-family:inherit;font-size:14.5px;font-weight:700;color:#204432;padding:13px;border-radius:13px;cursor:pointer;"> Pokračovať s Apple</button>
+              <button onClick="{{ toLocation }}" style="width:100%;background:#fff;border:1.5px solid rgba(32,68,50,0.14);font-family:inherit;font-size:14.5px;font-weight:700;color:#204432;padding:13px;border-radius:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;"><span style="font-weight:800;color:#BA5F3F;">G</span> Pokračovať s Google</button>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;"><div style="flex:1;height:1px;background:rgba(32,68,50,0.12);"></div><span style="font-size:11.5px;font-weight:700;color:#9AA8A0;">alebo e-mailom</span><div style="flex:1;height:1px;background:rgba(32,68,50,0.12);"></div></div>
+            <div style="font-size:12.5px;font-weight:800;margin-bottom:7px;color:#204432;">E-mail</div>
+            <div style="display:flex;align-items:center;gap:9px;background:#fff;border:1px solid rgba(32,68,50,0.12);border-radius:13px;padding:13px 14px;margin-bottom:14px;"><span style="font-size:14px;opacity:0.5;">✉️</span><span style="font-size:14px;color:#9AA8A0;font-weight:500;">tvoj@email.sk</span></div>
+            <div style="font-size:12.5px;font-weight:800;margin-bottom:7px;color:#204432;">Heslo</div>
+            <div style="display:flex;align-items:center;gap:9px;background:#fff;border:1px solid rgba(32,68,50,0.12);border-radius:13px;padding:13px 14px;"><span style="font-size:14px;opacity:0.5;">🔒</span><span style="flex:1;font-size:14px;color:#204432;font-weight:600;letter-spacing:2px;">••••••••</span></div>
+          </div>
+          <div style="flex:none;padding:12px 24px 24px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+            <button onClick="{{ toLocation }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:700;padding:15px;border-radius:14px;cursor:pointer;">Vytvoriť účet →</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ LOCATION ============ -->
+      <sc-if value="{{ sLocation }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;background:#FAF6EE;">
+          <div style="flex:1;position:relative;background:#EDE7DA;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+            <div style="position:absolute;top:22%;left:0;right:0;height:14px;background:#FAF6EE;transform:rotate(-8deg);"></div>
+            <div style="position:absolute;top:55%;left:0;right:0;height:18px;background:#FAF6EE;transform:rotate(4deg);"></div>
+            <div style="position:relative;width:80px;height:80px;display:flex;align-items:center;justify-content:center;">
+              <div style="position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(186,95,63,0.4);animation:spkPulse 2s ease-out infinite;"></div>
+              <div style="width:44px;height:44px;color:#BA5F3F;z-index:1;filter:drop-shadow(0 6px 8px rgba(22,48,33,0.25));"><dc-import name="SporacekMark" hint-size="44px,44px" style="display:block;width:44px;height:44px;color:#BA5F3F;"></dc-import></div>
+            </div>
+          </div>
+          <div style="flex:none;background:#fff;border-radius:24px 24px 0 0;margin-top:-24px;padding:24px 22px 30px;box-shadow:0 -8px 30px rgba(22,48,33,0.10);position:relative;z-index:2;">
+            <div style="width:42px;height:5px;border-radius:999px;background:rgba(32,68,50,0.12);margin:0 auto 18px;"></div>
+            <div style="width:50px;height:50px;border-radius:16px;background:#F0E6D2;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;">📍</div>
+            <h1 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;margin-bottom:9px;color:#204432;">Povoľ prístup k polohe</h1>
+            <p style="font-size:14px;color:#4B6357;font-weight:500;line-height:1.5;margin-bottom:20px;">Nájdeme ti najbližšie obchody a ich dnešné akcie. Polohu nikdy nezdieľame.</p>
+            <button onClick="{{ toHome }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:700;padding:15px;border-radius:14px;cursor:pointer;margin-bottom:11px;">Povoliť polohu</button>
+            <div onClick="{{ toHome }}" style="text-align:center;font-size:13.5px;font-weight:700;color:#7A8A80;cursor:pointer;">Zadám mesto ručne</div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ HOME ============ -->
+      <sc-if value="{{ sHome }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="flex:none;padding:52px 18px 6px;display:flex;align-items:center;justify-content:space-between;">
+            <div><div style="font-size:13px;color:#7A8A80;font-weight:600;">Dobrý deň 👋</div><div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Poďme ušetriť</div></div>
+            <div onClick="{{ toProfile }}" style="width:36px;height:36px;border-radius:50%;background:#204432;color:#E7D6B4;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;cursor:pointer;">M</div>
+          </div>
+          <div style="flex:none;padding:0 18px 10px;">
+            <div onClick="{{ toWatchlist }}" style="display:flex;align-items:center;gap:10px;background:#EAF1EC;border:1px solid rgba(127,163,140,0.4);border-radius:14px;padding:10px 13px;cursor:pointer;">
+              <span style="font-size:17px;font-family:'Material Symbols Outlined';">notifications_active</span>
+              <div style="flex:1;font-size:12.5px;font-weight:700;color:#3C5A48;">{{ watchDropCount }} sledované suroviny dnes zlacneli</div>
+              <span style="font-size:16px;font-family:'Material Symbols Outlined';color:#204432;">chevron_right</span>
+            </div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:10px 18px 18px;">
+            <div style="background:#204432;border-radius:24px;padding:22px 20px 20px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 20px 40px rgba(32,68,50,0.26);">
+              <div style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin-bottom:6px;position:relative;z-index:1;">Poďme nakupovať</div>
+              <div style="font-size:13.5px;font-weight:600;color:rgba(231,214,180,0.85);line-height:1.4;margin-bottom:18px;max-width:230px;position:relative;z-index:1;">Sporáček ti zostaví plán jedál a nákupný zoznam podľa akcií v okolí.</div>
+              <button onClick="{{ toPreferences }}" style="width:100%;background:#BA5F3F;color:#fff;border:none;font-family:inherit;font-size:17px;font-weight:800;padding:16px;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;z-index:1;"><span style="font-size:19px;font-family:'Material Symbols Outlined';">shopping_cart</span>Spustiť sporáčik →</button>
+              <div style="position:absolute;right:-22px;top:-22px;width:120px;height:120px;color:rgba(231,214,180,0.13);"><dc-import name="SporacekMark" hint-size="120px,120px" style="display:block;width:120px;height:120px;color:rgba(231,214,180,0.13);"></dc-import></div>
+            </div>
+
+            <div style="background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:20px;padding:14px 14px 12px;margin-bottom:22px;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="background:#7FA38C;color:#0E1F16;font-size:10px;font-weight:800;padding:3px 9px;border-radius:999px;display:flex;align-items:center;gap:4px;"><span style="font-size:12px;font-family:'Material Symbols Outlined';">check</span>Nakúpené</span><div style="font-size:13.5px;font-weight:800;color:#204432;">Tento týždeň varíš</div></div>
+              <div onClick="{{ cook0 }}" style="display:flex;align-items:center;gap:11px;background:#F4EFE3;border-radius:14px;padding:9px 11px;margin-bottom:8px;cursor:pointer;">
+                <div style="width:46px;height:46px;border-radius:10px;background-image:url({{ heroRecipe.img }});background-size:cover;background-position:center;flex:none;"></div>
+                <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:700;color:#7A8A80;">Dnes · {{ heroRecipe.meal }}</div><div style="font-size:14px;font-weight:800;line-height:1.15;">{{ heroRecipe.name }}</div></div>
+                <span style="background:#204432;color:#fff;font-size:12px;font-weight:800;padding:8px 13px;border-radius:999px;flex:none;display:flex;align-items:center;gap:5px;"><span style="font-size:14px;font-family:'Material Symbols Outlined';">play_arrow</span>Variť</span>
+              </div>
+              <div onClick="{{ toList }}" style="display:flex;align-items:center;gap:10px;padding:8px 11px;cursor:pointer;"><span style="font-size:16px;font-family:'Material Symbols Outlined';">receipt_long</span><div style="flex:1;font-size:13.5px;font-weight:700;color:#204432;">Posledný nákupný zoznam</div><span style="font-size:11px;font-weight:700;color:#7A8A80;">{{ listTotal }} položiek ›</span></div>
+            </div>
+
+            <div style="display:flex;gap:12px;margin-bottom:26px;">
+              <div style="flex:1;background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:18px;padding:15px 16px;"><div style="font-size:11.5px;color:#7A8A80;font-weight:700;margin-bottom:6px;">Ušetril si spolu</div><div style="font-size:26px;font-weight:800;color:#204432;letter-spacing:-0.02em;">{{ totalSavings }}</div><div style="font-size:11px;font-weight:600;color:#BA5F3F;margin-top:2px;">za 3 mesiace</div></div>
+              <div style="flex:1;background:#E7D6B4;border-radius:18px;padding:15px 16px;"><div style="font-size:11.5px;color:#7C6B45;font-weight:700;margin-bottom:6px;">Tento týždeň</div><div style="font-size:26px;font-weight:800;color:#204432;letter-spacing:-0.02em;">€14,60</div><div style="font-size:11px;font-weight:600;color:#7C6B45;margin-top:2px;">z 5 nákupov v akcii</div></div>
+            </div>
+
+            <div style="font-size:17px;font-weight:800;letter-spacing:-0.01em;margin-bottom:3px;">Tipy na recepty</div>
+            <div style="font-size:12.5px;color:#7A8A80;font-weight:600;margin-bottom:14px;">Z dnešných akcií — a kde to kúpiš najlacnejšie.</div>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <sc-for list="{{ homeTips }}" as="r" hint-placeholder-count="3">
+                <div onClick="{{ r.onDetail }}" style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(32,68,50,0.07);cursor:pointer;">
+                  <div style="display:flex;">
+                    <div style="width:104px;height:104px;background-image:url({{ r.img }});background-size:cover;background-position:center;flex:none;"></div>
+                    <div style="padding:12px 14px;flex:1;"><div style="font-size:15px;font-weight:800;line-height:1.15;">{{ r.name }}</div><div style="font-size:11.5px;color:#7A8A80;font-weight:600;margin:4px 0 9px;">{{ r.time }} · {{ r.portions }} · {{ r.ingCount }} surovín</div><span style="background:#E7D6B4;color:#204432;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;">{{ r.price }} / porcia</span></div>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#F4EFE3;border-top:1px solid rgba(32,68,50,0.06);"><div style="display:flex;align-items:center;gap:8px;"><span style="font-size:15px;font-family:'Material Symbols Outlined';">shopping_cart</span><span style="font-size:12.5px;font-weight:700;color:#204432;">Najlacnejšie v <strong>{{ r.store }}</strong></span></div><span style="font-size:12.5px;font-weight:800;color:#BA5F3F;">ušetríš {{ r.save }}</span></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="dom" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ PREFERENCES ============ -->
+      <sc-if value="{{ sPreferences }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Nastav si varenie</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">Vyber obchody, povedz na čo máš chuť — zvyšok spraví AI</div></div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:8px 18px 18px;">
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px;"><span style="font-size:16px;font-family:'Material Symbols Outlined';">shopping_cart</span><div style="font-size:14px;font-weight:800;color:#204432;">Kde chceš nakupovať?</div></div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+              <sc-for list="{{ prefStores }}" as="st" hint-placeholder-count="5">
+                <div onClick="{{ st.onClick }}" style="display:flex;align-items:center;gap:7px;padding:9px 14px;border-radius:12px;font-size:13.5px;font-weight:800;cursor:pointer;background:{{ st.bg }};color:{{ st.color }};border:{{ st.border }};"><span style="font-size:14px;">{{ st.check }}</span>{{ st.name }}</div>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px;"><span style="font-size:16px;font-family:'Material Symbols Outlined';">auto_awesome</span><div style="font-size:14px;font-weight:800;color:#204432;">Čo máš dnes chuť?</div></div>
+            <div style="background:#204432;border-radius:18px;padding:3px;margin-bottom:12px;box-shadow:0 12px 26px rgba(32,68,50,0.18);">
+              <div style="background:#fff;border-radius:15px;padding:14px 15px;"><textarea value="{{ prompt }}" onChange="{{ onPromptChange }}" placeholder="Napíš voľne, ako kamarátovi…" rows="2" style="width:100%;border:none;outline:none;resize:none;font-family:inherit;font-size:14px;line-height:1.5;font-weight:600;color:#204432;background:transparent;"></textarea></div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px;">
+              <sc-for list="{{ suggestions }}" as="s" hint-placeholder-count="5">
+                <span onClick="{{ s.onClick }}" style="background:#fff;border:1.5px solid rgba(32,68,50,0.15);color:#4B6357;font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:999px;cursor:pointer;">{{ s.label }}</span>
+              </sc-for>
+            </div>
+            <div style="font-size:14px;font-weight:800;margin-bottom:12px;color:#204432;">Koľko porcií?</div>
+            <sc-for list="{{ portions }}" as="p" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;gap:12px;background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:14px;padding:11px 14px;margin-bottom:10px;">
+                <span style="font-size:20px;">{{ p.glyph }}</span><div style="flex:1;font-size:15px;font-weight:800;color:#204432;">{{ p.label }}</div>
+                <div onClick="{{ p.dec }}" style="width:34px;height:34px;border-radius:50%;background:#F0E6D2;color:#204432;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;cursor:pointer;">−</div>
+                <div style="min-width:22px;text-align:center;font-size:17px;font-weight:800;color:#204432;">{{ p.count }}</div>
+                <div onClick="{{ p.inc }}" style="width:34px;height:34px;border-radius:50%;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;cursor:pointer;">+</div>
+              </div>
+            </sc-for>
+            <div style="font-size:14px;font-weight:800;margin:18px 0 12px;color:#204432;">Na koľko dní?</div>
+            <div style="display:flex;gap:8px;">
+              <sc-for list="{{ days }}" as="d" hint-placeholder-count="4">
+                <div onClick="{{ d.onClick }}" style="flex:1;text-align:center;padding:14px 4px;border-radius:14px;font-size:14px;font-weight:800;cursor:pointer;background:{{ d.bg }};color:{{ d.color }};border:{{ d.border }};">{{ d.label }}</div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="flex:none;padding:14px 18px 24px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+            <button onClick="{{ toLoading }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;padding:16px;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;">✨ Nechaj AI navariť plán →</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ LOADING ============ -->
+      <sc-if value="{{ sLoading }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 32px;box-sizing:border-box;background:#204432;color:#E7D6B4;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-40px;right:-50px;width:200px;height:200px;color:rgba(231,214,180,0.06);"><dc-import name="SporacekMark" hint-size="200px,200px" style="display:block;width:200px;height:200px;color:rgba(231,214,180,0.06);"></dc-import></div>
+          <div style="position:relative;width:120px;height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
+            <div style="position:absolute;inset:0;border-radius:50%;border:3px solid rgba(231,214,180,0.16);border-top-color:#BA5F3F;animation:spkSpin 1.1s linear infinite;"></div>
+            <div style="width:74px;height:74px;color:#E7D6B4;animation:spkPulse 1.6s ease-in-out infinite;"><dc-import name="SporacekMark" hint-size="74px,74px" style="display:block;width:74px;height:74px;color:#E7D6B4;"></dc-import></div>
+          </div>
+          <div style="font-size:12.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#BA5F3F;margin-bottom:12px;">AI skladá tvoj plán</div>
+          <h1 style="font-size:23px;font-weight:800;letter-spacing:-0.02em;color:#fff;line-height:1.15;margin-bottom:10px;">Pripravujeme recepty<br>z dnešných akcií</h1>
+          <p style="font-size:13.5px;color:rgba(231,214,180,0.8);font-weight:500;max-width:270px;line-height:1.45;margin-bottom:28px;">Skladáme jedlá presne podľa {{ planStores }} a tvojich preferencií.</p>
+          <div style="width:100%;max-width:290px;height:6px;border-radius:999px;background:rgba(231,214,180,0.14);overflow:hidden;position:relative;">
+            <div style="position:absolute;top:0;bottom:0;width:45%;border-radius:999px;background:#BA5F3F;animation:spkBar 1.4s ease-in-out infinite;"></div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ PLAN ============ -->
+      <sc-if value="{{ sPlan }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="flex:none;padding:52px 18px 10px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+              <div><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Tvoj plán na {{ planDays }} dní</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">{{ planStores }} · {{ planPortionsLabel }}</div></div>
+              <div style="width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;font-family:'Material Symbols Outlined';">refresh</div>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <div style="flex:1;background:#204432;border-radius:13px;padding:11px 13px;color:#E7D6B4;"><div style="font-size:10px;font-weight:600;opacity:0.8;">Plán spolu</div><div style="font-size:18px;font-weight:800;color:#fff;">€8,55</div></div>
+              <div style="flex:1;background:#F0E6D2;border-radius:13px;padding:11px 13px;"><div style="font-size:10px;font-weight:600;color:#8A6A3E;">Ušetríš</div><div style="font-size:18px;font-weight:800;color:#BA5F3F;">€1,20</div></div>
+              <div style="flex:1;background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:13px;padding:11px 13px;"><div style="font-size:10px;font-weight:600;color:#7A8A80;">⌀ porcia</div><div style="font-size:18px;font-weight:800;">€1,90</div></div>
+            </div>
+          </div>
+          <div style="flex:none;padding:8px 18px 6px;display:flex;gap:7px;overflow-x:auto;">
+            <div style="flex:none;background:#204432;color:#fff;font-size:13px;font-weight:800;padding:8px 15px;border-radius:999px;">Po</div>
+            <div style="flex:none;background:#fff;border:1px solid rgba(32,68,50,0.12);color:#4B6357;font-size:13px;font-weight:700;padding:7px 15px;border-radius:999px;">Ut</div>
+            <div style="flex:none;background:#fff;border:1px solid rgba(32,68,50,0.12);color:#4B6357;font-size:13px;font-weight:700;padding:7px 15px;border-radius:999px;">St</div>
+            <div style="flex:none;background:#fff;border:1px solid rgba(32,68,50,0.12);color:#4B6357;font-size:13px;font-weight:700;padding:7px 15px;border-radius:999px;">Št</div>
+            <div style="flex:none;background:#fff;border:1px solid rgba(32,68,50,0.12);color:#4B6357;font-size:13px;font-weight:700;padding:7px 15px;border-radius:999px;">Pi</div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:8px 18px 18px;">
+            <div style="display:flex;align-items:center;gap:10px;margin:6px 0 12px;"><div style="font-size:15px;font-weight:800;color:#204432;">Pondelok</div><div style="flex:1;height:1px;background:rgba(32,68,50,0.1);"></div><div style="font-size:12px;font-weight:700;color:#BA5F3F;">€3,80 · ušetríš €0,75</div></div>
+            <sc-for list="{{ planDay1 }}" as="r" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#7A8A80;">{{ r.meal }}</div><div onClick="{{ r.onSwap }}" style="font-size:12px;font-weight:800;color:#BA5F3F;cursor:pointer;">⇄ Zameniť</div></div>
+              <div onClick="{{ r.onDetail }}" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(32,68,50,0.07);display:flex;margin-bottom:14px;cursor:pointer;">
+                <div style="width:92px;height:92px;background-image:url({{ r.img }});background-size:cover;background-position:center;flex:none;"></div>
+                <div style="padding:11px 13px;flex:1;"><div style="font-size:14px;font-weight:800;line-height:1.15;color:#204432;">{{ r.name }}</div><div style="font-size:11px;color:#7A8A80;font-weight:500;margin:3px 0 8px;">{{ r.time }} · {{ r.portions }}</div>
+                  <div style="display:flex;align-items:center;gap:7px;"><span style="background:#E7D6B4;color:#204432;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;">{{ r.price }} / porcia</span><sc-if value="{{ r.sale }}" hint-placeholder-val="{{ false }}"><span style="background:#BA5F3F;color:#fff;font-size:10px;font-weight:800;padding:3px 7px;border-radius:999px;">akcia</span></sc-if></div>
+                </div>
+              </div>
+            </sc-for>
+            <div style="display:flex;align-items:center;gap:10px;margin:6px 0 12px;"><div style="font-size:15px;font-weight:800;color:#204432;">Utorok</div><div style="flex:1;height:1px;background:rgba(32,68,50,0.1);"></div><div style="font-size:12px;font-weight:700;color:#BA5F3F;">€2,75 · ušetríš €0,65</div></div>
+            <sc-for list="{{ planDay2 }}" as="r" hint-placeholder-count="1">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;"><div style="font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:#7A8A80;">{{ r.meal }}</div><div onClick="{{ r.onSwap }}" style="font-size:12px;font-weight:800;color:#BA5F3F;cursor:pointer;">⇄ Zameniť</div></div>
+              <div onClick="{{ r.onDetail }}" style="background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(32,68,50,0.07);display:flex;cursor:pointer;">
+                <div style="width:92px;height:92px;background-image:url({{ r.img }});background-size:cover;background-position:center;flex:none;"></div>
+                <div style="padding:11px 13px;flex:1;"><div style="font-size:14px;font-weight:800;line-height:1.15;color:#204432;">{{ r.name }}</div><div style="font-size:11px;color:#7A8A80;font-weight:500;margin:3px 0 8px;">{{ r.time }} · {{ r.portions }}</div>
+                  <div style="display:flex;align-items:center;gap:7px;"><span style="background:#E7D6B4;color:#204432;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;">{{ r.price }} / porcia</span><sc-if value="{{ r.sale }}" hint-placeholder-val="{{ false }}"><span style="background:#BA5F3F;color:#fff;font-size:10px;font-weight:800;padding:3px 7px;border-radius:999px;">akcia</span></sc-if></div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="flex:none;padding:13px 18px 14px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+            <button onClick="{{ toList }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:700;padding:15px;border-radius:14px;cursor:pointer;">Vytvoriť nákupný zoznam · {{ listTotal }} položiek</button>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="recipes" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ RECIPES TAB ============ -->
+      <sc-if value="{{ sRecipesTab }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="flex:none;padding:52px 18px 10px;">
+            <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:4px;color:#204432;">Recepty z akcií</div>
+            <div style="font-size:12px;color:#7A8A80;font-weight:600;margin-bottom:14px;">142 receptov · {{ planStores }} · dnešné ceny</div>
+            <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(32,68,50,0.12);border-radius:13px;padding:12px 14px;"><span style="font-size:17px;opacity:0.5;font-family:'Material Symbols Outlined';">search</span><span style="font-size:14px;color:#9AA8A0;font-weight:500;">Hľadaj recept alebo surovinu</span></div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:6px 18px 18px;">
+            <sc-for list="{{ allRecipes }}" as="r" hint-placeholder-count="6">
+              <div onClick="{{ r.onDetail }}" style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:18px;overflow:hidden;margin-bottom:14px;cursor:pointer;">
+                <div style="height:130px;background-image:url({{ r.img }});background-size:cover;background-position:center;position:relative;">
+                  <sc-if value="{{ r.sale }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:10px;left:10px;background:#BA5F3F;color:#fff;font-size:10px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;">🔥 v akcii</span></sc-if>
+                  <div onClick="{{ r.onSave }}" style="position:absolute;right:10px;top:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;font-size:14px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' {{ r.savedFill }};color:{{ r.savedColor }};">favorite</div>
+                </div>
+                <div style="padding:12px 15px;display:flex;align-items:center;justify-content:space-between;">
+                  <div><div style="font-size:11px;font-weight:700;color:#7A8A80;">{{ r.meal }}</div><div style="font-size:16px;font-weight:800;color:#204432;line-height:1.15;margin-top:2px;">{{ r.name }}</div></div>
+                  <div style="font-size:11.5px;font-weight:700;color:#7A8A80;text-align:right;">{{ r.time }}</div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="recipes" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ RECIPE DETAIL ============ -->
+      <sc-if value="{{ sDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;background:#FAF6EE;">
+          <div style="flex:1;overflow-y:auto;">
+            <div style="position:relative;height:230px;background:#0E1F16;">
+              <div style="width:100%;height:100%;background-image:url({{ cook.img }});background-size:cover;background-position:center;"></div>
+              <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(14,31,22,0.85) 0%, rgba(14,31,22,0.15) 42%, rgba(14,31,22,0.3) 100%);"></div>
+              <div onClick="{{ goBack }}" style="position:absolute;top:50px;left:16px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;font-size:17px;color:#fff;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+              <div onClick="{{ cook.onWatch }}" style="position:absolute;top:50px;right:16px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:center;font-size:16px;color:{{ cook.watchColorLight }};cursor:pointer;font-family:'Material Symbols Outlined';">favorite_border</div>
+              <div style="position:absolute;left:18px;right:18px;bottom:14px;"><div style="font-size:11px;font-weight:700;color:#E7D6B4;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:4px;">{{ cook.meal }}</div><h1 style="font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.08;color:#fff;margin:0;">{{ cook.name }}</h1></div>
+            </div>
+            <div style="padding:18px;">
+              <div style="display:flex;align-items:center;gap:14px;font-size:13px;color:#7A8A80;font-weight:600;margin-bottom:18px;">
+                <span style="display:flex;align-items:center;gap:4px;"><span style="font-size:15px;font-family:'Material Symbols Outlined';">timer</span>{{ cook.time }}</span>
+                <span style="display:flex;align-items:center;gap:4px;"><span style="font-size:15px;font-family:'Material Symbols Outlined';">restaurant</span>{{ cook.portions }}</span>
+              </div>
+              <div style="display:flex;gap:10px;margin-bottom:22px;">
+                <div style="flex:1;background:#204432;border-radius:16px;padding:15px;color:#E7D6B4;"><div style="font-size:11px;font-weight:600;opacity:0.85;">Cena za porciu</div><div style="font-size:24px;font-weight:800;color:#fff;letter-spacing:-0.02em;">{{ cook.price }}</div></div>
+                <div style="flex:1;background:#F0E6D2;border-radius:16px;padding:15px;"><div style="font-size:11px;font-weight:600;color:#8A6A3E;">Ušetríš</div><div style="font-size:24px;font-weight:800;color:#BA5F3F;letter-spacing:-0.02em;">{{ cook.save }}</div></div>
+              </div>
+              <div style="font-size:16px;font-weight:800;margin-bottom:10px;color:#204432;">Suroviny</div>
+              <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:20px;">
+                <sc-for list="{{ cook.ingredients }}" as="ing" hint-placeholder-count="4">
+                  <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid rgba(32,68,50,0.06);">
+                    <div style="flex:1;font-size:13.5px;font-weight:700;color:#204432;">{{ ing.name }}</div>
+                    <sc-if value="{{ ing.inPantry }}" hint-placeholder-val="{{ false }}"><span style="background:#EAF1EC;color:#3C5A48;font-size:9px;font-weight:800;padding:2px 7px;border-radius:999px;white-space:nowrap;">v špajzi</span></sc-if>
+                    <sc-if value="{{ ing.sale }}" hint-placeholder-val="{{ false }}"><span style="background:#BA5F3F;color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:999px;">akcia</span></sc-if>
+                    <span style="font-size:12.5px;font-weight:600;color:#7A8A80;">{{ ing.qty }}</span>
+                    <span onClick="{{ ing.onWatch }}" style="font-size:15px;cursor:pointer;color:{{ ing.watchColor }};font-family:'Material Symbols Outlined';">notifications_active</span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="font-size:16px;font-weight:800;margin-bottom:10px;color:#204432;">Postup</div>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <sc-for list="{{ cook.steps }}" as="st" hint-placeholder-count="3">
+                  <div style="display:flex;gap:12px;"><div style="width:24px;height:24px;flex:none;border-radius:50%;background:#E7D6B4;color:#204432;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;">{{ st.n }}</div><p style="font-size:14px;line-height:1.5;color:#4B6357;margin:0;">{{ st.text }}</p></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none;padding:14px 18px 22px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+            <button onClick="{{ toList }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:700;padding:15px;border-radius:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;"><span style="font-size:17px;font-family:'Material Symbols Outlined';">add</span>Pridať do zoznamu</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ LIST ============ -->
+      <sc-if value="{{ sList }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:12px;"><div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+              <div><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Nákupný zoznam</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">{{ headerSub }}</div></div>
+            </div>
+            <div onClick="{{ toggleEdit }}" style="font-size:13px;font-weight:800;color:{{ editColor }};background:{{ editBg }};padding:7px 14px;border-radius:999px;cursor:pointer;">{{ editLabel }}</div>
+          </div>
+          <div style="padding:0 18px 10px;flex:none;">
+            <div style="display:flex;align-items:center;gap:12px;background:#204432;border-radius:16px;padding:11px 14px;">
+              <div style="display:flex;align-items:center;"><div style="width:28px;height:28px;border-radius:50%;background:#BA5F3F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:2px solid #204432;">M</div><div style="width:28px;height:28px;border-radius:50%;background:#E7D6B4;color:#204432;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;border:2px solid #204432;margin-left:-8px;">Z</div></div>
+              <div style="flex:1;line-height:1.25;"><div style="font-size:12px;font-weight:800;color:#fff;">Zdieľané s rodinou</div></div>
+              <div onClick="{{ shareList }}" style="background:#BA5F3F;color:#fff;font-size:12px;font-weight:800;padding:7px 13px;border-radius:999px;cursor:pointer;">↗ Zdieľať</div>
+            </div>
+          </div>
+          <div style="padding:0 18px 10px;flex:none;">
+            <div style="display:flex;gap:10px;">
+              <div style="flex:1;background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:16px;padding:12px 14px;"><div style="font-size:10.5px;font-weight:700;color:#7A8A80;">Spolu</div><div style="font-size:21px;font-weight:800;color:#204432;letter-spacing:-0.02em;">{{ listCartTotal }}</div></div>
+              <div style="flex:1;background:#F0E6D2;border-radius:16px;padding:12px 14px;"><div style="font-size:10.5px;font-weight:700;color:#8A6A3E;">Ušetríš</div><div style="font-size:21px;font-weight:800;color:#BA5F3F;letter-spacing:-0.02em;">{{ listSaveTotal }}</div></div>
+            </div>
+            <sc-if value="{{ listPantrySaved }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:8px;background:#EAF1EC;border-radius:10px;padding:8px 11px;margin-top:8px;"><span style="font-size:14px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;color:#3C5A48;">kitchen</span><div style="font-size:11.5px;font-weight:700;color:#3C5A48;">Ušetril si {{ listPantrySaved }} zo surovín, ktoré máš v špajzi</div></div>
+            </sc-if>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:4px 18px 14px;">
+            <sc-for list="{{ groups }}" as="g" hint-placeholder-count="3">
+              <div style="font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#7A8A80;margin:8px 0 10px;">{{ g.title }}</div>
+              <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:16px;">
+                <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;border-bottom:{{ it.border }};">
+                    <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}"><div onClick="{{ it.onRemove }}" style="width:24px;height:24px;border-radius:50%;background:#F7E3DC;color:#BA5F3F;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;cursor:pointer;flex:none;">−</div></sc-if>
+                    <sc-if value="{{ it.showCheck }}" hint-placeholder-val="{{ true }}"><div onClick="{{ it.onToggle }}" style="width:22px;height:22px;border-radius:7px;cursor:pointer;flex:none;background:{{ it.boxBg }};border:{{ it.boxBorder }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;">{{ it.boxMark }}</div></sc-if>
+                    <div style="flex:1;"><div style="font-size:14px;font-weight:700;text-decoration:{{ it.strike }};color:{{ it.textColor }};">{{ it.name }}</div></div>
+                    <sc-if value="{{ it.deal }}" hint-placeholder-val="{{ false }}"><span style="background:#BA5F3F;color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:999px;margin-right:8px;">akcia</span></sc-if>
+                    <sc-if value="{{ it.inPantry }}" hint-placeholder-val="{{ false }}"><span style="background:#EAF1EC;color:#3C5A48;font-size:10px;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:4px;"><span style="font-size:12px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;">kitchen</span>máš v špajzi</span></sc-if>
+                    <sc-if value="{{ it.showPrice }}" hint-placeholder-val="{{ true }}"><div style="font-size:14px;font-weight:800;color:{{ it.textColor }};">{{ it.price }}</div></sc-if>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+            <sc-if value="{{ editing }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1.5px dashed rgba(32,68,50,0.25);border-radius:14px;padding:6px 8px 6px 14px;">
+                <span style="font-size:16px;color:#7A8A80;">＋</span>
+                <input value="{{ draft }}" onChange="{{ onDraftChange }}" placeholder="Pridaj vlastnú položku…" style="flex:1;border:none;outline:none;font-family:inherit;font-size:14px;font-weight:600;color:#204432;background:transparent;">
+                <div onClick="{{ addItem }}" style="background:#204432;color:#fff;font-size:13px;font-weight:800;padding:9px 15px;border-radius:10px;cursor:pointer;">Pridať</div>
+              </div>
+            </sc-if>
+          </div>
+          <div style="flex:none;padding:12px 18px 14px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+            <button onClick="{{ saveList }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:800;padding:14px;border-radius:13px;cursor:pointer;">{{ ctaLabel }}</button>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="list" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ SHOP ============ -->
+      <sc-if value="{{ sShop }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ toHome }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div style="flex:1;"><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Môj nákup</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">Pondelok–Utorok · {{ shopRecipes.length }} jedlá</div></div>
+            <div onClick="{{ shareRecipes }}" style="font-size:13px;font-weight:800;color:#BA5F3F;display:flex;align-items:center;gap:4px;cursor:pointer;"><span style="font-size:15px;font-family:'Material Symbols Outlined';">ios_share</span>Zdieľať</div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:6px 18px 18px;">
+            <div style="background:#204432;border-radius:20px;padding:18px;color:#E7D6B4;margin-bottom:22px;position:relative;overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;position:relative;z-index:1;"><span style="background:#7FA38C;color:#0E1F16;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px;display:flex;align-items:center;gap:4px;"><span style="font-size:13px;font-family:'Material Symbols Outlined';">check</span>Nakúpené</span><span style="font-size:11px;font-weight:600;opacity:0.8;">práve teraz</span></div>
+              <div style="font-size:13px;font-weight:600;opacity:0.85;position:relative;z-index:1;">Suroviny máš doma. Kedykoľvek sa vráť a začni variť.</div>
+              <div style="display:flex;gap:18px;margin-top:14px;position:relative;z-index:1;"><div><div style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em;">{{ listCartTotal }}</div><div style="font-size:11px;opacity:0.8;">zaplatené</div></div><div><div style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em;">{{ listSaveTotal }}</div><div style="font-size:11px;opacity:0.8;">ušetrené</div></div></div>
+              <div style="position:absolute;right:-16px;bottom:-16px;width:92px;height:92px;color:rgba(231,214,180,0.13);"><dc-import name="SporacekMark" hint-size="92px,92px" style="display:block;width:92px;height:92px;color:rgba(231,214,180,0.13);"></dc-import></div>
+            </div>
+            <div style="font-size:16px;font-weight:800;letter-spacing:-0.01em;margin-bottom:4px;color:#204432;">Recepty v tomto nákupe</div>
+            <div style="font-size:12px;color:#7A8A80;font-weight:600;margin-bottom:14px;">Vyber, čo dnes uvaríš.</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <sc-for list="{{ shopRecipes }}" as="r" hint-placeholder-count="3">
+                <div style="background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(32,68,50,0.07);display:flex;">
+                  <div style="width:96px;height:96px;background-image:url({{ r.img }});background-size:cover;background-position:center;flex:none;"></div>
+                  <div style="padding:11px 13px;flex:1;display:flex;flex-direction:column;justify-content:center;">
+                    <div style="font-size:11px;font-weight:700;color:#7A8A80;">{{ r.meal }}</div>
+                    <div style="font-size:14px;font-weight:800;line-height:1.15;margin:2px 0 8px;color:#204432;">{{ r.name }}</div>
+                    <span onClick="{{ r.onCook }}" style="align-self:flex-start;background:#204432;color:#fff;font-size:12px;font-weight:800;padding:7px 14px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:5px;"><span style="font-size:14px;font-family:'Material Symbols Outlined';">play_arrow</span>Začať variť</span>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+            <div onClick="{{ toList }}" style="display:flex;align-items:center;gap:10px;background:#F0E6D2;border-radius:14px;padding:13px 15px;margin-top:18px;cursor:pointer;"><span style="font-size:17px;font-family:'Material Symbols Outlined';">receipt_long</span><div style="flex:1;font-size:13.5px;font-weight:700;color:#204432;">Zobraziť nákupný zoznam</div><span style="font-size:18px;color:#7A8A80;font-family:'Material Symbols Outlined';">chevron_right</span></div>
+            <div onClick="{{ toReceipt }}" style="display:flex;align-items:center;gap:10px;background:#fff;border:1px dashed rgba(32,68,50,0.2);border-radius:14px;padding:13px 15px;margin-top:10px;cursor:pointer;"><span style="font-size:17px;font-family:'Material Symbols Outlined';">photo_camera</span><div style="flex:1;font-size:13.5px;font-weight:700;color:#204432;">Naskenovať účtenku a overiť úsporu</div><span style="font-size:18px;color:#7A8A80;font-family:'Material Symbols Outlined';">chevron_right</span></div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ COOKING (step by step) ============ -->
+      <sc-if value="{{ sCook }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;background:#163021;color:#E7D6B4;">
+          <div style="flex:none;padding:52px 18px 10px;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ cookExit }}" style="width:32px;height:32px;border-radius:50%;background:rgba(231,214,180,0.14);display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff;cursor:pointer;font-family:'Material Symbols Outlined';">close</div>
+            <div style="flex:1;"><div style="font-size:13px;font-weight:700;color:#fff;">{{ cook.name }}</div><div style="font-size:11px;color:rgba(231,214,180,0.7);font-weight:500;">Krok {{ cookStepNum }} z {{ cookStepCount }}</div></div>
+          </div>
+          <div style="flex:none;padding:4px 18px 0;display:flex;gap:6px;">
+            <sc-for list="{{ cookProgress }}" as="p" hint-placeholder-count="4">
+              <div style="flex:1;height:5px;border-radius:999px;background:{{ p.bg }};"></div>
+            </sc-for>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:24px 26px;">
+            <div style="font-size:80px;font-weight:800;color:rgba(231,214,180,0.18);line-height:1;letter-spacing:-0.04em;margin-bottom:4px;">{{ cookStepNum }}</div>
+            <h1 style="font-size:26px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2;">{{ cookStepText }}</h1>
+          </div>
+          <div style="flex:none;padding:14px 18px 30px;display:flex;gap:12px;align-items:center;">
+            <div onClick="{{ cookPrevStep }}" style="width:56px;height:56px;flex:none;border-radius:16px;background:rgba(231,214,180,0.12);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <button onClick="{{ cookNextStep }}" style="flex:1;background:#E7D6B4;color:#204432;border:none;font-family:inherit;font-size:17px;font-weight:800;padding:18px;border-radius:16px;cursor:pointer;">{{ cookNextLabel }}</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ RECEIPT ============ -->
+      <sc-if value="{{ sReceipt }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;background:#0E1F16;color:#fff;position:relative;">
+          <div style="flex:none;padding:52px 18px 12px;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ toShop }}" style="width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;font-family:'Material Symbols Outlined';">close</div>
+            <div style="flex:1;text-align:center;font-size:15px;font-weight:800;">Naskenuj účtenku</div>
+            <div style="width:32px;height:32px;"></div>
+          </div>
+          <div style="flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:24px;">
+            <div style="width:200px;background:#FAF6EE;border-radius:10px;padding:16px 16px 22px;color:#204432;transform:rotate(-3deg);box-shadow:0 24px 50px rgba(0,0,0,0.5);">
+              <div style="text-align:center;font-size:13px;font-weight:800;letter-spacing:0.04em;margin-bottom:2px;">{{ planStores }}</div>
+              <div style="text-align:center;font-size:9px;color:#7A8A80;font-weight:600;margin-bottom:12px;">Bratislava · dnes</div>
+              <sc-for list="{{ receiptLines }}" as="l" hint-placeholder-count="4">
+                <div style="display:flex;justify-content:space-between;font-size:10px;font-weight:600;padding:4px 0;border-bottom:1px dashed rgba(32,68,50,0.18);"><span>{{ l.name }}</span><span>{{ l.price }}</span></div>
+              </sc-for>
+              <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:800;padding-top:8px;"><span>SPOLU</span><span>{{ listCartTotal }}</span></div>
+            </div>
+            <div style="position:absolute;top:48px;left:36px;width:30px;height:30px;border-top:3px solid #BA5F3F;border-left:3px solid #BA5F3F;border-radius:4px 0 0 0;"></div>
+            <div style="position:absolute;top:48px;right:36px;width:30px;height:30px;border-top:3px solid #BA5F3F;border-right:3px solid #BA5F3F;border-radius:0 4px 0 0;"></div>
+            <div style="position:absolute;bottom:48px;left:36px;width:30px;height:30px;border-bottom:3px solid #BA5F3F;border-left:3px solid #BA5F3F;border-radius:0 0 0 4px;"></div>
+            <div style="position:absolute;bottom:48px;right:36px;width:30px;height:30px;border-bottom:3px solid #BA5F3F;border-right:3px solid #BA5F3F;border-radius:0 0 4px 0;"></div>
+          </div>
+          <div style="flex:none;padding:0 24px 36px;text-align:center;">
+            <p style="font-size:13.5px;color:rgba(255,255,255,0.82);font-weight:500;line-height:1.45;max-width:280px;margin:0 auto 20px;">Zarovnaj účtenku do rámika. Overíme, koľko si naozaj ušetril.</p>
+            <div onClick="{{ toDone }}" style="width:72px;height:72px;margin:0 auto;border-radius:50%;background:#fff;border:5px solid rgba(255,255,255,0.3);cursor:pointer;"></div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ DONE (receipt confirmed) ============ -->
+      <sc-if value="{{ sDone }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#204432;font-family:inherit;color:#E7D6B4;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+          <div style="position:absolute;top:0;left:18%;width:9px;height:9px;background:#BA5F3F;border-radius:2px;animation:spkConf 2.4s ease-in infinite;"></div>
+          <div style="position:absolute;top:0;left:62%;width:10px;height:10px;background:#BA5F3F;border-radius:2px;animation:spkConf 2.2s ease-in infinite 0.2s;"></div>
+          <div style="position:absolute;top:0;left:80%;width:8px;height:8px;background:#E7D6B4;border-radius:2px;animation:spkConf 2.6s ease-in infinite 0.7s;"></div>
+          <div style="position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;color:rgba(231,214,180,0.06);"><dc-import name="SporacekMark" hint-size="200px,200px" style="display:block;width:200px;height:200px;color:rgba(231,214,180,0.06);"></dc-import></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;position:relative;z-index:1;">
+            <div style="width:96px;height:96px;border-radius:50%;background:#BA5F3F;display:flex;align-items:center;justify-content:center;margin-bottom:26px;animation:popIn 0.5s ease-out;box-shadow:0 16px 36px rgba(186,95,63,0.45);"><span style="font-size:46px;color:#fff;font-family:'Material Symbols Outlined';">check</span></div>
+            <div style="font-size:12.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#E7D6B4;margin-bottom:12px;">Nákup overený</div>
+            <h1 style="font-size:25px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:22px;">Tento nákup si<br>ušetril</h1>
+            <div style="background:rgba(231,214,180,0.12);border-radius:22px;padding:22px 38px;margin-bottom:14px;"><div style="font-size:50px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;">{{ listSaveTotal }}</div></div>
+            <p style="font-size:13.5px;color:rgba(231,214,180,0.82);font-weight:500;line-height:1.5;max-width:270px;">Pripočítali sme to k tvojej úspore. Spolu už máš <span style="color:#fff;font-weight:800;">{{ totalSavings }}</span>.</p>
+          </div>
+          <div style="flex:none;padding:0 24px 34px;position:relative;z-index:1;">
+            <button onClick="{{ toSavings }}" style="width:100%;background:#E7D6B4;color:#204432;border:none;font-family:inherit;font-size:15px;font-weight:800;padding:16px;border-radius:14px;cursor:pointer;">Zobraziť moje úspory →</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ PANTRY (Špajza) ============ -->
+      <sc-if value="{{ sPantry }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#FAF6EE;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 8px;flex:none;">
+            <div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;">Špajza</div>
+            <div style="font-size:12.5px;color:#7A8A80;font-weight:600;margin-top:2px;">Zvyšné suroviny doma — Sporáček ich odpočíta z ďalších nákupov</div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:10px 18px 18px;">
+            <div style="display:flex;align-items:center;gap:9px;background:#EAF1EC;border:1px solid rgba(127,163,140,0.4);border-radius:14px;padding:11px 13px;margin-bottom:18px;">
+              <span style="font-size:17px;font-family:'Material Symbols Outlined';">savings</span>
+              <div style="font-size:12.5px;font-weight:700;color:#3C5A48;line-height:1.35;">Po varení pridáme zvyšné suroviny sem automaticky. Použi ich v ďalšom recepte a ušetri.</div>
+            </div>
+            <div style="display:flex;gap:10px;margin-bottom:20px;">
+              <div style="flex:1;background:#fff;border:1px solid rgba(32,68,50,0.08);border-radius:16px;padding:13px 15px;"><div style="font-size:11px;font-weight:700;color:#7A8A80;">V špajzi</div><div style="font-size:23px;font-weight:800;color:#204432;letter-spacing:-0.02em;">{{ pantryCount }} surovin{{ pantryPlural }}</div></div>
+              <div style="flex:1;background:#F0E6D2;border-radius:16px;padding:13px 15px;"><div style="font-size:11px;font-weight:700;color:#8A6A3E;">Ušetrené zo špajze</div><div style="font-size:23px;font-weight:800;color:#BA5F3F;letter-spacing:-0.02em;">{{ pantrySavingsLabel }}</div></div>
+            </div>
+            <sc-if value="{{ pantryUrgentItem }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;align-items:center;gap:8px;background:#FBEbE4;border-radius:12px;padding:10px 13px;margin-bottom:16px;"><span style="font-size:16px;font-family:'Material Symbols Outlined';color:#BA5F3F;">schedule</span><div style="font-size:12px;font-weight:700;color:#BA5F3F;">{{ pantryUrgentItem }} čoskoro exspiruje — použi ho v najbližšom recepte</div></div>
+            </sc-if>
+            <div style="font-size:14px;font-weight:800;margin-bottom:10px;">Tvoje suroviny</div>
+            <sc-if value="{{ pantryEmpty }}" hint-placeholder-val="{{ false }}">
+              <div style="text-align:center;padding:24px 10px;color:#7A8A80;font-size:13px;font-weight:600;">Zatiaľ nič — po uvarení receptu sem pribudnú zvyšky.</div>
+            </sc-if>
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+              <sc-for list="{{ pantryItems }}" as="it" hint-placeholder-count="4">
+                <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;padding:13px 14px;display:flex;gap:12px;align-items:center;">
+                  <div style="width:42px;height:42px;border-radius:12px;background:#F0E6D2;display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;font-family:'Material Symbols Outlined';color:#204432;">{{ it.icon }}</div>
+                  <div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:800;">{{ it.name }}</div><div style="font-size:12px;font-weight:600;color:#7A8A80;margin-top:2px;">ID {{ it.pid }} · {{ it.qty }}</div></div>
+                  <span style="background:{{ it.badgeBg }};color:{{ it.badgeColor }};font-size:10px;font-weight:800;padding:4px 9px;border-radius:999px;white-space:nowrap;">{{ it.expiryLabel }}</span>
+                  <span onClick="{{ it.onRemove }}" style="font-size:18px;color:rgba(32,68,50,0.3);cursor:pointer;font-family:'Material Symbols Outlined';">delete</span>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ pantryAdding }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fff;border:1.5px solid rgba(32,68,50,0.15);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;">
+                <input value="{{ pantryDraftName }}" onChange="{{ onPantryNameChange }}" placeholder="Názov suroviny" style="border:1px solid rgba(32,68,50,0.15);border-radius:10px;padding:9px 11px;font-family:inherit;font-size:13.5px;font-weight:600;color:#204432;">
+                <input value="{{ pantryDraftQty }}" onChange="{{ onPantryQtyChange }}" placeholder="Množstvo (napr. 200 g)" style="border:1px solid rgba(32,68,50,0.15);border-radius:10px;padding:9px 11px;font-family:inherit;font-size:13.5px;font-weight:600;color:#204432;">
+                <div onClick="{{ savePantryItem }}" style="background:#204432;color:#fff;font-size:13px;font-weight:800;padding:10px;border-radius:10px;text-align:center;cursor:pointer;">Uložiť do špajze</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ pantryAdding }}" hint-placeholder-val="{{ true }}">
+            </sc-if>
+            <div onClick="{{ openPantryAdd }}" style="display:flex;align-items:center;gap:10px;background:#fff;border:1.5px dashed rgba(32,68,50,0.25);border-radius:14px;padding:12px 14px;cursor:pointer;display:{{ pantryAddBtnDisplay }};">
+              <span style="font-size:18px;color:#7A8A80;font-family:'Material Symbols Outlined';">add_circle</span>
+              <div style="flex:1;font-size:13.5px;font-weight:700;color:#204432;">Pridať surovinu do špajze</div>
+            </div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="pantry" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ SLEDUJEM (hub) ============ -->
+      <sc-if value="{{ sSledujem }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="flex:none;padding:52px 18px 6px;"><div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Sledujem</div><div style="font-size:12.5px;color:#7A8A80;font-weight:600;margin-top:2px;">Recepty, potraviny a nákupy na jednom mieste</div></div>
+          <div style="flex:1;overflow-y:auto;padding:10px 18px 18px;">
+            <div style="display:flex;align-items:center;gap:9px;background:#EAF1EC;border:1px solid rgba(127,163,140,0.4);border-radius:14px;padding:11px 13px;margin-bottom:18px;"><span style="font-size:17px;font-family:'Material Symbols Outlined';">monitoring</span><div style="font-size:12.5px;font-weight:700;color:#3C5A48;line-height:1.35;">Sporáček drží databázu receptov aj históriu cien. Všetko, čo si uložil alebo sleduješ, nájdeš tu.</div></div>
+            <div onClick="{{ toSaved }}" style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:20px;padding:16px;margin-bottom:14px;cursor:pointer;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:44px;height:44px;border-radius:12px;background:#F0E6D2;display:flex;align-items:center;justify-content:center;font-size:21px;flex:none;font-family:'Material Symbols Outlined';">favorite</div><div style="flex:1;"><div style="font-size:16px;font-weight:800;color:#204432;">Uložené recepty</div><div style="font-size:12px;font-weight:600;color:#7A8A80;">{{ savedCount }} obľúbených</div></div><div style="font-size:20px;color:#BA5F3F;">›</div></div>
+              <div style="background:#FBEbE4;color:#BA5F3F;font-size:12px;font-weight:700;padding:8px 12px;border-radius:10px;">🔥 {{ savedOnSaleCount }} z nich sú dnes v akcii</div>
+            </div>
+            <div onClick="{{ toWatchlist }}" style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:20px;padding:16px;margin-bottom:14px;cursor:pointer;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:44px;height:44px;border-radius:12px;background:#F0E6D2;display:flex;align-items:center;justify-content:center;font-size:21px;flex:none;font-family:'Material Symbols Outlined';">notifications_active</div><div style="flex:1;"><div style="font-size:16px;font-weight:800;color:#204432;">Sledované potraviny</div><div style="font-size:12px;font-weight:600;color:#7A8A80;">{{ watchCount }} položiek naprieč obchodmi</div></div><div style="font-size:20px;color:#BA5F3F;">›</div></div>
+              <div style="background:#FBEbE4;color:#BA5F3F;font-size:12px;font-weight:700;padding:8px 12px;border-radius:10px;">📉 {{ watchDropCount }} dnes zlacneli</div>
+            </div>
+            <div onClick="{{ toLists }}" style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:20px;padding:16px;cursor:pointer;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:44px;height:44px;border-radius:12px;background:#F0E6D2;display:flex;align-items:center;justify-content:center;font-size:21px;flex:none;font-family:'Material Symbols Outlined';">receipt_long</div><div style="flex:1;"><div style="font-size:16px;font-weight:800;color:#204432;">Nákupné zoznamy</div><div style="font-size:12px;font-weight:600;color:#7A8A80;">3 uložené nákupy · história</div></div><div style="font-size:20px;color:#BA5F3F;">›</div></div>
+              <div style="background:#F0E6D2;color:#8A6A3E;font-size:12px;font-weight:700;padding:8px 12px;border-radius:10px;">Aktívny: dnes · {{ planStores }} · {{ listCartTotal }}</div>
+            </div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="sledujem" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ WATCHLIST ============ -->
+      <sc-if value="{{ sWatchlist }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Sledované potraviny</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">Klepni na 🔔 a prestaneš sledovať</div></div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:6px 18px 18px;">
+            <sc-for list="{{ watchItems }}" as="w" hint-placeholder-count="4">
+              <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:10px;background:#F0E6D2;display:flex;align-items:center;justify-content:center;font-size:19px;flex:none;">{{ w.icon }}</div>
+                <div style="flex:1;min-width:0;"><div style="font-size:14px;font-weight:800;color:#204432;">{{ w.name }}</div><div style="font-size:11.5px;font-weight:600;color:#7A8A80;margin-top:2px;">{{ w.store }} · {{ w.priceLine }}</div></div>
+                <sc-if value="{{ w.dropped }}" hint-placeholder-val="{{ false }}"><span style="background:#FBEbE4;color:#BA5F3F;font-size:11px;font-weight:800;padding:4px 9px;border-radius:999px;">{{ w.pct }}</span></sc-if>
+                <span onClick="{{ w.onWatch }}" style="font-size:18px;cursor:pointer;color:#BA5F3F;font-family:'Material Symbols Outlined';">notifications_active</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ SAVED RECIPES ============ -->
+      <sc-if value="{{ sSaved }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Uložené recepty</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">{{ savedCount }} obľúbené</div></div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:6px 18px 18px;">
+            <sc-for list="{{ savedRecipesFull }}" as="r" hint-placeholder-count="3">
+              <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:18px;overflow:hidden;margin-bottom:14px;">
+                <div style="height:120px;background-image:url({{ r.img }});background-size:cover;background-position:center;position:relative;"><sc-if value="{{ r.sale }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:10px;left:10px;background:#BA5F3F;color:#fff;font-size:10px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;">🔥 v akcii</span></sc-if></div>
+                <div style="padding:12px 15px;display:flex;align-items:center;gap:10px;">
+                  <div style="flex:1;min-width:0;"><div style="font-size:11px;font-weight:700;color:#7A8A80;">{{ r.meal }}</div><div style="font-size:15px;font-weight:800;color:#204432;line-height:1.15;margin-top:2px;">{{ r.name }}</div></div>
+                  <span onClick="{{ r.onUnsave }}" style="font-size:18px;cursor:pointer;">❤️</span>
+                  <span onClick="{{ r.onCook }}" style="background:#204432;color:#fff;font-size:12px;font-weight:800;padding:8px 13px;border-radius:999px;cursor:pointer;">▶ Variť</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="sledujem" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ SHOPPING HISTORY (Lists) ============ -->
+      <sc-if value="{{ sLists }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div style="flex:1;"><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Nákupné zoznamy</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">Uložené automaticky pri každom pláne</div></div>
+            <div onClick="{{ toPreferences }}" style="width:34px;height:34px;border-radius:10px;background:#204432;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;">＋</div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:8px 18px 18px;">
+            <sc-for list="{{ savedLists }}" as="l" hint-placeholder-count="3">
+              <div onClick="{{ l.onOpen }}" style="background:#fff;border:{{ l.border }};border-radius:18px;padding:15px 16px;margin-bottom:12px;cursor:pointer;">
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;"><span style="font-size:14px;font-weight:800;color:#204432;">{{ l.date }}</span><sc-if value="{{ l.active }}" hint-placeholder-val="{{ false }}"><span style="background:#7FA38C;color:#0E1F16;font-size:9px;font-weight:800;padding:3px 8px;border-radius:999px;">aktívny</span></sc-if><div style="margin-left:auto;font-size:18px;color:#BA5F3F;">›</div></div>
+                <div style="display:flex;align-items:center;gap:14px;"><div style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#4B6357;"><span>🏪</span>{{ l.store }}</div><div style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#4B6357;"><span>🍳</span>{{ l.recipes }} recepty</div><div style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#4B6357;"><span>🧾</span>{{ l.items }} pol.</div></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;padding-top:11px;border-top:1px solid rgba(32,68,50,0.06);"><span style="font-size:11px;font-weight:700;color:#7A8A80;">ušetril si {{ l.save }}</span><span style="font-size:17px;font-weight:800;color:#204432;">{{ l.total }}</span></div>
+              </div>
+            </sc-for>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="sledujem" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ SAVINGS ============ -->
+      <sc-if value="{{ sSavings }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+          <div style="flex:none;padding:52px 18px 6px;"><div style="font-size:20px;font-weight:800;letter-spacing:-0.02em;color:#204432;">Tvoje úspory</div><div style="font-size:12px;color:#7A8A80;font-weight:600;margin-top:2px;">Júl 2026</div></div>
+          <div style="flex:1;overflow-y:auto;padding:10px 18px 18px;">
+            <div style="background:#204432;border-radius:20px;padding:22px;color:#E7D6B4;margin-bottom:18px;position:relative;overflow:hidden;">
+              <div style="font-size:13px;font-weight:600;opacity:0.85;margin-bottom:4px;">Tento mesiac si ušetril</div>
+              <div style="font-size:42px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;">€58,40</div>
+              <div style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;background:rgba(231,214,180,0.16);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;">↑ €12 oproti júnu</div>
+              <div style="position:absolute;right:-16px;bottom:-16px;width:96px;height:96px;color:rgba(231,214,180,0.14);"><dc-import name="SporacekMark" hint-size="96px,96px" style="display:block;width:96px;height:96px;color:rgba(231,214,180,0.14);"></dc-import></div>
+            </div>
+            <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:18px;padding:18px;margin-bottom:18px;">
+              <div style="font-size:14px;font-weight:800;margin-bottom:16px;color:#204432;">Úspora po týždňoch</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <sc-for list="{{ savingsMonths }}" as="m" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;justify-content:space-between;"><div style="font-size:13px;font-weight:800;color:#204432;width:24px;">{{ m.label }}</div><div style="flex:1;margin:0 12px;height:8px;background:#F0E6D2;border-radius:999px;overflow:hidden;"><div style="height:100%;width:{{ m.barWidth }};background:#BA5F3F;border-radius:999px;"></div></div><div style="font-size:13px;font-weight:800;color:#BA5F3F;">{{ m.amount }}</div></div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="font-size:14px;font-weight:800;margin-bottom:12px;color:#204432;">Kde si ušetril najviac</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-for list="{{ savingsBreakdown }}" as="b" hint-placeholder-count="3">
+                <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:12px;">
+                  <div style="width:36px;height:36px;border-radius:10px;background:#E7D6B4;display:flex;align-items:center;justify-content:center;font-size:18px;">{{ b.icon }}</div>
+                  <div style="flex:1;"><div style="font-size:14px;font-weight:700;color:#204432;">{{ b.label }}</div><div style="font-size:11px;color:#7A8A80;font-weight:600;">{{ b.sub }}</div></div>
+                  <div style="font-size:16px;font-weight:800;color:#BA5F3F;">{{ b.amount }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="savings" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ PROFILE ============ -->
+      <sc-if value="{{ sProfile }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#FAF6EE;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="flex:1;overflow-y:auto;">
+            <div style="background:#204432;padding:52px 20px 24px;color:#E7D6B4;position:relative;overflow:hidden;">
+              <div onClick="{{ goBack }}" style="position:absolute;top:52px;left:20px;width:30px;height:30px;border-radius:50%;background:rgba(231,214,180,0.16);display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;cursor:pointer;font-family:'Material Symbols Outlined';z-index:2;">arrow_back</div>
+              <div style="position:absolute;right:-20px;top:-24px;width:120px;height:120px;color:rgba(231,214,180,0.10);"><dc-import name="SporacekMark" hint-size="120px,120px" style="display:block;width:120px;height:120px;color:rgba(231,214,180,0.10);"></dc-import></div>
+              <div style="display:flex;align-items:center;gap:14px;position:relative;z-index:1;margin-top:30px;">
+                <div style="width:52px;height:52px;border-radius:50%;background:#E7D6B4;color:#204432;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;">M</div>
+                <div style="flex:1;"><div style="font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.01em;">Martina K.</div><div style="font-size:12.5px;font-weight:500;opacity:0.82;">martina@email.sk</div></div>
+              </div>
+              <div style="margin-top:18px;background:rgba(231,214,180,0.12);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:14px;position:relative;z-index:1;">
+                <div><div style="font-size:10.5px;font-weight:600;opacity:0.85;">Celkovo ušetrené</div><div style="font-size:23px;font-weight:800;color:#fff;letter-spacing:-0.02em;">{{ totalSavings }}</div></div>
+                <div style="width:1px;height:30px;background:rgba(231,214,180,0.2);"></div>
+                <div><div style="font-size:10.5px;font-weight:600;opacity:0.85;">Navarené jedlá</div><div style="font-size:23px;font-weight:800;color:#fff;letter-spacing:-0.02em;">84</div></div>
+              </div>
+            </div>
+            <div style="padding:18px 18px 0;">
+              <div style="font-size:12px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#7A8A80;margin-bottom:10px;">Sledovanie</div>
+              <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:22px;">
+                <div onClick="{{ toWatchlist }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);cursor:pointer;"><span style="font-size:18px;font-family:'Material Symbols Outlined';">monitoring</span><div style="flex:1;font-size:14px;font-weight:700;">Sledované potraviny</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">{{ watchCount }} ›</div></div>
+                <div onClick="{{ toSaved }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);cursor:pointer;"><span style="font-size:18px;font-family:'Material Symbols Outlined';">favorite</span><div style="flex:1;font-size:14px;font-weight:700;">Uložené recepty</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">{{ savedCount }} ›</div></div>
+                <div onClick="{{ toLists }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;cursor:pointer;"><span style="font-size:18px;font-family:'Material Symbols Outlined';">receipt_long</span><div style="flex:1;font-size:14px;font-weight:700;">Nákupné zoznamy</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">história ›</div></div>
+              </div>
+              <div style="font-size:12px;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:#7A8A80;margin-bottom:10px;">Nastavenia varenia</div>
+              <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:22px;">
+                <div onClick="{{ toStore }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);cursor:pointer;"><span style="font-size:18px;font-family:'Material Symbols Outlined';">shopping_cart</span><div style="flex:1;font-size:14px;font-weight:700;">Obľúbené obchody</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">{{ planStores }} ›</div></div>
+                <div onClick="{{ toPreferences }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);cursor:pointer;"><span style="font-size:18px;">🍽️</span><div style="flex:1;font-size:14px;font-weight:700;">Porcie a jedlá</div><div style="font-size:13px;color:#7A8A80;font-weight:600;">{{ planPortionsLabel }} ›</div></div>
+                <div onClick="{{ toAllergens }}" style="display:flex;align-items:center;gap:13px;padding:14px 15px;cursor:pointer;"><span style="font-size:18px;">🥗</span><div style="flex:1;font-size:14px;font-weight:700;">Diéta a alergény</div><div style="font-size:13px;color:#BA5F3F;font-weight:700;">2 vylúčené ›</div></div>
+              </div>
+              <div style="text-align:center;padding:4px 0 10px;"><span onClick="{{ toWelcome }}" style="font-size:14px;font-weight:700;color:#BA5F3F;cursor:pointer;">Odhlásiť sa</span><div style="font-size:11px;color:#9AA8A0;font-weight:500;margin-top:8px;">Sporáček v1.0 · MVP</div></div>
+              <div style="text-align:center;padding:0 0 22px;display:flex;justify-content:center;gap:14px;"><span onClick="{{ toError }}" style="font-size:11px;font-weight:700;color:#9AA8A0;cursor:pointer;text-decoration:underline;">stav: chyba</span><span onClick="{{ toEmptyList }}" style="font-size:11px;font-weight:700;color:#9AA8A0;cursor:pointer;text-decoration:underline;">stav: prázdny zoznam</span></div>
+            </div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ ALLERGENS ============ -->
+      <sc-if value="{{ sAllergens }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#FAF6EE;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 10px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;">Diéta a alergény</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">Tieto suroviny nikdy nezaradíme</div></div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:8px 18px 18px;">
+            <div style="background:#F0E6D2;border-radius:13px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;margin-bottom:22px;"><span style="font-size:16px;">⚠️</span><div style="font-size:12px;font-weight:600;color:#8A6A3E;line-height:1.4;">Recepty aj nákupný zoznam automaticky vynecháme. Pri vážnych alergiách vždy skontroluj etiketu výrobku.</div></div>
+            <div style="font-size:14px;font-weight:800;margin-bottom:10px;">Stravovanie</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
+              <span style="background:#204432;color:#fff;font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;">Bez obmedzení</span>
+              <span style="background:#fff;border:1.5px solid rgba(32,68,50,0.15);color:#4B6357;font-size:14px;font-weight:700;padding:8px 15px;border-radius:999px;">Vegetariánska</span>
+              <span style="background:#fff;border:1.5px solid rgba(32,68,50,0.15);color:#4B6357;font-size:14px;font-weight:700;padding:8px 15px;border-radius:999px;">Bez lepku</span>
+            </div>
+            <div style="font-size:14px;font-weight:800;margin-bottom:10px;">Vylúčiť alergény</div>
+            <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:16px;overflow:hidden;margin-bottom:22px;">
+              <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;">🥜</span><div style="flex:1;font-size:14px;font-weight:700;">Orechy</div><div style="width:42px;height:25px;border-radius:999px;background:#BA5F3F;position:relative;"><div style="position:absolute;top:2.5px;right:2.5px;width:20px;height:20px;border-radius:50%;background:#fff;"></div></div></div>
+              <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;border-bottom:1px solid rgba(32,68,50,0.06);"><span style="font-size:18px;">🥛</span><div style="flex:1;font-size:14px;font-weight:700;">Laktóza</div><div style="width:42px;height:25px;border-radius:999px;background:#BA5F3F;position:relative;"><div style="position:absolute;top:2.5px;right:2.5px;width:20px;height:20px;border-radius:50%;background:#fff;"></div></div></div>
+              <div style="display:flex;align-items:center;gap:13px;padding:14px 15px;"><span style="font-size:18px;">🌾</span><div style="flex:1;font-size:14px;font-weight:700;">Lepok</div><div style="width:42px;height:25px;border-radius:999px;background:rgba(32,68,50,0.14);position:relative;"><div style="position:absolute;top:2.5px;left:2.5px;width:20px;height:20px;border-radius:50%;background:#fff;"></div></div></div>
+            </div>
+            <div style="font-size:14px;font-weight:800;margin-bottom:10px;">Nemám rád/rada</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="background:#204432;color:#fff;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;">Huby ✕</span></div>
+          </div>
+          <div style="flex:none;padding:14px 18px 26px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);"><button onClick="{{ toProfile }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;padding:16px;border-radius:14px;cursor:pointer;">Uložiť a prepočítať plán</button></div>
+        </div>
+      </sc-if>
+
+      <!-- ============ STORE ============ -->
+      <sc-if value="{{ sStore }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#FAF6EE;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 8px;flex:none;display:flex;align-items:center;gap:12px;">
+            <div onClick="{{ goBack }}" style="width:32px;height:32px;border-radius:50%;background:#fff;border:1px solid rgba(32,68,50,0.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:#204432;cursor:pointer;font-family:'Material Symbols Outlined';">arrow_back</div>
+            <div style="flex:1;"><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;">Obľúbené obchody</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">Sporáček v nich hľadá akcie pri každom varení</div></div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:8px 20px 16px;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#7A8A80;margin-bottom:12px;">Obchody v okolí · klepni na obľúbené</div>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <sc-for list="{{ storeList }}" as="s" hint-placeholder-count="4">
+                <div onClick="{{ s.onClick }}" style="background:{{ s.bg }};border:{{ s.border }};border-radius:16px;padding:15px;display:flex;align-items:center;gap:13px;color:{{ s.textColor }};cursor:pointer;">
+                  <div style="width:42px;height:42px;border-radius:12px;background:{{ s.iconBg }};display:flex;align-items:center;justify-content:center;font-size:20px;font-family:'Material Symbols Outlined';color:{{ s.iconColor }};">storefront</div>
+                  <div style="flex:1;"><div style="font-size:16px;font-weight:800;">{{ s.name }}</div><div style="font-size:12px;opacity:0.85;font-weight:500;">{{ s.sub }}</div></div>
+                  <sc-if value="{{ s.selected }}" hint-placeholder-val="{{ false }}"><div style="width:24px;height:24px;border-radius:50%;background:#BA5F3F;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;font-family:'Material Symbols Outlined';color:#fff;">check</div></sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="flex:none;padding:14px 20px 24px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);"><button onClick="{{ toProfile }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:16px;font-weight:700;padding:16px;border-radius:14px;cursor:pointer;">Uložiť obchody ({{ storeFavCount }})</button></div>
+        </div>
+      </sc-if>
+
+      <!-- ============ ERROR ============ -->
+      <sc-if value="{{ sError }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#204432;color:#E7D6B4;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+          <div style="position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;color:rgba(231,214,180,0.05);"><dc-import name="SporacekMark" hint-size="200px,200px" style="display:block;width:200px;height:200px;color:rgba(231,214,180,0.05);"></dc-import></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;position:relative;z-index:1;">
+            <div style="width:96px;height:96px;border-radius:50%;background:rgba(186,95,63,0.16);display:flex;align-items:center;justify-content:center;margin-bottom:28px;"><div style="width:58px;height:58px;border-radius:50%;background:#BA5F3F;display:flex;align-items:center;justify-content:center;font-size:30px;">⚠</div></div>
+            <h1 style="font-size:23px;font-weight:800;letter-spacing:-0.02em;color:#fff;line-height:1.15;margin-bottom:12px;">Nepodarilo sa zostaviť plán</h1>
+            <p style="font-size:14px;color:rgba(231,214,180,0.8);font-weight:500;line-height:1.5;max-width:280px;margin-bottom:8px;">Akcie z obchodu sa práve nedajú načítať. Môže za to slabé pripojenie alebo dočasný výpadok.</p>
+            <div style="background:rgba(231,214,180,0.10);border-radius:14px;padding:14px 16px;margin-top:18px;width:100%;max-width:290px;text-align:left;display:flex;align-items:center;gap:12px;"><span style="font-size:20px;">📡</span><div><div style="font-size:13px;font-weight:800;color:#fff;">Žiadne pripojenie</div><div style="font-size:12px;color:rgba(231,214,180,0.75);font-weight:500;">Skontroluj internet a skús znova</div></div></div>
+          </div>
+          <div style="flex:none;padding:0 24px 34px;position:relative;z-index:1;">
+            <button onClick="{{ toPreferences }}" style="width:100%;background:#BA5F3F;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:700;padding:16px;border-radius:14px;cursor:pointer;margin-bottom:12px;">↻ Skúsiť znova</button>
+            <div onClick="{{ toProfile }}" style="text-align:center;font-size:13.5px;font-weight:700;color:rgba(231,214,180,0.85);cursor:pointer;">Zobraziť posledný uložený plán</div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- ============ EMPTY LIST ============ -->
+      <sc-if value="{{ sEmptyList }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;height:100%;background:#FAF6EE;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+          <div style="padding:52px 18px 12px;flex:none;"><div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;">Nákupný zoznam</div><div style="font-size:12px;color:#7A8A80;font-weight:600;">{{ planStores }} · 0 položiek</div></div>
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;">
+            <div style="width:110px;height:110px;border-radius:50%;background:#F0E6D2;display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;"><span style="font-size:48px;font-family:'Material Symbols Outlined';">receipt_long</span><div style="position:absolute;right:4px;bottom:6px;width:34px;height:34px;border-radius:50%;background:#204432;color:#E7D6B4;display:flex;align-items:center;justify-content:center;font-size:17px;border:3px solid #FAF6EE;">+</div></div>
+            <h1 style="font-size:21px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:9px;">Zoznam je zatiaľ prázdny</h1>
+            <p style="font-size:14px;color:#4B6357;font-weight:500;line-height:1.5;max-width:270px;margin-bottom:22px;">Vyber recept z dnešných akcií a my sem rovno pridáme všetky suroviny aj s cenami.</p>
+            <button onClick="{{ toRecipesTab }}" style="background:#204432;color:#fff;border:none;font-family:inherit;font-size:14.5px;font-weight:700;padding:13px 24px;border-radius:14px;cursor:pointer;margin-bottom:12px;">Prezrieť recepty z akcií →</button>
+            <div onClick="{{ toProfile }}" style="font-size:13.5px;font-weight:700;color:#BA5F3F;cursor:pointer;">Späť do nastavení</div>
+          </div>
+          <dc-import name="__navslot" hint-size="100%,66px" active="list" on-home="{{ toHome }}" on-plan="{{ toRecipesTab }}" on-pantry="{{ toPantry }}" on-sledujem="{{ toSledujem }}" on-savings="{{ toSavings }}" has-badge="{{ hasAlerts }}" has-pantry-badge="{{ pantryUrgent }}"></dc-import>
+        </div>
+      </sc-if>
+
+      <!-- ============ TOAST ============ -->
+      <sc-if value="{{ toastMsg }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:16px;right:16px;bottom:20px;z-index:45;background:#204432;color:#fff;font-size:12.5px;font-weight:700;padding:12px 15px;border-radius:13px;display:flex;align-items:center;gap:9px;animation:toastUp 0.25s ease-out;box-shadow:0 12px 24px rgba(0,0,0,0.25);">
+          <span style="font-size:16px;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1;">kitchen</span>{{ toastMsg }}
+        </div>
+      </sc-if>
+
+      <!-- ============ SHARE SHEET ============ -->
+      <sc-if value="{{ shareOpen }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ closeShare }}" style="position:absolute;inset:0;z-index:40;background:rgba(14,31,22,0.5);display:flex;align-items:flex-end;animation:fadeIn 0.2s ease-out;">
+          <div style="width:100%;background:#FAF6EE;border-radius:26px 26px 0 0;padding:22px 22px 30px;box-sizing:border-box;animation:sheetUp 0.28s cubic-bezier(0.22,1,0.36,1);">
+            <div style="width:40px;height:4px;border-radius:999px;background:rgba(32,68,50,0.2);margin:0 auto 18px;"></div>
+            <div style="font-size:18px;font-weight:800;color:#204432;margin-bottom:4px;">{{ shareTitle }}</div>
+            <div style="font-size:13px;font-weight:600;color:#7A8A80;margin-bottom:16px;">Ktokoľvek s odkazom uvidí {{ shareWhat }}. Netreba účet.</div>
+            <div style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid rgba(32,68,50,0.12);border-radius:13px;padding:12px 14px;margin-bottom:16px;"><span style="font-size:15px;font-family:'Material Symbols Outlined';color:#204432;">link</span><div style="flex:1;font-size:13px;font-weight:700;color:#204432;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">sporacek.sk/s/{{ shareCode }}</div><div style="font-size:12px;font-weight:800;color:#BA5F3F;">Kopírovať</div></div>
+            <div style="display:flex;gap:12px;margin-bottom:18px;">
+              <sc-for list="{{ shareTargets }}" as="t" hint-placeholder-count="4">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:7px;"><div style="width:52px;height:52px;border-radius:50%;background:{{ t.bg }};display:flex;align-items:center;justify-content:center;font-size:23px;">{{ t.glyph }}</div><span style="font-size:11px;font-weight:700;color:#4B6357;">{{ t.name }}</span></div>
+              </sc-for>
+            </div>
+            <button onClick="{{ closeShare }}" style="width:100%;background:#204432;color:#fff;border:none;font-family:inherit;font-size:15px;font-weight:800;padding:15px;border-radius:14px;cursor:pointer;">Hotovo</button>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: "welcome",
+    navStack: [],
+    stores: ["Lidl"],
+    prompt: "Chcem niečo fitnes a rýchle",
+    adults: 2, kids: 1, days: 5,
+    checked: { "1-0": true, "1-1": true, "2-0": true },
+    cookId: 0,
+    cookStep: 0,
+    shareOpen: false, shareKind: null,
+    watchedIngredients: { "Kuracie prsia": true, "Brokolica": true },
+    watchedRecipes: { 0: true, 1: true },
+    savedRecipeIds: { 0: true, 1: true },
+    pantry: [
+      { name: "Cesnak", pid: "GRL-014", qty: "2 strúčiky", icon: "nutrition", expiryLabel: "spotreba za 2 dni", urgent: true },
+      { name: "Cibuľa", pid: "VEG-031", qty: "1 ks", icon: "nutrition", expiryLabel: "spotreba za 5 dní", urgent: false },
+      { name: "Parmezán", pid: "DRY-052", qty: "20 g", icon: "egg_alt", expiryLabel: "spotreba 3.8.", urgent: false },
+      { name: "Špenát", pid: "VEG-018", qty: "60 g · zvyšok z varenia", icon: "nutrition", expiryLabel: "spotreba 27.7.", urgent: false },
+    ],
+    pantrySavings: 2.60,
+    pantryAdding: false, pantryDraftName: "", pantryDraftQty: "",
+    storeFavs: { "Tesco": true, "Lidl": true },
+    toastMsg: null,
+    draft: "",
+  };
+
+  ALERTS = [
+    { icon: "kebab_dining", name: "Kuracie prsia", store: "Lidl", was: "4,99", now: "3,39", pct: "-32%", recipeId: 0, note: "v 2 uložených receptoch" },
+    { icon: "nutrition", name: "Brokolica", store: "Tesco", was: "1,89", now: "1,15", pct: "-39%", recipeId: 3, note: "súčasť Brokolicová krémová polievka" },
+  ];
+  WATCHLIST = [
+    { name: "Kuracie prsia", icon: "🍗", store: "Lidl", was: "4,99", now: "3,39", pct: "-32%" },
+    { name: "Brokolica", icon: "🥦", store: "Tesco", was: "1,89", now: "1,15", pct: "-39%" },
+    { name: "Parmezán", icon: "🧀", store: "Kaufland", was: "2,60", now: "2,60", pct: null },
+    { name: "Bryndza", icon: "🧀", store: "Billa", was: "3,20", now: "2,85", pct: "-11%" },
+  ];
+  SAVINGS_MONTHS = [ { label: "Júl", amount: "€52,10", pct: 92 }, { label: "Jún", amount: "€61,40", pct: 100 }, { label: "Máj", amount: "€34,80", pct: 62 } ];
+  STORE_LIST_NAMES = ["Lidl", "Tesco", "Kaufland", "Billa", "COOP"];
+  STORE_INFO = [
+    { name: "Tesco", sub: "Bratislava · 0,8 km · 142 akcií" },
+    { name: "Lidl", sub: "Bratislava · 1,2 km · 98 akcií" },
+    { name: "Kaufland", sub: "Bratislava · 2,1 km · 124 akcií" },
+    { name: "Billa", sub: "Bratislava · 1,9 km · 87 akcií" },
+  ];
+  CUISINE_SUGGESTIONS = ["🥗 Vegetariánske & rýchle", "🍗 Kura s ryžou", "💪 Niečo fitnes", "💸 Lacné a sýte", "🌾 Bezlepkové"];
+
+  RECIPES = [
+    { name: "Toskánske cestoviny s kuracím", meal: "Obed", time: "30 min", price: "€2,15", save: "€0,75", img: "fotky/cestoviny-kuracie-spenat-smotana.jpg", sale: true, store: "Lidl",
+      ingredients: [ {name:"Kuracie prsia", qty:"300 g", sale:true}, {name:"Cestoviny", qty:"200 g", sale:false}, {name:"Špenát", qty:"150 g", sale:true}, {name:"Smotana na varenie", qty:"150 ml", sale:false}, {name:"Parmezán", qty:"30 g", sale:false}, {name:"Cibuľa", qty:"¼ ks", sale:false}, {name:"Cesnak", qty:"2 strúčiky", sale:false} ],
+      steps: [ "Cestoviny uvar v osolenej vode, odlož si šálku vody z varenia.", "Kura nakrájaj na prúžky a na vysokom ohni opeč do zlata.", "Orestuj cibuľu, cesnak, zalej smotanou s čili vločkami.", "Vmiešaj špenát nech zvädne, odstav a primiešaj parmezán.", "Vráť kura, pridaj cestoviny, dolaď vodou z varenia a podávaj." ],
+      leftovers: [ {name:"Cesnak", qty:"2 strúčiky", icon:"nutrition", expiryLabel:"spotreba za 2 dni", urgent:true}, {name:"Cibuľa", qty:"1 ks", icon:"nutrition", expiryLabel:"spotreba za 5 dní", urgent:false}, {name:"Parmezán", qty:"20 g", icon:"egg_alt", expiryLabel:"spotreba 3.8.", urgent:false}, {name:"Špenát", qty:"60 g · zvyšok z varenia", icon:"nutrition", expiryLabel:"spotreba 27.7.", urgent:false} ] },
+    { name: "Bryndzové halušky so slaninou", meal: "Večera", time: "35 min", price: "€1,65", save: "€0,45", img: "fotky/bryndzove-halusky-slanina.jpg", sale: true, store: "Lidl",
+      ingredients: [ {name:"Zemiaky", qty:"500 g", sale:false}, {name:"Múka", qty:"130 g", sale:false}, {name:"Vajcia", qty:"1 ks", sale:false}, {name:"Bryndza", qty:"150 g", sale:true}, {name:"Slanina", qty:"80 g", sale:true} ],
+      steps: [ "Zemiaky ošúp a najemno nastrúhaj, osoľ a vmiešaj múku s vajcom.", "Slaninu opeč na suchej panvici do chrumkava.", "Cesto pretláčaj cez sitko do vriacej vody, halušky vyber keď vyplávajú.", "Premiešaj s bryndzou, navrch daj slaninu s výpekom." ],
+      leftovers: [ {name:"Slanina", qty:"20 g · zvyšok", icon:"nutrition", expiryLabel:"spotreba za 3 dni", urgent:false} ] },
+    { name: "Poctivý hovädzí guláš", meal: "Večera", time: "90 min", price: "€2,45", save: "€0,75", img: "fotky/hovedzi-gulas-zemiaky-mrkva.jpg", sale: false, store: "Tesco",
+      ingredients: [ {name:"Hovädzie mäso", qty:"400 g", sale:false}, {name:"Cibuľa", qty:"200 g", sale:false}, {name:"Zemiaky", qty:"300 g", sale:false}, {name:"Mrkva", qty:"150 g", sale:false}, {name:"Sladká paprika", qty:"1 PL", sale:false} ],
+      steps: [ "Cibuľu opeč do zlatista, pridaj mäso a opeč zo všetkých strán.", "Vmiešaj papriku a pretlak, zalej vodou a dus 40 min.", "Pridaj mrkvu a zemiaky, dus ďalších 30–40 min do mäkka.", "Dochuť soľou a korením, podávaj s chlebom." ],
+      leftovers: [ {name:"Mrkva", qty:"50 g · zvyšok", icon:"nutrition", expiryLabel:"spotreba za 6 dní", urgent:false} ] },
+    { name: "Brokolicová krémová polievka", meal: "Obed", time: "30 min", price: "€0,85", save: "€0,30", img: "fotky/brokolicova-kremova-polievka.jpg", sale: true, store: "Tesco",
+      ingredients: [ {name:"Brokolica", qty:"600 g", sale:true}, {name:"Zemiaky", qty:"200 g", sale:false}, {name:"Cibuľa", qty:"1 ks", sale:false}, {name:"Smotana na varenie", qty:"100 ml", sale:false} ],
+      steps: [ "Opraž cibuľu, pridaj zemiaky, zalej vodou s bujónom a var 10 min.", "Pridaj brokolicu, var ďalších 7–8 min do mäkka.", "Rozmixuj na hladko, vmiešaj smotanu, osoľ a okoreň." ], leftovers: [] },
+    { name: "Cesnakové pečené zemiaky s rozmarínom", meal: "Príloha", time: "45 min", price: "€0,70", save: "€0,25", img: "fotky/cesnakove-pecene-zemiaky-rozmarin.jpg", sale: false, store: "Kaufland",
+      ingredients: [ {name:"Zemiaky", qty:"600 g", sale:false}, {name:"Cesnak", qty:"4 strúčiky", sale:false}, {name:"Rozmarín", qty:"2 vetvičky", sale:false} ],
+      steps: [ "Zemiaky nakrájaj na klinky, premiešaj s olejom, soľou a korením.", "Rozlož na plech s cesnakom a rozmarínom.", "Peč pri 210 °C 35–40 min, v polovici obráť." ], leftovers: [] },
+    { name: "Grilované kuracie stehná s kalerábovým šalátom", meal: "Večera", time: "35 min", price: "€1,90", save: "€0,65", img: "fotky/grilovane-kuracie-stehna-kalerabovy-salat.jpg", sale: true, store: "Kaufland",
+      ingredients: [ {name:"Kuracie stehná", qty:"8 ks", sale:true}, {name:"Kaleráb", qty:"2 ks", sale:false}, {name:"Jablká", qty:"1 ks", sale:false}, {name:"Jogurt biely", qty:"100 g", sale:false} ],
+      steps: [ "Stehná potri olejom, osoľ, okoreň a nechaj 10 min odležať.", "Kaleráb a jablko nastrúhaj, pokvapkaj citrónom a premiešaj s jogurtom.", "Stehná grilluj 6–7 min z každej strany do prepečena.", "Podávaj s kalerábovým šalátom." ], leftovers: [] },
+  ];
+
+  LIST_DATA = [
+    { aisle: "Ovocie a zelenina", items: [ {name:"Cibuľa ¼ ks", price:"0,10", sale:false}, {name:"Cesnak 2 strúčiky", price:"0,05", sale:false}, {name:"Špenát 150 g", price:"0,55", sale:true} ] },
+    { aisle: "Mäso", items: [ {name:"Kuracie prsia 300 g", price:"1,85", sale:true} ] },
+    { aisle: "Mliečne a chladené", items: [ {name:"Smotana na varenie 150 ml", price:"0,65", sale:false}, {name:"Parmezán 30 g", price:"0,55", sale:false} ] },
+    { aisle: "Trvanlivé", items: [ {name:"Cestoviny 200 g", price:"0,65", sale:false} ] },
+  ];
+
+  go(screen) {
+    this.setState(s => ({ navStack: [...s.navStack, s.screen], screen }));
+    if (screen === "loading") setTimeout(() => this.go("plan"), 1400);
+  }
+  goBack() {
+    this.setState(s => {
+      const stack = s.navStack.slice();
+      const prev = stack.pop();
+      return { navStack: stack, screen: prev || "home" };
+    });
+  }
+  openDetail(id) { this.openCookish("detail", id); }
+  openCook(id) { this.openCookish("cook", id, { cookStep: 0 }); }
+  openCookish(screen, id, extra) { this.setState(s => ({ navStack: [...s.navStack, s.screen], screen, cookId: id, ...(extra||{}) })); }
+  cookExit() { this.setState({ screen: "shop" }); }
+
+  cookNextStep() {
+    const cook = this.RECIPES[this.state.cookId] || this.RECIPES[0];
+    if (this.state.cookStep >= cook.steps.length - 1) { this.finishCooking(); return; }
+    this.setState(s => ({ cookStep: s.cookStep + 1 }));
+  }
+  cookPrevStep() {
+    if (this.state.cookStep === 0) { this.cookExit(); return; }
+    this.setState(s => ({ cookStep: s.cookStep - 1 }));
+  }
+  finishCooking() {
+    const cook = this.RECIPES[this.state.cookId] || this.RECIPES[0];
+    const leftovers = cook.leftovers || [];
+    if (leftovers.length) {
+      this.setState(s => {
+        const names = s.pantry.map(p => p.name);
+        const additions = leftovers.filter(l => !names.includes(l.name)).map((l, i) => ({ ...l, pid: "LFT-" + (100 + i) }));
+        return { pantry: [...s.pantry, ...additions], screen: "shop", toastMsg: additions.length ? ("+" + additions.length + " surovin pridaných do špajze") : null };
+      });
+      setTimeout(() => this.setState({ toastMsg: null }), 2600);
+    } else {
+      this.setState({ screen: "shop" });
+    }
+  }
+
+  toggleStore(name) { this.setState(s => { const has = s.stores.includes(name); if (has && s.stores.length <= 1) return {}; return { stores: has ? s.stores.filter(x => x !== name) : [...s.stores, name] }; }); }
+  step(key, delta, min) { this.setState(s => ({ [key]: Math.max(min, s[key] + delta) })); }
+  toggleItem(id) { this.setState(s => ({ checked: { ...s.checked, [id]: !s.checked[id] } })); }
+  toggleWatchIngredient(name) { this.setState(s => ({ watchedIngredients: { ...s.watchedIngredients, [name]: !s.watchedIngredients[name] } })); }
+  toggleWatchRecipe(id) { this.setState(s => ({ watchedRecipes: { ...s.watchedRecipes, [id]: !s.watchedRecipes[id] } })); }
+  toggleSaveRecipe(id) { this.setState(s => ({ savedRecipeIds: { ...s.savedRecipeIds, [id]: !s.savedRecipeIds[id] } })); }
+  toggleEdit() { this.setState(s => ({ editing: !s.editing })); }
+  addItem() { const name = (this.state.draft || "").trim(); if (!name) return; this.setState({ draft: "" }); }
+  removePantryItem(name) { this.setState(s => ({ pantry: s.pantry.filter(p => p.name !== name) })); }
+  openPantryAdd() { this.setState({ pantryAdding: true, pantryDraftName: "", pantryDraftQty: "" }); }
+  savePantryItem() {
+    const name = (this.state.pantryDraftName || "").trim();
+    if (!name) { this.setState({ pantryAdding: false }); return; }
+    this.setState(s => ({
+      pantry: [...s.pantry, { name, qty: s.pantryDraftQty || "1 ks", pid: "MAN-" + Math.floor(Math.random()*900+100), icon: "nutrition", expiryLabel: "bez dátumu", urgent: false }],
+      pantryAdding: false,
+    }));
+  }
+  toggleStoreFav(name) { this.setState(s => ({ storeFavs: { ...s.storeFavs, [name]: !s.storeFavs[name] } })); }
+
+  openShare(kind) { this.setState({ shareOpen: true, shareKind: kind }); }
+  closeShare() { this.setState({ shareOpen: false }); }
+
+  renderVals() {
+    const { screen, stores, adults, kids, days, checked, cookId, cookStep, shareOpen, shareKind, prompt, watchedIngredients, watchedRecipes, savedRecipeIds, pantry, pantrySavings, pantryAdding, pantryDraftName, pantryDraftQty, storeFavs, toastMsg, editing, draft } = this.state;
+
+    const stepMap = {
+      welcome: "01 · Vitajte", auth: "02 · Vytvoriť účet", location: "03 · Poloha", home: "04 · Domov",
+      preferences: "05 · Nastav varenie", loading: "06 · AI generuje plán", plan: "07 · Jedálniček",
+      recipesTab: "Recepty", detail: "Recept · detail", list: "Nákupný zoznam", shop: "Môj nákup",
+      cook: "Varenie", receipt: "Sken účtenky", done: "Úspora overená", pantry: "Špajza",
+      sledujem: "Sledujem", watchlist: "Sledované potraviny", saved: "Uložené recepty", lists: "Nákupné zoznamy · história",
+      savings: "Úspory", profile: "Účet", allergens: "Diéta a alergény", store: "Obľúbené obchody",
+      error: "Stav: chyba", emptyList: "Stav: prázdny zoznam",
+    };
+
+    const pantryNames = pantry.map(p => p.name.toLowerCase());
+    const isInPantry = (name) => pantryNames.some(pn => name.toLowerCase().includes(pn));
+
+    const prefStores = this.STORE_LIST_NAMES.map(name => {
+      const on = stores.includes(name);
+      return { name, onClick: () => this.toggleStore(name), check: on ? "✓" : "+", bg: on ? "#204432" : "#fff", color: on ? "#fff" : "#4B6357", border: on ? "none" : "1.5px solid rgba(32,68,50,0.15)" };
+    });
+    const suggestions = this.CUISINE_SUGGESTIONS.map(label => ({ label, onClick: () => this.setState({ prompt: label.replace(/^[^\s]+\s/, "") }) }));
+    const portions = [
+      { key: "adults", glyph: "🧑", label: "Dospelí", count: adults, min: 1 },
+      { key: "kids", glyph: "🧒", label: "Deti", count: kids, min: 0 },
+    ].map(p => ({ ...p, inc: () => this.step(p.key, 1, p.min), dec: () => this.step(p.key, -1, p.min) }));
+    const days_ = [1, 3, 5, 7].map(n => { const on = days === n; return { label: n === 1 ? "1 deň" : n + " dní", onClick: () => this.setState({ days: n }), bg: on ? "#204432" : "#fff", color: on ? "#fff" : "#4B6357", border: on ? "none" : "1.5px solid rgba(32,68,50,0.12)" }; });
+
+    const PORTIONS_MAP = { 0: "2 porcie", 1: "2 porcie", 2: "2 porcie", 3: "4 porcie", 4: "2 porcie", 5: "4 porcie" };
+    const mkRecipe = (r, i) => ({ ...r, portions: PORTIONS_MAP[i], ingCount: r.ingredients.length, onCook: () => this.openCook(i), onDetail: () => this.openDetail(i), onSwap: () => this.openDetail(i),
+      onSave: () => this.toggleSaveRecipe(i), savedFill: savedRecipeIds[i] ? 1 : 0, savedColor: savedRecipeIds[i] ? "#BA5F3F" : "#204432" });
+    const allRecipes = this.RECIPES.map(mkRecipe);
+    const homeTips = [mkRecipe(this.RECIPES[0], 0), mkRecipe(this.RECIPES[2], 2), mkRecipe(this.RECIPES[5], 5)];
+    const heroRecipe = mkRecipe(this.RECIPES[1], 1);
+    const cook0 = () => this.openCook(1);
+
+    const savedRecipesFull = this.RECIPES.map((r, i) => ({ ...r, i })).filter(r => savedRecipeIds[r.i]).map(r => ({ ...mkRecipe(r, r.i), onUnsave: () => this.toggleSaveRecipe(r.i) }));
+    const savedCount = savedRecipesFull.length;
+    const savedOnSaleCount = savedRecipesFull.filter(r => r.sale).length;
+
+    const watchItems = this.WATCHLIST.filter(w => watchedIngredients[w.name]).map(w => ({ ...w, dropped: !!w.pct, priceLine: "€" + w.was + " → €" + w.now, onWatch: () => this.toggleWatchIngredient(w.name) }));
+    const watchCount = watchItems.length;
+    const watchDropCount = watchItems.filter(w => w.dropped).length;
+    const alerts = this.ALERTS;
+
+    let total = 0, count = 0, cartTotal = 0, saveTotal = 0, pantrySavedThisList = 0;
+    const listGroups = this.LIST_DATA.map((g, gi) => ({
+      aisle: g.aisle,
+      items: g.items.map((it, ii) => {
+        const id = gi + "-" + ii; const on = !!checked[id]; total++; if (on) count++;
+        const inPantry = isInPantry(it.name);
+        const priceNum = parseFloat(it.price.replace(",", "."));
+        if (!inPantry) { cartTotal += priceNum; if (it.sale) saveTotal += priceNum * 0.28; } else { pantrySavedThisList += priceNum; }
+        return { name: it.name, price: it.price, deal: it.deal, inPantry, showPrice: !inPantry, showCheck: !editing,
+          boxBg: on ? "#204432" : "#fff", boxBorder: on ? "none" : "1.5px solid rgba(32,68,50,0.2)", boxMark: on ? "✓" : "",
+          strike: on ? "line-through" : "none", textColor: on ? "#9AA8A0" : "#204432",
+          border: ii === g.items.length - 1 ? "none" : "1px solid rgba(32,68,50,0.06)",
+          onToggle: () => this.toggleItem(id), onRemove: () => {} };
+      }),
+    }));
+
+    const cookRecipe = this.RECIPES[cookId] || this.RECIPES[0];
+    const cookIngredients = cookRecipe.ingredients.map(ing => ({ ...ing, inPantry: isInPantry(ing.name), onWatch: () => this.toggleWatchIngredient(ing.name), watchColor: watchedIngredients[ing.name] ? "#BA5F3F" : "rgba(32,68,50,0.22)" }));
+    const cookSteps = cookRecipe.steps.map((text, i) => ({ n: i + 1, text }));
+    const stepIdx = Math.min(cookStep, cookRecipe.steps.length - 1);
+    const cookProgress = cookRecipe.steps.map((_, i) => ({ bg: i <= stepIdx ? "#BA5F3F" : "rgba(231,214,180,0.18)" }));
+
+    const planDay1 = [mkRecipe(this.RECIPES[0], 0), mkRecipe(this.RECIPES[1], 1)];
+    const planDay2 = [mkRecipe(this.RECIPES[3], 3)];
+    const shopRecipes = [mkRecipe(this.RECIPES[0], 0), mkRecipe(this.RECIPES[1], 1), mkRecipe(this.RECIPES[3], 3)];
+    const receiptLines = [ {name:"Kuracie prsia", price:"1,85"}, {name:"Cestoviny", price:"0,65"}, {name:"Smotana na varenie", price:"0,65"}, {name:"Parmezán", price:"0,55"} ];
+
+    const savedLists = [
+      { active: true, date: "Dnes · 2. júl", store: stores[0] || "Lidl", recipes: 2, items: total, total: "€" + cartTotal.toFixed(2).replace(".", ","), save: "€" + saveTotal.toFixed(2).replace(".", ",") },
+      { active: false, date: "28. jún", store: "Tesco", recipes: 3, items: 11, total: "€12,80", save: "€3,10" },
+      { active: false, date: "21. jún", store: "Lidl", recipes: 2, items: 8, total: "€9,20", save: "€2,40" },
+    ].map(l => ({ ...l, onOpen: () => this.go("list"), border: l.active ? "2px solid #204432" : "1px solid rgba(32,68,50,0.08)" }));
+
+    const savingsMonths = this.SAVINGS_MONTHS.map(m => ({ label: m.label, amount: m.amount, barWidth: m.pct + "%" }));
+    const savingsBreakdown = [
+      { icon: "🍗", label: "Mäso v akcii", sub: "8 nákupov", amount: "€21,30" },
+      { icon: "🥦", label: "Sezónna zelenina", sub: "12 nákupov", amount: "€16,80" },
+      { icon: "🥫", label: "Špajza · žiadne plytvanie", sub: pantry.length + " surovín využitých znova", amount: "€" + pantrySavings.toFixed(2).replace(".", ",") },
+    ];
+
+    const pantryItems = pantry.map((p, i) => ({ ...p, badgeBg: p.urgent ? "#FBEbE4" : "#EFE9DC", badgeColor: p.urgent ? "#BA5F3F" : "#7A8A80", onRemove: () => this.removePantryItem(p.name) }));
+    const pantryUrgentEntry = pantry.find(p => p.urgent);
+
+    const storeList = this.STORE_INFO.map(s => { const on = !!storeFavs[s.name]; return { name: s.name, sub: s.sub, selected: on, onClick: () => this.toggleStoreFav(s.name), bg: on ? "#204432" : "#fff", border: on ? "2px solid #204432" : "1px solid rgba(32,68,50,0.1)", textColor: on ? "#fff" : "#204432", iconBg: on ? "#E7D6B4" : "#F0E6D2", iconColor: "#204432" }; });
+    const storeFavCount = Object.values(storeFavs).filter(Boolean).length;
+
+    const shareMeta = { list: { title: "Zdieľať nákupný zoznam", what: "položky a ceny", code: "n7k2q" }, recipes: { title: "Zdieľať recepty", what: "všetky recepty na dnes", code: "r4m9x" } };
+    const sm = shareMeta[shareKind] || shareMeta.list;
+    const shareTargets = [ { name: "WhatsApp", glyph: "💬", bg: "#DCF3E4" }, { name: "Messenger", glyph: "📨", bg: "#DDE9FB" }, { name: "E-mail", glyph: "✉️", bg: "#F0E6D2" }, { name: "Viac", glyph: "•••", bg: "#EDE7DA" } ];
+
+    return {
+      stepLabel: stepMap[screen] || "",
+      statusColor: ["welcome","location","loading","cook","done","receipt","error","profile"].includes(screen) ? "#E7D6B4" : "#204432",
+      sWelcome: screen === "welcome", sAuth: screen === "auth", sLocation: screen === "location", sHome: screen === "home",
+      sPreferences: screen === "preferences", sLoading: screen === "loading", sPlan: screen === "plan", sRecipesTab: screen === "recipesTab",
+      sDetail: screen === "detail", sList: screen === "list", sShop: screen === "shop", sCook: screen === "cook",
+      sReceipt: screen === "receipt", sDone: screen === "done", sPantry: screen === "pantry", sSledujem: screen === "sledujem",
+      sWatchlist: screen === "watchlist", sSaved: screen === "saved", sLists: screen === "lists", sSavings: screen === "savings",
+      sProfile: screen === "profile", sAllergens: screen === "allergens", sStore: screen === "store", sError: screen === "error", sEmptyList: screen === "emptyList",
+
+      toWelcome: () => this.go("welcome"), toAuth: () => this.go("auth"), toLocation: () => this.go("location"), toHome: () => this.go("home"),
+      toPreferences: () => this.go("preferences"), toLoading: () => this.go("loading"), toPlan: () => this.go("plan"),
+      toRecipesTab: () => this.go("recipesTab"), toList: () => this.go("list"), toShop: () => this.go("shop"),
+      toReceipt: () => this.go("receipt"), toDone: () => this.go("done"), toPantry: () => this.go("pantry"),
+      toSledujem: () => this.go("sledujem"), toWatchlist: () => this.go("watchlist"), toSaved: () => this.go("saved"),
+      toLists: () => this.go("lists"), toSavings: () => this.go("savings"), toProfile: () => this.go("profile"),
+      toAllergens: () => this.go("allergens"), toStore: () => this.go("store"), toError: () => this.go("error"), toEmptyList: () => this.go("emptyList"),
+      goBack: () => this.goBack(),
+      cook0, cookExit: () => this.cookExit(), cookNextStep: () => this.cookNextStep(), cookPrevStep: () => this.cookPrevStep(),
+      cookNextLabel: stepIdx >= cookRecipe.steps.length - 1 ? "Hotovo, dobrú chuť!" : "Ďalší krok →",
+      cookStepNum: stepIdx + 1, cookStepCount: cookRecipe.steps.length, cookStepText: cookRecipe.steps[stepIdx], cookProgress,
+
+      hasAlerts: alerts.length > 0, watchDropCount, watchCount, watchItems, savedCount, savedOnSaleCount, savedRecipesFull,
+      pantryUrgent: !!pantryUrgentEntry, pantryUrgentItem: pantryUrgentEntry ? pantryUrgentEntry.name : null,
+      pantryCount: pantry.length, pantryPlural: pantry.length === 1 ? "a" : "y", pantryEmpty: pantry.length === 0,
+      pantrySavingsLabel: "€" + pantrySavings.toFixed(2).replace(".", ","), pantryItems,
+      pantryAdding, pantryDraftName, pantryDraftQty, pantryAddBtnDisplay: pantryAdding ? "none" : "flex",
+      onPantryNameChange: (e) => this.setState({ pantryDraftName: e.target.value }),
+      onPantryQtyChange: (e) => this.setState({ pantryDraftQty: e.target.value }),
+      openPantryAdd: () => this.openPantryAdd(), savePantryItem: () => this.savePantryItem(),
+
+      planStores: stores.join(", "), planDays: days, planPortionsLabel: adults + " dosp." + (kids ? " + " + kids + " dieťa" : ""),
+      prefStores, suggestions, portions, days: days_, prompt, onPromptChange: (e) => this.setState({ prompt: e.target.value }),
+
+      allRecipes, homeTips, heroRecipe, totalSavings: "€148,30",
+      listTotal: total, listCartTotal: "€" + cartTotal.toFixed(2).replace(".", ","), listSaveTotal: "€" + saveTotal.toFixed(2).replace(".", ","),
+      listPantrySaved: pantrySavedThisList > 0 ? ("€" + pantrySavedThisList.toFixed(2).replace(".", ",")) : null,
+      headerSub: (stores[0] || "Lidl") + " · " + total + " položiek", groups: listGroups,
+      editing, editLabel: editing ? "Hotovo" : "Upraviť", editColor: editing ? "#fff" : "#BA5F3F", editBg: editing ? "#204432" : "transparent",
+      toggleEdit: () => this.toggleEdit(), draft, onDraftChange: (e) => this.setState({ draft: e.target.value }), addItem: () => this.addItem(),
+      ctaLabel: editing ? "Uložiť zmeny" : "Uložiť nákup · môžeš variť neskôr",
+      saveList: () => { this.setState({ toastMsg: "Nákup uložený — recepty aj zoznam si nájdeš v Špajzi a v Sledujem" }); setTimeout(() => this.setState({ toastMsg: null }), 2600); this.go("shop"); },
+
+      planDay1, planDay2, shopRecipes, receiptLines, savedLists, savingsMonths, savingsBreakdown,
+      cook: { ...cookRecipe, portions: PORTIONS_MAP[cookId] || "2 porcie", ingredients: cookIngredients, steps: cookSteps,
+        onWatch: () => this.toggleWatchRecipe(cookId), watchColor: watchedRecipes[cookId] ? "#BA5F3F" : "#204432", watchColorLight: watchedRecipes[cookId] ? "#BA5F3F" : "#fff" },
+
+      storeList, storeFavCount,
+      shareOpen, shareList: () => this.openShare("list"), shareRecipes: () => this.openShare("recipes"), closeShare: () => this.closeShare(),
+      shareTitle: sm.title, shareWhat: sm.what, shareCode: sm.code, shareTargets,
+      toastMsg,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

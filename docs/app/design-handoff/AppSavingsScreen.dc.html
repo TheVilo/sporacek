@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<x-dc>
+<div style="width:100%;height:100%;background:#FAF6EE;font-family:'Plus Jakarta Sans',sans-serif;color:#204432;overflow:hidden;display:flex;flex-direction:column;">
+
+  <!-- header -->
+  <div style="padding:16px 18px 8px;flex:none;">
+    <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em;">Tvoje úspory</div>
+    <div style="font-size:12px;color:#7A8A80;font-weight:600;">Jún 2026</div>
+  </div>
+
+  <div style="flex:1;overflow-y:auto;padding:8px 18px 18px;">
+
+    <!-- big total -->
+    <div style="background:#204432;border-radius:20px;padding:24px;color:#E7D6B4;margin-bottom:18px;position:relative;overflow:hidden;">
+      <div style="font-size:13px;font-weight:600;opacity:0.85;margin-bottom:4px;">Tento mesiac si ušetril</div>
+      <div style="font-size:46px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;">€58,40</div>
+      <div style="display:inline-flex;align-items:center;gap:5px;margin-top:10px;background:rgba(231,214,180,0.16);padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;">↑ €12 oproti máju</div>
+      <div style="position:absolute;right:-16px;bottom:-16px;width:96px;height:96px;color:rgba(231,214,180,0.14);"><dc-import name="SporacekMark" hint-size="96px,96px" style="display:block;width:96px;height:96px;color:rgba(231,214,180,0.14);"></dc-import></div>
+    </div>
+
+    <!-- weekly chart -->
+    <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:18px;padding:18px;margin-bottom:18px;">
+      <div style="font-size:14px;font-weight:800;margin-bottom:16px;">Úspora po týždňoch</div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;height:110px;">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;"><div style="width:100%;height:48%;background:#E7D6B4;border-radius:8px 8px 4px 4px;"></div><span style="font-size:11px;font-weight:700;color:#7A8A80;">T1</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;"><div style="width:100%;height:66%;background:#E7D6B4;border-radius:8px 8px 4px 4px;"></div><span style="font-size:11px;font-weight:700;color:#7A8A80;">T2</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;"><div style="width:100%;height:54%;background:#E7D6B4;border-radius:8px 8px 4px 4px;"></div><span style="font-size:11px;font-weight:700;color:#7A8A80;">T3</span></div>
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;"><div style="width:100%;height:92%;background:#BA5F3F;border-radius:8px 8px 4px 4px;"></div><span style="font-size:11px;font-weight:800;color:#BA5F3F;">T4</span></div>
+      </div>
+    </div>
+
+    <!-- breakdown -->
+    <div style="font-size:14px;font-weight:800;margin-bottom:12px;">Kde si ušetril najviac</div>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:10px;background:#E7D6B4;display:flex;align-items:center;justify-content:center;font-size:18px;">🍗</div>
+        <div style="flex:1;"><div style="font-size:14px;font-weight:700;">Mäso v akcii</div><div style="font-size:11px;color:#7A8A80;font-weight:600;">8 nákupov</div></div>
+        <div style="font-size:16px;font-weight:800;color:#BA5F3F;">€21,30</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:10px;background:#E7D6B4;display:flex;align-items:center;justify-content:center;font-size:18px;">🥦</div>
+        <div style="flex:1;"><div style="font-size:14px;font-weight:700;">Sezónna zelenina</div><div style="font-size:11px;color:#7A8A80;font-weight:600;">12 nákupov</div></div>
+        <div style="font-size:16px;font-weight:800;color:#BA5F3F;">€16,80</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(32,68,50,0.07);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:12px;">
+        <div style="width:36px;height:36px;border-radius:10px;background:#E7D6B4;display:flex;align-items:center;justify-content:center;font-size:18px;">♻️</div>
+        <div style="flex:1;"><div style="font-size:14px;font-weight:700;">Žiadne plytvanie</div><div style="font-size:11px;color:#7A8A80;font-weight:600;">0 vyhodených surovín</div></div>
+        <div style="font-size:16px;font-weight:800;color:#BA5F3F;">€20,30</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom nav -->
+  <div style="flex:none;display:flex;justify-content:space-around;align-items:center;padding:10px 8px 20px;background:#fff;border-top:1px solid rgba(32,68,50,0.08);">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">home</span><span style="font-size:10px;font-weight:600;">Domov</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">skillet</span><span style="font-size:10px;font-weight:600;">Recepty</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">kitchen</span><span style="font-size:10px;font-weight:600;">Špajza</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#9AA8A0;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">notifications_active</span><span style="font-size:10px;font-weight:600;">Sledujem</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:3px;color:#204432;"><span style="font-size:19px;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">savings</span><span style="font-size:10px;font-weight:700;">Úspory</span></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}"></script>
+</body>
+</html>

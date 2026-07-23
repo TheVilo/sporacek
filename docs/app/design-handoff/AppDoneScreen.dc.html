@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @keyframes spkd-pop { 0% { transform: scale(0.7); opacity:0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity:1; } }
+    @keyframes spkd-conf { 0% { transform: translateY(-10px) rotate(0); opacity:0; } 20% { opacity:1; } 100% { transform: translateY(60px) rotate(220deg); opacity:0; } }
+  </style>
+</helmet>
+<div style="width:100%;height:100%;background:#204432;font-family:'Plus Jakarta Sans',sans-serif;color:#E7D6B4;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+
+  <!-- confetti -->
+  <div style="position:absolute;top:0;left:18%;width:9px;height:9px;background:#BA5F3F;border-radius:2px;animation:spkd-conf 2.4s ease-in infinite;"></div>
+  <div style="position:absolute;top:0;left:38%;width:8px;height:8px;background:#E7D6B4;border-radius:2px;animation:spkd-conf 2.8s ease-in infinite 0.4s;"></div>
+  <div style="position:absolute;top:0;left:62%;width:10px;height:10px;background:#BA5F3F;border-radius:2px;animation:spkd-conf 2.2s ease-in infinite 0.2s;"></div>
+  <div style="position:absolute;top:0;left:80%;width:8px;height:8px;background:#E7D6B4;border-radius:2px;animation:spkd-conf 2.6s ease-in infinite 0.7s;"></div>
+  <div style="position:absolute;top:0;left:50%;width:7px;height:7px;background:#F0E6D2;border-radius:2px;animation:spkd-conf 3s ease-in infinite 1s;"></div>
+
+  <div style="position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;color:rgba(231,214,180,0.06);"><dc-import name="SporacekMark" hint-size="200px,200px" style="display:block;width:200px;height:200px;color:rgba(231,214,180,0.06);"></dc-import></div>
+
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;position:relative;z-index:1;">
+    <div style="width:104px;height:104px;border-radius:50%;background:#BA5F3F;display:flex;align-items:center;justify-content:center;margin-bottom:28px;animation:spkd-pop 0.6s ease-out;box-shadow:0 16px 36px rgba(186,95,63,0.45);">
+      <span style="font-size:50px;color:#fff;;font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;">check</span>
+    </div>
+    <div style="font-size:13px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#E7D6B4;margin-bottom:12px;">Nákup overený</div>
+    <h1 style="font-size:27px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.15;margin-bottom:24px;">Tento nákup si<br>ušetril</h1>
+
+    <!-- big amount -->
+    <div style="background:rgba(231,214,180,0.12);border-radius:22px;padding:24px 40px;margin-bottom:14px;">
+      <div style="font-size:56px;font-weight:800;color:#fff;letter-spacing:-0.03em;line-height:1;">€6,20</div>
+    </div>
+    <p style="font-size:14px;color:rgba(231,214,180,0.82);font-weight:500;line-height:1.5;max-width:280px;">Pripočítali sme to k tvojej úspore za jún. Tento mesiac už máš <span style="color:#fff;font-weight:800;">€58,40</span>.</p>
+  </div>
+
+  <!-- actions -->
+  <div style="flex:none;padding:0 24px 34px;position:relative;z-index:1;">
+    <button style="width:100%;background:#E7D6B4;color:#204432;border:none;font-family:inherit;font-size:16px;font-weight:800;padding:17px;border-radius:14px;cursor:pointer;margin-bottom:12px;">Zobraziť moje úspory →</button>
+    <div style="text-align:center;font-size:14px;font-weight:700;color:rgba(231,214,180,0.85);">📤 Zdieľať úsporu</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:390,&quot;height&quot;:844}}"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Plus Jakarta Sans',sans-serif;-webkit-font-smoothing:antialiased;background:#E8E3D8;}
+    a{color:#BA5F3F;}
+    a:hover{color:#8A4429;}
+    .ms{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1;}
+    .msf{font-family:'Material Symbols Outlined';font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;line-height:1;}
+    .grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+    .grid-comp{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+    code{font-family:'SF Mono',ui-monospace,Menlo,Consolas,monospace;}
+    @media(max-width:640px){.grid-auto{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}}
+  </style>
+</helmet>
+
+<div style="width:100%;min-height:100vh;background:#E8E3D8;color:#204432;padding:clamp(24px,5vw,64px) clamp(16px,4vw,48px);">
+<div style="max-width:1120px;margin:0 auto;">
+
+  <!-- HEADER -->
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap;">
+    <div style="height:34px;color:#204432;"><dc-import name="SporacekLogo" hint-size="150px,34px" style="display:block;height:34px;width:150px;color:#204432;"></dc-import></div>
+    <span style="background:#BA5F3F;color:#fff;font-size:12px;font-weight:800;padding:4px 11px;border-radius:999px;">UI KIT · v1</span>
+  </div>
+  <h1 style="font-size:clamp(30px,5vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.03;margin-bottom:14px;">Dizajnový systém & tokeny</h1>
+  <p style="font-size:clamp(15px,2vw,18px);line-height:1.55;color:#4B6357;font-weight:500;max-width:680px;">Kompletná referencia pre vývoj: farby, typografická škála, spacing, rádiusy, tiene a komponenty — všetko vytiahnuté z 24 schválených obrazoviek. Dole je hotový <code style="background:#fff;padding:2px 6px;border-radius:6px;font-size:0.85em;">:root</code> blok premenných a Tailwind config na priame skopírovanie.</p>
+
+  <!-- section renderer -->
+  <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="6">
+    <div style="margin-top:56px;">
+      <div style="display:flex;align-items:baseline;gap:12px;border-bottom:2px solid rgba(32,68,50,0.15);padding-bottom:10px;margin-bottom:24px;flex-wrap:wrap;">
+        <span style="font-size:13px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#BA5F3F;">{{ sec.num }}</span>
+        <h2 style="font-size:clamp(20px,3vw,26px);font-weight:800;letter-spacing:-0.02em;">{{ sec.title }}</h2>
+        <span style="font-size:13px;color:#7A8A80;font-weight:600;margin-left:auto;">{{ sec.hint }}</span>
+      </div>
+      {{ sec.body }}
+    </div>
+  </sc-for>
+
+  <div style="margin-top:72px;padding-top:20px;border-top:1px solid rgba(32,68,50,0.15);font-size:12px;color:#7A8A80;font-weight:600;">Sporáček UI Kit · Plus Jakarta Sans + Source Serif 4 · odvodené zo schválených MVP obrazoviek</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  renderVals() {
+    const h = React.createElement;
+    const mono = { fontFamily:"'SF Mono',ui-monospace,Menlo,Consolas,monospace" };
+
+    // ---------- COLORS ----------
+    const colorGroups = [
+      { label:'Značka & povrchy', items:[
+        ['Forest','#204432','--c-forest','Primárna, text, tmavé karty'],
+        ['Forest deep','#163021','--c-forest-deep','Rám telefónu, hĺbka'],
+        ['Forest ink','#0E1F16','--c-forest-ink','Text na sage'],
+        ['Terracotta','#BA5F3F','--c-terracotta','Akcent, CTA, úspory'],
+        ['Terracotta dark','#8A4429','--c-terracotta-dark','Hover na akcent'],
+        ['Sage','#7FA38C','--c-sage','Sekundárny akcent, tagy'],
+        ['Wheat','#E7D6B4','--c-wheat','Zvýraznené karty, badge'],
+      ]},
+      { label:'Pozadia', items:[
+        ['Cream','#FAF6EE','--c-cream','Pozadie appky'],
+        ['Sand','#F4EFE3','--c-sand','Vnorené karty, riadky'],
+        ['Linen','#E8E3D8','--c-linen','Pozadie stránky'],
+        ['White','#FFFFFF','--c-white','Karty na creame'],
+      ]},
+      { label:'Text', items:[
+        ['Text primary','#204432','--c-text','Nadpisy, dôležité'],
+        ['Text secondary','#4B6357','--c-text-2','Odseky, popisy'],
+        ['Text muted','#7A8A80','--c-text-muted','Meta, popisky'],
+        ['Text faint','#9AA8A0','--c-text-faint','Neaktívne v nave'],
+      ]},
+    ];
+    const isLight = (hex) => {
+      const c = hex.replace('#',''); const r=parseInt(c.slice(0,2),16),g=parseInt(c.slice(2,4),16),b=parseInt(c.slice(4,6),16);
+      return (0.299*r+0.587*g+0.114*b) > 150;
+    };
+    const swatch = (item) => {
+      const [name,hex,varn,use] = item;
+      const light = isLight(hex);
+      return h('div',{key:varn,style:{background:'#fff',borderRadius:16,overflow:'hidden',border:'1px solid rgba(32,68,50,0.09)'}},
+        h('div',{style:{height:78,background:hex,borderBottom:light?'1px solid rgba(32,68,50,0.1)':'none',display:'flex',alignItems:'flex-end',padding:'8px 10px'}},
+          h('span',{style:{...mono,fontSize:11,fontWeight:700,color:light?'#204432':'#fff',opacity:0.9}},hex)),
+        h('div',{style:{padding:'10px 12px 12px'}},
+          h('div',{style:{fontSize:13,fontWeight:800,letterSpacing:'-0.01em'}},name),
+          h('code',{style:{...mono,fontSize:11,fontWeight:600,color:'#BA5F3F',display:'block',margin:'3px 0 6px'}},varn),
+          h('div',{style:{fontSize:11.5,color:'#7A8A80',fontWeight:600,lineHeight:1.35}},use)));
+    };
+    const colorsBody = h('div',{style:{display:'flex',flexDirection:'column',gap:24}},
+      colorGroups.map((g,i)=>h('div',{key:i},
+        h('div',{style:{fontSize:12,fontWeight:800,textTransform:'uppercase',letterSpacing:'0.08em',color:'#204432',marginBottom:12}},g.label),
+        h('div',{className:'grid-auto'},g.items.map(swatch)))));
+
+    // ---------- TYPOGRAPHY ----------
+    const typeRows = [
+      ['Display / H1','clamp(30px → 44px)',800,'-0.03em',1.03,'Poďme ušetriť',44],
+      ['H2 · sekcia','clamp(20px → 26px)',800,'-0.02em',1.1,'Jedálniček na dnes',26],
+      ['H3 · titul karty','22px',800,'-0.02em',1.15,'Poctivý hovädzí guláš',22],
+      ['Title','20px',800,'-0.02em',1.15,'Poďme nakupovať',20],
+      ['Subtitle','17px',700,'-0.01em',1.3,'Spustiť sporáčik →',17],
+      ['Body large','16px',600,'0',1.5,'Sporáček ti zostaví plán jedál.',16],
+      ['Body','14px',500,'0',1.55,'Suroviny, postup a cena za porciu.',14],
+      ['Caption','12px',600,'0',1.4,'30 min · 2 porcie · 8 surovín',12],
+      ['Micro','11px',700,'0',1.3,'3 jedlá zostávajú',11],
+    ];
+    const typeBody = h('div',{style:{display:'flex',flexDirection:'column',gap:2}},
+      // font families
+      h('div',{style:{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:14,marginBottom:20}},
+        h('div',{style:{background:'#fff',borderRadius:16,padding:'18px 20px',border:'1px solid rgba(32,68,50,0.09)'}},
+          h('div',{style:{fontSize:11,fontWeight:800,textTransform:'uppercase',letterSpacing:'0.08em',color:'#BA5F3F',marginBottom:8}},'Primárny · UI'),
+          h('div',{style:{fontSize:26,fontWeight:800,letterSpacing:'-0.02em'}},'Plus Jakarta Sans'),
+          h('div',{style:{fontSize:13,color:'#7A8A80',fontWeight:600,marginTop:6}},'400 · 500 · 600 · 700 · 800'),
+          h('div',{style:{fontSize:22,fontWeight:400,marginTop:10,color:'#4B6357'}},'AaBbCc 123 čšž €')),
+        h('div',{style:{background:'#204432',borderRadius:16,padding:'18px 20px',color:'#FAF6EE'}},
+          h('div',{style:{fontSize:11,fontWeight:800,textTransform:'uppercase',letterSpacing:'0.08em',color:'#E7D6B4',marginBottom:8}},'Akcent · citáty'),
+          h('div',{style:{fontFamily:"'Source Serif 4',serif",fontSize:26,fontWeight:600}},'Source Serif 4'),
+          h('div',{style:{fontSize:13,color:'rgba(250,246,238,0.7)',fontWeight:600,marginTop:6}},'500 · 600'),
+          h('div',{style:{fontFamily:"'Source Serif 4',serif",fontSize:22,fontWeight:500,marginTop:10,color:'rgba(250,246,238,0.9)'}},'AaBbCc 123 čšž €'))),
+      // scale
+      h('div',{style:{background:'#fff',borderRadius:16,border:'1px solid rgba(32,68,50,0.09)',overflow:'hidden'}},
+        typeRows.map((r,i)=>{
+          const [role,size,weight,ls,lh,sample,px]=r;
+          return h('div',{key:i,style:{display:'flex',alignItems:'baseline',gap:16,padding:'14px 18px',borderTop:i?'1px solid rgba(32,68,50,0.07)':'none',flexWrap:'wrap'}},
+            h('div',{style:{width:150,flex:'none'}},
+              h('div',{style:{fontSize:12.5,fontWeight:800}},role),
+              h('code',{style:{...mono,fontSize:11,color:'#BA5F3F',fontWeight:600}},size),
+              h('div',{style:{fontSize:10.5,color:'#9AA8A0',fontWeight:600,marginTop:2}},weight+' · lh '+lh+' · ls '+ls)),
+            h('div',{style:{flex:1,minWidth:180,fontSize:Math.min(px,32),fontWeight:weight,letterSpacing:ls,lineHeight:lh,color:'#204432'}},sample));
+        })));
+
+    // ---------- SPACING ----------
+    const spaces = [4,6,8,10,12,14,16,18,20,24,32,48];
+    const spacingBody = h('div',{},
+      h('p',{style:{fontSize:14,color:'#4B6357',fontWeight:600,marginBottom:16,lineHeight:1.5}},'Základ 2px, mierka najčastejšie 4–24px. Padding kariet 14–22px, gap medzi kartami 12–14px, sekcie 48–64px.'),
+      h('div',{style:{display:'flex',flexWrap:'wrap',gap:14}},spaces.map(s=>
+        h('div',{key:s,style:{background:'#fff',borderRadius:12,border:'1px solid rgba(32,68,50,0.09)',padding:'12px 14px',display:'flex',flexDirection:'column',alignItems:'center',gap:8,minWidth:70}},
+          h('div',{style:{height:48,display:'flex',alignItems:'center'}},h('div',{style:{width:s,height:s,background:'#BA5F3F',borderRadius:2}})),
+          h('code',{style:{...mono,fontSize:12,fontWeight:700,color:'#204432'}},s+'px')))));
+
+    // ---------- RADIUS ----------
+    const radii = [['sm',10],['md',14],['lg',18],['xl',20],['2xl',24],['pill',999],['phone',38]];
+    const radiusBody = h('div',{className:'grid-auto'},radii.map(([n,v])=>
+      h('div',{key:n,style:{background:'#fff',borderRadius:14,border:'1px solid rgba(32,68,50,0.09)',padding:16,display:'flex',flexDirection:'column',alignItems:'center',gap:10}},
+        h('div',{style:{width:64,height:64,background:'#E7D6B4',border:'2px solid #204432',borderRadius:v===999?999:v,borderBottomLeftRadius:v===999?999:0,borderBottomRightRadius:v===999?999:0}}),
+        h('div',{style:{textAlign:'center'}},
+          h('div',{style:{fontSize:12.5,fontWeight:800}},n),
+          h('code',{style:{...mono,fontSize:11,color:'#BA5F3F',fontWeight:600}},(v===999?'999px':v+'px'))))));
+
+    // ---------- SHADOW ----------
+    const shadows = [
+      ['Border','1px solid','0 0 0 1px rgba(32,68,50,0.08)','Jemný obrys kariet','1px solid rgba(32,68,50,0.08)'],
+      ['Card','elevated','0 20px 40px rgba(32,68,50,0.26)','Zvýraznené CTA karty',null],
+      ['Float','phone','0 30px 60px rgba(22,48,33,0.25)','Plávajúci telefón / modal',null],
+    ];
+    const shadowBody = h('div',{className:'grid-auto'},shadows.map((s,i)=>
+      h('div',{key:i,style:{display:'flex',flexDirection:'column',alignItems:'center',gap:12,padding:'8px 8px 4px'}},
+        h('div',{style:{width:'100%',height:90,background:'#fff',borderRadius:16,boxShadow:s[2].startsWith('0 0')?'none':s[2],border:s[4]||'none'}}),
+        h('div',{style:{textAlign:'center'}},
+          h('div',{style:{fontSize:12.5,fontWeight:800}},s[0]),
+          h('code',{style:{...mono,fontSize:10.5,color:'#7A8A80',fontWeight:600,display:'block',marginTop:2}},s[2])))));
+
+    // ---------- COMPONENTS ----------
+    const compCard = (title,el) => h('div',{style:{background:'#F4EFE3',borderRadius:18,border:'1px solid rgba(32,68,50,0.08)',padding:18}},
+      h('div',{style:{fontSize:11,fontWeight:800,textTransform:'uppercase',letterSpacing:'0.08em',color:'#7A8A80',marginBottom:14}},title),
+      el);
+    const ms = (n,fill)=>h('span',{className:fill?'msf':'ms',style:{fontSize:18}},n);
+    const compBody = h('div',{className:'grid-comp'},
+      compCard('Tlačidlá',h('div',{style:{display:'flex',flexDirection:'column',gap:10}},
+        h('button',{style:{background:'#BA5F3F',color:'#fff',border:'none',fontFamily:'inherit',fontSize:16,fontWeight:800,padding:'15px',borderRadius:14,cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',gap:8}},ms('shopping_cart',true),'Primárne CTA'),
+        h('button',{style:{background:'#204432',color:'#fff',border:'none',fontFamily:'inherit',fontSize:14,fontWeight:800,padding:'12px',borderRadius:12,cursor:'pointer'}},'Sekundárne'),
+        h('button',{style:{background:'transparent',color:'#204432',border:'1.5px solid rgba(32,68,50,0.2)',fontFamily:'inherit',fontSize:14,fontWeight:700,padding:'11px',borderRadius:12,cursor:'pointer'}},'Obrys'))),
+      compCard('Badge / pill',h('div',{style:{display:'flex',flexWrap:'wrap',gap:8,alignItems:'center'}},
+        h('span',{style:{background:'#BA5F3F',color:'#fff',fontSize:12,fontWeight:800,padding:'5px 12px',borderRadius:999}},'MVP'),
+        h('span',{style:{background:'#7FA38C',color:'#0E1F16',fontSize:10,fontWeight:800,padding:'4px 10px',borderRadius:999,display:'inline-flex',alignItems:'center',gap:4}},ms('check',true),'Nakúpené'),
+        h('span',{style:{background:'#E7D6B4',color:'#204432',fontSize:12,fontWeight:800,padding:'4px 10px',borderRadius:999}},'€2,15 / porcia'),
+        h('span',{style:{background:'#204432',color:'#fff',fontSize:12,fontWeight:800,padding:'8px 13px',borderRadius:999,display:'inline-flex',alignItems:'center',gap:5}},ms('play_arrow',true),'Variť'))),
+      compCard('Input / vyhľadávanie',h('div',{style:{display:'flex',alignItems:'center',gap:10,background:'#EAF1EC',border:'1px solid rgba(127,163,140,0.4)',borderRadius:14,padding:'12px 13px'}},
+        ms('search'),h('div',{style:{flex:1,fontSize:13,fontWeight:600,color:'#7A8A80'}},'Hľadaj recept alebo surovinu'))),
+      compCard('Riadok zoznamu',h('div',{style:{display:'flex',alignItems:'center',gap:11,background:'#fff',borderRadius:14,padding:'9px 11px'}},
+        h('div',{style:{width:46,height:46,borderRadius:10,background:'#E7D6B4',flex:'none',display:'flex',alignItems:'center',justifyContent:'center'}},ms('restaurant')),
+        h('div',{style:{flex:1,minWidth:0}},
+          h('div',{style:{fontSize:11,fontWeight:700,color:'#7A8A80'}},'Dnes · Večera'),
+          h('div',{style:{fontSize:14,fontWeight:800}},'Bryndzové halušky')),
+        ms('chevron_right'))),
+      compCard('Info banner',h('div',{style:{display:'flex',alignItems:'center',gap:10,background:'#EAF1EC',border:'1px solid rgba(127,163,140,0.4)',borderRadius:14,padding:'10px 13px'}},
+        ms('notifications_active'),h('div',{style:{flex:1,fontSize:12.5,fontWeight:700,color:'#3C5A48'}},'2 sledované suroviny dnes zlacneli'),ms('chevron_right'))),
+      compCard('Bottom nav (5 tabov)',h('div',{style:{display:'flex',justifyContent:'space-around',alignItems:'center',background:'#fff',borderRadius:14,border:'1px solid rgba(32,68,50,0.08)',padding:'10px 4px'}},
+        [['home','Domov',1],['skillet','Recepty',0],['kitchen','Špajza',0],['notifications_active','Sledujem',0],['savings','Úspory',0]].map((t,i)=>
+          h('div',{key:i,style:{display:'flex',flexDirection:'column',alignItems:'center',gap:3,color:t[2]?'#204432':'#9AA8A0'}},
+            h('span',{className:t[2]?'msf':'ms',style:{fontSize:19}},t[0]),
+            h('span',{style:{fontSize:10,fontWeight:t[2]?700:600}},t[1]))))));
+
+    // ---------- TOKENS CODE ----------
+    const rootCss = `:root{
+  /* brand & surfaces */
+  --c-forest:#204432;  --c-forest-deep:#163021;  --c-forest-ink:#0E1F16;
+  --c-terracotta:#BA5F3F;  --c-terracotta-dark:#8A4429;
+  --c-sage:#7FA38C;  --c-wheat:#E7D6B4;
+  /* backgrounds */
+  --c-cream:#FAF6EE;  --c-sand:#F4EFE3;  --c-linen:#E8E3D8;  --c-white:#fff;
+  /* text */
+  --c-text:#204432;  --c-text-2:#4B6357;  --c-text-muted:#7A8A80;  --c-text-faint:#9AA8A0;
+  --c-border:rgba(32,68,50,0.08);
+
+  /* type */
+  --font-ui:'Plus Jakarta Sans',sans-serif;
+  --font-serif:'Source Serif 4',serif;
+  --fs-h1:clamp(1.875rem,5vw,2.75rem);  /* 30 → 44 */
+  --fs-h2:clamp(1.25rem,3vw,1.625rem);  /* 20 → 26 */
+  --fs-h3:1.375rem;   --fs-title:1.25rem;   --fs-subtitle:1.0625rem;
+  --fs-body-lg:1rem;  --fs-body:0.875rem;   --fs-caption:0.75rem;  --fs-micro:0.6875rem;
+  --lh-tight:1.05;  --lh-snug:1.15;  --lh-normal:1.5;
+  --fw-med:500; --fw-semi:600; --fw-bold:700; --fw-black:800;
+
+  /* spacing */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-8:32px; --sp-12:48px;
+
+  /* radius */
+  --r-sm:10px; --r-md:14px; --r-lg:18px; --r-xl:20px; --r-2xl:24px; --r-pill:999px; --r-phone:38px;
+
+  /* shadow */
+  --sh-card:0 20px 40px rgba(32,68,50,0.26);
+  --sh-float:0 30px 60px rgba(22,48,33,0.25);
+}`;
+    const codeBlock = h('div',{style:{background:'#163021',borderRadius:18,padding:'20px 22px',overflow:'auto'}},
+      h('pre',{style:{...mono,fontSize:12,lineHeight:1.6,color:'#E7D6B4',whiteSpace:'pre',margin:0}},rootCss));
+    const tokensBody = h('div',{},
+      h('p',{style:{fontSize:14,color:'#4B6357',fontWeight:600,marginBottom:16,lineHeight:1.5}},'Skopíruj do svojho global CSS. Typografia je responzívna cez clamp() — H1 a H2 sa škálujú medzi mobilom a desktopom automaticky.'),
+      codeBlock);
+
+    return {
+      sections: [
+        { num:'01', title:'Farby', hint:'15 tokenov', body: colorsBody },
+        { num:'02', title:'Typografia', hint:'2 rezy · 9 úrovní', body: typeBody },
+        { num:'03', title:'Spacing', hint:'základ 2px', body: spacingBody },
+        { num:'04', title:'Rádiusy', hint:'7 úrovní', body: radiusBody },
+        { num:'05', title:'Tiene & obrys', hint:'3 úrovne', body: shadowBody },
+        { num:'06', title:'Komponenty', hint:'z reálnych obrazoviek', body: compBody },
+        { num:'07', title:'CSS premenné', hint:'copy · paste', body: tokensBody },
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
