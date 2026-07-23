@@ -635,7 +635,17 @@ def main():
                 nakup.append(item)
             if priced == 0:
                 continue
-            spolahlive = priced >= max(1, (total + 1) // 2)  # aspoň polovica surovín
+            # spoľahlivosť: aspoň polovica surovín ocenená A ZÁROVEŇ ocenené
+            # suroviny pokrývajú >= 80 % známej hmotnosti receptu — inak by
+            # lacné základy (soľ, korenie s bežnou cenou) "pretlačili" recept
+            # aj keď hlavná surovina (mäso) cenu nemá
+            known_g = sum(i["mnozstvo_g"] for i in r["suroviny"]
+                          if i.get("id") and i.get("mnozstvo_g"))
+            priced_ids = {it["id"] for it in nakup if it["cena_v_recepte"] is not None}
+            priced_g = sum(i["mnozstvo_g"] for i in r["suroviny"]
+                           if i.get("id") in priced_ids and i.get("mnozstvo_g"))
+            weight_ok = (known_g == 0) or (priced_g / known_g >= 0.8)
+            spolahlive = priced >= max(1, (total + 1) // 2) and weight_ok
             ceny_za_porciu.append({
                 "obchod": obchod,
                 "cena_za_porciu": round(spolu / max(1, r["porcie"]), 2),
@@ -737,6 +747,13 @@ def main():
     if sus:
         print("\n⚠ PODOZRIVÉ CENY (over ručne — môže ísť o chybu parsovania):")
         for x in sus[:15]:
+            print("  •", x)
+    # konzistencia fotiek: každý recept má mať fotku a každá fotka recept
+    bez_fotky = [r["slug"] for r in recepty
+                 if not r["foto_url"] or not os.path.exists(r["foto_url"])]
+    if bez_fotky:
+        print(f"\n⚠ RECEPTY BEZ FOTKY ({len(bez_fotky)}) — vygeneruj cez .claude/skills/generovanie-fotiek:")
+        for x in bez_fotky:
             print("  •", x)
     if format_warnings:
         print()

@@ -75,7 +75,7 @@ podmienka, kategoria_letak }`
 `{ obchod, cena_za_porciu, usetris_za_porciu, napar_surovin, z_letaku, odhadom,
 spolu_surovin, spolahlive, platnost_od, platnost_do, nakup[] }`
 
-- `spolahlive` = aspoň polovica surovín ocenená → len vtedy zobrazuj cenu ako hlavný údaj.
+- `spolahlive` = aspoň polovica surovín ocenená **a** ocenené suroviny pokrývajú ≥ 80 % známej hmotnosti receptu (aby cena nechýbala práve hlavnej surovine) → len vtedy zobrazuj cenu ako hlavný údaj.
 - `z_letaku` vs `odhadom`: koľko cien je z aktuálneho letáku vs. z bežnej ceny.
   V UI: „2,15 € / porcia (3 suroviny odhadom)".
 - `platnost_od/do` = spoločné okno platnosti letákových cien receptu.

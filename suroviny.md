@@ -122,6 +122,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - sladká paprika
 - údená paprika
 - oregano
+- majoránka
 - bazalka
 - tymian
 - mäta
