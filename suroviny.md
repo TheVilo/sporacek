@@ -126,6 +126,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - tymian
 - mäta
 - rozmarín
+- majoránka
 - kôpor
 - petržlenová vňať
 - čerstvý koriander
