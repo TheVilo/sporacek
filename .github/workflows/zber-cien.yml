@@ -3,14 +3,20 @@ name: Zber cien (crawl4ai)
 # Automatický zber cien surovín z letákov cez scripts/crawl_ceny.py:
 # najnovšie letáky všetkých obchodov sa nájdu na Kimbine (aggregátor),
 # obrázky strán prečíta Gemini vision → ceny/*.json.
-# Beží na serveroch GitHubu — týždenne (štvrtok, nové letáky) aj na tlačidlo.
+#
+# Beží KAŽDÝ DEŇ ráno, ale lacno: obchody majú rôzne cykly letákov (Lidl od
+# pondelka, BILLA od stredy, Kaufland/COOP/Terno od štvrtka…), preto sa denne
+# len pozrie, či vyšiel nový leták. Už zozbierané letáky (podľa dátumu začiatku
+# platnosti) sa preskočia ZADARMO — Gemini beží len na reálne nový leták,
+# v deň keď vyjde. Platnosť akcií sa číta priamo z letáku, nie odhadom.
+#
 # Výsledok NEcommituje rovno do main, ale otvorí Pull Request, ktorý sa
 # skontroluje podľa skillu ceny-z-letaku (časť C) a až potom mergne.
-# Celý beh (6 obchodov) stojí rádovo desiatky centov mesačne (Gemini Flash).
+# Celý týždeň (6 obchodov) stojí rádovo ~0,25 € (Gemini Flash).
 
 on:
   schedule:
-    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky)
+    - cron: "0 5 * * *"     # denne 05:00 UTC (07:00 SK) — kontrola nových letákov
   workflow_dispatch:         # tlačidlo "Run workflow" v záložke Actions
     inputs:
       obchod:
@@ -42,6 +48,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements-crawl.txt
           python -m playwright install --with-deps chromium
+
+      # Dedup aj proti čakajúcemu (ešte nezmergovanému) cenovému PR: stiahni
+      # jeho ceny/*.json do pracovného adresára, nech sa ten istý leták
+      # nezbiera znova každý deň, kým PR čaká na kontrolu.
+      - name: Načítaj už zozbierané ceny z čakajúceho PR
+        run: |
+          if git fetch origin zber-cien/auto 2>/dev/null; then
+            git checkout FETCH_HEAD -- ceny/ 2>/dev/null || true
+            echo "ceny/ doplnené z čakajúceho PR (zber-cien/auto)"
+          else
+            echo "(žiadny čakajúci PR)"
+          fi
 
       # Gemini vision číta obrázky strán letákov (akciové ceny). Kľúč sa berie zo
       # secret GEMINI_API_KEY (Settings → Secrets and variables → Actions). Bez

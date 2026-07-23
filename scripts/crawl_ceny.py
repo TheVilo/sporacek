@@ -235,6 +235,7 @@ def _store(kluc: str) -> dict:
     """Doplní odvodené polia (zdroj_kontroly, poznamka_default) k STORES záznamu."""
     s = dict(STORES[kluc])
     s.setdefault("mode", "jsonld")
+    s["_kluc"] = kluc  # pre dedup (názov cieľového súboru) v crawl_kimbino
     s["zdroj_kontroly"] = _zdroj(s["mode"])
     s["poznamka_default"] = "bežná cena z e-shopu" if s["typ"] == "bezna" else ""
     return s
@@ -395,6 +396,29 @@ def _kimbino_strany(html: str) -> list[str]:
     return [seen[p] for p in sorted(seen)]
 
 
+def _kimbino_platnost(letak_url: str, html: str) -> str | None:
+    """Platnosť letáku priamo z Kimbina — žiadny odhad.
+
+    Začiatok je v URL letáku (…-od-stvrtka-23-07-2026-<id>/). Koniec sa hľadá
+    v texte stránky ako rozsah "23.07.2026 - 29.07.2026" so ZHODNÝM začiatkom
+    (na stránke bývajú aj rozsahy iných letákov); keď sa nenájde, začiatok + 6 dní
+    (bežný týždenný cyklus).
+    """
+    import re as _re
+    m = _re.search(r'(\d{2})-(\d{2})-(\d{4})-\d+/?$', letak_url)
+    if not m:
+        return None
+    zac = date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+    zac_txt = f"{m.group(1)}.{m.group(2)}.{m.group(3)}"
+    kon = zac + timedelta(days=6)
+    for r in _re.finditer(
+            r'(\d{2}\.\d{2}\.\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4})', html or ""):
+        if r.group(1) == zac_txt:
+            kon = date(int(r.group(4)), int(r.group(3)), int(r.group(2)))
+            break
+    return f"{zac.isoformat()} - {kon.isoformat()}"
+
+
 async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
     """Kimbino leták (obrázky strán) → Gemini vision prečíta ceny. Vráti surové položky."""
     import base64
@@ -432,11 +456,31 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
                 return []
             letak_url = "https://www.kimbino.sk" + m.group(1)
             print(f"      {store['obchod']}: najnovší leták → {letak_url}")
+
+            # Skutočná platnosť letáku (každý obchod má iný cyklus: Lidl od
+            # pondelka, BILLA od stredy, Kaufland od štvrtka…) + dedup: keď už
+            # je leták s týmto začiatkom v ceny/, preskoč ho ZADARMO (žiadne
+            # Gemini). Vďaka tomu môže kontrola bežať každý deň a zbiera sa
+            # vždy len reálne nový leták, v deň keď vyjde.
+            platnost = _kimbino_platnost(letak_url, "")
+            if platnost:
+                zac = platnost.split(" - ")[0]
+                ciel = CENY_DIR / f"{store['_kluc']}-{zac}.json"
+                if ciel.exists():
+                    print(f"⏭  {store['obchod']}: leták od {zac} už je zozbieraný "
+                          f"({ciel.name}) — preskočené.")
+                    store["_preskocene"] = True
+                    return []
+
             res = await crawler.arun(url=letak_url, config=CrawlerRunConfig())
             if not res.success:
                 print(f"⚠  {store['obchod']}: leták sa nenačítal — "
                       f"{getattr(res, 'error_message', '?')}")
                 return []
+            # spresni koniec platnosti z textu stránky letáku
+            platnost = _kimbino_platnost(letak_url, res.html or "") or platnost
+            if platnost:
+                store["_platnost"] = platnost
 
     strany = _kimbino_strany(res.html or "")
     if not strany:
@@ -606,10 +650,14 @@ def spracuj(kluc: str, platnost: str, api_key: str | None,
         print(f"⏭  {kluc}: preskočené (nemá URL — doplň link do STORES).")
         return False
     raw = asyncio.run(crawl(store, api_key, sample=sample))
+    # kimbino režim prečíta skutočnú platnosť z letáku (Lidl od pondelka,
+    # BILLA od stredy…) — má prednosť pred odhadom štvrtok–streda
+    platnost = store.get("_platnost", platnost)
     strany = 0
     polozky = [p for p in (normalizuj_polozku(r, store, platnost) for r in raw) if p]
     if not polozky:
-        print(f"⚠  {kluc}: nič sa nevyextrahovalo (over URL / stránku).")
+        if not store.get("_preskocene"):  # dedup skip už má vlastný výpis
+            print(f"⚠  {kluc}: nič sa nevyextrahovalo (over URL / stránku).")
         return False
 
     data = poskladaj_json(polozky, store, platnost, strany)
