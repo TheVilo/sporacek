@@ -5,7 +5,7 @@ description: Použi keď treba spracovať leták obchodu do cenovej databázy (c
 
 # Spracovanie letáku do cenovej databázy (`ceny/`)
 
-Pravidlá cenovej databázy sú v koreňovom `CLAUDE.md` (sekcia „Cenová databáza `ceny/`"). Tento skill dopĺňa: **(A)** hotový prompt pre Gemini, ktorý dáva používateľ, a **(B)** môj postup na kontrolu a import JSON-u do `ceny/`.
+Pravidlá cenovej databázy sú v `znalostna-baza/architektura.md` (sekcia „Cenová databáza `ceny/`"). Tento skill dopĺňa: **(A)** hotový prompt pre Gemini, ktorý dáva používateľ, a **(B)** môj postup na kontrolu a import JSON-u do `ceny/`.
 
 Používateľ typicky spraví JSON z letáku cez **Gemini** (v inej appke) a prinesie ho sem s PDF na overenie. Gemini nemá „skilly" — dáva sa mu iba **prompt** (časť A).
 

@@ -5,7 +5,7 @@ description: Použi na údržbu hlavnej databázy (docs/data/databaza.json) — 
 
 # Údržba hlavnej databázy
 
-Celá architektúra je v `CLAUDE.md` (sekcia „Hlavná databáza pre appku") a schéma výstupu v `docs/data/SCHEMA.md`. Tento skill je pracovný postup pre opakovanú údržbu.
+Celá architektúra je v `znalostna-baza/architektura.md` (sekcia „Hlavná databáza pre appku") a schéma výstupu v `docs/data/SCHEMA.md`. Tento skill je pracovný postup pre opakovanú údržbu.
 
 ## Základný cyklus
 
