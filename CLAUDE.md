@@ -58,6 +58,13 @@ Nenačítavaj skill, ak práve nerobíš daný workflow — šetrí to kontext.
 
 Dátový model a jeho pravidlá (cenová databáza `ceny/`, generovanie `databaza.json`, alergény/diéty, `trvanlivost`, `gramy_za_ks`, špajža, social obsah, formát receptu, taxonómia tagov, živé stránky a ich URL, viacero obchodov) → **`znalostna-baza/architektura.md`**. Číta sa len keď reálne pracuješ s daným podsystémom.
 
+## Šetrenie tokenov (dôležité, čítaj vždy)
+
+- **`docs/data/databaza.json` nikdy nečítaj do kontextu** (2,6 MB ≈ 660-tisíc tokenov) — pozri invariant 4 vyššie.
+- **`ceny/` čítaj len pre obchod, ktorý práve riešiš** (napr. `ceny/lidl-*.json`), nikdy všetkých 8 súborov naraz „pre istotu" — to je ~85-tisíc tokenov. Ak treba porovnanie naprieč obchodmi, over si najprv, či to nevie priamo stránka `docs/ceny.html` (počíta to naživo v prehliadači).
+- **Pri hromadných operáciách na receptoch** (napr. „skontroluj všetky recepty na X") **nečítaj všetkých 117 súborov naraz** — buď to zúž (konkrétne tagy/suroviny cez `grep`), alebo deleguj cez `Agent`/`Explore`, nech sa surové súbory nehromadia v hlavnom kontexte.
+- **Model:** na bežnú prácu (recept, leták, aliasy, fotka) stačí štandardný model — nepoužívaj drahší model „pre istotu". Nová/samostatná úloha → radšej nová session než dlhé naťahovanie jednej konverzácie (kontext sa platí znova pri každej odpovedi).
+
 ## Dôležité upozornenia
 
 - **Leták je len dočasný vstup.** Trvalá hodnota = databáza receptov — nesmie sa robiť dvakrát, preto zapisuj dôsledne a konzistentne.
