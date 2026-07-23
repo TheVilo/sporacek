@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Halved hard-boiled eggs in a smooth pale mustard cream sauce, served beside boiled potatoes on a minimalist matte plate over a smooth light wood table, sprinkled with fresh chives. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Halved hard-boiled eggs, cut side up showing the yolk, arranged in a smooth pale creamy mustard sauce (light yellowish), with boiled potatoes on the side, on a minimalist matte plate over a smooth light wood table, sprinkled with fresh chives. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
 
 ---
 
