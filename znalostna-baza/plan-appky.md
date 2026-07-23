@@ -49,3 +49,16 @@ výslovnej požiadavky používateľa.
 - **Fáza 6**: výber hostingu backendu sa rieši až vtedy (žiadna registrácia
   vopred).
 - **Pred fázou 7**: Apple Developer Program — 99 USD/rok.
+
+### E-maily na doméne (dohodnuté)
+
+Developer účty sa registrujú na doménové adresy (nie súkromný Gmail),
+bez diakritiky, rolové:
+
+- `dev@sporacek.sk` — login/vlastník developer účtov (Google Play, Apple).
+  Google účet sa dá vytvoriť s nedomácou adresou („použiť existujúcu").
+- `podpora@sporacek.sk` — verejný support e-mail v Store listingu
+  (povinný, bude dostávať spam — zámerne iná než login adresa).
+- Doména musí poštu reálne prijímať (stačí forwarding — Cloudflare Email
+  Routing / registrátor), inak hrozí zmeškanie overovacích/policy mailov
+  a suspendácia účtu. Na dev účte povinne 2FA + záložný telefón/e-mail.
