@@ -42,10 +42,20 @@ výslovnej požiadavky používateľa.
 
 ## Účty / registrácie / náklady (kedy čo treba)
 
-- **Teraz (fázy 0–4): nič.** Hosting obsahu = GitHub Pages (beží), doména
-  beží, Gemini API na fotky beží. Žiadny server, žiadne nové registrácie.
-- **Pred fázou 5**: Google Play Developer účet — jednorazovo 25 USD,
-  registrácia trvá pár dní (identita), vybaviť s predstihom.
+- **Teraz (fázy 0–4): nič, ani Play Developer účet.** Hosting obsahu =
+  GitHub Pages (beží), doména beží, Gemini API na fotky beží. Testovanie
+  appky je zadarmo bez akejkoľvek registrácie: vlastný telefón cez USB
+  (Android Studio → Run), emulátor, alebo zdieľanie buildu s pár ľuďmi cez
+  **Firebase App Distribution** (zadarmo, obdoba TestFlightu — žiadny Play
+  poplatok, žiadny limit testerov). Play účet sa **nedá** obísť len pre
+  interný testing (Google vyžaduje $25 registráciu pre akýkoľvek prístup
+  do Play Console, aj internal track) — preto sa mu vyhýbame, kým netreba.
+- **Pred fázou 5** (Play Internal/Closed Testing): Google Play Developer
+  účet — jednorazovo 25 USD, registrácia trvá pár dní (identita), vybaviť
+  s predstihom. Počítaj aj s tým, že Google od nových účtov vyžaduje
+  **closed testing s min. 12 testermi počas 14 dní** pred pustením appky
+  do produkcie — dôvod navyše otestovať poriadne cez Firebase zadarmo
+  najprv a Play účet založiť až tesne pred touto fázou.
 - **Fáza 6**: výber hostingu backendu sa rieši až vtedy (žiadna registrácia
   vopred).
 - **Pred fázou 7**: Apple Developer Program — 99 USD/rok.
