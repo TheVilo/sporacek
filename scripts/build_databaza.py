@@ -109,11 +109,18 @@ def parse_package(mnozstvo):
         return {"qty": 1000, "unit": "g"}
     if re.search(r"cena\s*za\s*1\s*l\b", s):
         return {"qty": 1000, "unit": "ml"}
-    m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks)\b", s)
-    if not m:
-        return None
-    qty = float(m.group(1).replace(",", "."))
-    unit = m.group(2)
+    # multibalenie "4 × 100 g" = 400 g (nie 100!)
+    m = re.search(r"(\d+)\s*[×x]\s*(\d+[.,]?\d*)\s*(kg|g|ml|l|ks)\b", s)
+    if m:
+        n = int(m.group(1))
+        qty = float(m.group(2).replace(",", ".")) * n
+        unit = m.group(3)
+    else:
+        m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks)\b", s)
+        if not m:
+            return None
+        qty = float(m.group(1).replace(",", "."))
+        unit = m.group(2)
     if unit == "kg":
         return {"qty": qty * 1000, "unit": "g"}
     if unit == "l":
@@ -121,22 +128,42 @@ def parse_package(mnozstvo):
     return {"qty": qty, "unit": unit}
 
 # ---------- množstvo v recepte (rovnaká logika ako docs/vyber.html) ----------
+# presné definície kuchynských mier a slovných množstiev (gramy, ak nie je
+# uvedené inak; pri PL/ČL a pod. sa jednotka g/ml preberá z cieľového balenia)
+LYZICA_G = 15      # 1 PL / polievková lyžica
+LYZICKA_G = 5      # 1 ČL / čajová lyžička
+STIPKA_G = 0.5     # štipka
+PODLA_CHUTI_G = 2  # "podľa chuti" / "—" (soľ, korenie…) — nominálny odhad
+VETVICKA_G = 2     # 1 vetvička bylinky ("pár vetvičiek" = 5 g)
+PAR_LISTKOV_G = 2  # "pár lístkov" (bazalka…)
+PLATOK_G = 15      # 1 plátok (syr, citrón…)
+ZVAZOK_G = 30      # 1 zväzok byliniek
+HRST_G = 30        # 1 hrsť
+KVAPKY_G = 1       # "pár kvapiek"
+NA_VYPRAZANIE_G = 30   # "na vyprážanie" (olej)
+NA_POSYP_G = 5     # "na posyp/podsypanie/ozdobu/podávanie"
+CM_G = 5           # 1 cm koreňa (zázvor) ~ 5 g; "kúsok" bez rozmeru ~ 10 g
+
 def parse_recipe_qty(mnozstvo, pkg_unit_hint):
     if not mnozstvo:
         return None
-    s = mnozstvo.lower()
+    s = mnozstvo.lower().strip()
+    # unicode zlomky -> desatinné čísla (½ ČL, ¼ ks…)
+    for frac, dec in (("½", "0.5"), ("¼", "0.25"), ("¾", "0.75"),
+                      ("⅓", "0.33"), ("⅔", "0.67"), ("⅛", "0.125")):
+        s = s.replace(frac, dec)
+    hint_unit = "ml" if pkg_unit_hint == "ml" else "g"
+
     # POZOR: lyžica/lyžička kontroluj PRED generickými jednotkami — inak by
     # „1 lyžica" chytilo „l" (liter) zo slova lyžica. PL/ČL = objemový odhad.
     m = re.search(r"(\d+[.,]?\d*)\s*(čl|čajov\w*\s*lyžičk\w*|lyžičk\w*)\b", s)
     if m:
-        qty = float(m.group(1).replace(",", "."))
-        unit = "ml" if pkg_unit_hint == "ml" else "g"
-        return {"qty": qty * 5, "unit": unit, "approx": True}
+        return {"qty": float(m.group(1).replace(",", ".")) * LYZICKA_G,
+                "unit": hint_unit, "approx": True}
     m = re.search(r"(\d+[.,]?\d*)\s*(pl|polievkov\w*\s*lyžic\w*|lyžic\w*)\b", s)
     if m:
-        qty = float(m.group(1).replace(",", "."))
-        unit = "ml" if pkg_unit_hint == "ml" else "g"
-        return {"qty": qty * 15, "unit": unit, "approx": True}
+        return {"qty": float(m.group(1).replace(",", ".")) * LYZICA_G,
+                "unit": hint_unit, "approx": True}
     # generické jednotky — \b zabráni, aby „l" chytilo začiatok iného slova
     m = re.search(r"(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)\b", s)
     if m:
@@ -149,6 +176,42 @@ def parse_recipe_qty(mnozstvo, pkg_unit_hint):
         if unit == "l":
             return {"qty": qty * 1000, "unit": "ml"}
         return {"qty": qty, "unit": unit}
+
+    # slovné množstvá (vždy odhad)
+    def approx(qty, unit="g"):
+        return {"qty": qty, "unit": unit, "approx": True}
+    if "štipka" in s:
+        return approx(STIPKA_G)
+    if "podľa chuti" in s or s in ("—", "-", "–"):
+        return approx(PODLA_CHUTI_G)
+    if "vyprážanie" in s or "vypráž" in s:
+        return approx(NA_VYPRAZANIE_G, hint_unit)
+    if "posyp" in s or "podsypanie" in s or "ozdob" in s or "podávanie" in s:
+        return approx(NA_POSYP_G)
+    if "kvapiek" in s or "kvapky" in s:
+        return approx(KVAPKY_G, hint_unit)
+    m = re.search(r"(\d+[.,]?\d*)\s*plát", s)
+    if m:
+        return approx(float(m.group(1).replace(",", ".")) * PLATOK_G)
+    m = re.search(r"(\d+[.,]?\d*)\s*vetvičk", s)
+    if m:
+        return approx(float(m.group(1).replace(",", ".")) * VETVICKA_G)
+    if "vetvičiek" in s or "vetvičk" in s:
+        return approx(5)  # "pár vetvičiek"
+    if "lístk" in s:
+        return approx(PAR_LISTKOV_G)
+    m = re.search(r"(\d+[.,]?\d*)\s*zväz", s)
+    if m:
+        return approx(float(m.group(1).replace(",", ".")) * ZVAZOK_G)
+    if "zväzok" in s:
+        return approx(ZVAZOK_G)
+    if "hrsť" in s or "hrst" in s:
+        return approx(HRST_G)
+    m = re.search(r"kúsok[^\d]*(\d+[.,]?\d*)\s*cm", s)
+    if m:
+        return approx(float(m.group(1).replace(",", ".")) * CM_G)
+    if "kúsok" in s:
+        return approx(10)
     return None
 
 # ---------- matcher: názov (leták/recept) -> id suroviny ----------
@@ -157,7 +220,9 @@ class Matcher:
         # exact index: normovaný alias -> id ; + zoznam (aliasKey,id) na substring
         self.exact = {}
         self.phrases = []  # (alias_norm, id) zoradené od najdlhšieho
+        self.vyluc = {}    # id -> [norm. podreťazce, pri ktorých sa id NEsmie použiť]
         for s in suroviny:
+            self.vyluc[s["id"]] = [norm(v) for v in s.get("_vyluc", [])]
             for a in s["_alias_all"]:
                 k = norm(a)
                 if len(k) < 3:
@@ -166,20 +231,23 @@ class Matcher:
                 self.phrases.append((k, s["id"]))
         self.phrases.sort(key=lambda x: -len(x[0]))
 
+    def _blocked(self, iid, k):
+        return any(v and v in k for v in self.vyluc.get(iid, []))
+
     def match(self, nazov):
         k = norm(nazov)
         if len(k) < 3:
             return None
-        if k in self.exact:
+        if k in self.exact and not self._blocked(self.exact[k], k):
             return self.exact[k]
         # substring: alias sa nachádza v názve (najdlhší alias vyhráva)
         for ak, iid in self.phrases:
-            if ak in k:
+            if ak in k and not self._blocked(iid, k):
                 return iid
         # obrátene: názov je súčasťou aliasu (kratší recept. názov)
         best, bd = None, 1e9
         for ak, iid in self.phrases:
-            if k in ak:
+            if k in ak and not self._blocked(iid, k):
                 d = len(ak) - len(k)
                 if d < bd:
                     best, bd = iid, d
@@ -295,11 +363,25 @@ def main():
         if spotreba is None and trv == "cerstve":
             spotreba = DEFAULT_SPOTREBA_BY_CAT.get(c["kategoria"])
         alias_all = [c["nazov"]] + list(extra.get("aliasy", []))
+        # bežná cena mimo akcie (fallback pre suroviny, čo nebývajú v letáku —
+        # soľ, korenie, múka… User ich väčšinou má doma, ale recept s nimi
+        # musí počítať, inak nikdy nedostane úplnú cenu.)
+        bezna = None
+        if isinstance(extra.get("bezna_cena"), (int, float)) and extra.get("bezne_balenie"):
+            bpkg = parse_package(extra["bezne_balenie"])
+            if bpkg and bpkg.get("qty"):
+                bezna = {"cena": extra["bezna_cena"], "balenie": extra["bezne_balenie"],
+                         "qty": bpkg["qty"], "unit": bpkg["unit"]}
         s = {"id": c["id"], "nazov": c["nazov"], "kategoria": c["kategoria"],
              "jednotka": unit, "trvanlivost": trv,
              "gramy_za_ks": extra.get("gramy_za_ks"),  # priem. hmotnosť 1 ks (na prepočet a špajžu)
              "spotreba_dni": spotreba,                 # odhad "spotrebuj do X dní" (pre špajžu)
              "alergeny": list(extra.get("alergeny", [])),
+             "sezona": extra.get("sezona"),            # mesiace sezóny (ovocie/zelenina)
+             "bezna_cena": extra.get("bezna_cena"),
+             "bezne_balenie": extra.get("bezne_balenie"),
+             "_bezna": bezna,
+             "_vyluc": list(extra.get("vyluc", [])),
              "_alias_all": alias_all, "ceny": []}
         suroviny.append(s)
         id_index[c["id"]] = s
@@ -342,6 +424,10 @@ def main():
                 "platnost_do": do,
                 "podmienka": p.get("poznamka") or None,
                 "kategoria_letak": p.get("kategoria"),
+                # normalizovaný názov produktu (bez diakritiky) — nech appka
+                # vie deterministicky matchovať sledované produkty ("rajo
+                # maslo") naprieč týždňami bez vlastného porovnávania reťazcov
+                "nazov_norm": norm(p["nazov"]),
                 # jednotková cena (€ za 1 g/ml/ks) — nech appka neprepočítava
                 "jednotkova_cena": (round(p["zlavnena_cena"] / pkg["qty"], 5)
                                     if pkg and pkg.get("qty") and isinstance(p.get("zlavnena_cena"), (int, float))
@@ -352,9 +438,11 @@ def main():
 
     # na cenenie receptov len najnovší leták per obchod
     catalog_by_store = {}  # obchod -> id -> [polozky z najnovšieho letáku]
+    current_by_iid = {}    # id -> [aktuálne položky zo všetkých obchodov]
     for letak_od, iid, rec in all_records:
         if letak_od == letak_od_by_store.get(rec["obchod"]):
             catalog_by_store.setdefault(rec["obchod"], {}).setdefault(iid, []).append(rec)
+            current_by_iid.setdefault(iid, []).append(rec)
 
     # ---- štatistiky per surovina (bežná cena z celej histórie) ----
     # bežná jednotková cena = medián z pôvodných (nezľavnených) cien; kde
@@ -379,6 +467,20 @@ def main():
             }
         else:
             s["statistiky"] = None
+        # kde je surovina PRÁVE TERAZ najlacnejšia (len aktuálne letáky) —
+        # pre watchlist, špajzu aj "kde kúpiť" bez počítania v appke
+        best_now = None
+        for c in current_by_iid.get(s["id"], []):
+            if c["jednotkova_cena"] is None or c["balenie_jednotka"] != s["jednotka"]:
+                continue
+            if best_now is None or c["jednotkova_cena"] < best_now["jednotkova_cena"]:
+                best_now = c
+        s["aktualne_najlacnejsie"] = ({
+            "obchod": best_now["obchod"], "nazov_v_letaku": best_now["nazov_v_letaku"],
+            "zlavnena_cena": best_now["zlavnena_cena"], "mnozstvo": best_now["mnozstvo"],
+            "jednotkova_cena": best_now["jednotkova_cena"], "zlava": best_now["zlava"],
+            "podmienka": best_now["podmienka"], "platnost_do": best_now["platnost_do"],
+        } if best_now else None)
 
     # ---- recepty -> id + cena za porciu per obchod ----
     recepty, format_warnings = parse_recipes()
@@ -386,16 +488,22 @@ def main():
     stores = sorted(catalog_by_store.keys())
 
     def best_price_for(iid, obchod):
-        """Najlepšie oceniteľné balenie danej suroviny v obchode (najnižšia jedn. cena)."""
+        """Najlepšie oceniteľné balenie danej suroviny v obchode (najnižšia jedn. cena).
+        Balenie "za kus" (šalát, citróny…) sa prepočíta na gramy cez gramy_za_ks,
+        nech vie oceniť aj recepty s množstvom v gramoch."""
+        gpk = id_index[iid].get("gramy_za_ks")
         best = None
         for rec in catalog_by_store.get(obchod, {}).get(iid, []):
             if not isinstance(rec["zlavnena_cena"], (int, float)):
                 continue
             if not rec["balenie_qty"]:
                 continue
-            ppu = rec["zlavnena_cena"] / rec["balenie_qty"]
+            qty, unit = rec["balenie_qty"], rec["balenie_jednotka"]
+            if unit == "ks" and gpk:
+                qty, unit = qty * gpk, "g"
+            ppu = rec["zlavnena_cena"] / qty
             if best is None or ppu < best["_ppu"]:
-                best = {**rec, "_ppu": ppu}
+                best = {**rec, "balenie_qty": qty, "balenie_jednotka": unit, "_ppu": ppu}
         return best
 
     for r in recepty:
@@ -444,12 +552,20 @@ def main():
         r["alergeny"] = sorted(rec_alerg)
         r["vegetarianske"] = vegetarianske
         r["veganske"] = veganske
+        # sezónne suroviny receptu — appka/social z toho vie "v júli má tento
+        # recept marhule v sezóne" (mesiace sú nadčasové, nezastarajú)
+        r["sezonne_suroviny"] = [
+            {"id": ing["id"], "mesiace": id_index[ing["id"]]["sezona"]}
+            for ing in r["suroviny"]
+            if ing.get("id") and id_index[ing["id"]].get("sezona")
+        ]
 
         # cena za porciu per obchod
         ceny_za_porciu = []
         total = len(r["suroviny"])
         for obchod in stores:
             spolu, usetri, priced = 0.0, 0.0, 0
+            z_letaku, odhadom = 0, 0
             plat_od, plat_do = None, None
             nakup = []  # konkrétny produkt na kúpu (so značkou) — pre nákupný zoznam
             for ing in r["suroviny"]:
@@ -457,12 +573,24 @@ def main():
                 if not iid:
                     continue
                 bp = best_price_for(iid, obchod)
+                if not bp and id_index[iid]["_bezna"]:
+                    # fallback: bežná cena mimo akcie (soľ, korenie, múka…) —
+                    # nie je v letáku, ale recept s ňou musí počítať
+                    b = id_index[iid]["_bezna"]
+                    bp = {"nazov_v_letaku": None, "mnozstvo": b["balenie"],
+                          "balenie_qty": b["qty"], "balenie_jednotka": b["unit"],
+                          "zlavnena_cena": b["cena"], "povodna_cena": None,
+                          "zlava": None, "podmienka": None,
+                          "platnost_od": None, "platnost_do": None,
+                          "zdroj_ceny": "bezna"}
                 if not bp:
                     continue
+                zdroj = bp.get("zdroj_ceny", "letak")
                 item = {
                     "id": iid,
                     "surovina": id_index[iid]["nazov"],
-                    "kupit": bp["nazov_v_letaku"],   # konkrétny produkt/značka z letáku
+                    "kupit": bp["nazov_v_letaku"],   # konkrétny produkt/značka z letáku (None pri bežnej cene)
+                    "zdroj_ceny": zdroj,             # "letak" | "bezna" (odhad mimo akcie)
                     "balenie": bp["mnozstvo"],
                     "balenie_qty": bp["balenie_qty"],           # číselne (napr. 500)
                     "balenie_jednotka": bp["balenie_jednotka"], # g / ml / ks
@@ -487,6 +615,10 @@ def main():
                     cost = (bp["zlavnena_cena"] / bp["balenie_qty"]) * qty_pkg
                     spolu += cost
                     priced += 1
+                    if zdroj == "letak":
+                        z_letaku += 1
+                    else:
+                        odhadom += 1
                     item["cena_v_recepte"] = round(cost, 2)
                     item["mnozstvo_g"] = round(qty_pkg) if bp["balenie_jednotka"] in ("g", "ml") else None
                     # úspora = rozdiel oproti pôvodnej (nezľavnenej) cene,
@@ -509,6 +641,8 @@ def main():
                 "cena_za_porciu": round(spolu / max(1, r["porcie"]), 2),
                 "usetris_za_porciu": round(usetri / max(1, r["porcie"]), 2),
                 "napar_surovin": priced,
+                "z_letaku": z_letaku,     # koľko surovín má cenu z aktuálneho letáku
+                "odhadom": odhadom,       # koľko z bežnej ceny (odhad mimo akcie)
                 "spolu_surovin": total,
                 "spolahlive": spolahlive,
                 "platnost_od": plat_od,
@@ -528,8 +662,21 @@ def main():
             ing.setdefault("id", None)
 
     # ---- zapíš databázu ----
+    # História cien v databaza.json sa drží len ~12 týždňov dozadu (plná
+    # história ostáva v ceny/*.json) — inak by súbor rástol donekonečna.
+    # Štatistiky (bezna_jednotkova_cena) sú už spočítané z PLNEJ histórie.
+    newest = max(letak_od_by_store.values(), default=None)
+    cutoff = None
+    if newest:
+        from datetime import date, timedelta
+        y, m, dd = map(int, newest.split("-"))
+        cutoff = (date(y, m, dd) - timedelta(days=90)).isoformat()
     for s in suroviny:
         del s["_alias_all"]
+        del s["_bezna"]
+        del s["_vyluc"]
+        if cutoff:
+            s["ceny"] = [c for c in s["ceny"] if (c.get("platnost_od") or newest) >= cutoff]
         # zoraď ceny podľa obchodu a dátumu
         s["ceny"].sort(key=lambda c: (c["obchod"], c.get("platnost_od") or ""))
 
@@ -550,7 +697,9 @@ def main():
     }
     os.makedirs("docs/data", exist_ok=True)
     with open("docs/data/databaza.json", "w", encoding="utf-8") as fh:
-        json.dump(out, fh, ensure_ascii=False, indent=2)
+        # kompaktný JSON — súbor číta appka, nie človek; gzip na GitHub Pages
+        # ho zrazí na zlomok. Na čítanie schémy je docs/data/SCHEMA.md.
+        json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
 
     # ---- report pokrytia ----
     sur_s_cenou = sum(1 for s in suroviny if s["ceny"])
@@ -567,6 +716,28 @@ def main():
     print(f"suroviny v receptoch:        {ingr_total}")
     print(f"  napárované na id:          {ingr_mapped} ({100*ingr_mapped//max(1,ingr_total)} %)")
     print(f"letákové názvy nespárované:  {len(unmatched_catalog)} (z rôznych obchodov)")
+    # sanity-check: podozrivé ceny (chyba parsovania sa prejaví ako extrém —
+    # presne tak sa kedysi našla chyba "1 lyžica = 1 liter")
+    sus = []
+    for r in recepty:
+        for c in r["ceny_za_porciu"]:
+            if c["spolahlive"] and c["cena_za_porciu"] > 8:
+                sus.append(f"{r['slug']} @ {c['obchod']}: {c['cena_za_porciu']} €/porcia")
+    for s in suroviny:
+        st = s.get("statistiky")
+        if not st:
+            continue
+        for c in s["ceny"]:
+            # porovnávaj len rovnaké jednotky (kus vs. gram nie je porovnateľné)
+            if c["balenie_jednotka"] != s["jednotka"]:
+                continue
+            if c["jednotkova_cena"] and st["bezna_jednotkova_cena"] and \
+               c["jednotkova_cena"] > 5 * st["bezna_jednotkova_cena"]:
+                sus.append(f"{s['id']}: {c['nazov_v_letaku']} ({c['obchod']}) jednotková {c['jednotkova_cena']} vs bežná {st['bezna_jednotkova_cena']}")
+    if sus:
+        print("\n⚠ PODOZRIVÉ CENY (over ručne — môže ísť o chybu parsovania):")
+        for x in sus[:15]:
+            print("  •", x)
     if format_warnings:
         print()
         print("⚠ RECEPTY MIMO ŠTANDARDNÉHO FORMÁTU (všetky recepty musia byť rovnaké):")

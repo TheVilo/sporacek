@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Testy parsovania (chránia jadro pred regresiami)
+        run: pip install -q pytest && python3 -m pytest tests/ -q
       - name: Rebuild databázy
         run: python3 scripts/build_databaza.py
       - name: Commit ak sa zmenila
