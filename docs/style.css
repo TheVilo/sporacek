@@ -81,6 +81,12 @@ h1 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin: 0 0 6px; c
 
 /* search + tag filter (databáza receptov) */
 .controls { margin-bottom: 26px; }
+/* vyhľadávanie prilepené hneď pod hlavičkou pri scrollovaní - nech sa naň
+   nemusí naspäť skrolovať pri dlhých zoznamoch (117+ receptov) */
+.search-sticky {
+  position: sticky; top: var(--header-h, 52px); z-index: 15;
+  background: var(--paper); padding: 8px 0 10px; margin-bottom: 4px;
+}
 .search-input {
   width: 100%; font-family: inherit; font-size: .92rem; padding: 10px 14px; margin-bottom: 10px;
   border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--text);
@@ -196,6 +202,7 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 .lightbox-panel { width: 320px; flex-shrink: 0; padding: 22px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
 .lightbox-panel h3 { margin: 0; font-size: 1.05rem; color: var(--green-ink); text-wrap: balance; }
 .lightbox-panel .label { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--terracotta); font-weight: 800; }
+.lightbox-panel .tags { margin-bottom: 8px; }
 
 /* suroviny/postup vnútri okna - okno samo je už "otváracie miesto", netreba ďalšie <details> */
 .lightbox-section { border-top: 1px dashed var(--border); padding-top: 12px; }
