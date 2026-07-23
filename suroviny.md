@@ -60,6 +60,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - kaleráb
 - karfiol
 - špargľa
+- hrášok (mrazený)
 
 ## Ovocie
 - čučoriedky
@@ -167,4 +168,5 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - sezamové semienka
 - tatárska omáčka
 - brusnicová omáčka
+- majonéza
 - sušienky
