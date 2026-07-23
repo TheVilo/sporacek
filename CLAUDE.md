@@ -32,6 +32,7 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `docs/api/v1/` | **generované** statické API pre appky (Android/iOS) — needituj ručne, robí ho build |
 | `docs/fotky-nahlad/` | **generované** 320 px náhľady fotiek pre zoznamy (`scripts/generate_thumbs.py`) |
 | `docs/app/` | dizajnové tokeny appky (`tokens.json` + web/Compose témy) a style guide — detail `docs/app/README.md` |
+| `znalostna-baza/plan-appky.md` | **záväzný plán vývoja appky** (fázy, architektúra, čo je rozhodnuté) — čítaj pred každou prácou na appke |
 | `recepty/` | jeden súbor = jeden recept (nikdy neobsahuje cenu) |
 | `fotky/` | fotky receptov, pomenované podľa id (sú v repe) |
 | `tydne/` | výstup týždňa (leták → recepty → nákup → úspora) |
