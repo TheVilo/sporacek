@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of creamy parmesan risotto topped with large seared king prawns with a golden-pink crust, in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The prawns are sharply focused. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of grated parmesan. A modern brushed steel fork rests on a casually draped light grey linen napkin. Fresh chives and a lemon wedge add a credible, lived-in feel. Soft daylight.
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of creamy parmesan risotto topped with large seared king prawns with a golden-pink crust, in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The prawns are sharply focused. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of grated parmesan. A modern brushed steel fork rests on a casually draped light grey linen napkin. Fresh chives and a lemon wedge add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 

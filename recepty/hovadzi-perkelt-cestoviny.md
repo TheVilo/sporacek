@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, wider modern editorial table scene, 9:16 format, blending warm minimalism and a lived-in lifestyle aesthetic. Rich paprika beef stew in a centerpiece minimalist matte bowl on a smooth wood table, served over pasta. The scene is rich but clean: a softly wrinkled linen napkin, modern cutlery, a small side bowl of extra pasta, and a modern drinking glass. Fresh parsley generously garnishing the stew. Natural window light.
+A bright, wider modern editorial table scene, 9:16 format, blending warm minimalism and a lived-in lifestyle aesthetic. Rich paprika beef stew in a centerpiece minimalist matte bowl on a smooth wood table, served over pasta. The scene is rich but clean: a softly wrinkled linen napkin, modern cutlery, a small side bowl of extra pasta, and a modern drinking glass. Fresh parsley generously garnishing the stew. Natural window light. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 

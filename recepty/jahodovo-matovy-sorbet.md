@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of scoops of vivid pink strawberry sorbet in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The sorbet is sharply focused, glistening slightly as it melts. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of fresh strawberries. Fresh mint leaves scattered on top add a credible, lived-in feel. Soft daylight.
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of scoops of vivid pink strawberry sorbet in a sleek white ceramic bowl on a smooth light oak table, capturing an elevated home cooking aesthetic. The sorbet is sharply focused, glistening slightly as it melts. To add life, the background is beautifully blurred, showing a modern water glass and a small contemporary dish of fresh strawberries. Fresh mint leaves scattered on top add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 

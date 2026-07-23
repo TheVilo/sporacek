@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A slice of creamy baked curd cheese cake with peach slices on top on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. The whole cake sits in the softly blurred background. Crisp, diffused daylight.
+A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A slice of creamy baked curd cheese cake with peach slices on top on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. The whole cake sits in the softly blurred background. Crisp, diffused daylight. No text, no logo, no watermark in the image.
 
 ---
 

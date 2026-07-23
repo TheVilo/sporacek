@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Sliced turkey breast in a creamy mushroom sauce over pasta in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with grated parmesan. A casually draped linen cloth with a modern matte silver fork. Scattered fresh parsley around the bowl. Soft, airy natural window light.
+A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Sliced turkey breast in a creamy mushroom sauce over pasta in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with grated parmesan. A casually draped linen cloth with a modern matte silver fork. Scattered fresh parsley around the bowl. Soft, airy natural window light. No text, no logo, no watermark in the image.
 
 ---
 

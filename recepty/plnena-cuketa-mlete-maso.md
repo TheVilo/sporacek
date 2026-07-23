@@ -17,7 +17,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Zu
 | Surovina | Množstvo |
 |---|---|
 | Cuketa | 1 ks (väčšia) |
-| Mleté bravčové mäso | 200 g |
+| Bravčové mleté mäso | 200 g |
 | Ryža | 50 g |
 | Paradajky | 100 g |
 | Cibuľa | ½ ks |

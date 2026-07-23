@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden breaded chicken schnitzels served in a minimalist matte ceramic plate on a clean, smooth light wood table, next to buttery cauliflower florets. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. A pinch of parsley and a lemon wedge add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the crunchy golden coating. Film grain.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden breaded chicken schnitzels served in a minimalist matte ceramic plate on a clean, smooth light wood table, next to buttery cauliflower florets. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. A pinch of parsley and a lemon wedge add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the crunchy golden coating. Film grain. No text, no logo, no watermark in the image.
 
 ---
 

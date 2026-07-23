@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: pečený losos so zemiakmi a cuketou, plátok citróna vedľa, porcia na tmavšom oválnom tanieri položenom na drevenej krájacej doske. Záber mierne šikmo zhora, kuchynské pozadie. Prirodzené denné svetlo z okna, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — nôž položený vedľa dosky, drobné omrvinky alebo kvapka oleja na doske. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: pečený losos so zemiakmi a cuketou, plátok citróna vedľa, porcia na tmavšom oválnom tanieri položenom na drevenej krájacej doske. Záber mierne šikmo zhora, kuchynské pozadie. Prirodzené denné svetlo z okna, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — nôž položený vedľa dosky, drobné omrvinky alebo kvapka oleja na doske. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16. No text, no logo, no watermark in the image."
 
 ---
 

@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Segedínsky guláš — pork and sauerkraut stew where clearly visible shredded sauerkraut strands are mixed throughout the meat chunks in a creamy paprika sauce (not just meat in sauce — the shredded cabbage must be clearly visible), served over rice — in a matte geometric bowl sitting on a clean white quartz kitchen island. A casually wrinkled neutral napkin holds a modern brass fork. The blurred background adds editorial depth with a small dish of extra sauerkraut. Stray leaves of fresh parsley and a dash of pepper on the counter. Crisp, natural side-light highlighting the creamy paprika sauce. No text, no logo, no watermark in the image.
+A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Segedínsky guláš — pork and sauerkraut stew where clearly visible shredded sauerkraut strands are mixed throughout the meat chunks in a creamy paprika sauce (not just meat in sauce — the shredded cabbage must be clearly visible), served over rice — in a matte geometric bowl sitting on a clean white quartz kitchen island. A casually wrinkled neutral napkin holds a modern brass fork. The blurred background adds editorial depth with a small dish of extra sauerkraut. Stray leaves of fresh parsley and a dash of pepper on the counter. Crisp, natural side-light highlighting the creamy paprika sauce. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 

@@ -140,6 +140,8 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - balzamikový ocot
 - horčica
 - horčičné semienko
+- voda
+- ľad
 - cukor kryštálový
 - cukor trstinový
 - med

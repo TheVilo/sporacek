@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Tender chicken pieces in a creamy orange-red paprika sauce in a deep rustic bowl, garnished with fresh parsley, with a portion of cooked pasta beside it, on a clean, smooth light wood table. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Tender chicken pieces in a creamy orange-red paprika sauce in a deep rustic bowl, garnished with fresh parsley, with a portion of cooked pasta beside it, on a clean, smooth light wood table. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No visible steam or smoke rising from the food. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 

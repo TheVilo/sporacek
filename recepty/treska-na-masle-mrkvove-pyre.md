@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Pan-fried cod fillet in golden butter on top of smooth orange carrot purée, in a matte geometric bowl sitting on a clean white quartz kitchen island. A casually wrinkled neutral napkin holds a modern brass fork. The blurred background adds editorial depth with a small dish of lemon wedges. Stray leaves of fresh thyme and a dash of pepper on the counter. Crisp, natural side-light highlighting the golden butter glaze.
+A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Pan-fried cod fillet in golden butter on top of smooth orange carrot purée, in a matte geometric bowl sitting on a clean white quartz kitchen island. A casually wrinkled neutral napkin holds a modern brass fork. The blurred background adds editorial depth with a small dish of lemon wedges. Stray leaves of fresh thyme and a dash of pepper on the counter. Crisp, natural side-light highlighting the golden butter glaze. No text, no logo, no watermark in the image.
 
 ---
 

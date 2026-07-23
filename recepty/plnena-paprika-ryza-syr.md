@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Baked bell peppers stuffed only with white rice and melted golden cheese (no beans, no corn), sitting in a light tomato sauce in a rustic ceramic dish, a portion on a minimalist matte plate over a smooth light wood table. Fresh parsley on top, a softly wrinkled linen napkin and a modern matte fork beside it. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No text, no logo, no watermark in the image.
+A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Baked bell peppers stuffed only with white rice and melted golden cheese (no beans, no corn), sitting in a light tomato sauce in a rustic ceramic dish, a portion on a minimalist matte plate over a smooth light wood table. Fresh parsley on top, a softly wrinkled linen napkin and a modern matte fork beside it. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 

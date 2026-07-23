@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-"A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Authentic Slovak plnená paprika: whole bell peppers stuffed with seasoned ground pork and rice, fully submerged and swimming in a generous, thin, glossy, soup-like smooth tomato sauce (like a stew, not a thick paste dolloped on top) — one pepper halved to show the filling, in a deep modern matte bowl, centered on a smooth oak table. A casually draped linen cloth with a modern matte silver spoon nearby, since this is eaten like a soup. Soft, airy natural window light. No text, no logo, no watermark in the image."
+"A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Authentic Slovak plnená paprika: whole bell peppers stuffed with seasoned ground pork and rice, fully submerged and swimming in a generous, thin, glossy, soup-like smooth tomato sauce (like a stew, not a thick paste dolloped on top) — one pepper halved to show the filling, in a deep modern matte bowl, centered on a smooth oak table. A casually draped linen cloth with a modern matte silver spoon nearby, since this is eaten like a soup. Soft, airy natural window light. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon."
 
 ---
 

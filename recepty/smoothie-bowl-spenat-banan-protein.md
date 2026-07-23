@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of a vibrant green smoothie bowl made from spinach, banana and Greek yogurt, topped with fresh blueberries and pumpkin seeds, in a sleek matte ceramic bowl on a smooth light oak table, filling most of the frame, capturing an elevated home cooking aesthetic. The topping is sharply focused. To add life, the background is beautifully blurred, showing a small contemporary dish of extra blueberries and a modern water glass. A modern matte spoon rests on a casually draped light grey linen napkin. Scattered pumpkin seeds add a credible, lived-in feel. Soft daylight.
+A bright, airy, modern editorial food photograph in a vertical 9:16 format. A close-up of a vibrant green smoothie bowl made from spinach, banana and Greek yogurt, topped with fresh blueberries and pumpkin seeds, in a sleek matte ceramic bowl on a smooth light oak table, filling most of the frame, capturing an elevated home cooking aesthetic. The topping is sharply focused. To add life, the background is beautifully blurred, showing a small contemporary dish of extra blueberries and a modern water glass. A modern matte spoon rests on a casually draped light grey linen napkin. Scattered pumpkin seeds add a credible, lived-in feel. Soft daylight. No text, no logo, no watermark in the image.
 
 ---
 

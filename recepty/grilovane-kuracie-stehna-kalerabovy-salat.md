@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing an elevated home cooking style with grilled chicken thighs with a charred golden skin in a modern matte bowl on a clean oak surface. Right next to it is a contemporary dish of shredded kohlrabi salad with apple, tying into the meal. A modern brushed fork leans casually on the bowl. Fresh dill scattered naturally on the table for that authentic lifestyle touch. Soft, welcoming daylight.
+A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing an elevated home cooking style with grilled chicken thighs with a charred golden skin in a modern matte bowl on a clean oak surface. Right next to it is a contemporary dish of shredded kohlrabi salad with apple, tying into the meal. A modern brushed fork leans casually on the bowl. Fresh dill scattered naturally on the table for that authentic lifestyle touch. Soft, welcoming daylight. No text, no logo, no watermark in the image.
 
 ---
 

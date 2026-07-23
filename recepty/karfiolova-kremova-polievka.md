@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A warm, comforting top-down editorial food photo, 9:16 format, blending soft minimalism with a lived-in lifestyle feel. A smooth cream of cauliflower soup in a minimalist matte bowl, swirled with a touch of cream and topped with a few small toasted cauliflower florets, on a smooth wood table. A rustic slice of bread rests beside the bowl on a softly wrinkled linen napkin. Warm natural light.
+A warm, comforting top-down editorial food photo, 9:16 format, blending soft minimalism with a lived-in lifestyle feel. A smooth cream of cauliflower soup in a minimalist matte bowl, swirled with a touch of cream and topped with a few small toasted cauliflower florets, on a smooth wood table. A rustic slice of bread rests beside the bowl on a softly wrinkled linen napkin. Warm natural light. No text, no logo, no watermark in the image.
 
 ---
 

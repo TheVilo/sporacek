@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, wider modern editorial table scene, 9:16 format, blending warm minimalism and a lived-in lifestyle aesthetic. Golden-brown grilled lamb chops with a rosemary-garlic crust, in a centerpiece minimalist matte plate on a smooth wood table, next to a portion of creamy layered potato gratin with a golden bubbling top. The scene is rich but clean: a softly wrinkled linen napkin, modern cutlery, and a small side bowl with extra rosemary sprigs. Fresh rosemary generously garnishing the lamb. Natural window light.
+A bright, wider modern editorial table scene, 9:16 format, blending warm minimalism and a lived-in lifestyle aesthetic. Golden-brown grilled lamb chops with a rosemary-garlic crust, in a centerpiece minimalist matte plate on a smooth wood table, next to a portion of creamy layered potato gratin with a golden bubbling top. The scene is rich but clean: a softly wrinkled linen napkin, modern cutlery, and a small side bowl with extra rosemary sprigs. Fresh rosemary generously garnishing the lamb. Natural window light. No text, no logo, no watermark in the image.
 
 ---
 

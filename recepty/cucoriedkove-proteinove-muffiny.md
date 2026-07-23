@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): upečené čučoriedkové muffiny v papierových košíčkoch na tanieri, zlatistý vrch, popraskaný povrch s viditeľnými čučoriedkami. Žiadny práškový cukor navrchu (v recepte nie je) — povrch je len prirodzene zlatistý od pečenia, prípadne kvapka medu (ktorý je v recepte) vedľa na tanieri.
+Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): upečené čučoriedkové muffiny v papierových košíčkoch na tanieri, zlatistý vrch, popraskaný povrch s viditeľnými čučoriedkami. Žiadny práškový cukor navrchu (v recepte nie je) — povrch je len prirodzene zlatistý od pečenia, prípadne kvapka medu (ktorý je v recepte) vedľa na tanieri. No text, no logo, no watermark in the image.
 Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
 Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
 Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.

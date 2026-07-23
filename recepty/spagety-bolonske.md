@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. A generous bowl of spaghetti twirled with rich meaty bolognese tomato sauce, topped with grated parmesan and a few fresh basil leaves, on a minimalist matte plate over a smooth light wood table. A softly wrinkled linen napkin and a modern matte fork beside it. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No text, no logo, no watermark in the image.
+A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. A generous bowl of spaghetti twirled with rich meaty bolognese tomato sauce, topped with grated parmesan and a few fresh basil leaves, on a minimalist matte plate over a smooth light wood table. A softly wrinkled linen napkin and a modern matte fork beside it. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 

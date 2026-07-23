@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: pečené bravčové karé so zemiakmi a cuketou, porcia na jednoduchom modrom tanieri. Záber prísne zhora (bird's eye view), na reálnom drevenom kuchynskom stole. Prirodzené denné svetlo cez okno, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok kuchynskej utierky a list izbovej rastliny v rohu záberu, drevený stôl s prirodzenými škvrnami/opotrebovaním. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: pečené bravčové karé so zemiakmi a cuketou, porcia na jednoduchom modrom tanieri. Záber prísne zhora (bird's eye view), na reálnom drevenom kuchynskom stole. Prirodzené denné svetlo cez okno, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok kuchynskej utierky a list izbovej rastliny v rohu záberu, drevený stôl s prirodzenými škvrnami/opotrebovaním. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16. No text, no logo, no watermark in the image."
 
 ---
 

@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A crisp, appetizing top-down flat-lay editorial photo, 9:16 format, with a warm minimalist and lived-in lifestyle feel. Sticky BBQ-glazed pork ribs piled next to a generous portion of homemade potato fries, served in a minimalist matte tray lined with parchment paper. A small side bowl of extra BBQ sauce placed nearby. A softly wrinkled linen napkin and modern cutlery resting beside the tray on a light wood table. Natural daylight highlighting the glossy glaze.
+A crisp, appetizing top-down flat-lay editorial photo, 9:16 format, with a warm minimalist and lived-in lifestyle feel. Sticky BBQ-glazed pork ribs piled next to a generous portion of homemade potato fries, served in a minimalist matte tray lined with parchment paper. A small side bowl of extra BBQ sauce placed nearby. A softly wrinkled linen napkin and modern cutlery resting beside the tray on a light wood table. Natural daylight highlighting the glossy glaze. No text, no logo, no watermark in the image.
 
 ---
 

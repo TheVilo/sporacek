@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Sliced duck breast with crispy golden-brown skin and a rosy pink center, fanned out on a matte geometric plate, glazed with a glossy orange sauce, next to a swirl of smooth potato purée. A casually wrinkled neutral napkin holds a modern brass fork. Thin orange slices and a sprig of thyme garnish the plate. Crisp, natural side-light highlighting the glossy sauce and crispy skin.
+A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 format. Sliced duck breast with crispy golden-brown skin and a rosy pink center, fanned out on a matte geometric plate, glazed with a glossy orange sauce, next to a swirl of smooth potato purée. A casually wrinkled neutral napkin holds a modern brass fork. Thin orange slices and a sprig of thyme garnish the plate. Crisp, natural side-light highlighting the glossy sauce and crispy skin. No text, no logo, no watermark in the image.
 
 ---
 

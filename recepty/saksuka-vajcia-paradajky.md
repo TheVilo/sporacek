@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, airy, modern editorial in-progress cooking snap, 9:16 format. Shakshuka — eggs poached in a spiced tomato and bell pepper sauce with runny yolks, still in a dark skillet, resting on a sleek, clean light wood cutting board with an organic, lived-in feel. A few raw cherry tomatoes and garlic cloves sit nearby. The background is blurred, showing a modern ceramic pinch bowl. The glossy tomato sauce looks fresh, garnished with fresh parsley. Natural, dynamic composition with soft directional daylight. No text, no logo, no watermark in the image.
+A bright, airy, modern editorial in-progress cooking snap, 9:16 format. Shakshuka — eggs poached in a spiced tomato and bell pepper sauce with runny yolks, still in a dark skillet, resting on a sleek, clean light wood cutting board with an organic, lived-in feel. A few raw cherry tomatoes and garlic cloves sit nearby. The background is blurred, showing a modern ceramic pinch bowl. The glossy tomato sauce looks fresh, garnished with fresh parsley. Natural, dynamic composition with soft directional daylight. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 

@@ -20,7 +20,7 @@
 ---
 
 ## Foto prompt
-A bright, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Toasted bread slices topped with melted soft cheese and a spoonful of glossy cranberry sauce, resting on textured parchment paper in a minimalist matte tray. Chopped walnuts scattered on top. A softly wrinkled linen napkin and a rustic wooden board beneath. Natural warm side light emphasizing the melted cheese.
+A bright, appetizing 45-degree angle editorial food photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Toasted bread slices topped with melted soft cheese and a spoonful of glossy cranberry sauce, resting on textured parchment paper in a minimalist matte tray. Chopped walnuts scattered on top. A softly wrinkled linen napkin and a rustic wooden board beneath. Natural warm side light emphasizing the melted cheese. No text, no logo, no watermark in the image.
 
 ---
 

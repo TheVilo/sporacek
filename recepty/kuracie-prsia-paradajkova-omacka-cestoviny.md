@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: kuracie prsia v paradajkovej omáčke s cestovinami, posypané parmezánom, porcia na jednoduchom bielom tanieri. Záber mierne šikmo zhora, na svetlej kuchynskej pracovnej doske. Vedľa taniera položená vidlička. Prirodzené denné svetlo, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok utierky v rohu záberu, prirodzené škvrny/opotrebovanie na povrchu. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: kuracie prsia v paradajkovej omáčke s cestovinami, posypané parmezánom, porcia na jednoduchom bielom tanieri. Záber mierne šikmo zhora, na svetlej kuchynskej pracovnej doske. Vedľa taniera položená vidlička. Prirodzené denné svetlo, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok utierky v rohu záberu, prirodzené škvrny/opotrebovanie na povrchu. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16. No text, no logo, no watermark in the image."
 
 ---
 
