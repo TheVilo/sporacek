@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>šporáček — dizajnový systém appky</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  body { padding: 0 0 80px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  header.top {
+    position: sticky; top: 0; z-index: 10; background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border); padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  section { margin: 48px 0; }
+  section > .sec-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  section > .sec-head .num { color: var(--color-accent); font-weight: 800; font-size: 13px; }
+  section > .sec-sub { color: var(--color-text-muted); font-size: 13px; margin-bottom: 18px; }
+  .grid-auto { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+  .grid-comp { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+  .swatch { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--color-border); background: var(--color-surface); }
+  .swatch .fill { height: 68px; display: flex; align-items: flex-end; padding: 8px 10px; }
+  .swatch .meta { padding: 10px 12px 12px; }
+  .swatch code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: var(--color-accent); font-weight: 700; display: block; margin: 3px 0; }
+  .contrast-tag { display: inline-block; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 999px; margin-top: 4px; }
+  .contrast-pass { background: var(--color-success); color: var(--color-success-ink); }
+  .contrast-fail { background: var(--color-danger); color: #fff; }
+  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--color-border); flex-wrap: wrap; }
+  .type-row:first-child { border-top: none; }
+  .type-row .role { width: 150px; flex: none; }
+  .comp-card { background: var(--color-surface-2); border-radius: var(--r-xl); border: 1px solid var(--color-border); padding: 18px; }
+  .comp-card > .label { text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 800; color: var(--color-text-muted); margin-bottom: 14px; }
+  .space-demo { display: flex; flex-wrap: wrap; gap: 14px; }
+  .space-box { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--r-sm); padding: 12px 14px; display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 66px; }
+  .radius-box { width: 60px; height: 60px; background: var(--color-badge-bg); border: 2px solid var(--color-primary); }
+  /* zámerne primitíva (--c-*), nie sémantické tokeny: kód-blok má zostať
+     vizuálne "terminálovo" tmavý v OBOCH témach, nemá sa prepínať so stránkou */
+  pre.code-block { background: var(--c-forest-deep); color: var(--c-wheat); border-radius: var(--r-lg); padding: 18px 20px; overflow: auto; font-size: 12px; line-height: 1.6; font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div>
+    <div class="micro text-muted" style="letter-spacing:.08em;text-transform:uppercase;">šporáček · UI kit v2</div>
+    <div class="title">Dizajnový systém appky</div>
+  </div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-live="polite">
+    <span class="material-symbols" id="themeIcon">dark_mode</span>
+    <span id="themeLabel">Tmavý režim</span>
+  </button>
+</header>
+
+<div class="wrap">
+
+  <p class="body text-secondary" style="max-width:70ch;margin-top:20px;">
+    Tokeny a komponenty pre appku, postavené nad schválenou paletou z <code>UI Kit.dc.html</code>
+    (24 obrazoviek). Farby sú previazané cez sémantické premenné (<code>--color-*</code>) — tento
+    prepínač hore mení iba hodnoty v <code>docs/app/tokens.css</code>, nič v komponentoch. Každý
+    farebný pár textu je overený proti WCAG AA (skript v <code>CLAUDE.md</code> / dizajnová sekcia).
+  </p>
+
+  <section id="colors">
+    <div class="sec-head"><span class="num">01</span><h2 class="h2">Farby</h2></div>
+    <div class="sec-sub">Sémantické tokeny — použi tieto, nikdy --c-forest/--c-terracotta priamo v komponentoch.</div>
+    <div class="grid-auto" id="colorGrid"></div>
+  </section>
+
+  <section id="type">
+    <div class="sec-head"><span class="num">02</span><h2 class="h2">Typografia</h2></div>
+    <div class="sec-sub">Plus Jakarta Sans (UI) + Source Serif 4 (akcent, napr. veľké číslo úspory)</div>
+    <div class="grid-auto" style="margin-bottom:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+      <div class="card" style="padding:18px 20px;">
+        <div class="micro" style="color:var(--color-accent);margin-bottom:8px;">PRIMÁRNY · UI</div>
+        <div style="font-size:26px;font-weight:800;letter-spacing:-0.02em;">Plus Jakarta Sans</div>
+        <div class="caption text-muted" style="margin-top:6px;">400 · 500 · 600 · 700 · 800</div>
+      </div>
+      <div class="card-hero" style="padding:18px 20px;">
+        <div class="micro" style="color:var(--color-badge-bg);margin-bottom:8px;">AKCENT · ČÍSLA, CITÁTY</div>
+        <div class="serif-accent" style="font-size:26px;font-weight:600;">Source Serif 4</div>
+        <div class="caption" style="opacity:.75;margin-top:6px;">500 · 600</div>
+      </div>
+    </div>
+    <div class="card" id="typeScale"></div>
+  </section>
+
+  <section id="spacing">
+    <div class="sec-head"><span class="num">03</span><h2 class="h2">Spacing</h2></div>
+    <div class="sec-sub">Základ 2px. Padding kariet 14–22px, gap 12–14px, sekcie 48–64px.</div>
+    <div class="space-demo" id="spaceDemo"></div>
+  </section>
+
+  <section id="radius">
+    <div class="sec-head"><span class="num">04</span><h2 class="h2">Rádiusy</h2></div>
+    <div class="grid-auto" id="radiusGrid"></div>
+  </section>
+
+  <section id="components">
+    <div class="sec-head"><span class="num">05</span><h2 class="h2">Komponenty</h2></div>
+    <div class="sec-sub">Rovnaké vzory ako v UI Kite, cez sémantické tokeny — fungujú nezmenené v oboch témach.</div>
+    <div class="grid-comp">
+      <div class="comp-card">
+        <div class="label">Tlačidlá</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <button class="btn btn-primary"><span class="material-symbols filled">shopping_cart</span>Primárne CTA</button>
+          <button class="btn btn-secondary">Sekundárne</button>
+          <button class="btn btn-outline">Obrys</button>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="label">Odznaky</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span class="badge badge-accent">MVP</span>
+          <span class="badge badge-success"><span class="material-symbols filled" style="font-size:13px;">check</span>Nakúpené</span>
+          <span class="badge badge-neutral">€2,15 / porcia</span>
+          <span class="badge badge-primary"><span class="material-symbols filled" style="font-size:13px;">play_arrow</span>Variť</span>
+          <span class="badge badge-warning">Čoskoro exspiruje</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="label">Vyhľadávanie</div>
+        <div class="input-wrap"><span class="material-symbols">search</span><input placeholder="Hľadaj recept alebo surovinu"></div>
+      </div>
+      <div class="comp-card">
+        <div class="label">Riadok zoznamu</div>
+        <div class="row">
+          <div style="width:46px;height:46px;border-radius:10px;background:var(--color-badge-bg);flex:none;display:flex;align-items:center;justify-content:center;"><span class="material-symbols" style="color:var(--color-badge-text);">restaurant</span></div>
+          <div style="flex:1;min-width:0;">
+            <div class="micro text-muted">Dnes · Večera</div>
+            <div class="body-lg" style="font-weight:800;">Bryndzové halušky</div>
+          </div>
+          <span class="material-symbols text-muted">chevron_right</span>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="label">Info banner</div>
+        <div class="banner">
+          <span class="material-symbols">notifications_active</span>
+          <div class="body" style="flex:1;font-weight:700;">2 sledované suroviny dnes zlacneli</div>
+          <span class="material-symbols">chevron_right</span>
+        </div>
+      </div>
+      <div class="comp-card" style="grid-column:1/-1;">
+        <div class="label">Spodná navigácia (šírka celej obrazovky, nie karty)</div>
+        <div class="bottom-nav" style="border-radius:var(--r-md);border:1px solid var(--color-border);max-width:420px;">
+          <button class="nav-item" aria-current="page"><span class="material-symbols filled">home</span><span class="micro">Domov</span></button>
+          <button class="nav-item"><span class="material-symbols">skillet</span><span class="micro">Recepty</span></button>
+          <button class="nav-item"><span class="material-symbols">kitchen</span><span class="micro">Špajza</span></button>
+          <button class="nav-item"><span class="material-symbols">notifications_active</span><span class="micro">Sledujem</span></button>
+          <button class="nav-item"><span class="material-symbols">savings</span><span class="micro">Úspory</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tokens-code">
+    <div class="sec-head"><span class="num">06</span><h2 class="h2">Zdrojové súbory</h2></div>
+    <div class="sec-sub">Plné znenie v repe — toto je len odkaz, nekopíruj ručne.</div>
+    <pre class="code-block">docs/app/tokens.css       — farby (svetlý + tmavý), typografia, spacing, rádiusy, tiene
+docs/app/components.css   — tlačidlá, karty, odznaky, input, riadky, spodná navigácia
+docs/app/styleguide.html  — táto stránka (živý náhľad, prepínač témy)</pre>
+  </section>
+
+</div>
+
+<script>
+const TYPE_ROWS = [
+  ["Display / H1","clamp(30–44px)",800,"-0.03em",1.03,"Poďme ušetriť",44,"h1"],
+  ["H2 · sekcia","clamp(20–26px)",800,"-0.02em",1.1,"Jedálniček na dnes",26,"h2"],
+  ["H3 · titul karty","22px",800,"-0.02em",1.15,"Poctivý hovädzí guláš",22,"h3"],
+  ["Title","20px",800,"-0.02em",1.15,"Poďme nakupovať",20,"title"],
+  ["Subtitle","17px",700,"-0.01em",1.3,"Spustiť sporáčik →",17,"subtitle"],
+  ["Body large","16px",600,"0",1.5,"Sporáček ti zostaví plán jedál.",16,"body-lg"],
+  ["Body","14px",500,"0",1.55,"Suroviny, postup a cena za porciu.",14,"body"],
+  ["Caption","12px",600,"0",1.4,"30 min · 2 porcie · 8 surovín",12,"caption"],
+  ["Micro","11px",700,"0",1.3,"3 jedlá zostávajú",11,"micro"],
+];
+document.getElementById("typeScale").innerHTML = TYPE_ROWS.map(([role,size,weight,ls,lh,sample,px]) => `
+  <div class="type-row">
+    <div class="role">
+      <div class="body" style="font-weight:800;">${role}</div>
+      <code style="font-family:ui-monospace,monospace;font-size:11px;color:var(--color-accent);font-weight:700;">${size}</code>
+      <div class="micro text-faint" style="font-weight:600;">${weight} · lh ${lh} · ls ${ls}</div>
+    </div>
+    <div style="flex:1;min-width:180px;font-size:${Math.min(px,32)}px;font-weight:${weight};letter-spacing:${ls};line-height:${lh};">${sample}</div>
+  </div>`).join("");
+
+const SPACES = [4,6,8,10,12,14,16,18,20,24,32,48];
+document.getElementById("spaceDemo").innerHTML = SPACES.map(s => `
+  <div class="space-box">
+    <div style="height:48px;display:flex;align-items:center;"><div style="width:${s}px;height:${s}px;background:var(--color-accent);border-radius:2px;"></div></div>
+    <code style="font-family:ui-monospace,monospace;font-size:12px;font-weight:700;">${s}px</code>
+  </div>`).join("");
+
+const RADII = [["sm",10],["md",14],["lg",18],["xl",20],["2xl",24],["pill",999],["phone",38]];
+document.getElementById("radiusGrid").innerHTML = RADII.map(([n,v]) => `
+  <div class="swatch" style="padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div class="radius-box" style="border-radius:${v===999?999:v}px;"></div>
+    <div style="text-align:center;">
+      <div class="body" style="font-weight:800;">${n}</div>
+      <code style="font-family:ui-monospace,monospace;font-size:11px;color:var(--color-accent);font-weight:700;">${v===999?"999px":v+"px"}</code>
+    </div>
+  </div>`).join("");
+
+/* --- farby: čítané priamo z aktuálnych CSS premenných, nech kontrast vždy
+   zodpovedá reálne vykreslenej téme (nie natvrdo napísaným hex hodnotám) --- */
+/* type: "surface" = plošný token, kontrast sa neoveruje (nie je to text);
+   "text" = kontrola voči zadanému pozadiu (bg2, default --color-bg);
+   "pair" = dvojica bg+text tokenov, ktoré sa vždy používajú spolu (odznaky) */
+const COLOR_GROUPS = [
+  { label: "Pozadia a povrchy (bez kontrolného kontrastu — nie sú text)", items: [
+    ["Pozadie appky", "--color-bg", "surface"],
+    ["Karta", "--color-surface", "surface"],
+    ["Vnorená karta/riadok", "--color-surface-2", "surface"],
+  ]},
+  { label: "Text", items: [
+    ["Text primárny", "--color-text", "text"],
+    ["Text sekundárny", "--color-text-secondary", "text"],
+    ["Text muted", "--color-text-muted", "text"],
+    ["Nav neaktívny", "--color-nav-inactive", "text", "--color-surface"],
+    ["Biely text na akcente (CTA)", "#FFFFFF", "text", "--color-accent"],
+    ["Text inverse na primárnej karte", "--color-text-inverse", "text", "--color-primary"],
+  ]},
+  { label: "Odznaky (vlastný pár bg + text, nezávisí od stránky)", items: [
+    ["Odznak neutrál", "--color-badge-bg", "pair", "--color-badge-text"],
+    ["Odznak upozornenie", "--color-warning-bg", "pair", "--color-warning-text"],
+    ["Odznak úspech", "--color-success", "pair", "--color-success-ink"],
+  ]},
+];
+function resolveColor(v) { return v.startsWith('--') ? readVar(v) : v; }
+function readVar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+function hexToRgb(hex) {
+  hex = hex.replace('#','');
+  if (hex.length === 3) hex = hex.split('').map(c=>c+c).join('');
+  const n = parseInt(hex,16);
+  return [(n>>16)&255,(n>>8)&255,n&255];
+}
+function relLum([r,g,b]) {
+  const f = c => { c/=255; return c<=0.04045 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4); };
+  const [R,G,B] = [f(r),f(g),f(b)];
+  return 0.2126*R + 0.7152*G + 0.0722*B;
+}
+function contrastRatio(hex1, hex2) {
+  const L1 = relLum(hexToRgb(hex1)), L2 = relLum(hexToRgb(hex2));
+  const [hi,lo] = L1>L2 ? [L1,L2] : [L2,L1];
+  return (hi+0.05)/(lo+0.05);
+}
+function renderColors() {
+  document.getElementById("colorGrid").innerHTML = COLOR_GROUPS.map(g => `
+    <div style="grid-column:1/-1;margin-top:6px;" class="micro text-muted">${g.label.toUpperCase()}</div>
+    ${g.items.map(([name, varname, kind, ref]) => {
+      const hex = resolveColor(varname);
+      let tag = '';
+      if (kind === 'text') {
+        const bgHex = resolveColor(ref || '--color-bg');
+        const r = contrastRatio(hex, bgHex);
+        const pass = r >= 4.5;
+        const passUi = r >= 3.0;
+        tag = `<span class="contrast-tag ${pass ? 'contrast-pass' : (passUi ? 'contrast-pass' : 'contrast-fail')}">${r.toFixed(2)}:1 ${pass ? '· AA text' : (passUi ? '· AA veľký/UI' : '· ZLYHÁVA')}</span>`;
+      } else if (kind === 'pair') {
+        const textHex = resolveColor(ref);
+        const r = contrastRatio(textHex, hex);
+        const pass = r >= 4.5;
+        tag = `<span class="contrast-tag ${pass ? 'contrast-pass' : 'contrast-fail'}">${r.toFixed(2)}:1 (s vlastným textom)</span>`;
+      }
+      const fillStyle = kind === 'pair'
+        ? `background:${hex};color:${resolveColor(ref)};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;`
+        : `background:${hex};`;
+      return `
+      <div class="swatch">
+        <div class="fill" style="${fillStyle}">${kind === 'pair' ? 'Aa' : ''}</div>
+        <div class="meta">
+          <div class="body" style="font-weight:800;">${name}</div>
+          <code>${varname.startsWith('--') ? varname : hex}</code>
+          ${tag}
+        </div>
+      </div>`;
+    }).join('')}
+  `).join('');
+}
+
+/* --- theme toggle: manuálny prepínač prebije prefers-color-scheme, uložené v localStorage --- */
+const root = document.documentElement;
+function applyTheme(mode) {
+  if (mode === 'system') { root.removeAttribute('data-theme'); }
+  else { root.setAttribute('data-theme', mode); }
+  const isDark = mode === 'dark' || (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  document.getElementById('themeIcon').textContent = isDark ? 'light_mode' : 'dark_mode';
+  document.getElementById('themeLabel').textContent = isDark ? 'Svetlý režim' : 'Tmavý režim';
+  renderColors();
+}
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const current = root.getAttribute('data-theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('sporacek-theme', next);
+  applyTheme(next);
+});
+applyTheme(localStorage.getItem('sporacek-theme') || 'system');
+</script>
+</body>
+</html>

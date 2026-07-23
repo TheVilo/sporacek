@@ -711,6 +711,63 @@ def main():
         # ho zrazí na zlomok. Na čítanie schémy je docs/data/SCHEMA.md.
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
 
+    # ---- statické API v1 pre appky (docs/api/v1/) ----
+    # API kontrakt je to jediné, na čo sa appky (Android/iOS) natvrdo viažu.
+    # Dnes ho servíruje GitHub Pages ako statické JSON-y; budúci backend má
+    # dodržať rovnaké tvary a cesty — potom sa v appke mení len base URL.
+    # URL na fotky sú v odpovediach ABSOLÚTNE — appka si nikdy neskladá cesty
+    # sama, takže hosting fotiek sa dá kedykoľvek presunúť bez zmeny appky.
+    PAGES = "https://recepty.sporacek.sk"
+    RAW = "https://raw.githubusercontent.com/TheVilo/sporacek/main"
+
+    def foto_urls(r):
+        slug = r["slug"]
+        return (f"{RAW}/fotky/{slug}.jpg", f"{PAGES}/fotky-nahlad/{slug}.jpg")
+
+    api = "docs/api/v1"
+    import shutil
+    shutil.rmtree(api, ignore_errors=True)  # čistý rebuild — žiadne siroty po premenovaní
+    os.makedirs(f"{api}/recepty", exist_ok=True)
+    os.makedirs(f"{api}/suroviny", exist_ok=True)
+
+    def dump(path, obj):
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(obj, fh, ensure_ascii=False, separators=(",", ":"))
+
+    dump(f"{api}/meta.json", out["meta"])
+
+    # zoznam receptov — ľahký (na scrollujúci zoznam), detail sa ťahá zvlášť
+    recepty_index = []
+    for r in recepty:
+        foto, nahlad = foto_urls(r)
+        recepty_index.append({
+            "slug": r["slug"], "nazov": r["nazov"], "porcie": r["porcie"],
+            "cas_pripravy": r["cas_pripravy"], "tagy": r["tagy"],
+            "foto_url": foto, "foto_nahlad_url": nahlad,
+            "kcal": r["nutricne"]["kcal"],
+            "pocet_surovin": len(r["suroviny"]),
+            "alergeny": r["alergeny"],
+            "vegetarianske": r["vegetarianske"], "veganske": r["veganske"],
+            "najlacnejsie": r["najlacnejsie"],
+        })
+    dump(f"{api}/recepty/index.json", {"meta": {"pocet": len(recepty_index)}, "recepty": recepty_index})
+
+    for r in recepty:
+        foto, nahlad = foto_urls(r)
+        detail = {**r, "foto_url": foto, "foto_nahlad_url": nahlad}
+        dump(f"{api}/recepty/{r['slug']}.json", detail)
+
+    # suroviny — index ľahký (watchlist/špajza výber), detail s históriou cien
+    sur_index = [{
+        "id": s["id"], "nazov": s["nazov"], "kategoria": s["kategoria"],
+        "jednotka": s["jednotka"], "trvanlivost": s["trvanlivost"],
+        "alergeny": s["alergeny"], "sezona": s["sezona"],
+        "aktualne_najlacnejsie": s["aktualne_najlacnejsie"],
+    } for s in suroviny]
+    dump(f"{api}/suroviny/index.json", {"meta": {"pocet": len(sur_index)}, "suroviny": sur_index})
+    for s in suroviny:
+        dump(f"{api}/suroviny/{s['id']}.json", s)
+
     # ---- report pokrytia ----
     sur_s_cenou = sum(1 for s in suroviny if s["ceny"])
     ingr_total = sum(len(r["suroviny"]) for r in recepty)
@@ -755,6 +812,13 @@ def main():
         print(f"\n⚠ RECEPTY BEZ FOTKY ({len(bez_fotky)}) — vygeneruj cez .claude/skills/generovanie-fotiek:")
         for x in bez_fotky:
             print("  •", x)
+    bez_nahladu = [r["slug"] for r in recepty
+                   if os.path.exists(r["foto_url"] or "")
+                   and not os.path.exists(f"docs/fotky-nahlad/{r['slug']}.jpg")]
+    if bez_nahladu:
+        print(f"\n⚠ FOTKY BEZ NÁHĽADU ({len(bez_nahladu)}) — spusti: python3 scripts/generate_thumbs.py")
+    n_api = len(glob.glob("docs/api/v1/recepty/*.json")) + len(glob.glob("docs/api/v1/suroviny/*.json")) + 1
+    print(f"API v1 (docs/api/v1/):       {n_api} súborov")
     if format_warnings:
         print()
         print("⚠ RECEPTY MIMO ŠTANDARDNÉHO FORMÁTU (všetky recepty musia byť rovnaké):")

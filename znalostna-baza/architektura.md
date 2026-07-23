@@ -54,6 +54,16 @@ Skript na konci vypíše pokrytie (koľko surovín má cenu, koľko receptov je 
 
 ---
 
+## Appka: API v1, dizajnové tokeny, náhľady fotiek
+
+**Rozhodnutá stratégia:** Android appka (Kotlin + Jetpack Compose) sa stavia teraz vo vlastnom repe; iOS (SwiftUI) neskôr zvlášť. Zdieľa sa medzi nimi (1) **API kontrakt**, (2) **dizajnové tokeny**, (3) doménová logika cez Kotlin Multiplatform — **nie UI** (plynulosť a natívny pocit sa zdieľaným UI dosiahnuť nedá). Detailný návod pre vývojára appky: `docs/app/README.md`.
+
+- **API v1** (`docs/api/v1/`, generuje `build_databaza.py` z databázy): `meta.json`, `recepty/index.json` + `recepty/{slug}.json`, `suroviny/index.json` + `suroviny/{id}.json`. Namiesto jedného 2,3 MB súboru appka ťahá len to, čo práve potrebuje. **Kontrakt (cesty + tvary JSON-ov) je jediné, na čo sa appky viažu natvrdo** — dnes ho servíruje GitHub Pages, budúci ostrý backend ho musí dodržať, potom sa v appke mení len base URL. URL fotiek sú v odpovediach absolútne. Popis endpointov: `docs/data/SCHEMA.md`.
+- **Náhľady fotiek** (`docs/fotky-nahlad/`, generuje `scripts/generate_thumbs.py`): 320 px verzie fotiek (~25 KB) pre scrollujúce zoznamy — plné 768×1344 fotky by scroll sekali. API dáva obe URL (`foto_url`, `foto_nahlad_url`). Pri novej fotke spusti skript (na `main` beží aj v Action).
+- **Dizajnové tokeny** (`docs/app/`): `tokens.json` je platformovo neutrálny zdroj (farby svetlá+tmavá, typografia, spacing, rádiusy); z neho vychádzajú `tokens.css` (web), `android/Color.kt|Type.kt|Theme.kt` (Compose) a neskôr Swift téma. Farby sú kotvené na brand manuál, tmavý režim odvodený cez OKLCH, každý pár overený proti WCAG AA — živý dôkaz: `docs/app/styleguide.html`. **Pri zmene tokenu zmeň tokens.json + tokens.css + platformové témy naraz** — inak sa témy rozídu.
+
+---
+
 ## Social obsah (`social/`)
 
 **Účel:** `docs/social.html` je databáza pripraveného social obsahu — hotový text a grafika na Instagram/Facebook na priame stiahnutie. Štyri zdroje:

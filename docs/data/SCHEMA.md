@@ -1,8 +1,30 @@
-# databaza.json — dátový kontrakt pre appku (schema_verzia 2)
+# Dátový kontrakt pre appku (schema_verzia 2)
 
-Jediný zdroj dát pre appku: `https://recepty.sporacek.sk/data/databaza.json`
-(generuje `scripts/build_databaza.py`, automaticky po každej zmene zdrojov).
-Súbor **nikdy needituj ručne** — pri ďalšom builde by sa zmena prepísala.
+Všetko generuje `scripts/build_databaza.py` (automaticky po každej zmene
+zdrojov) — **nikdy needituj ručne**, pri ďalšom builde by sa zmena prepísala.
+
+## API v1 — týmto sa napájajú appky (Android/iOS)
+
+Base URL: `https://recepty.sporacek.sk/api/v1/`
+
+| endpoint | obsah | kedy ho appka volá |
+|---|---|---|
+| `meta.json` | verzia schémy, obchody, `aktualny_letak_od` | pri štarte (staré dáta? nový leták?) |
+| `recepty/index.json` | ľahký zoznam receptov (názov, náhľad, tagy, kcal, alergény, `najlacnejsie`) ~10 KB gzip | zoznam / scroll / vyhľadávanie |
+| `recepty/{slug}.json` | plný recept (suroviny s `id`+`mnozstvo_g`, postup, `ceny_za_porciu` s nákupom) | otvorenie detailu |
+| `suroviny/index.json` | ľahký zoznam surovín (kategória, trvanlivosť, sezóna, `aktualne_najlacnejsie`) | watchlist / špajza výber |
+| `suroviny/{id}.json` | plný záznam vrátane histórie cien a štatistík | detail suroviny / graf ceny |
+
+**Pravidlá kontraktu:**
+- Tvary polí sú rovnaké ako v `databaza.json` (popis nižšie) — index súbory sú len výrezy.
+- URL fotiek (`foto_url` plná, `foto_nahlad_url` 320 px náhľad pre zoznamy) sú **absolútne** — appka si nikdy neskladá cesty k obrázkom sama, hosting sa dá presunúť bez zmeny appky.
+- Dnes to servíruje GitHub Pages ako statické súbory. **Budúci backend musí dodržať rovnaké cesty a tvary** — potom sa v appke mení len base URL, nič iné. Toto je jediné miesto, na ktoré sa appky viažu natvrdo.
+- Zmena tvaru poľa = nový `schema_verzia` v `meta.json` (appka si ju overuje).
+
+## databaza.json — celý dataset v jednom súbore
+
+`https://recepty.sporacek.sk/data/databaza.json` (~2,3 MB, ~190 KB gzip) —
+používajú ho webové stránky repa; appky preferujú API v1 vyššie.
 
 Koreň: `{ meta, suroviny[], recepty[] }`.
 

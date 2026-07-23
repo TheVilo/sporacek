@@ -1,9 +1,9 @@
 # Bravčové karé s marhuľovým chutney a ryžou
 
-**slug:** bravčove-kare-marhuľova-glazura  
+**slug:** bravcove-kare-marhulova-glazura  
 **porcie:** 2  
 **čas prípravy:** 35 minút  
-**foto_url:** fotky/bravčove-kare-marhuľova-glazura.jpg  
+**foto_url:** fotky/bravcove-kare-marhulova-glazura.jpg  
 
 ---
 
