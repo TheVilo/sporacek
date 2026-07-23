@@ -1,9 +1,12 @@
 name: Zber cien (crawl4ai)
 
-# Automatický zber cien surovín z letákov a e-shopov cez scripts/crawl_ceny.py.
-# Beží na serveroch GitHubu (otvorená sieť) — týždenne aj na tlačidlo.
+# Automatický zber cien surovín z letákov cez scripts/crawl_ceny.py:
+# najnovšie letáky všetkých obchodov sa nájdu na Kimbine (aggregátor),
+# obrázky strán prečíta Gemini vision → ceny/*.json.
+# Beží na serveroch GitHubu — týždenne (štvrtok, nové letáky) aj na tlačidlo.
 # Výsledok NEcommituje rovno do main, ale otvorí Pull Request, ktorý sa
 # skontroluje podľa skillu ceny-z-letaku (časť C) a až potom mergne.
+# Celý beh (6 obchodov) stojí rádovo desiatky centov mesačne (Gemini Flash).
 
 on:
   schedule:
@@ -21,6 +24,7 @@ concurrency:
 jobs:
   zber:
     runs-on: ubuntu-latest
+    timeout-minutes: 120   # 6 obchodov × ~10 min vision; poistka proti zaseknutiu
     steps:
       - uses: actions/checkout@v4
 
@@ -34,15 +38,14 @@ jobs:
           pip install -r scripts/requirements-crawl.txt
           python -m playwright install --with-deps chromium
 
-      # Gemini spracuje vizuálne letáky (akciové ceny). Kľúč sa berie zo secret
-      # GEMINI_API_KEY (Settings → Secrets and variables → Actions). Keď secret
-      # nie je nastavený, llm obchody sa ticho preskočia — beh nezlyhá, len z
-      # letákov nič nepribudne. Gemini Flash je lacný (~centy za beh), skript
-      # na konci vypíše reálnu spotrebu tokenov aj odhad ceny v €.
+      # Gemini vision číta obrázky strán letákov (akciové ceny). Kľúč sa berie zo
+      # secret GEMINI_API_KEY (Settings → Secrets and variables → Actions). Bez
+      # kľúča sa obchody preskočia — beh nezlyhá, len nič nepribudne. Skript na
+      # konci vypíše reálnu spotrebu tokenov aj odhad ceny v €.
       - name: Zber cien
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/crawl_ceny.py kaufland-agg 2>&1 | tee /tmp/zber.log   # PILOT: celý Kaufland leták
+        run: python scripts/crawl_ceny.py --all 2>&1 | tee /tmp/zber.log
 
       # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
       # Workflow permissions zapnuté "Allow GitHub Actions to create and approve
@@ -70,5 +73,5 @@ jobs:
         run: |
           echo "===== LOG ZBERU ====="
           cat /tmp/zber.log || echo "(žiadny log)"
-          echo "===== VYGENEROVANÉ ceny/*agg*.json ====="
-          ls -la ceny/*agg* 2>/dev/null || echo "(žiadny agg súbor)"
+          echo "===== STAV ceny/ ====="
+          ls -la ceny/ 2>/dev/null || echo "(prázdne)"

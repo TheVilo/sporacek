@@ -8,14 +8,19 @@ webe (sieťová politika blokuje weby obchodov) a netreba ho spúšťať lokáln
 Výstupné `ceny/*.json` workflow zabalí do Pull Requestu, ktorý prejde kontrolou
 podľa skillu `.claude/skills/ceny-z-letaku/SKILL.md` (časť C) a potom sa mergne.
 
-Režimy extrakcie (pole `mode` v STORES) — primárne FREE, Gemini až keď treba:
-  * jsonld — default, ZADARMO, bez kľúča: číta schema.org JSON-LD z HTML
-  * css    — ZADARMO, ale treba per-web selektory v poli `schema`
-  * llm    — Gemini Flash, potrebuje GEMINI_API_KEY (bez kľúča sa preskočí)
+Režimy extrakcie (pole `mode` v STORES):
+  * kimbino — HLAVNÝ režim: na www.kimbino.sk/<slug>/ nájde najnovší leták,
+              stiahne obrázky strán a Gemini vision z nich prečíta názvy + ceny.
+              Potrebuje GEMINI_API_KEY (bez kľúča sa preskočí). Podozrivé ceny
+              prečíta druhýkrát; nečitateľné sa zahodia (nikdy nula).
+  * jsonld  — ZADARMO, bez kľúča: číta schema.org JSON-LD z HTML (e-shopy;
+              slovenské reťazce ho ale nemajú — preto kimbino)
+  * css     — ZADARMO, ale treba per-web selektory v poli `schema`
+  * llm     — Gemini text z HTML stránky (leták-prehliadačky obchodov text
+              neobsahujú, preto sa nepoužíva)
 
-Typ ceny (viď `CLAUDE.md` → Cenová databáza):
-  * akciova — z web-letáku obchodu (dočasné akciové ceny)
-  * bezna   — z e-shopu obchodu (bežné ceny → doplnia diery pri oceňovaní receptov)
+Priame weby obchodov (lidl.sk, billa.sk, tesco.sk…) NEfungujú ako zdroj —
+ich leták-prehliadačky sú obrázkové appky bez cien v HTML (overené 07/2026).
 
 Použitie:
     python scripts/crawl_ceny.py --all                 # všetky obchody (workflow)
@@ -183,53 +188,36 @@ def extrahuj_jsonld(html: str) -> list[dict]:
 #   "llm"    — Gemini, potrebuje GEMINI_API_KEY (až keď ho používateľ dodá)
 # Kľúč = <obchod>-<typ>, napr. "kaufland-letak", "kaufland-eshop".
 #
+# Všetky obchody idú cez Kimbino (aggregátor letákov): skript na prehľadovej
+# stránke obchodu sám nájde najnovší celoštátny leták, stiahne obrázky strán
+# a Gemini vision z nich prečíta názvy + ceny. Priame weby obchodov NEfungujú —
+# ich leták-prehliadačky neobsahujú ceny v čitateľnej podobe (overené 07/2026).
+# Nový obchod = jeden záznam nižšie (slug z www.kimbino.sk/<slug>/).
 STORES = {
-    # ── PILOT (prieskum): aggregátor letákov ako zdroj pre Kaufland. mode jsonld
-    #    = zadarmo, len stiahne a uloží vzorku (--sample), nech vidíme, čo reálny
-    #    prehliadač na stránke dostane (text produktov vs. len obrázky, anti-bot). ──
-    "kaufland-agg": {
-        "obchod": "Kaufland",
-        "typ": "akciova",
-        "mode": "kimbino",   # obrázky strán letáku → Gemini vision prečíta ceny
-        "url": "https://www.kimbino.sk/kaufland/",  # prehľad → sám nájde najnovší leták
-        "kimbino_slug": "kaufland",
+    "kaufland": {
+        "obchod": "Kaufland", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/kaufland/", "kimbino_slug": "kaufland",
     },
-
-    # ── FREE teraz: skutočný e-shop s produktovými stránkami (skúsi JSON-LD) ──
-    "billa-eshop": {
-        "obchod": "BILLA",
-        "typ": "bezna",
-        "mode": "jsonld",
-        "url": "https://www.billa.sk/produkty/",
+    "lidl": {
+        "obchod": "Lidl", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/lidl/", "kimbino_slug": "lidl",
     },
-
-    # ── Vizuálne letáky/katalógy: štruktúrované ceny nemajú → potrebujú OCR/LLM.
-    #    mode "llm" = kým workflow neinjektuje GEMINI_API_KEY, automaticky sa
-    #    PRESKOČIA (žiadny Gemini, žiadne náklady). Zapnú sa až keď šporáček
-    #    zarába — vtedy stačí vo workflowe odkomentovať GEMINI_API_KEY. ──────────
-    "billa-letak": {
-        "obchod": "BILLA", "typ": "akciova", "mode": "llm",
-        "url": "https://www.billa.sk/letaky-a-akcie",
+    "tesco": {
+        "obchod": "Tesco", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/tesco/", "kimbino_slug": "tesco",
     },
-    "lidl-letak": {
-        "obchod": "Lidl", "typ": "akciova", "mode": "llm",
-        "url": "https://www.lidl.sk/c/online-letak/s10008489",
+    "terno": {
+        "obchod": "Terno", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/terno/", "kimbino_slug": "terno",
     },
-    "tesco-hypermarket-letak": {
-        "obchod": "Tesco hypermarket", "typ": "akciova", "mode": "llm",
-        "url": "https://www.tesco.sk/akciove-ponuky/letaky-a-katalogy/tesco-hypermarket-bratislava-zlate-piesky",
+    "billa": {
+        "obchod": "BILLA", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/billa/", "kimbino_slug": "billa",
     },
-    "tesco-supermarket-letak": {
-        "obchod": "Tesco supermarket", "typ": "akciova", "mode": "llm",
-        "url": "https://www.tesco.sk/akciove-ponuky/letaky-a-katalogy/tesco-supermarket-zarnovica",
+    "coop-jednota": {
+        "obchod": "COOP Jednota", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/coop-jednota/", "kimbino_slug": "coop-jednota",
     },
-    "terno-letak": {
-        "obchod": "Terno", "typ": "akciova", "mode": "llm",
-        "url": "https://terno.sk/sekcia/7-akciovy-letak",
-    },
-    # Pozn.: Lidl a Terno majú LEN letáky (žiadny e-shop) → bežné ceny sa z nich
-    # nedajú ťahať. Tesco má aj e-shop potravín (potravinydomov.itesco.sk) —
-    # ak budeme chcieť bežné Tesco ceny free, pridá sa ako ďalší 'bezna'/jsonld.
 }
 
 # Koľko strán letáku maximálne spracovať (0 = všetky). Nastavuje --max-pages,
@@ -434,8 +422,9 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
         slug = store.get("kimbino_slug")
         if slug:
             import re as _re
-            m = _re.search(rf'href=["\'](/{slug}/{slug}-letak[^"\']*?)["\']',
-                           res.html or "", _re.I)
+            m = _re.search(
+                rf'href=["\'](?:https://www\.kimbino\.sk)?(/{slug}/{slug}-letak[^"\']*?)["\']',
+                res.html or "", _re.I)
             if not m:
                 print(f"⚠  {store['obchod']}: nenašiel sa odkaz na najnovší leták.")
                 return []
