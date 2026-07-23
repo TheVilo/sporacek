@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-"A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden pan-fried meat patties (fašírky) topped with a creamy white yogurt-garlic sauce, served next to a fresh diced cucumber salad, in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. A pinch of fresh dill and a few cucumber slices scattered nearby add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight. Film grain. No text, no logo, no watermark in the image."
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Golden pan-fried meat patties (fašírky) topped with a creamy white yogurt-garlic sauce, served with boiled potatoes and a fresh diced cucumber salad, in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. A pinch of fresh dill scattered nearby adds an authentic, lived-in lifestyle feel. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
@@ -17,6 +17,7 @@
 | Surovina | Množstvo |
 |---|---|
 | bravčové mleté mäso | 500 g |
+| zemiaky | 500 g |
 | vajcia | 1 ks |
 | strúhanka | 50 g |
 | cibuľa | 0,5 ks |
@@ -33,10 +34,10 @@
 
 | | |
 |---|---|
-| Energia | ~450 kcal |
-| Bielkoviny | 30 g |
-| Sacharidy | 20 g |
-| Tuky | 26 g |
+| Energia | ~560 kcal |
+| Bielkoviny | 33 g |
+| Sacharidy | 48 g |
+| Tuky | 27 g |
 
 ---
 
@@ -44,9 +45,10 @@
 
 1. Cibuľu najemno nasekaj, primiešaj k mletému mäsu spolu s vajcom, strúhankou, soľou a korením.
 2. Z hmoty vytvaruj menšie fašírky, opeč na oleji z oboch strán dozlata a dopeč pod pokrievkou.
-3. Uhorku nastrúhaj alebo nakrájaj na kocky, zľahka posoľ.
-4. Jogurt zmiešaj s prelisovaným cesnakom a troškou soli na omáčku.
-5. Podávaj fašírky s jogurtovo-cesnakovou omáčkou a uhorkovým šalátom.
+3. Zemiaky ošúp, nakrájaj a uvar v osolenej vode do mäkka (asi 15 minút).
+4. Uhorku nastrúhaj alebo nakrájaj na kocky, zľahka posoľ.
+5. Jogurt zmiešaj s prelisovaným cesnakom a troškou soli na omáčku.
+6. Podávaj fašírky s varenými zemiakmi, jogurtovo-cesnakovou omáčkou a uhorkovým šalátom.
 
 ---
 

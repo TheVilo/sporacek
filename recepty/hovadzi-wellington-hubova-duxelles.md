@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A sliced beef Wellington showing distinct layers — golden flaky puff pastry, a thin wrap of prosciutto, dark mushroom duxelles, and a pink medium-rare beef tenderloin center — on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. Fresh thyme sprigs garnish the plate. Crisp, diffused daylight highlighting the flaky pastry layers.
+A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A sliced beef Wellington showing distinct layers — golden flaky puff pastry, a thin wrap of prosciutto, dark mushroom duxelles, and a pink medium-rare beef tenderloin center — with grilled asparagus spears on the side, on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. Fresh thyme sprigs garnish the plate. Soft, evenly diffused bright daylight highlighting the flaky pastry layers — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
@@ -23,6 +23,7 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A sli
 | Cesnak | 2 strúčiky |
 | Horčica | 2 PL |
 | Vajcia | 1 ks (na potretie) |
+| Špargľa | 400 g |
 | Tymian | pár vetvičiek |
 | Olivový olej | 2 PL |
 | Múka | na podsypanie |
@@ -50,7 +51,8 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A sli
 5. Rúru predhrej na 200 °C. Lístkové cesto rozvin na pomúčenej doske, vybaľ mäso z fólie a zaroluj do cesta, okraje zatlač a prebytočné cesto odstrihni.
 6. Wellington potri rozšľahaným vajcom, po povrchu urob nožom jemné dekoratívne zárezy.
 7. Peč 30–35 minút do zlatista (na strednú prepečenosť mäsa vnútri).
-8. Pred krájaním nechaj 10 minút odpočívať.
+8. Kým sa Wellington pečie, špargľu zbav dreveného konca, pokvapkaj olivovým olejom, osoľ a na grile alebo panvici opeč 4–5 minút do jemného opečenia.
+9. Wellington pred krájaním nechaj 10 minút odpočívať. Nakrájaj a podávaj s grilovanou špargľou.
 
 ---
 

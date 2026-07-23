@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Sliced beef roulade rolls filled with bacon and pickles, revealing the spiral filling, on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. A small side dish with extra pickles sits in the softly blurred background. Garnished with fresh parsley. Crisp, diffused daylight.
+A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Sliced beef roulade rolls filled with bacon and pickles, revealing the spiral filling, in a glossy brown gravy with a portion of cooked white rice beside them, on a sleek white plate over a smooth marble counter. Modern matte brass cutlery rests on a casually messy, unironed linen cloth to break the perfection and add organic texture. Garnished with fresh parsley. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
@@ -22,6 +22,7 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Slice
 | Cibuľa | 1 ks |
 | Horčica | 2 PL |
 | Múka | 1 PL |
+| Ryža | 300 g |
 | Olivový olej | 2 PL |
 | Petržlenová vňať | pár vetvičiek |
 | Soľ, čierne korenie | — |
@@ -47,7 +48,8 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Slice
 4. Na olivovom oleji opeč roládky zo všetkých strán dozlata.
 5. Zalej 400 ml vody, prikry a dusaj na miernom ohni 55–60 minút, kým nie sú mäkké.
 6. Roládky vyber, šťavu zahusti múkou rozmiešanou v troche studenej vody, prevar do zhustnutia.
-7. Roládky nakrájaj na plátky, polej omáčkou a posyp petržlenovou vňaťou.
+7. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+8. Roládky nakrájaj na plátky, polej omáčkou, posyp petržlenovou vňaťou a podávaj s ryžou.
 
 ---
 

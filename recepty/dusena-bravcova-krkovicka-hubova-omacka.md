@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Slow-braised pork neck slices in a rich creamy mushroom sauce served in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. The table isn't empty; a few scattered raw mushroom slices and a pinch of pepper add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight highlights the glossy sauce. Film grain.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Slow-braised pork neck slices in a rich creamy mushroom sauce with a portion of cooked white rice beside it, served in a minimalist matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte silver knife and fork. The table isn't empty; a few scattered raw mushroom slices and a pinch of pepper add an authentic, lived-in lifestyle feel. Soft, evenly diffused bright daylight highlights the glossy sauce — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
@@ -23,6 +23,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Sl
 | Smotana na varenie | 200 ml |
 | Bujón (kocka) | 1 ks |
 | Múka | 1 PL |
+| Ryža | 300 g |
 | Olivový olej | 2 PL |
 | Petržlenová vňať | pár vetvičiek |
 | Soľ, čierne korenie | — |
@@ -33,9 +34,9 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Sl
 
 | | |
 |---|---|
-| Energia | ~490 kcal |
-| Bielkoviny | 32 g |
-| Sacharidy | 8 g |
+| Energia | ~570 kcal |
+| Bielkoviny | 34 g |
+| Sacharidy | 48 g |
 | Tuky | 36 g |
 
 ---
@@ -48,7 +49,8 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Sl
 4. Posyp múkou, krátko opraž, zalej 300 ml vody s rozdrveným bujónom.
 5. Vráť mäso späť do omáčky, prikry a dusaj na miernom ohni 45–50 minút, kým nie je krkovička mäkká.
 6. Na záver vmiešaj smotanu, prehrej, dochuť soľou a korením.
-7. Podávaj posypané petržlenovou vňaťou.
+7. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+8. Podávaj s ryžou, posypané petržlenovou vňaťou.
 
 ---
 
