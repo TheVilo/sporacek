@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Fluffy steamed rice mixed with fresh chopped herbs and lemon zest, in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with lemon wedges. A casually draped linen cloth with a modern matte silver fork nearby. Soft, airy natural window light. No text, no logo, no watermark in the image.
+A contemporary, bright lifestyle food photo in a 9:16 format, capturing an elevated home cooking moment. Fluffy white rice mixed with fresh chopped herbs and lemon zest, in a modern large matte bowl, centered on a smooth oak table. Next to it, adding depth to the editorial scene, is a smaller minimalist bowl filled with lemon wedges. A casually draped linen cloth with a modern matte silver fork nearby. Soft, airy natural window light. No text, no logo, no watermark in the image. No visible steam or smoke rising from the food.
 
 ---
 

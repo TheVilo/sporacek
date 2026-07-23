@@ -1,0 +1,7 @@
+# Závislosti pre scripts/crawl_ceny.py (zber cien).
+# Inštaluje ich GitHub Actions workflow .github/workflows/zber-cien.yml:
+#   pip install -r scripts/requirements-crawl.txt
+#   python -m playwright install --with-deps chromium
+#
+# Extrakcia používa Gemini cez litellm, ktorý je závislosťou crawl4ai.
+crawl4ai>=0.4.0

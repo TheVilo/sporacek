@@ -13,7 +13,7 @@ Fotky **musia vyzerať ako fotka z obľúbeného kuchárskeho blogu alebo food I
 
 Povolené a žiadané: prirodzené jasné denné svetlo (často s teplými slnečnými odleskami), jedlo pekne a chutne naaranžované s jemným garnišom (čerstvé bylinky, sezam, nastrúhaný syr...), fotené zhora alebo z uhla 3/4, vkusné reálne rekvizity v primeranej miere (plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja), mierny prirodzený bokeh na pozadí je v poriadku. Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — nie sterilné biele štúdio.
 
-Nikdy ale: prehnane geometrické/umelé aranžovanie, prehnane veľa rekvizít naraz (max 2-3), text alebo logo v obrázku.
+Nikdy ale: prehnane geometrické/umelé aranžovanie, prehnane veľa rekvizít naraz (max 2-3), text alebo logo v obrázku, **para/dym stúpajúci z jedla** (pri horúcich jedlách — polievky, vývary, čaje — pôsobí v AI-generovaných fotkách vždy nápadne umelo/falošne, radšej vynechaj), **tmavé pozadie/props (čierna bridlica a pod.) ani ostré dramatické bočné svetlo** (side-light, backlit okenná scéna) — v praxi to vyjde príliš tmavo/umelo/"studio" namiesto svetlého a vzdušného. Vždy radšej explicitne napíš "soft, evenly diffused bright daylight, no harsh directional shadows".
 
 **Presná šablóna (2-krokový proces — analýza receptu + 10 kompozičných variantov) je nižšie v tejto sekcii, v `## Foto prompt — 2-krokový proces`.** Použi ju vždy, aj mimo týždenného letáku. (`tyzdenny-vystup/SKILL.md` na ňu len odkazuje, nedrží vlastnú kópiu — nech nevznikajú dve verzie, ktoré sa časom rozídu.)
 
@@ -95,7 +95,7 @@ Výstup kroku 1: jeden súvislý anglický popisný názov jedla (max 15-20 slov
 
 Máme **10 overených promptov** (štýl "Modern Editorial & Elevated Lifestyle") — každý je iná kompozícia/scéna, aby fotky naprieč receptami nepôsobili identicky. Vyber ten, ktorý sedí typu jedla (napr. polievka/krém → miska zhora, mäso s prílohou → 3/4 alebo 45°, pečivo/dezert → detail vrstiev alebo mramor), a **striedaj ich** — neopakuj rovnaký template pri receptoch tesne po sebe. Ak sa niektorý template pri používaní ukáže ako nevhodný alebo treba pridať ďalší (napr. chýba dobrý štýl pre raňajky), uprav/pridaj ho priamo tu.
 
-Na koniec vybraného promptu vždy pripoj: `No text, no logo, no watermark in the image.`
+Na koniec vybraného promptu vždy pripoj: `No text, no logo, no watermark in the image.` Pri horúcich jedlách (polievky, vývary, čaje a pod.) pripoj aj `No visible steam or smoke rising from the food.` — para v AI-generovaných fotkách takmer vždy vyzerá nápadne umelo.
 
 **1. Moderný detail s hĺbkou (Editorial štýl)**
 ```
