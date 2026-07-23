@@ -52,6 +52,15 @@ DEFAULT_TRV_BY_CAT = {
     "Základy a koreniny": "trvanlive",
 }
 
+# odhad trvanlivosti ČERSTVEJ suroviny v dňoch (pre špajzu: "spotrebuj do X").
+# Základ podľa kategórie, presnejšie hodnoty per surovina v aliasy.json
+# (spotreba_dni). Trvanlivé suroviny nemajú default (v horizonte plánovania
+# nevypršia) — ale override v aliasy.json ich môže doplniť.
+DEFAULT_SPOTREBA_BY_CAT = {
+    "Mäso a ryby": 2, "Mliečne a vajcia": 7,
+    "Zelenina": 7, "Ovocie": 6,
+}
+
 def slugify(nazov):
     s = strip_dia(nazov.lower())
     s = re.sub(r"\([^)]*\)", " ", s)
@@ -282,10 +291,15 @@ def main():
         extra = aliasy.get(c["id"], {})
         unit = extra.get("jednotka") or DEFAULT_UNIT_BY_CAT.get(c["kategoria"], "g")
         trv = extra.get("trvanlivost") or DEFAULT_TRV_BY_CAT.get(c["kategoria"], "trvanlive")
+        spotreba = extra.get("spotreba_dni")
+        if spotreba is None and trv == "cerstve":
+            spotreba = DEFAULT_SPOTREBA_BY_CAT.get(c["kategoria"])
         alias_all = [c["nazov"]] + list(extra.get("aliasy", []))
         s = {"id": c["id"], "nazov": c["nazov"], "kategoria": c["kategoria"],
              "jednotka": unit, "trvanlivost": trv,
              "gramy_za_ks": extra.get("gramy_za_ks"),  # priem. hmotnosť 1 ks (na prepočet a špajžu)
+             "spotreba_dni": spotreba,                 # odhad "spotrebuj do X dní" (pre špajžu)
+             "alergeny": list(extra.get("alergeny", [])),
              "_alias_all": alias_all, "ceny": []}
         suroviny.append(s)
         id_index[c["id"]] = s
@@ -293,12 +307,21 @@ def main():
     matcher = Matcher(suroviny)
 
     # ---- cenníky -> ceny k surovinám ----
+    # História cien (suroviny[].ceny[]) drží VŠETKY letáky (aj staré) — na grafy
+    # a štatistiky. Ale ceny receptov sa počítajú LEN z najnovšieho letáku
+    # každého obchodu — inak by sa po pridaní ďalšieho týždňa miešali staré
+    # (už neplatné) zľavy s novými.
     unmatched_catalog = {}
-    catalog_by_store = {}  # obchod -> id -> [polozky s cenou/balením]
+    all_records = []          # (letak_od, rec) — všetko, aj história
+    letak_od_by_store = {}    # obchod -> najnovší dátum začiatku letáku
     for f in sorted(glob.glob("ceny/*.json")):
         d = json.load(open(f, encoding="utf-8"))
         obchod = d.get("obchod", "?")
         default_platnost = d.get("platnost_tyzdenna_default")
+        letak_od = (parse_platnost(default_platnost)[0]
+                    or (re.search(r"(\d{4}-\d{2}-\d{2})", f) or [None, ""])[1])
+        if letak_od > letak_od_by_store.get(obchod, ""):
+            letak_od_by_store[obchod] = letak_od
         for p in d.get("polozky", []):
             iid = matcher.match(p["nazov"])
             if not iid:
@@ -319,9 +342,43 @@ def main():
                 "platnost_do": do,
                 "podmienka": p.get("poznamka") or None,
                 "kategoria_letak": p.get("kategoria"),
+                # jednotková cena (€ za 1 g/ml/ks) — nech appka neprepočítava
+                "jednotkova_cena": (round(p["zlavnena_cena"] / pkg["qty"], 5)
+                                    if pkg and pkg.get("qty") and isinstance(p.get("zlavnena_cena"), (int, float))
+                                    else None),
             }
             id_index[iid]["ceny"].append(rec)
-            catalog_by_store.setdefault(obchod, {}).setdefault(iid, []).append(rec)
+            all_records.append((letak_od, iid, rec))
+
+    # na cenenie receptov len najnovší leták per obchod
+    catalog_by_store = {}  # obchod -> id -> [polozky z najnovšieho letáku]
+    for letak_od, iid, rec in all_records:
+        if letak_od == letak_od_by_store.get(rec["obchod"]):
+            catalog_by_store.setdefault(rec["obchod"], {}).setdefault(iid, []).append(rec)
+
+    # ---- štatistiky per surovina (bežná cena z celej histórie) ----
+    # bežná jednotková cena = medián z pôvodných (nezľavnených) cien; kde
+    # pôvodná chýba, berie sa zľavnená. Slúži na "zlacnelo o X %" v appke
+    # aj na social fakty ("o 55 % lacnejšie ako priemer").
+    for s in suroviny:
+        unit_prices = []
+        for c in s["ceny"]:
+            if not c["balenie_qty"] or c["balenie_jednotka"] != s["jednotka"]:
+                continue
+            base = c["povodna_cena"] if isinstance(c["povodna_cena"], (int, float)) else c["zlavnena_cena"]
+            if isinstance(base, (int, float)):
+                unit_prices.append(base / c["balenie_qty"])
+        if unit_prices:
+            unit_prices.sort()
+            n = len(unit_prices)
+            med = unit_prices[n // 2] if n % 2 else (unit_prices[n // 2 - 1] + unit_prices[n // 2]) / 2
+            s["statistiky"] = {
+                "bezna_jednotkova_cena": round(med, 5),
+                "min_jednotkova_cena": round(unit_prices[0], 5),
+                "pocet_zaznamov": n,
+            }
+        else:
+            s["statistiky"] = None
 
     # ---- recepty -> id + cena za porciu per obchod ----
     recepty, format_warnings = parse_recipes()
@@ -350,11 +407,49 @@ def main():
             ing["id"] = iid
             if not iid:
                 unmatched_ingr[ing["nazov"]] = unmatched_ingr.get(ing["nazov"], 0) + 1
+
+        # normalizované množstvo priamo na surovine receptu — nech appka vie
+        # škálovať porcie a zlučovať nákup z viacerých receptov bez parsovania
+        # slovenských textov ("300 g (na rezance)" -> qty=300, jednotka=g).
+        # mnozstvo_g = množstvo v g/ml (pri ks prepočet cez gramy_za_ks).
+        for ing in r["suroviny"]:
+            iid = ing.get("id")
+            hint = id_index[iid]["jednotka"] if iid else "g"
+            rq = parse_recipe_qty(ing["mnozstvo"], hint)
+            ing["qty"] = rq["qty"] if rq else None
+            ing["jednotka"] = rq["unit"] if rq else None
+            g = None
+            if rq:
+                if rq["unit"] in ("g", "ml"):
+                    g = rq["qty"]
+                elif rq["unit"] == "ks" and iid and id_index[iid].get("gramy_za_ks"):
+                    g = rq["qty"] * id_index[iid]["gramy_za_ks"]
+            ing["mnozstvo_g"] = round(g) if g is not None else None
+
+        # alergény a diétne príznaky receptu — odvodené zo surovín
+        rec_alerg = set()
+        vegetarianske = True
+        veganske = True
+        for ing in r["suroviny"]:
+            iid = ing.get("id")
+            if not iid:
+                continue
+            s = id_index[iid]
+            rec_alerg.update(s["alergeny"])
+            if s["kategoria"] == "Mäso a ryby":
+                vegetarianske = False
+            if s["kategoria"] in ("Mäso a ryby", "Mliečne a vajcia") or iid == "med" \
+               or "laktoza" in s["alergeny"] or "vajcia" in s["alergeny"]:
+                veganske = False
+        r["alergeny"] = sorted(rec_alerg)
+        r["vegetarianske"] = vegetarianske
+        r["veganske"] = veganske
+
         # cena za porciu per obchod
         ceny_za_porciu = []
         total = len(r["suroviny"])
         for obchod in stores:
-            spolu, priced = 0.0, 0
+            spolu, usetri, priced = 0.0, 0.0, 0
             plat_od, plat_do = None, None
             nakup = []  # konkrétny produkt na kúpu (so značkou) — pre nákupný zoznam
             for ing in r["suroviny"]:
@@ -369,10 +464,15 @@ def main():
                     "surovina": id_index[iid]["nazov"],
                     "kupit": bp["nazov_v_letaku"],   # konkrétny produkt/značka z letáku
                     "balenie": bp["mnozstvo"],
+                    "balenie_qty": bp["balenie_qty"],           # číselne (napr. 500)
+                    "balenie_jednotka": bp["balenie_jednotka"], # g / ml / ks
                     "cena_balenia": bp["zlavnena_cena"],
+                    "povodna_cena": bp["povodna_cena"],
+                    "akcia": bool(bp["zlava"]),
                     "podmienka": bp["podmienka"],
                     "trvanlivost": id_index[iid]["trvanlivost"],
                     "cena_v_recepte": None,
+                    "usetris_v_recepte": None,
                 }
                 rq = parse_recipe_qty(ing["mnozstvo"], bp["balenie_jednotka"])
                 # koľko z balenia (v jeho jednotke) recept spotrebuje
@@ -389,6 +489,12 @@ def main():
                     priced += 1
                     item["cena_v_recepte"] = round(cost, 2)
                     item["mnozstvo_g"] = round(qty_pkg) if bp["balenie_jednotka"] in ("g", "ml") else None
+                    # úspora = rozdiel oproti pôvodnej (nezľavnenej) cene,
+                    # prepočítaný na množstvo, ktoré recept reálne použije
+                    if isinstance(bp["povodna_cena"], (int, float)) and bp["povodna_cena"] > bp["zlavnena_cena"]:
+                        sav = ((bp["povodna_cena"] - bp["zlavnena_cena"]) / bp["balenie_qty"]) * qty_pkg
+                        item["usetris_v_recepte"] = round(sav, 2)
+                        usetri += sav
                     # najneskoršie od / najskoršie do pre spoločnú platnosť
                     if bp["platnost_od"]:
                         plat_od = max(plat_od, bp["platnost_od"]) if plat_od else bp["platnost_od"]
@@ -401,6 +507,7 @@ def main():
             ceny_za_porciu.append({
                 "obchod": obchod,
                 "cena_za_porciu": round(spolu / max(1, r["porcie"]), 2),
+                "usetris_za_porciu": round(usetri / max(1, r["porcie"]), 2),
                 "napar_surovin": priced,
                 "spolu_surovin": total,
                 "spolahlive": spolahlive,
@@ -410,6 +517,12 @@ def main():
             })
         ceny_za_porciu.sort(key=lambda x: (not x["spolahlive"], x["cena_za_porciu"]))
         r["ceny_za_porciu"] = ceny_za_porciu
+        # súhrn pre karty ("Najlacnejšie v Lidl · ušetríš €0,75")
+        best = next((c for c in ceny_za_porciu if c["spolahlive"]), None)
+        r["najlacnejsie"] = ({"obchod": best["obchod"],
+                              "cena_za_porciu": best["cena_za_porciu"],
+                              "usetris_za_porciu": best["usetris_za_porciu"]}
+                             if best else None)
         # vyčisti interné
         for ing in r["suroviny"]:
             ing.setdefault("id", None)
@@ -422,11 +535,15 @@ def main():
 
     out = {
         "meta": {
+            "schema_verzia": 2,
             "generovane": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "zdroj": "scripts/build_databaza.py — generované, needituj ručne",
             "pocet_surovin": len(suroviny),
             "pocet_receptov": len(recepty),
             "obchody": stores,
+            # ceny receptov sú z najnovšieho letáku každého obchodu — appka
+            # podľa toho vie, či sú dáta aktuálne alebo už po platnosti
+            "aktualny_letak_od": letak_od_by_store,
         },
         "suroviny": suroviny,
         "recepty": recepty,
