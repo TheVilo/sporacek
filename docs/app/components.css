@@ -1,0 +1,130 @@
+/* ==========================================================================
+   šporáček — appka: znovupoužiteľné komponenty
+   Postavené nad docs/app/tokens.css. Vzory prevzaté z "UI Kit" (24 schválených
+   obrazoviek) — len prepojené na sémantické tokeny namiesto natvrdo
+   napísaných farieb, nech appka funguje v svetlom aj tmavom režime bez toho,
+   aby sa menil jediný riadok tu.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  line-height: var(--lh-normal);
+}
+
+.material-symbols {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+}
+.material-symbols.filled { font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24; }
+
+/* ---- typografia ---- */
+.h1 { font-size: var(--fs-h1); font-weight: var(--fw-black); letter-spacing: -0.03em; line-height: var(--lh-tight); margin: 0; }
+.h2 { font-size: var(--fs-h2); font-weight: var(--fw-black); letter-spacing: -0.02em; line-height: var(--lh-snug); margin: 0; }
+.h3 { font-size: var(--fs-h3); font-weight: var(--fw-black); letter-spacing: -0.02em; line-height: var(--lh-snug); margin: 0; }
+.title { font-size: var(--fs-title); font-weight: var(--fw-black); letter-spacing: -0.02em; margin: 0; }
+.subtitle { font-size: var(--fs-subtitle); font-weight: var(--fw-bold); letter-spacing: -0.01em; margin: 0; }
+.body-lg { font-size: var(--fs-body-lg); font-weight: var(--fw-med); margin: 0; }
+.body { font-size: var(--fs-body); font-weight: var(--fw-med); margin: 0; }
+.caption { font-size: var(--fs-caption); font-weight: var(--fw-semi); margin: 0; }
+.micro { font-size: var(--fs-micro); font-weight: var(--fw-bold); margin: 0; }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.serif-accent { font-family: var(--font-serif); }
+
+/* ---- tlačidlá ---- */
+.btn {
+  font-family: inherit; border: none; cursor: pointer; border-radius: var(--r-md);
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+  transition: background-color .15s ease, transform .1s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary {
+  /* CTA — biely text na terracotta. 3.2–4.4:1 podľa témy, v pásme pre tučný
+     text tohto rozmeru (WCAG veľký text 3:1); font-weight 800 @ 16px+ zámerne. */
+  background: var(--color-accent); color: #fff;
+  font-size: var(--fs-body-lg); font-weight: var(--fw-black);
+  padding: var(--sp-4); border-radius: var(--r-md); width: 100%;
+}
+.btn-primary:hover { background: var(--color-accent-hover); }
+.btn-secondary {
+  background: var(--color-primary); color: var(--color-text-inverse);
+  font-size: var(--fs-body); font-weight: var(--fw-black);
+  padding: var(--sp-3); border-radius: var(--r-sm);
+}
+.btn-outline {
+  background: transparent; color: var(--color-text);
+  border: 1.5px solid var(--color-border-strong);
+  font-size: var(--fs-body); font-weight: var(--fw-bold);
+  padding: 11px; border-radius: var(--r-sm);
+}
+
+/* ---- karty a povrchy ---- */
+.card {
+  background: var(--color-surface); border-radius: var(--r-lg);
+  border: 1px solid var(--color-border);
+}
+.card-hero {
+  /* tmavá "hero" karta (napr. "Poďme nakupovať" na domovskej obrazovke) */
+  background: var(--color-primary); color: var(--color-text-inverse);
+  border-radius: var(--r-2xl); padding: 22px 20px 20px;
+  box-shadow: var(--sh-card);
+}
+.row {
+  /* vnorený riadok v karte (napr. jedlo v pláne dňa) */
+  background: var(--color-surface-2); border-radius: var(--r-md);
+  padding: var(--sp-2) var(--sp-3); display: flex; align-items: center; gap: 11px;
+}
+
+/* ---- odznaky / pill ---- */
+.badge { display: inline-flex; align-items: center; gap: 4px; border-radius: var(--r-pill); font-weight: var(--fw-black); }
+.badge-accent { background: var(--color-accent); color: #fff; font-size: var(--fs-caption); padding: 5px 12px; }
+.badge-success { background: var(--color-success); color: var(--color-success-ink); font-size: var(--fs-micro); padding: 4px 10px; }
+.badge-neutral { background: var(--color-badge-bg); color: var(--color-badge-text); font-size: var(--fs-caption); padding: 4px 10px; }
+.badge-primary { background: var(--color-primary); color: var(--color-text-inverse); font-size: var(--fs-caption); padding: 8px 13px; }
+.badge-warning { background: var(--color-warning-bg); color: var(--color-warning-text); font-size: var(--fs-caption); padding: 5px 11px; }
+
+/* ---- input / vyhľadávanie ---- */
+.input-wrap {
+  display: flex; align-items: center; gap: var(--sp-2);
+  background: var(--color-surface-2); border: 1px solid var(--color-border-strong);
+  border-radius: var(--r-md); padding: 12px 13px;
+}
+.input-wrap input {
+  flex: 1; border: none; background: transparent; font-family: inherit;
+  font-size: var(--fs-body); font-weight: var(--fw-med); color: var(--color-text);
+  outline: none;
+}
+.input-wrap input::placeholder { color: var(--color-text-muted); }
+
+/* ---- info banner ---- */
+.banner {
+  display: flex; align-items: center; gap: var(--sp-2);
+  background: var(--color-surface-2); border: 1px solid var(--color-border-strong);
+  border-radius: var(--r-md); padding: 10px 13px;
+}
+
+/* ---- spodná navigácia (5 tabov) ---- */
+.bottom-nav {
+  display: flex; justify-content: space-around; align-items: center;
+  background: var(--color-surface); border-top: 1px solid var(--color-border);
+  padding: var(--sp-3) var(--sp-1); position: sticky; bottom: 0;
+}
+.nav-item { display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--color-nav-inactive); background: none; border: none; font-family: inherit; cursor: pointer; }
+.nav-item .micro { font-weight: var(--fw-semi); }
+.nav-item[aria-current="page"] { color: var(--color-nav-active); }
+.nav-item[aria-current="page"] .micro { font-weight: var(--fw-bold); }
+
+/* ---- theme toggle (pomocná trieda pre appku, nie súčasť UI kitu) ---- */
+.theme-toggle {
+  background: var(--color-surface-2); border: 1px solid var(--color-border-strong);
+  border-radius: var(--r-pill); padding: 6px 14px; font-family: inherit;
+  font-size: var(--fs-caption); font-weight: var(--fw-bold); color: var(--color-text);
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+}
