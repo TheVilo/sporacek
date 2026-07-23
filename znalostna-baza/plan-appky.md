@@ -26,8 +26,8 @@ výslovnej požiadavky používateľa.
 | fáza | čo | stav |
 |---|---|---|
 | 0 | Obsahový základ: databáza + API v1 + náhľady + tokeny + Compose téma | ✅ hotové, na `main` |
-| 1 | Kostra `sporacek-android` repa: KMP `shared` + `androidApp`, téma z `docs/app/android/` | ⬜ ďalší krok |
-| 2 | Vertikálny rez: zoznam receptov → detail → dark mode → offline cache — v plnej kvalite (scroll, animácie), overí architektúru | ⬜ |
+| 1 | Kostra `sporacek-android` repa: KMP `shared` + `androidApp`, téma z `docs/app/android/` | ✅ hotové, `sporacek-android` branch `claude/faza-1-kostra-appky` |
+| 2 | Vertikálny rez: zoznam receptov → detail → dark mode → offline cache — v plnej kvalite (scroll, animácie), overí architektúru | ⬜ ďalší krok |
 | 3 | Hlavný tok MVP: Domov → Nastav → Loading → Plán → Zoznam → Nákup → Varenie → úspora | ⬜ |
 | 4 | Huby: Sledujem, Špajza, Úspory + WorkManager notifikácie | ⬜ |
 | 5 | Beta: Play Internal Testing (publikum zo social), meranie, ladenie | ⬜ |
