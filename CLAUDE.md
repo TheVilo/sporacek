@@ -28,7 +28,10 @@ Podrobnosti: `znalostna-baza/brand-manual.md`, `znalostna-baza/strategia.md`
 | `znalostna-baza/aliasy.json` | kurátorovaná alias-vrstva (leták↔surovina), jednotky, bežné ceny — jediná ručne udržiavaná vec párovania |
 | `scripts/build_databaza.py` | build skript: `suroviny.md` + `aliasy.json` + `ceny/` + `recepty/` → `docs/data/databaza.json` |
 | `docs/data/databaza.json` | **generovaná** hlavná databáza pre appku (needituj ručne, ani nečítaj do kontextu — má 2,6 MB) |
-| `docs/data/SCHEMA.md` | popis schémy `databaza.json` pre programátora appky |
+| `docs/data/SCHEMA.md` | dátový kontrakt pre programátora appky (API v1 endpointy + schéma databázy) |
+| `docs/api/v1/` | **generované** statické API pre appky (Android/iOS) — needituj ručne, robí ho build |
+| `docs/fotky-nahlad/` | **generované** 320 px náhľady fotiek pre zoznamy (`scripts/generate_thumbs.py`) |
+| `docs/app/` | dizajnové tokeny appky (`tokens.json` + web/Compose témy) a style guide — detail `docs/app/README.md` |
 | `recepty/` | jeden súbor = jeden recept (nikdy neobsahuje cenu) |
 | `fotky/` | fotky receptov, pomenované podľa id (sú v repe) |
 | `tydne/` | výstup týždňa (leták → recepty → nákup → úspora) |

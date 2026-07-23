@@ -11,9 +11,11 @@ on:
     paths:
       - 'ceny/**'
       - 'recepty/**'
+      - 'fotky/**'
       - 'suroviny.md'
       - 'znalostna-baza/aliasy.json'
       - 'scripts/build_databaza.py'
+      - 'scripts/generate_thumbs.py'
   workflow_dispatch:
 
 permissions:
@@ -28,17 +30,19 @@ jobs:
         with:
           python-version: '3.11'
       - name: Testy parsovania (chránia jadro pred regresiami)
-        run: pip install -q pytest && python3 -m pytest tests/ -q
-      - name: Rebuild databázy
+        run: pip install -q pytest pillow && python3 -m pytest tests/ -q
+      - name: Náhľady fotiek (docs/fotky-nahlad/)
+        run: python3 scripts/generate_thumbs.py
+      - name: Rebuild databázy + API v1
         run: python3 scripts/build_databaza.py
-      - name: Commit ak sa zmenila
+      - name: Commit ak sa niečo zmenilo
         run: |
           git config user.name "sporacek-bot"
           git config user.email "bot@sporacek.sk"
-          git add docs/data/databaza.json
+          git add docs/data/databaza.json docs/api docs/fotky-nahlad
           if git diff --cached --quiet; then
             echo "databáza bez zmeny"
           else
-            git commit -m "auto: rebuild databaza.json"
+            git commit -m "auto: rebuild databaza.json + api/v1 + náhľady"
             git push
           fi
