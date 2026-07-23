@@ -509,6 +509,16 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
                      "image_url": {"url": f"data:image/webp;base64,{b64}"}},
                 ]}])
         except Exception as e:
+            # Vyčerpaný limit/strop Gemini účtu = systémová chyba: leták by sa
+            # uložil POLOVIČNÝ a dedup by ho už nikdy nedozbieral. Preto celý
+            # leták zahoď — dozbiera sa pri ďalšom behu (po zvýšení stropu).
+            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e) or "RateLimit" in str(e):
+                print(f"🛑 {store['obchod']}: Gemini limit/strop vyčerpaný na strane "
+                      f"{idx + 1} — leták sa NEuloží (dozbiera sa nabudúce). "
+                      "Strop míňania sa nastavuje na https://aistudio.google.com/ "
+                      "(Settings → Plan / ai.studio/spend).")
+                store["_rate_limited"] = True
+                break
             print(f"      strana {idx}: Gemini chyba — {e}")
             if idx == 0:  # pri prvej chybe vypíš dostupné modely, nech sa neháda
                 try:
@@ -567,6 +577,9 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
             p["strana"] = idx + 1
         out.extend(prods)
         print(f"      strana {idx + 1}/{len(spracuj_n)}: {len(prods)} položiek")
+    if store.get("_rate_limited"):
+        store["_preskocene"] = True  # nech spracuj nevypisuje mätúce varovanie
+        return []
     return out
 
 
