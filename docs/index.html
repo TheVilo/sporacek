@@ -38,6 +38,17 @@
   });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
 })();
+/* výška hlavičky ako CSS premenná - .search-sticky sa prilepí presne pod ňu,
+   nie natvrdo odhadnutých pár px (header sa mierne líši podľa fontu/zoomu) */
+(function(){
+  var header = document.querySelector('.site-header');
+  function setHeaderHeight(){
+    if (header) document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(setHeaderHeight);
+})();
 </script>
 <div class="wrap">
   <div class="top-row">
@@ -53,8 +64,14 @@
   <div class="sub">Táto stránka si dáta ťahá naživo priamo z GitHub repa (<code>recepty/</code>, <code>fotky/</code>) — pri každom otvorení alebo obnovení vidíš vždy aktuálny stav, bez potreby prekódovávania.</div>
   <div class="status-line" id="statusLine">Načítavam…</div>
 
+  <!-- Priamy potomok .wrap (nie zanorený v .controls) - sticky prvok drží
+       polohu len v rámci výšky SVOJHO rodiča, takže rodičom musí byť niečo,
+       čo sa tiahne cez celú stránku (.wrap), inak sa "odlepí" hneď po
+       preskrolovaní pôvodne malého .controls boxu. -->
+  <div class="search-sticky" id="searchSticky" style="display:none">
+    <input type="text" class="search-input" id="searchInput" placeholder="Hľadať podľa názvu…" autocomplete="off" style="margin-bottom:0" />
+  </div>
   <div class="controls" id="controls" style="display:none">
-    <input type="text" class="search-input" id="searchInput" placeholder="Hľadať podľa názvu…" autocomplete="off" />
     <div class="chips" id="chips"></div>
   </div>
 
@@ -77,10 +94,11 @@
     </div>
     <div class="lightbox-panel">
       <div>
+        <div class="tags" id="lightboxTags"></div>
         <div class="label">Recept</div>
         <h3 id="lightboxTitle"></h3>
+        <div class="prompt-hint" id="lightboxSlug"></div>
         <div class="id-row">
-          <div class="prompt-hint" id="lightboxSlug"></div>
           <button class="copy-btn copy-btn-small" onclick="copyLightboxId(this)">📋 Kopírovať ID</button>
           <button class="copy-btn copy-btn-small" onclick="copyLightboxPrompt(this)">📋 Kopírovať prompt</button>
         </div>
@@ -150,6 +168,8 @@ function openLightbox(r) {
   lightboxSlug = r.slug || "";
   document.getElementById("lightboxSlug").textContent = lightboxSlug ? `ID: ${lightboxSlug}` : "";
   lightboxPrompt = r.foto_prompt || "";
+  const tagy = r.tagy || [];
+  document.getElementById("lightboxTags").innerHTML = tagy.map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join("");
 
   const suroviny = r.suroviny || [];
   document.getElementById("lightboxSurovinySection").style.display = suroviny.length ? "" : "none";
@@ -332,6 +352,7 @@ async function loadAll(manual) {
     activeTags = new Set([...activeTags].filter(t => recipes.some(r => r.tagy.includes(t))));
     buildChips();
     document.getElementById("controls").style.display = recipes.length ? "" : "none";
+    document.getElementById("searchSticky").style.display = recipes.length ? "" : "none";
     applyFilters();
     const now = new Date().toLocaleString("sk-SK");
     statusLine.textContent = `Naposledy načítané: ${now} · ${recipes.length} receptov priamo z GitHubu`;
