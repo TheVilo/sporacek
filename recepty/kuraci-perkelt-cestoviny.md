@@ -47,7 +47,7 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 3. Stiahni z ohňa, vmiešaj sladkú papriku, krátko premiešaj, nech nezhorí.
 4. Pridaj nakrájanú papriku, paradajky a prelisovaný cesnak. Prilej trochu vody, prikry a duste 30–35 minút, kým mäso zmäkne.
 5. Na záver vmiešaj smotanu, prehrej (nevar prudko).
-6. Medzitým uvar cestoviny podľa návodu na obale.
+6. Medzitým uvar cestoviny 8–11 minút do al dente.
 7. Podávaj perkelt na cestovinách.
 
 ---

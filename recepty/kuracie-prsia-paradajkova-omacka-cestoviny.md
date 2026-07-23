@@ -45,7 +45,7 @@
 2. Na olivovom oleji opeč kuracie mäso dozlata, vyber z panvice.
 3. Na tom istom oleji opeč prelisovaný cesnak, pridaj nakrájané paradajky a duš 8–10 minút do zmäknutia.
 4. Vráť mäso späť do omáčky, pridaj bazalku a dochuť.
-5. Medzitým uvar cestoviny podľa návodu na obale.
+5. Medzitým uvar cestoviny 8–11 minút do al dente.
 6. Podávaj cestoviny s omáčkou a mäsom, posyp strúhaným parmezánom.
 
 ---

@@ -47,7 +47,7 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 2. Pridaj mleté mäso a opekaj, kým nezmení farbu a nerozpadne sa na drobno, priebežne miešaj.
 3. Vmiešaj paradajkový pretlak, chvíľu opraž, potom pridaj konzervované paradajky a oregano. Osoľ, okoreň.
 4. Dus na miernom ohni 20–25 minút, občas premiešaj, kým omáčka zhustne.
-5. Zatiaľ uvar cestoviny v osolenej vode podľa návodu na obale, sceď.
+5. Zatiaľ uvar cestoviny v osolenej vode 8–11 minút do al dente, sceď.
 6. Cestoviny rozdeľ na taniere, prelej bolonskou omáčkou a posyp strúhaným parmezánom.
 
 ---

@@ -45,7 +45,7 @@ A hearty, rustic top-down editorial food photo, 9:16 format, blending warm minim
 3. Var na miernom ohni 1,5–2 hodiny, kým nie je mäso mäkké, priebežne zbieraj penu.
 4. Mäso a zeleninu vyber, vývar precedi.
 5. Mrkvu nakrájaj na kolieska a vráť do precedeného vývaru.
-6. Cestoviny uvar v osolenej vode zvlášť podľa návodu na obale.
+6. Cestoviny uvar v osolenej vode zvlášť 8–11 minút do al dente.
 7. Do misiek daj cestoviny, zalej horúcim vývarom s mrkvou, posyp petržlenovou vňaťou.
 
 ---

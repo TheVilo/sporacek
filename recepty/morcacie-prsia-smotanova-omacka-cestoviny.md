@@ -41,7 +41,7 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode podľa návodu na obale.
+1. Cestoviny uvar v osolenej vode 8–11 minút do al dente.
 2. Morčacie prsia nakrájaj na prúžky, osoľ a okoreň.
 3. Na olivovom oleji opekaj morčacie mäso 5–6 minút, kým nezbelie, vyber z panvice.
 4. Na tom istom oleji opraž šampiňóny a cesnak 5 minút.

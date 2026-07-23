@@ -46,7 +46,7 @@ A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 f
 
 ## Postup
 
-1. Ryžu uvar podľa návodu na obale.
+1. Ryžu uvar 12–15 minút do mäkka.
 2. Kuracie prsia nakrájaj na prúžky, papriku a cibuľu tiež na prúžky.
 3. Kuracie prúžky posyp sladkou paprikou, rascou, údenou paprikou, soľou a korením, premiešaj.
 4. Na panvici rozpáľ olej, opekaj kuracie mäso 5–6 minút do zlatista a prepečenia, vyber z panvice.

@@ -48,7 +48,7 @@ A bright, wider modern editorial table scene, 9:16 format, blending warm minimal
 3. Na tom istom oleji opraž cibuľu do sklovita, odstav z ohňa a vmiešaj sladkú papriku (nech nezhorkne).
 4. Pridaj cesnak, nakrájanú papriku, paradajkový pretlak a mäso späť, zalej 400 ml vody s rozdrveným bujónom.
 5. Prikry a dusaj na miernom ohni 1 hodinu, kým nie je mäso mäkké, priebežne premiešaj a podľa potreby prilej vodu.
-6. Medzitým uvar cestoviny v osolenej vode podľa návodu na obale.
+6. Medzitým uvar cestoviny v osolenej vode 8–11 minút do al dente.
 7. Perkelt podávaj na cestovinách, posypaný petržlenovou vňaťou.
 
 ---

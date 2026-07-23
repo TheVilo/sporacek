@@ -45,7 +45,7 @@ A vibrant, warm editorial food photo, 9:16 format, blending cozy minimalism with
 
 ## Postup
 
-1. Ryžu uvar podľa návodu na obale.
+1. Ryžu uvar 12–15 minút do mäkka.
 2. Cibuľu, cesnak a zázvor jemne nasekaj. Kuracie prsia nakrájaj na kocky, papriku na prúžky.
 3. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, zázvor, kari korenie a kurkumu, krátko opraž, kým nezavonia.
 4. Pridaj kuracie mäso, opekaj 4–5 minút, kým nezbelie zo všetkých strán.

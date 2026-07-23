@@ -46,7 +46,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Te
 2. Odstav hrniec z ohňa, vmiešaj sladkú papriku (na horúcom povrchu horkne). Hneď pridaj papriku nakrájanú na prúžky a paradajku na kocky, krátko preduś.
 3. Pridaj kuracie stehná nakrájané na väčšie kúsky, osoľ, okoreň a podlej trochou vody. Prikry a dus na miernom ohni 25–30 minút, kým je mäso mäkké.
 4. Smotanu rozšľahaj s múkou do hladka, vmiešaj do paprikáša a povar 3–4 minúty, nech omáčka zhustne.
-5. Medzitým uvar cestoviny v osolenej vode podľa návodu na obale a sceď.
+5. Medzitým uvar cestoviny v osolenej vode 8–11 minút do al dente a sceď.
 6. Paprikáš dochuť soľou a korením. Podávaj s cestovinami, posypané petržlenovou vňaťou.
 
 ---

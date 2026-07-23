@@ -46,7 +46,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Ryžu uvar podľa návodu na obale.
+1. Ryžu uvar 12–15 minút do mäkka.
 2. Cibuľu, cesnak a zázvor jemne nasekaj. Karfiol rozdeľ na menšie ružičky.
 3. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, zázvor, kari korenie a kurkumu, krátko opraž.
 4. Pridaj karfiol, konzervované paradajky a kokosové mlieko, premiešaj.

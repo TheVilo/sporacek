@@ -41,7 +41,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Zu
 
 ## Postup
 
-1. Ryžu uvar podľa návodu na obale. Rúru predhrej na 200 °C.
+1. Ryžu uvar 12–15 minút do mäkka. Rúru predhrej na 200 °C.
 2. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu (nechaj asi 0,5 cm hrubé steny, nech sa polovice nepretrhnú). Dužinu nakrájaj nadrobno a odlož.
 3. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj prelisovaný cesnak a mäso, opeč do hneda (5–7 min). Osoľ, okoreň, pridaj oregano.
 4. Pridaj nakrájanú dužinu z cukety a paradajky, dus 3–4 minúty, kým dužina zmäkne. Vmiešaj uvarenú ryžu.

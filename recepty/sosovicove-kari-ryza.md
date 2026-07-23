@@ -44,7 +44,7 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Ryžu uvar podľa návodu na obale.
+1. Ryžu uvar 12–15 minút do mäkka.
 2. Cibuľu a cesnak nakrájaj najemno a orestuj na oleji do sklovita (asi 3 minúty). Pridaj nastrúhaný zázvor, dus ďalšiu minútu.
 3. Pridaj kari korenie a rascu, krátko opraž (30 sekúnd) za stáleho miešania, nech sa uvoľní vôňa a korenie nezhorí.
 4. Vsyp červenú šošovicu, pridaj konzervované paradajky, kokosové mlieko a 300 ml vody. Premiešaj.

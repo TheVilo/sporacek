@@ -43,7 +43,7 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 
 ## Postup
 
-1. Ryžové rezance priprav podľa návodu na obale (zvyčajne namočiť v horúcej vode 5–8 minút), scedi.
+1. Ryžové rezance priprav 12–15 minút do mäkka (zvyčajne namočiť v horúcej vode 5–8 minút), scedi.
 2. Hovädzie mäso nakrájaj na tenké prúžky, ideálne naprieč vláknami — mäso zostane jemnejšie.
 3. Papriku, mrkvu a cibuľu nakrájaj na tenké prúžky/plátky.
 4. V miske zmiešaj sójovú omáčku, med a nastrúhaný zázvor na omáčku.

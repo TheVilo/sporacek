@@ -43,7 +43,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Sl
 
 ## Postup
 
-1. Ryžu daj variť podľa návodu na obale.
+1. Ryžu prepláchni, zalej dvojnásobkom vody, osoľ a pod pokrievkou na miernom ohni var 12–15 minút do mäkka, kým nevpije vodu.
 2. Na oleji v hrnčeku krátko opraž horčičné semienko (asi 30 sekúnd, kým začne "poskakovať"), pridaj nadrobno nakrájanú cibuľu a dus 3 minúty do zmäknutia.
 3. Pridaj nastrúhaný zázvor, marhule nakrájané nadrobno, cukor a ocot. Dus na miernom ohni 12–15 minút, občas premiešaj, kým marhule úplne zmäknú a chutney zhustne do lesklej, mierne lepkavej konzistencie. Osoľ, okoreň.
 4. Kým sa chutney dusí, karé osuš, osoľ a okoreň z oboch strán. Na oleji na vysokom ohni opekaj 3–4 minúty z každej strany bez hýbania, kým nechytí zlatohnedú kôrku.

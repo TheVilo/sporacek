@@ -44,7 +44,7 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minim
 
 ## Postup
 
-1. Cestoviny uvar podľa návodu na obale v osolenej vode. Pred scedením si odlož šálku vody z varenia.
+1. Cestoviny uvar 8–11 minút do al dente v osolenej vode. Pred scedením si odlož šálku vody z varenia.
 2. Kuracie prsia nakrájaj na prúžky, osuš, osoľ a okoreň. Na oleji na vysokom ohni opeč 4–5 minút (nepreplňuj panvicu, aby sa kura opieklo a nedusilo), potom vyber z panvice.
 3. Na tej istej panvici zniž oheň, orestuj nadrobno nakrájanú cibuľu (2 minúty), prelisovaný cesnak a sušené paradajky nakrájané na prúžky (1 minúta), kým sa uvoľní vôňa.
 4. Zalej smotanou, pridaj čili vločky. Zníž na mierny oheň — smotana nesmie prudko vrieť, inak sa zrazí.

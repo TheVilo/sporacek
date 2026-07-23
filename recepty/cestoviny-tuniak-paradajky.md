@@ -41,7 +41,7 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode podľa návodu na obale, sceď.
+1. Cestoviny uvar v osolenej vode 8–11 minút do al dente, sceď.
 2. Zatiaľ na olivovom oleji speň nadrobno nakrájanú cibuľu a cesnak (3–4 minúty).
 3. Pridaj konzervované paradajky a oregano, osoľ, okoreň a dus 8–10 minút, kým omáčka mierne zhustne.
 4. Tuniak sceď a vidličkou ho rozdrob, vmiešaj do omáčky a krátko prehrej.

@@ -39,7 +39,7 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 ## Postup
 
 1. Ryžu prepláchni pod studenou vodou, kým voda nie je čistá (zbaví sa prebytočného škrobu).
-2. Uvar podľa návodu na obale v osolenej vode.
+2. Uvar do mäkka v osolenej vode.
 3. Do horúcej uvarenej ryže vmiešaj maslo, nastrúhanú citrónovú kôru a trochu citrónovej šťavy.
 4. Pridaj nasekanú petržlenovú vňať a koriander, jemne premiešaj vidličkou (nech sa zrniečka nerozdrvia).
 5. Podávaj hneď, s klinom citróna.
