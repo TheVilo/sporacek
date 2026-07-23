@@ -258,8 +258,8 @@ def normalizuj_polozku(raw: dict, store: dict, platnost: str) -> dict | None:
     if not nazov or not je_v_scope(nazov):
         return None
     zlavnena = _cislo(raw.get("zlavnena_cena"))
-    if zlavnena is None:
-        return None  # bez ceny, ktorú zákazník zaplatí, položka nemá zmysel
+    if zlavnena is None or zlavnena <= 0:
+        return None  # bez ceny (alebo s nulou z nečitateľného obrázka) položka nemá zmysel
     povodna = _cislo(raw.get("povodna_cena"))
     zlava = (raw.get("zlava") or "").strip()
     if not zlava and povodna and povodna > zlavnena:
@@ -491,6 +491,43 @@ async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
             _COST["in"] += getattr(u, "prompt_tokens", 0) or 0
             _COST["out"] += getattr(u, "completion_tokens", 0) or 0
         prods = _parse_json_array(resp.choices[0].message.content or "")
+
+        # Overovacie kolo: položky s nulovou/nečitateľnou cenou skús prečítať z toho
+        # istého obrázka ešte raz, cielene po mene. Čo ani potom nemá kladnú cenu,
+        # zahodí normalizuj_polozku (nula sa do ceny/ nikdy nedostane).
+        podozrive = [p for p in prods if (_cislo(p.get("zlavnena_cena")) or 0) <= 0]
+        if podozrive:
+            mena = ", ".join(str(p.get("nazov", "?")) for p in podozrive)
+            try:
+                resp2 = litellm.completion(
+                    model=GEMINI_MODEL, api_key=key, temperature=0,
+                    messages=[{"role": "user", "content": [
+                        {"type": "text", "text": (
+                            "Pozri sa na tento obrázok strany letáku EŠTE RAZ, veľmi "
+                            f"pozorne, a nájdi presné ceny týchto produktov: {mena}. "
+                            "Ak cena produktu na obrázku naozaj nie je čitateľná, "
+                            "produkt úplne vynechaj (nikdy nedávaj 0). "
+                            + _VISION_INSTRUKCIA)},
+                        {"type": "image_url",
+                         "image_url": {"url": f"data:image/webp;base64,{b64}"}},
+                    ]}])
+                u2 = getattr(resp2, "usage", None)
+                if u2:
+                    _COST["in"] += getattr(u2, "prompt_tokens", 0) or 0
+                    _COST["out"] += getattr(u2, "completion_tokens", 0) or 0
+                oprava = {str(p.get("nazov", "")).strip().lower(): p
+                          for p in _parse_json_array(resp2.choices[0].message.content or "")}
+                opravene = 0
+                for p in podozrive:
+                    n = oprava.get(str(p.get("nazov", "")).strip().lower())
+                    if n and (_cislo(n.get("zlavnena_cena")) or 0) > 0:
+                        p.update({k: v for k, v in n.items() if k != "strana"})
+                        opravene += 1
+                print(f"      strana {idx + 1}: {len(podozrive)} podozrivých cien, "
+                      f"po overení opravených {opravene}, zvyšok sa zahodí")
+            except Exception as e:
+                print(f"      strana {idx + 1}: overovacie kolo zlyhalo — {e}")
+
         for p in prods:
             p["strana"] = idx + 1
         out.extend(prods)
