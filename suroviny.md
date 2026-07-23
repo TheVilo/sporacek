@@ -47,7 +47,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - špenát
 - brokolica
 - šampiňóny
-- dyňa
+- melón
 - zeler
 - zázvor
 - kukurica (konzervovaná)

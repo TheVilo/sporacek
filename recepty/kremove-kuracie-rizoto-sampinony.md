@@ -8,7 +8,8 @@
 ---
 
 ## Foto prompt
-"Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): svetlé, zlatisto-krémové kuracie rizoto so šampiňónmi na peknom tanieri (POZOR: farba je bledozlatá/krémová ako klasické rizoto, NIE oranžová ani červená - žiadna paradajka ani paprika v recepte), zrniečka ryže v hustej lesklej omáčke (lesk je od masla a parmezánu, nie od paradajok), navrchu strúhaný parmezán a nasekaná petržlenová vňať. Prirodzené, jasné denné svetlo, teplé a príjemné. Jedlo pekne naaranžované s jemným garnišom. Fotografované zhora alebo z uhla 3/4. Reálne vkusné rekvizity v primeranej miere (napr. plátený obrúsok, drevený stôl, príbor) — nie nahádzaný moodboard. Pozadie: pekný drevený stôl alebo svetlá kamenná doska. Mierny prirodzený bokeh na pozadí je v poriadku, jedlo musí byť ostré. Živé sýte farby. Voľné miesto navrchu na text. Bez textu a bez loga. Formát 9:16. No text, no logo, no watermark in the image."
+
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A creamy chicken and mushroom risotto with tender chicken pieces and sliced mushrooms, topped with grated parmesan and fresh parsley, in a shallow matte bowl on a clean, smooth light wood table. A softly wrinkled linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows. No visible steam or smoke rising from the food. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 

@@ -8,17 +8,8 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): upečený jablkový crumble v zapekacej mise, zlatistá drobivá ovsená kôrka navrchu (POZOR: žiadne orechy v posype ani ako posyp navrchu, žiadna zmrzlina ani šľahačka na servírovanie — recept obsahuje len jablká, citrón, med, škoricu, ovsené vločky, múku, maslo a trstinový cukor, nič iné), na okrajoch mierne bublajúca jablková šťava, para stúpajúca z teplého koláča. Žiadny práškový cukor ani cukrová poleva navrchu — kôrka je len prirodzene zlatohnedá od pečenia. No text, no logo, no watermark in the image.
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+
+A bright, modern editorial side-angle close-up, 9:16 format. Apple oat crumble with a golden crunchy topping over soft cinnamon apples in a small rustic baking dish, one scoop revealing the layers, on a smooth light wood surface. A modern matte spoon rests at the edge, a light linen napkin nearby. Soft, airy daylight — no harsh shadows. No visible steam or smoke rising from the food. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 

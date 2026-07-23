@@ -8,17 +8,8 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): upečené čučoriedkové muffiny v papierových košíčkoch na tanieri, zlatistý vrch, popraskaný povrch s viditeľnými čučoriedkami. Žiadny práškový cukor navrchu (v recepte nie je) — povrch je len prirodzene zlatistý od pečenia, prípadne kvapka medu (ktorý je v recepte) vedľa na tanieri. No text, no logo, no watermark in the image.
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+
+A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A few blueberry muffins on a sleek white plate over a smooth marble counter, one broken open to show blueberries inside, a scatter of fresh blueberries around. A casually messy linen cloth nearby. Soft, diffused daylight — no harsh shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 

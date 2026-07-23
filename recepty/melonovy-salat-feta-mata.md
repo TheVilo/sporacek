@@ -16,7 +16,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 | Surovina | Množstvo |
 |---|---|
-| Dyňa | 500 g |
+| Melón | 500 g |
 | Syr feta | 100 g |
 | Mäta | pár lístkov |
 | Červená cibuľa | ¼ ks |
@@ -39,10 +39,10 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Dyňu nakrájaj na kocky, zbav prípadných semienok.
+1. Melón nakrájaj na kocky, zbav prípadných semienok.
 2. Syr feta nakrájaj alebo rozdrob na väčšie kúsky.
 3. Červenú cibuľu nakrájaj na tenké pol-krúžky.
-4. Na tanier rozlož dyňu, fetu a cibuľu, posyp natrhanými lístkami mäty.
+4. Na tanier rozlož melón, fetu a cibuľu, posyp natrhanými lístkami mäty.
 5. Pokvapkaj olivovým olejom a balzamikovým octom, jemne osoľ a okoreň.
 6. Podávaj hneď, vychladené.
 

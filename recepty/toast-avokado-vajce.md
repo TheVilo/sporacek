@@ -8,17 +8,8 @@
 ---
 
 ## Foto prompt
-Fotorealistická, chutne vyzerajúca fotka jedla v štýle populárneho kuchárskeho blogu/Instagramu (nie amatérsky odfotok na telefón narýchlo, ale ani komerčná reklamná studio scéna): opečený toast potretý avokádovou zmesou až po okraje, navrchu vyprážané vajce s tečúcim žĺtkom, posypané čili vločkami, na jednoduchom tanieri. No text, no logo, no watermark in the image.
-Prirodzené, jasné denné svetlo (často s teplými slnečnými odleskami), teplé a príjemné, nie tmavé ani ploché.
-Jedlo je pekne naaranžované na peknom tanieri/miske, s jemným garnišom (napr. čerstvé bylinky, sezam, nastrúhaný syr, pokvapkaná omáčka) — vidno, že ho fotil niekto so vkusom pre food styling.
-Fotografované zhora (flat-lay) alebo z uhla 3/4 — podľa toho, čo jedlu najviac sedí.
-Reálne, vkusné rekvizity v primeranej miere (max 2-3) — napr. plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja, príbor — pôsobia prirodzene, nie ako nahádzaný moodboard.
-Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — čisté, príjemné, nie sterilné štúdio.
-Mierny prirodzený bokeh na pozadí je v poriadku, jedlo samotné musí byť ostré a v centre pozornosti.
-Živé, sýte, chutné farby.
-Voľné miesto navrchu alebo po strane na text.
-Bez textu a bez loga v obrázku.
-Formát 9:16 (Instagram Stories).
+
+A bright, modern editorial side-angle close-up, 9:16 format. Wholegrain toast topped with smashed avocado and a fried egg with a runny yolk, sprinkled with chilli flakes, on a matte plate on a smooth light wood surface. A modern matte fork rests at the edge, a light linen napkin nearby. Soft, airy daylight — no harsh shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
