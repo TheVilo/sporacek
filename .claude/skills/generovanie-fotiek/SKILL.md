@@ -86,7 +86,11 @@ Priprav si opis jedla — analyzuj recept podľa týchto pravidiel (rovnaké pra
 2. Analyzuj zoznam ingrediencií a gramáže: všetko, čo má významný objem (mäso, prílohy, veľká zelenina, cesto), MUSÍ byť v opise.
 3. Skontroluj krok "Servírovanie" (posledné vety postupu): ak sa jedlo niečím polieva, posýpa (bylinky, syr) alebo ukladá na niečo špecifické, zahrň to.
 4. Filtruj neviditeľné veci: úplne ignoruj suroviny, ktoré vo finále nevidno (rozpustený olej, soľ v marináde, cukor v ceste, prelisovaný cesnak).
-5. Opíš stav surovín podľa postupu (nakrájané na kocky, pečené do zlatista, rozmixované na krém).
+5. **Opíš jedlo tak, ako reálne vyzerá po danej technike z postupu — nielen podľa surovín.** Prečítaj kroky prípravy a zohľadni ich vo vizuáli (nakrájané na kocky, pečené do zlatista, rozmixované na krém, opečené vcelku vs. po kúskoch…). Časté chyby, na ktoré si dávaj pozor:
+   - **Mäso opečené vcelku a až potom nakrájané** (steak, karé, roláda, pečienka) → plátky majú **svetlý šťavnatý stred a len tenký opečený okraj**, NIE každý kúsok opečený dookola. (Opak: kocky mäsa opekané zvlášť sú opečené zo všetkých strán.)
+   - Mäso „prepečené/medium" → opíš farbu rezu (ružový stred pri hovädzom medium-rare, biely pri prepečenom kuracom).
+   - Cesto/pečivo „prekrojené" → ukáž vrstvy/striedku.
+   Vždy nech fotka sedí s tým, čo v poslednom kroku reálne leží na tanieri, vrátane spôsobu úpravy.
 6. **Kritické, navyše oproti pôvodnému zadaniu:** ak niektorý z 10 promptov nižšie žiada `[INÁ INGREDIENCIA]` (napr. "malá miska s...", "dipping bowl of..."), táto vec **musí byť reálna surovina z receptu** (dresing, omáčka, príloha, posyp) — nikdy nič vymyslené navyše. Ak recept nemá vhodnú "druhú" ingredienciu na vedľajšiu misku, vynechaj tú časť promptu radšej, než si niečo domýšľať.
 
 7. **Jedna vyvážená porcia.** Fotka zobrazuje **jednu realistickú porciu pre jedného strávnika** — hlavná zložka a príloha v **rozumnom pomere** (napr. pár plátkov mäsa vedľa zhruba rovnako veľkej kôpky prílohy), nikdy nie kopa mäsa s trochou ryže. Do opisu preto pridaj „a single balanced portion, main and side in realistic proportion". (Množstvá v recepte sú pre 2 osoby a appka ich škáluje, ale **tanier na fotke = 1 porcia**.)
