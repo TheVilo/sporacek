@@ -23,6 +23,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Tw
 | Cibuľa | 1 ks |
 | Paradajkový pretlak | 1 PL |
 | Múka | 1 PL |
+| Ryža | 150 g |
 | Slnečnicový olej | 2 PL |
 | Soľ, čierne korenie | — |
 
@@ -46,7 +47,8 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Tw
 3. Na oleji závitky opeč zo všetkých strán do zlata, vyber ich. V tom istom tuku opeč nadrobno nakrájanú cibuľu.
 4. Vmiešaj paradajkový pretlak, krátko opraž a zalej vodou. Vráť závitky, prikry a dus na miernom ohni 40 minút, občas ich obráť.
 5. Závitky vyber. Do omáčky vmiešaj múku rozšľahanú v troche studenej vody a povar, kým zhustne. Dochuť.
-6. Vyber špáradlá a podávaj závitky preliate omáčkou, s ryžou.
+6. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+7. Vyber špáradlá a podávaj závitky preliate omáčkou, s ryžou.
 
 ---
 

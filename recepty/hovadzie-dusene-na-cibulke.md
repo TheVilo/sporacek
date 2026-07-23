@@ -23,6 +23,7 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Te
 | Paradajkový pretlak | 1 PL |
 | Bobkový list | 1 ks |
 | Múka | 1 PL |
+| Ryža | 150 g |
 | Slnečnicový olej | 2 PL |
 | Soľ, čierne korenie | — |
 
@@ -46,7 +47,8 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Te
 3. Odstav z ohňa, vmiešaj sladkú papriku, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň, krátko opraž a zalej vodou, aby bolo mäso ponorené. Pridaj bobkový list, osoľ a okoreň.
 4. Prikry a dus na miernom ohni 75–90 minút, podľa potreby podlievaj vodou, kým je mäso úplne mäkké.
 5. Vyber bobkový list. Ak chceš hustejšiu omáčku, vmiešaj múku rozšľahanú v troche studenej vody a povar.
-6. Podávaj s ryžou alebo varenými zemiakmi, posypané petržlenovou vňaťou.
+6. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+7. Podávaj s ryžou, posypané petržlenovou vňaťou.
 
 ---
 
