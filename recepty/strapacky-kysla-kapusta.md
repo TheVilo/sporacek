@@ -8,7 +8,7 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A hearty rustic serving of strapačky: small, irregular, bumpy potato dumplings (halušky, not smooth uniform gnocchi) thoroughly tossed and mixed through with soft braised shredded sauerkraut in a pale golden-brown colour — everything mixed together, not separate — sprinkled with black pepper, in a rustic cream/white ceramic bowl on a smooth light wood table. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows. No visible steam or smoke rising from the food. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A hearty rustic serving of strapačky: traditional Slovak halušky — a pile of very small, tiny soft potato dumplings resembling little spätzle or nokedli (short, irregular, torn, roughly 1–2 cm each, NOT large smooth gnocchi) — thoroughly tossed and mixed through with soft braised shredded sauerkraut in a pale golden-brown colour — everything mixed together, not separate — sprinkled with black pepper, in a rustic cream/white ceramic bowl on a smooth light wood table. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows. No visible steam or smoke rising from the food. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
