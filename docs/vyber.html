@@ -175,7 +175,25 @@ function parsePackageSize(mnozstvo) {
 function parseRecipeQty(mnozstvo, pkgUnitHint) {
   if (!mnozstvo) return null;
   const s = mnozstvo.toLowerCase();
-  let m = s.match(/(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)/);
+  // POZOR: lyžica/lyžička kontroluj PRED generickými jednotkami — inak by
+  // „1 lyžica" chytilo „l" (liter) zo slova lyžica. PL/ČL = objemový odhad,
+  // jednotku (g vs ml) prevezme z napárovanej položky letáku.
+  // (JS \b nefunguje s diakritikou, preto negatívny lookahead za pl/čl —
+  // inak by „pl" chytilo aj „plátky")
+  let m = s.match(/(\d+[.,]?\d*)\s*(?:čl(?![a-záäčďéíĺľňóôŕřšťúýž])|lyžičk[a-záäčďéíĺľňóôŕřšťúýž]*)/);
+  if (m) {
+    const qty = parseFloat(m[1].replace(",", "."));
+    const unit = pkgUnitHint === "ml" ? "ml" : "g";
+    return { qty: qty * 5, unit, approx: true };
+  }
+  m = s.match(/(\d+[.,]?\d*)\s*(?:pl(?![a-záäčďéíĺľňóôŕřšťúýž])|lyžic[a-záäčďéíĺľňóôŕřšťúýž]*)/);
+  if (m) {
+    const qty = parseFloat(m[1].replace(",", "."));
+    const unit = pkgUnitHint === "ml" ? "ml" : "g";
+    return { qty: qty * 15, unit, approx: true };
+  }
+  // generické jednotky — \b zabráni, aby „l" chytilo začiatok iného slova
+  m = s.match(/(\d+[.,]?\d*)\s*(kg|g|ml|l|ks|strúčik\w*|balen\w*)\b/);
   if (m) {
     let qty = parseFloat(m[1].replace(",", "."));
     let unit = m[2];
@@ -183,15 +201,6 @@ function parseRecipeQty(mnozstvo, pkgUnitHint) {
     if (unit === "kg") return { qty: qty * 1000, unit: "g" };
     if (unit === "l") return { qty: qty * 1000, unit: "ml" };
     return { qty, unit };
-  }
-  // PL/ČL nemajú v letáku priamy ekvivalent — hrubý odhad, jednotku (g vs ml) prevezme
-  // z napárovanej položky letáku (olej/ocot sa predáva na ml, korenie/cukor na g)
-  m = s.match(/(\d+[.,]?\d*)\s*(pl|čl)\b/);
-  if (m) {
-    const qty = parseFloat(m[1].replace(",", "."));
-    const per = m[2] === "pl" ? 15 : 5;
-    const unit = pkgUnitHint === "ml" ? "ml" : "g";
-    return { qty: qty * per, unit, approx: true };
   }
   return null; // "štipka", "podľa chuti", "—" a pod. — necenené
 }

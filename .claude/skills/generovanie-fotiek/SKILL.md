@@ -38,6 +38,8 @@ Toto nie je problém proxy ani neplatný kľúč — je to limitácia tohto typu
 
 Ak SDK aj tak vráti podobnú 403 chybu, over v Google Cloud Console (`APIs & Services → Enabled APIs`, projekt **sporacek**), či je zapnuté **Generative Language API** — bez toho zlyháva všetko, aj SDK.
 
+Chyba **`429 RESOURCE_EXHAUSTED — monthly spending cap`** znamená vyčerpaný mesačný limit útraty projektu — nie je to chyba kódu ani kľúča. Vyriešiť ju vie len používateľ na https://ai.studio/spend (zvýšiť cap alebo počkať na nový mesiac). Recepty vtedy commitni bez fotky — `build_databaza.py` chýbajúce fotky nahlási v reporte, takže sa na ne nezabudne.
+
 ## Ako vygenerovať fotku
 
 Použi hotový skript `scripts/generate_photo.py`:

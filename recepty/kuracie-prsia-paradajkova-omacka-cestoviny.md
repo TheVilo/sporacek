@@ -1,21 +1,18 @@
----
-id: kuracie-prsia-paradajkova-omacka-cestoviny
-nazov: Kuracie prsia v paradajkovej omáčke s cestovinami
-foto_url: "fotky/kuracie-prsia-paradajkova-omacka-cestoviny.jpg"
-foto_prompt: "Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: kuracie prsia v paradajkovej omáčke s cestovinami, posypané parmezánom, porcia na jednoduchom bielom tanieri. Záber mierne šikmo zhora, na svetlej kuchynskej pracovnej doske. Vedľa taniera položená vidlička. Prirodzené denné svetlo, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok utierky v rohu záberu, prirodzené škvrny/opotrebovanie na povrchu. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
-pocet_porcii: 2
-tagy:
-  typ: [obed]
-  surovina: [kura]
-  vyziva: [sýte, vysoký-proteín]
-nutricne_hodnoty_na_porciu:   # odhad, nie presné údaje
-  kcal: 560
-  bielkoviny_g: 38
-  sacharidy_g: 55
-  tuky_g: 18
+# Kuracie prsia v paradajkovej omáčke s cestovinami
+
+**slug:** kuracie-prsia-paradajkova-omacka-cestoviny
+**porcie:** 2
+**čas prípravy:** 30 minút
+**foto_url:** fotky/kuracie-prsia-paradajkova-omacka-cestoviny.jpg
+
 ---
 
-## Suroviny (2 porcie)
+## Foto prompt
+"Fotografia jedla presne v štýle bežného Instagram food postu od domáceho kuchára — realistická, nie štylizovaná reklamná fotka: kuracie prsia v paradajkovej omáčke s cestovinami, posypané parmezánom, porcia na jednoduchom bielom tanieri. Záber mierne šikmo zhora, na svetlej kuchynskej pracovnej doske. Vedľa taniera položená vidlička. Prirodzené denné svetlo, mierne nerovnomerné, nie dramatické bočné nasvietenie ani studio softbox efekt. Autentický kontext — kúsok utierky v rohu záberu, prirodzené škvrny/opotrebovanie na povrchu. Pôsobí to ako skutočná domácnosť, nie fotoshoot. Realistické, mierne tlmené farby, jemná prirodzená zrnitosť ako z telefónu. Bez textu, bez loga a bez akýchkoľvek prázdnych/bielych blokov v obrázku. Formát 9:16."
+
+---
+
+## Suroviny (pre 2 osoby)
 
 | Surovina | Množstvo |
 |---|---|
@@ -29,6 +26,19 @@ nutricne_hodnoty_na_porciu:   # odhad, nie presné údaje
 | čierne korenie | podľa chuti |
 | bazalka | podľa chuti |
 
+---
+
+## Nutričné hodnoty (na porciu, odhad)
+
+| | |
+|---|---|
+| Energia | ~560 kcal |
+| Bielkoviny | 38 g |
+| Sacharidy | 55 g |
+| Tuky | 18 g |
+
+---
+
 ## Postup
 
 1. Kuracie prsia nakrájaj na kocky, osoľ a okoreň.
@@ -37,3 +47,8 @@ nutricne_hodnoty_na_porciu:   # odhad, nie presné údaje
 4. Vráť mäso späť do omáčky, pridaj bazalku a dochuť.
 5. Medzitým uvar cestoviny podľa návodu na obale.
 6. Podávaj cestoviny s omáčkou a mäsom, posyp strúhaným parmezánom.
+
+---
+
+## Tagy
+`#obed` `#kura` `#sýte` `#vysoký-proteín`

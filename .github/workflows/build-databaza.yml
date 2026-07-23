@@ -1,0 +1,44 @@
+# Auto-rebuild hlavnej databázy (docs/data/databaza.json) po každej zmene
+# zdrojov. Čisto deterministický skript (žiadne AI/OCR) — len prepočíta
+# to isté, čo by sa inak spúšťalo ručne cez `python3 scripts/build_databaza.py`.
+# Commit ide priamo do main, ale mení LEN generovaný súbor docs/data/ —
+# ten nie je v trigger paths, takže sa workflow nezacyklí.
+name: Build databáza
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'ceny/**'
+      - 'recepty/**'
+      - 'suroviny.md'
+      - 'znalostna-baza/aliasy.json'
+      - 'scripts/build_databaza.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Testy parsovania (chránia jadro pred regresiami)
+        run: pip install -q pytest && python3 -m pytest tests/ -q
+      - name: Rebuild databázy
+        run: python3 scripts/build_databaza.py
+      - name: Commit ak sa zmenila
+        run: |
+          git config user.name "sporacek-bot"
+          git config user.email "bot@sporacek.sk"
+          git add docs/data/databaza.json
+          if git diff --cached --quiet; then
+            echo "databáza bez zmeny"
+          else
+            git commit -m "auto: rebuild databaza.json"
+            git push
+          fi

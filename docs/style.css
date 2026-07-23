@@ -221,9 +221,17 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 }
 .lightbox-close:hover { background: rgba(255,255,255,.15); }
 @media (max-width: 720px) {
-  .lightbox-inner { flex-direction: column; max-height: 92vh; }
-  .lightbox-media { max-height: 46vh; width: 100%; }
-  .lightbox-panel { width: 100%; }
+  .lightbox { padding: 12px; }
+  /* Na mobile sa okno prepne na stĺpec a scrolluje ako celok (fotka + panel).
+     Kľúčové: .lightbox-inner musí mať overflow-y:auto — inak flexbox obsah
+     panelu odreže a postup/suroviny sa nedajú doscrollovať. */
+  .lightbox-inner {
+    flex-direction: column; max-height: 90vh;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .lightbox-media { max-height: 46vh; width: 100%; flex-shrink: 0; }
+  .lightbox-media img { max-height: 46vh; }
+  .lightbox-panel { width: 100%; overflow: visible; }
 }
 
 /* shopping list groups (týždenný výstup) */
