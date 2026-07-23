@@ -5,7 +5,7 @@ description: Použi pri spracovaní týždenného letáku (akciové produkty) na
 
 # Spracovanie týždenného letáku
 
-Pravidlá pre recepty (id, suroviny, tagy, tón) sú v koreňovom `CLAUDE.md` — načítaj si ich, ak ešte nie sú v kontexte.
+Pravidlá pre recepty (id, suroviny, tagy, tón) sú v `CLAUDE.md` (kritické invarianty) a detailne v `znalostna-baza/architektura.md` — načítaj si ich, ak ešte nie sú v kontexte.
 
 ## Viacero obchodov naraz
 
