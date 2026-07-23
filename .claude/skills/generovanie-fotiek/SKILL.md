@@ -89,6 +89,8 @@ Priprav si opis jedla — analyzuj recept podľa týchto pravidiel (rovnaké pra
 5. Opíš stav surovín podľa postupu (nakrájané na kocky, pečené do zlatista, rozmixované na krém).
 6. **Kritické, navyše oproti pôvodnému zadaniu:** ak niektorý z 10 promptov nižšie žiada `[INÁ INGREDIENCIA]` (napr. "malá miska s...", "dipping bowl of..."), táto vec **musí byť reálna surovina z receptu** (dresing, omáčka, príloha, posyp) — nikdy nič vymyslené navyše. Ak recept nemá vhodnú "druhú" ingredienciu na vedľajšiu misku, vynechaj tú časť promptu radšej, než si niečo domýšľať.
 
+7. **Jedna vyvážená porcia.** Fotka zobrazuje **jednu realistickú porciu pre jedného strávnika** — hlavná zložka a príloha v **rozumnom pomere** (napr. pár plátkov mäsa vedľa zhruba rovnako veľkej kôpky prílohy), nikdy nie kopa mäsa s trochou ryže. Do opisu preto pridaj „a single balanced portion, main and side in realistic proportion". (Množstvá v recepte sú pre 2 osoby a appka ich škáluje, ale **tanier na fotke = 1 porcia**.)
+
 Výstup kroku 1: jeden súvislý anglický popisný názov jedla (max 15-20 slov), presne opisujúci, čo reálne leží na tanieri — týmto nahraď `[NAZOV RECEPTU]` v šablóne nižšie.
 
 ### Krok 2: vlož opis do jednej z 10 kompozičných šablón

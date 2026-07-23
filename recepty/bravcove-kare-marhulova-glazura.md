@@ -9,7 +9,7 @@
 
 ## Foto prompt
 
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Slices of golden pan-seared pork loin topped with glossy apricot chutney with soft apricot pieces, served beside a mound of fluffy white rice on a matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A single balanced portion, main and side in realistic proportion: a few slices of golden pan-seared pork loin topped with glossy apricot chutney, next to a similar-sized portion of fluffy white rice, on a matte ceramic plate on a clean, smooth light wood table. A softly wrinkled neutral linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
 
 ---
 
