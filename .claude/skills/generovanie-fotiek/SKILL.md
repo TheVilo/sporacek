@@ -93,7 +93,9 @@ Priprav si opis jedla — analyzuj recept podľa týchto pravidiel (rovnaké pra
    Vždy nech fotka sedí s tým, čo v poslednom kroku reálne leží na tanieri, vrátane spôsobu úpravy.
 6. **Kritické, navyše oproti pôvodnému zadaniu:** ak niektorý z 10 promptov nižšie žiada `[INÁ INGREDIENCIA]` (napr. "malá miska s...", "dipping bowl of..."), táto vec **musí byť reálna surovina z receptu** (dresing, omáčka, príloha, posyp) — nikdy nič vymyslené navyše. Ak recept nemá vhodnú "druhú" ingredienciu na vedľajšiu misku, vynechaj tú časť promptu radšej, než si niečo domýšľať.
 
-7. **Jedna vyvážená porcia.** Fotka zobrazuje **jednu realistickú porciu pre jedného strávnika** — hlavná zložka a príloha v **rozumnom pomere** (napr. pár plátkov mäsa vedľa zhruba rovnako veľkej kôpky prílohy), nikdy nie kopa mäsa s trochou ryže. Do opisu preto pridaj „a single balanced portion, main and side in realistic proportion". (Množstvá v recepte sú pre 2 osoby a appka ich škáluje, ale **tanier na fotke = 1 porcia**.)
+7. **Realistická a chutná porcia (na počte porcií nezáleží).** Nezáleží, koľko porcií je na fotke — appka si množstvá prepočíta, niekedy sa jednoducho uvarí viac. Dôležité je, aby jedlo vyzeralo **reálne, chutne a pekne**, a aby hlavná zložka a príloha boli v **prirodzenom pomere** (nie kopa mäsa s trochou ryže — to pôsobí neprirodzene). Radšej pekná apetítna porcia než snaha o „presne jednu porciu".
+
+8. **Mäkké/drobivé suroviny nezobrazuj ako dokonalý geometrický tvar.** Feta, tvaroh, bryndza, mozzarella nikdy nie sú hladký kváder/valec s ostrými hranami — v realite sú drobivé alebo natrhané, s nerovnými okrajmi (feta nalámaná na kusy alebo rozdrobená, mozzarella natrhaná). Vždy to tak opíš (napr. „a rustic, crumbly slab of feta with uneven broken edges").
 
 Výstup kroku 1: jeden súvislý anglický popisný názov jedla (max 15-20 slov), presne opisujúci, čo reálne leží na tanieri — týmto nahraď `[NAZOV RECEPTU]` v šablóne nižšie.
 
