@@ -44,13 +44,19 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, warm minim
 
 ## Postup
 
-1. Cestoviny uvar 8–11 minút do al dente v osolenej vode. Pred scedením si odlož šálku vody z varenia.
-2. Kuracie prsia nakrájaj na prúžky, osuš, osoľ a okoreň. Na oleji na vysokom ohni opeč 4–5 minút (nepreplňuj panvicu, aby sa kura opieklo a nedusilo), potom vyber z panvice.
-3. Na tej istej panvici zniž oheň, orestuj nadrobno nakrájanú cibuľu (2 minúty), prelisovaný cesnak a sušené paradajky nakrájané na prúžky (1 minúta), kým sa uvoľní vôňa.
-4. Zalej smotanou, pridaj čili vločky. Zníž na mierny oheň — smotana nesmie prudko vrieť, inak sa zrazí.
-5. Vmiešaj špenát, nech zvädne (1–2 minúty). Odstav z ohňa, vmiešaj čerstvo nastrúhaný parmezán.
-6. Vráť kura do panvice, pridaj scedené cestoviny. Ak je omáčka hustá, prilej trochu odloženej vody z varenia, kým sa hodvábne nespojí s cestovinami.
-7. Podávaj hneď, posyp ďalším parmezánom.
+1. **Daj variť cestoviny a opeč kuracie dozlata.**
+   Cestoviny daj variť v osolenej vode podľa návodu na obale (8–11 minút), pred scedením si odlož šálku vody. Medzitým rozpáľ olej na panvici, kuracie prsia nakrájané na tenké prúžky osoľ, okoreň a opekaj 5–6 minút, kým nezozlatnú. Potom odlož nabok.
+   *Tip: Panvicu neutieraj — na výpeku ďalej pokračuješ.*
+
+2. **Orestuj cibuľu, cesnak a paradajky, zalej smotanou.**
+   Na výpeku zníž oheň, orestuj nadrobno nakrájanú cibuľu, prelisovaný cesnak a prúžky sušených paradajok. Zalej smotanou s čili vločkami a jemne prevar.
+   ⏱ 3 min
+
+3. **Vmiešaj špenát a parmezán.**
+   Vmiešaj špenát, nech zvädne (1–2 minúty). Odstav z ohňa a vmiešaj čerstvo nastrúhaný parmezán.
+
+4. **Vmiešaj cestoviny a kuracie do omáčky.**
+   Vráť kuracie do panvice, pridaj scedené cestoviny. Ak je omáčka hustá, prilej trochu odloženej vody z varenia, kým sa hodvábne nespojí. Podávaj hneď, posyp ďalším parmezánom.
 
 ---
 

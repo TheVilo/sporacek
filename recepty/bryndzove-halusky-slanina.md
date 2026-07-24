@@ -38,12 +38,22 @@ A bright, airy, modern editorial food photograph, vertical 9:16, embracing warm 
 
 ## Postup
 
-1. Zemiaky ošúp a najemno nastrúhaj (na najjemnejšom strúhadle), osoľ.
-2. Postupne prisýpaj múku a vmiešaj vajce, vypracuj hustejšie cesto — správnu konzistenciu spoznáš podľa toho, že v ňom ostane stáť varecha.
-3. Slaninu nakrájaj na kocky a opeč na suchej panvici do chrumkava.
-4. Cesto pretláčaj cez haluškové sitko (alebo dosku a nôž) priamo do vriacej osolenej vody. Keď halušky vyplávajú na povrch, sú hotové (cca 2–3 minúty), vyber ich dierovanou lyžicou.
-5. Bryndzu rozmiešaj s troškou horúcej vody z varenia halušiek, nech je krémovejšia.
-6. Horúce halušky premiešaj s bryndzou, navrch pridaj opečenú slaninu aj s výpekom.
+1. **Zemiaky nastrúhaj a osoľ.**
+   Zemiaky ošúp a najemno nastrúhaj (na najjemnejšom strúhadle), osoľ.
+
+2. **Vmiešaj múku a vajce, vypracuj husté cesto.**
+   Postupne prisýpaj múku a vmiešaj vajce, vypracuj hustejšie cesto.
+   *Tip: Správnu konzistenciu spoznáš podľa toho, že v ceste ostane stáť varecha.*
+
+3. **Slaninu opeč do chrumkava.**
+   Slaninu nakrájaj na kocky a opeč na suchej panvici do chrumkava.
+
+4. **Cesto pretláčaj cez sitko do vriacej vody.**
+   Cesto pretláčaj cez haluškové sitko (alebo dosku a nôž) priamo do vriacej osolenej vody. Keď halušky vyplávajú na povrch, sú hotové (cca 2–3 minúty), vyber ich dierovanou lyžicou.
+   📷 fotky/postup/bryndzove-halusky-slanina-krok-4.jpg — takto sa cesto pretláča cez sitko
+
+5. **Zmiešaj s bryndzou a slaninou.**
+   Bryndzu rozmiešaj s troškou horúcej vody z varenia halušiek, nech je krémovejšia. Horúce halušky premiešaj s bryndzou, navrch pridaj opečenú slaninu aj s výpekom.
 
 ---
 

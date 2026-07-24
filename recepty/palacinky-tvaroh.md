@@ -42,11 +42,19 @@ A fresh, modern editorial food photo, 9:16 format. Thin rolled pancakes filled w
 
 ## Postup
 
-1. Vajcia rozšľahaj so štipkou soli a 1 PL cukru, prisyp múku a za stáleho miešania prilievaj mlieko, kým nevznikne hladké redšie cesto. Nechaj odstáť 15 minút.
-2. Zatiaľ zmiešaj tvaroh so zvyšným cukrom, vanilkovým extraktom a nastrúhanou citrónovou kôrou.
-3. Panvicu zľahka vymasti maslom a rozohrej na stredný oheň. Naber naberačku cesta, rozotri po dne a upeč palacinku z oboch strán do zlata (asi 1–2 minúty na stranu).
-4. Na každú palacinku rozotri tvarohovú plnku a zaroluj alebo prelož.
-5. Podávaj hneď, podľa chuti pocukruj.
+1. **Vyšľahaj cesto a nechaj odstáť.**
+   Vajcia rozšľahaj so štipkou soli a 1 PL cukru, prisyp múku a za stáleho miešania prilievaj mlieko, kým nevznikne hladké redšie cesto.
+   *Tip: Cesto má byť redšie ako na lievance — steká z varechy v tenkom prúde.*
+   ⏱ 15 min
+
+2. **Priprav tvarohovú plnku.**
+   Zatiaľ zmiešaj tvaroh so zvyšným cukrom, vanilkovým extraktom a nastrúhanou citrónovou kôrou.
+
+3. **Upeč palacinky dozlata.**
+   Panvicu zľahka vymasti maslom a rozohrej na stredný oheň. Naber naberačku cesta, rozotri po dne a upeč palacinku z oboch strán do zlata (asi 1–2 minúty na stranu).
+
+4. **Naplň tvarohom a podávaj.**
+   Na každú palacinku rozotri tvarohovú plnku a zaroluj alebo prelož. Podávaj hneď, podľa chuti pocukruj.
 
 ---
 

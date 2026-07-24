@@ -42,12 +42,19 @@ A bright, wider modern editorial table scene, 9:16 format, blending warm minimal
 
 ## Postup
 
-1. Plátky karé rozklep na rovnomernú hrúbku (cca 0,5 cm), osoľ a okoreň.
-2. Priprav si tri misky: múku, rozšľahané vajcia, strúhanku. Každý rezeň postupne obaľ v múke, vajci a strúhanke.
-3. Zemiaky uvar v osolenej vode domäkka, scedi, rozšťuchaj alebo prepasíruj. Vmiešaj teplé mlieko a maslo, dochuť soľou, kým nezískaš hladkú kašu.
-4. Na panvici rozohrej dostatok oleja, rezne vypráž 3–4 minúty z každej strany do zlatista a chrumkava.
-5. Vyprážané rezne polož na papierovú utierku, nech odkvapká prebytočný olej.
-6. Podávaj so zemiakovou kašou a klinom citróna.
+1. **Rozklep mäso a osoľ.**
+   Plátky karé rozklep na rovnomernú hrúbku (cca 0,5 cm), osoľ a okoreň.
+
+2. **Obaľ v múke, vajci a strúhanke.**
+   Priprav si tri misky: múku, rozšľahané vajcia, strúhanku. Každý rezeň postupne obaľ v múke, vajci a strúhanke.
+   *Tip: Obaľuj tesne pred vyprážaním, aby strúhanka nezmäkla.*
+
+3. **Priprav zemiakovú kašu.**
+   Zemiaky uvar v osolenej vode domäkka, sceď, rozšťuchaj alebo prepasíruj. Vmiešaj teplé mlieko a maslo, dochuť soľou, kým nezískaš hladkú kašu.
+
+4. **Vypráž rezne do zlatista a podávaj.**
+   Na panvici rozohrej dostatok oleja, rezne vypráž 3–4 minúty z každej strany do zlatista a chrumkava. Polož na papierovú utierku, nech odkvapká prebytočný olej. Podávaj so zemiakovou kašou a klinom citróna.
+   *Tip: Olej musí byť dostatočne horúci — inak sa strúhanka nasiakne tukom a nebude chrumkavá.*
 
 ---
 

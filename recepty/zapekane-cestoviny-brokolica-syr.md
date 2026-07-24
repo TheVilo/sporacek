@@ -40,12 +40,19 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Cestoviny uvar v osolenej vode o niečo kratšie, ako uvádza obal (ostanú na skus), sceď.
-2. Brokolicu rozober na ružičky a povar v osolenej vode 3 minúty, sceď.
-3. Smotanu rozšľahaj s vajcami a prelisovaným cesnakom, osoľ a okoreň.
-4. Zapekaciu misu vytri maslom, vlož cestoviny a brokolicu, zalej smotanovou zmesou a premiešaj.
-5. Posyp strúhaným syrom a zapekaj 20 minút, kým je vrch zlatý.
-6. Nechaj chvíľu postáť a podávaj.
+1. **Uvar cestoviny a brokolicu.**
+   Rúru predhrej na 200 °C. Cestoviny uvar v osolenej vode o niečo kratšie, ako uvádza obal (ostanú na skus), sceď. Brokolicu rozober na ružičky a povar v osolenej vode 3 minúty, sceď.
+   *Tip: Cestoviny nechaj radšej tvrdšie — dovaria sa v rúre.*
+
+2. **Vyšľahaj smotanovú zálievku.**
+   Smotanu rozšľahaj s vajcami a prelisovaným cesnakom, osoľ a okoreň.
+
+3. **Zmiešaj v zapekacej mise a posyp syrom.**
+   Zapekaciu misu vytri maslom, vlož cestoviny a brokolicu, zalej smotanovou zmesou a premiešaj. Posyp strúhaným syrom.
+
+4. **Zapekaj do zlata a podávaj.**
+   Zapekaj, kým je vrch zlatý. Nechaj chvíľu postáť a podávaj.
+   ⏱ 20 min
 
 ---
 

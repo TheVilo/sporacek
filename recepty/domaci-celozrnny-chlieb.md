@@ -39,13 +39,29 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 
 ## Postup
 
-1. Droždie rozmiešaj vo vlažnej vode s medom, nechaj 10 minút postáť, kým sa na povrchu nevytvorí pena.
-2. V mise zmiešaj celozrnnú múku, múku a soľ. Pridaj kvások a olivový olej, vypracuj hladké cesto (rukami cca 8–10 minút, alebo v mixéri s hákom 5 minút).
-3. Cesto daj do vymastenej misy, prikry utierkou, nechaj kysnúť na teplom mieste 1–1,5 hodiny, kým nezdvojnásobí objem.
-4. Cesto vyklop, prevaľkaj (vytlač vzduch), vytvaruj do bochníka, ulož na plech s papierom na pečenie. Prikry a nechaj ešte 30 minút kysnúť.
-5. Rúru predhrej na 220 °C. Vrch bochníka narež ostrým nožom.
-6. Peč 30–35 minút, kým chlieb nie je zlatohnedý a pri poklepaní na spodok znie dutý zvuk.
-7. Nechaj úplne vychladnúť na mriežke pred krájaním.
+1. **Rozmiešaj droždie s medom vo vode.**
+   Droždie rozmiešaj vo vlažnej vode s medom. Nechaj postáť, kým sa na povrchu nevytvorí pena.
+   ⏱ 10 min
+
+2. **Vmiešaj múku a vypracuj hladké cesto.**
+   V mise zmiešaj celozrnnú múku, múku a soľ. Pridaj kvások a olivový olej, vypracuj hladké cesto — rukami cca 8–10 minút, alebo v mixéri s hákom 5 minút.
+   *Tip: Cesto je hotové, keď je hladké, pružné a nelepí sa na ruky.*
+   📷 fotky/postup/domaci-celozrnny-chlieb-krok-2.jpg — takto má vyzerať vypracované cesto
+
+3. **Nechaj cesto vykysnúť do dvojnásobku.**
+   Cesto daj do vymastenej misy, prikry utierkou, nechaj kysnúť na teplom mieste, kým nezdvojnásobí objem.
+   ⏱ 90 min
+
+4. **Vytvaruj bochník a nechaj ešte vykysnúť.**
+   Cesto vyklop, prevaľkaj, aby si vytlačil vzduch, vytvaruj do bochníka a ulož na plech s papierom na pečenie. Prikry a nechaj ešte vykysnúť.
+   ⏱ 30 min
+
+5. **Narež vrch a peč dozlata.**
+   Rúru predhrej na 220 °C. Vrch bochníka narež ostrým nožom a peč, kým chlieb nie je zlatohnedý a pri poklepaní na spodok znie dutý zvuk.
+   ⏱ 33 min
+
+6. **Nechaj vychladnúť pred krájaním.**
+   Chlieb nechaj úplne vychladnúť na mriežke, až potom krájaj.
 
 ---
 
