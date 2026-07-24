@@ -13,7 +13,7 @@ Fotky **musia vyzerať ako fotka z obľúbeného kuchárskeho blogu alebo food I
 
 Povolené a žiadané: prirodzené jasné denné svetlo (často s teplými slnečnými odleskami), jedlo pekne a chutne naaranžované s jemným garnišom (čerstvé bylinky, sezam, nastrúhaný syr...), fotené zhora alebo z uhla 3/4, vkusné reálne rekvizity v primeranej miere (plátený/textilný obrúsok, drevená doska, paličky, malá miska s prísadou, pohár nápoja), mierny prirodzený bokeh na pozadí je v poriadku. Pozadie: pekný drevený stôl, svetlá kamenná/mramorová doska alebo plech na pečenie — nie sterilné biele štúdio.
 
-Nikdy ale: prehnane geometrické/umelé aranžovanie, prehnane veľa rekvizít naraz (max 2-3), text alebo logo v obrázku, **para/dym stúpajúci z jedla** (pri horúcich jedlách — polievky, vývary, čaje — pôsobí v AI-generovaných fotkách vždy nápadne umelo/falošne, radšej vynechaj), **tmavé pozadie/props (čierna bridlica a pod.) ani ostré dramatické bočné svetlo** (side-light, backlit okenná scéna) — v praxi to vyjde príliš tmavo/umelo/"studio" namiesto svetlého a vzdušného. Vždy radšej explicitne napíš "soft, evenly diffused bright daylight, no harsh directional shadows". **Prehnane sýte, „neónové" farby** (typicky pri jedlách s paprikovou/paradajkovou omáčkou — guláše, paprikáše, lečo — vychádzajú kričiaco oranžovo-červené, čo pôsobí umelo). Vždy pridaj `natural, realistic home-cooked food colours, not oversaturated or neon` a pri paprikových/paradajkových omáčkach opíš farbu ako `muted brownish paprika-red`, nie „rich/vibrant red".
+Nikdy ale: prehnane geometrické/umelé aranžovanie, prehnane veľa rekvizít naraz (max 2-3), text alebo logo v obrázku, **para/dym stúpajúci z jedla** (pri horúcich jedlách — polievky, vývary, čaje — pôsobí v AI-generovaných fotkách vždy nápadne umelo/falošne, radšej vynechaj), **tmavé pozadie/props (čierna bridlica a pod.) ani ostré dramatické bočné svetlo** (side-light, backlit okenná scéna) — v praxi to vyjde príliš tmavo/umelo/"studio" namiesto svetlého a vzdušného. Vždy radšej explicitne napíš "soft, evenly diffused bright daylight, no harsh directional shadows". **Ľudia ani ruky** — do fotky nikdy nedávaj osoby, ruky ani časti tela; len jedlo a rekvizity. **Prehnane sýte, „neónové" farby** (typicky pri jedlách s paprikovou/paradajkovou omáčkou — guláše, paprikáše, lečo — vychádzajú kričiaco oranžovo-červené, čo pôsobí umelo). Vždy pridaj `natural, realistic home-cooked food colours, not oversaturated or neon` a pri paprikových/paradajkových omáčkach opíš farbu ako `muted brownish paprika-red`, nie „rich/vibrant red".
 
 **Presná šablóna (2-krokový proces — analýza receptu + 10 kompozičných variantov) je nižšie v tejto sekcii, v `## Foto prompt — 2-krokový proces`.** Použi ju vždy, aj mimo týždenného letáku. (`tyzdenny-vystup/SKILL.md` na ňu len odkazuje, nedrží vlastnú kópiu — nech nevznikajú dve verzie, ktoré sa časom rozídu.)
 
@@ -166,7 +166,62 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. [NAZO
 A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing an elevated home cooking style with [NAZOV RECEPTU] in a modern matte bowl on a clean oak surface. Right next to it is a contemporary dish of [INÁ INGREDIENCIA], tying into the meal. A modern brushed fork leans casually on the bowl. A few pieces of [HLAVNÁ BYLINKA] scattered naturally on the table for that authentic lifestyle touch. The [HLAVNÁ ČASŤ POSTUPU] looks vibrant. Soft, welcoming daylight.
 ```
 
-Každý recept má svoj vygenerovaný text uložený v `foto_prompt` poli/sekcii — použi presne ten text pri generovaní.
+**11. Leštený betón (industriálny minimalizmus)**
+```
+A bright, modern editorial food photograph in a vertical 9:16 format. A close-up of [NAZOV RECEPTU] in a sleek white ceramic bowl on a smooth, light grey polished concrete countertop. Elevated home cooking vibe. The [HLAVNÁ ČASŤ POSTUPU] is sharply focused. A casually folded sage green linen napkin sits under a modern matte silver spoon. Blurred water glass in the background. Natural scattered crumbs of [DÔLEŽITÉ INGREDIENCIE] and fresh [HLAVNÁ BYLINKA]. Soft diffused natural daylight. Appetizing and not overly styled.
+```
+
+**12. „Alfresco" stolovanie (svetlá terasa)** — letné/šalátové jedlá
+```
+A sunny, bright lifestyle food photo, 9:16 format. [NAZOV RECEPTU] served on a modern matte ceramic plate, sitting on a smooth light teak wood patio table, capturing an alfresco dining aesthetic. Soft dappled natural sunlight, still bright and even (no harsh light patches). A casually placed modern fork and a small contemporary bowl of [INÁ INGREDIENCIA] in the background. Garnished with [HLAVNÁ BYLINKA]. Lived-in, inviting, and mouth-watering editorial style.
+```
+
+**13. Moderná tmavá bridlica (elegancia)** — POUŽI LEN na jedlá, ktorým tmavé pozadie svedčí (steak, čokoládový dezert); inak vynechaj
+```
+A sophisticated, warm minimalist food photo, 9:16 format. [NAZOV RECEPTU] in a matte off-white bowl on a smooth, modern dark slate surface. Soft, diffused directional window light creating an elegant but authentic editorial mood (not harsh). No rustic elements. A sleek matte black fork on a charcoal linen napkin. A few pieces of fresh [HLAVNÁ BYLINKA] and [DÔLEŽITÉ INGREDIENCIE] scattered cleanly. Highly appetizing and elevated home cooking feel.
+```
+
+**14. Terazzo ostrovček (svieži trend)**
+```
+A bright, trendy editorial food shot, 9:16 format. [NAZOV RECEPTU] in a modern ribbed ceramic bowl on a smooth, neutral-toned terrazzo kitchen island. Elevated lifestyle feel. A messy but clean white linen cloth with a brushed brass spoon. The blurred background shows a contemporary glass of water and a small pinch dish of [INÁ INGREDIENCIA]. Garnished perfectly with [HLAVNÁ BYLINKA]. Soft, airy daylight.
+```
+
+**15. Japandi štýl (svetlý jaseň a zen)**
+```
+A calm, warm minimalist food photograph, 9:16 format. [NAZOV RECEPTU] in a simple matte stoneware bowl on a smooth, pale ash wood table, embracing a clean Japandi aesthetic. Organic lived-in feel, not overly styled. A wooden-handled modern spoon and a tiny pinch bowl of [DÔLEŽITÉ INGREDIENCIE] add depth. Garnished effortlessly with [HLAVNÁ BYLINKA]. Soft, diffused morning window light.
+```
+
+**16. Pastelové matné pozadie (svieže a prístupné)**
+```
+A fresh, modern editorial food photo, 9:16 format. [NAZOV RECEPTU] served on a sleek white plate over a smooth, matte sage-green backdrop. Bright, airy, and appetizing. A casually draped light beige linen napkin with modern silver cutlery. A small dish of [INÁ INGREDIENCIA] is slightly out of focus in the back. A few crumbs and fresh [HLAVNÁ BYLINKA] for a credible lifestyle touch. Delicious and approachable.
+```
+
+**17. Nerezový pult (čistý „chef" vibe)**
+```
+A clean, modern culinary lifestyle photo, 9:16 format. [NAZOV RECEPTU] in a minimalist matte bowl on a brushed stainless steel prep counter, warm tone, no cold metallic reflections. Bright, crisp natural daylight. Elevated home cooking, professional but lived-in, not industrial. A modern chef's knife resting in the blurred background next to raw [DÔLEŽITÉ INGREDIENCIE]. The [HLAVNÁ ČASŤ POSTUPU] is vibrant and heavily garnished with [HLAVNÁ BYLINKA].
+```
+
+**18. Ranný podnos (útulný lifestyle)** — raňajky
+```
+A cozy, bright editorial lifestyle photo, 9:16 format. [NAZOV RECEPTU] served in a modern ceramic bowl on a smooth light wood serving tray, casually placed over soft white linen bedding. A small modern cup of coffee or tea and a dish of [INÁ INGREDIENCIA] in the beautifully blurred background. A modern matte spoon rests nearby. Inviting, appetizing, and lived-in. Soft, diffused window light highlighting the [HLAVNÁ ČASŤ POSTUPU].
+```
+
+**19. Dvojtónový pult (mramor a drevo)**
+```
+A bright, elevated food blog photograph, 9:16 format. [NAZOV RECEPTU] resting on a modern kitchen counter that splits cleanly between smooth white marble and light oak wood. Warm minimalism aesthetic. A casually folded neutral napkin under a sleek brass fork. Scattered fresh [HLAVNÁ BYLINKA] and a pinch of [DÔLEŽITÉ INGREDIENCIE] add authenticity. Soft, airy side-light, no harsh shadows, making the meal look irresistible.
+```
+
+**20. Ležérny pruhovaný ľan (uvoľnené stolovanie)**
+```
+A bright, welcoming editorial food photo, 9:16 format. [NAZOV RECEPTU] in a sleek matte bowl placed on a modern, subtly striped linen tablecloth (white and light grey). Elevated but relaxed home cooking. A modern silver spoon, a blurred modern glass of water, and a small side plate of [INÁ INGREDIENCIA] create depth. Natural dropped crumbs of [DÔLEŽITÉ INGREDIENCIE]. The [HLAVNÁ ČASŤ POSTUPU] looks fresh and appetizing. Soft, inviting daylight.
+```
+
+**21. Rustikálna liatinová panvica/hrniec zo sporáka** — jednohrnce, guláše, leča, prívarky, restované
+```
+A cozy rustic food photograph, vertical 9:16 format. [NAZOV RECEPTU] in a cast-iron skillet or enamel pot with a wooden spoon resting in it, garnished with fresh [HLAVNÁ BYLINKA], straight from the stove on a light rustic wooden table with a folded linen cloth and [INÁ INGREDIENCIA] beside it. Soft, bright, evenly diffused daylight, natural realistic colours, no visible steam.
+```
+
+Každý recept má svoj vygenerovaný text uložený v `foto_prompt` poli/sekcii — použi presne ten text pri generovaní. **Striedaj celý roster (21 šablón)**, nielen prvých pár — najmä 11–21 vedome používaj na rozbitie „bowl na drevenom stole" jednotvárnosti. Šablóna **13 (tmavá bridlica) len na tmavo-vhodné jedlá**; **bez ľudí/rúk** v žiadnej.
 
 ### Fotky postupu (voliteľné, zatiaľ nepoužívané pravidelne)
 
