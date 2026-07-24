@@ -173,3 +173,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - brusnicová omáčka
 - majonéza
 - sušienky
+
+---
+
+**Foto surovín:** parkovaný (zatiaľ neaktívny) prompt na štúdiové fotky jednotlivých surovín je v `znalostna-baza/prompt-fotky-surovin.md`.
