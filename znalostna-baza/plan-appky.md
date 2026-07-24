@@ -46,6 +46,15 @@ výslovnej požiadavky používateľa.
   nákupnom zozname pri lacných trvanlivých surovinách z obľúbených
   receptov) a AI odfotenie špajze na automatické pridanie položiek (platený
   tier, vision model). Zaraď do Fázy 4 (huby) pri návrhu Špajza obrazovky.
+- **Užívateľský profil (preferencie)** (dohodnuté 07/2026, plná schéma v
+  `architektura.md` sekcia „Užívateľský profil"): lokálny zber udalostí
+  (uvarené/uložené/preskočené/nákup) + odvodený agregát (obľúbené tagy,
+  frekvencia, priemerná cena) — štruktúrované fakty, nikdy AI text ako
+  zdroj pravdy. Zber môže začať už vo **Fáze 3** (lokálne, bez backendu),
+  radenie receptov/Špajze/zásobného nákupu z neho čerpá vo **Fáze 4**.
+  GDPR panel (prístup/oprava/export/vymazanie) patrí do existujúceho
+  `AppProfileScreen`, postaviť ho radšej skôr než neskôr — pri Fáze 6
+  (sync) sa nič nepredeláva, len pribudne server strana.
 
 ## Účty / registrácie / náklady (kedy čo treba)
 

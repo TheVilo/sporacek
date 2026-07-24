@@ -71,6 +71,52 @@ Skript na konci vypíše pokrytie (koľko surovín má cenu, koľko receptov je 
 
 ---
 
+## Užívateľský profil (preferencie) — dohodnuté 07/2026
+
+**Účel:** appka sa má postupne učiť, čo user reálne varí a preferuje, a to použiť na chytrejšie radenie receptov, zásobný nákup (viď „Špajza" vyššie) a odporúčania — bez toho, aby sa AI text stal zdrojom pravdy namiesto dát.
+
+**Kľúčový princíp: štruktúrované fakty sú zdroj pravdy, AI text je len prezentačná vrstva navrchu.** Nikdy neuklad AI-vygenerovaný voľný text ako primárne úložisko — je ťažké ho dotazovať/auditovať/exportovať a starne. AI sa volá len keď treba z hotových faktov poskladať vetu pre usera (cache-uj výsledok, neregeneruj pri každom otvorení appky).
+
+**Dve fázy (rovnaký vzor ako celá appka — lokálne najprv, sync neskôr):**
+- **Fáza A (teraz, bez backendu):** profil žije len v telefóne (SQLDelight, `shared` KMP modul). Žiadny účet, dáta neopúšťajú zariadenie.
+- **Fáza B (Fáza 6, ostrý backend):** ten istý model sa synchronizuje k účtu — vtedy nastupujú plné GDPR povinnosti (nižšie).
+
+**Dátový model — dve vrstvy:**
+
+1. **Surové udalosti** (append-only log, lokálne držaný ~90 dní, potom sa už len premietol do agregátu a zahodí sa — data minimization): `{ typ, recept_slug?, surovina_id?, obchod?, cena_spolu?, usetrene?, datum }`, `typ` ∈ `uvarene | ulozene | preskocene | nakup_dokonceny | spajza_pridane | spajza_spotrebovane`.
+2. **Odvodený profil** (prepočítaný z udalostí, čistá aritmetika — žiadne AI volanie, prakticky zadarmo, pár KB na usera):
+   ```json
+   {
+     "verzia": 1,
+     "aktualizovane": "2026-07-24T10:00:00Z",
+     "domacnost": { "pocet_osob": 2 },
+     "preferovany_obchod": "Lidl",
+     "oblubene_tagy": { "vysoky-protein": 8, "jednohrnec": 5 },
+     "vyhybane_suroviny": ["ryby"],
+     "priemerna_cena_porcia": 1.85,
+     "frekvencia_tyzdenne": 4.2,
+     "celkovo_usetrene": 148.30,
+     "posledne_recepty": [{"slug": "...", "datum": "..."}]
+   }
+   ```
+
+**Kriticky dôležité oddelenie:** `alergeny` (z `AppAllergensScreen`) sú explicitné, bezpečnostné, zadané userom ručne — **nikdy** sa neodvodzujú ani nemenia zo správania. `vyhybane_suroviny` v tomto profile sú len odhad z opakovaného preskakovania — používajú sa na radenie/odporúčania, **nikdy** na bezpečnostné filtrovanie. Tieto dve veci sa nesmú zamieňať ani zlúčiť do jedného poľa.
+
+**Napojenie:** `UserProfileRepository` v KMP `shared` module (rovnaký vzor ako `RecipeRepository`) — appka zapíše udalosť pri relevantnej akcii, agregát sa prepočíta na pozadí. Konzumuje ho radenie receptov na Domov, radenie v Špajzi (pokrytie surovinami **aj** preferencia), zásobný nákup (frekvencia použitia trvanlivej suroviny).
+
+**GDPR — nie nová obrazovka, sekcia v existujúcom `AppProfileScreen` (#18):**
+
+| právo | čo v appke |
+|---|---|
+| prístup/transparentnosť | „Čo o tebe vieme" — polia vyššie preložené do ľudskej reči, nie surový JSON |
+| oprava | každé odvodené pole (obľúbené tagy, vyhýbané suroviny) editovateľné/zmazateľné userom priamo — opravené dáta sú aj presnejšie |
+| prenositeľnosť | „Stiahnuť moje dáta" — export JSON |
+| vymazanie | „Vymazať moje dáta" — zmaže lokálne udalosti + agregát, po sync aj na serveri |
+
+V lokálnej fáze A je riziko nízke (dáta neopúšťajú zariadenie), ale tento panel sa oplatí postaviť už teraz — keď príde backend (Fáza B), nič sa nepredeláva, len pribudne sync. Pred spustením appky s reálnymi userami (Fáza 5+) si toto premietni cez právnika — toto je inžiniersky návrh, nie právne stanovisko.
+
+---
+
 ## Social obsah (`social/`)
 
 **Účel:** `docs/social.html` je databáza pripraveného social obsahu — hotový text a grafika na Instagram/Facebook na priame stiahnutie. Štyri zdroje:
