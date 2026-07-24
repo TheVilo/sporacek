@@ -211,8 +211,14 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 .lightbox-section ol li::marker { color: var(--terracotta); font-weight: 700; }
 .lightbox-section ol li strong { display: block; color: var(--green-ink); }
 .postup-popis { margin-top: 2px; }
-.postup-tip { margin-top: 4px; font-size: .8rem; color: var(--terracotta); }
-.postup-timer { margin-top: 4px; font-size: .8rem; font-weight: 700; color: var(--green-ink); }
+.postup-tip {
+  margin-top: 6px; font-size: .8rem; color: var(--text); background: color-mix(in srgb, var(--sand) 35%, var(--surface));
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 11px;
+}
+.postup-timer {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font-size: .8rem; font-weight: 700; color: var(--green-ink);
+  background: color-mix(in srgb, var(--sand) 20%, var(--surface)); border: 1px solid var(--border); border-radius: 100px; padding: 4px 12px;
+}
 .postup-foto { display: block; margin-top: 6px; width: 100%; max-width: 280px; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; }
 .postup-foto-caption { margin-top: 4px; max-width: 280px; font-size: .76rem; font-style: italic; color: var(--text); opacity: .8; }
 .lightbox-section ul.ingredients { margin: 0; padding-left: 1.2em; list-style: disc; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
