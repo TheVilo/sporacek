@@ -39,6 +39,13 @@ výslovnej požiadavky používateľa.
 - **Špajza a spoplatnenie**: design handoff ju má v MVP; skôr bola plánovaná
   ako platená fáza 2. Dohodnuté smerovanie: **postaviť v MVP**, o spoplatnení
   rozhodnúť pri launchi (feature flag). Ak sa to zmení, aktualizuj tu.
+- **Špajza = vyťahovanie, nie hromadenie** (dohodnuté 07/2026, detail v
+  `architektura.md` sekcia „Appka: API v1..."): Špajza obrazovka má aktívne
+  radiť recepty podľa pokrytia surovinami zo špajze + `spotreba_dni`, nie
+  byť pasívny zoznam. K tomu dve doplnkové funkcie: zásobný nákup (nudge v
+  nákupnom zozname pri lacných trvanlivých surovinách z obľúbených
+  receptov) a AI odfotenie špajze na automatické pridanie položiek (platený
+  tier, vision model). Zaraď do Fázy 4 (huby) pri návrhu Špajza obrazovky.
 
 ## Účty / registrácie / náklady (kedy čo treba)
 

@@ -52,6 +52,13 @@ Skript na konci vypíše pokrytie (koľko surovín má cenu, koľko receptov je 
 
 **Pripravovaná funkcia „špajža" (platená).** Trvanlivé suroviny (`trvanlivost: "trvanlive"`), ktoré sa neminú, si user odloží do špajze; môže si tam pridať aj to, čo má doma. Šporáček s tým potom **počíta pri odhade ceny aj nákupnom zozname** — čo je v špajži, sa neduplikuje do nákupu a recepty sa uprednostne skladajú tak, aby sa domáce zásoby spotrebovali (ďalšia forma šetrenia). Preto databáza už teraz rozlišuje `trvanlivost` a v nákupnom zozname drží `id` + konkrétny produkt — špajža sa bude porovnávať práve cez `id`. (Samotná špajža sa rieši ako ďalší krok, dátový model je na ňu pripravený.)
 
+**Kľúčový produktový princíp špajze (dohodnuté 07/2026): vyťahovanie, nie hromadenie.** Špajza nemá byť pasívny zoznam „čo mám doma" — Špajza obrazovka má **aktívne radiť recepty podľa toho, koľko % surovín už má user doma** (+ ako lacno dokúpi zvyšok cez `ceny_za_porciu`), s prioritou na suroviny, ktorým sa kráti `spotreba_dni` (najprv uvar to, čo sa čoskoro pokazí). Toto je jadro celej funkcie — nie doplnok. Z toho vyplývajú dve ďalšie funkcie naviazané na špajzu:
+
+- **Zásobný nákup (nudge v nákupnom zozname).** Samostatná sekcia v zozname („Zásoby — oplatí sa doplniť"), oddelená od tohtotýždňových surovín receptu. Zloženie: trvanlivé suroviny (`trvanlivost: "trvanlive"`), ktoré sa objavujú v uložených/často varených receptoch usera, a ich aktuálna cena je výrazne pod `statistiky.bezna_jednotkova_cena` (skutočná výhoda, nielen nálepka „akcia"). Beží nad existujúcimi dátami, netreba nič nové v databáze.
+- **AI odfotenie špajze → automatické položky (platená alternatíva).** Vo flow „Pridať surovinu do špajze" popri ručnom pridaní aj možnosť odfotiť policu/chladničku — vision model (rovnaká trieda ako Gemini na fotky receptov, viď `generovanie-fotiek/SKILL.md`) rozpozná produkty a napáruje ich na `id` cez rovnaký `Matcher`, čo používa `build_databaza.py`. Ušetrí ručné pridávanie desiatok položiek naraz — vhodné ako platený tier.
+
+**Foto po navarení → galéria → social (potvrdené, je už v dizajne appky).** Po dovarení si user odfotí hotové jedlo; fotka sa uloží k receptu do osobnej galérie. So súhlasom usera je to zdroj reálneho UGC obsahu na social siete — presne v duchu moodboardu z `brand-manual.md` („reálna kuchyňa, nie štúdio, nie stock fotky").
+
 ---
 
 ## Appka: API v1, dizajnové tokeny, náhľady fotiek
