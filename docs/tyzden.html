@@ -224,7 +224,7 @@ function postupStepHtml(s) {
   const popis = s.popis ? `<div class="postup-popis">${escapeHtml(s.popis)}</div>` : "";
   const tip = s.tip ? `<div class="postup-tip">💡 ${escapeHtml(s.tip)}</div>` : "";
   const timer = s.timer_min ? `<div class="postup-timer">⏱ ${s.timer_min} min</div>` : "";
-  const foto = s.foto ? `<img class="postup-foto" src="${RAW_BASE}/${s.foto}" alt="${escapeHtml(s.foto_caption || "")}" loading="lazy">` : "";
+  const foto = s.foto ? `<img class="postup-foto" src="${RAW_BASE}/${s.foto}" alt="${escapeHtml(s.foto_caption || "")}" loading="lazy">${s.foto_caption ? `<div class="postup-foto-caption">${escapeHtml(s.foto_caption)}</div>` : ""}` : "";
   return `<li><strong>${escapeHtml(s.nadpis)}</strong>${popis}${tip}${timer}${foto}</li>`;
 }
 

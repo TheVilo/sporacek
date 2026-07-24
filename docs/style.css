@@ -214,6 +214,7 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 .postup-tip { margin-top: 4px; font-size: .8rem; color: var(--terracotta); }
 .postup-timer { margin-top: 4px; font-size: .8rem; font-weight: 700; color: var(--green-ink); }
 .postup-foto { display: block; margin-top: 6px; width: 100%; max-width: 280px; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; }
+.postup-foto-caption { margin-top: 4px; max-width: 280px; font-size: .76rem; font-style: italic; color: var(--text); opacity: .8; }
 .lightbox-section ul.ingredients { margin: 0; padding-left: 1.2em; list-style: disc; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
 .lightbox-section ul.ingredients li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .lightbox-section ul.ingredients li::marker { color: var(--terracotta); font-weight: 700; }
