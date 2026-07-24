@@ -39,10 +39,15 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format. A bowl of 
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode 8–11 minút do al dente. Pred scedením si odlož pohár vody z varenia.
-2. Zatiaľ priprav pesto: bazalku, väčšinu parmezánu, cesnak, vlašské orechy a olivový olej rozmixuj (alebo utlč v mažiari) na hrubšiu zelenú pastu. Osoľ, okoreň.
-3. Scedené cestoviny prehoď späť do hrnca (mimo ohňa), vmiešaj pesto a podľa potreby trochu vody z cestovín, nech sa hladko obalí.
-4. Podávaj posypané zvyškom parmezánu.
+1. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode 8–11 minút do al dente. Pred scedením si odlož pohár vody z varenia.
+   ⏱ 10 min
+
+2. **Priprav pesto.**
+   Bazalku, väčšinu parmezánu, cesnak, vlašské orechy a olivový olej rozmixuj (alebo utlč v mažiari) na hrubšiu zelenú pastu. Osoľ, okoreň.
+
+3. **Spoj cestoviny s pestom a podávaj.**
+   Scedené cestoviny prehoď späť do hrnca mimo ohňa, vmiešaj pesto a podľa potreby trochu vody z cestovín, nech sa hladko obalí. Podávaj posypané zvyškom parmezánu.
 
 ---
 

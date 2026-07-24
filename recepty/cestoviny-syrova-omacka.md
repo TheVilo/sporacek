@@ -38,11 +38,19 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format. A bowl of 
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode 8–11 minút do al dente, sceď.
-2. Na masle opraž múku do svetlej zápražky (1 minútu). Za stáleho miešania po častiach prilievaj mlieko, aby nevznikli hrudky.
-3. Priveď k varu a var, kým omáčka mierne zhustne. Odstav z ohňa a vmiešaj strúhaný syr, kým sa rozpustí do hladka.
-4. Osoľ, okoreň, pridaj scedené cestoviny a premiešaj.
-5. Podávaj posypané zvyškom syra a čiernym korením.
+1. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode 8–11 minút do al dente, sceď.
+   ⏱ 10 min
+
+2. **Priprav zápražku a vmiešaj mlieko.**
+   Na masle opraž múku do svetlej zápražky (asi 1 minútu). Za stáleho miešania po častiach prilievaj mlieko, aby nevznikli hrudky.
+   *Tip: Mlieko prilievaj postupne po malých dávkach a stále miešaj — inak sa v omáčke vytvoria hrudky.*
+
+3. **Zhusti omáčku a vmiešaj syr.**
+   Priveď k varu a var, kým omáčka mierne zhustne. Odstav z ohňa a vmiešaj strúhaný syr, kým sa rozpustí do hladka.
+
+4. **Spoj s cestovinami a podávaj.**
+   Osoľ, okoreň, pridaj scedené cestoviny a premiešaj. Podávaj posypané zvyškom syra a čiernym korením.
 
 ---
 

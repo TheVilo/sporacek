@@ -41,12 +41,19 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode 8–11 minút do al dente, sceď.
-2. Zatiaľ na olivovom oleji speň nadrobno nakrájanú cibuľu a cesnak (3–4 minúty).
-3. Pridaj konzervované paradajky a oregano, osoľ, okoreň a dus 8–10 minút, kým omáčka mierne zhustne.
-4. Tuniak sceď a vidličkou ho rozdrob, vmiešaj do omáčky a krátko prehrej.
-5. Pridaj scedené cestoviny, premiešaj a dochuť.
-6. Podávaj posypané parmezánom a petržlenovou vňaťou.
+1. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode 8–11 minút do al dente, sceď.
+   ⏱ 10 min
+
+2. **Priprav paradajkovú omáčku.**
+   Na olivovom oleji speň nadrobno nakrájanú cibuľu a cesnak (3–4 minúty). Pridaj konzervované paradajky a oregano, osoľ, okoreň a dus, kým omáčka mierne zhustne.
+   ⏱ 9 min
+
+3. **Vmiešaj tuniaka.**
+   Tuniak sceď a vidličkou ho rozdrob, vmiešaj do omáčky a krátko prehrej.
+
+4. **Spoj s cestovinami a podávaj.**
+   Pridaj scedené cestoviny, premiešaj a dochuť. Podávaj posypané parmezánom a petržlenovou vňaťou.
 
 ---
 

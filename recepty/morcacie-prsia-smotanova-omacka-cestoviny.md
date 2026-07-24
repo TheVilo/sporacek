@@ -41,13 +41,23 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode 8–11 minút do al dente.
-2. Morčacie prsia nakrájaj na prúžky, osoľ a okoreň.
-3. Na olivovom oleji opekaj morčacie mäso 5–6 minút, kým nezbelie, vyber z panvice.
-4. Na tom istom oleji opraž šampiňóny a cesnak 5 minút.
-5. Pridaj morčacie mäso späť, zalej smotanou, prevar 3–4 minúty do zhustnutia.
-6. Vmiešaj uvarené cestoviny, dochuť soľou a korením.
-7. Podávaj posypané parmezánom a petržlenovou vňaťou.
+1. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode 8–11 minút do al dente.
+   ⏱ 10 min
+
+2. **Opeč morčacie mäso.**
+   Morčacie prsia nakrájaj na prúžky, osoľ a okoreň. Na olivovom oleji opekaj, kým nezbelie, vyber z panvice.
+
+3. **Opraž šampiňóny a cesnak.**
+   Na tom istom oleji opraž šampiňóny a cesnak.
+   ⏱ 5 min
+
+4. **Zalej smotanou a spoj s mäsom.**
+   Pridaj morčacie mäso späť, zalej smotanou, prevar do zhustnutia.
+   *Tip: Nevar prudko, nech sa smotana nezrazí.*
+
+5. **Spoj s cestovinami a podávaj.**
+   Vmiešaj uvarené cestoviny, dochuť soľou a korením. Podávaj posypané parmezánom a petržlenovou vňaťou.
 
 ---
 

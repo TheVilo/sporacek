@@ -39,10 +39,19 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format. A bowl of 
 
 ## Postup
 
-1. Cestoviny (ideálne špagety) uvar v osolenej vode 8–11 minút do al dente. Pred scedením si odlož pohár vody z varenia.
-2. Zatiaľ cesnak nakrájaj na tenké plátky. Na olivovom oleji ho na miernom ohni opekaj do zlatista (nesmie zhorknúť), pridaj čili vločky a krátko opraž.
-3. Scedené cestoviny prehoď do panvice s cesnakovým olejom, prilej trochu vody z cestovín a premiešaj, nech sa obalia a šťava sa spojí.
-4. Vmiešaj nasekanú petržlenovú vňať, dochuť soľou a podávaj posypané parmezánom.
+1. **Uvar cestoviny (ideálne špagety).**
+   Cestoviny uvar v osolenej vode 8–11 minút do al dente. Pred scedením si odlož pohár vody z varenia.
+   ⏱ 10 min
+
+2. **Opeč cesnak s čili vločkami.**
+   Cesnak nakrájaj na tenké plátky. Na olivovom oleji ho na miernom ohni opekaj do zlatista, pridaj čili vločky a krátko opraž.
+   *Tip: Cesnak stráž — na silnejšom ohni rýchlo zhorkne a horkosť pokazí celé jedlo.*
+
+3. **Spoj cestoviny s cesnakovým olejom.**
+   Scedené cestoviny prehoď do panvice s cesnakovým olejom, prilej trochu vody z cestovín a premiešaj, nech sa obalia a šťava sa spojí.
+
+4. **Dochuť a podávaj.**
+   Vmiešaj nasekanú petržlenovú vňať, dochuť soľou a podávaj posypané parmezánom.
 
 ---
 

@@ -43,13 +43,23 @@ A bright, wider modern editorial table scene, 9:16 format, blending warm minimal
 
 ## Postup
 
-1. Hovädzie mäso nakrájaj na väčšie kocky, osoľ a okoreň.
-2. Na olivovom oleji opeč mäso zo všetkých strán dozlata, vyber z hrnca.
-3. Na tom istom oleji opraž cibuľu do sklovita, odstav z ohňa a vmiešaj sladkú papriku (nech nezhorkne).
-4. Pridaj cesnak, nakrájanú papriku, paradajkový pretlak a mäso späť, zalej 400 ml vody s rozdrveným bujónom.
-5. Prikry a dusaj na miernom ohni 1 hodinu, kým nie je mäso mäkké, priebežne premiešaj a podľa potreby prilej vodu.
-6. Medzitým uvar cestoviny v osolenej vode 8–11 minút do al dente.
-7. Perkelt podávaj na cestovinách, posypaný petržlenovou vňaťou.
+1. **Opeč mäso.**
+   Hovädzie mäso nakrájaj na väčšie kocky, osoľ a okoreň. Na olivovom oleji opeč zo všetkých strán dozlata, vyber z hrnca.
+
+2. **Orestuj cibuľu s paprikou.**
+   Na tom istom oleji opraž cibuľu do sklovita, odstav z ohňa a vmiešaj sladkú papriku, nech nezhorkne.
+   *Tip: Papriku vždy miešaj mimo horúceho ohňa — na horúcom povrchu rýchlo zhorkne a celé jedlo bude horké.*
+
+3. **Pridaj zeleninu a mäso, zalej vodou.**
+   Pridaj cesnak, nakrájanú papriku, paradajkový pretlak a mäso späť, zalej 400 ml vody s rozdrveným bujónom.
+
+4. **Duste do mäkka.**
+   Prikry a duste na miernom ohni, kým nie je mäso mäkké, priebežne premiešaj a podľa potreby prilej vodu.
+   ⏱ 60 min
+
+5. **Uvar cestoviny a podávaj.**
+   Medzitým uvar cestoviny v osolenej vode 8–11 minút do al dente. Perkelt podávaj na cestovinách, posypaný petržlenovou vňaťou.
+   ⏱ 10 min
 
 ---
 

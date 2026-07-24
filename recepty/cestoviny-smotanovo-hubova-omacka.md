@@ -41,12 +41,18 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode podľa návodu, sceď a odlož trochu vody z varenia.
-2. Šampiňóny nakrájaj na plátky. Na masle a oleji opeč nadrobno nakrájanú cibuľu do sklovita, pridaj šampiňóny a restuj, kým nevyparia vodu a nezozlatnú.
-3. Pridaj prelisovaný cesnak a krátko opraž.
-4. Prilej smotanu, priveď k varu a chvíľu povar, nech omáčka zhustne. Osoľ a okoreň.
-5. Vmiešaj scedené cestoviny a väčšinu parmezánu, premiešaj. Ak je omáčka hustá, prilej trochu vody z cestovín.
-6. Podávaj posypané zvyškom parmezánu a petržlenovou vňaťou.
+1. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode podľa návodu, sceď a odlož trochu vody z varenia.
+   ⏱ 10 min
+
+2. **Opeč cibuľu a šampiňóny.**
+   Šampiňóny nakrájaj na plátky. Na masle a oleji opeč nadrobno nakrájanú cibuľu do sklovita, pridaj šampiňóny a restuj, kým nevyparia vodu a nezozlatnú. Pridaj prelisovaný cesnak a krátko opraž.
+
+3. **Zalej smotanou a zhusti omáčku.**
+   Prilej smotanu, priveď k varu a chvíľu povar, nech omáčka zhustne. Osoľ a okoreň.
+
+4. **Spoj s cestovinami a podávaj.**
+   Vmiešaj scedené cestoviny a väčšinu parmezánu, premiešaj. Ak je omáčka hustá, prilej trochu vody z cestovín. Podávaj posypané zvyškom parmezánu a petržlenovou vňaťou.
 
 ---
 

@@ -39,10 +39,18 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format. A bowl of 
 
 ## Postup
 
-1. Brokolicu rozober na malé ružičky. Cestoviny uvar v osolenej vode 8–11 minút do al dente; v poslednej 3 minútach prihoď k nim brokolicu. Sceď, odlož trochu vody z varenia.
-2. Na olivovom oleji na miernom ohni opeč cesnak nakrájaný na plátky do zlatista, pridaj čili vločky.
-3. Pridaj scedené cestoviny s brokolicou, premiešaj a časť brokolice zľahka pomačkaj, nech sa vytvorí jemná omáčka. Podľa potreby prilej vodu z cestovín.
-4. Osoľ, okoreň a podávaj posypané parmezánom.
+1. **Uvar cestoviny s brokolicou.**
+   Brokolicu rozober na malé ružičky. Cestoviny uvar v osolenej vode 8–11 minút do al dente, v poslednej 3 minútach prihoď k nim brokolicu. Sceď, odlož trochu vody z varenia.
+   ⏱ 10 min
+
+2. **Opeč cesnak s čili vločkami.**
+   Na olivovom oleji na miernom ohni opeč cesnak nakrájaný na plátky do zlatista, pridaj čili vločky.
+
+3. **Spoj cestoviny s brokolicou a omáčkou.**
+   Pridaj scedené cestoviny s brokolicou, premiešaj a časť brokolice zľahka pomačkaj, nech sa vytvorí jemná omáčka. Podľa potreby prilej vodu z cestovín.
+
+4. **Dochuť a podávaj.**
+   Osoľ, okoreň a podávaj posypané parmezánom.
 
 ---
 

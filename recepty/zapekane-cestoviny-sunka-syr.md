@@ -40,13 +40,19 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A sco
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode al dente, scedi.
-2. Rúru predhrej na 190 °C. Zapekaciu misu vymasti maslom.
-3. Šunku nakrájaj na kocky.
-4. V miske rozšľahaj vajcia so smotanou, prelisovaným cesnakom, soľou a korením.
-5. Cestoviny premiešaj so šunkou a polovicou syra, presuň do zapekacej misy.
-6. Zalej vaječno-smotanovou zmesou, navrch posyp zvyšným syrom.
-7. Zapekaj 20–25 minút do zlatista a bublinkovej kôrky.
+1. **Uvar cestoviny a priprav formu.**
+   Cestoviny uvar v osolenej vode al dente, sceď. Rúru predhrej na 190 °C, zapekaciu misu vymasti maslom.
+   ⏱ 10 min
+
+2. **Priprav plnku.**
+   Šunku nakrájaj na kocky. V miske rozšľahaj vajcia so smotanou, prelisovaným cesnakom, soľou a korením.
+
+3. **Naplň formu.**
+   Cestoviny premiešaj so šunkou a polovicou syra, presuň do zapekacej misy. Zalej vaječno-smotanovou zmesou, navrch posyp zvyšným syrom.
+
+4. **Zapekaj dozlata.**
+   Zapekaj, kým je vrch zlatý a bublinkový.
+   ⏱ 22 min
 
 ---
 

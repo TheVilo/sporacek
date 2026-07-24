@@ -43,11 +43,19 @@
 
 ## Postup
 
-1. Cestoviny uvar v osolenej vode al dente podľa návodu, sceď a prepláchni studenou vodou, nech sa nelepia a vychladnú.
-2. Cherry paradajky prekroj na polovice, uhorku nakrájaj na kocky, červenú cibuľu na tenké plátky. Tuniaka sceď a rozdrob vidličkou.
-3. Na dresing zmiešaj jogurt, horčicu, citrónovú šťavu, soľ a korenie.
-4. V mise premiešaj cestoviny so zeleninou, kukuricou a tuniakom, prelej dresingom a jemne premiešaj.
-5. Nechaj 10 minút v chladničke odležať — chute sa spoja. Skvelý aj na druhý deň do krabičky.
+1. **Uvar cestoviny a vychlaď ich.**
+   Cestoviny uvar v osolenej vode al dente podľa návodu na obale, sceď a prepláchni studenou vodou, nech sa nelepia a rýchlo vychladnú.
+   ⏱ 10 min
+
+2. **Priprav zeleninu, tuniaka a dresing.**
+   Cherry paradajky prekroj na polovice, uhorku nakrájaj na kocky a červenú cibuľu na tenké plátky. Tuniaka sceď a rozdrob vidličkou. Na dresing zmiešaj jogurt, horčicu, citrónovú šťavu, soľ a korenie.
+
+3. **Spoj všetko dokopy.**
+   V mise premiešaj vychladnuté cestoviny so zeleninou, kukuricou a tuniakom, prelej dresingom a jemne premiešaj.
+
+4. **Nechaj odležať a podávaj.**
+   Šalát nechaj aspoň 10 minút v chladničke odležať, nech sa chute spoja. Skvelý aj na druhý deň do krabičky.
+   ⏱ 10 min
 
 ---
 

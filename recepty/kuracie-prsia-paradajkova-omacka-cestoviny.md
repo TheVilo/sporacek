@@ -41,12 +41,19 @@
 
 ## Postup
 
-1. Kuracie prsia nakrájaj na kocky, osoľ a okoreň.
-2. Na olivovom oleji opeč kuracie mäso dozlata, vyber z panvice.
-3. Na tom istom oleji opeč prelisovaný cesnak, pridaj nakrájané paradajky a duš 8–10 minút do zmäknutia.
-4. Vráť mäso späť do omáčky, pridaj bazalku a dochuť.
-5. Medzitým uvar cestoviny 8–11 minút do al dente.
-6. Podávaj cestoviny s omáčkou a mäsom, posyp strúhaným parmezánom.
+1. **Opeč kuracie mäso.**
+   Kuracie prsia nakrájaj na kocky, osoľ a okoreň. Na olivovom oleji opeč dozlata, vyber z panvice.
+
+2. **Priprav paradajkovú omáčku.**
+   Na tom istom oleji opeč prelisovaný cesnak, pridaj nakrájané paradajky a duš, kým nezmäknú.
+   ⏱ 9 min
+
+3. **Vráť mäso do omáčky.**
+   Vráť mäso späť do omáčky, pridaj bazalku a dochuť.
+
+4. **Uvar cestoviny a podávaj.**
+   Medzitým uvar cestoviny 8–11 minút do al dente. Podávaj cestoviny s omáčkou a mäsom, posyp strúhaným parmezánom.
+   ⏱ 10 min
 
 ---
 

@@ -42,13 +42,24 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 
 ## Postup
 
-1. Kuracie stehná nakrájaj na väčšie kusy, osoľ, okoreň.
-2. Cibuľu najemno nakrájaj, na oleji opeč do sklovita. Pridaj mäso, opeč zo všetkých strán.
-3. Stiahni z ohňa, vmiešaj sladkú papriku, krátko premiešaj, nech nezhorí.
-4. Pridaj nakrájanú papriku, paradajky a prelisovaný cesnak. Prilej trochu vody, prikry a duste 30–35 minút, kým mäso zmäkne.
-5. Na záver vmiešaj smotanu, prehrej (nevar prudko).
-6. Medzitým uvar cestoviny 8–11 minút do al dente.
-7. Podávaj perkelt na cestovinách.
+1. **Opeč cibuľu a kuracie mäso.**
+   Kuracie stehná nakrájaj na väčšie kusy, osoľ a okoreň. Cibuľu najemno nakrájaj, na oleji opeč do sklovita, pridaj mäso a opeč zo všetkých strán.
+
+2. **Vmiešaj papriku a zeleninu.**
+   Stiahni z ohňa, vmiešaj sladkú papriku, krátko premiešaj, nech nezhorí. Pridaj nakrájanú papriku, paradajky a prelisovaný cesnak.
+   *Tip: Papriku vždy pridávaj mimo horúceho ohňa — inak rýchlo zhorkne a jedlo bude horké.*
+
+3. **Duste do mäkka.**
+   Prilej trochu vody, prikry a duste, kým mäso zmäkne.
+   ⏱ 32 min
+
+4. **Vmiešaj smotanu.**
+   Na záver vmiešaj smotanu, prehrej.
+   *Tip: Nevar prudko, nech sa smotana nezrazí.*
+
+5. **Uvar cestoviny a podávaj.**
+   Medzitým uvar cestoviny 8–11 minút do al dente. Podávaj perkelt na cestovinách.
+   ⏱ 10 min
 
 ---
 

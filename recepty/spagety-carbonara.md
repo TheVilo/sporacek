@@ -39,12 +39,26 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. V miske rozšľahaj 2 žĺtky a 1 celé vajce s väčšinou nastrúhaného parmezánu a poriadnou dávkou čierneho korenia.
-2. Cestoviny uvar v osolenej vode podľa návodu. Pred scedením si odlož pohár vody z varenia.
-3. Zatiaľ slaninu nakrájaj na kocky a na olivovom oleji s roztlačeným strúčikom cesnaku opeč do chrumkava. Cesnak potom vyber.
-4. Scedené horúce cestoviny prehoď do panvice k slanine (mimo ohňa), premiešaj.
-5. Prilej vaječnú zmes a rýchlo miešaj — zvyškové teplo vytvorí krémovú omáčku. Ak treba, prilej trochu vody z cestovín, nech je omáčka hladká (nesmie sa zraziť na vajíčko).
-6. Ihneď podávaj, posyp zvyšným parmezánom a čiernym korením.
+1. **Rozšľahaj vaječnú zmes.**
+   V miske rozšľahaj 2 žĺtky a 1 celé vajce s väčšinou nastrúhaného parmezánu a poriadnou dávkou čierneho korenia.
+
+2. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode podľa návodu. Pred scedením si odlož pohár vody z varenia.
+   ⏱ 10 min
+
+3. **Opeč slaninu.**
+   Zatiaľ slaninu nakrájaj na kocky a na olivovom oleji s roztlačeným strúčikom cesnaku opeč do chrumkava. Cesnak potom vyber.
+
+4. **Spoj cestoviny so slaninou.**
+   Scedené horúce cestoviny prehoď do panvice k slanine, mimo ohňa, premiešaj.
+
+5. **Vmiešaj vaječnú zmes na krémovú omáčku.**
+   Prilej vaječnú zmes a rýchlo miešaj — zvyškové teplo cestovín vytvorí krémovú omáčku. Ak treba, prilej trochu vody z cestovín, nech je omáčka hladká.
+   *Tip: Panvica musí byť mimo priameho ohňa a vaječnú zmes miešaj rýchlo a nepretržite — ak je príliš horúco, vajcia sa zrazia namiesto hodvábnej omáčky.*
+   📷 fotky/postup/spagety-carbonara-krok-5.jpg — takto má vyzerať hodvábna omáčka, nie zrazené vajíčko
+
+6. **Podávaj ihneď.**
+   Ihneď podávaj, posyp zvyšným parmezánom a čiernym korením.
 
 ---
 

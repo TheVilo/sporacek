@@ -46,11 +46,28 @@ A bright, elevated food blog photograph, 9:16 format. A portion of baked lasagne
 
 ## Postup
 
-1. Na oleji speň nadrobno nakrájanú cibuľu a cesnak, pridaj mleté mäso a opeč. Vmiešaj pretlak, konzervované paradajky a oregano, osoľ, okoreň a dus 15–20 minút do zhustnutia (bolonská omáčka).
-2. Priprav béchamel: na masle opraž múku, po častiach prilievaj mlieko za stáleho miešania a povar do zhustnutia. Osoľ, okoreň.
-3. Rúru predhrej na 190 °C. Do zapekacej misy striedaj vrstvy: bolonská omáčka – lasagne dosky – béchamel, a takto pokračuj (skonči béchamelom).
-4. Posyp strúhaným syrom a zapekaj 30–35 minút, kým sú dosky mäkké a vrch zlatý.
-5. Pred krájaním nechaj lasagne 10 minút postáť, nech drží tvar.
+1. **Priprav bolonskú omáčku.**
+   Na oleji speň nadrobno nakrájanú cibuľu a cesnak, pridaj mleté mäso a opeč. Vmiešaj pretlak, konzervované paradajky a oregano, osoľ, okoreň.
+
+2. **Duste omáčku do zhustnutia.**
+   Dus na miernom ohni, kým omáčka pekne zhustne.
+   ⏱ 18 min
+
+3. **Priprav béchamel.**
+   Na masle opraž múku, po častiach prilievaj mlieko za stáleho miešania a povar do zhustnutia. Osoľ, okoreň.
+   *Tip: Mlieko prilievaj postupne po malých dávkach a stále miešaj — inak vzniknú hrudky.*
+
+4. **Poskladaj lasagne do vrstiev.**
+   Rúru predhrej na 190 °C. Do zapekacej misy striedaj vrstvy: bolonská omáčka – lasagne dosky – béchamel, a takto pokračuj, kým nespotrebuješ všetko (skonči béchamelom). Navrch posyp strúhaným syrom.
+   📷 fotky/postup/lasagne-bolonske-krok-4.jpg — takto majú vyzerať vrstvy v priereze
+
+5. **Zapekaj dozlata.**
+   Zapekaj, kým sú dosky mäkké a vrch zlatý.
+   ⏱ 32 min
+
+6. **Nechaj postáť pred krájaním.**
+   Pred krájaním nechaj lasagne postáť, nech drží tvar a pekne sa krája.
+   ⏱ 10 min
 
 ---
 
