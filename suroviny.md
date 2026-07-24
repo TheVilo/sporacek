@@ -131,6 +131,7 @@ Bez toho sa recepty nedajú spoľahlivo párovať s akciovým tovarom.
 - majoránka
 - kôpor
 - petržlenová vňať
+- pažítka
 - čerstvý koriander
 - mletá rasca
 - kari korenie

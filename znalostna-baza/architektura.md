@@ -109,7 +109,7 @@ Skript na konci vypíše pokrytie (koľko surovín má cenu, koľko receptov je 
 ### tagy (na rýchle vyhľadávanie)
 Používaj len tieto skupiny, nevymýšľaj nové hodnoty:
 
-- **typ:** obed, večera, raňajky, desiata, olovrant, dezert, polievka, šalát, jednohrnec, predjedlo, príloha, nápoj, pečivo
+- **typ:** obed, večera, raňajky, desiata, olovrant, dezert, polievka, šalát, jednohrnec, predjedlo, príloha, nápoj, pečivo, nátierka
 - **surovina:** kura, bravčové, hovädzie, ryba, morčacie, morské-plody, bezmäsité, strukoviny, jahňacie, kačacie
 - **výživa:** vegetariánske, vysoký-proteín, ľahké, sýte
 - **náročnosť:** do-20-minút, do-rúry, jednohrnec
