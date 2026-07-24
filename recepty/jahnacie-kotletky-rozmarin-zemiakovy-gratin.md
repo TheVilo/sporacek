@@ -41,14 +41,21 @@ A bright, wider modern editorial table scene, 9:16 format, blending warm minimal
 
 ## Postup
 
-1. Rúru predhrej na 180 °C. Zapekaciu misu vymasti maslom.
-2. Zemiaky ošúp a nakrájaj na tenké plátky (najlepšie na mandolíne).
-3. Smotanu prevar s 2 prelisovanými strúčikmi cesnaku, osoľ a okoreň.
-4. Zemiaky poukladaj v misy do vrstiev, zalej smotanou, navrch posyp syrom.
-5. Peč 45–50 minút, kým sú zemiaky mäkké a povrch zlatistý.
-6. Kotletky osoľ, okoreň, potri olivovým olejom so zvyšným prelisovaným cesnakom a nasekaným rozmarínom.
-7. Na rozohriatej panvici opekaj kotletky 3–4 minúty z každej strany (podľa hrúbky), kým majú zlatistú kôrku.
-8. Nechaj 5 minút odpočívať, podávaj so zemiakovým gratinom.
+1. **Priprav a poskladaj gratin.**
+   Rúru predhrej na 180 °C, zapekaciu misu vymasti maslom. Zemiaky ošúp a nakrájaj na tenké plátky (najlepšie na mandolíne). Smotanu prevar s 2 prelisovanými strúčikmi cesnaku, osoľ a okoreň. Zemiaky poukladaj v mise do vrstiev, zalej smotanou, navrch posyp syrom.
+
+2. **Zapeč gratin.**
+   Peč, kým sú zemiaky mäkké a povrch zlatistý.
+   ⏱ 47 min
+
+3. **Priprav kotletky.**
+   Kotletky osoľ, okoreň, potri olivovým olejom so zvyšným prelisovaným cesnakom a nasekaným rozmarínom.
+
+4. **Opeč kotletky.**
+   Na rozohriatej panvici opekaj 3–4 minúty z každej strany (podľa hrúbky), kým majú zlatistú kôrku.
+
+5. **Nechaj odpočívať a podávaj.**
+   Nechaj 5 minút odpočívať, podávaj so zemiakovým gratinom.
 
 ---
 

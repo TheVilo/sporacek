@@ -41,12 +41,20 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Mleté mäso osoľ, okoreň a rukami rozdeľ na 4 rovnaké guľky, sploštené na placky o niečo väčšie ako žemle (pri pečení sa zmenšia).
-2. Panvicu rozohrej s olivovým olejom na vysokej teplote, placky opekaj 3–4 minúty z každej strany.
-3. Minútu pred koncom polož na každú placku plátok cheddaru, nech sa rozpustí.
-4. Žemle prekroj a opeč na suchej panvici z vnútornej strany do zlatista.
-5. Cibuľu a paradajky nakrájaj na kolieska.
-6. Žemľu potri horčicou, poukladaj šalát, burger s roztopeným cheddarom, paradajku a cibuľu.
+1. **Vytvaruj placky.**
+   Mleté mäso osoľ, okoreň a rukami rozdeľ na 4 rovnaké guľky, sploštené na placky o niečo väčšie ako žemle (pri pečení sa zmenšia).
+
+2. **Opeč placky a rozpusti syr.**
+   Panvicu rozohrej s olivovým olejom na vysokej teplote, placky opekaj 3–4 minúty z každej strany. Minútu pred koncom polož na každú placku plátok cheddaru, nech sa rozpustí.
+
+3. **Opraž žemle.**
+   Žemle prekroj a opeč na suchej panvici z vnútornej strany do zlatista.
+
+4. **Priprav zeleninu.**
+   Cibuľu a paradajky nakrájaj na kolieska.
+
+5. **Poskladaj burger.**
+   Žemľu potri horčicou, poukladaj šalát, burger s roztopeným cheddarom, paradajku a cibuľu.
 
 ---
 

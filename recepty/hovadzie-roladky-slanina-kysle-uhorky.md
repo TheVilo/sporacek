@@ -42,14 +42,23 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Slice
 
 ## Postup
 
-1. Plátky hovädzieho mäsa jemne naklepni, osoľ, okoreň a potri horčicou.
-2. Na každý plátok polož plátok slaniny, kúsok kyslej uhorky a trochu nakrájanej cibule.
-3. Zroluj a zopni špáradlom.
-4. Na olivovom oleji opeč roládky zo všetkých strán dozlata.
-5. Zalej 400 ml vody, prikry a dusaj na miernom ohni 55–60 minút, kým nie sú mäkké.
-6. Roládky vyber, šťavu zahusti múkou rozmiešanou v troche studenej vody, prevar do zhustnutia.
-7. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
-8. Roládky nakrájaj na plátky, polej omáčkou, posyp petržlenovou vňaťou a podávaj s ryžou.
+1. **Priprav, naplň a zroluj roládky.**
+   Plátky hovädzieho mäsa jemne naklepni, osoľ, okoreň a potri horčicou. Na každý plátok polož plátok slaniny, kúsok kyslej uhorky a trochu nakrájanej cibule, zroluj a zopni špáradlom.
+   *Tip: Zroluj čo najtesnejšie a špáradlo prepichni naprieč koncom závitku, nech sa pri dusení neroztvorí.*
+   📷 fotky/postup/hovadzie-roladky-slanina-kysle-uhorky-krok-1.jpg — takto sa roláda zvíja a spevňuje špáradlom
+
+2. **Opeč roládky.**
+   Na olivovom oleji opeč roládky zo všetkých strán dozlata.
+
+3. **Dus do mäkka.**
+   Zalej 400 ml vody, prikry a dusaj na miernom ohni, kým nie sú mäkké.
+   ⏱ 57 min
+
+4. **Zahusti omáčku a uvar ryžu.**
+   Roládky vyber, šťavu zahusti múkou rozmiešanou v troche studenej vody, prevar do zhustnutia. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+
+5. **Podávaj.**
+   Roládky nakrájaj na plátky, polej omáčkou, posyp petržlenovou vňaťou a podávaj s ryžou.
 
 ---
 

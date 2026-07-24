@@ -42,12 +42,23 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Te
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju opeč do sklovita až mäkka (8–10 minút).
-2. Odstav hrniec z ohňa, vmiešaj sladkú papriku (na horúcom povrchu horkne). Hneď pridaj papriku nakrájanú na prúžky a paradajku na kocky, krátko preduś.
-3. Pridaj kuracie stehná nakrájané na väčšie kúsky, osoľ, okoreň a podlej trochou vody. Prikry a dus na miernom ohni 25–30 minút, kým je mäso mäkké.
-4. Smotanu rozšľahaj s múkou do hladka, vmiešaj do paprikáša a povar 3–4 minúty, nech omáčka zhustne.
-5. Medzitým uvar cestoviny v osolenej vode 8–11 minút do al dente a sceď.
-6. Paprikáš dochuť soľou a korením. Podávaj s cestovinami, posypané petržlenovou vňaťou.
+1. **Opraž cibuľu.**
+   Cibuľu nakrájaj nadrobno a na oleji ju opeč do sklovita až mäkka.
+   ⏱ 9 min
+
+2. **Pridaj papriku a paradajku.**
+   Odstav hrniec z ohňa, vmiešaj sladkú papriku. Hneď pridaj papriku nakrájanú na prúžky a paradajku na kocky, krátko preduš.
+   *Tip: Papriku vždy miešaj mimo horúceho povrchu — na ohni rýchlo zhorkne.*
+
+3. **Dus kura do mäkka.**
+   Pridaj kuracie stehná nakrájané na väčšie kúsky, osoľ, okoreň a podlej trochou vody. Prikry a dus na miernom ohni, kým je mäso mäkké.
+   ⏱ 27 min
+
+4. **Zahusti smotanou a uvar cestoviny.**
+   Smotanu rozšľahaj s múkou do hladka, vmiešaj do paprikáša a povar 3–4 minúty, nech omáčka zhustne. Medzitým uvar cestoviny v osolenej vode 8–11 minút do al dente a sceď.
+
+5. **Dochuť a podávaj.**
+   Paprikáš dochuť soľou a korením. Podávaj s cestovinami, posypané petržlenovou vňaťou.
 
 ---
 

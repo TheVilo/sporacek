@@ -42,12 +42,18 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 
 ## Postup
 
-1. Kuracie prsia nakrájaj na väčšie kocky. V miske zmiešaj olivový olej, citrónovú šťavu, prelisovaný cesnak, oregano, údenú papriku, soľ a korenie. Kura v marináde nechaj aspoň 30 minút (ideálne dlhšie v chladničke).
-2. Papriku, cuketu a cibuľu nakrájaj na kúsky podobnej veľkosti ako kura.
-3. Striedavo napichaj kura a zeleninu na špajle (ak používaš drevené, namoč ich vopred do vody, nech nezhoria).
-4. Grilovaciu panvicu alebo gril rozohrej na vysokú teplotu.
-5. Špízy grilluj 10–12 minút, priebežne obracaj, kým kura nie je prepečené a zelenina má pekné grilovacie pásiky.
-6. Podávaj s klinom citróna.
+1. **Namarinuj kura.**
+   Kuracie prsia nakrájaj na väčšie kocky. V miske zmiešaj olivový olej, citrónovú šťavu, prelisovaný cesnak, oregano, údenú papriku, soľ a korenie. Kura v marináde nechaj aspoň 30 minút (ideálne dlhšie v chladničke).
+   ⏱ 30 min
+
+2. **Priprav zeleninu a napichaj špízy.**
+   Papriku, cuketu a cibuľu nakrájaj na kúsky podobnej veľkosti ako kura. Striedavo napichaj kura a zeleninu na špajle (ak používaš drevené, namoč ich vopred do vody, nech nezhoria).
+
+3. **Grilluj špízy.**
+   Grilovaciu panvicu alebo gril rozohrej na vysokú teplotu. Špízy grilluj 10–12 minút, priebežne obracaj, kým kura nie je prepečené a zelenina má pekné grilovacie pásiky.
+
+4. **Podávaj.**
+   Podávaj s klinom citróna.
 
 ---
 

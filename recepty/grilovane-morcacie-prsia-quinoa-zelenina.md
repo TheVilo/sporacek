@@ -42,12 +42,21 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 
 ## Postup
 
-1. Quinou dôkladne prepláchni pod studenou vodou (odstráni horkastú chuť), uvar podľa návodu (pomer cca 1:2 s vodou, 15 minút, potom nechaj 5 minút postáť pod pokrievkou).
-2. Morčacie prsia rozkroj vodorovne na tenšie plátky, potri zmesou oleja, prelisovaného cesnaku, oregana, soli a korenia. Nechaj 10 minút marinovať.
-3. Cuketu a papriku nakrájaj na hrubšie plátky/prúžky.
-4. Na rozohriatej grilovacej panvici opekaj morčacie prsia 4–5 minút z každej strany, kým nie sú prepečené a majú pekné grilovacie pásiky. Nechaj 5 minút odpočívať, potom nakrájaj na plátky.
-5. Na tej istej panvici opeč cuketu, papriku a cherry paradajky 5–6 minút, kým zmäknú a mierne zoškvarnú.
-6. Servíruj morčacie prsia na quinoi, obložené grilovanou zeleninou, pokvapkané citrónovou šťavou.
+1. **Uvar quinou.**
+   Quinou dôkladne prepláchni pod studenou vodou (odstráni horkastú chuť), uvar podľa návodu (pomer cca 1:2 s vodou), potom nechaj 5 minút postáť pod pokrievkou.
+   ⏱ 15 min
+
+2. **Namarinuj morčacie prsia a priprav zeleninu.**
+   Morčacie prsia rozkroj vodorovne na tenšie plátky, potri zmesou oleja, prelisovaného cesnaku, oregana, soli a korenia. Nechaj 10 minút marinovať. Cuketu a papriku nakrájaj na hrubšie plátky/prúžky.
+
+3. **Grilluj morčacie prsia.**
+   Na rozohriatej grilovacej panvici opekaj 4–5 minút z každej strany, kým nie sú prepečené a majú pekné grilovacie pásiky. Nechaj 5 minút odpočívať, potom nakrájaj na plátky.
+
+4. **Grilluj zeleninu.**
+   Na tej istej panvici opeč cuketu, papriku a cherry paradajky 5–6 minút, kým zmäknú a mierne zoškvarnú.
+
+5. **Podávaj.**
+   Servíruj morčacie prsia na quinoi, obložené grilovanou zeleninou, pokvapkané citrónovou šťavou.
 
 ---
 

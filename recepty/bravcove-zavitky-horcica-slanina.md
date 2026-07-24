@@ -42,13 +42,22 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Tw
 
 ## Postup
 
-1. Plátky karé jemne rozklep, osoľ, okoreň a potri z jednej strany horčicou.
-2. Na každý plátok polož plátok slaniny a prúžok kyslej uhorky, zviň do závitku a spevni špáradlom.
-3. Na oleji závitky opeč zo všetkých strán do zlata, vyber ich. V tom istom tuku opeč nadrobno nakrájanú cibuľu.
-4. Vmiešaj paradajkový pretlak, krátko opraž a zalej vodou. Vráť závitky, prikry a dus na miernom ohni 40 minút, občas ich obráť.
-5. Závitky vyber. Do omáčky vmiešaj múku rozšľahanú v troche studenej vody a povar, kým zhustne. Dochuť.
-6. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
-7. Vyber špáradlá a podávaj závitky preliate omáčkou, s ryžou.
+1. **Priprav a naplň závitky.**
+   Plátky karé jemne rozklep, osoľ, okoreň a potri z jednej strany horčicou. Na každý plátok polož plátok slaniny a prúžok kyslej uhorky, zviň do závitku a spevni špáradlom.
+   📷 fotky/postup/bravcove-zavitky-horcica-slanina-krok-1.jpg — takto sa závitok zvíja a spevňuje špáradlom
+
+2. **Opeč závitky a cibuľu.**
+   Na oleji závitky opeč zo všetkých strán do zlata, vyber ich. V tom istom tuku opeč nadrobno nakrájanú cibuľu.
+
+3. **Dus závitky v omáčke.**
+   Vmiešaj paradajkový pretlak, krátko opraž a zalej vodou. Vráť závitky, prikry a dus na miernom ohni, občas ich obráť.
+   ⏱ 40 min
+
+4. **Zahusti omáčku a uvar ryžu.**
+   Závitky vyber, do omáčky vmiešaj múku rozšľahanú v troche studenej vody a povar, kým zhustne, dochuť. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+
+5. **Podávaj.**
+   Vyber špáradlá a podávaj závitky preliate omáčkou, s ryžou.
 
 ---
 

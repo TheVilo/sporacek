@@ -40,11 +40,17 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 
 ## Postup
 
-1. Kuracie stehná potri olivovým olejom, osoľ a okoreň, nechaj 10 minút odležať.
-2. Kaleráb a jablko ošúp a nastrúhaj nahrubo, pokvapkaj citrónovou šťavou, aby nezhnedli.
-3. Kalerábovo-jablkovú zmes premiešaj s jogurtom, osoľ podľa chuti.
-4. Kuracie stehná grilluj na rozohriatej panvici alebo grile 6–7 minút z každej strany, kým nie sú prepečené a kožka chrumkavá.
-5. Podávaj stehná s kalerábovým šalátom, posyp čerstvou petržlenovou vňaťou.
+1. **Priprav kuracie stehná.**
+   Kuracie stehná potri olivovým olejom, osoľ a okoreň, nechaj 10 minút odležať.
+
+2. **Priprav kalerábový šalát.**
+   Kaleráb a jablko ošúp a nastrúhaj nahrubo, pokvapkaj citrónovou šťavou, aby nezhnedli. Premiešaj s jogurtom, osoľ podľa chuti.
+
+3. **Grilluj kuracie stehná.**
+   Grilluj na rozohriatej panvici alebo grile 6–7 minút z každej strany, kým nie sú prepečené a kožka chrumkavá.
+
+4. **Podávaj.**
+   Podávaj stehná s kalerábovým šalátom, posyp čerstvou petržlenovou vňaťou.
 
 ---
 

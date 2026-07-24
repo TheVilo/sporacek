@@ -43,12 +43,26 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Kuracie prsia rozrež pozdĺž na motýlika (nie úplne cez), rozlož a jemne rozklep na rovnakú hrúbku. Osoľ a okoreň z oboch strán.
-2. Na jednu polovicu každého prsia polož 2 plátky šunky a 2 plátky syra, prekry druhou polovicou a okraje pritlač, nech plnka nevyteká.
-3. Priprav tri taniere: múku, rozšľahané vajcia a strúhanku. Každé prsia obaľ postupne v múke, vajci a strúhanke.
-4. Zemiaky ošúp, nakrájaj na menšie kúsky a uvar v osolenej vode do mäkka (asi 15 minút). Vodu zlej, zemiaky roztlač a po častiach vmiešaj mierne zohriate mlieko a maslo, kým nevznikne hladká kaša. Dosoľ.
-5. V panvici rozohrej dostatok oleja na strednom ohni. Cordon bleu vyprážaj z oboch strán do zlatista, asi 5–6 minút na stranu, kým je mäso prepečené a syr rozpustený.
-6. Nechaj chvíľu odkvapkať na papierovej utierke a podávaj so zemiakovou kašou.
+1. **Priprav a rozklep kuracie prsia.**
+   Kuracie prsia rozrež pozdĺž na motýlika (nie úplne cez), rozlož a jemne rozklep na rovnakú hrúbku. Osoľ a okoreň z oboch strán.
+
+2. **Naplň šunkou a syrom, dôkladne zapečať.**
+   Na jednu polovicu každého prsia polož 2 plátky šunky a 2 plátky syra, prekry druhou polovicou a okraje pritlač, nech plnka nevyteká.
+   *Tip: Okraje pritlač poriadne po celom obvode — ak zostane škára, syr pri vyprážaní vytečie von.*
+   📷 fotky/postup/kuracie-cordon-bleu-krok-2.jpg — takto zapečať okraje, aby plnka nevytiekla
+
+3. **Obaľ v strúhanke.**
+   Priprav tri taniere: múku, rozšľahané vajcia a strúhanku. Každé prsia obaľ postupne v múke, vajci a strúhanke.
+
+4. **Priprav zemiakovú kašu.**
+   Zemiaky ošúp, nakrájaj na menšie kúsky a uvar v osolenej vode do mäkka. Vodu zlej, zemiaky roztlač a po častiach vmiešaj mierne zohriate mlieko a maslo, kým nevznikne hladká kaša. Dosoľ.
+   ⏱ 15 min
+
+5. **Vysmaž cordon bleu.**
+   V panvici rozohrej dostatok oleja na strednom ohni. Cordon bleu vyprážaj z oboch strán do zlatista, asi 5–6 minút na stranu, kým je mäso prepečené a syr rozpustený.
+
+6. **Podávaj.**
+   Nechaj chvíľu odkvapkať na papierovej utierke a podávaj so zemiakovou kašou.
 
 ---
 

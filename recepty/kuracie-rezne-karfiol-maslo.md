@@ -41,12 +41,20 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Go
 
 ## Postup
 
-1. Kuracie prsia rozkrojaj na plátky, naklepni na tenšie rezne, osoľ a okoreň.
-2. Postupne obaľuj v múke, rozšľahanom vajci a strúhanke.
-3. Na oleji smaž rezne 3–4 minúty z každej strany do zlatista, osuš na papierovej utierke.
-4. Karfiol rozdeľ na ružičky a var v osolenej vode 8–10 minút, kým je ešte na skus.
-5. Uvarený karfiol premiešaj s rozpusteným maslom, osoľ a okoreň.
-6. Podávaj rezne s karfiolom a citrónom.
+1. **Priprav rezne.**
+   Kuracie prsia rozkrojaj na plátky, naklepni na tenšie rezne, osoľ a okoreň.
+
+2. **Obaľ v strúhanke.**
+   Postupne obaľuj v múke, rozšľahanom vajci a strúhanke.
+
+3. **Vysmaž rezne.**
+   Na oleji smaž 3–4 minúty z každej strany do zlatista, osuš na papierovej utierke.
+
+4. **Uvar karfiol.**
+   Karfiol rozdeľ na ružičky a var v osolenej vode 8–10 minút, kým je ešte na skus.
+
+5. **Zamiešaj maslo a podávaj.**
+   Uvarený karfiol premiešaj s rozpusteným maslom, osoľ a okoreň. Podávaj rezne s karfiolom a citrónom.
 
 ---
 

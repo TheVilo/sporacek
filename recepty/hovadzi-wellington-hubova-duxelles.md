@@ -44,15 +44,30 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. A sli
 
 ## Postup
 
-1. Sviečkovicu osoľ, okoreň, na rozohriatom oleji rýchlo opeč zo všetkých strán dozlata (2–3 minúty spolu), nechaj vychladnúť a potri horčicou.
-2. Šampiňóny nasekaj najemno (alebo v mixéri), spolu s cesnakom opekaj na suchej panvici 8–10 minút, kým sa odparí všetka tekutina a vznikne hustá hmota (duxelles), osoľ, okoreň, pridaj tymian, nechaj vychladnúť.
-3. Na potravinovú fóliu poukladaj vedľa seba plátky parmskej šunky, navrch rozotri hubovú duxelles.
-4. Na duxelles polož sviečkovicu, pomocou fólie pevne zroluj do valca, konce fólie zatoč, daj na 20 minút do chladničky stuhnúť.
-5. Rúru predhrej na 200 °C. Lístkové cesto rozvin na pomúčenej doske, vybaľ mäso z fólie a zaroluj do cesta, okraje zatlač a prebytočné cesto odstrihni.
-6. Wellington potri rozšľahaným vajcom, po povrchu urob nožom jemné dekoratívne zárezy.
-7. Peč 30–35 minút do zlatista (na strednú prepečenosť mäsa vnútri).
-8. Kým sa Wellington pečie, špargľu zbav dreveného konca, pokvapkaj olivovým olejom, osoľ a na grile alebo panvici opeč 4–5 minút do jemného opečenia.
-9. Wellington pred krájaním nechaj 10 minút odpočívať. Nakrájaj a podávaj s grilovanou špargľou.
+1. **Opeč sviečkovicu a potri horčicou.**
+   Sviečkovicu osoľ, okoreň, na rozohriatom oleji rýchlo opeč zo všetkých strán dozlata (2–3 minúty spolu), nechaj vychladnúť a potri horčicou.
+
+2. **Priprav hubovú duxelles.**
+   Šampiňóny nasekaj najemno (alebo v mixéri), spolu s cesnakom opekaj na suchej panvici 8–10 minút, kým sa odparí všetka tekutina a vznikne hustá hmota, osoľ, okoreň, pridaj tymian, nechaj vychladnúť.
+
+3. **Zabaľ mäso do šunky a duxelles.**
+   Na potravinovú fóliu poukladaj vedľa seba plátky parmskej šunky, navrch rozotri hubovú duxelles. Na duxelles polož sviečkovicu, pomocou fólie pevne zroluj do valca, konce fólie zatoč, daj do chladničky stuhnúť.
+   *Tip: Fóliu zatáčaj pevne ako cukrík — čím tesnejší valec, tým rovnomernejšie sa Wellington neskôr pekne krája.*
+   ⏱ 20 min
+   📷 fotky/postup/hovadzi-wellington-hubova-duxelles-krok-3.jpg — takto pevne zabaľ mäso do fólie pred chladením
+
+4. **Zabaľ do lístkového cesta.**
+   Rúru predhrej na 200 °C. Lístkové cesto rozvin na pomúčenej doske, vybaľ mäso z fólie a zaroluj do cesta, okraje zatlač a prebytočné cesto odstrihni. Wellington potri rozšľahaným vajcom, po povrchu urob nožom jemné dekoratívne zárezy.
+
+5. **Peč dozlata.**
+   Peč, kým je cesto zlatisté a mäso vnútri má strednú prepečenosť.
+   ⏱ 32 min
+
+6. **Priprav špargľu.**
+   Kým sa Wellington pečie, špargľu zbav dreveného konca, pokvapkaj olivovým olejom, osoľ a na grile alebo panvici opeč 4–5 minút do jemného opečenia.
+
+7. **Nechaj odpočívať a podávaj.**
+   Wellington pred krájaním nechaj 10 minút odpočívať. Nakrájaj a podávaj s grilovanou špargľou.
 
 ---
 

@@ -43,14 +43,21 @@ A contemporary, bright lifestyle food photo in a 9:16 format, capturing an eleva
 
 ## Postup
 
-1. Ryžové rezance priprav 12–15 minút do mäkka (zvyčajne namočiť v horúcej vode 5–8 minút), scedi.
-2. Hovädzie mäso nakrájaj na tenké prúžky, ideálne naprieč vláknami — mäso zostane jemnejšie.
-3. Papriku, mrkvu a cibuľu nakrájaj na tenké prúžky/plátky.
-4. V miske zmiešaj sójovú omáčku, med a nastrúhaný zázvor na omáčku.
-5. Panvicu/wok rozpáľ na vysokom ohni s trochou sezamového oleja. Hovädzie opekaj 1–2 minúty, kým získa farbu, vyber z panvice.
-6. Na tej istej panvici opeč cibuľu, mrkvu a cesnak 1 minútu, pridaj papriku, opekaj ďalšie 2 minúty, nech zelenina zostane chrumkavá.
-7. Vráť mäso späť, prilej omáčku, pridaj rezance a rýchlo premiešaj, kým sa všetko prehreje a rezance sa obalia omáčkou.
-8. Podávaj posypané sezamovými semienkami.
+1. **Priprav rezance a omáčku.**
+   Ryžové rezance namoč v horúcej vode podľa návodu (5–8 minút), kým nezmäknú, sceď. V miske zmiešaj sójovú omáčku, med a nastrúhaný zázvor na omáčku.
+
+2. **Nakrájaj mäso a zeleninu.**
+   Hovädzie mäso nakrájaj na tenké prúžky, ideálne naprieč vláknami. Papriku, mrkvu a cibuľu nakrájaj na tenké prúžky/plátky.
+   *Tip: Krájanie naprieč vláknami je kľúčové — pozdĺž vlákien by bolo mäso žuvacie.*
+
+3. **Opeč hovädzie na vysokom ohni.**
+   Panvicu/wok rozpáľ na vysokom ohni s trochou sezamového oleja. Mäso opekaj 1–2 minúty, kým získa farbu, vyber z panvice.
+
+4. **Opeč zeleninu, kým je chrumkavá.**
+   Na tej istej panvici opeč cibuľu, mrkvu a cesnak 1 minútu, pridaj papriku a opekaj ďalšie 2 minúty, nech zelenina zostane chrumkavá.
+
+5. **Spoj všetko s omáčkou a podávaj.**
+   Vráť mäso späť do panvice, prilej omáčku, pridaj rezance a rýchlo premiešaj, kým sa všetko prehreje a rezance sa obalia omáčkou. Podávaj posypané sezamovými semienkami.
 
 ---
 

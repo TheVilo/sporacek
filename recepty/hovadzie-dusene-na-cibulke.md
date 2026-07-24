@@ -42,13 +42,26 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Te
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju pomaly opekaj 12–15 minút, kým poriadne zmäkne a skaramelizuje sa dozlata.
-2. Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán.
-3. Odstav z ohňa, vmiešaj sladkú papriku, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň, krátko opraž a zalej vodou, aby bolo mäso ponorené. Pridaj bobkový list, osoľ a okoreň.
-4. Prikry a dus na miernom ohni 75–90 minút, podľa potreby podlievaj vodou, kým je mäso úplne mäkké.
-5. Vyber bobkový list. Ak chceš hustejšiu omáčku, vmiešaj múku rozšľahanú v troche studenej vody a povar.
-6. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
-7. Podávaj s ryžou, posypané petržlenovou vňaťou.
+1. **Skaramelizuj cibuľu.**
+   Cibuľu nakrájaj nadrobno a na oleji ju pomaly opekaj, kým poriadne zmäkne a skaramelizuje sa dozlata.
+   ⏱ 13 min
+
+2. **Opeč mäso.**
+   Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán.
+
+3. **Zalej a dochuť.**
+   Odstav z ohňa, vmiešaj sladkú papriku, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň, krátko opraž a zalej vodou, aby bolo mäso ponorené. Pridaj bobkový list, osoľ a okoreň.
+   *Tip: Papriku vždy miešaj mimo horúceho povrchu — na ohni rýchlo zhorkne.*
+
+4. **Dus do mäkka.**
+   Prikry a dus na miernom ohni, podľa potreby podlievaj vodou, kým je mäso úplne mäkké.
+   ⏱ 82 min
+
+5. **Zahusti omáčku a uvar ryžu.**
+   Vyber bobkový list. Ak chceš hustejšiu omáčku, vmiešaj múku rozšľahanú v troche studenej vody a povar. Medzitým uvar ryžu v osolenej vode podľa návodu a sceď.
+
+6. **Podávaj.**
+   Podávaj s ryžou, posypané petržlenovou vňaťou.
 
 ---
 

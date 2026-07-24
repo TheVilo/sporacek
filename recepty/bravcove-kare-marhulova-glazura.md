@@ -43,12 +43,22 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Ryžu prepláchni, zalej dvojnásobkom vody, osoľ a pod pokrievkou na miernom ohni var 12–15 minút do mäkka, kým nevpije vodu.
-2. Na oleji v hrnčeku krátko opraž horčičné semienko (asi 30 sekúnd, kým začne "poskakovať"), pridaj nadrobno nakrájanú cibuľu a dus 3 minúty do zmäknutia.
-3. Pridaj nastrúhaný zázvor, marhule nakrájané nadrobno, cukor a ocot. Dus na miernom ohni 12–15 minút, občas premiešaj, kým marhule úplne zmäknú a chutney zhustne do lesklej, mierne lepkavej konzistencie. Osoľ, okoreň.
-4. Kým sa chutney dusí, karé osuš, osoľ a okoreň z oboch strán. Na oleji na vysokom ohni opekaj 3–4 minúty z každej strany bez hýbania, kým nechytí zlatohnedú kôrku.
-5. Karé nechaj 3 minúty odpočinúť, potom nakrájaj na plátky.
-6. Na tanier daj ryžu, navrch plátky karé a lyžicu teplého marhuľového chutney.
+1. **Uvar ryžu.**
+   Ryžu prepláchni, zalej dvojnásobkom vody, osoľ a pod pokrievkou na miernom ohni var do mäkka, kým nevpije vodu.
+   ⏱ 14 min
+
+2. **Zaraz základ na chutney.**
+   Na oleji v hrnčeku krátko opraž horčičné semienko (asi 30 sekúnd, kým začne „poskakovať"), pridaj nadrobno nakrájanú cibuľu a dus 3 minúty do zmäknutia. Pridaj nastrúhaný zázvor, marhule nakrájané nadrobno, cukor a ocot.
+
+3. **Dus chutney do zhustnutia.**
+   Dus na miernom ohni, občas premiešaj, kým marhule úplne zmäknú a chutney zhustne do lesklej, mierne lepkavej konzistencie. Osoľ, okoreň.
+   ⏱ 13 min
+
+4. **Opeč karé dozlata.**
+   Kým sa chutney dusí, karé osuš, osoľ a okoreň z oboch strán. Na oleji na vysokom ohni opekaj 3–4 minúty z každej strany bez hýbania, kým nechytí zlatohnedú kôrku.
+
+5. **Nechaj odpočívať a podávaj.**
+   Karé nechaj 3 minúty odpočinúť, potom nakrájaj na plátky. Na tanier daj ryžu, navrch plátky karé a lyžicu teplého marhuľového chutney.
 
 ---
 

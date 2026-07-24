@@ -39,13 +39,22 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Kuracie prsia rozkroj vodorovne na polovicu (motýlik) alebo rozklep na rovnomernú hrúbku ~1,5 cm — vďaka tomu sa neprepečú nerovnomerne. Osoľ a okoreň z oboch strán, nechaj 5 minút odpočívať.
-2. Zemiaky uvar v osolenej vode 15–18 minút do mäkka. Scedi, pridaj kúsok masla.
-3. Kukuricu uvar v osolenej vode 8–10 minút.
-4. Na panvici rozpáľ trochu oleja/masla na strednom-vysokom ohni. Kuracie prsia opekaj 5–6 minút z prvej strany bez hýbania, kým sa samé neuvoľnia od dna, potom otoč a opekaj ešte 4–5 minút.
-5. V posledných 2 minútach pridaj zvyšok masla, prelisovaný cesnak a tymian. Panvicu mierne nakláňaj a rozpusteným maslom kuracie prsia priebežne polievaj (klasický reštauračný trik na šťavnatosť aj chuť).
-6. Kura nechaj 3 minúty odpočívať. Kukuricu osuš, potri zvyšným maslom so soľou.
-7. Podávaj kura s maslovými zemiakmi a kukuricou, prelej zvyšným cesnakovým maslom z panvice.
+1. **Priprav kuracie prsia.**
+   Kuracie prsia rozkroj vodorovne na polovicu (motýlik) alebo rozklep na rovnomernú hrúbku ~1,5 cm — vďaka tomu sa neprepečú nerovnomerne. Osoľ a okoreň z oboch strán, nechaj 5 minút odpočívať.
+
+2. **Uvar zemiaky a kukuricu.**
+   Zemiaky uvar v osolenej vode 15–18 minút do mäkka, sceď, pridaj kúsok masla. Kukuricu uvar v osolenej vode 8–10 minút.
+   ⏱ 17 min
+
+3. **Opeč kuracie prsia.**
+   Na panvici rozpáľ trochu oleja/masla na strednom-vysokom ohni. Kuracie prsia opekaj 5–6 minút z prvej strany bez hýbania, kým sa samé neuvoľnia od dna, potom otoč a opekaj ešte 4–5 minút.
+
+4. **Prelej cesnakovým maslom.**
+   V posledných 2 minútach pridaj zvyšok masla, prelisovaný cesnak a tymian. Panvicu mierne nakláňaj a rozpusteným maslom kuracie prsia priebežne polievaj.
+   *Tip: Tento trik sa volá "basting" — poliévanie rozpusteným maslom dodá šťavnatosť aj chuť.*
+
+5. **Podávaj.**
+   Kura nechaj 3 minúty odpočívať. Kukuricu osuš, potri zvyšným maslom so soľou. Podávaj kura s maslovými zemiakmi a kukuricou, prelej zvyšným cesnakovým maslom z panvice.
 
 ---
 

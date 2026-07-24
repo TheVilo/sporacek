@@ -40,14 +40,25 @@ A sophisticated, warm minimalist food photo, 9:16 format. A thick sliced rib-eye
 
 ## Postup
 
-1. Steaky vyber z chladničky aspoň 30 minút pred pečením, nech dosiahnu izbovú teplotu. Osuš papierovou utierkou, výdatne osoľ a okoreň.
-2. Maslo zmiešaj s prelisovaným cesnakom a nasekaným rozmarínom, vytvaruj do válčeka a daj chladiť.
-3. Špargľu zbav dreveného konca, premiešaj s olivovým olejom, soľou a korením.
-4. Panvicu (najlepšie liatinovú) rozpáľ nasucho dokiaľ nezačne mierne dymiť.
-5. Steaky opekaj 3–4 minúty z každej strany (podľa hrúbky a požadovanej prepečenosti), priebežne polievaj vytekajúcim tukom.
-6. Na inej panvici alebo grile opeč špargľu 4–5 minút, kým je jemne opečená a stále na skus.
-7. Steaky nechaj 5 minút odpočívať pod alobalom, potom navrch polož plátok bylinkového masla.
-8. Podávaj so špargľou.
+1. **Priprav steaky.**
+   Steaky vyber z chladničky aspoň 30 minút pred pečením, nech dosiahnu izbovú teplotu. Osuš papierovou utierkou, výdatne osoľ a okoreň.
+   ⏱ 30 min
+
+2. **Priprav bylinkové maslo.**
+   Maslo zmiešaj s prelisovaným cesnakom a nasekaným rozmarínom, vytvaruj do válčeka a daj chladiť.
+
+3. **Priprav špargľu.**
+   Špargľu zbav dreveného konca, premiešaj s olivovým olejom, soľou a korením.
+
+4. **Opeč steaky.**
+   Panvicu (najlepšie liatinovú) rozpáľ nasucho, dokiaľ nezačne mierne dymiť. Steaky opekaj 3–4 minúty z každej strany (podľa hrúbky a požadovanej prepečenosti), priebežne polievaj vytekajúcim tukom.
+   📷 fotky/postup/hovadzi-rib-eye-steak-bylinkove-maslo-sparglou-krok-4.jpg — takto vyzerá správne opečená kôrka pri polievaní maslom
+
+5. **Opeč špargľu.**
+   Na inej panvici alebo grile opeč špargľu 4–5 minút, kým je jemne opečená a stále na skus.
+
+6. **Nechaj odpočívať a podávaj.**
+   Steaky nechaj 5 minút odpočívať pod alobalom, potom navrch polož plátok bylinkového masla. Podávaj so špargľou.
 
 ---
 

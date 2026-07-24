@@ -41,12 +41,21 @@ A bright, wider modern editorial table scene, 9:16 format, blending warm minimal
 
 ## Postup
 
-1. Rebierka osoľ, okoreň a zabaľ do alobalu. Peč v rúre na 160 °C asi 1 hodinu, kým mäso zmäkne.
-2. Medzitým priprav glazúru: paradajkový pretlak, med, ocot, údenú papriku a prelisovaný cesnak zmiešaj dohladka.
-3. Rebierka vybaľ z alobalu, potri glazúrou zo všetkých strán.
-4. Grilovaciu panvicu alebo gril rozohrej na strednú-vysokú teplotu. Rebierka grilluj 8–10 minút, priebežne obracaj a potieraj zvyšnou glazúrou, kým nemajú lesklý karamelizovaný povrch.
-5. Kukuricu uvar 8–10 minút v osolenej vode, potom krátko grilluj spolu s rebierkami, kým nezíska pekné pásiky. Potri maslom.
-6. Podávaj rebierka s grilovanou kukuricou.
+1. **Peč rebierka v alobale.**
+   Rebierka osoľ, okoreň a zabaľ do alobalu. Peč v rúre na 160 °C, kým mäso zmäkne.
+   ⏱ 60 min
+
+2. **Priprav glazúru.**
+   Medzitým priprav glazúru: paradajkový pretlak, med, ocot, údenú papriku a prelisovaný cesnak zmiešaj dohladka.
+
+3. **Potri rebierka glazúrou a grilluj.**
+   Rebierka vybaľ z alobalu, potri glazúrou zo všetkých strán. Grilovaciu panvicu alebo gril rozohrej na strednú-vysokú teplotu. Grilluj 8–10 minút, priebežne obracaj a potieraj zvyšnou glazúrou, kým nemajú lesklý karamelizovaný povrch.
+
+4. **Priprav kukuricu.**
+   Kukuricu uvar 8–10 minút v osolenej vode, potom krátko grilluj spolu s rebierkami, kým nezíska pekné pásiky. Potri maslom.
+
+5. **Podávaj.**
+   Podávaj rebierka s grilovanou kukuricou.
 
 ---
 

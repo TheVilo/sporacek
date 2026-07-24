@@ -43,12 +43,21 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Go
 
 ## Postup
 
-1. Cibuľu najemno nasekaj, primiešaj k mletému mäsu spolu s vajcom, strúhankou, soľou a korením.
-2. Z hmoty vytvaruj menšie fašírky, opeč na oleji z oboch strán dozlata a dopeč pod pokrievkou.
-3. Zemiaky ošúp, nakrájaj a uvar v osolenej vode do mäkka (asi 15 minút).
-4. Uhorku nastrúhaj alebo nakrájaj na kocky, zľahka posoľ.
-5. Jogurt zmiešaj s prelisovaným cesnakom a troškou soli na omáčku.
-6. Podávaj fašírky s varenými zemiakmi, jogurtovo-cesnakovou omáčkou a uhorkovým šalátom.
+1. **Priprav mäsovú zmes.**
+   Cibuľu najemno nasekaj, primiešaj k mletému mäsu spolu s vajcom, strúhankou, soľou a korením.
+
+2. **Vytvaruj a opeč fašírky.**
+   Z hmoty vytvaruj menšie fašírky, opeč na oleji z oboch strán dozlata a dopeč pod pokrievkou.
+
+3. **Uvar zemiaky.**
+   Zemiaky ošúp, nakrájaj a uvar v osolenej vode do mäkka.
+   ⏱ 15 min
+
+4. **Priprav uhorkový šalát a omáčku.**
+   Uhorku nastrúhaj alebo nakrájaj na kocky, zľahka posoľ. Jogurt zmiešaj s prelisovaným cesnakom a troškou soli na omáčku.
+
+5. **Podávaj.**
+   Podávaj fašírky s varenými zemiakmi, jogurtovo-cesnakovou omáčkou a uhorkovým šalátom.
 
 ---
 
