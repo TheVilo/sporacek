@@ -9,7 +9,7 @@
 
 ## Foto prompt
 
-A bright, elevated food blog photograph, 9:16 format. A portion of baked lasagne with layers of pasta, bolognese and bechamel under golden cheese, on a plate resting on a modern kitchen counter that splits cleanly between smooth white marble and light oak wood. Warm minimalism. A neutral napkin under a sleek brass fork. Scattered basil. Soft, airy side-light, no harsh shadows. No text, no logo, no watermark in the image.
+A bright, modern editorial side-angle close-up, 9:16 format, showcasing elevated home cooking. A cleanly cut slice of baked bolognese lasagne on a smooth light wood surface, showing crisp, clearly defined and distinct alternating layers you can count from bottom to top: flat pasta sheets, a rich meaty bolognese layer, a creamy white bechamel layer, repeated in neat strata, finished with a golden melted cheese top. Each layer is separate, well-structured and easy to distinguish — a textbook cross-section that clearly shows how the lasagne is built up in layers. A modern matte silver serving spoon rests naturally at the edge. The background is blurred but shows a sleek glass of water to add realism and a lived-in feel. A few scattered crumbs of grated cheese and fresh basil leaves. Soft, airy daylight. No text, no logo, no watermark in the image. Natural, realistic home-cooked food colours, not oversaturated or neon.
 
 ---
 
