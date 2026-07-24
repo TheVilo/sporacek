@@ -9,7 +9,7 @@
 
 ## Foto prompt
 
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A bowl of creamy oatmeal topped with fresh blueberries, a spoonful of peanut butter and a drizzle of honey, on a clean, smooth light wood table. A softly wrinkled linen napkin beneath a modern matte spoon. Soft, evenly diffused bright daylight — no harsh directional shadows. No visible steam or smoke rising from the food. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+A calm, warm minimalist food photograph, 9:16 format. Creamy oatmeal topped with blueberries, peanut butter and honey in a simple matte stoneware bowl on a smooth pale ash wood table, clean Japandi aesthetic. Organic lived-in feel. A wooden-handled spoon and a tiny bowl of blueberries add depth. Soft diffused morning window light. No visible steam. No text, no logo, no watermark in the image.
 
 ---
 

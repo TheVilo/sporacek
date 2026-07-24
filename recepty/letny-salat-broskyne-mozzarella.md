@@ -9,7 +9,7 @@
 
 ## Foto prompt
 
-A contemporary, bright lifestyle food photo, 9:16 format. A summer salad of juicy peach slices and torn mozzarella, drizzled with balsamic reduction and scattered with fresh basil, on a matte plate on a smooth light oak table. A softly draped linen cloth and a modern fork nearby. Soft, airy natural window light — no harsh shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+A sunny, bright lifestyle food photo, 9:16 format. A summer salad of peach slices and torn mozzarella with basil and balsamic served on a modern matte ceramic plate, sitting on a smooth light teak wood patio table, alfresco dining aesthetic. Soft dappled natural sunlight, still bright and even, no harsh light patches. A casually placed modern fork and a small bowl of balsamic in the background. Garnished with basil. Inviting editorial style. No text, no logo, no watermark in the image.
 
 ---
 

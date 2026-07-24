@@ -9,7 +9,7 @@
 
 ## Foto prompt
 
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A creamy chicken and mushroom risotto with tender chicken pieces and sliced mushrooms, topped with grated parmesan and fresh parsley, in a shallow matte bowl on a clean, smooth light wood table. A softly wrinkled linen napkin beneath a modern matte fork. Soft, evenly diffused bright daylight — no harsh directional shadows. No visible steam or smoke rising from the food. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+A bright, modern editorial food photograph in a vertical 9:16 format. A close-up of a creamy chicken and mushroom risotto topped with grated parmesan and parsley in a sleek white ceramic bowl on a smooth, light grey polished concrete countertop. Elevated home cooking vibe. A casually folded sage green linen napkin sits under a modern matte silver spoon. Blurred water glass in the background. Natural scattered parsley and parmesan. Soft diffused natural daylight. Appetizing and not overly styled. No text, no logo, no watermark in the image.
 
 ---
 

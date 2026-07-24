@@ -9,7 +9,7 @@
 
 ## Foto prompt
 
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A bowl of thick greek yogurt topped with sliced peaches, crunchy oat-and-walnut granola and a drizzle of honey, on a clean, smooth light wood table. A softly wrinkled linen napkin beneath a modern matte spoon. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+A cozy, bright editorial lifestyle photo, 9:16 format. Thick greek yogurt topped with sliced peaches, granola and honey in a modern ceramic bowl on a smooth light wood serving tray, casually placed over soft white linen bedding. A small cup of coffee and a dish of granola in the blurred background. A modern matte spoon nearby. Inviting and lived-in. Soft diffused window light. No text, no logo, no watermark in the image.
 
 ---
 

@@ -20,7 +20,8 @@
 ---
 
 ## Foto prompt
-A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A vivid orange smoothie bowl topped with fresh blueberries, sliced peach and a sprinkle of oats, served in a minimalist matte ceramic bowl on a clean, smooth light wood table. A softly wrinkled neutral linen napkin lies beneath a modern matte spoon. Natural scattered oats and a few whole blueberries add an authentic, lived-in lifestyle feel. Crisp, diffused natural daylight. Film grain. No text, no logo, no watermark in the image.
+
+A bright, trendy editorial food shot, 9:16 format. A peach and blueberry smoothie bowl topped with fruit, granola and seeds in a modern ribbed ceramic bowl on a smooth neutral-toned terrazzo kitchen island. A clean white linen cloth with a brushed brass spoon. Blurred background with a glass of water and a small dish of granola. Garnished with blueberries. Soft, airy daylight. No text, no logo, no watermark in the image.
 
 ---
 

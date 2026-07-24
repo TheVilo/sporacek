@@ -8,7 +8,8 @@
 ---
 
 ## Foto prompt
-A warm, comforting top-down editorial food photo, 9:16 format, blending soft minimalism with a lived-in lifestyle feel. A deep red creamy tomato soup in a minimalist matte bowl, swirled with a touch of cream on top and garnished with fresh basil leaves, on a smooth wood table. A rustic slice of bread rests beside the bowl on a softly wrinkled linen napkin. Warm natural light. No text, no logo, no watermark in the image.
+
+A bright, welcoming editorial food photo, 9:16 format. Creamy tomato soup with a swirl of cream and basil in a sleek matte bowl on a modern subtly striped linen tablecloth (white and light grey). Relaxed home cooking. A silver spoon, a blurred glass of water, and a small side plate of bread create depth. Soft, inviting daylight. No visible steam. Natural realistic colours, not neon. No text, no logo, no watermark in the image.
 
 ---
 

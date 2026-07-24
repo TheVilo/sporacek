@@ -8,7 +8,8 @@
 ---
 
 ## Foto prompt
-A vibrant, warm editorial food photo, 9:16 format, blending cozy minimalism with a lived-in lifestyle aesthetic. A rich golden chicken curry with visible pieces of chicken and vegetables in a creamy coconut sauce, served in a minimalist matte bowl next to a small mound of fluffy white rice, on a smooth wood table. Fresh coriander leaves scattered on top and a lime wedge on the side. A softly wrinkled linen napkin and modern cutlery nearby. Warm, soft side lighting. No text, no logo, no watermark in the image.
+
+A clean, modern culinary lifestyle photo, 9:16 format. Chicken curry in golden coconut sauce with rice, sprinkled with coriander, in a minimalist matte bowl on a brushed stainless steel prep counter, warm tone, no cold metallic reflections. Bright crisp natural daylight, professional but lived-in. A chef's knife in the blurred background next to raw chilli and coriander. Heavily garnished with coriander. No text, no logo, no watermark in the image.
 
 ---
 

@@ -8,7 +8,8 @@
 ---
 
 ## Foto prompt
-A bright, appetizing editorial dessert photo, 9:16 format, blending warm minimalism with a lived-in lifestyle feel. Thin rolled pancakes filled with sweet cottage cheese, dusted with a little powdered sugar, arranged on a minimalist matte plate on a smooth light wood table. A small bowl of cottage cheese and a softly wrinkled linen napkin beside them. Soft, evenly diffused bright daylight — no harsh directional shadows, no dramatic side-lighting. No text, no logo, no watermark in the image.
+
+A fresh, modern editorial food photo, 9:16 format. Thin rolled pancakes filled with sweet cottage cheese, dusted with powdered sugar, on a sleek white plate over a smooth matte sage-green backdrop. Bright, airy, appetizing. A light beige linen napkin with modern silver cutlery. A small dish of cottage cheese slightly out of focus. Delicious and approachable. No text, no logo, no watermark in the image.
 
 ---
 

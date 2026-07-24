@@ -8,7 +8,8 @@
 ---
 
 ## Foto prompt
-A bold, appetizing 45-degree angle editorial food photo, 9:16 format. A portion of baked lasagne cut to show distinct layers of pasta sheets, meaty bolognese and creamy béchamel under a golden cheese top, on a minimalist matte plate over a smooth light wood table, garnished with a fresh basil leaf. A softly wrinkled linen napkin and a modern matte fork beside it. Soft, evenly diffused bright daylight — no harsh directional shadows. Natural, realistic home-cooked food colours, not oversaturated or neon. No text, no logo, no watermark in the image.
+
+A bright, elevated food blog photograph, 9:16 format. A portion of baked lasagne with layers of pasta, bolognese and bechamel under golden cheese, on a plate resting on a modern kitchen counter that splits cleanly between smooth white marble and light oak wood. Warm minimalism. A neutral napkin under a sleek brass fork. Scattered basil. Soft, airy side-light, no harsh shadows. No text, no logo, no watermark in the image.
 
 ---
 
