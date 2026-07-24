@@ -8,14 +8,19 @@ webe (sieťová politika blokuje weby obchodov) a netreba ho spúšťať lokáln
 Výstupné `ceny/*.json` workflow zabalí do Pull Requestu, ktorý prejde kontrolou
 podľa skillu `.claude/skills/ceny-z-letaku/SKILL.md` (časť C) a potom sa mergne.
 
-Režimy extrakcie (pole `mode` v STORES) — primárne FREE, Gemini až keď treba:
-  * jsonld — default, ZADARMO, bez kľúča: číta schema.org JSON-LD z HTML
-  * css    — ZADARMO, ale treba per-web selektory v poli `schema`
-  * llm    — Gemini Flash, potrebuje GEMINI_API_KEY (bez kľúča sa preskočí)
+Režimy extrakcie (pole `mode` v STORES):
+  * kimbino — HLAVNÝ režim: na www.kimbino.sk/<slug>/ nájde najnovší leták,
+              stiahne obrázky strán a Gemini vision z nich prečíta názvy + ceny.
+              Potrebuje GEMINI_API_KEY (bez kľúča sa preskočí). Podozrivé ceny
+              prečíta druhýkrát; nečitateľné sa zahodia (nikdy nula).
+  * jsonld  — ZADARMO, bez kľúča: číta schema.org JSON-LD z HTML (e-shopy;
+              slovenské reťazce ho ale nemajú — preto kimbino)
+  * css     — ZADARMO, ale treba per-web selektory v poli `schema`
+  * llm     — Gemini text z HTML stránky (leták-prehliadačky obchodov text
+              neobsahujú, preto sa nepoužíva)
 
-Typ ceny (viď `CLAUDE.md` → Cenová databáza):
-  * akciova — z web-letáku obchodu (dočasné akciové ceny)
-  * bezna   — z e-shopu obchodu (bežné ceny → doplnia diery pri oceňovaní receptov)
+Priame weby obchodov (lidl.sk, billa.sk, tesco.sk…) NEfungujú ako zdroj —
+ich leták-prehliadačky sú obrázkové appky bez cien v HTML (overené 07/2026).
 
 Použitie:
     python scripts/crawl_ceny.py --all                 # všetky obchody (workflow)
@@ -59,7 +64,7 @@ KATEGORIA_KEYWORDS = {
         "jablk", "hrušk", "marhul", "broskyn", "slivk", "čeres", "višn", "hrozn",
         "melón", "banán", "pomaranč", "citrón", "jahod", "malin", "čučoried",
         "paradajk", "uhork", "papri", "cibuľ", "cesnak", "zemiak", "mrkv",
-        "kapust", "šalát", "brokolic", "kalerá", "špenát", "avokád", "šampiň",
+        "kapust", "šalát", "brokolic", "kalerá", "karfiol", "špenát", "avokád", "šampiň",
         "hrášok", "fazuľk", "cuket", "baklažán", "reďkov", "petržlen",
     ],
     "Mliečne a vajcia": [
@@ -183,54 +188,54 @@ def extrahuj_jsonld(html: str) -> list[dict]:
 #   "llm"    — Gemini, potrebuje GEMINI_API_KEY (až keď ho používateľ dodá)
 # Kľúč = <obchod>-<typ>, napr. "kaufland-letak", "kaufland-eshop".
 #
+# Všetky obchody idú cez Kimbino (aggregátor letákov): skript na prehľadovej
+# stránke obchodu sám nájde najnovší celoštátny leták, stiahne obrázky strán
+# a Gemini vision z nich prečíta názvy + ceny. Priame weby obchodov NEfungujú —
+# ich leták-prehliadačky neobsahujú ceny v čitateľnej podobe (overené 07/2026).
+# Nový obchod = jeden záznam nižšie (slug z www.kimbino.sk/<slug>/).
 STORES = {
-    # ── FREE teraz: skutočný e-shop s produktovými stránkami (skúsi JSON-LD) ──
-    "billa-eshop": {
-        "obchod": "BILLA",
-        "typ": "bezna",
-        "mode": "jsonld",
-        "url": "https://www.billa.sk/produkty/",
+    "kaufland": {
+        "obchod": "Kaufland", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/kaufland/", "kimbino_slug": "kaufland",
     },
-
-    # ── Vizuálne letáky/katalógy: štruktúrované ceny nemajú → potrebujú OCR/LLM.
-    #    mode "llm" = kým workflow neinjektuje GEMINI_API_KEY, automaticky sa
-    #    PRESKOČIA (žiadny Gemini, žiadne náklady). Zapnú sa až keď šporáček
-    #    zarába — vtedy stačí vo workflowe odkomentovať GEMINI_API_KEY. ──────────
-    "billa-letak": {
-        "obchod": "BILLA", "typ": "akciova", "mode": "llm",
-        "url": "https://www.billa.sk/letaky-a-akcie",
+    "lidl": {
+        "obchod": "Lidl", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/lidl/", "kimbino_slug": "lidl",
     },
-    "lidl-letak": {
-        "obchod": "Lidl", "typ": "akciova", "mode": "llm",
-        "url": "https://www.lidl.sk/c/online-letak/s10008489",
+    "tesco": {
+        "obchod": "Tesco", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/tesco/", "kimbino_slug": "tesco",
     },
-    "tesco-hypermarket-letak": {
-        "obchod": "Tesco hypermarket", "typ": "akciova", "mode": "llm",
-        "url": "https://www.tesco.sk/akciove-ponuky/letaky-a-katalogy/tesco-hypermarket-bratislava-zlate-piesky",
+    "terno": {
+        "obchod": "Terno", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/terno/", "kimbino_slug": "terno",
     },
-    "tesco-supermarket-letak": {
-        "obchod": "Tesco supermarket", "typ": "akciova", "mode": "llm",
-        "url": "https://www.tesco.sk/akciove-ponuky/letaky-a-katalogy/tesco-supermarket-zarnovica",
+    "billa": {
+        "obchod": "BILLA", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/billa/", "kimbino_slug": "billa",
     },
-    "terno-letak": {
-        "obchod": "Terno", "typ": "akciova", "mode": "llm",
-        "url": "https://terno.sk/sekcia/7-akciovy-letak",
+    "coop-jednota": {
+        "obchod": "COOP Jednota", "typ": "akciova", "mode": "kimbino",
+        "url": "https://www.kimbino.sk/coop-jednota/", "kimbino_slug": "coop-jednota",
     },
-    # Pozn.: Lidl a Terno majú LEN letáky (žiadny e-shop) → bežné ceny sa z nich
-    # nedajú ťahať. Tesco má aj e-shop potravín (potravinydomov.itesco.sk) —
-    # ak budeme chcieť bežné Tesco ceny free, pridá sa ako ďalší 'bezna'/jsonld.
 }
+
+# Koľko strán letáku maximálne spracovať (0 = všetky). Nastavuje --max-pages,
+# nech sa dá test kimbino režimu spustiť lacno len na pár stranách.
+MAX_PAGES = 0
 
 # Odvodené polia podľa (typ ceny, mode) — do schémy `ceny/`.
 def _zdroj(mode: str) -> str:
     return {"jsonld": "crawl4ai (JSON-LD)", "css": "crawl4ai (CSS)",
-            "llm": "crawl4ai + Gemini"}.get(mode, "crawl4ai")
+            "llm": "crawl4ai + Gemini",
+            "kimbino": "kimbino + Gemini vision"}.get(mode, "crawl4ai")
 
 
 def _store(kluc: str) -> dict:
     """Doplní odvodené polia (zdroj_kontroly, poznamka_default) k STORES záznamu."""
     s = dict(STORES[kluc])
     s.setdefault("mode", "jsonld")
+    s["_kluc"] = kluc  # pre dedup (názov cieľového súboru) v crawl_kimbino
     s["zdroj_kontroly"] = _zdroj(s["mode"])
     s["poznamka_default"] = "bežná cena z e-shopu" if s["typ"] == "bezna" else ""
     return s
@@ -242,8 +247,8 @@ def normalizuj_polozku(raw: dict, store: dict, platnost: str) -> dict | None:
     if not nazov or not je_v_scope(nazov):
         return None
     zlavnena = _cislo(raw.get("zlavnena_cena"))
-    if zlavnena is None:
-        return None  # bez ceny, ktorú zákazník zaplatí, položka nemá zmysel
+    if zlavnena is None or zlavnena <= 0:
+        return None  # bez ceny (alebo s nulou z nečitateľného obrázka) položka nemá zmysel
     povodna = _cislo(raw.get("povodna_cena"))
     zlava = (raw.get("zlava") or "").strip()
     if not zlava and povodna and povodna > zlavnena:
@@ -290,7 +295,11 @@ def tyzden_platnost(dnes: date | None = None) -> str:
 
 SAMPLES_DIR = REPO / "scripts" / "_samples"
 
-# Odhad ceny Gemini 2.0 Flash (USD/1M tokenov; približné, real bill je v Google konzole).
+# Gemini model (multimodálny, lacný). Na jednom mieste — používa ho llm aj kimbino
+# režim. Pozor: staršie modely Google priebežne ruší (2.0-flash je už NOT_FOUND).
+GEMINI_MODEL = "gemini/gemini-flash-latest"
+
+# Odhad ceny Gemini Flash (USD/1M tokenov; približné, real bill je v Google konzole).
 GEMINI_FLASH_USD = {"in": 0.10, "out": 0.40}
 USD_EUR = 0.92
 _COST = {"in": 0, "out": 0}  # kumulatívne tokeny za celý beh
@@ -341,11 +350,246 @@ _LLM_INSTRUKCIA = (
     "zákazník zaplatí."
 )
 
+# Inštrukcia pre Gemini VISION (číta OBRÁZOK strany letáku) — kimbino režim.
+_VISION_INSTRUKCIA = (
+    "Toto je jedna strana akciového letáku obchodu (obrázok). Vyextrahuj VŠETKY "
+    "potravinové suroviny na varenie, ktoré na strane vidíš, aj s cenami. "
+    "Vynechaj alkohol, nápoje, sirupy, snacky, sladkosti, hotové jedlá, drogériu "
+    "a nepotraviny. Vráť IBA platné JSON pole (nič iné, žiadny text navyše) v tvare "
+    '[{"nazov": "...", "mnozstvo": "...", "povodna_cena": 2.49, "zlava": "-30%", '
+    '"zlavnena_cena": 1.69}]. Ceny ako čísla v eurách (1.69, nie \"169\"). '
+    "povodna_cena = null ak nie je uvedená, zlava = \"\" ak nie je uvedená, "
+    "zlavnena_cena = cena ktorú zákazník zaplatí. Ak na strane nie sú potraviny, "
+    "vráť prázdne pole []."
+)
+
+
+def _parse_json_array(txt: str) -> list[dict]:
+    """Vytiahne JSON pole z odpovede modelu (aj keď je obalené v ```json ... ```)."""
+    if not txt:
+        return []
+    s = txt.strip()
+    if s.startswith("```"):
+        s = s.strip("`")
+        s = s[s.find("\n") + 1:] if "\n" in s else s
+    i, j = s.find("["), s.rfind("]")
+    if i == -1 or j == -1 or j < i:
+        return []
+    try:
+        data = json.loads(s[i:j + 1])
+        return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, ValueError):
+        return []
+
+
+def _kimbino_strany(html: str) -> list[str]:
+    """Z HTML letáka na Kimbine vytiahne URL plných obrázkov strán (0.jpg, 1.jpg…)."""
+    import re as _re
+    # pozor: URL obsahuje filters:format(webp):quality(65) — v triede znakov NESMIE
+    # byť ')' , inak sa vzor zastaví na zátvorke a nenájde nič. Hranica = úvodzovka/medzera.
+    pat = _re.compile(
+        r'https://eu\.kimbicdn\.com/thumbor/[^"\'\s]+?/sk/data/\d+/\d+/(\d+)\.jpg[^"\'\s]*')
+    seen: dict[int, str] = {}
+    for m in pat.finditer(html):
+        page = int(m.group(1))
+        seen.setdefault(page, m.group(0))
+    return [seen[p] for p in sorted(seen)]
+
+
+def _kimbino_platnost(letak_url: str, html: str) -> str | None:
+    """Platnosť letáku priamo z Kimbina — žiadny odhad.
+
+    Začiatok je v URL letáku (…-od-stvrtka-23-07-2026-<id>/). Koniec sa hľadá
+    v texte stránky ako rozsah "23.07.2026 - 29.07.2026" so ZHODNÝM začiatkom
+    (na stránke bývajú aj rozsahy iných letákov); keď sa nenájde, začiatok + 6 dní
+    (bežný týždenný cyklus).
+    """
+    import re as _re
+    m = _re.search(r'(\d{2})-(\d{2})-(\d{4})-\d+/?$', letak_url)
+    if not m:
+        return None
+    zac = date(int(m.group(3)), int(m.group(2)), int(m.group(1)))
+    zac_txt = f"{m.group(1)}.{m.group(2)}.{m.group(3)}"
+    kon = zac + timedelta(days=6)
+    for r in _re.finditer(
+            r'(\d{2}\.\d{2}\.\d{4})\s*[-–]\s*(\d{2})\.(\d{2})\.(\d{4})', html or ""):
+        if r.group(1) == zac_txt:
+            kon = date(int(r.group(4)), int(r.group(3)), int(r.group(2)))
+            break
+    return f"{zac.isoformat()} - {kon.isoformat()}"
+
+
+async def crawl_kimbino(store: dict, api_key: str | None) -> list[dict]:
+    """Kimbino leták (obrázky strán) → Gemini vision prečíta ceny. Vráti surové položky."""
+    import base64
+    import urllib.request
+    from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+
+    key = api_key or os.environ.get("GEMINI_API_KEY")
+    if not key:
+        print(f"⏭  {store['obchod']}: kimbino režim potrebuje GEMINI_API_KEY — preskočené.")
+        return []
+
+    proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("HTTP_PROXY")
+    bconf = BrowserConfig(headless=True, browser_type="chromium",
+                          proxy=proxy or None, ignore_https_errors=True)
+    async with AsyncWebCrawler(config=bconf) as crawler:
+        res = await crawler.arun(url=store["url"], config=CrawlerRunConfig())
+        if not res.success:
+            print(f"⚠  {store['obchod']}: stránka sa nenačítala — "
+                  f"{getattr(res, 'error_message', '?')}")
+            return []
+
+        # Ak je zadaný slug, ber store['url'] ako prehľad obchodu a nájdi na ňom
+        # NAJNOVŠÍ (prvý) leták: čokoľvek pod /<slug>/ s "letak" v názve — prvý
+        # odkaz na prehľade je vždy najnovší. Presný tvar sa medzi obchodmi líši
+        # (kaufland-letak-..., ale aj tesco-hypermarket-letak-...), preto voľnejší
+        # vzor; prefix /<slug>/ zaručuje, že sa nechytí leták iného obchodu.
+        slug = store.get("kimbino_slug")
+        if slug:
+            import re as _re
+            m = _re.search(
+                rf'href=["\'](?:https://www\.kimbino\.sk)?(/{slug}/[^"\']*letak[^"\']*?)["\']',
+                res.html or "", _re.I)
+            if not m:
+                print(f"⚠  {store['obchod']}: nenašiel sa odkaz na najnovší leták.")
+                return []
+            letak_url = "https://www.kimbino.sk" + m.group(1)
+            print(f"      {store['obchod']}: najnovší leták → {letak_url}")
+
+            # Skutočná platnosť letáku (každý obchod má iný cyklus: Lidl od
+            # pondelka, BILLA od stredy, Kaufland od štvrtka…) + dedup: keď už
+            # je leták s týmto začiatkom v ceny/, preskoč ho ZADARMO (žiadne
+            # Gemini). Vďaka tomu môže kontrola bežať každý deň a zbiera sa
+            # vždy len reálne nový leták, v deň keď vyjde.
+            platnost = _kimbino_platnost(letak_url, "")
+            if platnost:
+                zac = platnost.split(" - ")[0]
+                ciel = CENY_DIR / f"{store['_kluc']}-{zac}.json"
+                if ciel.exists():
+                    print(f"⏭  {store['obchod']}: leták od {zac} už je zozbieraný "
+                          f"({ciel.name}) — preskočené.")
+                    store["_preskocene"] = True
+                    return []
+
+            res = await crawler.arun(url=letak_url, config=CrawlerRunConfig())
+            if not res.success:
+                print(f"⚠  {store['obchod']}: leták sa nenačítal — "
+                      f"{getattr(res, 'error_message', '?')}")
+                return []
+            # spresni koniec platnosti z textu stránky letáku
+            platnost = _kimbino_platnost(letak_url, res.html or "") or platnost
+            if platnost:
+                store["_platnost"] = platnost
+
+    strany = _kimbino_strany(res.html or "")
+    if not strany:
+        print(f"⚠  {store['obchod']}: nenašli sa obrázky strán letáku (over URL).")
+        return []
+    spracuj_n = strany[:MAX_PAGES] if MAX_PAGES else strany
+    print(f"      {store['obchod']}: leták má {len(strany)} strán, spracujem {len(spracuj_n)} "
+          f"(Gemini vision)")
+
+    import litellm
+    out: list[dict] = []
+    for idx, url in enumerate(spracuj_n):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            img = urllib.request.urlopen(req, timeout=30).read()
+        except Exception as e:
+            print(f"      strana {idx}: obrázok sa nestiahol — {e}")
+            continue
+        b64 = base64.b64encode(img).decode()
+        try:
+            resp = litellm.completion(
+                model=GEMINI_MODEL, api_key=key, temperature=0,
+                messages=[{"role": "user", "content": [
+                    {"type": "text", "text": _VISION_INSTRUKCIA},
+                    {"type": "image_url",
+                     "image_url": {"url": f"data:image/webp;base64,{b64}"}},
+                ]}])
+        except Exception as e:
+            # Vyčerpaný limit/strop Gemini účtu = systémová chyba: leták by sa
+            # uložil POLOVIČNÝ a dedup by ho už nikdy nedozbieral. Preto celý
+            # leták zahoď — dozbiera sa pri ďalšom behu (po zvýšení stropu).
+            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e) or "RateLimit" in str(e):
+                print(f"🛑 {store['obchod']}: Gemini limit/strop vyčerpaný na strane "
+                      f"{idx + 1} — leták sa NEuloží (dozbiera sa nabudúce). "
+                      "Strop míňania sa nastavuje na https://aistudio.google.com/ "
+                      "(Settings → Plan / ai.studio/spend).")
+                store["_rate_limited"] = True
+                break
+            print(f"      strana {idx}: Gemini chyba — {e}")
+            if idx == 0:  # pri prvej chybe vypíš dostupné modely, nech sa neháda
+                try:
+                    murl = ("https://generativelanguage.googleapis.com/v1beta/"
+                            f"models?key={key}&pageSize=100")
+                    md = json.loads(urllib.request.urlopen(murl, timeout=30).read())
+                    mods = [m.get("name", "") for m in md.get("models", [])
+                            if "generateContent" in m.get("supportedGenerationMethods", [])]
+                    print("      DOSTUPNÉ MODELY:", ", ".join(mods) or "(žiadne)")
+                except Exception as e2:
+                    print(f"      (zoznam modelov sa nepodaril: {e2})")
+            continue
+        u = getattr(resp, "usage", None)
+        if u:
+            _COST["in"] += getattr(u, "prompt_tokens", 0) or 0
+            _COST["out"] += getattr(u, "completion_tokens", 0) or 0
+        prods = _parse_json_array(resp.choices[0].message.content or "")
+
+        # Overovacie kolo: položky s nulovou/nečitateľnou cenou skús prečítať z toho
+        # istého obrázka ešte raz, cielene po mene. Čo ani potom nemá kladnú cenu,
+        # zahodí normalizuj_polozku (nula sa do ceny/ nikdy nedostane).
+        podozrive = [p for p in prods if (_cislo(p.get("zlavnena_cena")) or 0) <= 0]
+        if podozrive:
+            mena = ", ".join(str(p.get("nazov", "?")) for p in podozrive)
+            try:
+                resp2 = litellm.completion(
+                    model=GEMINI_MODEL, api_key=key, temperature=0,
+                    messages=[{"role": "user", "content": [
+                        {"type": "text", "text": (
+                            "Pozri sa na tento obrázok strany letáku EŠTE RAZ, veľmi "
+                            f"pozorne, a nájdi presné ceny týchto produktov: {mena}. "
+                            "Ak cena produktu na obrázku naozaj nie je čitateľná, "
+                            "produkt úplne vynechaj (nikdy nedávaj 0). "
+                            + _VISION_INSTRUKCIA)},
+                        {"type": "image_url",
+                         "image_url": {"url": f"data:image/webp;base64,{b64}"}},
+                    ]}])
+                u2 = getattr(resp2, "usage", None)
+                if u2:
+                    _COST["in"] += getattr(u2, "prompt_tokens", 0) or 0
+                    _COST["out"] += getattr(u2, "completion_tokens", 0) or 0
+                oprava = {str(p.get("nazov", "")).strip().lower(): p
+                          for p in _parse_json_array(resp2.choices[0].message.content or "")}
+                opravene = 0
+                for p in podozrive:
+                    n = oprava.get(str(p.get("nazov", "")).strip().lower())
+                    if n and (_cislo(n.get("zlavnena_cena")) or 0) > 0:
+                        p.update({k: v for k, v in n.items() if k != "strana"})
+                        opravene += 1
+                print(f"      strana {idx + 1}: {len(podozrive)} podozrivých cien, "
+                      f"po overení opravených {opravene}, zvyšok sa zahodí")
+            except Exception as e:
+                print(f"      strana {idx + 1}: overovacie kolo zlyhalo — {e}")
+
+        for p in prods:
+            p["strana"] = idx + 1
+        out.extend(prods)
+        print(f"      strana {idx + 1}/{len(spracuj_n)}: {len(prods)} položiek")
+    if store.get("_rate_limited"):
+        store["_preskocene"] = True  # nech spracuj nevypisuje mätúce varovanie
+        return []
+    return out
+
 
 # ── Crawl (importuje crawl4ai až tu, nech testy logiky bežia aj bez neho) ─────
 async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[dict]:
     """Stiahne stránku a vráti surové položky. Bez kľúča: jsonld/css. sample=True uloží vzorku."""
     from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
+
+    if store["mode"] == "kimbino":
+        return await crawl_kimbino(store, api_key)
 
     proxy = os.environ.get("HTTPS_PROXY") or os.environ.get("HTTP_PROXY")
     bconf = BrowserConfig(headless=True, browser_type="chromium",
@@ -357,13 +601,16 @@ async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[
         from crawl4ai.extraction_strategy import JsonCssExtractionStrategy
         strat = JsonCssExtractionStrategy(store["schema"])
     elif mode == "llm":
+        from crawl4ai import LLMConfig
         from crawl4ai.extraction_strategy import LLMExtractionStrategy
         key = api_key or os.environ.get("GEMINI_API_KEY")
         if not key:
             print(f"⏭  {store['obchod']}: llm režim potrebuje GEMINI_API_KEY — preskočené.")
             return []
+        # crawl4ai ≥0.4: provider/api_token sa už nezadávajú priamo, ale cez
+        # llm_config=LLMConfig(...). Starý zápis padal na 'provider is deprecated'.
         strat = LLMExtractionStrategy(
-            provider="gemini/gemini-2.0-flash", api_token=key,
+            llm_config=LLMConfig(provider=GEMINI_MODEL, api_token=key),
             schema=_LLM_SCHEMA, extraction_type="schema", instruction=_LLM_INSTRUKCIA)
 
     run = CrawlerRunConfig(extraction_strategy=strat) if strat else CrawlerRunConfig()
@@ -376,13 +623,29 @@ async def crawl(store: dict, api_key: str | None, sample: bool = False) -> list[
         return []
 
     if sample:  # ulož vzorku stránky, nech sa dá doladiť extrakcia
+        import re as _re
         SAMPLES_DIR.mkdir(parents=True, exist_ok=True)
         html = res.html or ""
+        md = res.markdown or ""
         jl = extrahuj_jsonld(html)
+        eur = md.count("€")
+        imgs = _re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', html, _re.I)
+        links = _re.findall(r'<a[^>]+href=["\']([^"\']+)["\']', html, _re.I)
+        # zaujímavé = obrázky letáku / CDN (nie ikony/ads/loga)
+        zaujimave_img = [u for u in imgs if not _re.search(
+            r'\.svg|logo|icon|sprite|avatar|googlesyndication|doubleclick', u, _re.I)][:60]
+        letak_links = [u for u in links if _re.search(
+            r'letak|leaflet|/l/|flyer|akci|katalog', u, _re.I)][:40]
         f = SAMPLES_DIR / f"{store['obchod'].lower()}-{store['typ']}.md"
         f.write_text(
-            f"# Vzorka: {store['url']}\n\nJSON-LD produktov nájdených: {len(jl)}\n\n"
-            f"## Markdown (prvých 4000 znakov)\n\n{(res.markdown or '')[:4000]}\n\n"
+            f"# Vzorka: {store['url']}\n\n"
+            f"JSON-LD produktov: {len(jl)} | výskyt '€' v markdowne: {eur} | "
+            f"dĺžka markdownu: {len(md)} | <img>: {len(imgs)} | <a>: {len(links)}\n\n"
+            f"## Odkazy na leták/katalóg ({len(letak_links)})\n\n"
+            + "\n".join(letak_links) + "\n\n"
+            f"## Obrázky (bez ikon/log/ads, prvých {len(zaujimave_img)})\n\n"
+            + "\n".join(zaujimave_img) + "\n\n"
+            f"## Markdown (prvých 15000 znakov)\n\n{md[:15000]}\n\n"
             f"## HTML (prvých 8000 znakov)\n\n```\n{html[:8000]}\n```\n",
             encoding="utf-8")
         print(f"      vzorka → {f.relative_to(REPO)} (JSON-LD: {len(jl)})")
@@ -400,10 +663,14 @@ def spracuj(kluc: str, platnost: str, api_key: str | None,
         print(f"⏭  {kluc}: preskočené (nemá URL — doplň link do STORES).")
         return False
     raw = asyncio.run(crawl(store, api_key, sample=sample))
+    # kimbino režim prečíta skutočnú platnosť z letáku (Lidl od pondelka,
+    # BILLA od stredy…) — má prednosť pred odhadom štvrtok–streda
+    platnost = store.get("_platnost", platnost)
     strany = 0
     polozky = [p for p in (normalizuj_polozku(r, store, platnost) for r in raw) if p]
     if not polozky:
-        print(f"⚠  {kluc}: nič sa nevyextrahovalo (over URL / stránku).")
+        if not store.get("_preskocene"):  # dedup skip už má vlastný výpis
+            print(f"⚠  {kluc}: nič sa nevyextrahovalo (over URL / stránku).")
         return False
 
     data = poskladaj_json(polozky, store, platnost, strany)
@@ -431,7 +698,12 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="neuloží, len vypíše zhrnutie")
     ap.add_argument("--sample", action="store_true",
                     help="ulož vzorku stránky do scripts/_samples/ (na doladenie extrakcie)")
+    ap.add_argument("--max-pages", type=int, default=0,
+                    help="max. počet strán letáku (kimbino režim); 0 = všetky (lacný test)")
     args = ap.parse_args()
+
+    global MAX_PAGES
+    MAX_PAGES = args.max_pages
 
     platnost = args.platnost or tyzden_platnost()
     kluce = list(STORES) if args.all else [args.store]

@@ -1,19 +1,28 @@
 name: Zber cien (crawl4ai)
 
-# Automatický zber cien surovín z letákov a e-shopov cez scripts/crawl_ceny.py.
-# Beží na serveroch GitHubu (otvorená sieť) — týždenne aj na tlačidlo.
+# Automatický zber cien surovín z letákov cez scripts/crawl_ceny.py:
+# najnovšie letáky všetkých obchodov sa nájdu na Kimbine (aggregátor),
+# obrázky strán prečíta Gemini vision → ceny/*.json.
+#
+# Beží KAŽDÝ DEŇ ráno, ale lacno: obchody majú rôzne cykly letákov (Lidl od
+# pondelka, BILLA od stredy, Kaufland/COOP/Terno od štvrtka…), preto sa denne
+# len pozrie, či vyšiel nový leták. Už zozbierané letáky (podľa dátumu začiatku
+# platnosti) sa preskočia ZADARMO — Gemini beží len na reálne nový leták,
+# v deň keď vyjde. Platnosť akcií sa číta priamo z letáku, nie odhadom.
+#
 # Výsledok NEcommituje rovno do main, ale otvorí Pull Request, ktorý sa
 # skontroluje podľa skillu ceny-z-letaku (časť C) a až potom mergne.
+# Celý týždeň (6 obchodov) stojí rádovo ~0,25 € (Gemini Flash).
 
 on:
   schedule:
-    - cron: "0 6 * * 4"     # každý štvrtok 06:00 UTC (nové letáky) — vždy FREE
+    - cron: "0 5 * * *"     # denne 05:00 UTC (07:00 SK) — kontrola nových letákov
   workflow_dispatch:         # tlačidlo "Run workflow" v záložke Actions
     inputs:
-      use_gemini:
-        description: "Zapnúť Gemini na letáky (STOJÍ peniaze). Nechaj vypnuté pre free JSON-LD."
-        type: boolean
-        default: false
+      obchod:
+        description: "Len jeden obchod (napr. tesco) — na testovanie. Prázdne = všetky."
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -26,6 +35,7 @@ concurrency:
 jobs:
   zber:
     runs-on: ubuntu-latest
+    timeout-minutes: 120   # 6 obchodov × ~10 min vision; poistka proti zaseknutiu
     steps:
       - uses: actions/checkout@v4
 
@@ -39,15 +49,33 @@ jobs:
           pip install -r scripts/requirements-crawl.txt
           python -m playwright install --with-deps chromium
 
-      # Gemini kľúč sa injektuje LEN keď je prepínač use_gemini zapnutý (ručný beh).
-      # Týždenný (schedule) beh ho nemá → llm obchody sa preskočia → FREE.
+      # Dedup aj proti čakajúcemu (ešte nezmergovanému) cenovému PR: stiahni
+      # jeho ceny/*.json do pracovného adresára, nech sa ten istý leták
+      # nezbiera znova každý deň, kým PR čaká na kontrolu.
+      - name: Načítaj už zozbierané ceny z čakajúceho PR
+        run: |
+          if git fetch origin zber-cien/auto 2>/dev/null; then
+            git checkout FETCH_HEAD -- ceny/ 2>/dev/null || true
+            echo "ceny/ doplnené z čakajúceho PR (zber-cien/auto)"
+          else
+            echo "(žiadny čakajúci PR)"
+          fi
+
+      # Gemini vision číta obrázky strán letákov (akciové ceny). Kľúč sa berie zo
+      # secret GEMINI_API_KEY (Settings → Secrets and variables → Actions). Bez
+      # kľúča sa obchody preskočia — beh nezlyhá, len nič nepribudne. Skript na
+      # konci vypíše reálnu spotrebu tokenov aj odhad ceny v €.
       - name: Zber cien
         env:
-          GEMINI_API_KEY: ${{ (github.event_name == 'workflow_dispatch' && inputs.use_gemini) && secrets.GEMINI_API_KEY || '' }}
-        run: python scripts/crawl_ceny.py --all --sample
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/crawl_ceny.py ${{ inputs.obchod || '--all' }} 2>&1 | tee /tmp/zber.log
 
+      # POZOR: aby tento krok fungoval, musí byť v Settings → Actions → General →
+      # Workflow permissions zapnuté "Allow GitHub Actions to create and approve
+      # pull requests". Bez toho zlyhá s "GitHub Actions is not permitted to
+      # create or approve pull requests" (vetva sa síce pushne, ale PR sa neotvorí).
       - name: Otvor Pull Request s novými cenami
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           branch: zber-cien/auto
           commit-message: "Automatický zber cien (crawl4ai)"
@@ -61,3 +89,12 @@ jobs:
             Zber je heuristika — ceny a kategórie treba overiť, nemergovať naslepo.
           labels: zber-cien
           delete-branch: true
+
+      # Diagnostika ako POSLEDNÝ krok → v logu je na konci, ľahko sa číta.
+      - name: Výpis logu zberu
+        if: always()
+        run: |
+          echo "===== LOG ZBERU ====="
+          cat /tmp/zber.log || echo "(žiadny log)"
+          echo "===== STAV ceny/ ====="
+          ls -la ceny/ 2>/dev/null || echo "(prázdne)"
