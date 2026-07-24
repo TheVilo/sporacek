@@ -58,7 +58,7 @@ from google.genai import types
 
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 resp = client.models.generate_content(
-    model="gemini-2.5-flash-image",   # lacný "nanobanana", pár centov/fotka
+    model="gemini-3.1-flash-image",   # predvolený "Nano Banana 2" — ~$0,067/fotka, near-pro kvalita
     contents=foto_prompt,
     config=types.GenerateContentConfig(
         response_modalities=["IMAGE"],
@@ -73,8 +73,15 @@ for part in resp.candidates[0].content.parts:
 
 ## Model a cena
 
-- **`gemini-2.5-flash-image`** ("Nano Banana") — predvolený, štandardné rozlíšenie. Rádovo pár centov za fotku. Použi tento pre bežné recepty.
-- **`gemini-3-pro-image`** ("Nano Banana Pro") — výrazne drahší, najmä pri 2K/4K rozlíšení. Použi len ak si o to používateľ vyslovene povie (kvalitnejšia/väčšia fotka).
+**Predvolený model: `gemini-3.1-flash-image`** ("Nano Banana 2") — near-pro kvalita za polovicu ceny pro modelu, zvláda aj ťažké tvary (halušky). Používaj ho na všetko.
+
+| Model | Cena/fotka (9:16, štd.) | Kedy |
+|---|---|---|
+| `gemini-3.1-flash-image` ("Nano Banana 2") | **~$0,067** | **predvolený, na všetko** |
+| `gemini-2.5-flash-image` ("Nano Banana") | ~$0,039 | starý lacný; lane sa ruší ~2.10.2026, nepoužívať pre nové |
+| `gemini-3-pro-image` ("Nano Banana Pro") | ~$0,134 (1K/2K), $0,24 (4K) | len ak 3.1 flash zlyhá alebo treba 4K; na výslovnú požiadavku |
+
+Ceny sú orientačné (stav 2026). 3.1 flash nahradil 2.5 flash aj kvalitou aj tým, že 2.5 sa ruší.
 
 ## Foto prompt — 2-krokový proces
 
@@ -99,7 +106,7 @@ Priprav si opis jedla — analyzuj recept podľa týchto pravidiel (rovnaké pra
 
 9. **Slovenské halušky/strapačky — ťažký prípad pre Gemini.** Model osciluje: „Spätzle" → dlhé rezance (zle), „potato dumplings/gnocchi" → hladké okrúhle guľky (zle). Reálne halušky sú medzi tým (malé nepravidelné hrudky). Použi formuláciu: „traditional Slovak haluški: a pile of small, irregular, lumpy, rough-surfaced little pieces of grated-potato dough, each about 1.5 cm, with uneven torn homemade shapes — explicitly NOT smooth round balls and NOT long noodles, rustic and clearly hand-scraped".
 
-**Kľúčové: pri halušách flash model (`gemini-2.5-flash-image`) tvar nezvláda — použi `gemini-3-pro-image` (Nano Banana Pro).** Ten halušky spraví správne (drobné nepravidelné hrudky) hneď na prvýkrát. Je to oprávnená výnimka z pravidla „pro len na výslovnú požiadavku" — halušky sú overený prípad, kde flash zlyháva. Platí pre bryndzové halušky, strapačky, halušky s kapustou a pod. (V skripte stačí zavolať s `model="gemini-3-pro-image"`.)
+**Kľúčové: starý `gemini-2.5-flash-image` tvar halušiek nezvláda (robí gnocchi/rezance). Predvolený `gemini-3.1-flash-image` ich už zvláda správne** (drobné nepravidelné hrudky) — takže pri halušách netreba nič extra, len bežný default model. (Overené aj `gemini-3-pro-image`, ale 3.1 flash je za polovicu ceny rovnako dobrý.) Platí pre bryndzové halušky, strapačky, halušky s kapustou a pod.
 
 Výstup kroku 1: jeden súvislý anglický popisný názov jedla (max 15-20 slov), presne opisujúci, čo reálne leží na tanieri — týmto nahraď `[NAZOV RECEPTU]` v šablóne nižšie.
 

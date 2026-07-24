@@ -2,7 +2,7 @@
 """Vygeneruje fotku jedla cez Gemini (nanobanana) z foto_prompt receptu.
 
 Použitie:
-    GEMINI_API_KEY=... python3 scripts/generate_photo.py "<prompt>" output.png [--aspect 9:16] [--model gemini-2.5-flash-image]
+    GEMINI_API_KEY=... python3 scripts/generate_photo.py "<prompt>" output.png [--aspect 9:16] [--model gemini-3.1-flash-image]
 
 Vyžaduje GEMINI_API_KEY v prostredí (Google AI Studio -> API key) a balík google-genai
 (pip install google-genai). Fotky sa negenerujú do repa (CLAUDE.md) - ulož mimo verzovania
@@ -16,7 +16,7 @@ from google import genai
 from google.genai import types
 
 
-def generate_photo(prompt: str, output_path: str, aspect: str = "9:16", model: str = "gemini-2.5-flash-image") -> None:
+def generate_photo(prompt: str, output_path: str, aspect: str = "9:16", model: str = "gemini-3.1-flash-image") -> None:
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         sys.exit("Chýba GEMINI_API_KEY v prostredí.")
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     parser.add_argument("prompt", help="Foto prompt (z receptu)")
     parser.add_argument("output", help="Cesta k výstupnému PNG súboru")
     parser.add_argument("--aspect", default="9:16", help="Pomer strán (default 9:16)")
-    parser.add_argument("--model", default="gemini-2.5-flash-image", help="Model (default gemini-2.5-flash-image = lacný nanobanana)")
+    parser.add_argument("--model", default="gemini-3.1-flash-image", help="Model (default gemini-3.1-flash-image = Nano Banana 2, near-pro kvalita)")
     args = parser.parse_args()
 
     generate_photo(args.prompt, args.output, args.aspect, args.model)
