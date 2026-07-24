@@ -207,8 +207,13 @@ details.postup ul.ingredients li::marker { color: var(--terracotta); font-weight
 /* suroviny/postup vnútri okna - okno samo je už "otváracie miesto", netreba ďalšie <details> */
 .lightbox-section { border-top: 1px dashed var(--border); padding-top: 12px; }
 .lightbox-section .label { margin-bottom: 8px; }
-.lightbox-section ol { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
+.lightbox-section ol { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 10px; font-size: .84rem; color: var(--text); }
 .lightbox-section ol li::marker { color: var(--terracotta); font-weight: 700; }
+.lightbox-section ol li strong { display: block; color: var(--green-ink); }
+.postup-popis { margin-top: 2px; }
+.postup-tip { margin-top: 4px; font-size: .8rem; color: var(--terracotta); }
+.postup-timer { margin-top: 4px; font-size: .8rem; font-weight: 700; color: var(--green-ink); }
+.postup-foto { display: block; margin-top: 6px; width: 100%; max-width: 280px; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; }
 .lightbox-section ul.ingredients { margin: 0; padding-left: 1.2em; list-style: disc; display: flex; flex-direction: column; gap: 6px; font-size: .84rem; color: var(--text); }
 .lightbox-section ul.ingredients li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .lightbox-section ul.ingredients li::marker { color: var(--terracotta); font-weight: 700; }

@@ -73,7 +73,7 @@ podmienka, kategoria_letak }`
 |---|---|
 | `slug`, `nazov`, `porcie`, `cas_pripravy`, `foto_url`, `tagy[]` | základ; fotka je relatívna cesta v repe (`https://raw.githubusercontent.com/TheVilo/sporacek/main/<foto_url>`) |
 | `suroviny[]` | pozri nižšie |
-| `postup[]` | kroky (hotové texty po slovensky) |
+| `postup[]` | kroky, viď `recepty[].postup[]` nižšie |
 | `nutricne` | `{kcal, bielkoviny_g, sacharidy_g, tuky_g}` na porciu — **odhad**, vždy označ ako približné |
 | `alergeny[]`, `vegetarianske`, `veganske` | odvodené automaticky zo surovín — na filter „Diéta a alergény" |
 | `sezonne_suroviny[]` | `[{id, mesiace}]` — ktoré suroviny receptu majú sezónu (na „práve v sezóne") |
@@ -91,6 +91,17 @@ podmienka, kategoria_letak }`
 - `qty` môže byť `null` (nekvantifikovateľné) — zobraz text `mnozstvo`.
 - Kuchynské miery sú definované v builde: PL=15 g/ml, ČL=5, štipka=0,5,
   „podľa chuti"=2 g (nominálne), plátok=15 g, vetvička=2 g…
+
+### recepty[].postup[] (krokový flow appky, „Krok 1 z N")
+
+`{ nadpis, popis, tip?, timer_min?, foto?, foto_caption? }`
+
+- `nadpis` — krátky imperatívny nadpis kroku (vždy prítomný).
+- `popis` — plný text kroku, 1–3 vety. **Môže byť prázdny reťazec** — staré recepty (zatiaľ neprevedené na krokový formát) majú celú inštrukciu v `nadpis` a `popis: ""`; v UI vtedy jednoducho nezobrazuj popis.
+- `tip` (voliteľné) — praktická rada/varovanie, zobraz odlíšene (napr. 💡).
+- `timer_min` (voliteľné) — celé minúty pasívneho čakania (varenie, kysnutie, pečenie); ak chýba, krok nemá časovač.
+- `foto` (voliteľné) — relatívna cesta k fotke kroku (`fotky/postup/<slug>-krok-<n>.jpg`), rovnaká báza URL ako `foto_url`. Fotka kroku sa dáva **len pri naozaj komplikovanej technike** (konzistencia cesta, netriviálny postup) — väčšina krokov fotku nemá, to je normálne.
+- `foto_caption` (voliteľné) — krátky popis k fotke kroku (napr. „takto má vyzerať vypracované cesto").
 
 ### recepty[].ceny_za_porciu[] (jeden záznam = jeden obchod)
 

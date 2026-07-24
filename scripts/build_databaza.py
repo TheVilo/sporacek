@@ -319,14 +319,45 @@ def parse_recipes():
                     continue
                 ingr.append({"nazov": cells[0], "mnozstvo": cells[1]})
 
-        # postup (kroky)
+        # postup (kroky) — každý krok: nadpis (povinný) + popis/tip/timer/foto (voliteľné)
         postup = []
         pM = re.search(r"## Postup\s*\n(.+?)(?=\n---|\n## |$)", t, re.S)
         if pM:
-            for line in pM.group(1).splitlines():
-                m = re.match(r"^\s*\d+\.\s*(.+)$", line)
-                if m:
-                    postup.append(m.group(1).strip())
+            section = pM.group(1).strip("\n")
+            items = re.split(r"\n(?=\s*\d+\.\s)", section)
+            for item in items:
+                m = re.match(r"^\s*\d+\.\s*(.+)$", item, re.S)
+                if not m:
+                    continue
+                lines = [l.strip() for l in m.group(1).splitlines() if l.strip()]
+                if not lines:
+                    continue
+                nadpisM = re.match(r"^\*\*(.+?)\*\*\s*$", lines[0])
+                nadpis = nadpisM.group(1).strip() if nadpisM else lines[0]
+                popis_parts, tip, timer_min, krok_foto, krok_foto_caption = [], None, None, None, None
+                for line in lines[1:]:
+                    tipM = re.match(r"^\*Tip:\s*(.+?)\*\s*$", line)
+                    timerM = re.match(r"^⏱\s*(\d+)\s*min", line)
+                    fotoM = re.match(r"^📷\s*(\S+)(?:\s*—\s*(.+))?$", line)
+                    if tipM:
+                        tip = tipM.group(1).strip()
+                    elif timerM:
+                        timer_min = int(timerM.group(1))
+                    elif fotoM:
+                        krok_foto = fotoM.group(1).strip()
+                        krok_foto_caption = fotoM.group(2).strip() if fotoM.group(2) else None
+                    else:
+                        popis_parts.append(line)
+                krok = {"nadpis": nadpis, "popis": " ".join(popis_parts).strip()}
+                if tip:
+                    krok["tip"] = tip
+                if timer_min:
+                    krok["timer_min"] = timer_min
+                if krok_foto:
+                    krok["foto"] = krok_foto
+                    if krok_foto_caption:
+                        krok["foto_caption"] = krok_foto_caption
+                postup.append(krok)
 
         # nutričné hodnoty (na porciu, odhad) — tabuľka alebo frontmatter
         def num(*pats):

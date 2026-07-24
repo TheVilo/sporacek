@@ -177,7 +177,7 @@ function openLightbox(r) {
 
   const postup = r.postup || [];
   document.getElementById("lightboxPostupSection").style.display = postup.length ? "" : "none";
-  document.getElementById("lightboxPostup").innerHTML = postup.map(s => `<li>${escapeHtml(s)}</li>`).join("");
+  document.getElementById("lightboxPostup").innerHTML = postup.map(postupStepHtml).join("");
 
   lb.classList.add("open");
 }
@@ -215,14 +215,7 @@ function parseMarkdownRecipe(slug, text) {
   const sacharidy = (text.match(/Sacharidy\s*\|\s*(\d+)\s*g/) || [, null])[1];
   const tuky = (text.match(/Tuky\s*\|\s*(\d+)\s*g/) || [, null])[1];
 
-  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n---|\n## |$)/);
-  const postup = [];
-  if (postupM) {
-    for (const line of postupM[1].trim().split("\n")) {
-      const m = line.trim().match(/^\d+\.\s*(.+)$/);
-      if (m) postup.push(m[1].trim());
-    }
-  }
+  const postup = parsePostup(text);
 
   const tagyM = text.match(/## Tagy\s*\n(.+)/);
   let tagy = [];
@@ -235,6 +228,44 @@ function parseMarkdownRecipe(slug, text) {
   const suroviny = parseSuroviny(text);
 
   return { slug, nazov, cas, kcal, bielkoviny, sacharidy, tuky, postup, tagy, foto_prompt, suroviny };
+}
+
+function parsePostup(text) {
+  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n---|\n## |$)/);
+  const postup = [];
+  if (!postupM) return postup;
+  const items = postupM[1].trim().split(/\n(?=\s*\d+\.\s)/);
+  for (const item of items) {
+    const m = item.trim().match(/^\d+\.\s*([\s\S]+)$/);
+    if (!m) continue;
+    const lines = m[1].split("\n").map(l => l.trim()).filter(Boolean);
+    if (!lines.length) continue;
+    const nadpisM = lines[0].match(/^\*\*(.+?)\*\*\s*$/);
+    const nadpis = nadpisM ? nadpisM[1].trim() : lines[0];
+    const popisParts = [];
+    let tip = null, timerMin = null, foto = null, fotoCaption = null;
+    for (const line of lines.slice(1)) {
+      let mm;
+      if ((mm = line.match(/^\*Tip:\s*(.+?)\*\s*$/))) tip = mm[1].trim();
+      else if ((mm = line.match(/^⏱\s*(\d+)\s*min/))) timerMin = parseInt(mm[1], 10);
+      else if ((mm = line.match(/^📷\s*(\S+)(?:\s*—\s*(.+))?$/))) { foto = mm[1]; fotoCaption = mm[2] ? mm[2].trim() : null; }
+      else popisParts.push(line);
+    }
+    const krok = { nadpis, popis: popisParts.join(" ").trim() };
+    if (tip) krok.tip = tip;
+    if (timerMin) krok.timer_min = timerMin;
+    if (foto) { krok.foto = foto; if (fotoCaption) krok.foto_caption = fotoCaption; }
+    postup.push(krok);
+  }
+  return postup;
+}
+
+function postupStepHtml(s) {
+  const popis = s.popis ? `<div class="postup-popis">${escapeHtml(s.popis)}</div>` : "";
+  const tip = s.tip ? `<div class="postup-tip">💡 ${escapeHtml(s.tip)}</div>` : "";
+  const timer = s.timer_min ? `<div class="postup-timer">⏱ ${s.timer_min} min</div>` : "";
+  const foto = s.foto ? `<img class="postup-foto" src="${RAW_BASE}/${s.foto}" alt="${escapeHtml(s.foto_caption || "")}" loading="lazy">` : "";
+  return `<li><strong>${escapeHtml(s.nadpis)}</strong>${popis}${tip}${timer}${foto}</li>`;
 }
 
 function parseSuroviny(text) {
@@ -257,14 +288,7 @@ function parseYamlRecipe(slug, text) {
   const sacharidy = (fm.match(/sacharidy_g:\s*(\d+)/) || [, null])[1];
   const tuky = (fm.match(/tuky_g:\s*(\d+)/) || [, null])[1];
 
-  const postupM = text.match(/## Postup\s*\n([\s\S]+?)(?=\n## |$)/);
-  const postup = [];
-  if (postupM) {
-    for (const line of postupM[1].trim().split("\n")) {
-      const m = line.trim().match(/^\d+\.\s*(.+)$/);
-      if (m) postup.push(m[1].trim());
-    }
-  }
+  const postup = parsePostup(text);
 
   let tagy = [];
   const tagyBlockM = fm.match(/tagy:\n((?:\s+\w+:.*\n?)+)/);
