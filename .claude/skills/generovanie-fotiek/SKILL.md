@@ -223,9 +223,21 @@ A cozy rustic food photograph, vertical 9:16 format. [NAZOV RECEPTU] in a cast-i
 
 Každý recept má svoj vygenerovaný text uložený v `foto_prompt` poli/sekcii — použi presne ten text pri generovaní. **Striedaj celý roster (21 šablón)**, nielen prvých pár — najmä 11–21 vedome používaj na rozbitie „bowl na drevenom stole" jednotvárnosti. Šablóna **13 (tmavá bridlica) len na tmavo-vhodné jedlá**; **bez ľudí/rúk** v žiadnej.
 
-### Fotky postupu (voliteľné, zatiaľ nepoužívané pravidelne)
+### Fotky postupu (krokový flow appky)
 
-Rovnaký 2-krokový proces vieme použiť aj na fotky **kroku postupu**, nie len finálneho jedla — napr. na Stories "za scénou" alebo budúci krok-za-krokom obsah. Rozdiel: v kroku 1 namiesto finálneho servírovania opíš konkrétny medzikrok (napr. "opekanie cibule dozlata", "krájanie papriky na prúžky"), a v kroku 2 najčastejšie sedí **template č. 4** (in-progress, doska, nôž). Zatiaľ toto nerobíme automaticky pri každom recepte — použi len keď si o to používateľ vyslovene povie.
+Rovnaký 2-krokový proces (anglický opis → jedna z 21 šablón) sa používa aj na fotky **jednotlivého kroku postupu** v appke (krok-za-krokom flow, „Krok 1 z 4" a pod.).
+
+**Kritické pravidlo — fotka len pri naozaj komplikovanom kroku:**
+- **Nikdy** fotka „takto vyzerá hotové jedlo" — to už pokrýva hero `foto_url` receptu, duplicita je zbytočná.
+- Fotka **len** tam, kde treba vizuálne overiť niečo, čo sa slovom ťažko opíše/overí: konzistencia cesta alebo omáčky (napr. "cesto husté natoľko, že v ňom ostane stáť varecha", "lesklá, hodvábna textúra rizota"), stupeň opečenia/farby, alebo iný medzistav, kde si používateľ nie je istý, či to robí správne.
+- Väčšina receptov **fotku kroku nepotrebuje vôbec** — to je v poriadku a očakávané (bežný postup: opeč, zalej, premiešaj netreba fotiť).
+- **Nikdy ruky ani ľudí** — ak technika kroku fyzicky vyžaduje ruky (obaľovanie, pretláčanie cesta cez sitko, hnetenie), fotka namiesto akcie ukazuje **výsledný stav/konzistenciu** (napr. pri haluškovom ceste fotka cesta s varechou stojacou v ňom, nie ruky pretláčajúce cesto cez sitko).
+
+**Prompt:** v kroku 1 (anglický opis) namiesto finálneho servírovania opíš presne stav v danom kroku (napr. "a smooth, elastic ball of kneaded dough", "thick risotto rice glazed and glossy after toasting, in a pot"). V kroku 2 najčastejšie sedí **šablóna č. 4** (in-progress, doska) pri príprave/krájaní, alebo bežná hero šablóna preformulovaná na "v hrnci/miske" namiesto naservírovaného taniera pri kontrole konzistencie.
+
+**Formát: 4:3** (nie 9:16 ako hero fotka) — v appke ide o menšiu kartu v strede krokovej obrazovky, nie celoobrazovkovú fotku. Technicky stačí zavolať `generate_photo.py` s `--aspect 4:3`, žiadna zmena kódu netreba.
+
+**Uloženie:** `fotky/postup/<slug>-krok-<n>.jpg` (oddelene od hero fotiek v `fotky/<slug>.jpg`).
 
 ## Po vygenerovaní
 
