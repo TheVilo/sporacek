@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -270,8 +271,8 @@ function parsePostup(text) {
 
 function postupStepHtml(s) {
   const popis = s.popis ? `<div class="postup-popis">${escapeHtml(s.popis)}</div>` : "";
-  const tip = s.tip ? `<div class="postup-tip">💡 ${escapeHtml(s.tip)}</div>` : "";
-  const timer = s.timer_min ? `<div class="postup-timer">⏱ ${s.timer_min} min</div>` : "";
+  const tip = s.tip ? `<div class="postup-tip"><span class="material-symbols-outlined postup-tip-icon">lightbulb</span><span class="postup-tip-text">${escapeHtml(s.tip)}</span></div>` : "";
+  const timer = s.timer_min ? `<div class="postup-timer"><span class="material-symbols-outlined postup-timer-icon">schedule</span>${s.timer_min} min</div>` : "";
   const foto = s.foto ? `<img class="postup-foto" src="${RAW_BASE}/${s.foto}" alt="${escapeHtml(s.foto_caption || "")}" loading="lazy">${s.foto_caption ? `<div class="postup-foto-caption">${escapeHtml(s.foto_caption)}</div>` : ""}` : "";
   return `<li><strong>${escapeHtml(s.nadpis)}</strong>${popis}${tip}${timer}${foto}</li>`;
 }
