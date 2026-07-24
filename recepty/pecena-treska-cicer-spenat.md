@@ -41,12 +41,19 @@ A bright, high-end editorial food photo with a lived-in feel, 9:16 format. Oven-
 
 ## Postup
 
-1. Rúru predhrej na 200 °C.
-2. V zapekacej mise zmiešaj cícer, prekrojené cherry paradajky, prelisovaný cesnak, údenú papriku, 2 PL oleja, soľ a korenie.
-3. Zapekaciu misu s cícerom daj piecť na 10 minút, nech sa paradajky mierne rozpustia a cícer prehreje.
-4. Vyber z rúry, primiešaj špenát (zvädne od tepla), navrch polož osolené a okorenené filety tresky, pokvapkané zvyšným olejom.
-5. Peč ďalších 12–15 minút, kým treska nie je krehká a rozpadáva sa vidličkou.
-6. Podávaj s klinom citróna.
+1. **Priprav základ z cíceru a paradajok.**
+   Rúru predhrej na 200 °C. V zapekacej mise zmiešaj cícer, prekrojené cherry paradajky, prelisovaný cesnak, údenú papriku, 2 PL oleja, soľ a korenie.
+
+2. **Zapeč cícer.**
+   Zapekaciu misu s cícerom daj piecť na 10 minút, nech sa paradajky mierne rozpustia a cícer prehreje.
+   ⏱ 10 min
+
+3. **Pridaj tresku a dopeč.**
+   Vyber z rúry, primiešaj špenát (zvädne od tepla), navrch polož osolené a okorenené filety tresky, pokvapkané zvyšným olejom. Peč ďalších 12–15 minút, kým treska nie je krehká a rozpadáva sa vidličkou.
+   ⏱ 13 min
+
+4. **Podávaj.**
+   Podávaj s klinom citróna.
 
 ---
 

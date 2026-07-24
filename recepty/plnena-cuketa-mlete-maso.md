@@ -41,13 +41,23 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Zu
 
 ## Postup
 
-1. Ryžu uvar 12–15 minút do mäkka. Rúru predhrej na 200 °C.
-2. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu (nechaj asi 0,5 cm hrubé steny, nech sa polovice nepretrhnú). Dužinu nakrájaj nadrobno a odlož.
-3. Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj prelisovaný cesnak a mäso, opeč do hneda (5–7 min). Osoľ, okoreň, pridaj oregano.
-4. Pridaj nakrájanú dužinu z cukety a paradajky, dus 3–4 minúty, kým dužina zmäkne. Vmiešaj uvarenú ryžu.
-5. Naplň vydlabané polovice cukety zmesou (pokojne s kopcom, plnka sa pri pečení mierne zmrští). Daj do pekáča, podlej 50 ml vody.
-6. Peč 20 minút prikryté alobalom, potom posyp navrchu strúhaným syrom a peč ešte 8–10 minút bez alobalu, kým syr nie je roztopený a zlatistý.
-7. Podávaj hneď.
+1. **Uvar ryžu, priprav cuketu.**
+   Ryžu uvar 12–15 minút do mäkka. Rúru predhrej na 200 °C. Cuketu umyj, nakroj pozdĺžne na polovice, lyžičkou vydlabaj dužinu — nechaj asi 0,5 cm hrubé steny, nech sa polovice nepretrhnú. Dužinu nakrájaj nadrobno a odlož.
+   ⏱ 13 min
+
+2. **Priprav mäsovú plnku.**
+   Na oleji orestuj nakrájanú cibuľu (2–3 min), pridaj prelisovaný cesnak a mäso, opeč do hneda (5–7 min). Osoľ, okoreň, pridaj oregano. Pridaj nakrájanú dužinu z cukety a paradajky, dus 3–4 minúty, kým dužina zmäkne. Vmiešaj uvarenú ryžu.
+
+3. **Naplň cuketu.**
+   Naplň vydlabané polovice cukety zmesou — pokojne s kopcom, plnka sa pri pečení mierne zmrští. Daj do pekáča, podlej 50 ml vody.
+   *Tip: Plnku nahusto natlač do dutiny, nech sa pri pečení nerozpadne, no nepreplňuj ju až za okraj cukety.*
+
+4. **Peč prikryté, potom zapeč syrom.**
+   Peč 20 minút prikryté alobalom, potom posyp navrchu strúhaným syrom a peč ešte 8–10 minút bez alobalu, kým syr nie je roztopený a zlatistý.
+   ⏱ 28 min
+
+5. **Podávaj.**
+   Podávaj hneď.
 
 ---
 

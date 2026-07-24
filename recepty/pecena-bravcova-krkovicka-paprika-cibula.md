@@ -42,11 +42,23 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Sl
 
 ## Postup
 
-1. Krkovičku nakrájaj na plátky. V miske zmiešaj olivový olej, prelisovaný cesnak, sladkú papriku, rascu, soľ a korenie — touto marinádou mäso dôkladne potri z oboch strán. Nechaj marinovať aspoň 20 minút pri izbovej teplote (ideálne dlhšie v chladničke, ak máš čas).
-2. Rúru predhrej na 220 °C. Zemiaky nakrájaj na kocky, rozlož na plech a peč samotné 10 minút (potrebujú náskok, inak zostanú tvrdé, kým sa ostatné prepečie).
-3. Papriku nakrájaj na prúžky, cibuľu na mesiačiky. Pridaj k zemiakom spolu s marinovanou krkovičkou a bobkovým listom, všetko premiešaj.
-4. Peč ďalších 30–35 minút do zlatista, v polovici obráť.
-5. Podávaj posypané čerstvou petržlenovou vňaťou priamo z pekáča.
+1. **Marinuj krkovičku.**
+   Krkovičku nakrájaj na plátky. V miske zmiešaj olivový olej, prelisovaný cesnak, sladkú papriku, rascu, soľ a korenie — touto marinádou mäso dôkladne potri z oboch strán. Nechaj marinovať aspoň 20 minút pri izbovej teplote (ideálne dlhšie v chladničke, ak máš čas).
+   ⏱ 20 min
+
+2. **Predpeč zemiaky.**
+   Rúru predhrej na 220 °C. Zemiaky nakrájaj na kocky, rozlož na plech a peč samotné 10 minút — potrebujú náskok, inak zostanú tvrdé, kým sa ostatné prepečie.
+   ⏱ 10 min
+
+3. **Pridaj papriku, cibuľu a mäso.**
+   Papriku nakrájaj na prúžky, cibuľu na mesiačiky. Pridaj k zemiakom spolu s marinovanou krkovičkou a bobkovým listom, všetko premiešaj.
+
+4. **Dopeč.**
+   Peč ďalších 30–35 minút do zlatista, v polovici obráť.
+   ⏱ 33 min
+
+5. **Podávaj.**
+   Podávaj posypané čerstvou petržlenovou vňaťou priamo z pekáča.
 
 ---
 

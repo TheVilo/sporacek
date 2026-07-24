@@ -41,12 +41,23 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format. A baked sa
 
 ## Postup
 
-1. Lososa vyber z chladničky 15 minút vopred, nech mierne stiahne chlad — prepečie sa rovnomernejšie. Rúru predhrej na 220 °C. Zemiaky nakrájaj na menšie kocky, brokolicu rozdeľ na ružičky.
-2. Zemiaky a brokolicu rozlož na plech vystlaný papierom na pečenie, pokvapkaj olivovým olejom, osoľ. Peč 15 minút.
-3. Rozpustené maslo zmiešaj s prelisovaným cesnakom a šťavou z citróna.
-4. Vyber plech, uvoľni miesto pre lososa. Filé polož kožou nadol na plech, potri citrónovo-cesnakovým maslom, osoľ, okoreň.
-5. Peč ďalších 10–12 minút, kým losos nie je takmer hotový. Posledné 2–3 minúty zapni gril (horný ohrev) na vysokú teplotu, nech sa povrch pekne zakaramelizuje do zlatista.
-6. Podávaj hneď, s klinom citróna navrch.
+1. **Priprav suroviny.**
+   Lososa vyber z chladničky 15 minút vopred, nech mierne stiahne chlad — prepečie sa rovnomernejšie. Rúru predhrej na 220 °C. Zemiaky nakrájaj na menšie kocky, brokolicu rozdeľ na ružičky.
+
+2. **Predpeč zemiaky a brokolicu.**
+   Zemiaky a brokolicu rozlož na plech vystlaný papierom na pečenie, pokvapkaj olivovým olejom, osoľ. Peč 15 minút.
+   ⏱ 15 min
+
+3. **Priprav citrónovo-cesnakové maslo.**
+   Rozpustené maslo zmiešaj s prelisovaným cesnakom a šťavou z citróna.
+
+4. **Pridaj lososa a dopeč.**
+   Vyber plech, uvoľni miesto pre lososa. Filé polož kožou nadol na plech, potri citrónovo-cesnakovým maslom, osoľ, okoreň. Peč ďalších 10–12 minút, kým losos nie je takmer hotový.
+   ⏱ 11 min
+
+5. **Zapni gril na karamelizáciu a podávaj.**
+   Posledné 2–3 minúty zapni gril (horný ohrev) na vysokú teplotu, nech sa povrch pekne zakaramelizuje do zlatista. Podávaj hneď, s klinom citróna navrch.
+   *Tip: Povrch pod grilom sleduj — pri vysokej teplote skaramelizuje veľmi rýchlo a za pár sekúnd navyše môže aj zhorieť.*
 
 ---
 

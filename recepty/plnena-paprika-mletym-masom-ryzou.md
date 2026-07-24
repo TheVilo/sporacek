@@ -43,13 +43,19 @@
 
 ## Postup
 
-1. Paprikám odkrojí vrchnák a vyčisti jadrovník, aby vznikli "misky" na plnenie.
-2. Cibuľu a cesnak najemno nakrájaj, opeč na oleji do sklovita.
-3. Pridaj mleté mäso, opeč dozlata, osoľ a okoreň sladkou paprikou.
-4. Primiešaj surovú ryžu a polovicu paradajkového pretlaku, premiešaj.
-5. Naplň papriky zmesou, ulož do hrnca alebo pekáča.
-6. Zvyšný pretlak rozmiešaj s vodou a bujónom, zalej papriky do polovice výšky.
-7. Duste pod pokrievkou (alebo pečte v rúre) 35–40 minút, kým ryža a paprika nezmäknú.
+1. **Priprav papriky.**
+   Paprikám odkrojí vrchnák a vyčisti jadrovník, aby vznikli "misky" na plnenie.
+
+2. **Priprav mäsovú plnku so surovou ryžou.**
+   Cibuľu a cesnak najemno nakrájaj, opeč na oleji do sklovita. Pridaj mleté mäso, opeč dozlata, osoľ a okoreň sladkou paprikou. Primiešaj surovú ryžu a polovicu paradajkového pretlaku, premiešaj.
+   *Tip: Ryžu nechaj surovú — dovarí sa spolu s paprikou v tekutine, netreba ju variť vopred.*
+
+3. **Naplň papriky a zalej omáčkou.**
+   Naplň papriky zmesou, ulož do hrnca alebo pekáča. Zvyšný pretlak rozmiešaj s vodou a bujónom, zalej papriky do polovice výšky.
+
+4. **Duste do mäkka.**
+   Duste pod pokrievkou (alebo pečte v rúre) 35–40 minút, kým ryža a paprika nezmäknú.
+   ⏱ 38 min
 
 ---
 

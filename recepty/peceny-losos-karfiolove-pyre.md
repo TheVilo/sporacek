@@ -40,11 +40,20 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Karfiol rozdeľ na ružičky a var v osolenej vode 12–15 minút, kým nie je mäkký.
-2. Uvarený karfiol scedi a rozmixuj s maslom a mliekom na hladké pyré, osoľ a okoreň.
-3. Lososové filety osoľ, okoreň a pokvapkaj olivovým olejom.
-4. Peč 12–14 minút, kým je losos práve prepečený a koža chrumkavá.
-5. Podávaj lososa na karfiolovom pyré, s citrónom a čerstvým kôprom.
+1. **Uvar karfiol.**
+   Rúru predhrej na 200 °C. Karfiol rozdeľ na ružičky a var v osolenej vode 12–15 minút, kým nie je mäkký.
+   ⏱ 13 min
+
+2. **Rozmixuj na hladké pyré.**
+   Uvarený karfiol scedi a rozmixuj s maslom a mliekom na hladké pyré, osoľ a okoreň.
+   *Tip: Pyré mixuj dôkladne dohladka — hrudky sa už neskôr neodstránia.*
+
+3. **Priprav a upeč lososa.**
+   Lososové filety osoľ, okoreň a pokvapkaj olivovým olejom. Peč 12–14 minút, kým je losos práve prepečený a koža chrumkavá.
+   ⏱ 13 min
+
+4. **Podávaj.**
+   Podávaj lososa na karfiolovom pyré, s citrónom a čerstvým kôprom.
 
 ---
 

@@ -39,11 +39,19 @@ A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 f
 
 ## Postup
 
-1. Mrkvu ošúp, nakrájaj na kolieska a var v osolenej vode 15 minút, kým nie je mäkká.
-2. Uvarenú mrkvu scedi a rozmixuj s polovicou masla a mliekom na hladké pyré, osoľ.
-3. Filety tresky osuš papierovou utierkou, osoľ a okoreň.
-4. Na panvici rozpusti zvyšné maslo, tresku opekaj 3–4 minúty z každej strany, priebežne polievaj rozpusteným maslom.
-5. Podávaj tresku na mrkvovom pyré, s citrónom a čerstvým tymianom.
+1. **Uvar mrkvu.**
+   Mrkvu ošúp, nakrájaj na kolieska a var v osolenej vode 15 minút, kým nie je mäkká.
+   ⏱ 15 min
+
+2. **Rozmixuj na pyré.**
+   Uvarenú mrkvu scedi a rozmixuj s polovicou masla a mliekom na hladké pyré, osoľ.
+
+3. **Opeč tresku na masle.**
+   Filety tresky osuš papierovou utierkou, osoľ a okoreň. Na panvici rozpusti zvyšné maslo, tresku opekaj 3–4 minúty z každej strany, priebežne polievaj rozpusteným maslom.
+   *Tip: Priebežné polievanie rozpusteným maslom (basting) drží rybu šťavnatú a dodá jej peknú maslovú arómu.*
+
+4. **Podávaj.**
+   Podávaj tresku na mrkvovom pyré, s citrónom a čerstvým tymianom.
 
 ---
 

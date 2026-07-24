@@ -41,11 +41,20 @@ A crisp, appetizing top-down flat-lay editorial photo, 9:16 format, with a warm 
 
 ## Postup
 
-1. Rúru predhrej na 160 °C. Rebierka osoľ, okoreň a potri zmesou sladkej a údenej papriky.
-2. Rebierka zabaľ do alobalu a peč 60 minút, kým nie sú mäkké.
-3. Zemiaky nakrájaj na hranolky, premiešaj s olivovým olejom a soľou, rozlož na plech.
-4. Priprav BBQ glazúru: zmiešaj med, horčicu a prelisovaný cesnak.
-5. Zvýš teplotu rúry na 220 °C. Rebierka rozbaľ, potri glazúrou a spolu s hranolkami peč ďalších 15–20 minút, kým rebierka nie sú lesklé a karamelizované a hranolky zlatisté.
+1. **Priprav a okoreň rebierka.**
+   Rúru predhrej na 160 °C. Rebierka osoľ, okoreň a potri zmesou sladkej a údenej papriky.
+
+2. **Peč zabalené v alobale do mäkka.**
+   Rebierka zabaľ do alobalu a peč 60 minút, kým nie sú mäkké.
+   ⏱ 60 min
+
+3. **Priprav hranolky a BBQ glazúru.**
+   Zemiaky nakrájaj na hranolky, premiešaj s olivovým olejom a soľou, rozlož na plech. Priprav BBQ glazúru: zmiešaj med, horčicu a prelisovaný cesnak.
+
+4. **Potri glazúrou a dopeč s hranolkami.**
+   Zvýš teplotu rúry na 220 °C. Rebierka rozbaľ, potri glazúrou a spolu s hranolkami peč ďalších 15–20 minút, kým rebierka nie sú lesklé a karamelizované a hranolky zlatisté.
+   *Tip: Glazúru nanášaj až pri vyššej teplote na konci pečenia — med v nej sa pri dlhšom pečení ľahko spáli.*
+   ⏱ 18 min
 
 ---
 

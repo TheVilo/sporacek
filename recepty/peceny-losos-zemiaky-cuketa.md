@@ -41,12 +41,19 @@
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Zemiaky nakrájaj na plátky, cuketu na polmesiačiky.
-2. Zeleninu premiešaj s olivovým olejom, soľou a korením, rozlož na plech a pec 15 minút.
-3. Lososa osoľ, okoreň a polož na plech k predpečenej zelenine.
-4. Pridaj plátky citróna a prelisovaný cesnak na rybu.
-5. Pec ďalších 12–15 minút, kým losos nie je hotový a zelenina mäkká.
-6. Pred podávaním posyp čerstvou petržlenovou vňaťou.
+1. **Priprav zeleninu a predpeč.**
+   Rúru predhrej na 200 °C. Zemiaky nakrájaj na plátky, cuketu na polmesiačiky. Zeleninu premiešaj s olivovým olejom, soľou a korením, rozlož na plech a peč 15 minút.
+   ⏱ 15 min
+
+2. **Pridaj lososa s citrónom a cesnakom.**
+   Lososa osoľ, okoreň a polož na plech k predpečenej zelenine. Pridaj plátky citróna a prelisovaný cesnak na rybu.
+
+3. **Dopeč.**
+   Peč ďalších 12–15 minút, kým losos nie je hotový a zelenina mäkká.
+   ⏱ 13 min
+
+4. **Podávaj.**
+   Pred podávaním posyp čerstvou petržlenovou vňaťou.
 
 ---
 

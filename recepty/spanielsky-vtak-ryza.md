@@ -44,13 +44,22 @@ A bright, airy, modern editorial in-progress cooking snap, 9:16 format. Španiel
 
 ## Postup
 
-1. Plátky hovädzieho mäsa rozklep na tenko, osoľ, okoreň a potri horčicou.
-2. Na každý plátok polož plátok šunky, polovicu uvareného vajca a kyslú uhorku nakrájanú na prúžky.
-3. Mäso zroluj a zopni špáradlom alebo previaž niťou.
-4. Slaninu nakrájaj na kocky, opeč na oleji, pridaj nakrájanú cibuľu, opeč do sklovita.
-5. Rolky opeč zo všetkých strán dozlata. Prilej vodu, aby boli rolky takmer zakryté, prikry a duste 45–60 minút do mäkka.
-6. Rolky vyber, omáčku zahusti múkou rozmiešanou so smotanou, prever 5 minút.
-7. Rolky nakrájaj na kolieska, zalej omáčkou, podávaj s uvarenou ryžou.
+1. **Naplň a zroluj mäso.**
+   Plátky hovädzieho mäsa rozklep na tenko, osoľ, okoreň a potri horčicou. Na každý plátok polož plátok šunky, polovicu uvareného vajca a kyslú uhorku nakrájanú na prúžky. Mäso zroluj a zopni špáradlom alebo previaž niťou.
+   *Tip: Zroluj čo najtesnejšie, nech sa pri dusení plnka nevysúvala von.*
+
+2. **Opeč slaninu, cibuľu a rolky.**
+   Slaninu nakrájaj na kocky, opeč na oleji, pridaj nakrájanú cibuľu, opeč do sklovita. Rolky opeč zo všetkých strán dozlata.
+
+3. **Dus do mäkka.**
+   Prilej vodu, aby boli rolky takmer zakryté, prikry a duste 45–60 minút do mäkka.
+   ⏱ 52 min
+
+4. **Zahusti omáčku.**
+   Rolky vyber, omáčku zahusti múkou rozmiešanou so smotanou, prever 5 minút.
+
+5. **Podávaj.**
+   Rolky nakrájaj na kolieska, zalej omáčkou, podávaj s uvarenou ryžou.
 
 ---
 

@@ -39,12 +39,18 @@ A bright, wider modern editorial table scene, 9:16 format, blending warm minimal
 
 ## Postup
 
-1. Rúru predhrej na 200 °C. Zemiaky nakrájaj na klinky, cesnak prelisuj.
-2. Kuracie stehná osuš papierovou utierkou (kľúčové pre chrumkavú kožu), osoľ a okoreň zo všetkých strán.
-3. Zemiaky premiešaj s polovicou olivového oleja, soľou, oreganom a prelisovaným cesnakom, rozlož na plech.
-4. Na zemiaky polož kuracie stehná kožou nahor, pokvapkaj zvyšným olivovým olejom.
-5. Citrón nakrájaj na plátky, rozlož medzi kuracie stehná a zemiaky.
-6. Peč 40–45 minút, kým je koža na kuracom chrumkavá a zlatistá a zemiaky mäkké.
+1. **Priprav mäso a zeleninu.**
+   Rúru predhrej na 200 °C. Zemiaky nakrájaj na klinky, cesnak prelisuj. Kuracie stehná osuš papierovou utierkou — kľúčové pre chrumkavú kožu — osoľ a okoreň zo všetkých strán.
+
+2. **Rozlož na plech.**
+   Zemiaky premiešaj s polovicou olivového oleja, soľou, oreganom a prelisovaným cesnakom, rozlož na plech. Na zemiaky polož kuracie stehná kožou nahor, pokvapkaj zvyšným olivovým olejom. Citrón nakrájaj na plátky, rozlož medzi kuracie stehná a zemiaky.
+
+3. **Peč do chrumkava.**
+   Peč 40–45 minút, kým je koža na kuracom chrumkavá a zlatistá a zemiaky mäkké.
+   ⏱ 42 min
+
+4. **Podávaj.**
+   Podávaj hneď.
 
 ---
 

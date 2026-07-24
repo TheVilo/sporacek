@@ -41,12 +41,18 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Cuketu nakrájaj na rezance špirálovačom alebo julienne strúhadlom (prípadne tenko na pásiky nožom).
-2. Krevety osuš papierovou utierkou (kľúčové pre pekné opečenie, nie dusenie), osoľ a okoreň.
-3. Na panvici rozpáľ olivový olej na vysokom ohni. Krevety opeč 2–3 minúty z každej strany do ružova, vyber z panvice.
-4. Na tej istej panvici rozpusti maslo, pridaj prelisovaný cesnak a čili vločky, krátko opraž (30 sekúnd), nech nezhorí.
-5. Pridaj cuketové rezance, opekaj 3–4 minúty za miešania, kým mierne zmäknú, ale zostanú al dente.
-6. Vráť krevety späť na panvicu, prilej citrónovú šťavu, premiešaj a hneď podávaj posypané petržlenovou vňaťou.
+1. **Priprav cuketové rezance a krevety.**
+   Cuketu nakrájaj na rezance špirálovačom alebo julienne strúhadlom (prípadne tenko na pásiky nožom). Krevety osuš papierovou utierkou — kľúčové pre pekné opečenie, nie dusenie — osoľ a okoreň.
+
+2. **Opeč krevety dorusova.**
+   Na panvici rozpáľ olivový olej na vysokom ohni. Krevety opeč 2–3 minúty z každej strany do ružova, vyber z panvice.
+
+3. **Priprav cesnakové maslo a orestuj cuketu.**
+   Na tej istej panvici rozpusti maslo, pridaj prelisovaný cesnak a čili vločky, krátko opraž (30 sekúnd), nech nezhorí. Pridaj cuketové rezance, opekaj 3–4 minúty za miešania, kým mierne zmäknú, ale zostanú al dente.
+   *Tip: Cuketu neopekaj príliš dlho — pri prevarení rýchlo pustí vodu a rezance zmoknú.*
+
+4. **Spoj s krevetami a podávaj.**
+   Vráť krevety späť na panvicu, prilej citrónovú šťavu, premiešaj a hneď podávaj posypané petržlenovou vňaťou.
 
 ---
 

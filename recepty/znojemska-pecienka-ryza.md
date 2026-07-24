@@ -42,12 +42,21 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. Te
 
 ## Postup
 
-1. Bravčové karé nakrájaj na tenké plátky, zľahka potri horčicou, osoľ a okoreň.
-2. Slaninu nakrájaj na kocky a v hrnci ju vyškvar do zlata. Pridaj nadrobno nakrájanú cibuľu a opeč do sklovita.
-3. Pridaj mäso a opeč zo všetkých strán. Vmiešaj paradajkový pretlak, krátko opraž a podlej vodou, aby bolo mäso takmer ponorené. Prikry a dus na miernom ohni 25 minút.
-4. Zatiaľ uvar ryžu v osolenej vode podľa návodu.
-5. Do mäsa pridaj kyslé uhorky nakrájané na tenké prúžky, chvíľu dus. Nakoniec vmiešaj smotanu, prevar a dochuť soľou a korením.
-6. Podávaj s uvarenou ryžou, posypané petržlenovou vňaťou.
+1. **Priprav mäso.**
+   Bravčové karé nakrájaj na tenké plátky, zľahka potri horčicou, osoľ a okoreň.
+
+2. **Opeč slaninu, cibuľu a mäso.**
+   Slaninu nakrájaj na kocky a v hrnci ju vyškvar do zlata. Pridaj nadrobno nakrájanú cibuľu a opeč do sklovita. Pridaj mäso a opeč zo všetkých strán.
+
+3. **Dus v paradajkovej omáčke.**
+   Vmiešaj paradajkový pretlak, krátko opraž a podlej vodou, aby bolo mäso takmer ponorené. Prikry a dus na miernom ohni 25 minút. Zatiaľ uvar ryžu v osolenej vode podľa návodu.
+   ⏱ 25 min
+
+4. **Dokonči omáčku.**
+   Do mäsa pridaj kyslé uhorky nakrájané na tenké prúžky, chvíľu dus. Nakoniec vmiešaj smotanu, prevar a dochuť soľou a korením.
+
+5. **Podávaj.**
+   Podávaj s uvarenou ryžou, posypané petržlenovou vňaťou.
 
 ---
 

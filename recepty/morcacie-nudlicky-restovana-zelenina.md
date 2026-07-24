@@ -41,12 +41,17 @@ A bold, appetizing 45-degree angle editorial food photo, 9:16 format, blending w
 
 ## Postup
 
-1. Morčacie prsia nakrájaj na tenké nudličky, osoľ a okoreň.
-2. Papriku, cuketu a mrkvu nakrájaj na tenké prúžky, cesnak nadrobno.
-3. V panvici rozpáľ olivový olej. Mäso restuj na vysokom ohni 3–4 minúty do zlata, potom ho vyber.
-4. Do panvice pridaj mrkvu, po minúte papriku a cuketu, restuj 3–4 minúty, nech zelenina ostane na skus. Pridaj cesnak a sladkú papriku a krátko opraž.
-5. Vráť mäso, premiešaj a prehrej. Dochuť soľou a čiernym korením.
-6. Posyp petržlenovou vňaťou a podávaj samotné alebo s ryžou.
+1. **Priprav mäso a zeleninu.**
+   Morčacie prsia nakrájaj na tenké nudličky, osoľ a okoreň. Papriku, cuketu a mrkvu nakrájaj na tenké prúžky, cesnak nadrobno.
+
+2. **Restuj mäso.**
+   V panvici rozpáľ olivový olej. Mäso restuj na vysokom ohni 3–4 minúty do zlata, potom ho vyber.
+
+3. **Restuj zeleninu a spoj s mäsom.**
+   Do panvice pridaj mrkvu, po minúte papriku a cuketu, restuj 3–4 minúty, nech zelenina ostane na skus. Pridaj cesnak a sladkú papriku a krátko opraž. Vráť mäso, premiešaj a prehrej. Dochuť soľou a čiernym korením.
+
+4. **Podávaj.**
+   Posyp petržlenovou vňaťou a podávaj samotné alebo s ryžou.
 
 ---
 

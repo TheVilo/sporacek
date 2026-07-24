@@ -43,13 +43,22 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Bujón rozpusti v 900 ml horúcej vody, udržiavaj teplý na miernom ohni.
-2. Cibuľu najemno nakrájaj, na 1 PL olivového oleja opraž do sklovita.
-3. Pridaj ryžu, opraž 1–2 minúty, kým zosklovatie.
-4. Postupne prilievaj naberačku horúceho vývaru, za stáleho miešania nechaj vsiaknuť, potom prilej ďalšiu — opakuj 18–20 minút, kým je ryža mäkká, ale stále na skus.
-5. Krevety osoľ, okoreň, na zvyšnom oleji a polovici masla opekaj 1–2 minúty z každej strany, kým sú ružové a nepriehľadné, pridaj prelisovaný cesnak na poslednú minútu.
-6. Do hotového rizota vmiešaj zvyšné maslo a parmezán, dochuť soľou a korením.
-7. Rizoto rozlož do misiek, navrch polož opečené krevety, posyp petržlenovou vňaťou a podávaj s klinom citróna.
+1. **Priprav vývar a orestuj cibuľu.**
+   Bujón rozpusti v 900 ml horúcej vody, udržiavaj teplý na miernom ohni. Cibuľu najemno nakrájaj, na 1 PL olivového oleja opraž do sklovita.
+
+2. **Opraž ryžu a postupne prilievaj vývar.**
+   Pridaj ryžu, opraž 1–2 minúty, kým zosklovatie. Postupne prilievaj naberačku horúceho vývaru, za stáleho miešania nechaj vsiaknuť, potom prilej ďalšiu — opakuj, kým je ryža mäkká, ale stále na skus.
+   *Tip: Vývar prilievaj postupne po naberačkách, nikdy naraz — to je základ krémovej textúry rizota.*
+   ⏱ 19 min
+
+3. **Opeč krevety.**
+   Krevety osoľ, okoreň, na zvyšnom oleji a polovici masla opekaj 1–2 minúty z každej strany, kým sú ružové a nepriehľadné, pridaj prelisovaný cesnak na poslednú minútu.
+
+4. **Dokonči rizoto maslom a parmezánom.**
+   Do hotového rizota vmiešaj zvyšné maslo a parmezán, dochuť soľou a korením.
+
+5. **Podávaj.**
+   Rizoto rozlož do misiek, navrch polož opečené krevety, posyp petržlenovou vňaťou a podávaj s klinom citróna.
 
 ---
 

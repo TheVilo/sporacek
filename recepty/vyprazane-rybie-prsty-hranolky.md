@@ -41,12 +41,18 @@ A crisp, appetizing top-down flat-lay editorial photo, 9:16 format, with a warm 
 
 ## Postup
 
-1. Rúru predhrej na 220 °C. Zemiaky nakrájaj na hranolky, osuš, premiešaj s trochou oleja a soľou a rozlož na plech.
-2. Pierky zapeč 30–35 minút do zlatista, v polovici obráť.
-3. Tresku nakrájaj na pásiky ("prsty"), osoľ a okoreň.
-4. Postupne obaľuj v múke, rozšľahanom vajci a nakoniec v strúhanke.
-5. Na panvici rozohrej olej, rybie prsty smaž 3–4 minúty z každej strany do zlatista a chrumkava.
-6. Osuš na papierovej utierke, podávaj s hranolkami, citrónom a tatárskou omáčkou.
+1. **Priprav a peč hranolky.**
+   Rúru predhrej na 220 °C. Zemiaky nakrájaj na hranolky, osuš, premiešaj s trochou oleja a soľou a rozlož na plech. Peč 30–35 minút do zlatista, v polovici obráť.
+   ⏱ 32 min
+
+2. **Priprav a obaľ rybie prsty.**
+   Tresku nakrájaj na pásiky ("prsty"), osoľ a okoreň. Postupne obaľuj v múke, rozšľahanom vajci a nakoniec v strúhanke.
+
+3. **Vysmaž rybie prsty.**
+   Na panvici rozohrej olej, rybie prsty smaž 3–4 minúty z každej strany do zlatista a chrumkava.
+
+4. **Podávaj.**
+   Osuš na papierovej utierke, podávaj s hranolkami, citrónom a tatárskou omáčkou.
 
 ---
 

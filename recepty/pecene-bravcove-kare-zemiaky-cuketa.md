@@ -41,12 +41,19 @@
 
 ## Postup
 
-1. Rúru predhrej na 190 °C. Zemiaky ošúp a nakrájaj na štvrtiny, cuketu na hrubšie kolieska, cibuľu na klinčeky.
-2. Bravčové karé osoľ, okoreň a potri prelisovaným cesnakom a oreganom.
-3. Zemiaky a cibuľu premiešaj s olivovým olejom a soľou, rozlož na plech.
-4. Na zeleninu polož karé, pridaj cuketu okolo mäsa.
-5. Pec 45–50 minút, kým mäso nie je prepečené a zemiaky mäkké. V polovici pečenia zeleninu premiešaj.
-6. Pred krájaním nechaj mäso 5 minút odpočinúť.
+1. **Priprav suroviny.**
+   Rúru predhrej na 190 °C. Zemiaky ošúp a nakrájaj na štvrtiny, cuketu na hrubšie kolieska, cibuľu na klinčeky. Bravčové karé osoľ, okoreň a potri prelisovaným cesnakom a oreganom.
+
+2. **Rozlož na plech.**
+   Zemiaky a cibuľu premiešaj s olivovým olejom a soľou, rozlož na plech. Na zeleninu polož karé, pridaj cuketu okolo mäsa.
+
+3. **Peč.**
+   Peč 45–50 minút, kým mäso nie je prepečené a zemiaky mäkké. V polovici pečenia zeleninu premiešaj.
+   ⏱ 47 min
+
+4. **Nechaj odpočinúť a podávaj.**
+   Pred krájaním nechaj mäso 5 minút odpočinúť.
+   ⏱ 5 min
 
 ---
 

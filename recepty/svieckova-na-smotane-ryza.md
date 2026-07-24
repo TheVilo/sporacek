@@ -45,12 +45,27 @@ A bright, airy, dynamic 45-degree angle editorial shot, 9:16 format. Capturing a
 
 ## Postup
 
-1. Mrkvu, zeler a cibuľu nastrúhaj nahrubo. Polovicu daj na dno hrnca, na ňu polož mäso, zalej rozpusteným maslom, navrch daj zvyšnú zeleninu. Prikry a nechaj marinovať v chladničke aspoň 4–6 hodín, ideálne cez noc.
-2. Mäso vyber zo zeleniny, osuš, na panvici opeč zo všetkých strán dozlata. Na výpeku opeč aj zeleninu dozlata.
-3. Do hrnca s opečenou zeleninou vmiešaj horčicu a ocot, minútu opraž, potom prilej 500 ml vody s bujónom. Pridaj bobkový list.
-4. Vlož opečené mäso späť, prikry a duste na miernom ohni (alebo v rúre na 180 °C) 1,5–2 hodiny, kým mäso nie je mäkké.
-5. Mäso vyber, zeleninovú omáčku rozmixuj dohladka, precedi cez sitko, vmiešaj smotanu a prehrej (nevar prudko).
-6. Mäso nakrájaj na plátky, zalej horúcou omáčkou, podávaj s uvarenou ryžou a lyžicou brusnicovej omáčky.
+1. **Marinuj mäso so zeleninou.**
+   Mrkvu, zeler a cibuľu nastrúhaj nahrubo. Polovicu daj na dno hrnca, na ňu polož mäso, zalej rozpusteným maslom, navrch daj zvyšnú zeleninu. Prikry a nechaj marinovať v chladničke aspoň 4–6 hodín, ideálne cez noc.
+   *Tip: Naplánuj si tento krok vopred — mäso sa marinuje niekoľko hodín, ideálne cez noc, nie je to niečo, na čo treba čakať v kuchyni.*
+
+2. **Opeč mäso a zeleninu.**
+   Mäso vyber zo zeleniny, osuš, na panvici opeč zo všetkých strán dozlata. Na výpeku opeč aj zeleninu dozlata.
+
+3. **Priprav základ omáčky.**
+   Do hrnca s opečenou zeleninou vmiešaj horčicu a ocot, minútu opraž, potom prilej 500 ml vody s bujónom. Pridaj bobkový list.
+
+4. **Dus mäso do mäkka.**
+   Vlož opečené mäso späť, prikry a duste na miernom ohni (alebo v rúre na 180 °C) 1,5–2 hodiny, kým mäso nie je mäkké.
+   ⏱ 105 min
+
+5. **Rozmixuj a precedi omáčku.**
+   Mäso vyber, zeleninovú omáčku rozmixuj dohladka, precedi cez sitko, vmiešaj smotanu a prehrej (nevar prudko).
+   *Tip: Omáčku precedi dôkladne cez jemné sitko — vďaka tomu bude hodvábne hladká, bez vláknitých kúskov zeleniny.*
+   📷 fotky/postup/svieckova-na-smotane-ryza-krok-5.jpg — takto sa precedí omáčka na hodvábnu textúru
+
+6. **Podávaj.**
+   Mäso nakrájaj na plátky, zalej horúcou omáčkou, podávaj s uvarenou ryžou a lyžicou brusnicovej omáčky.
 
 ---
 
