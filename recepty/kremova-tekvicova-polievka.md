@@ -39,12 +39,23 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Rúru predhrej na 220 °C. Tekvicu ošúpaj, nakrájaj na kocky ~2 cm, rozlož na plech, pokvapkaj polovicou oleja, osoľ. Peč 20–25 minút, kým nezmäkne a okraje mierne nezhnednú — pečením získa oveľa hlbšiu chuť ako varením.
-2. Kým sa tekvica pečie, na zvyšku oleja orestuj nadrobno nakrájanú cibuľu 3 minúty. Pridaj nastrúhaný zázvor a kurkumu, krátko opraž.
-3. Na suchej panvici opraž tekvicové semienka 2–3 minúty, kým začnú popraskávať a zvoniť. Odlož nabok.
-4. Upečenú tekvicu pridaj k cibuľke, zalej 400 ml vody. Priveď do varu a var 5 minút, aby sa chute spojili.
-5. Mixuj tyčovým mixérom do hladka. Vlej smotanu, premiešaj, povar 2 minúty. Dochuť soľou.
-6. Podávaj posypanú opraženými tekvicovými semienkami, prípadne s kvapkou smotany navrchu.
+1. **Upeč tekvicu.**
+   Rúru predhrej na 220 °C. Tekvicu ošúpaj, nakrájaj na kocky ~2 cm, rozlož na plech, pokvapkaj polovicou oleja, osoľ. Peč, kým nezmäkne a okraje mierne nezhnednú.
+   *Tip: Pečením získa tekvica oveľa hlbšiu chuť ako varením.*
+   ⏱ 22 min
+
+2. **Orestuj cibuľu a koreniny.**
+   Kým sa tekvica pečie, na zvyšku oleja orestuj nadrobno nakrájanú cibuľu 3 minúty. Pridaj nastrúhaný zázvor a kurkumu, krátko opraž.
+
+3. **Opraž semienka.**
+   Na suchej panvici opraž tekvicové semienka 2–3 minúty, kým začnú popraskávať a zvoniť. Odlož nabok.
+
+4. **Rozmixuj polievku.**
+   Upečenú tekvicu pridaj k cibuľke, zalej 400 ml vody, priveď do varu a var 5 minút. Mixuj tyčovým mixérom do hladka, vlej smotanu, premiešaj, povar 2 minúty, dochuť soľou.
+   ⏱ 7 min
+
+5. **Podávaj.**
+   Posyp opraženými tekvicovými semienkami, prípadne s kvapkou smotany navrchu.
 
 ---
 

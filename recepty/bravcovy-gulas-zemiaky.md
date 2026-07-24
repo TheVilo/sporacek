@@ -42,12 +42,23 @@ A bright, airy, dynamic 45-degree angle editorial food photo, 9:16 format, eleva
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlata (7–10 minút).
-2. Bravčovú krkovičku nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán.
-3. Odstav hrniec z ohňa, vmiešaj sladkú papriku, rascu, prelisovaný cesnak a paradajkový pretlak (na horúcom povrchu paprika horkne). Vráť na oheň, krátko opraž a hneď zalej vodou, aby bolo mäso ponorené. Pridaj bobkový list.
-4. Priveď do varu, prikry a dus na miernom ohni 40 minút.
-5. Pridaj zemiaky nakrájané na kocky a dus ďalších 20–25 minút, kým sú mäso aj zemiaky mäkké a omáčka hustá.
-6. Vyber bobkový list, dochuť soľou a čiernym korením. Podávaj posypané petržlenovou vňaťou, s krajcom chleba.
+1. **Orestuj cibuľu a mäso.**
+   Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlata (7–10 minút). Bravčovú krkovičku nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán.
+
+2. **Zalej korením a vodou.**
+   Odstav hrniec z ohňa, vmiešaj sladkú papriku, rascu, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň, krátko opraž a hneď zalej vodou, aby bolo mäso ponorené. Pridaj bobkový list.
+   *Tip: Papriku vždy miešaj mimo horúceho povrchu — na ohni rýchlo zhorkne.*
+
+3. **Dus mäso do mäkka.**
+   Priveď do varu, prikry a dus na miernom ohni.
+   ⏱ 40 min
+
+4. **Pridaj zemiaky a dovar.**
+   Pridaj zemiaky nakrájané na kocky a dus ďalej, kým sú mäso aj zemiaky mäkké a omáčka hustá.
+   ⏱ 22 min
+
+5. **Dochuť a podávaj.**
+   Vyber bobkový list, dochuť soľou a čiernym korením. Podávaj posypané petržlenovou vňaťou, s krajcom chleba.
 
 ---
 

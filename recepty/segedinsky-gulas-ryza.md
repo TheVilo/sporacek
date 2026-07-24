@@ -43,13 +43,24 @@ A bright, modern elegant food photo with an elevated lifestyle aesthetic, 9:16 f
 
 ## Postup
 
-1. Bravčovú krkovičku nakrájaj na kocky, osoľ, okoreň.
-2. Na oleji opeč najemno nakrájanú cibuľu do sklovita, pridaj prelisovaný cesnak, krátko opraž.
-3. Pridaj mäso, opeč zo všetkých strán dozlata.
-4. Stiahni z ohňa, vmiešaj sladkú papriku (nech nezhorí), potom prilej vodu, aby mäso bolo takmer zakryté. Pridaj bobkový list, priveď do varu a dus pod pokrievkou 20 minút.
-5. Kyslú kapustu scedi, pridaj k mäsu, podľa potreby dolej vodu. Duste ďalších 20–25 minút, kým mäso a kapusta zmäknú.
-6. Múku rozmiešaj do hladka so smotanou, vmiešaj do guláša, prever 10 minút na miernom ohni.
-7. Podávaj s uvarenou ryžou.
+1. **Orestuj cibuľu a mäso.**
+   Bravčovú krkovičku nakrájaj na kocky, osoľ, okoreň. Na oleji opeč najemno nakrájanú cibuľu do sklovita, pridaj prelisovaný cesnak, krátko opraž. Pridaj mäso, opeč zo všetkých strán dozlata.
+
+2. **Zalej a dus mäso.**
+   Stiahni z ohňa, vmiešaj sladkú papriku, potom prilej vodu, aby mäso bolo takmer zakryté. Pridaj bobkový list, priveď do varu a dus pod pokrievkou.
+   *Tip: Papriku miešaj vždy mimo ohňa, inak zhorkne.*
+   ⏱ 20 min
+
+3. **Pridaj kapustu a dovar.**
+   Kyslú kapustu scedi, pridaj k mäsu, podľa potreby dolej vodu. Duste ďalej, kým mäso a kapusta zmäknú.
+   ⏱ 22 min
+
+4. **Zahusti smotanou.**
+   Múku rozmiešaj do hladka so smotanou, vmiešaj do guláša, prever na miernom ohni.
+   ⏱ 10 min
+
+5. **Podávaj.**
+   Podávaj s uvarenou ryžou.
 
 ---
 

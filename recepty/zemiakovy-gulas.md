@@ -42,11 +42,19 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju speň do sklovita.
-2. Odstav z ohňa, vmiešaj sladkú papriku, rascu, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň a krátko opraž.
-3. Pridaj papriku nakrájanú na prúžky a zemiaky na kocky. Zalej vodou, aby boli takmer ponorené, pridaj bobkový list, osoľ a okoreň.
-4. Priveď do varu a var na miernom ohni 20–25 minút, kým sú zemiaky mäkké. Časť zemiakov môžeš pri kraji zľahka roztlačiť, aby omáčka zhustla.
-5. Vyber bobkový list, dochuť a podávaj posypané petržlenovou vňaťou, s chlebom.
+1. **Speň cibuľu a pridaj koreniny.**
+   Cibuľu nakrájaj nadrobno a na oleji ju speň do sklovita. Odstav z ohňa, vmiešaj sladkú papriku, rascu, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň a krátko opraž.
+
+2. **Pridaj zeleninu.**
+   Pridaj papriku nakrájanú na prúžky a zemiaky na kocky. Zalej vodou, aby boli takmer ponorené, pridaj bobkový list, osoľ a okoreň.
+
+3. **Dus do mäkka.**
+   Priveď do varu a var na miernom ohni, kým sú zemiaky mäkké.
+   *Tip: Časť zemiakov môžeš pri kraji zľahka roztlačiť, aby omáčka zhustla.*
+   ⏱ 22 min
+
+4. **Dochuť a podávaj.**
+   Vyber bobkový list, dochuť a podávaj posypané petržlenovou vňaťou, s chlebom.
 
 ---
 

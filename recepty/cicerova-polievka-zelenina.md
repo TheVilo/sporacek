@@ -47,12 +47,22 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Cibuľu, mrkvu a zeler nakrájaj nadrobno a orestuj na oleji 5 minút, kým zmäknú.
-2. Pridaj prelisovaný cesnak, rascu a paradajkový pretlak, opraž 1 minútu, kým pretlak stmavne a zvonia (to dodá polievke hĺbku). Vmiešaj údenú papriku, krátko opraž.
-3. Vsyp scedený cícer, pridaj konzervované paradajky, bujón a 500 ml vody. Premiešaj.
-4. Priveď do varu, zníž teplotu a dus 15 minút, kým zelenina nezmäkne.
-5. Odstav z ohňa, vytlač šťavu z polovice citróna. Dochuť soľou. Ak chceš hustejšiu textúru, časť polievky rozmixuj tyčovým mixérom.
-6. Podávaj posypanú čerstvou petržlenovou vňaťou, s krajcom chleba.
+1. **Orestuj zeleninový základ.**
+   Cibuľu, mrkvu a zeler nakrájaj nadrobno a orestuj na oleji 5 minút, kým zmäknú.
+
+2. **Pridaj koreniny a pretlak.**
+   Pridaj prelisovaný cesnak, rascu a paradajkový pretlak, opraž 1 minútu, kým pretlak stmavne. Vmiešaj údenú papriku, krátko opraž.
+   *Tip: Krátke opraženie pretlaku dodá polievke hlbšiu chuť.*
+
+3. **Zalej a dus.**
+   Vsyp scedený cícer, pridaj konzervované paradajky, bujón a 500 ml vody, premiešaj. Priveď do varu, zníž teplotu a dus, kým zelenina nezmäkne.
+   ⏱ 15 min
+
+4. **Dochuť citrónom.**
+   Odstav z ohňa, vytlač šťavu z polovice citróna, dochuť soľou. Ak chceš hustejšiu textúru, časť polievky rozmixuj tyčovým mixérom.
+
+5. **Podávaj.**
+   Posyp čerstvou petržlenovou vňaťou, podávaj s krajcom chleba.
 
 ---
 

@@ -45,11 +45,23 @@ A bright, airy, modern editorial food photograph, vertical 9:16 format. A close-
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlatista (7–10 minút).
-2. Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán (7–10 minút).
-3. Odstav panvicu z ohňa (dôležité — na horúcom povrchu paprika horkne), vmiešaj prelisovaný cesnak, sladkú papriku, rascu a paradajkový pretlak. Vráť na oheň, krátko opraž a hneď zalej vodou alebo vývarom, aby bolo mäso ponorené. Pridaj bobkový list. Priveď do varu, prikry a dus na miernom ohni 40 minút.
-4. Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a dus ďalších 30–40 minút, kým mäso nie je mäkké a omáčka hustá.
-5. Vyber bobkový list. Dochuť soľou a čiernym korením. Podávaj posypané čerstvou petržlenovou vňaťou, s krajcom chleba.
+1. **Orestuj cibuľu a mäso.**
+   Cibuľu nakrájaj nadrobno a na oleji ju opeč do zlatista (7–10 minút). Hovädzie mäso nakrájaj na kocky, pridaj k cibuli a opeč zo všetkých strán (7–10 minút).
+
+2. **Zalej korením a vodou.**
+   Odstav panvicu z ohňa, vmiešaj prelisovaný cesnak, sladkú papriku, rascu a paradajkový pretlak. Vráť na oheň, krátko opraž a hneď zalej vodou alebo vývarom, aby bolo mäso ponorené. Pridaj bobkový list.
+   *Tip: Papriku vždy vmiešaj mimo horúceho povrchu — inak zhorkne.*
+
+3. **Dus mäso do mäkka.**
+   Priveď do varu, prikry a dus na miernom ohni.
+   ⏱ 40 min
+
+4. **Pridaj zeleninu a dovar.**
+   Pridaj nakrájanú mrkvu a zemiaky. Znova priveď do varu, prikry a dus ďalej, kým mäso nie je mäkké a omáčka hustá.
+   ⏱ 35 min
+
+5. **Dochuť a podávaj.**
+   Vyber bobkový list. Dochuť soľou a čiernym korením. Podávaj posypané čerstvou petržlenovou vňaťou, s krajcom chleba.
 
 ---
 

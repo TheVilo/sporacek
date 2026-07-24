@@ -45,12 +45,18 @@ A bright, warm minimalist top-down flat-lay photograph, vertical 9:16 format. A 
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno, na oleji ju speň do sklovita. Odstav z ohňa, vmiešaj sladkú papriku a rascu.
-2. Pridaj mrkvu nakrájanú na kolieska a zemiaky na kocky. Zalej vodou, aby bola zelenina ponorená, pridaj bobkový list a soľ.
-3. Priveď do varu a var na miernom ohni 20 minút, kým sú zemiaky mäkké.
-4. Smotanu rozšľahaj s múkou a trochou vývaru z hrnca do hladka, potom po častiach vmiešaj do polievky. Krátko povar, nech zhustne.
-5. Vmiešaj prelisovaný cesnak a ocot. Dochuť soľou, čiernym korením a podľa chuti ešte octom — polievka má byť príjemne nakyslá.
-6. Vyber bobkový list, posyp nasekaným kôprom a podávaj s chlebom.
+1. **Speň cibuľu a pridaj koreniny.**
+   Cibuľu nakrájaj nadrobno, na oleji ju speň do sklovita. Odstav z ohňa, vmiešaj sladkú papriku a rascu.
+
+2. **Pridaj zeleninu a var.**
+   Pridaj mrkvu nakrájanú na kolieska a zemiaky na kocky. Zalej vodou, aby bola zelenina ponorená, pridaj bobkový list a soľ. Priveď do varu a var na miernom ohni, kým sú zemiaky mäkké.
+   ⏱ 20 min
+
+3. **Zahusti smotanou.**
+   Smotanu rozšľahaj s múkou a trochou vývaru z hrnca do hladka, potom po častiach vmiešaj do polievky. Krátko povar, nech zhustne.
+
+4. **Dochuť a podávaj.**
+   Vmiešaj prelisovaný cesnak a ocot. Dochuť soľou, čiernym korením a podľa chuti ešte octom — polievka má byť príjemne nakyslá. Vyber bobkový list, posyp nasekaným kôprom a podávaj s chlebom.
 
 ---
 

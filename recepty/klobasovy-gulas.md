@@ -41,11 +41,18 @@ A bright, wider modern editorial table scene, 9:16 format, warm minimalism and a
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju speň do sklovita. Pridaj klobásu nakrájanú na kolieska a chvíľu opekaj.
-2. Odstav z ohňa, vmiešaj sladkú papriku, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň a krátko opraž.
-3. Pridaj papriku nakrájanú na prúžky a zemiaky na kocky. Zalej vodou, aby boli takmer ponorené, osoľ a okoreň.
-4. Priveď do varu a var na miernom ohni 20–25 minút, kým sú zemiaky mäkké a omáčka hustne.
-5. Dochuť a podávaj s chlebom.
+1. **Speň cibuľu a opeč klobásu.**
+   Cibuľu nakrájaj nadrobno a na oleji ju speň do sklovita. Pridaj klobásu nakrájanú na kolieska a chvíľu opekaj.
+
+2. **Vmiešaj koreniny.**
+   Odstav z ohňa, vmiešaj sladkú papriku, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň a krátko opraž.
+
+3. **Pridaj zeleninu a dus.**
+   Pridaj papriku nakrájanú na prúžky a zemiaky na kocky. Zalej vodou, aby boli takmer ponorené, osoľ a okoreň. Priveď do varu a var na miernom ohni, kým sú zemiaky mäkké a omáčka hustne.
+   ⏱ 22 min
+
+4. **Dochuť a podávaj.**
+   Podávaj s chlebom.
 
 ---
 

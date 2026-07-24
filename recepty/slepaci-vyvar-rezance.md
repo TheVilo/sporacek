@@ -40,12 +40,22 @@ A bright, modern editorial side-angle close-up, 9:16 format, showcasing elevated
 
 ## Postup
 
-1. Kuracie stehná daj do hrnca, zalej cca 1,2 l studenej vody, priveď pomaly do varu. Pravidelne zbieraj penu z povrchu — kľúčové pre číry vývar.
-2. Pridaj celú ošúpanú cibuľu, bobkový list, soľ a korenie. Var na miernom ohni 45–60 minút.
-3. Mrkvu a zeler nakrájaj na kolieska/kocky, pridaj do vývaru v poslednej tretine varenia, kým nezmäknú.
-4. Mäso vyber, odstráň kosti, mäso natrhaj na kúsky a vráť späť do vývaru.
-5. Cestoviny uvar samostatne podľa návodu, pridaj do taniera až pri podávaní, nech vývar zostane číry.
-6. Podávaj posypané čerstvou petržlenovou vňaťou.
+1. **Priveď mäso do varu a zbieraj penu.**
+   Kuracie stehná daj do hrnca, zalej cca 1,2 l studenej vody, priveď pomaly do varu, pravidelne zbieraj penu z povrchu.
+   *Tip: Dôsledné zbieranie peny je kľúčové pre číry vývar.*
+
+2. **Pridaj cibuľu a var vývar.**
+   Pridaj celú ošúpanú cibuľu, bobkový list, soľ a korenie. Var na miernom ohni.
+   ⏱ 52 min
+
+3. **Pridaj zeleninu.**
+   Mrkvu a zeler nakrájaj na kolieska/kocky, pridaj do vývaru v poslednej tretine varenia, kým nezmäknú.
+
+4. **Priprav mäso.**
+   Mäso vyber, odstráň kosti, mäso natrhaj na kúsky a vráť späť do vývaru.
+
+5. **Uvar cestoviny a podávaj.**
+   Cestoviny uvar samostatne podľa návodu, pridaj do taniera až pri podávaní, nech vývar zostane číry. Podávaj posypané čerstvou petržlenovou vňaťou.
 
 ---
 

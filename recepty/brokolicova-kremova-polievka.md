@@ -40,12 +40,18 @@ A fresh, vibrant top-down editorial food photo, 9:16 format, blending soft minim
 
 ## Postup
 
-1. Cibuľu a cesnak jemne nasekaj, zemiaky nakrájaj na kocky, brokolicu rozdeľ na ružičky.
-2. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.
-3. Pridaj zemiaky, zalej 900 ml vody, pridaj bujón, var 10 minút.
-4. Pridaj brokolicu, var ďalších 7–8 minút, kým nie je mäkká.
-5. Rozmixuj tyčovým mixérom na hladkú konzistenciu.
-6. Vmiešaj smotanu, osoľ a okoreň podľa chuti.
+1. **Priprav zeleninu a orestuj cibuľu.**
+   Cibuľu a cesnak jemne nasekaj, zemiaky nakrájaj na kocky, brokolicu rozdeľ na ružičky. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.
+
+2. **Uvar zemiaky a brokolicu.**
+   Pridaj zemiaky, zalej 900 ml vody, pridaj bujón a var 10 minút. Potom pridaj brokolicu a var ďalších 7–8 minút, kým nie je mäkká.
+   ⏱ 18 min
+
+3. **Rozmixuj na krém.**
+   Rozmixuj tyčovým mixérom na hladkú konzistenciu.
+
+4. **Vmiešaj smotanu a dochuť.**
+   Vmiešaj smotanu, osoľ a okoreň podľa chuti.
 
 ---
 

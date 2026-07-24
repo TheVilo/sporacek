@@ -40,13 +40,23 @@ A hearty, rustic top-down editorial food photo, 9:16 format, blending warm minim
 
 ## Postup
 
-1. Hovädzie mäso vlož do hrnca, zalej 2 l studenej vody, priveď k varu a zbieraj penu.
-2. Pridaj mrkvu, zeler, cibuľu (aj v šupke, pre farbu) a bobkový list, osoľ.
-3. Var na miernom ohni 1,5–2 hodiny, kým nie je mäso mäkké, priebežne zbieraj penu.
-4. Mäso a zeleninu vyber, vývar precedi.
-5. Mrkvu nakrájaj na kolieska a vráť do precedeného vývaru.
-6. Cestoviny uvar v osolenej vode zvlášť 8–11 minút do al dente.
-7. Do misiek daj cestoviny, zalej horúcim vývarom s mrkvou, posyp petržlenovou vňaťou.
+1. **Priveď mäso do varu a zbieraj penu.**
+   Hovädzie mäso vlož do hrnca, zalej 2 l studenej vody, priveď k varu a priebežne zbieraj penu z povrchu.
+   *Tip: Dôsledné zbieranie peny je kľúčové pre číry vývar.*
+
+2. **Pridaj zeleninu a var vývar.**
+   Pridaj mrkvu, zeler, cibuľu (aj v šupke, pre farbu) a bobkový list, osoľ. Var na miernom ohni, kým nie je mäso mäkké, priebežne zbieraj penu.
+   ⏱ 105 min
+
+3. **Precedi a priprav mrkvu.**
+   Mäso a zeleninu vyber, vývar precedi. Mrkvu nakrájaj na kolieska a vráť do precedeného vývaru.
+
+4. **Uvar cestoviny.**
+   Cestoviny uvar v osolenej vode zvlášť do al dente.
+   ⏱ 9 min
+
+5. **Podávaj.**
+   Do misiek daj cestoviny, zalej horúcim vývarom s mrkvou, posyp petržlenovou vňaťou.
 
 ---
 

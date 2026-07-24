@@ -45,13 +45,22 @@ A hearty, rustic top-down editorial food photo, 9:16 format, blending warm minim
 
 ## Postup
 
-1. Klobásu nakrájaj na kolieska, mrkvu, zeler, cibuľu a zemiaky na kocky.
-2. Na olivovom oleji opekaj klobásu 3–4 minúty, kým nepustí farbu, vyber a odlož.
-3. Na tom istom oleji opraž cibuľu, mrkvu a zeler 5 minút.
-4. Pridaj cesnak a sladkú papriku, krátko opraž.
-5. Zalej 1,2 l vody, pridaj bujón, bobkový list a zemiaky, var 15 minút.
-6. Pridaj fazuľu a opečenú klobásu, var ďalších 10 minút, kým nie sú zemiaky mäkké.
-7. Osoľ, okoreň, podávaj posypanú petržlenovou vňaťou.
+1. **Priprav suroviny a opeč klobásu.**
+   Klobásu nakrájaj na kolieska, mrkvu, zeler, cibuľu a zemiaky na kocky. Na olivovom oleji opekaj klobásu 3–4 minúty, kým nepustí farbu, vyber a odlož.
+
+2. **Orestuj zeleninu.**
+   Na tom istom oleji opraž cibuľu, mrkvu a zeler 5 minút. Pridaj cesnak a sladkú papriku, krátko opraž.
+
+3. **Zalej a var zemiaky.**
+   Zalej 1,2 l vody, pridaj bujón, bobkový list a zemiaky.
+   ⏱ 15 min
+
+4. **Pridaj fazuľu a klobásu.**
+   Pridaj fazuľu a opečenú klobásu, var ďalej, kým nie sú zemiaky mäkké.
+   ⏱ 10 min
+
+5. **Dochuť a podávaj.**
+   Osoľ, okoreň, podávaj posypanú petržlenovou vňaťou.
 
 ---
 

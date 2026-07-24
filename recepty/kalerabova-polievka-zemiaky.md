@@ -42,12 +42,18 @@ A hearty, rustic top-down editorial food photo, 9:16 format, blending warm minim
 
 ## Postup
 
-1. Kaleráb, zemiaky a mrkvu ošúp a nakrájaj na kocky. Cibuľu a cesnak jemne nasekaj.
-2. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.
-3. Pridaj kaleráb, zemiaky a mrkvu, zalej 1 l vody, pridaj bujón.
-4. Var 20–25 minút, kým nie je zelenina mäkká.
-5. Časť polievky rozmixuj tyčovým mixérom priamo v hrnci, nech zhustne, ale zostanú aj kúsky zeleniny.
-6. Vmiešaj smotanu, osoľ a okoreň podľa chuti, podávaj posypanú petržlenovou vňaťou.
+1. **Priprav zeleninu a orestuj cibuľu.**
+   Kaleráb, zemiaky a mrkvu ošúp a nakrájaj na kocky. Cibuľu a cesnak jemne nasekaj. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.
+
+2. **Uvar zeleninu.**
+   Pridaj kaleráb, zemiaky a mrkvu, zalej 1 l vody, pridaj bujón. Var, kým nie je zelenina mäkká.
+   ⏱ 22 min
+
+3. **Čiastočne rozmixuj.**
+   Časť polievky rozmixuj tyčovým mixérom priamo v hrnci, nech zhustne, ale zostanú aj kúsky zeleniny.
+
+4. **Vmiešaj smotanu a dochuť.**
+   Vmiešaj smotanu, osoľ a okoreň podľa chuti, podávaj posypanú petržlenovou vňaťou.
 
 ---
 

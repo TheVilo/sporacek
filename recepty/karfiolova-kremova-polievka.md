@@ -40,12 +40,18 @@ A warm, comforting top-down editorial food photo, 9:16 format, blending soft min
 
 ## Postup
 
-1. Cibuľu a cesnak jemne nasekaj, zemiaky nakrájaj na kocky, karfiol rozdeľ na ružičky.
-2. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.
-3. Pridaj zemiaky, zalej 900 ml vody, pridaj bujón, var 10 minút.
-4. Pridaj karfiol, var ďalších 10–12 minút, kým nie je mäkký.
-5. Rozmixuj tyčovým mixérom na hladkú konzistenciu.
-6. Vmiešaj smotanu, osoľ a okoreň podľa chuti.
+1. **Priprav zeleninu a orestuj cibuľu.**
+   Cibuľu a cesnak jemne nasekaj, zemiaky nakrájaj na kocky, karfiol rozdeľ na ružičky. Na olivovom oleji opraž cibuľu do sklovita, pridaj cesnak, krátko opraž.
+
+2. **Uvar zemiaky a karfiol.**
+   Pridaj zemiaky, zalej 900 ml vody, pridaj bujón a var 10 minút. Potom pridaj karfiol a var ďalej, kým nie je mäkký.
+   ⏱ 21 min
+
+3. **Rozmixuj na krém.**
+   Rozmixuj tyčovým mixérom na hladkú konzistenciu.
+
+4. **Vmiešaj smotanu a dochuť.**
+   Vmiešaj smotanu, osoľ a okoreň podľa chuti.
 
 ---
 

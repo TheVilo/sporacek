@@ -42,12 +42,18 @@ A bright, welcoming editorial food photo, 9:16 format. Creamy tomato soup with a
 
 ## Postup
 
-1. Cibuľu a cesnak jemne nasekaj, na olivovom oleji opraž do sklovita.
-2. Pridaj konzervované paradajky, rozdrvený bujón, cukor a 300 ml vody, premiešaj.
-3. Dus na miernom ohni 15 minút.
-4. Rozmixuj tyčovým mixérom na hladkú krémovú konzistenciu.
-5. Vmiešaj smotanu, osoľ a okoreň podľa chuti, krátko prevar.
-6. Podávaj posypanú čerstvou bazalkou.
+1. **Orestuj cibuľu a cesnak.**
+   Cibuľu a cesnak jemne nasekaj, na olivovom oleji opraž do sklovita.
+
+2. **Prilej paradajky a dus.**
+   Pridaj konzervované paradajky, rozdrvený bujón, cukor a 300 ml vody, premiešaj. Dus na miernom ohni.
+   ⏱ 15 min
+
+3. **Rozmixuj na krém.**
+   Rozmixuj tyčovým mixérom na hladkú krémovú konzistenciu.
+
+4. **Vmiešaj smotanu a podávaj.**
+   Vmiešaj smotanu, osoľ a okoreň podľa chuti, krátko prevar. Podávaj posypanú čerstvou bazalkou.
 
 ---
 

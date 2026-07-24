@@ -42,11 +42,19 @@ A contemporary, bright lifestyle food photo, 9:16 format, elevated home cooking 
 
 ## Postup
 
-1. Cibuľu nakrájaj nadrobno a na oleji ju speň do sklovita.
-2. Odstav z ohňa, vmiešaj sladkú papriku, rascu, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň a krátko opraž.
-3. Pridaj papriku na prúžky a zemiaky na kocky. Zalej vodou, aby boli takmer ponorené, osoľ a okoreň.
-4. Var na miernom ohni 15 minút, potom pridaj scedenú fazuľu a var ďalších 10 minút, kým sú zemiaky mäkké a omáčka hustne.
-5. Dochuť a podávaj posypané petržlenovou vňaťou, s chlebom.
+1. **Speň cibuľu a pridaj koreniny.**
+   Cibuľu nakrájaj nadrobno a na oleji ju speň do sklovita. Odstav z ohňa, vmiešaj sladkú papriku, rascu, prelisovaný cesnak a paradajkový pretlak. Vráť na oheň a krátko opraž.
+   *Tip: Papriku miešaj vždy mimo horúceho povrchu, inak zhorkne.*
+
+2. **Pridaj zeleninu a zalej vodou.**
+   Pridaj papriku na prúžky a zemiaky na kocky. Zalej vodou, aby boli takmer ponorené, osoľ a okoreň.
+
+3. **Dus zemiaky a pridaj fazuľu.**
+   Var na miernom ohni 15 minút, potom pridaj scedenú fazuľu a var ďalej, kým sú zemiaky mäkké a omáčka hustne.
+   ⏱ 25 min
+
+4. **Dochuť a podávaj.**
+   Podávaj posypané petržlenovou vňaťou, s chlebom.
 
 ---
 

@@ -43,13 +43,24 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Sušené hríby zalej horúcou vodou a nechaj aspoň 15 minút napučať, potom scedi (vodu si odlož).
-2. Klobásu nakrájaj na kolieska. Cibuľu najemno nakrájaj.
-3. Na oleji opeč cibuľu do sklovita, pridaj klobásu, opeč, kým pustí trochu tuku.
-4. Pridaj prelisovaný cesnak, krátko opraž, potom stiahni z ohňa a vmiešaj sladkú papriku (nech nezhorí).
-5. Prilej vodu z hríbov aj ďalšiu vodu (cca 800 ml), pridaj scedenú kyslú kapustu, hríby a bobkový list.
-6. Priveď do varu, pridaj na kocky nakrájané zemiaky, dus 30–40 minút na miernom ohni do mäkka.
-7. Na záver vmiešaj smotanu, dochuť soľou a korením, chvíľu prehrej (nevar prudko, nech sa smotana nezrazí).
+1. **Namoč hríby.**
+   Sušené hríby zalej horúcou vodou a nechaj napučať, potom scedi (vodu si odlož).
+   ⏱ 15 min
+
+2. **Opeč klobásu a cibuľu.**
+   Klobásu nakrájaj na kolieska, cibuľu najemno nakrájaj. Na oleji opeč cibuľu do sklovita, pridaj klobásu, opeč, kým pustí trochu tuku.
+
+3. **Pridaj koreniny a tekutinu.**
+   Pridaj prelisovaný cesnak, krátko opraž, potom stiahni z ohňa a vmiešaj sladkú papriku. Prilej vodu z hríbov aj ďalšiu vodu (cca 800 ml), pridaj scedenú kyslú kapustu, hríby a bobkový list.
+   *Tip: Papriku vmiešavaj vždy mimo horúceho ohňa, nech nezhorí.*
+
+4. **Dus so zemiakmi.**
+   Priveď do varu, pridaj na kocky nakrájané zemiaky, dus na miernom ohni do mäkka.
+   ⏱ 35 min
+
+5. **Zjemni smotanou a dochuť.**
+   Vmiešaj smotanu, dochuť soľou a korením, chvíľu prehrej.
+   *Tip: Nevar prudko, nech sa smotana nezrazí.*
 
 ---
 

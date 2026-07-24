@@ -41,12 +41,18 @@ A bright, airy, modern editorial food photograph in a vertical 9:16 format. A cl
 
 ## Postup
 
-1. Paradajky spar v horúcej vode 30 sekúnd, ošúp a nakrájaj na kúsky.
-2. Polovicu uhorky a papriky odlož bokom na neskoršiu ozdobu, zvyšok nakrájaj na kúsky.
-3. Do mixéra daj paradajky, nakrájanú uhorku, papriku, cesnak, cibuľu, olivový olej, ocot a strúhanku (na zjemnenie a zahustenie).
-4. Rozmixuj dohladka, dochuť soľou a korením.
-5. Prikry a daj chladiť do chladničky aspoň 2 hodiny.
-6. Podávaj vychladené, s odloženou uhorkou a paprikou nakrájanou na drobné kocky navrchu, pokvapkané olivovým olejom.
+1. **Priprav paradajky a zeleninu.**
+   Paradajky spar v horúcej vode 30 sekúnd, ošúp a nakrájaj na kúsky. Polovicu uhorky a papriky odlož bokom na neskoršiu ozdobu, zvyšok nakrájaj na kúsky.
+
+2. **Rozmixuj polievku.**
+   Do mixéra daj paradajky, nakrájanú uhorku, papriku, cesnak, cibuľu, olivový olej, ocot a strúhanku. Rozmixuj dohladka, dochuť soľou a korením.
+
+3. **Vychlaď.**
+   Prikry a daj chladiť do chladničky.
+   ⏱ 120 min
+
+4. **Podávaj.**
+   Podávaj vychladené, s odloženou uhorkou a paprikou nakrájanou na drobné kocky navrchu, pokvapkané olivovým olejom.
 
 ---
 
